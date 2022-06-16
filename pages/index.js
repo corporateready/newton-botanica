@@ -5,8 +5,8 @@ import Image from "next/image";
 import header__home_logo from "../public/static/home-page/header-logo.svg";
 import image__side from "../public/static/home-page/home-image-inner.svg";
 import image__side_mobile from "../public/static/home-page/home-image-inner-mobile.svg";
-import home__bg from "../public/static/home-page/background_auto_x1.webp";
-import home__bg_mobile from "../public/static/home-page/background_auto_x1.webp";
+import home__bg from "../public/static/home-page/background.webp";
+import home__bg_mobile from "../public/static/home-page/background.webp";
 
 import phone__icon from "../public/static/home-page/phone.svg";
 import Messengers from "../components/messengers";
@@ -56,7 +56,7 @@ export default function Home() {
         </header>
 
         <div className={styles.home__bg}>
-          <Image src={home__bg} layout="fill" priority alt="home background" />
+          <Image src={home__bg} layout="fill" priority alt="home background" placeholder="blur" />
         </div>
 
         <div className={styles.home__mobile_bg}>
@@ -66,6 +66,7 @@ export default function Home() {
             objectFit="cover"
             priority
             alt="home modile background"
+            placeholder="blur"
           />
         </div>
 
