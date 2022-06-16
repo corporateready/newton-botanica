@@ -2,13 +2,16 @@
     @apply flex flex-col space-y-[45%];
 
     @media screen and(max-width: 576px) {
-        @apply flex flex-row items-baseline justify-between space-y-0 w-full mt-[10%] mx-0 relative;
+        @apply flex flex-row items-baseline justify-between space-y-0 w-full mt-[15%] mx-0 relative;
     }
 
+    @media (max-width: 576px) and(max-height: 740px) {
+        @apply mt-[10%];
+    }
 }
 
 .whatsapp {
-    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse;
+    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse hover:scale-125 hover:duration-150;
 
     svg {
         @media screen and(max-width: 1000px) {
@@ -30,7 +33,7 @@
 }
 
 .viber {
-    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse;
+    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse hover:scale-125 hover:duration-150;
 
     svg {
         @apply text-sm;
@@ -54,7 +57,7 @@
 }
 
 .messenger {
-    @apply bg-white h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse;
+    @apply bg-white h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse hover:scale-125 hover:duration-150;
 
     svg {
         @apply text-sm;
@@ -78,7 +81,7 @@
 }
 
 .phone {
-    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse;
+    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse hover:scale-125 hover:duration-150;
 
     svg {
         @apply text-sm;

@@ -28,7 +28,7 @@ const messengers = [
   {
     id: 4,
     icon: <FaPhoneAlt size={25} color="white" />,
-    irl: "/",
+    irl: "tel:+3736082020",
     title: "phone",
   },
 ];

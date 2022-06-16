@@ -20,6 +20,10 @@
     }
 }
 
+.header__logo {
+    @apply hover:scale-75 hover:duration-200;
+}
+
 .home {
     @apply h-full w-full absolute top-0 left-0;
     font-family: 'Gilroy-Bold';
@@ -65,7 +69,11 @@
     @apply flex justify-center items-center space-x-[6%] pt-[25%] h-full w-full;
 
     @media screen and(max-width: 576px) {
-        @apply flex-col space-x-0;
+        @apply flex-col space-x-0 pt-[30%];
+    }
+
+    @media (max-width: 576px) and(max-height: 740px) {
+        @apply pt-[25%];
     }
 }
 
@@ -79,16 +87,18 @@
 }
 .image__side_mobile {
     @apply hidden;
-    @media screen and(max-width: 1440px) {
-        // width: calc(200px + (536 - 200)*(100vw - 576px)/(1440 - 576));
-    }
+    
     @media screen and(max-width: 576px) {
         @apply inline-block;
+    }
+
+    @media (max-width: 576px) and(max-height: 740px) {
+        @apply w-[90%];
     }
 }
 
 .navigate__side {
-    @apply w-[28.5%];
+    @apply w-[28.5%] mt-[5%];
 
     @media screen and(max-width: 576px) {
         @apply w-full mt-[10%];
@@ -101,7 +111,7 @@
 
 .button__about {
     @include text(12px, 130%, 400, #2BB018);
-    @apply block bg-white px-[38px] py-[17px] rounded uppercase tracking-wider;
+    @apply block bg-white px-[38px] py-[17px] rounded uppercase tracking-wider hover:bg-transparent hover:text-white hover:border-[1px] hover:transition-all hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         @apply w-[50%] px-0 py-[5%];
@@ -114,7 +124,7 @@
 
 .button__planning {
     @include text(12px, 130%, 400, #fff);
-    @apply block bg-none border-[1px] px-[38px] py-[17px] rounded uppercase tracking-wider;
+    @apply block bg-none border-[1px] px-[38px] py-[17px] rounded uppercase tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         @apply w-[50%] px-0 py-[5%];
@@ -128,7 +138,7 @@
 
 .button__send {
     @include text(12px, 130%, 400, #fff);
-    @apply block relative bg-[#2BB018] px-[38px] py-[17px] mt-[5%] w-full rounded uppercase tracking-wider;
+    @apply block relative bg-[#2BB018] px-[38px] py-[17px] mt-[5%] w-full rounded uppercase tracking-wider hover:bg-[#1e7f11] hover:transition-all hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         @apply px-0 py-[5%];
@@ -167,7 +177,7 @@
 
 .header__phone_link_number {
     @include text(20px, 130%, 400, #2d2d2b);
-    @apply inline-block ml-[2%] uppercase;
+    @apply inline-block ml-[3%] uppercase hover:scale-110 hover:text-[#2BB018] hover:duration-150;
 
     @media screen and(max-width: 576px) {
         @include text(18px, 130%, 700, #2BB018);
