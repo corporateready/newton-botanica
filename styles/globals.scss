@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Gilroy-Bold';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url('../fonts/gilroy-bold.woff'),
+      url('../fonts/gilroy-bold.woff2');
+  }
+//   font-family: 'Gilroy Medium';
+
+@layer {
+    body {
+        @apply max-w-full mx-auto flex flex-col;
+    }
+}

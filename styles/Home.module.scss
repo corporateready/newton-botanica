@@ -1,0 +1,175 @@
+@import '../styles/mixins.scss';
+
+.home__screen {
+    @apply relative h-screen w-screen;
+    @media screen and(max-width: 576px) {
+        @apply h-screen w-screen relative top-0 left-0;
+    }
+}
+
+.header {
+    @apply relative top-0 left-0 bg-white h-auto w-full z-10;
+    font-family: 'Gilroy-Bold';
+}
+
+.header__inner {
+    @apply flex justify-between items-center py-[0.7%] w-full h-full;
+
+    @media screen and(max-width: 576px) {
+        @apply py-[1%];
+    }
+}
+
+.home {
+    @apply h-full w-full absolute top-0 left-0;
+    font-family: 'Gilroy-Bold';
+}
+
+.home__bg {
+    @apply absolute top-0 left-0 h-screen w-full ;
+
+    @media screen and(max-width: 576px) {
+        @apply hidden;
+    }
+}
+
+.home__mobile_bg {
+    @apply hidden;
+
+    @media screen and(max-width: 576px) {
+        @apply block absolute top-0 left-0 h-screen w-full;
+    }
+}
+.desktop__messengerrs {
+    @apply absolute top-[40%] left-[2%];
+    @media screen and(max-width: 576px) {
+        @apply hidden;
+    }
+}
+.mobile__messengers {
+    @apply hidden;
+
+  @media screen and(max-width: 576px) {
+    @apply flex flex-col justify-evenly h-auto w-full items-center;
+  }
+}
+.container {
+    @apply w-[1170px] mx-auto px-0;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-full px-[9.3%];
+    }
+}
+
+.inner {
+    @apply flex justify-center items-center space-x-[6%] pt-[25%] h-full w-full;
+
+    @media screen and(max-width: 576px) {
+        @apply flex-col space-x-0;
+    }
+}
+
+.image__side {
+    @media screen and(max-width: 1440px) {
+        width: calc(200px + (536 - 200)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        @apply hidden;
+    }
+}
+.image__side_mobile {
+    @apply hidden;
+    @media screen and(max-width: 1440px) {
+        // width: calc(200px + (536 - 200)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        @apply inline-block;
+    }
+}
+
+.navigate__side {
+    @apply w-[28.5%];
+
+    @media screen and(max-width: 576px) {
+        @apply w-full mt-[10%];
+    }
+}
+
+.buttons__up {
+    @apply flex relative space-x-[5%];
+}
+
+.button__about {
+    @include text(12px, 130%, 400, #2BB018);
+    @apply block bg-white px-[38px] py-[17px] rounded uppercase tracking-wider;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-[50%] px-0 py-[5%];
+        font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
+    }
+}
+
+.button__planning {
+    @include text(12px, 130%, 400, #fff);
+    @apply block bg-none border-[1px] px-[38px] py-[17px] rounded uppercase tracking-wider;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-[50%] px-0 py-[5%];
+        font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
+    }
+}
+
+.button__send {
+    @include text(12px, 130%, 400, #fff);
+    @apply block relative bg-[#2BB018] px-[38px] py-[17px] mt-[5%] w-full rounded uppercase tracking-wider;
+
+    @media screen and(max-width: 1440px) {
+        @apply px-0 py-[5%];
+        font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 768px) {
+        @apply rounded-sm;
+    }
+    @media screen and(max-width: 576px) {
+        font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
+    }
+}
+
+.header__logo {
+    @media screen and(max-width: 576px) {
+        @apply w-[90px];
+    }
+}
+
+.header__phone_link {
+    @apply flex items-center justify-end w-[35%];
+
+    @media screen and(max-width: 576px) {
+        @apply w-[50%];
+    }
+}
+
+.header__phone_icon {
+    @apply pt-[1.5%];
+
+    @media screen and(max-width: 576px) {
+        @apply hidden;
+    }
+}
+
+.header__phone_link_number {
+    @include text(20px, 130%, 400, #2d2d2b);
+    @apply inline-block ml-[2%] uppercase;
+
+    @media screen and(max-width: 576px) {
+        @include text(18px, 130%, 700, #2BB018);
+    }
+}

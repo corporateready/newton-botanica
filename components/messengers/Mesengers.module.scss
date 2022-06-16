@@ -1,0 +1,102 @@
+.messengers {
+    @apply flex flex-col space-y-[45%];
+
+    @media screen and(max-width: 576px) {
+        @apply flex flex-row items-baseline justify-between space-y-0 w-full mt-[10%] mx-0 relative;
+    }
+
+}
+
+.whatsapp {
+    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse;
+
+    svg {
+        @media screen and(max-width: 1000px) {
+            @apply h-5 w-5;
+        }
+
+        @media screen and(max-width: 576px) {
+            @apply h-8 w-8;
+        }
+    }
+
+    @media screen and(max-width: 1000px) {
+        @apply h-8 w-8;
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply h-14 w-14 rounded-[30px];
+    }
+}
+
+.viber {
+    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse;
+
+    svg {
+        @apply text-sm;
+
+        @media screen and(max-width: 1000px) {
+            @apply h-5 w-5;
+        }
+
+        @media screen and(max-width: 576px) {
+            @apply h-8 w-8;
+        }
+    }
+
+    @media screen and(max-width: 1000px) {
+        @apply h-8 w-8;
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply h-14 w-14 rounded-[30px];
+    }
+}
+
+.messenger {
+    @apply bg-white h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse;
+
+    svg {
+        @apply text-sm;
+
+        @media screen and(max-width: 1000px) {
+            @apply h-5 w-5;
+        }
+
+        @media screen and(max-width: 576px) {
+            @apply h-8 w-8;
+        }
+    }
+
+    @media screen and(max-width: 1000px) {
+        @apply h-8 w-8;
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply h-14 w-14 rounded-[30px];
+    }
+}
+
+.phone {
+    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse;
+
+    svg {
+        @apply text-sm;
+
+        @media screen and(max-width: 1000px) {
+            @apply h-4 w-4;
+        }
+
+        @media screen and(max-width: 576px) {
+            @apply h-7 w-7;
+        }
+    }
+
+    @media screen and(max-width: 1000px) {
+        @apply h-8 w-8;
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply h-14 w-14 rounded-[30px];
+    }
+}
