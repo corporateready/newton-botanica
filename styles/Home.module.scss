@@ -71,6 +71,10 @@
     @media screen and(max-width: 576px) {
         @apply flex-col space-x-0 pt-[50%];
     }
+
+    @media (max-width: 576px) and (max-height: 740px) {
+        @apply flex-col space-x-0 pt-[40%];
+    }
 }
 
 .image__side {
