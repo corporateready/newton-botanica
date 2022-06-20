@@ -69,11 +69,7 @@
     @apply flex justify-center items-center space-x-[6%] pt-[25%] h-full w-full;
 
     @media screen and(max-width: 576px) {
-        @apply flex-col space-x-0 pt-[30%];
-    }
-
-    @media (max-width: 576px) and(max-height: 740px) {
-        @apply pt-[20%];
+        @apply flex-col space-x-0 pt-[50%];
     }
 }
 
@@ -89,11 +85,7 @@
     @apply hidden;
     
     @media screen and(max-width: 576px) {
-        @apply inline-block;
-    }
-
-    @media (max-width: 576px) and(max-height: 740px) {
-        @apply w-[90%];
+        @apply inline-block w-[70%];
     }
 }
 
