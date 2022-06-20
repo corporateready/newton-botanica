@@ -11,10 +11,12 @@
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "@react-three/fiber": "^8.0.24",
+    "framer-motion": "^6.3.11",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "sass": "^1.52.3",
+    "swiper": "^8.2.4",
     "three": "^0.141.0"
   },
   "devDependencies": {

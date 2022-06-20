@@ -1,0 +1,97 @@
+@import '../../../styles/mixins.scss';
+
+.payment__section {
+    @apply h-auto max-w-full relative top-0 left-0 py-[5%] mx-[5%];
+    font-family: 'Gilroy-Bold';
+}
+
+.payment__wrapper {
+    @apply w-full h-auto bg-white mx-auto px-[5%];
+
+    @media screen and (max-width: 576px) {
+        @apply px-[5%] pb-[10%];
+    }
+}
+
+.payment__inner {
+    @apply flex justify-between items-stretch space-x-[5%] h-full w-full py-[5%];
+
+    @media screen and(max-width: 576px) {
+        @apply flex flex-col justify-center py-[10%] space-x-0 space-y-[10%];
+    }
+}
+.image__side{
+    @apply flex flex-col justify-between w-[50%];
+
+    @media screen and(max-width: 576px) {
+        @apply w-full;
+    }
+}
+.image__side_img {
+
+    @media screen and(max-width: 1440px) {
+        width: calc(162px + (405 - 162)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply w-full flex justify-center;
+    }
+}
+.description__side {
+    @apply w-[50%] space-y-[3%];
+    @media screen and(max-width: 576px) {
+        @apply w-full;
+    }
+}
+.description__icon {
+    @apply flex self-center;
+    @media screen and(max-width: 1440px) {
+        width: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
+    }
+}
+.description__text {
+    @include text(24px, 100%, 400, #2D2D2B);
+    @apply uppercase;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(9px + (24 - 9)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        font-size: calc(14px + (25 - 14)*(100vw - 320px)/(576 - 320));
+    }
+    span {
+        @include text(24px, 100%, 400, #2BB018);
+
+        @media screen and(max-width: 1440px) {
+            font-size: calc(9px + (24 - 9)*(100vw - 576px)/(1440 - 576));
+        }
+        @media screen and(max-width: 576px) {
+            font-size: calc(14px + (25 - 14)*(100vw - 320px)/(576 - 320));
+        }
+    }
+}
+.description__item {
+    @apply flex w-full items-center space-x-[3%];
+}
+//  =====>
+.location__detail {
+    @include text(15px, 130%, 400, #fff);
+    @apply flex justify-center bg-[#2BB018] border-0 w-[60%] py-[2%] mx-auto rounded uppercase text-center tracking-wider hover:duration-150;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply hidden;
+    }
+}
+.location__detail_mobile {
+@apply hidden;
+    @media screen and(max-width: 576px) {
+        @include text(15px, 130%, 400, #fff);
+        @apply flex justify-center self-center bg-[#2BB018] border-0 w-[70%] py-[3%] mt-[5%] mx-auto rounded uppercase text-center tracking-wider hover:duration-150;
+
+        font-size: calc(10px + (15 - 10)*(100vw - 320px)/(576 - 320));
+    }
+}

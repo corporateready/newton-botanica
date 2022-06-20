@@ -1,0 +1,187 @@
+@import '../../../styles/mixins.scss';
+
+.hero__section {
+    @apply h-full w-full relative top-0 left-0;
+    font-family: 'Gilroy-Bold';
+}
+.hero__bg {
+    @apply absolute top-0 left-0 h-full w-full;
+
+    @media screen and(max-width: 576px) {
+        @apply hidden;
+    }
+}
+.hero__bg_mobile {
+    @apply hidden;
+
+    @media screen and(max-width: 576px) {
+        @apply flex absolute top-0 left-0 h-[80vh] w-full;
+    }
+}
+.hero__inner {
+    @apply relative flex flex-col justify-center h-full;
+
+    @media screen and(max-width: 576px) {
+        @apply pt-[20%];
+    }
+}
+.hero__title {
+    @include text(32px, 150%, 400, #2D2D2B);
+    @apply relative mt-[10%] uppercase text-center;
+
+    @media screen and(max-width: 1440px) {
+    font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 1024px) {
+        @apply mt-[13%];
+    }
+
+    @media screen and(max-width: 768px) {
+        @apply mt-[15%];
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply mt-[10%];
+        font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
+        }
+
+    span {
+        @include text(32px, 150%, 400, #2BB018);
+
+        @media screen and(max-width: 1440px) {
+            font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+        }
+
+        @media screen and(max-width: 576px) {
+            font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
+            }
+    }
+}
+.hero__buttons {
+    @apply flex justify-center mt-[40%] mx-auto relative space-x-[3%] w-[60%];
+
+    @media screen and(max-width: 1024px) {
+        @apply mt-[37%];
+    }
+
+    @media screen and(max-width: 768px) {
+        @apply mt-[35%];
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply w-[95%] mt-[85%];
+    }
+}
+.button__about {
+    @include text(12px, 130%, 400, #fff);
+    @apply flex justify-center bg-[#2BB018] w-[50%] py-[1%] text-center rounded uppercase tracking-wider items-center hover:bg-[#1e7f11] hover:text-white hover:transition-all hover:duration-150;
+    
+    @media screen and(max-width: 1440px) {
+    font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+    font-size: calc(9px + (14 - 9)*(100vw - 320px)/(576 - 320));
+    }
+}
+.button__planning {
+    @include text(12px, 130%, 400, #000);
+    @apply block bg-white border-[1px] w-[50%] py-[1%] rounded uppercase text-center tracking-wider hover:bg-slate-300 hover:transition-all hover:duration-150;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        @apply px-[5%];
+        font-size: calc(9px + (14 - 9)*(100vw - 320px)/(576 - 320));
+    }
+}
+.separotor {
+    @apply hidden;
+    @media screen and(max-width: 576px) {
+    @apply block;
+    }
+}
+.separotor__hide {
+    @apply block;
+    @media screen and(max-width: 576px) {
+    @apply hidden;
+    }
+}
+
+// Gallery =====>
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+//   body {
+//     background: #000;
+//     color: #000;
+//   }
+  
+  .swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .mySwiper2 {
+    height: 80%;
+    width: 100%;
+  }
+  
+  .mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+  
+  .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  
+  .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

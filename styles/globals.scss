@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "swiper/css/bundle";
+@import "swiper/css";
+@import "swiper/css/grid";
+@import "swiper/css/pagination";
+
 @font-face {
     font-family: 'Gilroy-Bold';
     font-style: normal;
@@ -10,7 +15,6 @@
     src: url('../fonts/gilroy-bold.woff'),
       url('../fonts/gilroy-bold.woff2');
   }
-//   font-family: 'Gilroy Medium';
 
 @layer {
     body {

@@ -1,0 +1,96 @@
+@import '../../../styles/mixins.scss';
+
+.header {
+    @apply absolute top-0 left-0 bg-white h-auto w-full z-10;
+    font-family: 'Gilroy-Bold';
+
+    @media screen and(max-width: 576px) {
+        // @apply absolute top-1/2;
+    }
+}
+
+.container {
+    @apply w-[1170px] mx-auto px-0;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-full px-[9.3%];
+    }
+}
+
+.header__inner {
+    @apply flex justify-between items-center py-[0.7%] w-full h-full;
+
+    @media screen and(max-width: 576px) {
+        // @apply py-[1%];
+    }
+}
+
+.header__logo {
+    @apply hover:scale-75 hover:duration-200;
+
+    @media screen and(max-width: 1440px) {
+        // @apply w-[25%]
+    }
+
+    @media screen and(max-width: 1024px) {
+        @apply w-[90px];
+    }
+
+    @media screen and(max-width: 768px) {
+        @apply w-[70px];
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply w-[90px];
+    }
+}
+.button__planning {
+    @include text(24px, 130%, 400, #2BB018);
+    @apply flex justify-center bg-none border-[1px] px-[38px] py-[5px] rounded uppercase text-center tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-[20%] py-[0.5%];
+        font-size: calc(10px + (24 - 10)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
+    }
+}
+.header__phone_link {
+    @apply flex items-center justify-end w-[15%];
+
+    @media screen and(max-width: 576px) {
+        @apply hidden;
+    }
+}
+
+.header__phone_icon {
+    @apply pt-[2.5%];
+
+    @media screen and(max-width: 1200px) {
+        @apply w-[17px];
+    }
+
+    @media screen and(max-width: 994px) {
+        @apply w-[13px];
+    }
+
+    @media screen and(max-width: 768px) {
+        @apply w-[10px] pt-0;
+    }
+
+}
+
+.header__phone_link_number {
+    @include text(20px, 130%, 400, #2d2d2b);
+    @apply inline-block ml-[3%] uppercase hover:scale-110 hover:text-[#2BB018] hover:duration-150;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(8px + (20 - 8)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        @include text(18px, 130%, 700, #2BB018);
+    }
+}

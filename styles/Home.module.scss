@@ -30,7 +30,7 @@
 }
 
 .home__bg {
-    @apply absolute top-0 left-0 h-screen w-full ;
+    @apply absolute top-0 left-0 h-screen w-full;
 
     @media screen and(max-width: 576px) {
         @apply hidden;
@@ -111,7 +111,7 @@
 
 .button__about {
     @include text(12px, 130%, 400, #2BB018);
-    @apply block bg-white px-[38px] py-[17px] rounded uppercase tracking-wider hover:bg-transparent hover:text-white hover:border-[1px] hover:transition-all hover:duration-150;
+    @apply block bg-white px-[38px] py-[17px] rounded uppercase tracking-wider text-center hover:bg-transparent hover:text-white hover:border-[1px] hover:transition-all hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         @apply w-[50%] px-0 py-[5%];
@@ -124,7 +124,7 @@
 
 .button__planning {
     @include text(12px, 130%, 400, #fff);
-    @apply block bg-none border-[1px] px-[38px] py-[17px] rounded uppercase tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
+    @apply block bg-none border-[1px] px-[38px] py-[17px] rounded uppercase text-center tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         @apply w-[50%] px-0 py-[5%];
