@@ -1,7 +1,7 @@
 @import '../../../styles/mixins.scss';
 
 .location__section {
-    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px] pb-[5.1%];
+    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px] pb-[5.1%] z-[5];
     font-family: 'Gilroy-Bold';
 }
 .location__wrapper {

@@ -2,12 +2,23 @@ import React from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/layout";
 import Image from "next/image";
-import planning__bg from "../public/static/home-page/background.webp";
+import planning__bg from "../public/static/planning-page/Group 2678.png";
 import { Hero, Complex, Designs, Location, Payment, News } from "../components/planning";
+import OfferPopUp from '../components/popup-offer'
 
 export default function planning() {
+  const [isOpen, setIsOpen] = React.useState(true)
+
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+    if (!isOpen) {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isOpen]);
   return (
-    <Layout>
+    
       <section className={styles.planning__section}>
         <div className={styles.planning__bg}>
           <Image
@@ -18,17 +29,22 @@ export default function planning() {
             alt="home background"
           />
         </div>
-
+        <Layout>
         <div className={styles.container}>
           <Hero />
           <Complex/>
           <Designs/>
           <Location/>
-          <Payment/>
+          <Payment isOpen={isOpen} setIsOpen={setIsOpen}/>
           <News/>
         </div>
-
+        </Layout>
+        {
+          isOpen && (
+            <OfferPopUp setIsOpen={setIsOpen}/>
+          )
+        }
       </section>
-    </Layout>
+    
   );
 }

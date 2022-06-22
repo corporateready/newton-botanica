@@ -1,0 +1,19 @@
+@import '../../styles/mixins.scss';
+
+.offer__section {
+    @apply h-screen w-screen fixed top-0 left-0 z-20;
+    background: rgba(45, 45, 43, 0.8);
+}
+.offer__inner {
+    @apply h-auto w-[50%] bg-white relative top-[25%] left-[25%] z-auto p-[9%] rounded-md;
+}
+.offer__button_close {
+    @apply absolute top-[6%] right-[3%];
+}
+.offer__title {
+    @include text(20px, 130%, 600, #2D2D2B);
+    @apply text-center;
+    span {
+        @include text(20px, 130%, 700, #2BB018);
+    }
+}
