@@ -3,9 +3,9 @@ import React from "react";
 import styles from "./OfferPopUp.module.scss";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
 
-export default function index({setIsOpen}) {
+export default function index({setIsPDFOpen}) {
     const hanlerClosePopup = () => {
-        setIsOpen(false)
+      setIsPDFOpen(false)
       }
   return (
     <section className={styles.offer__section}>

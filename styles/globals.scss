@@ -8,6 +8,24 @@
 @import "swiper/css/pagination";
 
 @font-face {
+    font-family: 'Gilroy Regular';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300;
+    src: url('../fonts/Gilroy-Regular.woff'),
+      url('../fonts/Gilroy-Regular.woff2');
+  }
+
+  @font-face {
+    font-family: 'Gilroy Semibold';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 600;
+    src: url('../fonts/Gilroy-SemiBold.woff'),
+      url('../fonts/Gilroy-SemiBold.woff2');
+  }
+
+  @font-face {
     font-family: 'Gilroy-Bold';
     font-style: normal;
     font-display: swap;

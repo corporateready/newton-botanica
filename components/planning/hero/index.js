@@ -4,7 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import hero__bg from "../../../public/static/planning-page/planning-hero-bg.webp";
 
-export default function index() {
+export default function index({ setIsPDFOpen, setIsPhoneOfferOpen }) {
+  const hanlerIsPDFOpenPopup = () => {
+    setIsPDFOpen(true);
+  };
+
+  const hanlerIsPhoneOpenPopup = () => {
+    setIsPhoneOfferOpen(true);
+  };
+
   return (
     <>
       <div className={styles.hero__section}>
@@ -28,7 +36,8 @@ export default function index() {
         </div>
         <article className={styles.hero__inner}>
           <h1 className={styles.hero__title}>
-            ALEGE UN REFUGIU URBAN<span className={styles.separotor}></span> MAI APROAPE DE NATURĂ,
+            ALEGE UN REFUGIU URBAN<span className={styles.separotor}></span> MAI
+            APROAPE DE NATURĂ,
             <span className={styles.separotor__hide}></span> ALEGE
             <span className={styles.separotor}></span>
             <span className={styles.hero__text_decor}>
@@ -36,15 +45,19 @@ export default function index() {
             </span>
           </h1>
           <div className={styles.hero__buttons}>
-            <Link href="/about">
-              <a className={styles.button__about}>SOLICITĂ <br/> PREZENTAREA PDF</a>
-            </Link>
-            <Link href="/planning">
-              <a className={styles.button__planning}>
-                REZERVĂ TIMPUL PENTRU
-                <br />A FI TELEFONAT
-              </a>
-            </Link>
+            <button
+              className={styles.button__about}
+              onClick={hanlerIsPDFOpenPopup}
+            >
+              SOLICITĂ <br /> PREZENTAREA PDF
+            </button>
+            <button
+              className={styles.button__planning}
+              onClick={hanlerIsPhoneOpenPopup}
+            >
+              REZERVĂ TIMPUL PENTRU
+              <br />A FI TELEFONAT
+            </button>
           </div>
         </article>
       </div>

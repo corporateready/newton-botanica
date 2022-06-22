@@ -36,6 +36,24 @@
 .offer__form {
     @apply flex flex-col py-[7%] space-y-[4%];
 
+    select {
+        @include text(15px, 130%, 400, #2D2D2B);
+        @apply border-[1px] rounded-md py-[3%] pl-[5%] focus-visible:outline-none;
+        font-family: 'Gilroy Regular';
+
+        @media screen and(max-width: 1440px) {
+            font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+        }
+
+        &::placeholder {
+            @include text(15px, 130%, 400, #2D2D2B);
+            font-family: 'Gilroy Regular';
+
+            @media screen and(max-width: 1440px) {
+                font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+            }
+        }
+    }
     input {
         @include text(15px, 130%, 400, #2D2D2B);
         @apply border-[1px] rounded-md py-[3%] pl-[5%] focus-visible:outline-none;
