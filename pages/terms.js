@@ -28,8 +28,8 @@ export default function Terms() {
           Privacy Statement and Disclaimer Notice and all Agreements: {'"Client"'},
           {'"You"'} and {'"Your"'} refers to you, the person log on this website and
           compliant to the Company{'’'}s terms and conditions. {'"The Company"'},
-          "Ourselves", "We", "Our" and "Us", refers to our Company. {'"Party"'},
-          "Parties", or "Us", refers to both the Client and ourselves. All terms
+          {'"Ourselves"'}, {'"We"'}, {'"Our" and "Us"'}, refers to our Company. {'"Party"'},
+          {'"Parties", or "Us",'} refers to both the Client and ourselves. All terms
           refer to the offer, acceptance and consideration of payment necessary
           to undertake the process of our assistance to the Client in the most
           appropriate manner for the express purpose of meeting the Client{'’'}s
@@ -178,7 +178,7 @@ export default function Terms() {
           By use of our corporate name; or By use of the uniform resource
           locator being linked to; or By use of any other description of our
           Website being linked to that makes sense within the context and format
-          of content on the linking party['’']s site.
+          of content on the linking party{"’"}s site.
         </ul>
         <p className={styles.terms__text}>
           No use of BINA-AGENCY S.R.L{"'"}s logo or other artwork will be allowed

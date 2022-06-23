@@ -76,7 +76,7 @@ export default function Policy() {
           <p className={styles.terms__text}>
             NEWTON HOUSE Grădina Botanică follows a standard procedure of using
             log files. These files log visitors when they visit websites. All
-            hosting companies do this and a part of hosting services' analytics.
+            hosting companies do this and a part of hosting services analytics.
             The information collected by log files include internet protocol
             (IP) addresses, browser type, Internet Service Provider (ISP), date
             and time stamp, referring/exit pages, and possibly the number of

@@ -16,6 +16,7 @@ import PDFOfferPopUp from "../components/popup-pdf-offer";
 import PhoneOfferPopUp from "../components/popup-phone-offer";
 
 export default function planning() {
+
   const [isOpen, setIsOpen] = useState(false);
   const [isPDFOpen, setIsPDFOpen] = useState(false);
   const [isPhoneOfferOpen, setIsPhoneOfferOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function planning() {
       document.body.style.overflow = "auto";
     }
   }, [isOpen]);
-  React.useEffect(() => {
+  useEffect(() => {
     if (isPDFOpen) {
       document.body.style.overflow = "hidden";
     }
@@ -36,7 +37,7 @@ export default function planning() {
       document.body.style.overflow = "auto";
     }
   }, [isPDFOpen]);
-  React.useEffect(() => {
+  useEffect(() => {
     if (isPhoneOfferOpen) {
       document.body.style.overflow = "hidden";
     }
