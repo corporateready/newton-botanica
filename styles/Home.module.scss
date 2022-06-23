@@ -180,8 +180,10 @@
     }
 }
 .offer__inner {
-    @apply h-auto w-[80%] bg-white relative left-[10%] mt-[15%] z-auto px-[9%] py-[5%] rounded-md;
-
+    @apply h-auto w-[70%] bg-white relative left-[15%] mt-[15%] z-auto px-[9%] py-[5%] rounded-md;
+    @media screen and (max-width: 1420px) {
+        @apply mt-[10%];
+    }
     @media screen and (max-width: 576px) {
         @apply w-full mt-[70%] left-0 py-[15%];
     }
