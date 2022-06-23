@@ -1,0 +1,39 @@
+@import '../styles/mixins.scss';
+
+.container {
+    @apply w-[1170px] mx-auto px-0;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-full px-[9.3%];
+    }
+}
+// ===== terms and policy =====>
+.terms__inner {
+    @apply py-[5%];
+}
+.terms {
+    @apply text-[#2BB018];
+}
+.terms__title {
+    @include text(28px, 130%, 600, #2d2d2b);
+    @apply pt-[2%];
+    @media screen and(max-width: 1440px) {
+        font-size: calc(12px + (28 - 12)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        font-size: calc(12px + (26 - 12)*(100vw - 320px)/(576 - 320));
+    }
+}
+.terms__text {
+    @include text(16px, 130%, 400, #2d2d2b);
+    @apply pt-[1%] text-justify;
+    @media screen and(max-width: 1440px) {
+        font-size: calc(7px + (16 - 7)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+    }
+}
+.policy {
+    @apply text-[#2BB018];
+}

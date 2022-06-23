@@ -39,3 +39,20 @@
         @apply max-w-full mx-auto flex flex-col;
     }
 }
+.swiper-button-prev::after {
+  @apply w-[0%] text-[10px];
+
+  @media screen and(max-width: 576px) {
+    @apply absolute bottom-[-206%] left-[5%];
+  }
+}
+.swiper-button-next::after {
+  @apply opacity-0;
+
+  @media screen and(max-width: 576px) {
+    @apply absolute top-[96%] left-[5%];
+  }
+}
+.swiper-button-prev .swiper-button-disabled {
+  // @apply opacity-0;
+}

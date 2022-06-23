@@ -11,7 +11,7 @@
 }
 
 .whatsapp {
-    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse hover:scale-125 hover:duration-150;
+    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer ;
 
     svg {
         @media screen and(max-width: 1000px) {
@@ -33,7 +33,7 @@
 }
 
 .viber {
-    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse hover:scale-125 hover:duration-150;
+    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer;
 
     svg {
         @apply text-sm;
@@ -57,7 +57,7 @@
 }
 
 .messenger {
-    @apply bg-white h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse hover:scale-125 hover:duration-150;
+    @apply bg-white h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer;
 
     svg {
         @apply text-sm;
@@ -81,7 +81,7 @@
 }
 
 .phone {
-    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:animate-pulse hover:scale-125 hover:duration-150;
+    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer;
 
     svg {
         @apply text-sm;

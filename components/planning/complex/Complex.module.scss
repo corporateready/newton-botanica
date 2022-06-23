@@ -5,7 +5,7 @@
     font-family: 'Gilroy-Bold';
 }
 .complex__wrapper {
-    @apply w-full mx-auto px-[6%];
+    @apply w-full mx-auto relative;
 
     @media screen and (max-width: 576px) {
         @apply px-[5%];
@@ -47,14 +47,11 @@
         @apply block;
     }
 }
-.complex__grids {
-    // @apply mt-[1%];
-}
 .complex__grid_month {
-    @apply grid grid-cols-3 grid-rows-2 gap-y-[3%] gap-x-[2%] p-[2%];
+    @apply grid grid-cols-3 grid-rows-2 gap-y-[3%] gap-x-[2%] py-[2%] px-[7%];
 
     @media screen and(max-width: 576px) {
-        @apply grid grid-cols-2 gap-x-[2%] gap-y-[2%];
+        @apply grid grid-cols-2 gap-x-[2%] gap-y-[2%] px-0 py-[7%];
     }
 }
 .complex__grid_item {
@@ -81,5 +78,29 @@
 
     @media screen and (max-width: 576px) {
         font-size: calc(8px + (15 - 8)*(100vw - 320px)/(576 - 320));
+    }
+}
+
+// ===== swiper =====>
+.mySwiper {
+    @apply relative top-0 left-0;
+}
+.prevButton, .nextButton {
+    @apply bg-[#2BB018] w-[3%];
+}
+.prevButton {
+    @apply absolute top-[56%] left-[1.5%];
+    @media screen and(max-width: 576px) {
+        @apply absolute top-[96%] left-[5%] h-auto;
+    }
+}
+.prevButton__icon {
+    @apply mt-[5%] left-[5%] inline-block;
+}
+.nextButton {
+    @apply absolute top-[56%] right-[1.5%];
+
+    @media screen and(max-width: 576px) {
+        @apply absolute top-[96%] right-[5%];
     }
 }
