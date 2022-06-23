@@ -6,8 +6,7 @@ import Image from "next/image";
 import header__home_logo from "../public/static/home-page/header-logo.svg";
 import image__side from "../public/static/home-page/home-image-inner.svg";
 import image__side_mobile from "../public/static/home-page/home-image-inner-mobile.svg";
-import home__bg from "../public/static/home-page/background.png";
-// import home__bg_mobile from "../public/static/home-page/background.webp";
+import home__bg from "../public/static/home-page/background.webp";
 import close__button from "../public/static/planning-page/close-button-popup.svg";
 
 import phone__icon from "../public/static/home-page/phone.svg";
@@ -64,8 +63,10 @@ export default function Home() {
         {/* <div className={styles.home__bg}> */}
           <Image
             src={home__bg}
-            layout="fill"
+            // layout="fill"
             objectFit="cover"
+            height={1500}
+                      width={2000}
             priority
             alt="home background"
           />
