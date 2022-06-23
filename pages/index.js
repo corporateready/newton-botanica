@@ -65,6 +65,7 @@ export default function Home() {
           <Image
             src={home__bg}
             layout="fill"
+            position='relative'
             priority
             alt="home background"
           />
@@ -75,6 +76,7 @@ export default function Home() {
             src={home__bg_mobile}
             layout="fill"
             objectFit="cover"
+            position='relative'
             priority
             alt="home modile background"
           />
