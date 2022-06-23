@@ -61,26 +61,24 @@ export default function Home() {
           </div>
         </header>
 
-        <div className={styles.home__bg}>
+        {/* <div className={styles.home__bg}> */}
           <Image
             src={home__bg}
             layout="fill"
-            position='relative'
+            objectFit="cover"
             priority
             alt="home background"
           />
-        </div>
+        {/* </div> */}
 
-        <div className={styles.home__mobile_bg}>
+        {/* <div className={styles.home__mobile_bg}>
           <Image
             src={home__bg_mobile}
             layout="fill"
-            objectFit="cover"
-            position='relative'
             priority
             alt="home modile background"
           />
-        </div>
+        </div> */}
 
         <div className={styles.home}>
           <div className={styles.container}>

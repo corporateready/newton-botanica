@@ -1,7 +1,7 @@
 @import '../styles/mixins.scss';
 
 .home__screen {
-    @apply relative h-screen w-screen;
+    @apply fixed h-screen w-screen;
     @media screen and(max-width: 576px) {
         @apply h-screen w-screen relative top-0 left-0;
     }
@@ -22,7 +22,7 @@
     font-family: 'Gilroy-Bold';
 }
 .home__bg {
-    @apply absolute top-0 left-0 h-screen w-full;
+    @apply h-full w-full;
 
     @media screen and(max-width: 576px) {
         @apply hidden;
@@ -138,7 +138,7 @@
     }
 }
 .header__phone_link {
-    @apply flex items-center justify-end w-[35%] animate-bounce;
+    @apply flex items-center justify-end w-[35%];
 
     @media screen and(max-width: 576px) {
         @apply w-[60%];
