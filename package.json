@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.9.1",
     "@react-icons/all-files": "^4.1.0",
     "@react-three/fiber": "^8.0.24",
     "framer-motion": "^6.3.11",
