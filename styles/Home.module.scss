@@ -22,10 +22,10 @@
     font-family: 'Gilroy-Bold';
 }
 .home__bg {
-    @apply h-full w-full;
+    @apply h-full w-full bg-[url('../public/static/home-page/background.webp')] ;
 
     @media screen and(max-width: 576px) {
-        @apply hidden;
+        @apply block absolute top-0 left-0 h-screen w-full;
     }
 }
 .home__mobile_bg {

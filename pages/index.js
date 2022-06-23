@@ -60,8 +60,8 @@ export default function Home() {
           </div>
         </header>
 
-        {/* <div className={styles.home__bg}> */}
-          <Image
+        <div className={styles.home__bg}>
+          {/* <Image
             src={home__bg}
             // layout="fill"
             objectFit="cover"
@@ -69,8 +69,8 @@ export default function Home() {
                       width={2000}
             priority
             alt="home background"
-          />
-        {/* </div> */}
+          // /> */}
+        </div>
 
         {/* <div className={styles.home__mobile_bg}>
           <Image
