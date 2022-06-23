@@ -21,30 +21,33 @@ export default function planning() {
   const [isPDFOpen, setIsPDFOpen] = useState(false);
   const [isPhoneOfferOpen, setIsPhoneOfferOpen] = useState(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    }
-    if (!isOpen) {
-      document.body.style.overflow = "auto";
-    }
-  }, [isOpen]);
-  useEffect(() => {
-    if (isPDFOpen) {
-      document.body.style.overflow = "hidden";
-    }
-    if (!isPDFOpen) {
-      document.body.style.overflow = "auto";
-    }
-  }, [isPDFOpen]);
-  useEffect(() => {
-    if (isPhoneOfferOpen) {
-      document.body.style.overflow = "hidden";
-    }
-    if (!isPhoneOfferOpen) {
-      document.body.style.overflow = "auto";
-    }
-  }, [isPhoneOfferOpen]);
+  const useIsOpenToggler = () => {
+    useEffect(() => {
+      if (isOpen) {
+        document.body.style.overflow = "hidden";
+      }
+      if (!isOpen) {
+        document.body.style.overflow = "auto";
+      }
+    }, [isOpen]);
+  }
+  useIsOpenToggler()
+  // useEffect(() => {
+  //   if (isPDFOpen) {
+  //     document.body.style.overflow = "hidden";
+  //   }
+  //   if (!isPDFOpen) {
+  //     document.body.style.overflow = "auto";
+  //   }
+  // }, [isPDFOpen]);
+  // useEffect(() => {
+  //   if (isPhoneOfferOpen) {
+  //     document.body.style.overflow = "hidden";
+  //   }
+  //   if (!isPhoneOfferOpen) {
+  //     document.body.style.overflow = "auto";
+  //   }
+  // }, [isPhoneOfferOpen]);
 
   return (
     <section className={styles.planning__section}>
