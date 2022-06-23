@@ -17,7 +17,7 @@ import PhoneOfferPopUp from "../components/popup-phone-offer";
 
 export default function planning() {
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(()=>{return false});
   const [isPDFOpen, setIsPDFOpen] = useState(false);
   const [isPhoneOfferOpen, setIsPhoneOfferOpen] = useState(false);
 
@@ -32,22 +32,22 @@ export default function planning() {
     }, [isOpen]);
   }
   useIsOpenToggler()
-  // useEffect(() => {
-  //   if (isPDFOpen) {
-  //     document.body.style.overflow = "hidden";
-  //   }
-  //   if (!isPDFOpen) {
-  //     document.body.style.overflow = "auto";
-  //   }
-  // }, [isPDFOpen]);
-  // useEffect(() => {
-  //   if (isPhoneOfferOpen) {
-  //     document.body.style.overflow = "hidden";
-  //   }
-  //   if (!isPhoneOfferOpen) {
-  //     document.body.style.overflow = "auto";
-  //   }
-  // }, [isPhoneOfferOpen]);
+  useEffect(() => {
+    if (isPDFOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    if (!isPDFOpen) {
+      document.body.style.overflow = "auto";
+    }
+  }, [isPDFOpen]);
+  useEffect(() => {
+    if (isPhoneOfferOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    if (!isPhoneOfferOpen) {
+      document.body.style.overflow = "auto";
+    }
+  }, [isPhoneOfferOpen]);
 
   return (
     <section className={styles.planning__section}>
@@ -63,9 +63,7 @@ export default function planning() {
       <Layout>
         <div className={styles.container}>
           <Hero
-            isPDFOpen={isPDFOpen}
             setIsPDFOpen={setIsPDFOpen}
-            isPhoneOfferOpen={isPhoneOfferOpen}
             setIsPhoneOfferOpen={setIsPhoneOfferOpen}
           />
           <Complex />
