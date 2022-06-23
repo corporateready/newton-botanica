@@ -4,7 +4,7 @@ import styles from "./OfferPopUp.module.scss";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
 
 export default function index({ setIsPhoneOfferOpen }) {
-  const hanlerClosePopup = () => {
+  const hanlerClosePhonePopup = () => {
     setIsPhoneOfferOpen(false);
   };
   return (
@@ -13,7 +13,7 @@ export default function index({ setIsPhoneOfferOpen }) {
         <button
           type="button"
           className={styles.offer__button_close}
-          onClick={hanlerClosePopup}
+          onClick={hanlerClosePhonePopup}
         >
           <Image
             src={close__button}
