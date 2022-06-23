@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/layout";
 import Image from "next/image";
@@ -16,11 +16,11 @@ import PDFOfferPopUp from "../components/popup-pdf-offer";
 import PhoneOfferPopUp from "../components/popup-phone-offer";
 
 export default function planning() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [isPDFOpen, setIsPDFOpen] = React.useState(false);
-  const [isPhoneOfferOpen, setIsPhoneOfferOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isPDFOpen, setIsPDFOpen] = useState(false);
+  const [isPhoneOfferOpen, setIsPhoneOfferOpen] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     }
