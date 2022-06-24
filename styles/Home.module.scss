@@ -38,9 +38,15 @@
     }
 }
 .desktop__messengerrs {
-    @apply absolute top-[350px] left-[2%];
+    @apply absolute top-[38%] left-[2%];
+    @media screen and(max-width: 1920px) {
+        @apply top-[30%];
+    }
+    @media screen and(max-width: 1600px) {
+        @apply top-[38%];
+    }
     @media screen and(max-width: 1440px) {
-        @apply top-[35%];
+        @apply top-[30%];
     }
     @media screen and(max-width: 576px) {
         @apply hidden;
@@ -61,10 +67,10 @@
     }
 }
 .inner {
-    @apply flex justify-center items-center space-x-[6%] pt-[23%] h-full w-full;
+    @apply flex justify-center items-center space-x-[6%] pt-[20%] h-full w-full;
 
     @media screen and(max-width: 1420px) {
-        @apply pt-[20%];
+        @apply pt-[16%];
     }
 
     @media screen and(max-width: 576px) {
@@ -127,7 +133,7 @@
 }
 .button__send {
     @include text(12px, 130%, 400, #fff);
-    @apply block relative bg-[#2BB018] px-[38px] py-[17px] mt-[5%] w-full rounded uppercase tracking-wider hover:bg-[#1e7f11] hover:transition-all hover:duration-150;
+    @apply block relative bg-[#2BB018] px-[38px] py-[17px] mt-[5%] w-full rounded uppercase tracking-wider hover:bg-white hover:text-[#2BB018] hover:duration-200;
 
     @media screen and(max-width: 1440px) {
         @apply px-0 py-[5%];
@@ -148,6 +154,28 @@
 }
 .header__phone_link {
     @apply flex items-center justify-end w-[35%];
+    animation-name: stretch;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-out;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+
+    @keyframes stretch {
+        0% {
+            transform: scale(1);
+            // background-color: green;
+            border-radius: 100%;
+        }
+
+        50% {
+            // background-color: orange;
+        }
+
+        100% {
+            transform: scale(1.1);
+        }
+    }
 
     @media screen and(max-width: 576px) {
         @apply w-[60%];
@@ -225,11 +253,11 @@
     }
 }
 .offer__form {
-    @apply flex flex-col py-[5%] mx-auto space-y-[4%] w-[70%];
+    @apply flex flex-col py-[5%] mx-auto w-[70%];
 
     input {
         @include text(15px, 130%, 400, #2D2D2B);
-        @apply border-[1px] rounded-md py-[3%] pl-[5%] focus-visible:outline-none;
+        @apply border-[1px] rounded-md py-[3%] mb-[4%] pl-[5%] focus-visible:outline-none;
         font-family: 'Gilroy Regular';
 
         @media screen and(max-width: 1440px) {
@@ -262,7 +290,7 @@
 // ===== send button =====>
 .button__sending {
     @include text(15px, 130%, 700, #000);
-    @apply block w-[70%] bg-[#2BB018] border-[#2BB018] border-2 text-white mx-auto py-[2.5%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-2 hover:text-[#2BB018] hover:duration-150;
+    @apply block w-full bg-[#2BB018] border-[#2BB018] border-2 text-white mx-auto mt-[2%] py-[2.5%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-2 hover:text-[#2BB018] hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));

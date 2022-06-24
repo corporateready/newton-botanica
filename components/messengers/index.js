@@ -32,7 +32,7 @@ const messengers = [
     title: "phone",
   },
 ];
-export default function index() {
+export default function Index() {
   return (
     <article className={styles.messengers}>
       {messengers.map((item) => (

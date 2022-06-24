@@ -27,8 +27,8 @@ export default function index({setIsOpen}) {
             <br/><span>NEWTON HOUSE GRĂDINA BOTANICĂ</span> PDF
         </h2>
         <form className={styles.offer__form}>
-            <input type="email" placeholder="Adresa de email"/>
-            <input type="text" placeholder="Numărul de telefon"/>
+            <input type="email" placeholder="Adresa de email" required/>
+            <input type="text" placeholder="Numărul de telefon" required/>
             
         </form>
         <button 

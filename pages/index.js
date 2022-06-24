@@ -22,7 +22,10 @@ export default function Home() {
     <>
       <Head>
         <title>Newton House Grădina Botanica</title>
-        <meta name="description" content="Apartamente în rate, pe 5 ani, cu doar 10% prima rată, 0% dobândă," />
+        <meta
+          name="description"
+          content="Apartamente în rate, pe 5 ani, cu doar 10% prima rată, 0% dobândă,"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -60,8 +63,7 @@ export default function Home() {
           </div>
         </header>
 
-        <div className={styles.home__bg}>
-        </div>
+        <div className={styles.home__bg}></div>
 
         <div className={styles.home}>
           <div className={styles.container}>
@@ -108,54 +110,67 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.desktop__messengerrs}>
-          <Messengers />
+            <Messengers />
+          </div>
         </div>
-        </div>
-        
 
         {isOfferOpen && (
-          <section className={styles.offer__section}>
-            <div className={styles.offer__container}>
-            <div className={styles.offer__inner}>
-              <button
-                type="button"
-                className={styles.offer__button_close}
-                onClick={hanlerClosePopup}
-              >
-                <Image
-                  src={close__button}
-                  height={24}
-                  width={24}
-                  alt="close button icon"
-                />
-              </button>
-              <h2 className={styles.offer__title}>
-                OBȚINE CONSULTAȚIA MANAGERULUI
-              </h2>
-              <h3 className={styles.offer__subtitle}>
-                Expediază-ne datele de contact și revenim cu un apel în curând
-              </h3>
-              <form className={styles.offer__form}>
-                <input type="email" placeholder="NUMELE, PRENUMELE" />
-                <input type="text" placeholder="Numărul de telefon" />
-              </form>
-              <button type="button" className={styles.button__sending}>
-                AFLĂ DETALII
-              </button>
-              <div className={styles.terms__policy}>
-                <Link href="/terms">
-                  <a className={styles.terms}>Terms and Conditions </a>
-                </Link> 
-                and
-                <Link href="/policy">
-                  <a className={styles.policy}> Privacy Policy</a>
-                </Link>
-              </div>
-            </div>
-            </div>
-          </section>
+          <OfferPopUpSending hanlerClosePopup={hanlerClosePopup} />
         )}
       </div>
     </>
+  );
+}
+
+function OfferPopUpSending({ hanlerClosePopup }) {
+  return (
+    <section className={styles.offer__section}>
+      <div className={styles.offer__container}>
+        <div className={styles.offer__inner}>
+          <button
+            type="button"
+            className={styles.offer__button_close}
+            onClick={hanlerClosePopup}
+          >
+            <Image
+              src={close__button}
+              height={24}
+              width={24}
+              alt="close button icon"
+            />
+          </button>
+          <h2 className={styles.offer__title}>
+            OBȚINE CONSULTAȚIA MANAGERULUI
+          </h2>
+          <h3 className={styles.offer__subtitle}>
+            Expediază-ne datele de contact și revenim cu un apel în curând
+          </h3>
+
+          <form
+            className={styles.offer__form}
+            action="https://formsubmit.co/nev30inbox@gmail.com"
+            method="POST"
+          >
+            <input type="text" name="Numele" placeholder="NUMELE, PRENUMELE" required />
+            <input type="text" name="Telefon" placeholder="Numărul de telefon" required />
+            <input type="hidden" name="_captcha" value="false"/>
+            <input type="hidden" name="_next" value="http://localhost:3000/thanks"/>
+            <button type="submit" className={styles.button__sending}>
+            AFLĂ DETALII
+          </button>
+          </form>
+          
+          <div className={styles.terms__policy}>
+            <Link href="/terms">
+              <a className={styles.terms}>Terms and Conditions </a>
+            </Link>
+            and
+            <Link href="/policy">
+              <a className={styles.policy}> Privacy Policy</a>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
