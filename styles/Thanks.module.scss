@@ -1,0 +1,12 @@
+@import '../styles/mixins.scss';
+
+.thanks__screen {
+    @apply bg-[url('/static/home-page/background.webp')] bg-no-repeat bg-cover object-cover flex flex-col h-screen w-full;
+}
+.video__wrapper {
+    @apply w-[500px] h-[300px] rounded-md my-[7%] relative overflow-auto;
+
+    @media screen and (max-width: 576px) {
+        @apply w-[95%] h-auto mx-auto;
+    }
+}

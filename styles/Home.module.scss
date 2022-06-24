@@ -107,8 +107,8 @@
     @apply flex relative space-x-[5%];
 }
 .button__about {
-    @include text(12px, 130%, 400, #2BB018);
-    @apply block bg-white px-[38px] py-[17px] rounded uppercase tracking-wider text-center hover:bg-transparent hover:text-white hover:border-[1px] hover:transition-all hover:duration-150;
+    @include text(12px, 130%, 400, #fff);
+    @apply block bg-none border-[1px] px-[38px] py-[17px] rounded uppercase text-center tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         @apply w-[50%] px-0 py-[5%];
@@ -176,7 +176,7 @@
     }
 }
 .header__phone_icon {
-    @apply pt-[1.5%];
+    @apply pt-[2%];
 
     @media screen and(max-width: 576px) {
         @apply hidden;
@@ -184,7 +184,7 @@
 }
 .header__phone_link_number {
     @include text(20px, 130%, 400, #2d2d2b);
-    @apply inline-block ml-[3%] text-right uppercase hover:scale-110 hover:text-[#2BB018] hover:duration-150;
+    @apply inline-block ml-[3%] text-right uppercase hover:text-[#2BB018] hover:duration-150;
 
     @media screen and(max-width: 576px) {
         @include text(18px, 130%, 700, #2BB018);
