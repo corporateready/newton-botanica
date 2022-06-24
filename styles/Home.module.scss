@@ -22,7 +22,9 @@
     font-family: 'Gilroy-Bold';
 }
 .home__bg {
-    @apply h-full w-full bg-[url('../public/static/home-page/background.webp')] ;
+    @apply h-screen w-screen bg-[url('../public/static/home-page/background.webp')] bg-no-repeat object-fill;
+    background-position: center;
+    background-size: cover;
 
     @media screen and(max-width: 576px) {
         @apply block absolute top-0 left-0 h-screen w-full;
@@ -36,7 +38,10 @@
     }
 }
 .desktop__messengerrs {
-    @apply absolute top-[40%] left-[2%];
+    @apply absolute top-[350px] left-[2%];
+    @media screen and(max-width: 1440px) {
+        @apply top-[35%];
+    }
     @media screen and(max-width: 576px) {
         @apply hidden;
     }
@@ -56,7 +61,11 @@
     }
 }
 .inner {
-    @apply flex justify-center items-center space-x-[6%] pt-[22.5%] h-full w-full;
+    @apply flex justify-center items-center space-x-[6%] pt-[23%] h-full w-full;
+
+    @media screen and(max-width: 1420px) {
+        @apply pt-[20%];
+    }
 
     @media screen and(max-width: 576px) {
         @apply flex-col space-x-0 pt-[50%];
@@ -185,7 +194,7 @@
         @apply mt-[10%];
     }
     @media screen and (max-width: 576px) {
-        @apply w-full mt-[70%] left-0 py-[15%];
+        @apply w-full mt-[50%] left-0 py-[15%];
     }
 }
 .offer__button_close {
