@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import styles from "../styles/Thanks.module.scss";
 import Layout from "../components/thanks-layout";
-// import video from '../public/video/video-1.mp4'
 
 export default function Thanks() {
   return (
