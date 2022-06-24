@@ -1,12 +1,12 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Router from "next/router";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 import header__home_logo from "../public/static/home-page/header-logo.svg";
 import image__side from "../public/static/home-page/home-image-inner.svg";
 import image__side_mobile from "../public/static/home-page/home-image-inner-mobile.svg";
-import home__bg from "../public/static/home-page/background.webp";
 import close__button from "../public/static/planning-page/close-button-popup.svg";
 
 import phone__icon from "../public/static/home-page/phone.svg";
@@ -123,6 +123,39 @@ export default function Home() {
 }
 
 function OfferPopUpSending({ hanlerClosePopup }) {
+  const [isSend, setIsSend] = React.useState(false);
+  const [nameValue, setNameValue] = React.useState("");
+  const [emailValue, setEmailValue] = React.useState("");
+
+  const useHandlerOnClickToSend = (e) => {
+    e.preventDefault();
+
+    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        numele: nameValue,
+        email: emailValue,
+      }),
+    })
+      .then((response) => {
+        response.json();
+        setIsSend(true);
+      })
+      .then((data) => data)
+      .catch((error) => console.log(error));
+  };
+
+  React.useEffect(() => {
+    if (isSend) {
+      console.log(isSend);
+      Router.push("/thanks");
+    }
+  }, [isSend]);
+
   return (
     <section className={styles.offer__section}>
       <div className={styles.offer__container}>
@@ -150,16 +183,34 @@ function OfferPopUpSending({ hanlerClosePopup }) {
             className={styles.offer__form}
             action="https://formsubmit.co/nev30inbox@gmail.com"
             method="POST"
+            onSubmit={useHandlerOnClickToSend}
           >
-            <input type="text" name="Numele" placeholder="NUMELE, PRENUMELE" required />
-            <input type="text" name="Telefon" placeholder="Numărul de telefon" required />
-            <input type="hidden" name="_captcha" value="false"/>
-            <input type="hidden" name="_next" value="http://localhost:3000/thanks"/>
+            <input
+              type="text"
+              value={nameValue}
+              onChange={(e) => setNameValue(e.target.value)}
+              placeholder="NUMELE, PRENUMELE"
+              required
+            />
+            <input
+              type="text"
+              value={emailValue}
+              onChange={(e) => setEmailValue(e.target.value)}
+              placeholder="Numărul de telefon"
+              required
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="false" />
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Everyone is important for as!"
+            />
             <button type="submit" className={styles.button__sending}>
-            AFLĂ DETALII
-          </button>
+              AFLĂ DETALII
+            </button>
           </form>
-          
+
           <div className={styles.terms__policy}>
             <Link href="/terms">
               <a className={styles.terms}>Terms and Conditions </a>
