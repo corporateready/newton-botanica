@@ -155,23 +155,17 @@
 .header__phone_link {
     @apply flex items-center justify-end w-[35%];
     animation-name: stretch;
-            animation-duration: 1.5s;
-            animation-timing-function: ease-out;
-            animation-direction: alternate;
-            animation-iteration-count: infinite;
-            animation-play-state: running;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
 
     @keyframes stretch {
         0% {
             transform: scale(1);
-            // background-color: green;
             border-radius: 100%;
         }
-
-        50% {
-            // background-color: orange;
-        }
-
         100% {
             transform: scale(1.1);
         }
@@ -302,9 +296,9 @@
 }
 // ===== terms and policy =====>
 .terms__policy {
-    @apply text-center mt-[3%];
+    @apply text-center mt-[-2%];
 
-    @include text(15px, 130%, 600, #2c2c2c);
+    @include text(15px, 130%, 400, #2c2c2c);
 
     @media screen and(max-width: 1440px) {
         font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
