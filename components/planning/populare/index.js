@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Carousel.module.scss";
-import {Carousel} from './carousel'
+// import {Carousel} from './carousel'
 
-export default function index({handlerOpenDetails}) {
+export default function index() {
   return (
     <>
       <div className={styles.complex__section}>
@@ -14,7 +14,7 @@ export default function index({handlerOpenDetails}) {
             </h1>
             <div className={styles.complex__inner}>
               <div className={styles.complex__grids}>
-                <Carousel handlerOpenDetails={handlerOpenDetails}/>
+                {/* <Carousel handlerOpenDetails={handlerOpenDetails}/> */}
               </div>
             </div>
           </div>

@@ -43,7 +43,7 @@ export default function Plan() {
           <div className={styles.container}>
             <div className={styles.complex__inner}>
               <div className={styles.complex__grids}>
-                {isPlan ? <Plan_1 /> : <Plan_2 />}
+                {/* {isPlan ? <Plan_1 /> : <Plan_2 />} */}
               </div>
             </div>
           </div>
