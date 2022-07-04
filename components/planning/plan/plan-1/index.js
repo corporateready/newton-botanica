@@ -7,8 +7,8 @@ import { wrap } from "popmotion";
 import styles from "./Plan-1.module.scss";
 import back__icon from "../../../../public/static/planning-page/complex/next-button.svg";
 
-import image_1_1 from '../../../../public/static/planning/plan/trance-2-faze-1.png'
-import image_1_2 from '../../../../public/static/planning/plan/trance-2-faze-1.png'
+import image_1_1 from "../../../../public/static/planning/plan/plan-1-1.png";
+import image_1_2 from "../../../../public/static/planning/plan/trance-2-faze-1.png";
 
 const variants = {
   enter: (direction) => {
@@ -31,12 +31,14 @@ const variants = {
   },
 };
 
-export default function Plan_1 () {
+export default function Plan_1() {
+
   const images_1 = [
-    <Image src={image_1_1} height={515} width={478} alt="img-1"/>,
-    <Image src={image_1_2} height={515} width={478} alt="img-2"/>,
-    <Image src={image_1_1} height={515} width={478} alt="img-3"/>,
+    <Image src={image_1_1} height={515} width={478} alt="img-1" />,
+    <Image src={image_1_2} height={515} width={478} alt="img-2" />,
+    <Image src={image_1_1} height={515} width={478} alt="img-3" />,
   ];
+  
   const [[page, direction], setPage] = useState([0, 0]);
 
   const imageIndex = wrap(0, images_1.length, page);
@@ -51,14 +53,14 @@ export default function Plan_1 () {
     <>
       <AnimatePresence initial={false} custom={direction}>
         <div
-          key={imageIndex-1}
-          className="w-[13%] absolute bottom-[0%] left-[3%] duration-200"
+          key={imageIndex - 1}
+          className={styles.complex__grid_prev_item}
         >
           {images_1[imageIndex - 1]}
         </div>
 
         <motion.div
-          key={images_1[imageIndex]}
+          key={page}
           variants={variants}
           initial="enter"
           animate="center"
@@ -71,7 +73,7 @@ export default function Plan_1 () {
           {images_1[imageIndex]}
         </motion.div>
 
-        <div className="w-[13%] absolute bottom-[0%] right-[3%] z-10">
+        <div className={styles.complex__grid_next_item}>
           {images_1[imageIndex]}
         </div>
       </AnimatePresence>
@@ -89,4 +91,4 @@ export default function Plan_1 () {
       </div>
     </>
   );
-};
+}

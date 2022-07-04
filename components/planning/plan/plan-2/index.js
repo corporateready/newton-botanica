@@ -58,7 +58,7 @@ export default function Plan_1 () {
         </div>
 
         <motion.div
-          key={images_2[imageIndex]}
+          key={page}
           variants={variants}
           initial="enter"
           animate="center"
