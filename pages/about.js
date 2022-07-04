@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
-import planning__bg from "../public/static/planning-page/Group 2678.png";
+// import planning__bg from "../public/static/planning-page/Group 2678.png";
 import {
   Hero,
   Complex,
@@ -30,7 +30,7 @@ export default function About() {
       <div className={styles.planning__bg}></div>
       <div className={styles.planning__bg}> 
         <Image
-          src={planning__bg}
+          src={"/../public/static/planning-page/Group 2678.png"}
           layout="fill"
           objectFit="cover"
           priority
