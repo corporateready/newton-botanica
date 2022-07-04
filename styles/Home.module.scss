@@ -178,6 +178,14 @@
 .header__phone_icon {
     @apply pt-[2%];
 
+    @media screen and(max-width: 992px) {
+        @apply w-[16px];
+    }
+
+    @media screen and(max-width: 768px) {
+        @apply w-[13px];
+    }
+
     @media screen and(max-width: 576px) {
         @apply hidden;
     }
@@ -186,8 +194,13 @@
     @include text(20px, 130%, 400, #2d2d2b);
     @apply inline-block ml-[3%] text-right uppercase hover:text-[#2BB018] hover:duration-150;
 
+    @media screen and(max-width: 1440px) {
+        font-size: calc(9px + (20 - 9)*(100vw - 576px)/(1440 - 576));
+    }
+
     @media screen and(max-width: 576px) {
         @include text(18px, 130%, 700, #2BB018);
+        font-size: calc(12px + (24 - 12)*(100vw - 320px)/(576 - 320));
     }
 }
 

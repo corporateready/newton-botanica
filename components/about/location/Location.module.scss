@@ -1,0 +1,89 @@
+@import '../../../styles/mixins.scss';
+
+.location__section {
+    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px] pb-[5.1%] z-[5];
+    font-family: 'Gilroy-Bold';
+}
+.location__wrapper {
+    @apply w-full mx-auto px-[6%];
+
+    @media screen and (max-width: 576px) {
+        @apply px-[5%] pb-[5%];
+    }
+}
+.location__inner {
+    @apply flex flex-col justify-center rounded-md h-full w-full mt-[4.5%] overflow-auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+.location__title {
+    @include text(32px, 150%, 400, #2D2D2B);
+    @apply relative pt-[60px] uppercase text-center;
+
+    @media screen and (max-width: 1440px) {
+        @apply pt-[5.8%];
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply pt-[10%];
+        font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
+    }
+
+    span {
+        background: radial-gradient(50% 50% at 50% 50%, #2BB018 0%, rgba(43, 176, 24, 0) 100%);
+        position: absolute;
+        bottom: -5%;
+        left: 20%;
+        height: 2%;
+        width: 60%;
+
+        @media screen and (max-width: 576px) {
+            @apply w-[100%] left-0;
+            font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
+        }
+    }
+
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        // @apply mt-[10%];
+        font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
+    }
+}
+.location__bg_inner {
+    @apply h-auto w-full relative top-0;
+}
+.location__address_inner{
+    @apply w-full;
+}
+.location__address_name {
+    @apply flex justify-end w-full mr-[3%];
+
+     @media screen and(max-width: 1440px) {
+        font-size: calc(10px + (15 - 10)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        font-size: calc(9px + (16 - 9)*(100vw - 320px)/(576 - 320));
+    }
+}
+.location__address {
+    @include text(15px, 130%, 400, #2D2D2B);
+    @apply flex justify-end items-center w-full px-[2%];
+}
+
+//  =====>
+.location__address_detail {
+    @include text(15px, 130%, 400, #fff);
+    @apply flex justify-center bg-[#2BB018] w-[30%] py-[1%] mx-auto my-[1%] mb-[2%] rounded uppercase text-center tracking-wider hover:duration-150;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply w-[60%] py-[2%];
+        font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
+    }
+}

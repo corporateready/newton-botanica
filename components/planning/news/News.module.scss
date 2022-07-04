@@ -52,29 +52,34 @@
     }
 }
 .news__navigation {
-    @apply flex justify-between gap-x-[3%] items-end w-full;
+    @apply flex justify-between gap-x-[3%] items-end w-[99%];
 
     @media screen and (max-width: 576px) {
         @apply mt-[3%];
     }
 }
 .news__navigation_years {
-    @apply w-[8%] text-[#2BB018] p-[0.5%] border-2 rounded-md focus-visible:outline;
+    @apply w-[10%] text-[#2BB018] p-[0.5%] border-2 rounded-md focus-visible:outline;
 
-    @media screen and(max-width: 576px) {
-        @apply w-[40%] text-[120%] py-[1%] text-[#2BB018] focus-visible:outline;
+    @media screen and (max-width: 1440px) {
+        font-size: calc(8px + (16 - 8)*(100vw - 768px)/(1440 - 768));
+    }
+
+    @media screen and(max-width: 768px) {
+        @apply w-[48%] text-[120%] py-[1%] text-[#2BB018] focus-visible:outline;
     }
 }
 .news__navigation_mounth_mob {
     @apply hidden;
 
-    @media screen and(max-width: 576px) {
-        @apply inline-block w-[60%] text-[120%] py-[1%] border-2 rounded-md text-[#2BB018] focus-visible:outline;
+    @media screen and(max-width: 768px) {
+        @apply inline-block w-[48%] text-[120%] py-[1%] border-2 rounded-md text-[#2BB018] focus-visible:outline;
     }
 }
 .news__navigation_line {
     @apply flex justify-between items-center w-[90%];
-    @media screen and(max-width: 576px) {
+
+    @media screen and(max-width: 768px) {
         @apply hidden;
     }
 }
@@ -82,7 +87,7 @@
     @apply grid grid-cols-12 justify-center w-full;
 }
 .navigation__item {
-    @apply flex flex-col relative;
+    @apply flex flex-col relative hover:cursor-pointer;
 }
 .navigation__item_name {
     @include text(12px, 130%, 400, #2e2e2d);
@@ -93,11 +98,15 @@
     }
 }
 .navigation__item_visible {
-    @apply w-full h-1 mt-[5%]  bg-[#2BB018] rounded-full;
+    @apply w-full h-1 mt-[5%] border-[1px] bg-transparent rounded-full;
+
+}
+.navigation__item_visible_active {
+    @apply w-full h-1 mt-[5%] border-[1px] bg-[#2BB018] rounded-full;
 
 }
 .navigation__item_button {
-    @apply w-2 h-2 bg-[#2BB018] absolute right-[-5px] bottom-[-2px] rounded-full;
+    @apply w-2 h-2 bg-slate-300 border-[1px] absolute right-[-5px] bottom-[-2px] rounded-full;
 }
 .news__grids {
     @apply mt-[4%];
@@ -111,7 +120,6 @@
 .news__grid_item {
     @apply h-auto w-full relative top-0;
 }
-
 //  =====>
 .location__address_detail {
     @include text(15px, 130%, 400, #fff);

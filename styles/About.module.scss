@@ -1,0 +1,93 @@
+@import '../styles/mixins.scss';
+
+.planning__section {
+    @apply h-full w-full relative top-0 left-0 overflow-auto;
+    font-family: 'Gilroy-Bold';
+}
+.planning__bg {
+    @apply absolute top-0 left-0 h-full w-full z-auto;
+}
+.container {
+    @apply w-[1170px] mx-auto px-0;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-full px-[9.3%];
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply w-full px-[2%];
+    }
+}
+
+// =====open details =====>
+.details__section {
+    @apply h-screen w-screen fixed top-0 left-0 z-10;
+    background: rgba(45, 45, 43, 0.8);
+}
+.details__wrapper {
+    @apply bg-white w-[97%] h-auto relative top-[5%] left-[1.5%] rounded-lg pb-[7%];
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+.details__close_button {
+    @apply z-20 absolute top-[2%] right-[1.5%];
+}
+.details__inner {
+    @apply pt-[5%] flex justify-between w-full h-auto px-[5%] space-x-[5%];
+}
+.details__slider {
+    @apply w-[55%] flex justify-center items-center relative;
+}
+.details__description{
+    @apply w-[45%] flex flex-col items-start justify-between;
+}
+.details__content_name {
+    @include text(20px, 130%, 400, #2BB018);
+}
+.details__content_name_ {
+    @include text(20px, 130%, 400, #2BB018);
+    @apply mt-[3%];
+}
+.details__content_perimeter {
+@include text(30px, 130%, 400, #2D2D2B);
+}
+.details__form__title {
+    @include text(15px, 130%, 400, #2D2D2B);
+    @apply mt-[3%] text-center;
+}
+.details__form {
+    @apply flex flex-col mt-[3%] space-y-[2%] w-full h-auto;
+
+    input {
+        @include text(15px, 130%, 400, #2D2D2B);
+        @apply border-[1px] border-[#C4C4C4] rounded-sm w-[70%] px-[3%] py-[2%] focus:outline-none;
+
+        &::placeholder {
+            @include text(15px, 130%, 400, #2D2D2B);
+            @apply focus:opacity-0;
+        }
+    
+    }
+}
+.button__sending {
+    @include text(15px, 130%, 400, #fff);
+    @apply bg-[#2BB018] border-none rounded-sm w-[70%] px-[3%] py-[2%] mt-[5%];
+}
+.details__suptitle {
+    @include text(15px, 130%, 400, #2D2D2B);
+    @apply mt-[5%];
+    font-family: 'Gilroy Regular';
+}
+.details__suptitle_tel {
+    @include text(15px, 130%, 400, #2D2D2B);
+    @apply relative;
+    font-family: 'Gilroy-Bold';
+
+    span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #2BB018;
+        width: 100%;
+        height: 1px;
+    }
+}

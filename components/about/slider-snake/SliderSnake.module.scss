@@ -1,0 +1,78 @@
+@import '../../../styles/mixins.scss';
+
+.slider__section {
+    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px];
+    font-family: 'Gilroy-Bold';
+}
+.slider__wrapper {
+    @apply w-full mx-auto relative;
+
+    @media screen and (max-width: 576px) {
+        @apply px-[5%];
+    }
+}
+.slider__inner {
+    @apply flex flex-col justify-center h-full w-full mt-[5%];
+}
+.slider__title {
+    @include text(32px, 150%, 400, #2D2D2B);
+    @apply relative pt-[5%] uppercase text-center;
+
+    span {
+        background: radial-gradient(50% 50% at 50% 50%, #2BB018 0%, rgba(43, 176, 24, 0) 100%);
+        position: absolute;
+        bottom: -5%;
+        left: 43%;
+        height: 2%;
+        width: 15%;
+
+        @media screen and (max-width: 576px) {
+            @apply w-[17%] left-[42%];
+            // font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply pt-[10%] ;
+        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+    }
+}
+.slider__grid_inner {
+    @apply px-[7%] flex space-x-2 w-full;
+
+    @media screen and(max-width: 576px) {
+        @apply flex flex-col space-x-0 px-0;
+    }
+}
+.slider__inner {
+    @apply flex flex-col; 
+}
+
+// ====== slider =====>
+.slider__body {
+    @apply w-[80%];
+    @media screen and(max-width: 576px) {
+        @apply w-full;
+    }
+}
+.slider__thumbnail {
+    @apply flex flex-col overflow-auto w-[45.2%];
+    @media screen and(max-width: 576px) {
+        @apply flex flex-row w-full space-x-2;
+    }
+}
+.slider__thumbnail_wrapper {
+    
+}
+// ===== toggler buttons =====>
+.trance__paggination_inner_toggler {
+    @apply flex flex-row justify-center pt-[3%] pb-[0.5%] space-x-2;
+}
+.paggination__inner_button {
+    @include text(15px, 100%, 400, #C4C4C4);
+    @apply h-6 w-6 border-[1px] border-[#2BB018] rounded-[3px] hover:bg-[#2BB018] hover:text-white duration-200;
+}

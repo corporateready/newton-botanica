@@ -1,0 +1,110 @@
+@import '../../../styles/mixins.scss';
+
+.complex__section {
+    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px];
+    font-family: 'Gilroy-Bold';
+}
+.complex__wrapper {
+    @apply w-full mx-auto relative;
+
+    @media screen and (max-width: 576px) {
+        @apply px-[5%];
+    }
+}
+.complex__inner {
+    @apply flex flex-col justify-center h-full w-full mt-[5%];
+}
+.complex__title {
+    @include text(32px, 150%, 400, #2D2D2B);
+    @apply relative pt-[5%] uppercase text-center;
+
+    span {
+        background: radial-gradient(50% 50% at 50% 50%, #2BB018 0%, rgba(43, 176, 24, 0) 100%);
+        position: absolute;
+        bottom: -5%;
+        left: 8%;
+        height: 2%;
+        width: 85%;
+
+        @media screen and (max-width: 576px) {
+            @apply w-[95%] left-[5%];
+            // font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply pt-[10%] ;
+        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+    }
+}
+.separator {
+    @apply hidden;
+    @media screen and (max-width: 576px) {
+        @apply block;
+    }
+}
+.complex__grid_month {
+    @apply grid grid-cols-3 grid-rows-2 gap-y-[3%] gap-x-[2%] py-[2%] px-[7%];
+
+    @media screen and(max-width: 576px) {
+        @apply grid grid-cols-2 gap-x-[2%] gap-y-[2%] px-0 py-[7%] pb-[15%];
+    }
+}
+.complex__grid_item {
+    @apply h-auto w-full relative top-0 rounded-md overflow-hidden;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+.item__bg {
+    @apply flex rounded-t-md;
+}
+.item__description {
+    @apply flex justify-start items-center py-[4%] pl-[5%] space-x-[5%];
+}
+.item__description_icon {
+    @media screen and (max-width: 1200px) {
+        @apply w-[13%]
+    }
+}
+.item__description_text {
+    @include text(15px, 130%, 400, #2D2D2B);
+
+    @media screen and (max-width: 1440px) {
+        font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        font-size: calc(8px + (15 - 8)*(100vw - 320px)/(576 - 320));
+    }
+}
+
+// ===== swiper =====>
+.mySwiper {
+    @apply relative top-0 left-0;
+}
+.prevButton, .nextButton {
+    @apply bg-[#2BB018] w-[3%];
+
+    @media screen and(max-width: 576px) {
+        @apply w-[10%];
+    }
+}
+.prevButton {
+    @apply absolute top-[56%] left-[1.5%];
+    @media screen and(max-width: 576px) {
+        @apply absolute top-[94%] left-[5%] h-auto;
+    }
+}
+.prevButton__icon {
+    @apply mt-[5%] left-[5%] inline-block;
+}
+.nextButton {
+    @apply absolute top-[56%] right-[1.5%];
+
+    @media screen and(max-width: 576px) {
+        @apply absolute top-[94%] right-[5%];
+    }
+}

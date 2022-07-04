@@ -1,0 +1,67 @@
+@import '../../../styles/mixins.scss';
+
+.details__section {
+    @apply h-auto w-full relative;
+}
+.details__wrapper {
+    @apply bg-white w-full h-full;
+}
+.details__inner {
+    @apply pt-[5%] pb-[7%] flex flex-col w-full h-auto px-[5%];
+}
+.details__form__title {
+    @include text(20px, 130%, 400, #2D2D2B);
+    @apply mt-[2%] text-center;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(10px + (20 - 10)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply hidden;
+        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+    }
+}
+.details__form__title_mob {    
+    @apply hidden;
+
+    @media screen and (max-width: 576px) {
+        @include text(20px, 130%, 400, #2D2D2B);
+        @apply inline-block mt-[2%] text-center pt-[10%];
+        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+    }
+}
+.details__form {
+    @apply flex flex-col items-center mt-[3%] mx-auto w-full h-auto;
+
+
+    input {
+        @include text(15px, 130%, 300, #2D2D2B);
+        @apply border-[1px] border-[#C4C4C4] rounded-md w-[35%] px-[3%] py-[1%] mb-[2%] focus:outline-none;
+        font-family: 'Gilroy Regular';
+
+        @media screen and(max-width: 576px) {
+            @apply w-[86%] rounded-sm py-[0.5%];
+        }
+       
+        &::placeholder {
+            @include text(15px, 100%, 400, #2D2D2B);
+            @apply focus:opacity-0;
+            @media screen and(max-width: 1440px) {
+                font-size: calc(10px + (15 - 10)*(100vw - 576px)/(1440 - 576));
+            }
+        }
+    
+    }
+}
+.button__sending {
+    @include text(15px, 100%, 400, #fff);
+    @apply bg-[#2BB018] border-none rounded-md w-[35%] px-[3%] py-[1%] mt-[1%] uppercase; 
+    
+    @media screen and(max-width: 1440px) {
+        font-size: calc(10px + (15 - 10)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        @apply w-[86%] py-[2%] rounded-sm;
+    }
+}

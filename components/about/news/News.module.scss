@@ -1,0 +1,163 @@
+@import '../../../styles/mixins.scss';
+
+.news__section {
+    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px] pb-[5.1%];
+    font-family: 'Gilroy-Bold';
+}
+.news__wrapper {
+    @apply w-full mx-auto px-[6%];
+
+    @media screen and (max-width: 576px) {
+        @apply px-[5%] pb-[10%];
+    }
+}
+.news__inner {
+    @apply flex flex-col justify-center h-full w-full mt-[4.5%];
+}
+.news__title {
+    @include text(32px, 150%, 400, #2D2D2B);
+    @apply relative pt-[60px] uppercase text-center;
+
+    @media screen and (max-width: 1440px) {
+        @apply pt-[5.8%];
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply pt-[10%];
+        font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
+    }
+
+    span {
+        background: radial-gradient(50% 50% at 50% 50%, #2BB018 0%, rgba(43, 176, 24, 0) 100%);
+        position: absolute;
+        bottom: -5%;
+        left: 35%;
+        height: 2%;
+        width: 30%;
+
+        @media screen and (max-width: 576px) {
+            @apply w-[50%] left-[25%];
+            font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
+        }
+    }
+
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        // @apply mt-[10%];
+        font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
+    }
+}
+.news__navigation {
+    @apply flex justify-between gap-x-[3%] items-end w-[99%];
+
+    @media screen and (max-width: 576px) {
+        @apply mt-[3%];
+    }
+}
+.news__navigation_years {
+    @apply w-[10%] text-[#2BB018] p-[0.5%] border-2 rounded-md focus-visible:outline;
+
+    @media screen and (max-width: 1440px) {
+        font-size: calc(8px + (16 - 8)*(100vw - 768px)/(1440 - 768));
+    }
+
+    @media screen and(max-width: 768px) {
+        @apply w-[48%] text-[120%] py-[1%] text-[#2BB018] focus-visible:outline;
+    }
+}
+.news__navigation_mounth_mob {
+    @apply hidden;
+
+    @media screen and(max-width: 768px) {
+        @apply inline-block w-[48%] text-[120%] py-[1%] border-2 rounded-md text-[#2BB018] focus-visible:outline;
+    }
+}
+
+.news__grids {
+    @apply mt-[4%];
+}
+.news__grid_month {
+    @apply grid grid-cols-2 gap-y-[5%] gap-x-[4%];
+    @media screen and(max-width: 576px) {
+        @apply grid grid-cols-1 gap-x-0 gap-y-[1%];
+    }
+}
+.news__grid_item {
+    @apply h-auto w-full relative top-0;
+}
+.item__info {
+    @apply  flex flex-row items-center w-full absolute bottom-[10%] left-0 bg-white;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @media screen and (max-width: 576px) {
+        @apply  bottom-[5%];
+    }
+}
+.item__info_l {
+    @include text(20px, 100%, 700, #fff);
+    @apply w-[35%] h-full text-center;
+    background-image: url('../../../public/static/planning-page/news/decor-bg.svg');
+    position: absolute;
+    top: 0;
+    left: -1%;
+    background-size:cover;
+    background-position: center;
+
+    p {
+        @apply absolute top-[35%] left-[15%] tracking-wider;
+    }
+
+    @media screen and (max-width: 1440px) {
+        font-size: calc(8px + (24 - 8)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply w-[25%] left-[-0.7%];
+        font-size: calc(8px + (15 - 8)*(100vw - 320px)/(576 - 320));
+
+        p {
+            @apply absolute top-[35%] left-[15%] tracking-wider;
+        }
+    }
+}
+.item__info_r {
+    @include text(11px, 100%, 400, #000);
+    @apply w-full space-y-[2%] pl-0 relative py-[2.5%] left-[34%];
+    font-family: 'Gilroy Regular';
+
+    @media screen and (max-width: 1440px) {
+        font-size: calc(6px + (11 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply w-full space-y-[1.5%] relative py-[1.5%] left-[24%];
+        font-size: calc(6px + (11 - 6)*(100vw - 320px)/(576 - 320));
+    }
+}
+.item__info_r_up,
+.item__info_r_down {
+    @apply flex;
+}
+.icon__checked_wrapp {
+    @media screen and (max-width: 1440px) {
+        width: calc(6px + (11 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+}
+//  =====>
+.location__address_detail {
+    @include text(15px, 130%, 400, #fff);
+    @apply flex justify-center bg-[#2BB018] border-[1px] w-[30%] py-[1%] mx-auto my-[0.5%] rounded uppercase text-center tracking-wider hover:duration-150;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply w-[60%] py-[2%];
+        font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
+    }
+}

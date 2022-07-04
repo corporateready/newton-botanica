@@ -2,17 +2,18 @@ import React from "react";
 import styles from "./Payment.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import payment__image from "../../../public/static/planning-page/payment/payment-image.svg";
+import payment__image from "../../../public/static/planning/payment-image-about.svg";
+import payment__image_mob from "../../../public/static/planning/payment-image-mob.svg";
 import logo__icon from "../../../public/static/planning-page/payment/logo-icon.svg";
-import leaf_1 from "../../../public/static/planning-page/payment/leaf-t-l.svg";
-import leaf_2 from "../../../public/static/planning-page/payment/leaf-t-r.svg";
-import leaf_3 from "../../../public/static/planning-page/payment/leaf-b-l.svg";
-import leaf_4 from "../../../public/static/planning-page/payment/leaf-b-r.svg";
-import leaf_1__mob from "../../../public/static/planning-page/payment/leaf-t-l-mob.svg";
-import leaf_2__mob from "../../../public/static/planning-page/payment/leaf-t-r-mob.png";
-import leaf_3__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
-import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
-import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.svg";
+// import leaf_1 from "../../../public/static/planning-page/payment/leaf-t-l.svg";
+// import leaf_2 from "../../../public/static/planning-page/payment/leaf-t-r.svg";
+// import leaf_3 from "../../../public/static/planning-page/payment/leaf-b-l.svg";
+// import leaf_4 from "../../../public/static/planning-page/payment/leaf-b-r.svg";
+// import leaf_1__mob from "../../../public/static/planning-page/payment/leaf-t-l-mob.svg";
+// import leaf_2__mob from "../../../public/static/planning-page/payment/leaf-t-r-mob.png";
+// import leaf_3__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
+// import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
+// import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.svg";
 
 export default function index({isOpen, setIsOpen}) {
 
@@ -28,8 +29,17 @@ export default function index({isOpen, setIsOpen}) {
               <div className={styles.image__side_img}>
                 <Image
                   src={payment__image}
-                  height={213}
-                  width={405}
+                  height={267}
+                  width={507}
+                  priority
+                  alt=""
+                />
+              </div>
+              <div className={styles.image__side_img_mob}>
+                <Image
+                  src={payment__image_mob}
+                  height={276}
+                  width={513}
                   priority
                   alt=""
                 />
@@ -46,8 +56,8 @@ export default function index({isOpen, setIsOpen}) {
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
-                    height={19}
-                    width={15}
+                    height={32}
+                    width={25}
                     priority
                     alt=""
                   />
@@ -60,8 +70,8 @@ export default function index({isOpen, setIsOpen}) {
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
-                    height={19}
-                    width={15}
+                    height={32}
+                    width={25}
                     priority
                     alt=""
                   />
@@ -74,8 +84,8 @@ export default function index({isOpen, setIsOpen}) {
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
-                    height={19}
-                    width={15}
+                    height={32}
+                    width={25}
                     priority
                     alt=""
                   />
@@ -88,8 +98,8 @@ export default function index({isOpen, setIsOpen}) {
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
-                    height={19}
-                    width={15}
+                    height={32}
+                    width={25}
                     priority
                     alt=""
                   />
@@ -102,8 +112,8 @@ export default function index({isOpen, setIsOpen}) {
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
-                    height={19}
-                    width={15}
+                    height={32}
+                    width={25}
                     priority
                     alt=""
                   />
@@ -116,8 +126,8 @@ export default function index({isOpen, setIsOpen}) {
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
-                    height={19}
-                    width={15}
+                    height={32}
+                    width={25}
                     priority
                     alt=""
                   />
@@ -128,8 +138,8 @@ export default function index({isOpen, setIsOpen}) {
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
-                    height={19}
-                    width={15}
+                    height={32}
+                    width={25}
                     priority
                     alt=""
                   />
@@ -142,8 +152,8 @@ export default function index({isOpen, setIsOpen}) {
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
-                    height={19}
-                    width={15}
+                    height={32}
+                    width={25}
                     priority
                     alt=""
                   />
@@ -156,8 +166,8 @@ export default function index({isOpen, setIsOpen}) {
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
-                    height={19}
-                    width={15}
+                    height={32}
+                    width={25}
                     priority
                     alt=""
                   />
@@ -172,7 +182,7 @@ export default function index({isOpen, setIsOpen}) {
             </Link>
           </div>
         </div>
-        <div className={styles.leaf}>
+        {/* <div className={styles.leaf}>
           <Image src={leaf_1} height={376} width={406} priority alt="" />
         </div>
         <div className={styles.leaf__mob}>
@@ -198,7 +208,7 @@ export default function index({isOpen, setIsOpen}) {
         </div>
         <div className={styles.leaf_5__mob}>
           <Image src={leaf_5__mob} height={276} width={306} priority alt="" />
-        </div>
+        </div> */}
       </div>
     </>
   );

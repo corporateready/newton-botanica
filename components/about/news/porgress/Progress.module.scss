@@ -1,0 +1,61 @@
+@import '../../../../styles//mixins.scss';
+
+.news__navigation_mounth_mob {
+    @apply hidden;
+
+    @media screen and(max-width: 768px) {
+        @apply inline-block w-[48%] text-[120%] py-[1%] border-2 rounded-md text-[#2BB018] focus-visible:outline;
+    }
+}
+.news__navigation_line {
+    @apply flex justify-between items-center w-[90%];
+
+    @media screen and(max-width: 768px) {
+        @apply hidden;
+    }
+}
+.navigation__items {
+    @apply grid grid-cols-12 justify-center w-full;
+}
+.navigation__item {
+    @apply flex flex-col relative hover:cursor-pointer;
+}
+.navigation__item_name {
+    @include text(12px, 130%, 400, #2e2e2d);
+    @apply text-center;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(6px + (12 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+}
+.navigation__item_visible {
+    @apply w-full h-1 mt-[5%] border-[1px] bg-transparent rounded-full;
+}
+.navigation__item_visible_active {
+    @apply w-full h-1 mt-[5%] border-[1px] bg-[#2BB018] rounded-full;
+}
+// .navigation__item_visible_active {
+//     @apply w-full h-1 mt-[5%] border-[1px] bg-[#2BB018] rounded-full;
+// }
+.navigation__item_button {
+    @apply w-2 h-2 bg-slate-300 border-[1px] absolute right-[-5px] bottom-[-2px] rounded-full;
+}
+.navigation__item_button_active {
+    @apply w-2 h-2 bg-[#2BB018] border-0 absolute right-[-5px] bottom-[-2px] rounded-full z-10;
+}
+// .navigation__item:hover {
+//     @apply bg-transparent;
+
+//     .navigation__item_visible {
+//         @apply bg-[#2BB018] duration-200 delay-100;
+//     }
+//     .navigation__item_button {
+//         @apply bg-[#2BB018] z-10 duration-200 delay-100;
+//     }
+// }
+// .navigation__item_active {
+
+//     .navigation__item_visible {
+//         @apply bg-[#2BB018] duration-200 delay-100;
+//     }
+// }

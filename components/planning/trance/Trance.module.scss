@@ -1,0 +1,143 @@
+@import '../../../styles/mixins.scss';
+
+.trance__section {
+    @apply bg-white relative py-[2%];
+}
+.trance__wrapper {
+    @apply px-[7%];
+}
+// =====>
+.trance__toggler {
+@apply flex justify-center items-center space-x-[2%];
+@media screen and(max-width: 576px) {
+    @apply space-x-[3%];
+}
+}
+.trance__toggler_l {
+    @include text(20px, 100%, 400, #2D2D2B);
+    @apply w-[25%] border-[1px] rounded-md uppercase overflow-hidden hover:cursor-not-allowed;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(8px + (20 - 8)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply w-[50%];
+        font-size: calc(9px + (16 - 9)*(100vw - 320px)/(576 - 320));
+    }
+
+    p {
+        @apply inline-block w-[50%] h-full py-[6%];
+
+        &:nth-child(1) {
+            @apply bg-[#FFA800] text-white; 
+        }
+    }
+
+}
+.trance__toggler_r {
+    @include text(20px, 100%, 400, #2D2D2B);
+    @apply w-[25%] border-[1px] py-[1.5%] rounded-md uppercase tracking-wider hover:bg-[#2BB018] hover:text-white;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(8px + (20 - 8)*(100vw - 576px)/(1440 - 576));
+    }
+    
+    @media screen and(max-width: 576px) {
+        @apply w-[50%] py-[3%];
+        font-size: calc(9px + (16 - 9)*(100vw - 320px)/(576 - 320));
+    }
+
+}
+
+//  =====>
+.trance__paggination {
+    @apply grid grid-cols-4 gap-[2%] mt-[5%];
+
+    @media screen and(max-width: 576px) {
+        @apply grid grid-cols-2 gap-y-4 gap-[3%];
+    }
+
+    button {
+        @include text(20px, 100%, 400, #2D2D2B);
+        @apply border-[1px] border-[#2BB018] py-[5%] rounded-md uppercase tracking-wider hover:bg-[#2BB018] hover:text-white duration-200;
+
+        @media screen and(max-width: 1440px) {
+            font-size: calc(8px + (20 - 8)*(100vw - 576px)/(1440 - 576));
+        }
+    
+        @media screen and(max-width: 576px) {
+            @apply w-[100%];
+            font-size: calc(9px + (16 - 9)*(100vw - 320px)/(576 - 320));
+        }
+    
+    }
+}
+.trance__paggination_inner {
+    @apply mt-[5%];
+}
+//  =====>
+.complex__grid_floats {
+    @apply grid grid-cols-3 gap-y-[3%] gap-x-[2%];
+
+    @media screen and(max-width: 768px) {
+        @apply grid grid-cols-2 gap-x-[2%] gap-y-[2%] px-0 py-[7%] pb-[15%];
+    }
+}
+.complex__grid_item {
+    @apply h-auto w-full relative top-0 rounded-md overflow-hidden;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+.item__bg {
+    @apply flex justify-center rounded-md m-[5%];
+}
+.item__bg_info {
+    @apply flex justify-center rounded-md my-[7%];
+}
+.item__description {
+    @apply flex flex-col h-full py-0 bg-[#ECECEC] space-y-[2%];
+    font-family: 'Gilroy Semibold';
+}
+.item__description__up {
+    @apply flex;
+}
+.item__description_name {
+    @apply text-left border-r-[1.5px] border-white pl-[5%] pt-[3%] w-[50%] flex flex-col;
+}
+.item__description_name_up {
+    @include text(15px, 150%, 400, #2BB018);
+}
+.item__description_name_down {
+    @include text(30px, 100%, 400, #2D2D2B);
+    @apply mt-[3%];
+}
+.item__description_text {
+    // @include text(15px, 100%, 400, #2D2D2B);
+    // @apply text-center py-[5%] w-[50%];
+    // @media screen and (max-width: 1440px) {
+    //     font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
+    // }
+
+    // @media screen and (max-width: 576px) {
+    //     font-size: calc(8px + (15 - 8)*(100vw - 320px)/(576 - 320));
+    // }
+}
+.item__description__up {
+    @apply flex justify-center w-full;
+}
+.item__description__down {
+    @apply w-full flex justify-center pt-[5%] pb-[13%];
+}
+.details__button {
+    @include text(15px, 130%, 600, #fff);
+    @apply bg-[#2BB018] rounded-md w-[60%] py-[2.5%] tracking-wider;
+
+}
+// =====>
+.trance__paggination_inner_toggler {
+    @apply flex flex-row justify-center pt-[4%] space-x-2;
+}
+.paggination__inner_button {
+    @include text(15px, 100%, 400, #C4C4C4);
+    @apply h-6 w-6 border-[1px] border-[#2BB018] rounded-[3px] hover:bg-[#2BB018] hover:text-white duration-200;
+}

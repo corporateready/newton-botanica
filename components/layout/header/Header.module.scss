@@ -3,6 +3,11 @@
 .header {
     @apply absolute top-0 left-0 bg-white h-auto w-full z-10;
     font-family: 'Gilroy-Bold';
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+
+    @media screen and(max-widyh: 576px) {
+        // box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    }
 }
 .container {
     @apply w-[1170px] mx-auto px-0;
@@ -42,8 +47,8 @@
     @apply flex justify-center bg-none border-[1px] px-[38px] py-[5px] rounded uppercase text-center tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
 
     @media screen and(max-width: 1440px) {
-        @apply w-[20%] py-[0.5%];
-        font-size: calc(10px + (24 - 10)*(100vw - 576px)/(1440 - 576));
+        @apply w-[20%] py-[0.5%] px-0;
+        font-size: calc(9px + (24 - 9)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {

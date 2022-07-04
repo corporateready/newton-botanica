@@ -1,8 +1,7 @@
-import Hero from './hero'
-import Complex from './complex'
-import Designs from './designs'
-import Location from './location'
 import Payment from './payment'
-import News from './news'
+import Populare from './populare'
+import Transe from './trance'
+import Plan from './plan'
+import InfoForm from './info-form'
 
-export { Hero, Complex, Designs, Location, Payment, News };
+export { Payment, Populare, Transe, Plan, InfoForm };

@@ -21,8 +21,8 @@ export default function index() {
               />
             </a>
           </Link>
-          <Link href="/planning">
-            <a className={styles.button__planning}>PLANIMETRII</a>
+          <Link href="/about">
+            <a className={styles.button__planning}>Planimetrii</a>
           </Link>
           <Link href="tel:+3736082020">
             <a className={styles.header__phone_link}>
