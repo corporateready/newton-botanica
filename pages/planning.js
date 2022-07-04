@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import styles from "../styles/About.module.scss";
 import Layout from "../components/layout";
 import Image from "next/image";
-import planning__bg from "../public/static/planning-page/Group 2678.png";
+import planning__bg from "../public/static/planning-page/Group_2678.png";
 import image__detail from "../public/static/planning/populare/populare-1/63 55 2d.svg";
 import close__button from "../public/static/planning/populare/close-icon.svg";
 import {
