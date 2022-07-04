@@ -48,7 +48,7 @@ export const Plan_2 = () => {
         </div>
 
         <motion.div
-          key={images_2[imageIndex-1]}
+          key={images_2[imageIndex]}
           variants={variants}
           initial="enter"
           animate="center"

@@ -50,7 +50,7 @@ export const Plan_1 = () => {
         </div>
 
         <motion.div
-          key={images_1[imageIndex+1]}
+          key={images_1[imageIndex]}
           variants={variants}
           initial="enter"
           animate="center"
