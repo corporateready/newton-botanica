@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { images_2 } from "./image-data";
-import styles from "./Carousel.module.scss";
+import styles from "./Plan-2.module.scss";
 import back__icon from "../../../../public/static/planning-page/complex/next-button.svg";
 
 const variants = {
@@ -48,7 +48,7 @@ export const Plan_2 = () => {
         </div>
 
         <motion.div
-          key={images_2[imageIndex]}
+          // key={images_2[imageIndex]}
           variants={variants}
           initial="enter"
           animate="center"

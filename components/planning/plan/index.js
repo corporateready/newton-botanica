@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styles from "./Gallery.module.scss";
-import { Plan_1 } from "./plan-1";
-import { Plan_2 } from "./plan-2";
+import Plan_1 from "./plan-1";
+import Plan_2 from "./plan-2";
 
 export default function Plan() {
   const buttons__toggle = [
@@ -12,12 +12,10 @@ export default function Plan() {
   const [isPlan, setIsPlan] = useState(true);
   const [isButtonActive, setIsButtonActive] = useState(false)
 
-  const handlerToggleTrance2 = () => {
+  const handlerToggleTrance = () => {
     setIsPlan(!isPlan);
     setIsButtonActive(!isButtonActive)
   };
-
-  console.log(isPlan);
 
   return (
     <>
@@ -36,7 +34,7 @@ export default function Plan() {
                     ? styles.trance__toggler_r__active
                     : styles.trance__toggler_r
                 }
-                onClick={handlerToggleTrance2}
+                onClick={handlerToggleTrance}
               >
                 {btg.name}
               </button>

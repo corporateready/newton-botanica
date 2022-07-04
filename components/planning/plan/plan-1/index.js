@@ -28,7 +28,7 @@ const variants = {
   },
 };
 
-export const Plan_1 = () => {
+export default function Plan_1 () {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const imageIndex = wrap(0, images_1.length, page);
@@ -37,7 +37,7 @@ export const Plan_1 = () => {
     setPage([page + newDirection, newDirection]);
   };
 
-  console.log(images_1[imageIndex]);
+  console.log(imageIndex);
 
   return (
     <>
@@ -50,7 +50,7 @@ export const Plan_1 = () => {
         </div>
 
         <motion.div
-          key={images_1[imageIndex]}
+          // key={imageIndex}
           variants={variants}
           initial="enter"
           animate="center"
