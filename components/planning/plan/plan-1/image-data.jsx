@@ -1,6 +1,6 @@
 import Image from 'next/image';
 // import Image from 'next/image';
-import image_1_1 from '../../../../public/static/planning/plan/plan-1.svg'
+import image_1_1 from '../../../../public/static/planning/plan/trance-2-faze-1.png'
 import image_1_2 from '../../../../public/static/planning/plan/trance-2-faze-1.png'
 
   export const images_1 = [

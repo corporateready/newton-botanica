@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./News.module.scss";
 // import Link from "next/link";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import LineNav from "./porgress/index";
 
 import { motion } from "framer-motion";
 
-export default function index() {
+export default function News() {
   const mounthes = [
     { mounth: "January" },
     { mounth: "February" },
@@ -24,7 +24,7 @@ export default function index() {
     { mounth: "November" },
     { mounth: "December" },
   ];
-  const [isYear, setIsYear] = React.useState();
+  const [isYear, setIsYear] = useState();
   // const [current, setCurrent] = React.useState("");
 
   return (

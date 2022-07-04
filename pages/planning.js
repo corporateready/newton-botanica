@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styles from "../styles/About.module.scss";
 import Layout from "../components/layout";
 import Image from "next/image";
@@ -14,8 +14,8 @@ import {
 } from "../components/planning";
 import Link from "next/link";
 
-export default function planning() {
-  const [isOpenDetails, setIsOpenDetails] = React.useState(false);
+export default function Planning() {
+  const [isOpenDetails, setIsOpenDetails] = useState(false);
 
   const hanlerCloseOpenDetails = () => {
     setIsOpenDetails(false);
@@ -25,7 +25,7 @@ export default function planning() {
     // alert('!')
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isOpenDetails) {
       document.body.style.overflow = "hidden";
     }

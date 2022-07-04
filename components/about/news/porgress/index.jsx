@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./Progress.module.scss";
 
-export default function index() {
-  const [current, setCurrent] = React.useState([
+export default function ProgressNav() {
+  const [current, setCurrent] = useState([
     { mounth: "January" },
     { mounth: "February" },
     { mounth: "March" },
@@ -16,9 +16,8 @@ export default function index() {
     { mounth: "November" },
     { mounth: "December" },
   ]);
-  const [isActive, setIsActive] = React.useState(false);
-  //   const mounthValueRef = React.useRef()
-  //   console.log(`mounthValueRef: ${mounthValueRef}`);
+  const [isActive, setIsActive] = useState(false);
+  
   const mounthes = [
     { mounth: "January" },
     { mounth: "February" },

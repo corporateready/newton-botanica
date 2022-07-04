@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { images_1 } from "./image-data";
-import styles from "./Carousel.module.scss";
+import styles from "./Plan-1.module.scss";
 import back__icon from "../../../../public/static/planning-page/complex/next-button.svg";
 
 const variants = {
@@ -37,18 +37,20 @@ export const Plan_1 = () => {
     setPage([page + newDirection, newDirection]);
   };
 
+  console.log(images_1[imageIndex]);
+
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
         <div
           key={imageIndex-1}
-          className="w-[13%] absolute bottom-[0%] left-[3%]"
+          className="w-[13%] absolute bottom-[0%] left-[3%] duration-200"
         >
           {images_1[imageIndex - 1]}
         </div>
 
         <motion.div
-          key={images_1[imageIndex]}
+          key={images_1[imageIndex+1]}
           variants={variants}
           initial="enter"
           animate="center"

@@ -1,4 +1,4 @@
-import Populare_1 from './populare-1'
+// import Populare_1 from './populare-1'
 // import Mounth_2 from './complex-2'
 
 // export const images = [
@@ -7,6 +7,6 @@ import Populare_1 from './populare-1'
 //     "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png"
 //   ];
 
-  export const images = [
-    <Populare_1 />
-  ];
+  // export const images = [
+  //   <Populare_1 />
+  // ];

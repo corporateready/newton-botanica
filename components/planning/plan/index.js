@@ -1,16 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./Gallery.module.scss";
 import { Plan_1 } from "./plan-1";
 import { Plan_2 } from "./plan-2";
 
-export default function index() {
+export default function Plan() {
   const buttons__toggle = [
     { name: "Tranșa 1", id: 1, tag: "trance-1" },
     { name: "Tranșa 2", id: 2, tag: "trance-2" },
   ];
 
-  const [isPlan, setIsPlan] = React.useState(true);
-  const [isButtonActive, setIsButtonActive] = React.useState(false)
+  const [isPlan, setIsPlan] = useState(true);
+  const [isButtonActive, setIsButtonActive] = useState(false)
 
   const handlerToggleTrance2 = () => {
     setIsPlan(!isPlan);
