@@ -1,37 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "./Progress.module.scss";
 
-export default function ProgressNav() {
-  const [current, setCurrent] = useState([
-    { mounth: "January" },
-    { mounth: "February" },
-    { mounth: "March" },
-    { mounth: "April" },
-    { mounth: "May" },
-    { mounth: "June" },
-    { mounth: "July" },
-    { mounth: "August" },
-    { mounth: "September" },
-    { mounth: "October" },
-    { mounth: "November" },
-    { mounth: "December" },
-  ]);
+export default function ProgressNav({ mounthes, updateCurrent }) {
   const [isActive, setIsActive] = useState(false);
-  
-  const mounthes = [
-    { mounth: "January" },
-    { mounth: "February" },
-    { mounth: "March" },
-    { mounth: "April" },
-    { mounth: "May" },
-    { mounth: "June" },
-    { mounth: "July" },
-    { mounth: "August" },
-    { mounth: "September" },
-    { mounth: "October" },
-    { mounth: "November" },
-    { mounth: "December" },
-  ];
 
   return (
     <div className={styles.news__navigation_line}>
@@ -40,15 +11,11 @@ export default function ProgressNav() {
           <div
             key={idx}
             onClick={(e) => {
-              setCurrent(current);
               setIsActive(!isActive);
+              updateCurrent(mounth.mounth)
               console.log("mounth", mounth.mounth);
             }}
             className={styles.navigation__item}
-            value={current}
-            onChange={(e) => {
-              setCurrent(e.target.value);
-            }}
           >
             <p className={styles.navigation__item_name}>
               {mounth.mounth && mounth.mounth}

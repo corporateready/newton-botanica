@@ -13,7 +13,7 @@ import {
   News,
 } from "../components/about";
 
-export default function planning() {
+export default function About() {
   // const [isOpen, setIsOpen] = React.useState(false);
 
   // React.useEffect(() => {
@@ -27,15 +27,17 @@ export default function planning() {
 
   return (
     <section className={styles.planning__section}>
-      <div className={styles.planning__bg}>
+      <div className={styles.planning__bg}></div>
+      <div className={styles.planning__bg}> 
         <Image
           src={planning__bg}
           layout="fill"
           objectFit="cover"
           priority
+          quality={100}
           alt="home background"
         />
-      </div>
+      </div> 
      <Layout>
         <div className={styles.container}>
           <Hero/>

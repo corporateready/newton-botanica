@@ -24,8 +24,14 @@ export default function News() {
     { mounth: "November" },
     { mounth: "December" },
   ];
+
   const [isYear, setIsYear] = useState();
-  // const [current, setCurrent] = React.useState("");
+  const [current, setCurrent] = React.useState(1);
+
+  const updateCurrent =()=> {
+    setCurrent(current)
+    alert(current)
+  }
 
   return (
     <>
@@ -47,7 +53,10 @@ export default function News() {
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
               </select>
-              <LineNav />
+              <LineNav 
+                mounthes={mounthes}
+                updateCurrent={updateCurrent}
+              />
               <select className={styles.news__navigation_mounth_mob}>
                 <option>IUNIE</option>
                 <option>IULIE</option>
