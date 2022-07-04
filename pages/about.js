@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
-import planning__bg from "../public/static/planning-page/Group_2678.png";
+import planning__bg from "../public/static/planning-page/planning-hero-bg.webp";
 import {
   Hero,
   Complex,
