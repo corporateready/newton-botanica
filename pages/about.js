@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
-// import planning__bg from "../public/static/planning-page/Group 2678.png";
+import planning__bg from "../public/static/planning-page/Group_2678.png";
 import {
   Hero,
   Complex,
@@ -13,7 +13,7 @@ import {
   News,
 } from "../components/about";
 
-export default function About() {
+export default function Planning() {
   // const [isOpen, setIsOpen] = React.useState(false);
 
   // React.useEffect(() => {
@@ -27,14 +27,12 @@ export default function About() {
 
   return (
     <section className={styles.planning__section}>
-      <div className={styles.planning__bg}></div>
       <div className={styles.planning__bg}> 
         <Image
-          src={"/../public/static/planning-page/Group 2678.png"}
+          src={planning__bg}
           layout="fill"
-          objectFit="cover"
+          // objectFit="cover"
           priority
-          quality={100}
           alt="home background"
         />
       </div> 
