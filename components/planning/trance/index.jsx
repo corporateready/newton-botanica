@@ -3,11 +3,11 @@ import styles from "./Trance.module.scss";
 import Image from "next/image";
 import { one__room_floats } from "./data";
 
-export default function index({data}) {
-  const [floats, setFloats] = React.useState([])
-  const [loading, setLoading] = React.useState(false)
-  const [currentPage, setCurrentPage] = React.useState(1)
-  const [floatsPaerPage] = React.useState(6)
+export default function index() {
+  // const [floats, setFloats] = React.useState([])
+  // const [loading, setLoading] = React.useState(false)
+  // const [currentPage, setCurrentPage] = React.useState(1)
+  // const [floatsPaerPage] = React.useState(6)
 
   // React.useEffect(()=>{
 
@@ -20,7 +20,7 @@ export default function index({data}) {
   //   getFloats()
   // },[])
   
-  console.log(data);
+  // console.log(data);
   return (
     <div className={styles.trance__section}>
       <div className={styles.trance__wrapper}>
@@ -40,7 +40,7 @@ export default function index({data}) {
         <div className={styles.trance__paggination_inner}>
           <div className={styles.complex__grid_floats}>
 
-            {floats.map((float) => (
+            {/* {one__room_floats.map((float) => (
               <div key={float.id} className={styles.complex__grid_item}>
                 <div className={styles.item__bg}>
                   <Image
@@ -48,7 +48,7 @@ export default function index({data}) {
                     height={221}
                     width={250}
                     priority
-                    placeholder="blur"
+                    // placeholder="blur"
                     alt=""
                   />
                 </div>
@@ -83,7 +83,7 @@ export default function index({data}) {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} */}
             
           </div>
           <div className={styles.trance__paggination_2}></div>
@@ -97,20 +97,4 @@ export default function index({data}) {
       </div>
     </div>
   );
-}
-
-export async function getServerSideProps() {
-  // const res = await fetch(`/components/planning/trance/data`)
-  // const data = await res.json()
-  // console.log(data);
-
-  // if (!data) {
-  //   return {
-  //     notFound: true,
-  //   }
-  // }
-
-  return {
-    props: {data}, // will be passed to the page component as props
-  }
 }

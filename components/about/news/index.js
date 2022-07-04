@@ -25,7 +25,7 @@ export default function index() {
     { mounth: "December" },
   ];
   const [isYear, setIsYear] = React.useState();
-  const [current, setCurrent] = React.useState("");
+  // const [current, setCurrent] = React.useState("");
 
   return (
     <>

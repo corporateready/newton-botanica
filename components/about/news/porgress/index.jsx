@@ -2,21 +2,20 @@ import React from "react";
 import styles from "./Progress.module.scss";
 
 export default function index() {
-  const [current, setCurrent] = React.useState(
-    [
-        { mounth: "January" },
-        { mounth: "February" },
-        { mounth: "March" },
-        { mounth: "April" },
-        { mounth: "May" },
-        { mounth: "June" },
-        { mounth: "July" },
-        { mounth: "August" },
-        { mounth: "September" },
-        { mounth: "October" },
-        { mounth: "November" },
-        { mounth: "December" },
-      ])
+  const [current, setCurrent] = React.useState([
+    { mounth: "January" },
+    { mounth: "February" },
+    { mounth: "March" },
+    { mounth: "April" },
+    { mounth: "May" },
+    { mounth: "June" },
+    { mounth: "July" },
+    { mounth: "August" },
+    { mounth: "September" },
+    { mounth: "October" },
+    { mounth: "November" },
+    { mounth: "December" },
+  ]);
   const [isActive, setIsActive] = React.useState(false);
   //   const mounthValueRef = React.useRef()
   //   console.log(`mounthValueRef: ${mounthValueRef}`);
@@ -34,11 +33,6 @@ export default function index() {
     { mounth: "November" },
     { mounth: "December" },
   ];
-  React.useEffect(() => {
-    if (current === "January") {
-      return alert("January");
-    }
-  }, [current]);
 
   return (
     <div className={styles.news__navigation_line}>
@@ -58,7 +52,8 @@ export default function index() {
             }}
           >
             <p className={styles.navigation__item_name}>
-                {mounth.mounth && mounth.mounth}</p>
+              {mounth.mounth && mounth.mounth}
+            </p>
             <p
               className={
                 isActive

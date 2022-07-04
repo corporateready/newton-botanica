@@ -47,7 +47,7 @@ export const Carousel = () => {
     <>
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
-          key={page}
+          key={imageIndex}
           variants={variants}
           initial="enter"
           animate="center"

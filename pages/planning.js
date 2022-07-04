@@ -21,8 +21,8 @@ export default function planning() {
     setIsOpenDetails(false);
   };
   const handlerOpenDetails = () => {
-    // setIsOpenDetails(true)
-    alert('!')
+    setIsOpenDetails(true)
+    // alert('!')
   };
 
   React.useEffect(() => {

@@ -8,5 +8,5 @@ import Populare_1 from './populare-1'
 //   ];
 
   export const images = [
-    <Populare_1 handlerOpenDetails />
+    <Populare_1 />
   ];

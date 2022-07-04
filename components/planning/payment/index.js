@@ -15,11 +15,11 @@ import logo__icon from "../../../public/static/planning-page/payment/logo-icon.s
 // import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
 // import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.svg";
 
-export default function index({isOpen, setIsOpen}) {
+export default function index() {
 
-  const hanlerOpenPopup = () => {
-    setIsOpen(true)
-  }
+  // const hanlerOpenPopup = () => {
+  //   setIsOpen(true)
+  // }
   return (
     <>
       <div className={styles.payment__section}>
@@ -46,7 +46,7 @@ export default function index({isOpen, setIsOpen}) {
               </div>
               <button 
                 className={styles.location__detail}
-                onClick={hanlerOpenPopup}
+                // onClick={hanlerOpenPopup}
                 >
                 SOLICITĂ OFERTA
               </button>
