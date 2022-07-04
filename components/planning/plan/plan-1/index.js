@@ -33,9 +33,9 @@ const variants = {
 
 export default function Plan_1 () {
   const images_1 = [
-    <Image src={image_1_1} height={515} width={478} alt=""/>,
-    <Image src={image_1_2} height={515} width={478} alt=""/>,
-    <Image src={image_1_1} height={515} width={478} alt=""/>,
+    <Image src={image_1_1} height={515} width={478} alt="img-1"/>,
+    <Image src={image_1_2} height={515} width={478} alt="img-2"/>,
+    <Image src={image_1_1} height={515} width={478} alt="img-3"/>,
   ];
   const [[page, direction], setPage] = useState([0, 0]);
 
