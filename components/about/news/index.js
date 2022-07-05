@@ -30,7 +30,7 @@ export default function News() {
 
   const updateCurrent =()=> {
     setCurrent(current)
-    alert(current)
+    // alert(current)
   }
 
   return (

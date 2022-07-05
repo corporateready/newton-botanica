@@ -41,6 +41,7 @@ export default function Planning() {
           src={planning__bg}
           layout="fill"
           objectFit="cover"
+          quality={100}
           priority
           alt="home background"
         />
