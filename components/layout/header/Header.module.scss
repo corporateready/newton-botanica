@@ -13,7 +13,7 @@
     @apply w-[1170px] mx-auto px-0;
 
     @media screen and(max-width: 1440px) {
-        @apply w-full px-[9.3%];
+        @apply w-full px-[7%];
     }
 }
 .header__inner {
@@ -52,6 +52,7 @@
     }
 
     @media screen and(max-width: 576px) {
+        @apply w-[35%] py-[2%] text-black border-[1px] border-[#2BB018];
         font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
     }
 }

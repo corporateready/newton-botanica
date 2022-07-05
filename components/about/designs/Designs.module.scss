@@ -59,7 +59,7 @@
     @apply grid grid-cols-4  gap-x-[5%] gap-y-[10%] pt-[4.5%] h-auto w-full;
 
     @media screen and (max-width: 576px) {
-        @apply grid grid-cols-2 gap-y-[5%];
+        @apply grid grid-cols-2 gap-y-[5%] mt-[3%];
     }
 }
 
@@ -89,7 +89,7 @@
 
     @media screen and(max-width: 576px) {
         @apply mt-[7%];
-        font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
+        font-size: calc(9px + (16 - 9)*(100vw - 320px)/(576 - 320));
     }
 }
 //  =====>

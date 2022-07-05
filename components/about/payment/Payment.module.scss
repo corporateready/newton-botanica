@@ -114,8 +114,8 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute top-[-25%] left-[-33%];  
-        width: calc(202px + (356 - 202)*(100vw - 320px)/(576 - 320));  
+        @apply block opacity-100 absolute top-[-27%] left-[-30%];  
+        width: calc(202px + (306 - 202)*(100vw - 320px)/(576 - 320));  
     }
 
 }

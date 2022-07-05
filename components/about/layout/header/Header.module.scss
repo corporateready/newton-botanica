@@ -13,17 +13,9 @@
 }
 .header__inner {
     @apply flex justify-between items-center py-[0.7%] w-full h-full;
-
-    @media screen and(max-width: 576px) {
-        // @apply py-[1%];
-    }
 }
 .header__logo {
     @apply hover:scale-75 hover:duration-200;
-
-    @media screen and(max-width: 1440px) {
-        // @apply w-[25%]
-    }
 
     @media screen and(max-width: 1024px) {
         @apply w-[90px];
