@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import hero__bg from "../../../public/static/planning-page/planning-hero-bg.webp";
+import hero__bg from "../../../public/static/planning-page/Frame 3.png";
+import hero__bg_mobile from "../../../public/static/planning-page/bg-groupe-mobile.png";
 
 export default function index({ setIsPDFOpen, setIsPhoneOfferOpen }) {
   const hanlerIsPDFOpenPopup = () => {
@@ -28,7 +29,9 @@ export default function index({ setIsPDFOpen, setIsPhoneOfferOpen }) {
         </div>
         <div className={styles.hero__bg_mobile}>
           <Image
-            src={hero__bg}
+            src={hero__bg_mobile}
+            height={751}
+            width={1170}
             objectFit="cover"
             priority
             alt="home background"

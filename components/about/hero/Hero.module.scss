@@ -15,33 +15,26 @@
     @apply hidden;
 
     @media screen and(max-width: 576px) {
-        @apply flex absolute top-0 left-0 h-full w-full;
+        @apply flex relative top-0 left-0 h-[70vh] w-full;
+        background-position: left;
     }
 }
 .hero__inner {
     @apply relative flex flex-col justify-center h-full;
 
     @media screen and(max-width: 576px) {
-        @apply pt-[20%];
+        @apply absolute top-0 left-0 z-10 w-full;
     }
 }
 .hero__title {
     @include text(32px, 150%, 400, #2D2D2B);
-    @apply relative mt-[10%] uppercase text-center;
+    @apply relative pt-[2%] uppercase text-center;
 
     @media screen and(max-width: 1440px) {
     font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
     }
-    @media screen and(max-width: 1024px) {
-        @apply mt-[13%];
-    }
-
-    @media screen and(max-width: 768px) {
-        @apply mt-[15%];
-    }
-
     @media screen and(max-width: 576px) {
-        @apply mt-[10%];
+        @apply top-[-22%];
         font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
         }
 
@@ -61,7 +54,7 @@
     @apply flex justify-center pt-[37%] pb-[3%] mx-auto relative space-x-[3%] w-[60%];
 
     @media screen and(max-width: 576px) {
-        @apply w-[95%] pt-[50%] pb-[15%];
+        @apply w-[95%] bottom-[-20%];
     }
 }
 .button__about {
@@ -72,7 +65,7 @@
     font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-    font-size: calc(9px + (14 - 9)*(100vw - 320px)/(576 - 320));
+    font-size: calc(9px + (13 - 9)*(100vw - 320px)/(576 - 320));
     }
 }
 .button__planning {
@@ -84,7 +77,7 @@
     }
     @media screen and(max-width: 576px) {
         @apply px-[5%];
-        font-size: calc(9px + (14 - 9)*(100vw - 320px)/(576 - 320));
+        font-size: calc(9px + (13 - 9)*(100vw - 320px)/(576 - 320));
     }
 }
 .separotor {
