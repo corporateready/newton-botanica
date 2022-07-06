@@ -1,13 +1,23 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 import Image from "next/image";
 import styles from "./Populare.module.scss";
 import location__bg from "../../../../../public/static/planning/populare/populare-1/p-1.png";
+import {usePopup} from '../../../../../pages/planning'
 
-export default function Index({ handlerOpenDetails }) {
+export default function Index() {
+  const {handlerSetModal} = usePopup()
+
+  // const handlerIsOpenDetails = () => {
+  //   alert('is open!')
+  //   // setIsOpenDetails(true)
+  // }
+
   return (
     <div className={styles.complex__grid_month}>
 
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={()=>handlerSetModal()}
+      >
         <div className={styles.item__bg}>
           <Image src={location__bg} height={157} width={178} priority alt="" />
         </div>
@@ -20,7 +30,7 @@ export default function Index({ handlerOpenDetails }) {
           </div>
           <div className={styles.item__description__down}>
             <button
-              onClick={handlerOpenDetails}
+              // onClick={handlerOpenDetails}
               type="button"
               className={styles.details__button}
             >
@@ -29,7 +39,8 @@ export default function Index({ handlerOpenDetails }) {
           </div>
         </div>
       </div>
-      <div className={styles.complex__grid_item_info}>
+      <div className={styles.complex__grid_item_info}
+      onClick={()=>handlerSetModal()}>
         <p className={styles.item__info}>
           Vedere spre parcul natural
           <br />
@@ -52,7 +63,8 @@ export default function Index({ handlerOpenDetails }) {
           </div>
         </div>
       </div>
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={()=>handlerSetModal()}>
         <div className={styles.item__bg}>
           <Image src={location__bg} height={157} width={178} priority alt="" />
         </div>
@@ -70,7 +82,8 @@ export default function Index({ handlerOpenDetails }) {
           </div>
         </div>
       </div>
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={()=>handlerSetModal()}>
         <div className={styles.item__bg}>
           <Image src={location__bg} height={157} width={178} priority alt="" />
         </div>
@@ -88,7 +101,8 @@ export default function Index({ handlerOpenDetails }) {
           </div>
         </div>
       </div>
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={()=>handlerSetModal()}>
         <div className={styles.item__bg}>
           <Image src={location__bg} height={157} width={178} priority alt="" />
         </div>
@@ -106,7 +120,8 @@ export default function Index({ handlerOpenDetails }) {
           </div>
         </div>
       </div>
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={()=>handlerSetModal()}>
         <div className={styles.item__bg}>
           <Image src={location__bg} height={157} width={178} priority alt="" />
         </div>
@@ -124,7 +139,8 @@ export default function Index({ handlerOpenDetails }) {
           </div>
         </div>
       </div>
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={()=>handlerSetModal()}>
         <p className={styles.item__info_attention}>ULTIMA DISPONIBILITATE</p>
         <div className={styles.item__bg_info}>
           <Image src={location__bg} height={115} width={130} priority alt="" />
@@ -143,7 +159,8 @@ export default function Index({ handlerOpenDetails }) {
           </div>
         </div>
       </div>
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={()=>handlerSetModal()}>
         <div className={styles.item__bg}>
           <Image src={location__bg} height={157} width={178} priority alt="" />
         </div>

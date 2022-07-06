@@ -1,0 +1,59 @@
+@import '../../../styles/mixins.scss';
+
+.complex__section {
+    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px] pb-[5%];
+    font-family: 'Gilroy-Bold';
+}
+.complex__wrapper {
+    @apply w-full mx-auto relative;
+}
+.complex__inner {
+    @apply h-full w-full pt-[5%] pb-[2%] px-[7%] overflow-hidden;
+    background: #fff;
+}
+.complex__title {
+    @include text(32px, 150%, 400, #2D2D2B);
+    @apply relative pt-[5%] uppercase text-center tracking-wider;
+
+    span {
+        background: radial-gradient(50% 50% at 50% 50%, #2BB018 0%, rgba(43, 176, 24, 0) 100%);
+        position: absolute;
+        bottom: -5%;
+        left: 27%;
+        height: 2%;
+        width: 45%;
+
+        @media screen and (max-width: 576px) {
+            @apply w-[70%] left-[16%];
+            // font-size: calc(10px + (20 - 10)*(100vw - 320px)/(576 - 320));
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply pt-[10%] ;
+        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+    }
+}
+.separator {
+    @apply hidden;
+    @media screen and (max-width: 576px) {
+        @apply block;
+    }
+}
+.complex__grids {
+    @apply w-full min-h-full mx-auto relative top-0 left-0;
+    height: 570px;
+    
+    @media screen and (max-width: 1440px) {
+                height: calc(238px + (570 - 228)*(100vw - 576px)/(1440 - 576));
+            }
+    @media screen and (max-width: 576px) {
+        height: calc(228px + (690 - 228)*(100vw - 320px)/(576 - 320));
+    }
+}
+
+

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
@@ -12,9 +12,10 @@ import {
   Payment,
   News,
 } from "../components/about";
+import Details from './details'
 
 export default function Planning() {
-  // const [isOpen, setIsOpen] = React.useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
   // React.useEffect(() => {
   //   if (isOpen) {
@@ -41,12 +42,13 @@ export default function Planning() {
           <Hero/>
           <Complex />
           <Designs />
-          <SliderSnake/>
+          {/* <SliderSnake/> */}
           <Location />
           <Payment />
           <News />
         </div>
       </Layout>
+      <Details/>
     </section>
   );
 }

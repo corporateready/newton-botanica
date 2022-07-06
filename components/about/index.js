@@ -1,5 +1,5 @@
 import Hero from './hero'
-import Complex from './complex'
+import Complex from './complex-1'
 import Designs from './designs'
 import Location from './location'
 import SliderSnake from './slider-snake'

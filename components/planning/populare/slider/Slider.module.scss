@@ -1,0 +1,46 @@
+.slider__body {
+  @apply h-full w-full;
+    // background: #151515;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .next,
+  .prev {
+    // @apply py-[0.5%];
+    top: calc(50% - 20px);
+    position: absolute;
+    background: #2BB018;
+    width: 40px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    z-index: 2;
+
+    @media screen and (max-width: 1440px) {
+      width: calc(10px + (40 - 10)*(100vw - 576px)/(1440 - 576));
+  }
+  }
+  .next {
+    @apply right-[-6%];
+  }
+  .next__disabled {
+    @apply hidden;
+  }
+  .prev {
+    @apply left-[-6%];
+    transform: scale(-1);
+  }
+  .prev__disabled {
+    @apply hidden opacity-0;
+  }
+  .img {
+    position: absolute;
+    width: 100%;
+  }

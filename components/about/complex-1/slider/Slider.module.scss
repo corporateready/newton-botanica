@@ -1,0 +1,41 @@
+.slider__body {
+  @apply h-full w-full;
+    // background: #151515;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .next,
+  .prev {
+    top: calc(50% - 20px);
+    position: absolute;
+    background: #2BB018;
+    width: 40px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 2;
+
+    @media screen and (max-width: 1440px) {
+      width: calc(16px + (40 - 16)*(100vw - 576px)/(1440 - 576));
+  }
+  }
+  .next {
+    @apply right-[-6%];
+  }
+  .prev {
+    @apply left-[-6%];
+    transform: scale(-1);
+  }
+  .img {
+    position: absolute;
+    width: 100%;
+  }
