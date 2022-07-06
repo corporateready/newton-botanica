@@ -12,7 +12,7 @@ import {
   Payment,
   News,
 } from "../components/about";
-import Details from './details'
+// import Details from './details'
 
 export default function Planning() {
   // const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +48,7 @@ export default function Planning() {
           <News />
         </div>
       </Layout>
-      <Details/>
+      {/* <Details/> */}
     </section>
   );
 }
