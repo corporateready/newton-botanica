@@ -71,7 +71,9 @@ export const Slider = ({setIsOpenDetails}) => {
             }
           }}
         >
+          <div key={page}>
           {images[imageIndex]}
+          </div>
         </motion.div>
       </AnimatePresence>
       <div

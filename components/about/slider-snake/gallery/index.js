@@ -11,15 +11,11 @@ import SwiperCore, {
   FreeMode,
 } from "swiper";
 
-import "swiper/css/bundle"
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
-
-// import "swiper/swiper-bundle.min.css";
-// import "swiper/swiper.min.css";
 
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
 
