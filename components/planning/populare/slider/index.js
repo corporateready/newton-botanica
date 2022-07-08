@@ -48,7 +48,7 @@ export const Slider = () => {
     <div className={styles.slider__body}>
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
-          key={page}
+          key={imageIndex}
           className={styles.img}
           custom={direction}
           variants={variants}
@@ -72,9 +72,7 @@ export const Slider = () => {
             }
           }}
         >
-          <div key={index}>
           {images[imageIndex]}
-          </div>
         </motion.div>
       </AnimatePresence>
       <div
