@@ -7,7 +7,7 @@ import { three__room_floats } from "./data";
 import { four__room_floats } from "./data";
 import { motion } from "framer-motion";
 
-export default function index() {
+export default function Index() {
   const [isTab, setIsTab] = useState(1);
 
   return (
@@ -25,7 +25,7 @@ export default function index() {
           <button
             type="button"
             className={
-              isTab === 1
+              isTab == 1
                 ? styles.trance__paggination_btn_active
                 : styles.trance__paggination_btn
             }
