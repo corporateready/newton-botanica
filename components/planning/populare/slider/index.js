@@ -72,7 +72,9 @@ export const Slider = () => {
             }
           }}
         >
+          <div key={imageIndex}>
           {images[imageIndex]}
+          </div>
         </motion.div>
       </AnimatePresence>
       <div
