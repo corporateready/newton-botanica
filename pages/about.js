@@ -7,8 +7,8 @@ import {
   Hero,
   Complex,
   Designs,
-  SliderSnake,
   Location,
+  SliderSnake,
   Payment,
   News,
 } from "../components/about";
@@ -49,7 +49,7 @@ export default function Planning() {
             <Hero />
             <Complex />
             <Designs />
-            {/* <SliderSnake/> */}
+            <SliderSnake/>
             <Location />
             <Payment />
             <News />

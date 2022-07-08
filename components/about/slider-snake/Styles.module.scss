@@ -1,0 +1,41 @@
+@import '../../../styles/mixins.scss';
+
+.complex__section {
+    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px] pb-[5%];
+    font-family: 'Gilroy-Bold';
+}
+.complex__wrapper {
+    @apply w-full mx-auto relative;
+}
+.complex__inner {
+    @apply h-full w-full pt-[5%] pb-[2%] px-[7%];
+    background: #fff;
+    overflow: hidden;
+}
+.complex__title {
+    @include text(32px, 150%, 400, #2D2D2B);
+    @apply relative pt-[5%] uppercase text-center tracking-wider;
+
+    span {
+        background: radial-gradient(50% 50% at 50% 50%, #2BB018 0%, rgba(43, 176, 24, 0) 100%);
+        position: absolute;
+        bottom: -5%;
+        left: 44%;
+        height: 2%;
+        width: 13%;
+
+        @media screen and (max-width: 576px) {
+            @apply w-[70%] left-[16%];
+            // font-size: calc(10px + (20 - 10)*(100vw - 320px)/(576 - 320));
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply pt-[10%] ;
+        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+    }
+}

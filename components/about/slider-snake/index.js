@@ -1,21 +1,28 @@
-import React from "react";
-import styles from "./SliderSnake.module.scss";
-// import {Gallery} from './slider'
+import React from 'react'
+import styles from './Styles.module.scss'
+import {Gallery} from './gallery'
+import Head from 'next/head';
 
-export function Index() {
-  return (
-    <>
-      <div className={styles.slider__section}>
-        <div className={styles.slider__wrapper}>
-          <h1 className={styles.slider__title}>
-            Galerie
-            <span></span>
-          </h1>
-          <div className={styles.slider__inner}>
-            {/* <Gallery /> */}
+export default function index() {
+    return (
+      <>
+      <Head>
+      <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css"/>
+      <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"/>
+      </Head>
+        <div className={styles.complex__section}>
+          <div className={styles.complex__wrapper}>
+            <h1 className={styles.complex__title}>
+              Galerie
+              <span></span>
+            </h1>
+            <div className={styles.complex__inner}>
+              <div className={styles.complex__grids}>
+                <Gallery />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  );
-}
+      </>
+    );
+  }

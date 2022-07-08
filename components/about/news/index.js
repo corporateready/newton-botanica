@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "./News.module.scss";
 // import Link from "next/link";
 import Image from "next/image";
@@ -6,32 +6,38 @@ import location__bg from "../../../public/static/planning-page/news/january/jan-
 import location__bg_2 from "../../../public/static/planning-page/news/ferbrary/feb-1.jpeg";
 import icon__checked from "../../../public/static/planning-page/news/nhgb-icon-checked.svg";
 import LineNav from "./porgress/index";
+import TimlineNav from './timeline-nav'
 
 import { motion } from "framer-motion";
 
 export default function News() {
   const mounthes = [
-    { mounth: "January" },
-    { mounth: "February" },
-    { mounth: "March" },
-    { mounth: "April" },
-    { mounth: "May" },
-    { mounth: "June" },
-    { mounth: "July" },
-    { mounth: "August" },
-    { mounth: "September" },
-    { mounth: "October" },
-    { mounth: "November" },
-    { mounth: "December" },
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
+  const [currentStep, setCurrentStep] = useState(1);
+
+  const updateStep = (step) => {
+    setCurrentStep(step)
+    console.log(step);
+  }
 
   const [isYear, setIsYear] = useState();
   const [current, setCurrent] = React.useState(1);
 
-  const updateCurrent =()=> {
-    setCurrent(current)
-    // alert(current)
-  }
+  const updateCurrent = () => {
+    setCurrent(current);
+  };
 
   return (
     <>
@@ -53,9 +59,10 @@ export default function News() {
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
               </select>
-              <LineNav 
-                mounthes={mounthes}
-                updateCurrent={updateCurrent}
+              <TimlineNav
+               labelArray={mounthes}
+               currentStep={currentStep}
+               updateStep={updateStep}
               />
               <select className={styles.news__navigation_mounth_mob}>
                 <option>IUNIE</option>
