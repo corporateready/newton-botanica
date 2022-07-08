@@ -57,7 +57,7 @@ function SwiperThumbs() {
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#2BB018",
-          ".swiper-pagination-bullet-active": "#000",
+          "--swiper-pagination-bullet-active": "#000",
           "--swiper-pagination-bullet": {
             "border": "#2BB018",
             "border": "1px",

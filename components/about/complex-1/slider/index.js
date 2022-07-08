@@ -69,7 +69,10 @@ export const Slider = () => {
             }
           }}
         >
+          <div key={page}>
           {images[imageIndex]}
+          </div>
+          
         </motion.div>
       </AnimatePresence>
       <div className={styles.next} onClick={() => paginate(1)}>
