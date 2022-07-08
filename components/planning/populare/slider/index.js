@@ -7,6 +7,7 @@ import next__arrow from "../../../../public/static/planning-page/complex/next-ar
 
 import styles from "./Slider.module.scss";
 import Image from "next/image";
+import index from "../../payment";
 
 const variants = {
   enter: (direction) => {
@@ -34,7 +35,7 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-export const Slider = ({setIsOpenDetails}) => {
+export const Slider = () => {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const imageIndex = wrap(0, images.length, page);
@@ -71,7 +72,7 @@ export const Slider = ({setIsOpenDetails}) => {
             }
           }}
         >
-          <div key={page}>
+          <div key={index}>
           {images[imageIndex]}
           </div>
         </motion.div>
