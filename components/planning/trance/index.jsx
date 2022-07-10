@@ -76,9 +76,9 @@ export default function Index() {
                 : styles.complex__grid_hidden
             }
             hidden={isTab != 1}
-            initial={{opacity: 0}}
-            animate={isTab===1 ? {opacity: 1 } : null}
-            transition= {{duration: 1}}
+            initial={{ opacity: 0 }}
+            animate={isTab === 1 ? { opacity: 1 } : null}
+            transition={{ duration: 1 }}
           >
             {one__room_floats.map((float) => (
               <div key={float.id} className={styles.complex__grid_item}>
@@ -132,9 +132,9 @@ export default function Index() {
                 : styles.complex__grid_hidden
             }
             hidden={isTab != 2}
-            initial={{opacity: 0}}
-            animate={isTab===2 ? {opacity: 1 } : null}
-            transition= {{duration: 1}}
+            initial={{ opacity: 0 }}
+            animate={isTab === 2 ? { opacity: 1 } : null}
+            transition={{ duration: 1 }}
           >
             {two__room_floats.map((float) => (
               <div key={float.id} className={styles.complex__grid_item}>
@@ -188,9 +188,9 @@ export default function Index() {
                 : styles.complex__grid_hidden
             }
             hidden={isTab != 3}
-            initial={{opacity: 0}}
-            animate={isTab===3 ? {opacity: 1 } : null}
-            transition= {{duration: 1}}
+            initial={{ opacity: 0 }}
+            animate={isTab === 3 ? { opacity: 1 } : null}
+            transition={{ duration: 1 }}
           >
             {three__room_floats.map((float) => (
               <div key={float.id} className={styles.complex__grid_item}>
@@ -244,9 +244,9 @@ export default function Index() {
                 : styles.complex__grid_hidden
             }
             hidden={isTab != 4}
-            initial={{opacity: 0}}
-            animate={isTab===4 ? {opacity: 1 } : null}
-            transition= {{duration: 1}}
+            initial={{ opacity: 0 }}
+            animate={isTab === 4 ? { opacity: 1 } : null}
+            transition={{ duration: 1 }}
           >
             {four__room_floats.map((float) => (
               <div key={float.id} className={styles.complex__grid_item}>
