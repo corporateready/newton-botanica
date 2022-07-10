@@ -105,8 +105,11 @@
     @apply hidden opacity-0;
 }
 .complex__grid_item {
-    @apply h-auto w-full relative top-0 rounded-md overflow-hidden;
+    @apply h-auto w-full relative top-0 rounded-md overflow-hidden hover:scale-95 hover:transition-all duration-200;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    &:hover {
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.35);
+    }
 }
 .item__bg {
     @apply flex justify-center rounded-md m-[5%];

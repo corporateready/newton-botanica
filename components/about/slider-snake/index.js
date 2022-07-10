@@ -3,12 +3,10 @@ import styles from './Styles.module.scss'
 import {Gallery} from './gallery'
 import Head from 'next/head';
 
-export default function index() {
+export default function Index() {
     return (
       <>
       <Head>
-      <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css"/>
-      <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"/>
       </Head>
         <div className={styles.complex__section}>
           <div className={styles.complex__wrapper}>
@@ -18,7 +16,7 @@ export default function index() {
             </h1>
             <div className={styles.complex__inner}>
               <div className={styles.complex__grids}>
-                <Gallery />
+                {/* <Gallery /> */}
               </div>
             </div>
           </div>

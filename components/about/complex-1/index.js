@@ -8,8 +8,8 @@ export default function Populare() {
         <div className={styles.complex__wrapper}>
           <div className={styles.container}>
             <h1 className={styles.complex__title}>
-              Cele mai populare planimetrii
-              <span></span>
+            Cel mai modern complez rezidențial <div className={styles.separator}></div>de la botanica
+            <span></span>
             </h1>
             <div className={styles.complex__inner}>
               <div className={styles.complex__grids}>

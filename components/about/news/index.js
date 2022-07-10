@@ -39,6 +39,8 @@ export default function News() {
     setCurrent(current);
   };
 
+  const [isMounth, setIsMounth] = useState()
+
   return (
     <>
       <div className={styles.news__section}>
@@ -65,8 +67,11 @@ export default function News() {
                updateStep={updateStep}
               />
               <select className={styles.news__navigation_mounth_mob}>
-                <option>IUNIE</option>
-                <option>IULIE</option>
+                {mounthes.map((mounth)=>(
+                  <option key={mounth}>{mounth}</option>
+                ))}
+                {/* <option>IUNIE</option>
+                <option>IULIE</option> */}
               </select>
             </div>
             <div className={styles.news__grids}>

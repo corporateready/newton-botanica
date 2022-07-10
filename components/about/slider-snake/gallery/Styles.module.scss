@@ -1,80 +1,55 @@
-.gallery {
-    // @apply flex justify-center;
-}
+// =============================================>
 
 .gallery__inner {
-    @apply flex space-x-[1%];
+  @apply flex space-x-[1%] w-full h-[525px] my-[5%];
+
+  @media screen and (max-width: 576px) {
+    @apply flex-col space-x-0;
+  }
 }
 
 .swiper {
-    // @apply flex flex-col;
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.swiper-slide {
-    @apply flex flex-col;
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
-
-.swiper-slide img {
+.thumb__wrapper {
+.swiper_slide {
+  .swiper_slide_img {
+    @apply mb-[5%];
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
 }
-
-.swiper {
-    width: 100%;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.swiper-slide {
-    @apply flex flex-col;
-    background-size: cover;
-    background-position: center;
 }
 .mySwiper {
-    @apply w-[30%] h-full;
+  @apply w-[27%] h-auto;
+}
 
-    .swiper-pagination-color {
-        @apply text-2xl;
-    }
-}
 .mySwiper2 {
-    height: 100%;
-    width: 70%;
+  height: 100%;
+  width: 73%;
 }
-// =====>
-.swiper-button {
-    margin: 8px;
-    background: #1f7f9e;
-    padding: 6px 14px;
-    cursor: pointer;
-    color: #fff;
-  
-    &:hover {
-      background: #0e556c;
-    }
-  }
-  .timeline-icon {
-    // @apply inline-block bg-black;
-  }
+
+.swiper_pagination_bullet {
+  @apply p-[5%];
+}
+
+// // =====>
+// .swiper_button {
+//     margin: 8px;
+//     background: #1f7f9e;
+//     padding: 6px 14px;
+//     cursor: pointer;
+//     color: #fff;
+
+//     &:hover {
+//       background: #0e556c;
+//     }
+//   }
+//   .timeline-icon {
+//     // @apply inline-block bg-black;
+//   }

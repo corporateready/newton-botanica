@@ -1,0 +1,7 @@
+.tl__navigation {
+    @apply w-full;
+
+    @media screen and (max-width: 576px) {
+        @apply hidden;
+    }
+}

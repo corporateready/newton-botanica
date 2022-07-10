@@ -1,7 +1,9 @@
 .slider__body {
   @apply h-full w-full;
     // background: #151515;
-    overflow: hidden;
+    // overflow: hidden;
+    height: 100%;
+    width: 100%;
     padding: 0;
     margin: 0;
     display: flex;
@@ -10,11 +12,11 @@
   }
   .next,
   .prev {
-    top: calc(50% - 20px);
+    bottom: 46%;
     position: absolute;
     background: #2BB018;
     width: 40px;
-    height: auto;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,15 +29,46 @@
     @media screen and (max-width: 1440px) {
       width: calc(16px + (40 - 16)*(100vw - 576px)/(1440 - 576));
   }
+
+  @media screen and (max-width: 576px) {
+    @apply bottom-[-13%] h-[25px] w-[25px] py-[2%];
+  }
+  }
+  .slider__pagination {
+    @apply hidden;
+    @media (max-width: 576px) {
+      @apply block absolute bottom-[-14%]; 
+    }
   }
   .next {
-    @apply right-[-6%];
+    @apply right-[-6%] disabled:opacity-0;
+
+    @media (max-width: 576px) {
+      @apply right-0;
+    }
+  }
+  .next__disabled {
+    @apply disabled:opacity-0;
   }
   .prev {
-    @apply left-[-6%];
+    @apply left-[-6%] ;
     transform: scale(-1);
+
+    @media (max-width: 576px) {
+      @apply left-0;
+    }
+  }
+  .prev {
+    @apply disabled:opacity-0;
   }
   .img {
     position: absolute;
     width: 100%;
+  }
+  // =====>
+  .inner__counter {
+    @apply text-[#2BB018] text-xl;
+  }
+  .inner__counter_lehgth {
+    @apply text-[#2D2D2B] text-xl;
   }

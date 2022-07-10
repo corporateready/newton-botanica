@@ -1,5 +1,5 @@
 .tl__navigation {
-    @apply flex justify-between;
+    @apply flex justify-between w-full;
     @media screen and (max-width: 576) {
         @apply hidden;
     }

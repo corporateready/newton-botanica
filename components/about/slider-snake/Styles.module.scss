@@ -1,14 +1,14 @@
 @import '../../../styles/mixins.scss';
 
 .complex__section {
-    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px] pb-[5%];
+    @apply h-auto w-full relative top-0 left-0 bg-white my-[-1px] pb-[5%];
     font-family: 'Gilroy-Bold';
 }
 .complex__wrapper {
-    @apply w-full mx-auto relative;
+    @apply w-full mx-auto ;
 }
 .complex__inner {
-    @apply h-full w-full pt-[5%] pb-[2%] px-[7%];
+    @apply h-[75vh] w-full pt-[5%] pb-[2%] px-[7%] relative; 
     background: #fff;
     overflow: hidden;
 }
@@ -25,7 +25,7 @@
         width: 13%;
 
         @media screen and (max-width: 576px) {
-            @apply w-[70%] left-[16%];
+            @apply w-[20%] left-[40%];
             // font-size: calc(10px + (20 - 10)*(100vw - 320px)/(576 - 320));
         }
     }

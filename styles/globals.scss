@@ -4,7 +4,6 @@
 
 // @import "swiper/css/bundle";
 // @import "swiper/css";
-// @import "swiper/css/grid";
 // @import "swiper/css/pagination";
 // @import "swiper/css/free-mode";
 // @import "swiper/css/navigation";
@@ -39,7 +38,7 @@
 
 @layer {
     body {
-        @apply max-w-full mx-auto flex flex-col;
+        @apply max-w-full h-auto mx-auto flex flex-col;
     }
 }
 // .swiper-button-prev::after {
@@ -59,3 +58,23 @@
 // .swiper-button-prev::after {
 //   @apply opacity-0;
 // }
+// ==========>
+.--swiper-pagination-bullet {
+  @apply text-[#C4C4C4] bg-transparent border-[#2BB018] rounded-md mx-[2%] py-[0.4%] px-[2.3%] relative bottom-0 left-0 inline-block border-[1px] hover:cursor-pointer;
+  @media screen and(max-width: 576px) {
+    @apply text-[#C4C4C4] text-sm bg-transparent border-[#2BB018] rounded-sm mx-[1.5%] py-[0.3%] px-[2%] inline-block border-[1px] hover:cursor-pointer;
+  }
+}
+.--swiper-pagination-bullet-active{
+  @apply text-white bg-[#2BB018];
+}
+.--swiper-wrapper {
+  .swiper-pagination {
+  @media screen and (max-width: 576px){
+    @apply pb-[17%];
+}
+  }
+}
+.--swiper-thumbs {
+  @apply flex flex-col;
+}

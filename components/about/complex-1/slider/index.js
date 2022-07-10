@@ -5,6 +5,9 @@ import { wrap } from "popmotion";
 import { images } from "./image-data";
 
 import styles from "./Slider.module.scss";
+import Image from "next/image";
+
+import arrow__icon from "../../../../public/static/planning-page/complex/next-arrow.svg";
 
 const variants = {
   enter: (direction) => {
@@ -43,6 +46,18 @@ export const Slider = () => {
 
   return (
     <div className={styles.slider__body}>
+      <div
+        className={page === 0 ? styles.prev__disabled : styles.prev}
+        onClick={() => paginate(-1)}
+      >
+        <Image src={arrow__icon} height={32} width={21} />
+      </div>
+      <div
+        className={page > 2 ? styles.next__disabled : styles.next}
+        onClick={() => paginate(1)}
+      >
+        <Image src={arrow__icon} height={32} width={21} />
+      </div>
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -69,18 +84,11 @@ export const Slider = () => {
             }
           }}
         >
-          <div key={page}>
-          {images[imageIndex]}
-          </div>
-          
+          <div key={page}>{images[imageIndex]}</div>
         </motion.div>
       </AnimatePresence>
-      <div className={styles.next} onClick={() => paginate(1)}>
-        {"‣"}
-      </div>
-      <div className={styles.prev} onClick={() => paginate(-1)}>
-        {"‣"}
-      </div>
+      <div className={styles.slider__pagination}>
+        <span className={styles.inner__counter}>{page + 1}</span>/<span className={styles.inner__counter_length}>{images.length + 1}</span></div>
     </div>
   );
 };
