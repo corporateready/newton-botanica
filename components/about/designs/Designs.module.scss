@@ -21,12 +21,8 @@
     @include text(32px, 150%, 400, #2D2D2B);
     @apply relative pt-[2%] uppercase text-center;
 
-    @media screen and (max-width: 1440px) {
-        // @apply pt-[5.8%];
-    }
-
     @media screen and (max-width: 576px) {
-        @apply pt-[10%];
+        @apply pt-[5%];
         font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
     }
 

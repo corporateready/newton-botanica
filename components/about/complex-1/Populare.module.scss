@@ -1,7 +1,7 @@
 @import '../../../styles/mixins.scss';
 
 .complex__section {
-    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px] pb-[5%] overflow-hidden;
+    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px] pb-[2%] overflow-hidden;
     font-family: 'Gilroy-Bold';
 
     @media (max-width: 576px) {

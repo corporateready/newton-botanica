@@ -31,13 +31,13 @@
   }
 
   @media screen and (max-width: 576px) {
-    @apply bottom-[-13%] h-[25px] w-[25px] py-[2%];
+    @apply bottom-[-9%] h-[25px] w-[25px] py-[2%];
   }
   }
   .slider__pagination {
     @apply hidden;
     @media (max-width: 576px) {
-      @apply block absolute bottom-[-14%]; 
+      @apply block absolute bottom-[-10%]; 
     }
   }
   .next {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
-import planning__bg from "/public/static/planning-page/Group_2678.png";
+import planning__bg from "/public/static/planning-page/Group_2678.webp";
 import {
   Hero,
   Complex,
@@ -38,7 +38,6 @@ export default function Planning() {
           <Image
             src={planning__bg}
             layout="fill"
-            // objectFit="cover"
             quality={100}
             priority
             alt="home background"
