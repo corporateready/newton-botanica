@@ -117,7 +117,7 @@ function SwiperThumbs() {
         {thumb__hero.map((thumb, index) => (
           <SwiperSlide key={index} className={styles.thumb__wrapper}>
             <div className={styles.swiper_slide}>
-              <img src={thumb} alt="" />
+            <Image src={thumb} height={525} width={672} priority alt="" />
             </div>
           </SwiperSlide>
         ))}

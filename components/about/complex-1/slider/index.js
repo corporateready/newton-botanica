@@ -50,13 +50,15 @@ export const Slider = () => {
         className={page === 0 ? styles.prev__disabled : styles.prev}
         onClick={() => paginate(-1)}
       >
-        <Image src={arrow__icon} height={32} width={21} />
+        <Image src={arrow__icon} height={32} width={21} alt="" />
       </div>
       <div
-        className={page > 2 ? styles.next__disabled : styles.next}
+        className={
+          page > images.length - 2 ? styles.next__disabled : styles.next
+        }
         onClick={() => paginate(1)}
       >
-        <Image src={arrow__icon} height={32} width={21} />
+        <Image src={arrow__icon} height={32} width={21} alt="" />
       </div>
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
@@ -88,7 +90,9 @@ export const Slider = () => {
         </motion.div>
       </AnimatePresence>
       <div className={styles.slider__pagination}>
-        <span className={styles.inner__counter}>{page + 1}</span>/<span className={styles.inner__counter_length}>{images.length + 1}</span></div>
+        <span className={styles.inner__counter}>{page + 1}</span>/
+        <span className={styles.inner__counter_length}>{images.length}</span>
+      </div>
     </div>
   );
 };
