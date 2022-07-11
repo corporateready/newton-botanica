@@ -8,7 +8,10 @@
     @apply w-[1170px] mx-auto px-0;
 
     @media screen and(max-width: 1440px) {
-        @apply w-full px-[7%];
+        @apply w-full px-[9.3%];
+    }
+    @media screen and(max-width: 576px) {
+        @apply w-full px-[5%];
     }
 }
 .header__inner {
