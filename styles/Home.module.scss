@@ -143,7 +143,7 @@
 .header__phone_link {
     @apply flex items-center justify-center w-[21%];
     animation-name: stretch;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-direction: alternate;
     animation-iteration-count: infinite;
@@ -151,11 +151,11 @@
 
     @keyframes stretch {
         0% {
-            transform: scale(1);
+            transform: scale(0.95);
             border-radius: 100%;
         }
         100% {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
     }
 
@@ -179,11 +179,11 @@
     }
 }
 .header__phone_link_number {
-    @include text(20px, 130%, 400, #2d2d2b);
+    @include text(22px, 100%, 400, #2d2d2b);
     @apply flex ml-[3%] text-right uppercase hover:text-[#2BB018] hover:duration-150;
 
     @media screen and(max-width: 1440px) {
-        font-size: calc(9px + (20 - 9)*(100vw - 576px)/(1440 - 576));
+        font-size: calc(9px + (22 - 9)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {

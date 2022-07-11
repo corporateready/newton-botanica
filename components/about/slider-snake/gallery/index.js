@@ -52,22 +52,8 @@ function SwiperThumbs() {
   return (
     <>
       <Head></Head>
-      {/* <div className={styles.swiper_button} ref={prevRef}>
-        prev
-      </div> */}
 
       <Swiper
-        style={
-          {
-            // "--swiper-navigation-color": "#fff",
-            // "--swiper-pagination-color": "#2BB018",
-            // "--swiper-pagination-bullet-active": "#000",
-            //   "--swiper-pagination-bullet": {
-            //     "border": "#2BB018",
-            //     "border": "1px",
-            //   }
-          }
-        }
         spaceBetween={10}
         navigation={false}
         pagination={{
@@ -85,8 +71,8 @@ function SwiperThumbs() {
         className={styles.mySwiper2}
       >
         {thumb__hero.map((thumb, index) => (
-          <SwiperSlide key={index}>
-            <div className="">
+          <SwiperSlide key={index} className={styles.thumb__wrapper}>
+            <div className={styles.swiper_slide}>
               <Image src={thumb} height={525} width={672} priority alt="" />
             </div>
           </SwiperSlide>
@@ -95,15 +81,17 @@ function SwiperThumbs() {
 
       <Swiper
         onSwiper={setThumbsSwiper}
-        spaceBetween={5}
+        spaceBetween={10}
         freeMode={true}
         breakpoints={{
-          576: {
+          575: {
             slidesPerView: 2,
+            direction: "vertical"
           },
-          300: {
+          0: {
             slidesPerView: 3,
-            spaceBetween: 5,
+            spaceBetween: 10,
+            direction:"horizontal"
           },
         }}
         direction={"vertical"}
@@ -116,16 +104,13 @@ function SwiperThumbs() {
       >
         {thumb__hero.map((thumb, index) => (
           <SwiperSlide key={index} className={styles.thumb__wrapper}>
-            <div className={styles.swiper_slide}>
-            <Image src={thumb} height={525} width={672} priority alt="" />
+            <div className={styles.swiper_thumb_slide}>
+            <Image src={thumb} height={243} width={362} priority alt="" />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* <div className="swiper-button" ref={nextRef}>
-        next
-      </div> */}
     </>
   );
 }
