@@ -11,95 +11,97 @@
 }
 
 .whatsapp {
-    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
 
-    svg {
-        @media screen and(max-width: 1000px) {
-            @apply h-5 w-5;
-        }
-
-        @media screen and(max-width: 576px) {
-            @apply h-8 w-8;
-        }
-    }
-
-    @media screen and(max-width: 1000px) {
-        @apply h-8 w-8;
+    @media screen and(max-width: 1440px) {
+        width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+        height: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
-        @apply h-14 w-14 rounded-[30px];
+        width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+        height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+    }
+
+    svg {
+        @media screen and(max-width: 1440px) {
+            width: calc(12px + (32 - 12)*(100vw - 576px)/(1440 - 576));
+        }
+        @media screen and(max-width: 576px) {
+            width: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+            height: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+        }
     }
 }
 
 .viber {
-    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
 
-    svg {
-        @apply text-sm;
-
-        @media screen and(max-width: 1000px) {
-            @apply h-5 w-5;
-        }
-
-        @media screen and(max-width: 576px) {
-            @apply h-8 w-8;
-        }
-    }
-
-    @media screen and(max-width: 1000px) {
-        @apply h-8 w-8;
+    @media screen and(max-width: 1440px) {
+        width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+        height: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
-        @apply h-14 w-14 rounded-[30px];
+        width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+        height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+    }
+
+    svg {
+        @media screen and(max-width: 1440px) {
+            width: calc(12px + (32 - 12)*(100vw - 576px)/(1440 - 576));
+        }
+        @media screen and(max-width: 576px) {
+            width: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+            height: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+        }
     }
 }
 
 .messenger {
-    @apply bg-white h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-white h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
 
-    svg {
-        @apply text-sm;
-
-        @media screen and(max-width: 1000px) {
-            @apply h-5 w-5;
-        }
-
-        @media screen and(max-width: 576px) {
-            @apply h-8 w-8;
-        }
-    }
-
-    @media screen and(max-width: 1000px) {
-        @apply h-8 w-8;
+    @media screen and(max-width: 1440px) {
+        width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+        height: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
-        @apply h-14 w-14 rounded-[30px];
+        width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+        height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+    }
+
+    svg {
+        @media screen and(max-width: 1440px) {
+            width: calc(12px + (32 - 12)*(100vw - 576px)/(1440 - 576));
+        }
+        @media screen and(max-width: 576px) {
+            width: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+            height: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+        }
     }
 }
 
 .phone {
-    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-3xl hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
 
-    svg {
-        @apply text-sm;
-
-        @media screen and(max-width: 1000px) {
-            @apply h-4 w-4;
-        }
-
-        @media screen and(max-width: 576px) {
-            @apply h-7 w-7;
-        }
-    }
-
-    @media screen and(max-width: 1000px) {
-        @apply h-8 w-8;
+    @media screen and(max-width: 1440px) {
+        width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+        height: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
-        @apply h-14 w-14 rounded-[30px];
+        width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+        height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+    }
+
+    svg {
+        @media screen and(max-width: 1440px) {
+            width: calc(8px + (32 - 8)*(100vw - 576px)/(1440 - 576));
+        }
+        @media screen and(max-width: 576px) {
+            width: calc(18px + (45 - 18)*(100vw - 320px)/(576 - 320));
+            height: calc(18px + (45 - 18)*(100vw - 320px)/(576 - 320));
+        }
     }
 }

@@ -36,8 +36,8 @@ export default function Index() {
   return (
     <article className={styles.messengers}>
       {messengers.map((item) => (
-          <Link href={item.irl} key={item.title}>
-        <a className={styles[item.title]}>{item.icon}</a>
+        <Link href={item.irl} key={item.title}>
+          <a className={styles[item.title]}>{item.icon}</a>
         </Link>
       ))}
     </article>

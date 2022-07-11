@@ -87,6 +87,7 @@ export default function Home() {
                   priority
                 />
               </div>
+
               <div className={styles.navigate__side}>
                 <div className={styles.buttons__up}>
                   <Link href="/about">
@@ -104,13 +105,14 @@ export default function Home() {
                   SOLICITĂ OFERTA
                 </button>
               </div>
+
+              <div className={styles.desktop__messengerrs}>
+                <Messengers />
+              </div>
             </div>
             <div className={styles.mobile__messengers}>
               <Messengers />
             </div>
-          </div>
-          <div className={styles.desktop__messengerrs}>
-            <Messengers />
           </div>
         </div>
 
