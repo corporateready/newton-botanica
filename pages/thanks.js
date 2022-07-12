@@ -4,9 +4,12 @@ import styles from "../styles/Thanks.module.scss";
 import Layout from "../components/thanks-layout";
 import Messenger from '../components/messengers'
 import YouTube, { YouTubeProps } from "react-youtube";
+import Head from "next/head";
 
 export default function Thanks() {
   return (
+    <>
+    <Head></Head>
     <div className={styles.thanks__screen}>
       <div className={styles.thanks__massangers}>
       <Messenger/>
@@ -16,7 +19,7 @@ export default function Thanks() {
           <div className={styles.container}>
             <div className={styles.thanks__wrapper}>
               <h1 className={styles.thanks__title}>
-                thank you thank youthank you thank you,
+                thank you <div className={styles.separate}></div> thank you <span className={styles.content__remove}>thank you</span> thank you,
                 <br />
                 <span>NEWTON HOUSE GRĂDINA BOTANICĂ</span>
               </h1>
@@ -26,7 +29,7 @@ export default function Thanks() {
                 </div>
                 <Link href={"/"}>
                   <a className={styles.back__button}>
-                    <span>
+                    {/* <span className={styles.back__button_icon}> */}
                       <svg
                         width="17"
                         height="12"
@@ -39,7 +42,7 @@ export default function Thanks() {
                           fill="#3BAA35"
                         />
                       </svg>
-                    </span>
+                    {/* </span> */}
                     <span>înapoi la site</span>
                   </a>
                 </Link>
@@ -49,12 +52,12 @@ export default function Thanks() {
         </div>
       </Layout>
     </div>
+    </>
   );
 }
 
 function YoutubeVideo() {
   const onPlayerReady = (event) => {
-    console.log(event.target.pauseVideo());
     event.target.pauseVideo();
   };
 
@@ -71,6 +74,7 @@ function YoutubeVideo() {
   return (
     <YouTube
       videoId="VdszNPYn5dU"
+      className={styles.video__body}
       opts={opts}
       onReady={onPlayerReady}
     />

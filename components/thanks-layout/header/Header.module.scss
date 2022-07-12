@@ -16,7 +16,7 @@
     @apply flex justify-between items-center py-[0.7%] w-full h-full;
 
     @media screen and(max-width: 576px) {
-        // @apply py-[1%];
+        @apply py-[3.5%];
     }
 }
 .header__logo {
@@ -25,12 +25,16 @@
         width: calc(36px + (90 - 36)*(100vw - 576px)/(1440 - 576));
     }
 
+    @media screen and(max-width: 576px) {
+        width: calc(68px + (122 - 68)*(100vw - 320px)/(576 - 320));
+    }
+
 }
 .header__phone_link {
     @apply flex items-center justify-end w-[21%];
 
     @media screen and(max-width: 576px) {
-        @apply hidden;
+        @apply w-[50%];
     }
 }
 .header__phone_icon {
@@ -48,6 +52,10 @@
         @apply w-[10px] pt-0;
     }
 
+    @media screen and(max-width: 768px) {
+        @apply w-[7%];
+    }
+
 }
 .header__phone_link_number {
     @include text(20px, 130%, 400, #2d2d2b);
@@ -58,6 +66,6 @@
     }
 
     @media screen and(max-width: 576px) {
-        @include text(18px, 130%, 700, #2BB018);
+        font-size: calc(11px + (21 - 11)*(100vw - 320px)/(576 - 320));
     }
 }

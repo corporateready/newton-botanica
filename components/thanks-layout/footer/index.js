@@ -31,21 +31,21 @@ export default function index() {
             <Link href={"/"}>
               <a className={styles.social__item}>
                 <span className={styles.social__item_icon}>
-                  <FiInstagram size={15} />
+                  <FiInstagram size={30} />
                 </span>
               </a>
             </Link>
             <Link href={"/"}>
               <a className={styles.social__item}>
                 <span className={styles.social__item_icon}>
-                  <FaFacebookF size={15} />
+                  <FaFacebookF size={30} />
                 </span>
               </a>
             </Link>
             <Link href={"/"}>
               <a className={styles.social__item}>
-                <span className={styles.social__item_icon}>
-                  <FaYoutube size={15} />
+                <span className={styles.social__item_icon_YT}>
+                  <FaYoutube size={35} />
                 </span>
               </a>
             </Link>
@@ -94,6 +94,53 @@ export default function index() {
             </div>
           </div>
         </div>
+        <div className={styles.footer__contact_mob}>
+          <div className={styles.footer__contact_bottom}>
+            <div className={styles.footer__contact_item}>
+              <span className={styles.footer__contact_icon}>
+                <Image
+                  src={phone__icon}
+                  height={24}
+                  width={24}
+                  priority
+                  alt="footer phone icon"
+                />
+              </span>
+              <span className={styles.footer__contact_text}>060 80 20 20</span>
+            </div>
+            <div className={styles.footer__contact_item}>
+              <span className={styles.footer__contact_icon}>
+                <Image
+                  src={loc__icon}
+                  height={24}
+                  width={24}
+                  priority
+                  alt="footer phone icon"
+                />
+              </span>
+              <span className={styles.footer__contact_text}>
+                str. Grădina Botanică, 18
+              </span>
+            </div>
+            <div className={styles.footer__contact_item}>
+              <span className={styles.footer__contact_icon}>
+                <Image
+                  src={mail__icon}
+                  height={24}
+                  width={24}
+                  priority
+                  alt="footer phone icon"
+                />
+              </span>
+              <span className={styles.footer__contact_text}>
+                newton botanica@gmail.com
+              </span>
+            </div>
+          </div>
+        </div>
+        <p className={styles.footer__bottom}>
+          Toate drepturile rezervate NEWTON HOUSE GRĂDINA BOTANICĂ © 2022.
+        </p>
       </div>
     </footer>
   );
