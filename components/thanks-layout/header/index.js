@@ -14,8 +14,8 @@ export default function index() {
             <a className={styles.header__logo}>
               <Image
                 src={header__logo}
-                height={54}
-                width={108}
+                height={45}
+                width={90}
                 priority
                 alt="home header logo"
               />

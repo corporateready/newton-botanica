@@ -18,40 +18,39 @@
     @apply grid grid-cols-3 py-[2%] w-full h-full;
 }
 .footer__logo {
-    @apply self-center hover:scale-75 hover:duration-200;
+    @apply self-center;
 
     @media screen and(max-width: 1440px) {
-        width: calc(69px + (171 - 13)*(100vw - 576px)/(1440 - 576));
+        width: calc(69px + (171 - 69)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
         width: calc(59px + (101 - 59)*(100vw - 320px)/(576 - 320));
     }
 }
+// ===== socials =====>
 .footer__socials {
     @apply h-auto flex justify-center items-center space-x-[7%];
 }
 .social__item {
-    @apply w-9 h-9 bg-white rounded-full flex justify-center;
-
-    @media screen and(max-width: 900px) {
-        @apply w-7 h-7;
-    }
-
-    @media screen and(max-width: 576px) {
-        @apply w-4 h-4;
-    }
-}
-.social__item_icon {
-    @apply flex items-center;
+    @apply bg-white rounded-full flex justify-center;
 
     @media screen and(max-width: 1440px) {
-        width: calc(15px + (24 - 15)*(100vw - 576px)/(1440 - 576));
+        height: calc(11px + (26 - 11)*(100vw - 576px)/(1440 - 576));
+        width: calc(11px + (26 - 11)*(100vw - 576px)/(1440 - 576));
     }
-    @media screen and(max-width: 576px) {
 
-            width: calc(8px + (10 - 8)*(100vw - 320px)/(576 - 320));
+}
+.social__item_icon {
+    @apply flex items-center justify-center;
+
+    @media screen and(max-width: 1440px) {
+        width: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
     }
+    // @media screen and(max-width: 576px) {
+
+    //         width: calc(8px + (10 - 8)*(100vw - 320px)/(576 - 320));
+    // }
 }
 .footer__contact {
     @apply flex flex-col h-full space-y-[1%];

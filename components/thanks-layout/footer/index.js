@@ -6,9 +6,9 @@ import footer__logo from "../../../public/static/footer/logo-footer.svg";
 import phone__icon from "../../../public/static/footer/phone-icon.svg";
 import loc__icon from "../../../public/static/footer/location.svg";
 import mail__icon from "../../../public/static/footer/mail-icon.svg";
-import {FiInstagram} from '@react-icons/all-files/fi/FiInstagram'
-import {FaFacebookF} from '@react-icons/all-files/fa/FaFacebookF'
-import {FaYoutube} from '@react-icons/all-files/fa/FaYoutube'
+import { FiInstagram } from "@react-icons/all-files/fi/FiInstagram";
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
+import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 
 export default function index() {
   return (
@@ -19,30 +19,38 @@ export default function index() {
             <a className={styles.footer__logo}>
               <Image
                 src={footer__logo}
-                height={86}
+                height={79}
                 width={171}
                 priority
                 alt="home header logo"
               />
             </a>
           </Link>
+
           <div className={styles.footer__socials}>
-            <p className={styles.social__item}>
-              <span className={styles.social__item_icon}>
-                <FiInstagram size={24} />
-              </span>
-            </p>
-            <p className={styles.social__item}>
-            <span className={styles.social__item_icon}>
-                <FaFacebookF size={24} />
-              </span>
-            </p>
-            <p className={styles.social__item}>
-            <span className={styles.social__item_icon}>
-                <FaYoutube size={24} />
-              </span>
-            </p>
+            <Link href={"/"}>
+              <a className={styles.social__item}>
+                <span className={styles.social__item_icon}>
+                  <FiInstagram size={15} />
+                </span>
+              </a>
+            </Link>
+            <Link href={"/"}>
+              <a className={styles.social__item}>
+                <span className={styles.social__item_icon}>
+                  <FaFacebookF size={15} />
+                </span>
+              </a>
+            </Link>
+            <Link href={"/"}>
+              <a className={styles.social__item}>
+                <span className={styles.social__item_icon}>
+                  <FaYoutube size={15} />
+                </span>
+              </a>
+            </Link>
           </div>
+
           <div className={styles.footer__contact}>
             <div className={styles.footer__contact_item}>
               <span className={styles.footer__contact_icon}>

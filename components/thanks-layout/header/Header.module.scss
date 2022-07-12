@@ -3,6 +3,7 @@
 .header {
     @apply absolute top-0 left-0 bg-white h-auto w-full z-10;
     font-family: 'Gilroy-Bold';
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
 }
 .container {
     @apply w-[1170px] mx-auto px-0;
@@ -20,17 +21,10 @@
 }
 .header__logo {
 
-    @media screen and(max-width: 1024px) {
-        @apply w-[90px];
+    @media screen and(max-width: 1440px) {
+        width: calc(36px + (90 - 36)*(100vw - 576px)/(1440 - 576));
     }
 
-    @media screen and(max-width: 768px) {
-        @apply w-[70px];
-    }
-
-    @media screen and(max-width: 576px) {
-        @apply w-[90px];
-    }
 }
 .header__phone_link {
     @apply flex items-center justify-end w-[21%];

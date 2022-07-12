@@ -1,12 +1,89 @@
-@import '../styles/mixins.scss';
+@import "../styles/mixins.scss";
 
 .thanks__screen {
-    @apply bg-[url('/static/home-page/background.webp')] bg-no-repeat bg-cover object-cover flex flex-col h-screen w-full;
+    @apply bg-[url('/static/home-page/background.webp')] relative flex flex-col h-full w-full;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-.video__wrapper {
-    @apply w-[500px] h-[300px] rounded-md my-[7%] relative overflow-auto;
+.thanks__massangers {
+    @apply absolute top-[20%] left-[2%];
+}
+.thanks {
+    @apply flex justify-center h-full w-full;
+}
 
-    @media screen and (max-width: 576px) {
-        @apply w-[95%] h-auto mx-auto;
+.container {
+    @apply w-[1170px] mx-auto px-0;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-full px-[9.3%];
     }
+
+    @media screen and(max-width: 576px) {
+        @apply w-full px-[5%];
+    }
+}
+
+.thanks__wrapper {
+    @apply bg-white w-full h-full flex flex-col items-center px-[5%];
+}
+
+.thanks__title {
+    @include text(32px, 130%, 600, #2d2d2b);
+    @apply pt-[9%] uppercase text-center relative;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -3%;
+        left: 0;
+        display: inline-block;
+        background: radial-gradient(50% 50% at 50% 50%, #2BB018 0%, rgba(43, 176, 24, 0) 100%);
+        height: 2px;
+        width: 100%;
+    }
+
+    span {
+        @include text(32px, 130%, 600, #2BB018);
+
+        @media screen and(max-width: 1440px) {
+            font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+        }
+    }
+}
+
+// ===========>
+.video__wrapper {
+    @apply h-auto w-full flex flex-col mt-[3%] mx-auto overflow-hidden mb-[6%];
+    background: #FFFFFF;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+}
+.video__wrapper_frame {
+    // @media screen and(max-width: 1440px) {
+    //     height: calc(236px + (590 - 236)*(100vw - 576px)/(1440 - 576));
+    // }
+}
+.video_responsive {
+    // overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.video_responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.back__button {
+    @include text(15px, 100%, 700, #2BB018);
+    @apply flex self-end justify-center space-x-[5%] border-[1px] border-[#C4C4C4] bg-transparent w-[20%] rounded-md my-[1.5%] tracking-wider uppercase py-[1%] mr-[2%];
 }
