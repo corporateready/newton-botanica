@@ -1,5 +1,5 @@
 .messengers {
-    @apply flex flex-col space-y-[45%];
+    @apply flex flex-col space-y-[55%];
 
     @media screen and(max-width: 576px) {
         @apply flex flex-row items-baseline justify-between space-y-0 w-full mt-[15%] mx-0 relative;
@@ -11,7 +11,7 @@
 }
 
 .whatsapp {
-    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
 
     @media screen and(max-width: 1440px) {
         width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
@@ -83,7 +83,7 @@
 }
 
 .phone {
-    @apply bg-[#25D366] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
 
     @media screen and(max-width: 1440px) {
         width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));

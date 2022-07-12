@@ -38,7 +38,7 @@
     }
 }
 .desktop__messengerrs {
-    @apply absolute top-[45%] left-[-15%];
+    @apply fixed top-[30%] left-[-3%];
 
     @media screen and(max-width: 576px) {
         @apply hidden;
@@ -59,7 +59,7 @@
     }
 }
 .inner {
-    @apply relative flex justify-center items-center space-x-[6%] pt-[8%] h-screen w-full;
+    @apply absolute flex justify-center top-[20%] left-0 space-x-[4%] h-screen w-full;
 
     @media screen and(max-width: 576px) {
         @apply flex-col h-full space-x-0 pt-[36%];
@@ -85,21 +85,20 @@
     }
 }
 .navigate__side {
-    @apply w-[28.5%] mt-[5%];
+    @apply w-[25%] mt-[14%];
 
     @media screen and(max-width: 576px) {
         @apply w-full mt-[10%];
     }
 }
 .buttons__up {
-    @apply flex relative space-x-[5%];
+    @apply flex space-x-[3%];
 }
 .button__about {
     @include text(12px, 130%, 400, #fff);
-    @apply block bg-none border-[1px] px-[38px] py-[17px] rounded uppercase text-center tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
+    @apply flex items-center justify-center bg-none w-[50%] border-[1px] border-white py-[3%] rounded uppercase tracking-wider hover:bg-white hover:text-[#2BB018] duration-150;
 
     @media screen and(max-width: 1440px) {
-        @apply w-[50%] px-0 py-[5%];
         font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
@@ -108,10 +107,9 @@
 }
 .button__planning {
     @include text(12px, 130%, 400, #fff);
-    @apply block bg-none border-[1px] px-[38px] py-[17px] rounded uppercase text-center tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
+    @apply flex items-center justify-center bg-none w-[50%] border-[1px] border-white py-[3%] rounded uppercase tracking-wider hover:bg-white hover:text-[#2BB018] duration-150;
 
     @media screen and(max-width: 1440px) {
-        @apply w-[50%] px-0 py-[5%];
         font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
     }
 
@@ -121,10 +119,9 @@
 }
 .button__send {
     @include text(12px, 130%, 400, #fff);
-    @apply block relative bg-[#2BB018] px-[38px] py-[17px] mt-[5%] w-full rounded uppercase tracking-wider hover:bg-white hover:text-[#2BB018] hover:duration-200;
+    @apply flex justify-center items-center bg-[#2BB018] py-[3.5%] mt-[3%] w-full rounded uppercase tracking-wider hover:bg-white hover:text-[#2BB018] hover:duration-200;
 
     @media screen and(max-width: 1440px) {
-        @apply px-0 py-[5%];
         font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
     }
 
@@ -152,7 +149,6 @@
     @keyframes stretch {
         0% {
             transform: scale(0.9);
-            border-radius: 100%;
         }
         100% {
             transform: scale(1);
@@ -179,7 +175,7 @@
     @apply flex text-right uppercase hover:text-[#2BB018] hover:duration-150;
 
     @media screen and(max-width: 1440px) {
-        // font-size: calc(9px + (22 - 9)*(100vw - 576px)/(1440 - 576));
+        font-size: calc(9px + (22 - 9)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
@@ -191,7 +187,7 @@
 //  ===== popup offer =====>
 .offer__section {
     @apply h-screen w-screen fixed top-0 left-0 z-20;
-    background: rgba(45, 45, 43, 0.8);
+    background: rgb(0 0 0 / 85%);
 
     @media screen and (max-width: 576px) {
         @apply px-[2%];
@@ -208,7 +204,7 @@
     }
 }
 .offer__inner {
-    @apply h-auto w-[70%] bg-white relative left-[15%] mt-[15%] z-auto px-[9%] py-[5%] rounded-md;
+    @apply h-auto w-[63%] bg-white relative left-[18%] mt-[15%] z-auto pt-[3%] pb-[4.5%] rounded-md;
     @media screen and (max-width: 1420px) {
         @apply mt-[10%];
     }
@@ -217,7 +213,7 @@
     }
 }
 .offer__button_close {
-    @apply absolute top-[6%] right-[3%];
+    @apply absolute top-[4%] right-[2.5%];
 }
 .offer__title {
     @include text(38px, 130%, 600, #2D2D2B);
@@ -233,7 +229,8 @@
 }
 .offer__subtitle {
     @include text(20px, 130%, 600, #2c2c2c);
-    @apply text-center mt-[3%];
+    @apply text-center mt-[2%];
+    font-family: 'Gilroy Regular';
 
     @media screen and(max-width: 1440px) {
         font-size: calc(7px + (20 - 7)*(100vw - 576px)/(1440 - 576));
@@ -244,11 +241,11 @@
     }
 }
 .offer__form {
-    @apply flex flex-col py-[5%] mx-auto w-[70%];
+    @apply flex flex-col py-[4%] mx-auto w-[52%];
 
     input {
         @include text(15px, 130%, 400, #2D2D2B);
-        @apply border-[1px] rounded-md py-[3%] mb-[4%] pl-[5%] focus-visible:outline-none;
+        @apply border-[1px] rounded-sm py-[3%] mb-[3%] pl-[3%] focus-visible:outline-none;
         font-family: 'Gilroy Regular';
 
         @media screen and(max-width: 1440px) {
@@ -261,7 +258,7 @@
 
         &::placeholder {
             @include text(15px, 130%, 400, #2D2D2B);
-            @apply uppercase;
+            @apply uppercase tracking-wider;
             font-family: 'Gilroy Regular';
 
             @media screen and(max-width: 1440px) {
@@ -281,7 +278,7 @@
 // ===== send button =====>
 .button__sending {
     @include text(15px, 130%, 700, #000);
-    @apply block w-full bg-[#2BB018] border-[#2BB018] border-2 text-white mx-auto mt-[2%] py-[2.5%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-2 hover:text-[#2BB018] hover:duration-150;
+    @apply flex justify-center w-full bg-[#2BB018] border-[#2BB018] border-[1px] text-white mx-auto py-[3.5%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-[1px] hover:text-[#2BB018] hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
@@ -293,7 +290,7 @@
 }
 // ===== terms and policy =====>
 .terms__policy {
-    @apply text-center mt-[-2%];
+    @apply text-center mt-[-2.5%];
 
     @include text(15px, 130%, 400, #2c2c2c);
 

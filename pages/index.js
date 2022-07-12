@@ -68,6 +68,7 @@ export default function Home() {
         <div className={styles.home}>
           <div className={styles.container}>
             <div className={styles.inner}>
+
               <div className={styles.image__side}>
                 <Image
                   src={image__side}
@@ -109,6 +110,7 @@ export default function Home() {
               <div className={styles.desktop__messengerrs}>
                 <Messengers />
               </div>
+
             </div>
             <div className={styles.mobile__messengers}>
               <Messengers />
@@ -169,8 +171,8 @@ function OfferPopUpSending({ hanlerClosePopup }) {
           >
             <Image
               src={close__button}
-              height={24}
-              width={24}
+              height={13}
+              width={13}
               alt="close button icon"
             />
           </button>
