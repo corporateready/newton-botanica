@@ -21,6 +21,8 @@ export default function Home() {
   return (
     <>
       <Head>
+      <link rel="preload" href="globals.scss" as="style" onload="this.rel='stylesheet'"/>
+      <link rel="preconnect" href="http://localhost:3000/" />
         <title>Newton House Grădina Botanica</title>
         <meta
           name="description"
@@ -68,7 +70,6 @@ export default function Home() {
         <div className={styles.home}>
           <div className={styles.container}>
             <div className={styles.inner}>
-
               <div className={styles.image__side}>
                 <Image
                   src={image__side}
@@ -107,14 +108,14 @@ export default function Home() {
                 </button>
               </div>
 
-              <div className={styles.desktop__messengerrs}>
+              <div className={styles.desktop__messengers}>
                 <Messengers />
               </div>
-
-            </div>
-            <div className={styles.mobile__messengers}>
+              <div className={styles.mobile__messengers}>
               <Messengers />
             </div>
+            </div>
+            
           </div>
         </div>
 
