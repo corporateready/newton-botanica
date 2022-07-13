@@ -67,11 +67,11 @@
     @apply absolute flex justify-center top-[20%] left-0 space-x-[4%] h-screen w-full;
 
     @media screen and(max-width: 576px) {
-        @apply flex-col h-full space-x-0 top-0 pt-0 px-[7%];
+        @apply flex-col h-full space-x-0 top-0 pt-[15%] px-[7%];
     }
 
     @media (max-width: 576px) and (max-height: 740px) {
-        @apply relative flex-col space-x-0 pt-[40%];
+        @apply relative flex-col space-x-0 pt-[30%];
     }
 }
 .image__side {
