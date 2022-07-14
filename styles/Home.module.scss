@@ -43,7 +43,7 @@
     }
 }
 .desktop__messengers {
-    @apply fixed top-[30%] left-[-3%];
+    @apply fixed top-[32%] left-[-3%];
 
     @media screen and(max-width: 576px) {
         @apply hidden;

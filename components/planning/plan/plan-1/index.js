@@ -49,16 +49,17 @@ export default function Plan_1 () {
   
     return (
       <>
-        <AnimatePresence initial={false} custom={direction}>
-          <div
-          //   key={imageIndex-1}
+      <div
+            key={imageIndex-1}
             className="w-[13%] absolute bottom-[0%] left-[3%] duration-200"
           >
             {images_1[imageIndex - 1]}
           </div>
+        <AnimatePresence initial={false} custom={direction}>
+          
   
           <motion.div
-           key={images_1[imageIndex]}
+           key={page}
             variants={variants}
             initial="enter"
             animate="center"

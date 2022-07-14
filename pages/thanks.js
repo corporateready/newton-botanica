@@ -2,36 +2,38 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import styles from "../styles/Thanks.module.scss";
 import Layout from "../components/thanks-layout";
-import Messenger from '../components/messengers'
+import Messenger from "../components/messengers";
 import YouTube, { YouTubeProps } from "react-youtube";
 import Head from "next/head";
 
 export default function Thanks() {
   return (
     <>
-    <Head>
-    <link rel="preconnect" href="http://localhost:3000/thanks/" />
-    <link rel="dns-prefetch" href="http://localhost:3000/thanks/" />
-    </Head>
-    <div className={styles.thanks__screen}>
-      <div className={styles.thanks__massangers}>
-      <Messenger/>
-      </div>
-      <Layout>
-        <div className={styles.thanks}>
-          <div className={styles.container}>
-            <div className={styles.thanks__wrapper}>
-              <h1 className={styles.thanks__title}>
-                thank you <div className={styles.separate}></div> thank you <span className={styles.content__remove}>thank you</span> thank you,
-                <br />
-                <span>NEWTON HOUSE GRĂDINA BOTANICĂ</span>
-              </h1>
-              <div className={styles.video__wrapper}>
-                <div className={styles.video__wrapper_frame}>
-                <YoutubeVideo />
-                </div>
-                <Link href={"/"}>
-                  <a className={styles.back__button}>
+      <Head>
+        <link rel="preconnect" href="http://localhost:3000/thanks/" />
+        <link rel="dns-prefetch" href="http://localhost:3000/thanks/" />
+      </Head>
+      <div className={styles.thanks__screen}>
+        <div className={styles.thanks__massangers}>
+          <Messenger />
+        </div>
+        <Layout>
+          <div className={styles.thanks}>
+            <div className={styles.container}>
+              <div className={styles.thanks__wrapper}>
+                <h1 className={styles.thanks__title}>
+                  thank you <div className={styles.separate}></div> thank you{" "}
+                  <span className={styles.content__remove}>thank you</span>{" "}
+                  thank you,
+                  <br />
+                  <span>NEWTON HOUSE GRĂDINA BOTANICĂ</span>
+                </h1>
+                <div className={styles.video__wrapper}>
+                  <div className={styles.video__wrapper_frame}>
+                    <YoutubeVideo />
+                  </div>
+                  <Link href={"/"}>
+                    <a className={styles.back__button}>
                       <svg
                         width="17"
                         height="12"
@@ -44,46 +46,46 @@ export default function Thanks() {
                           fill="#3BAA35"
                         />
                       </svg>
-                    <span>înapoi la site</span>
-                  </a>
-                </Link>
+                      <span>înapoi la site</span>
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Layout>
-    </div>
+        </Layout>
+      </div>
     </>
   );
 }
 
 function YoutubeVideo() {
-
-  useEffect(()=>{
-    document.addEventListener('fetch', event => {
-      event.respondWith(async function () {
+  useEffect(() => {
+    document.addEventListener("fetch", (event) => {
+      event.respondWith(
+        (async function () {
           // Respond from the cache if we can
           const cachedResponse = await caches.match(event.request);
           if (cachedResponse) return cachedResponse; // Else, use the preloaded response, if it's there
           const response = await event.preloadResponse;
           if (response) return response; // Else try the network.
           return fetch(event.request);
-      }());
-  });
-  }, [])
+        })()
+      );
+    });
+  }, []);
 
   const onPlayerReady = (event) => {
     event.target.pauseVideo();
   };
 
-
-
   const opts = {
     height: "590px",
     width: "100%",
-    loading:"lazy",
+    loading: "lazy",
     playerVars: {
       passive: true,
+      controls:2,
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
