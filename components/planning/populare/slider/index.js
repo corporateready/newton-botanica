@@ -2,12 +2,10 @@ import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
-// import { images } from "./image-data";
 import next__arrow from "../../../../public/static/planning-page/complex/next-arrow.svg";
 
 import styles from "./Slider.module.scss";
 import Image from "next/image";
-import index from "../../payment";
 
 import Page_1 from '../carousel/populare-1'
 import Page_2 from '../carousel/populare-1'

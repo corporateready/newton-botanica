@@ -114,9 +114,6 @@
 .item__bg {
     @apply flex justify-center rounded-md m-[5%];
 }
-.item__bg_info {
-    @apply flex justify-center rounded-md my-[7%];
-}
 .item__description {
     @apply flex flex-col h-full py-0 bg-[#ECECEC] space-y-[2%];
     font-family: 'Gilroy Semibold';
@@ -130,6 +127,10 @@
 .item__description_name_up {
     @include text(15px, 150%, 400, #2BB018);
 
+    @media screen and (max-width: 1440px) {
+        font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
+    }
+
     @media screen and (max-width: 576px) {
         font-size: calc(12px + (21 - 12)*(100vw - 320px)/(576 - 320));
     }
@@ -138,18 +139,15 @@
     @include text(30px, 100%, 400, #2D2D2B);
     @apply mt-[3%];
 
+    @media screen and (max-width: 1440px) {
+        font-size: calc(12px + (30 - 12)*(100vw - 576px)/(1440 - 576));
+    }
+
     @media screen and (max-width: 576px) {
         @apply text-center;
         font-family: 'Gilroy Regular';
         font-size: calc(21px + (37 - 21)*(100vw - 320px)/(576 - 320));
     }
-}
-.item__description_text {
-    @include text(15px, 100%, 400, #2D2D2B);
-    // @apply text-center py-[5%] w-[50%];
-    // @media screen and (max-width: 1440px) {
-    //     font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
-    // }
 }
 .item__description__up {
     @apply flex justify-center w-full;
@@ -160,6 +158,10 @@
 .details__button {
     @include text(15px, 130%, 600, #fff);
     @apply bg-[#2BB018] rounded-md w-[60%] py-[2.5%] tracking-wider;
+
+    @media screen and (max-width: 1440px) {
+        font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
+    }
 
     @media screen and (max-width: 576px) {
         font-family: 'Gilroy Regular';

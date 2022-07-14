@@ -25,9 +25,9 @@ export default function index() {
             </div>
             <div className={styles.location__address}>
               <p className={styles.location__address_name}>
-                Strada Grădina Botanică 18, Chișinău
+              Str. Grădina Botanică, 18
               </p>
-              <Link href="/planning">
+              <Link href="https://g.page/Newton-House-srl?share">
                 <a className={styles.location__address_detail}>Vezi traseul</a>
               </Link>
             </div>

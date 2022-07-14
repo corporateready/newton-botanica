@@ -17,20 +17,18 @@
 }
 .header__inner {
     @apply flex justify-between items-center py-[0.7%] w-full h-full;
+
+    @media screen and(max-width: 576px) {
+        @apply py-[2%];
+    }
 }
 .header__logo {
-    @apply hover:scale-75 hover:duration-200;
-
-    @media screen and(max-width: 1024px) {
-        @apply w-[90px];
-    }
-
-    @media screen and(max-width: 768px) {
-        @apply w-[70px];
+    @media screen and(max-width: 1440px) {
+        width: calc(43px + (108 - 43)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
-        @apply w-[90px];
+        width: calc(69px + (123 - 69)*(100vw - 320px)/(576 - 320));
     }
 }
 .button__planning {

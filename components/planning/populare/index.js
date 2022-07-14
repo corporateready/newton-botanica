@@ -1,7 +1,7 @@
 import styles from "./Populare.module.scss";
 import { Slider } from "./slider";
 
-export default function Populare({setIsOpenDetails}) {
+export default function Populare() {
   return (
     <>
       <div className={styles.complex__section}>
@@ -13,7 +13,7 @@ export default function Populare({setIsOpenDetails}) {
             </h1>
             <div className={styles.complex__inner}>
               <div className={styles.complex__grids}>
-                <Slider setIsOpenDetails={setIsOpenDetails}/>
+                <Slider />
               </div>
             </div>
           </div>

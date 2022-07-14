@@ -21,14 +21,14 @@
 }
 // =====open details =====>
 .details__section {
-    @apply h-screen w-screen fixed top-0 left-0 z-10;
-    background: rgba(45, 45, 43, 0.8);
+    @apply flex justify-center items-center h-screen w-screen absolute top-0 left-0 z-10;
+    background: rgb(0 0 0 / 85%);
 }
 .details__wrapper {
-    @apply bg-white w-[97%] h-auto relative top-[15%] left-[1.5%] rounded-lg pb-[7%];
+    @apply bg-white w-[97%] h-auto relative rounded-lg pb-[7%];
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
     @media screen and (max-width: 576px) {
-        @apply w-[96%] left-[2%] top-[3%];
+        @apply w-[96%];
     }
 }
 .details__close_button {

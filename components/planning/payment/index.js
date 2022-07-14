@@ -5,6 +5,8 @@ import Image from "next/image";
 import payment__image from "../../../public/static/planning/payment-image-about.svg";
 import payment__image_mob from "../../../public/static/planning/payment-image-mob.svg";
 import logo__icon from "../../../public/static/planning-page/payment/logo-icon.svg";
+
+import Messenger from '../../../components/messengers'
 // import leaf_1 from "../../../public/static/planning-page/payment/leaf-t-l.svg";
 // import leaf_2 from "../../../public/static/planning-page/payment/leaf-t-r.svg";
 // import leaf_3 from "../../../public/static/planning-page/payment/leaf-b-l.svg";
@@ -181,6 +183,9 @@ export default function index() {
               <a className={styles.location__detail_mobile}>SOLICITĂ OFERTA</a>
             </Link>
           </div>
+        </div>
+        <div className={styles.payment__messengers}>
+        <Messenger/>
         </div>
         {/* <div className={styles.leaf}>
           <Image src={leaf_1} height={376} width={406} priority alt="" />

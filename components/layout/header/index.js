@@ -5,7 +5,7 @@ import styles from "./Header.module.scss";
 import header__logo from "../../../public/static/home-page/header-logo.svg";
 import phone__icon from "../../../public/static/home-page/phone.svg";
 
-export default function index() {
+export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>

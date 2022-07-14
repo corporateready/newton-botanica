@@ -65,12 +65,17 @@
         font-size: calc(10px + (15 - 10)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
+        @apply flex justify-start;
         font-size: calc(9px + (16 - 9)*(100vw - 320px)/(576 - 320));
     }
 }
 .location__address {
     @include text(15px, 130%, 400, #2D2D2B);
     @apply flex justify-end items-center w-full px-[2%];
+
+    @media screen and(max-width: 576px) {
+        @apply flex justify-between items-center w-full;
+    }
 }
 
 //  =====>

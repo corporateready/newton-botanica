@@ -19,7 +19,7 @@ import Head from "next/head";
 const ModalContext = React.createContext();
 
 export default function Planning() {
-  const [isOpenDetails, setIsOpenDetails] = useState(false);
+  const [isOpenDetails, setIsOpenDetails] = useState(true);
 
   const handlerSetModal = useCallback(() => {
     setIsOpenDetails(true);
@@ -54,7 +54,6 @@ export default function Planning() {
             <Image
               src={planning__bg}
               layout="fill"
-              // objectFit="cover"
               quality={100}
               priority
               alt="home background"
@@ -80,8 +79,8 @@ export default function Planning() {
                 >
                   <Image
                     src={close__button}
-                    height={30}
-                    width={30}
+                    height={20}
+                    width={20}
                     priority
                     alt=""
                   />
@@ -149,11 +148,9 @@ export default function Planning() {
                     </div>
                     <p className={styles.details__suptitle}>
                       S-au apelați la numărul de telefon:{" "}
-                      {/* <Link href={"/"}> */}
                       <a className={styles.details__suptitle_tel}>
                         060 80 20 20 <span></span>
                       </a>
-                      {/* </Link> */}
                     </p>
                   </div>
                 </div>

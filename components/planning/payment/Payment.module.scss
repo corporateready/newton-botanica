@@ -1,7 +1,7 @@
 @import '../../../styles/mixins.scss';
 
 .payment__section {
-    @apply h-auto max-w-full relative top-0 left-0 mt-[15%] mb-[7%];
+    @apply h-auto max-w-full relative top-0 left-0 mt-[10%] mb-[8%];
     font-family: 'Gilroy-Bold';
 
     @media screen and (max-width: 576px) {
@@ -23,14 +23,14 @@
     }
 }
 .image__side{
-    @apply flex flex-col w-[50%];
+    @apply flex flex-col w-[50%] items-end;
 
     @media screen and(max-width: 576px) {
         @apply w-full;
     }
 }
 .image__side_img {
-
+    @apply block mr-0;
     @media screen and(max-width: 1440px) {
         width: calc(202px + (507 - 202)*(100vw - 576px)/(1440 - 576));
     }
@@ -214,4 +214,12 @@
         width: calc(102px + (206 - 102)*(100vw - 320px)/(576 - 320));  
     }
 
+}
+//  ===== messengers =====>
+.payment__messengers {
+    @apply absolute top-[15%] left-[-9%];
+
+    @media screen and (max-width: 576px) {
+        @apply hidden;
+    }
 }

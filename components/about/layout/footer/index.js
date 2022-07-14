@@ -86,6 +86,9 @@ export default function index() {
             </div>
           </div>
         </div>
+        <p className={styles.footer__bottom}>
+          Toate drepturile rezervate NEWTON HOUSE GRĂDINA BOTANICĂ © 2022.
+        </p>
       </div>
     </footer>
   );

@@ -11,11 +11,22 @@
         @apply w-full px-[9.3%];
     }
     @media screen and(max-width: 576px) {
-        @apply w-full px-[3%];
+        @apply w-full px-[9%];
     }
 }
 .footer__inner {
-    @apply grid grid-cols-3 py-[2%] w-full h-full;
+    @apply grid grid-cols-3 py-[2%] w-full h-full relative;
+
+    &::after {
+        content: "";
+        display: inline-block;
+       position: absolute;
+       bottom: 0;
+       left: 0; 
+       height: 1px;
+       width: 100%;
+       background: #2BB018;
+    }
 }
 .footer__logo {
     @apply self-center hover:scale-75 hover:duration-200;
@@ -25,11 +36,18 @@
     }
 
     @media screen and(max-width: 576px) {
+        @apply w-[100%];
         width: calc(59px + (101 - 59)*(100vw - 320px)/(576 - 320));
     }
 }
 .footer__socials {
     @apply h-auto flex justify-center items-center space-x-[7%];
+
+    @media screen and(max-width: 576px) {
+        @apply w-[100%] space-x-[15%];
+        width: calc(59px + (101 - 59)*(100vw - 320px)/(576 - 320));
+    }
+
 }
 .social__item {
     @apply w-9 h-9 bg-white rounded-full flex justify-center;
@@ -62,8 +80,8 @@
     @media screen and(max-width: 768px) {
         @apply ml-[17%];
     }
-    @media screen and(max-width: 405px) {
-        @apply ml-0;
+    @media screen and(max-width: 576px) {
+        @apply space-y-[-5%] w-[100%] ml-0;
     }
 }
 .footer__contact_item {
@@ -79,9 +97,23 @@
     }
 }
 .footer__contact_text {
-    @apply text-white text-[15px];
+    @apply text-white text-[15px] font-thin;
 
     @media screen and(max-width: 1440px) {
         font-size: calc(8px + (15 - 8)*(100vw - 576px)/(1440 - 576));
+    }
+}
+.footer__bottom {
+    @include text(16px, 100%, 300, #fff);
+    @apply py-[1.5%] tracking-wider;
+    font-family: 'Gilroy Regular';
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(6px + (16 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        @apply text-left py-[3%];
+        font-size: calc(6px + (12 - 6)*(100vw - 320px)/(576 - 320));
     }
 }

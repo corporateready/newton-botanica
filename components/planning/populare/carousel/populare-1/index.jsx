@@ -7,11 +7,6 @@ import {usePopup} from '../../../../../pages/planning'
 export default function Index() {
   const {handlerSetModal} = usePopup()
 
-  // const handlerIsOpenDetails = () => {
-  //   alert('is open!')
-  //   // setIsOpenDetails(true)
-  // }
-
   return (
     <div className={styles.complex__grid_month}>
 
