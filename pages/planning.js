@@ -19,7 +19,7 @@ import Head from "next/head";
 const ModalContext = React.createContext();
 
 export default function Planning() {
-  const [isOpenDetails, setIsOpenDetails] = useState(true);
+  const [isOpenDetails, setIsOpenDetails] = useState(false);
 
   const handlerSetModal = useCallback(() => {
     setIsOpenDetails(true);
