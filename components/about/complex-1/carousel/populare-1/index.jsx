@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Populare.module.scss";
 
-import location__bg from "../../../../../public/static/planning-page/complex/shutterstock_2120028527 1.png";
+import location__bg from "../../../../../public/static/planning-page/complex/centru-comercial.png";
 import item__img_2 from "../../../../../public/static/planning-page/complex/pasarela-image.png";
 import item__img_3 from "../../../../../public/static/planning-page/complex/parking-image.png";
 import item__img_4 from "../../../../../public/static/planning-page/complex/swiming-image.png";
@@ -47,7 +47,7 @@ export default function Index() {
         </div>
         <div className={styles.item__description}>
           <div className={styles.item__description_icon}>
-            <Image src={icon_2} height={15} width={56} priority alt="" />
+            <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
             Pasarelă pietonală modernă

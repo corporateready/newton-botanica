@@ -5,7 +5,7 @@
     font-family: 'Gilroy-Bold';
 
     @media (max-width: 576px) {
-        @apply pb-[17%]
+        @apply pb-[15%]
     }
 }
 .complex__wrapper {
@@ -16,7 +16,7 @@
     background: #fff;
 
     @media (max-width: 576px) {
-        @apply pt-[13%];
+        @apply pt-[5%];
     }
 }
 .complex__title {
@@ -61,8 +61,8 @@
             }
     @media screen and (max-width: 576px) {
         // @apply hidden;
-        height: 690px;
-        height: calc(228px + (690 - 228)*(100vw - 320px)/(576 - 320));
+        // height: 690px;
+        height: calc(360px + (650 - 360)*(100vw - 320px)/(576 - 320));
     }
 }
 .complex__grids_mob {

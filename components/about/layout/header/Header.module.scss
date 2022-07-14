@@ -3,6 +3,7 @@
 .header {
     @apply relative top-0 left-0 bg-white h-auto w-full z-10;
     font-family: 'Gilroy-Bold';
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
 }
 .container {
     @apply w-[1170px] mx-auto px-0;

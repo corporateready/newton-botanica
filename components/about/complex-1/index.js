@@ -8,7 +8,7 @@ export default function Populare() {
         <div className={styles.complex__wrapper}>
           <div className={styles.container}>
             <h1 className={styles.complex__title}>
-            Cel mai modern complez rezidențial <div className={styles.separator}></div>de la botanica
+            Cel mai modern complex rezidențial <div className={styles.separator}></div>de la botanica
             <span></span>
             </h1>
             <div className={styles.complex__inner}>

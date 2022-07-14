@@ -43,9 +43,7 @@ export default function index({ setIsPDFOpen, setIsPhoneOfferOpen }) {
             APROAPE DE NATURĂ,
             <span className={styles.separotor__hide}></span> ALEGE
             <span className={styles.separotor}></span>
-            <span className={styles.hero__text_decor}>
-              NEWTON HOUSE GRĂDINA BOTANICĂ
-            </span>
+            <span className={styles.hero__text_decor}> NEWTON HOUSE GRĂDINA BOTANICĂ</span>
           </h1>
           <div className={styles.hero__buttons}>
             <button

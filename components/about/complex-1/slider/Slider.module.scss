@@ -15,6 +15,8 @@
     bottom: 46%;
     position: absolute;
     background: #2BB018;
+    // background: transparent;
+    // border: 1px solid #C4C4C4;
     width: 40px;
     height: 40px;
     display: flex;
@@ -26,18 +28,22 @@
     font-size: 18px;
     z-index: 2;
 
+    svg {
+      fill:#2BB018;
+    }
+
     @media screen and (max-width: 1440px) {
       width: calc(16px + (40 - 16)*(100vw - 576px)/(1440 - 576));
   }
 
   @media screen and (max-width: 576px) {
-    @apply bottom-[-9%] h-[25px] w-[25px] py-[2%];
+    @apply bottom-[-9%] h-[32px] w-[30px] py-[2%] rounded-sm;
   }
   }
   .slider__pagination {
     @apply hidden;
     @media (max-width: 576px) {
-      @apply block absolute bottom-[-10%]; 
+      @apply block absolute bottom-[-7%]; 
     }
   }
   .next {
@@ -45,6 +51,9 @@
 
     @media (max-width: 576px) {
       @apply right-0;
+    }
+    @media (max-width: 576px) {
+      @apply flex absolute bottom-[-7%]; 
     }
   }
   .next__disabled {
@@ -57,9 +66,6 @@
     @media (max-width: 576px) {
       @apply left-0;
     }
-  }
-  .prev {
-    @apply disabled:opacity-0;
   }
   .img {
     position: absolute;

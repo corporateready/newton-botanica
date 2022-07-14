@@ -13,19 +13,8 @@ import {
   News,
 } from "../components/about";
 import Head from "next/head";
-// import Details from './details'
 
 export default function Planning() {
-  // const [isOpen, setIsOpen] = useState(false);
-
-  // React.useEffect(() => {
-  //   if (isOpen) {
-  //     document.body.style.overflow = "hidden";
-  //   }
-  //   if (!isOpen) {
-  //     document.body.style.overflow = "auto";
-  //   }
-  // }, [isOpen]);
 
   return (
     <>
@@ -54,7 +43,6 @@ export default function Planning() {
             <News />
           </div>
         </Layout>
-        {/* <Details/> */}
       </section>
     </>
   );
