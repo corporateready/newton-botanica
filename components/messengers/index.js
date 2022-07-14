@@ -10,7 +10,7 @@ const messengers = [
   {
     id: 1,
     icon: <FaWhatsapp size={30} color="white" />,
-    irl: "/",
+    irl: "https://api.whatsapp.com/send?phone=+37360802020&text=I'm%20interested%20in%20your%20car%20for%20sale",
     title: "whatsapp",
   },
   {
@@ -22,7 +22,7 @@ const messengers = [
   {
     id: 3,
     icon: <FaFacebookMessenger size={30} color="#2D9CDB" />,
-    irl: "/",
+    irl: "https://www.facebook.com/NewtonHouse.md",
     title: "messenger",
   },
   {
