@@ -32,7 +32,6 @@ export default function Thanks() {
                 </div>
                 <Link href={"/"}>
                   <a className={styles.back__button}>
-                    {/* <span className={styles.back__button_icon}> */}
                       <svg
                         width="17"
                         height="12"
@@ -45,7 +44,6 @@ export default function Thanks() {
                           fill="#3BAA35"
                         />
                       </svg>
-                    {/* </span> */}
                     <span>înapoi la site</span>
                   </a>
                 </Link>

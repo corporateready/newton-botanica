@@ -35,82 +35,93 @@ const thumb__hero = [
 function SwiperThumbs() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  // const prevRef = useRef();
-  // const nextRef = useRef();
-  // const bulletRef = useRef();
-
-  // React.useEffect(() => {
-  //   if (thumbsSwiper) {
-  //     // console.log("Swiper instance:", thumbsSwiper);
-  //     thumbsSwiper.params.navigation.prevEl = prevRef.current;
-  //     thumbsSwiper.params.navigation.nextEl = nextRef.current;
-  //     thumbsSwiper.navigation.init();
-  //     thumbsSwiper.navigation.update();
-  //   }
-  // }, [thumbsSwiper]);
-
   return (
     <>
-      <Head></Head>
-
       <Swiper
+        style={{
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "#fff",
+        }}
+        loop={true}
         spaceBetween={10}
         navigation={false}
-        pagination={{
-          clickable: true,
-          type: "bullets",
-          bulletElement: "span",
-          bulletClass: "--swiper-pagination-bullet",
-          bulletActiveClass: "--swiper-pagination-bullet-active",
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + "</span>";
-          },
-        }}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
         className={styles.mySwiper2}
       >
-        {thumb__hero.map((thumb, index) => (
-          <SwiperSlide key={index} className={styles.thumb__wrapper}>
-            <div className={styles.swiper_slide}>
-              <Image src={thumb} height={525} width={672} priority alt="" />
-            </div>
-          </SwiperSlide>
-        ))}
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+        </SwiperSlide>
       </Swiper>
-
       <Swiper
         onSwiper={setThumbsSwiper}
+        loop={true}
         spaceBetween={10}
+        slidesPerView={2}
         freeMode={true}
-        breakpoints={{
-          575: {
-            slidesPerView: 2,
-            direction: "vertical"
-          },
-          0: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-            direction:"horizontal"
-          },
-        }}
         direction={"vertical"}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className={styles.mySwiper}
-        style={{
-          // thumbsContainerClass: ".swiper-thumbs",
-        }}
       >
-        {thumb__hero.map((thumb, index) => (
-          <SwiperSlide key={index} className={styles.thumb__wrapper}>
-            <div className={styles.swiper_thumb_slide}>
-            <Image src={thumb} height={243} width={362} priority alt="" />
-            </div>
-          </SwiperSlide>
-        ))}
+        <SwiperSlide className={styles.swiper_slide}>
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+        </SwiperSlide>
       </Swiper>
-
     </>
   );
 }

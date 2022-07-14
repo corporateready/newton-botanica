@@ -1,7 +1,7 @@
 // =============================================>
 
 .gallery__inner {
-  @apply flex space-x-0 w-full h-[581px];
+  @apply w-full h-[700px] space-y-3 flex;
 
   @media screen and(max-width: 1440px) {
     // height: calc(232px + (581 - 232)*(100vw - 576px)/(1440 - 576));
@@ -12,72 +12,73 @@
     // height: calc(400px + (725 - 400)*(100vw - 320px)/(576 - 320));
   }
 }
-
 .swiper {
   width: 100%;
-  // height: 600px;
+  height: 100%;
+}
+
+.swiper_slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper_slide img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper {
+  width: 100%;
+  height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
-// .thumb__wrapper {
 .swiper_slide {
-  overflow: hidden;
-  img {
-    // @apply mb-[2%];
-    display: block;
-    width: 100%;
-    height: 100%;
-    // object-fit: cover;
-  }
-// }
-}
-.swiper_thumb_slide {
-  img {
-    // @apply mb-[2%];
-    display: flex;
-    width: 100%;
-    height: 100%;
-    // object-fit: cover;
-  }
-}
-.mySwiper {
-  @apply w-[33%];
-  height: 100%;
-  .swiper_thumb_slide {}
-
-  @media (max-width: 576px) {
-    @apply w-full;
-    // height: calc(200px + (525 - 200)*(100vw - 320px)/(576 - 320));
-  }
+  background-size: cover;
+  background-position: center;
 }
 
 .mySwiper2 {
-  // height: 100%;
-  min-height: 100%;
-  width: 67%;
-
-  @media (max-width: 576px) {
-    @apply w-full;
-    height: calc(200px + (525 - 200)*(100vw - 320px)/(576 - 320));
-  }
+  height: 60%;
+  width: 70%;
 }
 
-.swiper_pagination_bullet {
-  @apply p-[5%];
+.mySwiper {
+  height:57%;
+  width: 30%;
+  box-sizing: border-box;
+  padding: 10px 0;
 }
 
-// // =====>
-// .swiper_button {
-//     margin: 8px;
-//     background: #1f7f9e;
-//     padding: 6px 14px;
-//     cursor: pointer;
-//     color: #fff;
+.mySwiper .swiper_slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
 
-//     &:hover {
-//       background: #0e556c;
-//     }
-//   }
-//   .timeline-icon {
-//     // @apply inline-block bg-black;
-//   }
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper_slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

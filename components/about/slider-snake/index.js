@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Styles.module.scss'
-// import {Gallery} from './gallery'
+import {Gallery} from './gallery'
 import Head from 'next/head';
 
 export default function Index() {
@@ -16,7 +16,7 @@ export default function Index() {
             </h1>
             <div className={styles.complex__inner}>
               <div className={styles.complex__grids}>
-                {/* <Gallery /> */}
+                <Gallery />
               </div>
             </div>
           </div>
