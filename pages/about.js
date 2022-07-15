@@ -19,6 +19,8 @@ export default function Planning() {
   return (
     <>
       <Head>
+      <link rel="prefetch"/>
+      <link rel="preconnect" href="http://localhost:3000/about/" />
         <title>NGNB | PLANIMETRII</title>
       </Head>
 
@@ -27,6 +29,9 @@ export default function Planning() {
           <Image
             src={planning__bg}
             layout="fill"
+            // height={6000}
+            // width={1440}
+            // objectFit="fill"
             quality={100}
             priority
             alt="home background"

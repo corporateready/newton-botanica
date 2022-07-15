@@ -7,6 +7,10 @@
 }
 .planning__bg {
     @apply absolute top-0 left-0 h-full w-screen z-auto;
+
+    // @media screen and(max-width: 576px) {
+    //     @apply w-full h-auto object-cover;
+    // }
 }
 .container {
     @apply w-[1170px] mx-auto px-0;
