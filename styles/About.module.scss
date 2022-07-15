@@ -8,9 +8,16 @@
 .planning__bg {
     @apply absolute top-0 left-0 h-full w-screen z-auto;
 
-    // @media screen and(max-width: 576px) {
-    //     @apply w-full h-auto object-cover;
-    // }
+    @media screen and(max-width: 576px) {
+        @apply hidden;
+    }
+}
+.planning__bg_mob {
+    @apply hidden;
+
+    @media screen and(max-width: 576px) {
+        @apply inline-block absolute top-0 left-0 h-full w-screen z-auto;
+    }
 }
 .container {
     @apply w-[1170px] mx-auto px-0;
