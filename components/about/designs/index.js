@@ -18,7 +18,7 @@ export default function index() {
         <div className={styles.designs__wrapper}>
           <div className={styles.designs__inner}>
             <h1 className={styles.designs__title}>
-              Calitatea construcției sporite
+            Calitate sporită a construcției
               <span></span>
             </h1>
             <div className={styles.designs__grid}>

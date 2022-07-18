@@ -63,7 +63,7 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            parcare multietajată,
+            Parcare multietajată,
             <br />
             3000+ locuri de parcare
           </p>

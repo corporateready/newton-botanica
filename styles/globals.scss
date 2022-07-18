@@ -36,33 +36,52 @@
       url('../fonts/gilroy-bold.woff2');
   }
 
+  @font-face {
+    font-family: 'Montserrat Regular';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url('../fonts/Montserrat-Regular.woff'),
+      url('../fonts/Montserrat-Regular.woff2');
+  }
+
+  @font-face {
+    font-family: 'Montserrat Semibold';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 600;
+    src: url('../fonts/Montserrat-SemiBold.woff'),
+      url('../fonts/Montserrat-SemiBold.woff2');
+  }
+
+  @font-face {
+    font-family: 'Montserrat Bold';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 600;
+    src: url('../fonts/Montserrat-Bold.woff'),
+      url('../fonts/gilroy-bold.woff2');
+  }
+
 @layer {
     body {
         @apply max-w-full h-auto mx-auto flex flex-col;
     }
 }
-// .swiper-button-prev::after {
-//   @apply w-[0%] text-[10px];
-
-//   @media screen and(max-width: 576px) {
-//     @apply absolute top-[680%] left-[5%];
-//   }
-// }
-// .swiper-button-next::after {
-//   @apply opacity-0;
-
-//   @media screen and(max-width: 576px) {
-//     @apply absolute top-[680%] left-[5%] w-5;
-//   }
-// }
-// .swiper-button-prev::after {
-//   @apply opacity-0;
-// }
 // ==========>
 .--swiper-pagination-bullet {
-  @apply text-[#C4C4C4] bg-transparent border-[#2BB018] rounded-md mx-[2%] py-[0.4%] px-[2.3%] relative bottom-0 left-0 inline-block border-[1px] hover:cursor-pointer;
+  @apply text-[#C4C4C4] bg-transparent border-[#2BB018] rounded-md w-[25px] mx-[1%] relative bottom-0 left-0 inline-block border-[1px] hover:cursor-pointer;
+  
+  @media screen and(max-width: 1440px) {
+    width: calc(10px + (25 - 10)*(100vw - 576px)/(1440 - 576));
+    font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+  }
+
   @media screen and(max-width: 576px) {
-    @apply text-[#C4C4C4] text-sm bg-transparent border-[#2BB018] rounded-sm mx-[1.5%] py-[0.3%] px-[2%] inline-block border-[1px] hover:cursor-pointer;
+    @apply text-[#C4C4C4] text-sm bg-transparent border-[#2BB018] rounded-[15%] inline-block border-[1px] hover:cursor-pointer;
+    width: calc(10px + (25 - 10)*(100vw - 320px)/(576 - 320));
+    height: calc(10px + (25 - 10)*(100vw - 320px)/(576 - 320));
+    font-size: calc(6px + (15 - 6)*(100vw - 320px)/(576 - 320));
   }
 }
 .--swiper-pagination-bullet-active{

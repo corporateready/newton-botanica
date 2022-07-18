@@ -35,6 +35,14 @@ const thumb__hero = [
 function SwiperThumbs() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+  const pagination = {
+    clickable: true,
+    bulletClass:"--swiper-pagination-bullet",
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>"
+    }
+  }
+
   return (
     <>
       <Swiper
@@ -43,8 +51,11 @@ function SwiperThumbs() {
           "--swiper-pagination-color": "#fff",
         }}
         loop={true}
+        autoHeight={true}
         spaceBetween={10}
         navigation={false}
+        pagination={pagination}
+        direction={"horizontal"}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
         className={styles.mySwiper2}
@@ -86,12 +97,21 @@ function SwiperThumbs() {
         spaceBetween={10}
         slidesPerView={2}
         freeMode={true}
-        direction={"vertical"}
+        breakpoints={{
+          0: {
+            slidesPerView: 3,
+            direction: "horizontal"
+          },
+          576: {
+            slidesPerView: 2,
+            direction: "vertical",
+          }
+        }}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className={styles.mySwiper}
       >
-        <SwiperSlide className={styles.swiper_slide}>
+        <SwiperSlide style={{}} className={styles.swiper_slide}>
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
         </SwiperSlide>
         <SwiperSlide>

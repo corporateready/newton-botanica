@@ -85,7 +85,11 @@
     }
 }
 .footer__contact_item {
-    @apply flex items-center space-x-[5%];
+    @apply flex items-center space-x-[5%] w-[65%] self-end;
+
+    @media screen and (max-width: 576px) {
+        @apply w-[110%];
+    }
 }
 .footer__contact_icon {
     @media screen and(max-width: 1440px) {
@@ -101,6 +105,10 @@
 
     @media screen and(max-width: 1440px) {
         font-size: calc(8px + (15 - 8)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        font-size: calc(6px + (11 - 6)*(100vw - 320px)/(576 - 320));
     }
 }
 .footer__bottom {

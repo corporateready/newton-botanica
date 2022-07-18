@@ -5,41 +5,40 @@ import Image from "next/image";
 import location__bg from "../../../public/static/planning-page/news/january/jan-1.jpeg";
 import location__bg_2 from "../../../public/static/planning-page/news/ferbrary/feb-1.jpeg";
 import icon__checked from "../../../public/static/planning-page/news/nhgb-icon-checked.svg";
-import LineNav from "./porgress/index";
-import TimlineNav from './timeline-nav'
+import TimlineNav from "./timeline-nav";
 
 import { motion } from "framer-motion";
 
 export default function News() {
-  const mounthes = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+
+  const [isYear, setIsYear] = useState();
+  const [current, setCurrent] = React.useState(1);
+
   const [currentStep, setCurrentStep] = useState(1);
+
+  const mounthes = [
+    {id: 1, mounth:"January"},
+    {id: 2, mounth:"February"},
+    {id: 3, mounth:"March"},
+    {id: 4, mounth:"April"},
+    {id: 5, mounth:"May"},
+    {id: 6, mounth:"June"},
+    {id: 7, mounth:"July"},
+    {id: 8, mounth:"August"},
+    {id: 9, mounth:"September"},
+    {id: 10, mounth:"October"},
+    {id: 11, mounth:"November"},
+    {id: 12, mounth:"December"}  
+  ];
 
   const updateStep = (step) => {
     setCurrentStep(step)
     console.log(step);
   }
 
-  const [isYear, setIsYear] = useState();
-  const [current, setCurrent] = React.useState(1);
-
-  const updateCurrent = () => {
-    setCurrent(current);
-  };
-
-  const [isMounth, setIsMounth] = useState()
+  // const updateCurrent = () => {
+  //   setCurrent(current);
+  // };
 
   return (
     <>
@@ -62,20 +61,16 @@ export default function News() {
                 <option value="2021">2021</option>
               </select>
               <TimlineNav
-               labelArray={mounthes}
-               currentStep={currentStep}
-               updateStep={updateStep}
+               mounthes={mounthes}
               />
               <select className={styles.news__navigation_mounth_mob}>
                 {mounthes.map((mounth)=>(
-                  <option key={mounth}>{mounth}</option>
+                  <option key={mounth.id}>{mounth.mounth}</option>
                 ))}
-                {/* <option>IUNIE</option>
-                <option>IULIE</option> */}
               </select>
             </div>
             <div className={styles.news__grids}>
-              {isYear === "2021" ? <January /> : <Febuary />}
+              {isYear === "2021" ? <Year21 /> : <Year22 />}
             </div>
           </div>
         </div>
@@ -84,7 +79,7 @@ export default function News() {
   );
 }
 
-function January() {
+function Year21() {
   return (
     <motion.div
       className={styles.news__grid_month}
@@ -115,7 +110,7 @@ function January() {
   );
 }
 
-function Febuary() {
+function Year22() {
   return (
     <motion.div
       className={styles.news__grid_month}
