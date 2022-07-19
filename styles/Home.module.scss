@@ -1,9 +1,9 @@
 @import '../styles/mixins.scss';
 
 .home__screen {
-    @apply absolute h-screen w-screen;
+    @apply absolute h-full w-screen;
     @media screen and(max-width: 576px) {
-        @apply h-screen w-screen relative top-0 left-0;
+        // @apply h-full w-screen relative top-0 left-0;
     }
 }
 .header {
@@ -53,7 +53,7 @@
     @apply hidden;
 
   @media screen and(max-width: 576px) {
-    @apply flex flex-col justify-between h-auto w-full items-center mt-[-3%];
+    @apply flex flex-col justify-between h-auto w-full items-center;
   }
 }
 .container {
@@ -71,7 +71,7 @@
     @apply absolute flex justify-center top-[20%] left-0 space-x-[4%] h-screen w-full;
 
     @media screen and(max-width: 576px) {
-        @apply flex-col h-full space-x-0 top-0 pt-[10%] px-[3%];
+        @apply flex-col h-full space-x-0 top-0 pt-[10%] pb-[5%] px-[3%];
     }
 
     @media (max-width: 576px) and (max-height: 740px) {
@@ -90,7 +90,11 @@
     @apply hidden;
     
     @media screen and(max-width: 576px) {
-        @apply flex w-[90%] self-center;
+        @apply flex w-[80%] self-center;
+    }
+
+    @media (max-width: 576px) and (max-height:740px) {
+        @apply w-[70%] pt-[5%];
     }
 }
 .navigate__side {
