@@ -7,7 +7,7 @@ import YouTube, { YouTubeProps } from "react-youtube";
 import Head from "next/head";
 
 import { CookiesProvider } from 'react-cookie';
-import { useCookies } from 'react-cookie';
+// import { useCookies } from 'react-cookie';
 
 export default function Thanks() {
   return (

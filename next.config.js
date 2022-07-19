@@ -11,6 +11,15 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/thanks', // automatically becomes /docs/with-basePath
+        destination: '/thanks', // automatically becomes /docs/another
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
