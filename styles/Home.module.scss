@@ -1,9 +1,11 @@
 @import '../styles/mixins.scss';
 
 .home__screen {
-    @apply absolute h-full w-screen;
+    @apply relative top-0 left-0 h-screen w-screen bg-[url('../public/static/home-page/home-bg-natural.webp')] bg-no-repeat object-fill;
+    background-position: center;
+    background-size: cover;
     @media screen and(max-width: 576px) {
-        @apply h-screen w-screen top-0 left-0;
+        // @apply h-screen w-screen top-0 left-0;
     }
 }
 .header {
@@ -23,27 +25,11 @@
     }
 }
 .home {
-    @apply h-full w-full absolute top-0 left-0;
+    @apply h-auto w-full relative;
     font-family: 'Gilroy-Bold';
 }
-.home__bg {
-    @apply h-screen w-screen bg-[url('../public/static/home-page/home-bg-natural.webp')] bg-no-repeat object-fill;
-    background-position: center;
-    background-size: cover;
-
-    @media screen and(max-width: 576px) {
-        @apply block absolute top-0 left-0 h-full w-full;
-    }
-}
-.home__mobile_bg {
-    @apply hidden;
-
-    @media screen and(max-width: 576px) {
-        @apply flex absolute top-0 left-0 h-full w-full;
-    }
-}
 .desktop__messengers {
-    @apply fixed top-[32%] left-[-3%];
+    @apply absolute top-[20%] left-[-3%];
 
     @media screen and(max-width: 576px) {
         @apply hidden;
@@ -53,7 +39,7 @@
     @apply hidden;
 
   @media screen and(max-width: 576px) {
-    @apply flex flex-col justify-between h-auto w-full items-center;
+    @apply flex flex-col justify-between h-auto w-full items-center px-[3%] mt-[-5%];
   }
 }
 .container {
@@ -68,14 +54,14 @@
     }
 }
 .inner {
-    @apply absolute flex justify-center top-[20%] left-0 space-x-[4%] h-screen w-full;
+    @apply flex justify-center space-x-[4%] mt-[10%] h-full w-full;
 
     @media screen and(max-width: 576px) {
-        @apply flex-col h-full space-x-0 top-0 pt-[10%] pb-[5%] px-[3%];
+        @apply flex-col h-full  space-x-0 top-0 pt-[5%] pb-[5%];
     }
 
     @media (max-width: 425px) and (max-height: 740px) {
-        @apply relative flex-col space-x-0 pt-[30%];
+        @apply relative flex-col space-x-0 pt-0;
     }
 }
 .image__side {
@@ -90,15 +76,15 @@
     @apply hidden;
     
     @media screen and(max-width: 576px) {
-        @apply flex w-[90%] self-center;
+        @apply flex w-[90%] self-center justify-center;
     }
 
     @media (max-width: 576px) and (max-height:740px) {
-        @apply w-[70%];
+        @apply flex w-[70%] self-center;
     }
 }
 .navigate__side {
-    @apply w-[25%] mt-[14%];
+    @apply w-[30%] mt-[18%];
 
     @media screen and(max-width: 576px) {
         @apply w-full mt-[7%];

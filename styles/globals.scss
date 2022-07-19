@@ -65,7 +65,7 @@
 
 @layer {
     body {
-        @apply max-w-full h-full mx-auto; 
+        @apply max-w-full h-full mx-auto flex-col flex-1; 
     }
 }
 // ==========>

@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </header>
 
-        <div className={styles.home__bg}></div>
+        {/* <div className={styles.home__bg}></div> */}
 
         <div className={styles.home}>
           <div className={styles.container}>
@@ -111,13 +111,16 @@ export default function Home() {
               <div className={styles.desktop__messengers}>
                 <Messengers />
               </div>
-              <div className={styles.mobile__messengers}>
-              <Messengers />
-            </div>
+
             </div>
             
           </div>
+          
         </div>
+
+        <div className={styles.mobile__messengers}>
+              <Messengers />
+            </div>
 
         {isOfferOpen && (
           <OfferPopUpSending hanlerClosePopup={hanlerClosePopup} />
