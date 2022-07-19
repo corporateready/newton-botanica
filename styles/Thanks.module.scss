@@ -89,7 +89,7 @@
     border-radius: 13px;
 
     @media screen and (max-width: 576px) {
-        @apply mt-[18%] mb-0 bg-transparent rounded-none;
+        @apply mt-[10%] mb-0 bg-transparent rounded-none;
         box-shadow:none;
     }
 }
@@ -128,6 +128,11 @@
 
     @media screen and(max-width: 576px) {
         @apply self-center w-[60%] py-[3.5%] mt-[10%];
+        font-size: calc(11px + (21 - 11)*(100vw - 320px)/(576 - 320));
+    }
+
+    @media (max-height: 740px) and (max-width: 576px) {
+        @apply self-center w-[60%] py-[3.5%] my-[4%];
         font-size: calc(11px + (21 - 11)*(100vw - 320px)/(576 - 320));
     }
     

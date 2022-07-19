@@ -30,7 +30,7 @@ export default function Thanks() {
                 </h1>
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
-                    <YoutubeVideo />
+                    {/* <YoutubeVideo /> */}
                   </div>
                   <div></div>
                   <Link href={"/"}>
