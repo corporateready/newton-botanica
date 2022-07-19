@@ -105,23 +105,24 @@ function YoutubeVideo() {
   };
 
   return (
-    // <iframe
-
-    //   className={styles.video__body}
-    //   src="https://www.youtube.com/embed/VdszNPYn5dU"
-    //   title="YouTube video player"
-    //   frameborder="0"
-    //   opts={opts}
-    //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    //   allowfullscreen
-    // ></iframe>
-    <YouTube
-      videoId="VdszNPYn5dU"
+    <iframe
+    height= "590px"
+    width="100%"
       className={styles.video__body}
+      src="https://www.youtube.com/embed/VdszNPYn5dU"
+      title="YouTube video player"
+      frameBorder="0"
       opts={opts}
-      onReady={onPlayerReady}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
-    />
+    ></iframe>
+    // <YouTube
+    //   videoId="VdszNPYn5dU"
+    //   className={styles.video__body}
+    //   opts={opts}
+    //   onReady={onPlayerReady}
+    //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    //   allowfullscreen
+    // />
   );
 }

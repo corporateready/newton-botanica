@@ -94,11 +94,9 @@
     }
 }
 .video__body {
-    iframe {
     @media screen and (max-width: 576px) {
         @apply h-[230px];
     }
-}
 }
 .video_responsive {
     // overflow: hidden;
