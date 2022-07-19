@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  key: 'X-DNS-Prefetch-Control',
+  value: 'on',
   images: {
     formats: ['image/webp'],
     domains:['swiperjs.com','youtu.be', 'lorempixel.com'],

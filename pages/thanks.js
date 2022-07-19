@@ -6,11 +6,14 @@ import Messenger from "../components/messengers";
 import YouTube, { YouTubeProps } from "react-youtube";
 import Head from "next/head";
 
+import { CookiesProvider } from 'react-cookie';
+import { useCookies } from 'react-cookie';
+
 export default function Thanks() {
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://localhost:3000/thanks/" /> 
+        <link rel="preconnect" href="https://localhost:3000/thanks/" />
         <link rel="dns-prefetch" href="https://localhost:3000/thanks/" />
       </Head>
       <div className={styles.thanks__screen}>
@@ -30,9 +33,10 @@ export default function Thanks() {
                 </h1>
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
+                  <CookiesProvider>
                     <YoutubeVideo />
+                    </CookiesProvider>
                   </div>
-                  <div></div>
                   <Link href={"/"}>
                     <a className={styles.back__button}>
                       <svg
@@ -61,7 +65,15 @@ export default function Thanks() {
 }
 
 function YoutubeVideo() {
+
+//   useEffect(()=>{
+//     document.cookie = 'cookie1=value1; SameSite=Lax';
+// // Set a cross-site cookie for third-party contexts
+// document.cookie = 'cookie2=value2; SameSite=None; Secure';
+//   },[])
+
   useEffect(() => {
+
     document.addEventListener("fetch", (event) => {
       event.respondWith(
         (async function () {
@@ -86,18 +98,30 @@ function YoutubeVideo() {
     loading: "lazy",
     playerVars: {
       passive: false,
-      controls:2,
+      controls: 2,
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
 
   return (
+    // <iframe
+
+    //   className={styles.video__body}
+    //   src="https://www.youtube.com/embed/VdszNPYn5dU"
+    //   title="YouTube video player"
+    //   frameborder="0"
+    //   opts={opts}
+    //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    //   allowfullscreen
+    // ></iframe>
     <YouTube
       videoId="VdszNPYn5dU"
       className={styles.video__body}
       opts={opts}
       onReady={onPlayerReady}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
     />
   );
 }
