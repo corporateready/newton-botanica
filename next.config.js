@@ -17,7 +17,22 @@ const nextConfig = {
         source: '/thanks', // automatically becomes /docs/with-basePath
         destination: '/thanks', // automatically becomes /docs/another
         permanent: true,
-      },
+        has: [
+          {
+            type: 'query',
+            key: 'page',
+            // the page value will not be available in the
+            // destination since value is provided and doesn't
+            // use a named capture group e.g. (?<page>home)
+            value: 'home',
+          },
+          {
+            type: 'cookie',
+            key: 'authorized',
+            value: 'true',
+          }
+        ]
+      }
     ]
   },
 }
