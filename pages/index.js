@@ -21,8 +21,8 @@ export default function Home() {
   return (
     <>
       <Head>
-      <link rel="preload" href="globals.scss" as="style" onLoad="this.rel='stylesheet'"/>
-      {/* <link rel="preconnect" href="http://localhost:3000/" /> */}
+      {/* <link rel="preload" href="globals.scss" as="style" onLoad="this.rel='stylesheet'"/> */}
+      <link rel="preconnect" href="https://localhost:3000/" />
         <title>Newton House Grădina Botanica</title>
         <meta
           name="description"

@@ -10,8 +10,8 @@ export default function Thanks() {
   return (
     <>
       <Head>
-        {/* <link rel="preconnect" href="http://localhost:3000/thanks/" /> */}
-        {/* <link rel="dns-prefetch" href="http://localhost:3000/thanks/" /> */}
+        <link rel="preconnect" href="https://localhost:3000/thanks/" /> 
+        <link rel="dns-prefetch" href="https://localhost:3000/thanks/" />
       </Head>
       <div className={styles.thanks__screen}>
         <div className={styles.thanks__massangers}>
