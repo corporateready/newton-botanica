@@ -74,8 +74,8 @@
         @apply flex-col h-full space-x-0 top-0 pt-[10%] pb-[5%] px-[3%];
     }
 
-    @media (max-width: 576px) and (max-height: 740px) {
-        @apply relative flex-col space-x-0 pt-[35%];
+    @media (max-width: 425px) and (max-height: 740px) {
+        @apply relative flex-col space-x-0 pt-[30%];
     }
 }
 .image__side {
