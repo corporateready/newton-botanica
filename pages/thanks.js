@@ -6,7 +6,7 @@ import Messenger from "../components/messengers";
 import YouTube, { YouTubeProps } from "react-youtube";
 import Head from "next/head";
 
-import { CookiesProvider } from 'react-cookie';
+// import { CookiesProvider } from "react-cookie";
 // import { useCookies } from 'react-cookie';
 
 export default function Thanks() {
@@ -33,9 +33,9 @@ export default function Thanks() {
                 </h1>
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
-                  <CookiesProvider>
-                    <YoutubeVideo />
-                    </CookiesProvider>
+                    {/* <CookiesProvider> */}
+                      <YoutubeVideo />
+                    {/* </CookiesProvider> */}
                   </div>
                   <Link href={"/"}>
                     <a className={styles.back__button}>
@@ -65,15 +65,13 @@ export default function Thanks() {
 }
 
 function YoutubeVideo() {
-
-//   useEffect(()=>{
-//     document.cookie = 'cookie1=value1; SameSite=Lax';
-// // Set a cross-site cookie for third-party contexts
-// document.cookie = 'cookie2=value2; SameSite=None; Secure';
-//   },[])
+  //   useEffect(()=>{
+  //     document.cookie = 'cookie1=value1; SameSite=Lax';
+  // // Set a cross-site cookie for third-party contexts
+  // document.cookie = 'cookie2=value2; SameSite=None; Secure';
+  //   },[])
 
   useEffect(() => {
-
     document.addEventListener("fetch", (event) => {
       event.respondWith(
         (async function () {
@@ -106,15 +104,16 @@ function YoutubeVideo() {
 
   return (
     <iframe
-    height= "590px"
-    width="100%"
+      height="590px"
+      width="100%"
       className={styles.video__body}
       src="https://www.youtube.com/embed/VdszNPYn5dU"
       title="YouTube video player"
       frameBorder="0"
       opts={opts}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
+      allowFullScreen
+      onReady={onPlayerReady}
     ></iframe>
     // <YouTube
     //   videoId="VdszNPYn5dU"

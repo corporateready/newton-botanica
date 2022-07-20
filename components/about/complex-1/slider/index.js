@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { images } from "./image-data";
@@ -39,6 +39,14 @@ export const Slider = () => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [disable, setDisable] = useState(false);
 
+  // useEffect(()=>{
+   
+  //   if(page > images.length) {
+  //     setDisable("next")
+  //   }
+  // },[page])
+  console.log(page);
+
   const imageIndex = wrap(0, images.length, page);
 
   const paginate = (newDirection) => {
@@ -49,7 +57,9 @@ export const Slider = () => {
     <div className={styles.slider__body}>
       <button
         type="button"
-        className={page === 0 ? styles.prev__disabled : styles.prev}
+        disabled={page <= 0}
+        className={styles.prev}
+        
         onClick={() => paginate(-1)}
       >
         <svg
@@ -93,14 +103,14 @@ export const Slider = () => {
           </defs>
         </svg>
       </button>
-      <div
-        className={
-          page > images.length - 2 ? styles.next__disabled : styles.next
-        }
+      <button
+      type="button"
+        className={styles.next}
+        disabled={page > images.length}
         onClick={() => paginate(1)}
       >
         <Image src={arrow__icon} height={32} width={21} alt="" />
-      </div>
+      </button>
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}

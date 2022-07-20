@@ -1,14 +1,14 @@
 @import '../../../styles/mixins.scss';
 
 .complex__section {
-    @apply h-auto w-full relative top-0 left-0 bg-white my-[-1px] pb-[5%];
+    @apply h-auto w-full relative top-0 left-0 bg-white my-[-1px] pb-0;
     font-family: 'Gilroy-Bold';
 }
 .complex__wrapper {
     @apply w-full mx-auto ;
 }
 .complex__inner {
-    @apply w-full pt-[5%] pb-[2%] px-[7%] relative; 
+    @apply w-full pt-[5%] pb-0 px-[7%] relative; 
     background: #fff;
     overflow: hidden;
 

@@ -19,29 +19,23 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
-import image_1 from '../../../../public/static/planning-page/gallery/Gradina Botanica transa 2_View05.png'
+import image_1 from "../../../../public/static/planning-page/gallery/Gradina Botanica transa 2_View05.png";
 
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
 
-const thumb__hero = [
-  image_1,
-  "https://swiperjs.com/demos/images/nature-2.jpg",
-  "https://swiperjs.com/demos/images/nature-3.jpg",
-  "https://swiperjs.com/demos/images/nature-4.jpg",
-  "https://swiperjs.com/demos/images/nature-5.jpg",
-  "https://swiperjs.com/demos/images/nature-6.jpg",
-];
+const thumb__hero = [image_1, image_1, image_1, image_1, image_1, image_1];
 
 function SwiperThumbs() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const pagination = {
     clickable: true,
-    bulletClass:"--swiper-pagination-bullet",
+    bulletActiveClass: "--swiper-pagination-bullet-active",
+    bulletClass: "--swiper-pagination-bullet",
     renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>"
-    }
-  }
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
 
   return (
     <>
@@ -54,42 +48,25 @@ function SwiperThumbs() {
         autoHeight={true}
         spaceBetween={10}
         navigation={false}
+        // breakpoints={{
+        //   0: {
+        //     pagination:false,
+        //   },
+        //   576: {
+        //     pagination:true,
+        //   },
+        // }}
         pagination={pagination}
         direction={"horizontal"}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
         className={styles.mySwiper2}
       >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-        </SwiperSlide>
+        {thumb__hero.map((thumb, index) => (
+          <SwiperSlide className="" key={index}>
+            <Image src={thumb} layout="responsive" alt="" />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -100,47 +77,22 @@ function SwiperThumbs() {
         breakpoints={{
           0: {
             slidesPerView: 3,
-            direction: "horizontal"
+            direction: "horizontal",
           },
           576: {
             slidesPerView: 2,
             direction: "vertical",
-          }
+          },
         }}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className={styles.mySwiper}
       >
-        <SwiperSlide style={{}} className={styles.swiper_slide}>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-        </SwiperSlide>
+        {thumb__hero.map((thumb, index) => (
+          <SwiperSlide className="" key={index}>
+            <Image src={thumb} layout="fill" alt="" />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

@@ -1,70 +1,122 @@
 @import '../../styles/mixins.scss';
 
+//  ===== popup offer =====>
 .offer__section {
-    @apply h-screen w-screen fixed top-0 left-0 z-20;
-    background: rgba(45, 45, 43, 0.8);
+    @apply h-full w-full fixed flex top-0 left-0 z-20;
+    background: rgb(0 0 0 / 85%);
+    font-family: 'Montserrat Regular';
 
     @media screen and (max-width: 576px) {
-        @apply px-[2%];
+        @apply px-[3%];
+    }
+}
+.offer__container {
+    @apply w-[1170px] mx-auto px-0;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-full px-[9.3%];
+    }
+    @media screen and(max-width: 1440px) {
+        @apply px-0;
     }
 }
 .offer__inner {
-    @apply h-auto w-[50%] bg-white relative top-[25%] left-[25%] z-auto p-[9%] rounded-md;
+    @apply flex flex-col items-center justify-center h-auto w-[63%] relative bg-white mt-[10%] z-auto pt-[3%] pb-[4.5%] mx-auto rounded-md;
 
     @media screen and (max-width: 576px) {
-        @apply w-full top-1/2 left-0;
+        @apply w-full py-[15%] px-[5%];
     }
 }
 .offer__button_close {
-    @apply absolute top-[6%] right-[3%];
+    @apply absolute top-[4%] right-[2.5%];
+
+    @media screen and(max-width: 576px) {
+        @apply top-[3%];
+    }
 }
 .offer__title {
     @include text(20px, 130%, 600, #2D2D2B);
     @apply text-center;
+    font-family: 'Montserrat SemiBold';
 
     @media screen and(max-width: 1440px) {
-        font-size: calc(8px + (22 - 8)*(100vw - 576px)/(1440 - 576));
+        font-size: calc(14px + (20 - 14)*(100vw - 576px)/(1440 - 576));
     }
-    span {
-        @include text(20px, 130%, 700, #2BB018);
 
-        @media screen and(max-width: 1440px) {
-            font-size: calc(8px + (22 - 8)*(100vw - 576px)/(1440 - 576));
-        }
+    @media screen and(max-width: 576px) {
+        font-size: calc(10px + (28 - 10)*(100vw - 320px)/(576 - 320));
+    }
+
+    span {
+        @include text(20px, 130%, 600, #2BB018);
+    @apply text-center;
+    font-family: 'Montserrat SemiBold';
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(14px + (20 - 14)*(100vw - 576px)/(1440 - 576));
+    }
     }
 }
 .offer__form {
-    @apply flex flex-col py-[7%] space-y-[4%];
+    @apply flex flex-col py-[4%] mx-auto w-[52%];
 
     input {
         @include text(15px, 130%, 400, #2D2D2B);
-        @apply border-[1px] rounded-md py-[3%] pl-[5%] focus-visible:outline-none;
+        @apply border-[1px] rounded-sm py-[3%] mb-[3%] pl-[3%] focus-visible:outline-none;
         font-family: 'Gilroy Regular';
 
         @media screen and(max-width: 1440px) {
             font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
         }
 
+        @media screen and(max-width: 576px) {
+            @apply mb-[5%] rounded-md;
+            font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+        }
+
         &::placeholder {
             @include text(15px, 130%, 400, #2D2D2B);
+            @apply uppercase tracking-wider;
             font-family: 'Gilroy Regular';
 
             @media screen and(max-width: 1440px) {
                 font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
             }
+
+            @media screen and(max-width: 576px) {
+                font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+            }
         }
     }
+
+    @media screen and(max-width: 576px) {
+        @apply w-full;
+    }
 }
-// ===== send button =====>
 .button__sending {
     @include text(15px, 130%, 700, #000);
-    @apply block bg-[#2BB018] border-[#2BB018] border-2 text-white w-full py-[3%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-2 hover:text-[#2BB018] hover:duration-150;
+    @apply flex justify-center w-full bg-[#2BB018] border-[#2BB018] border-[1px] text-white mx-auto py-[3.5%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-[1px] hover:text-[#2BB018] hover:duration-200;
+    &:hover {
+        animation-name:  pulse;
+    animation-duration: 1s;
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    }
 
     @media screen and(max-width: 1440px) {
         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-        @apply px-[5%];
-        font-size: calc(9px + (14 - 9)*(100vw - 320px)/(576 - 320));
+        @apply px-[5%] w-full rounded-md;
+        font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
     }
 }

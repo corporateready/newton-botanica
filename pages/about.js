@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
@@ -14,8 +14,39 @@ import {
   News,
 } from "../components/about";
 import Head from "next/head";
+import OfferPDFOpenSending from "../components/popup-pdf-offer";
+import OfferCallRezerve from "../components/popup-phone-offer";
 
 export default function Planning() {
+  const [isPDFOpen, setIsPDFOpen] = useState(false);
+  const [isCallRezervePopUp, setIsCallRezervePopUp] = useState(false);
+
+  const hanlerClosePopup = () => {
+    setIsPDFOpen(!isPDFOpen);
+  };
+
+  const hanlerCloseCallPopup = () => {
+    setIsCallRezervePopUp(!isCallRezervePopUp);
+  };
+
+  useEffect(() => {
+    if (isPDFOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    if (!isPDFOpen) {
+      document.body.style.overflow = "auto";
+    }
+  }, [isPDFOpen]);
+
+  useEffect(() => {
+    if (isCallRezervePopUp) {
+      document.body.style.overflow = "hidden";
+    }
+    if (!isCallRezervePopUp) {
+      document.body.style.overflow = "auto";
+    }
+  }, [isCallRezervePopUp]);
+
   return (
     <>
       <Head>
@@ -45,7 +76,11 @@ export default function Planning() {
         </div>
         <Layout>
           <div className={styles.container}>
-            <Hero />
+            <Hero
+              setIsPDFOpen={setIsPDFOpen}
+              hanlerClosePopup={hanlerClosePopup}
+              setIsCallRezervePopUp={setIsCallRezervePopUp}
+            />
             <Complex />
             <Designs />
             <SliderSnake />
@@ -54,6 +89,12 @@ export default function Planning() {
             <News />
           </div>
         </Layout>
+        {isPDFOpen && (
+          <OfferPDFOpenSending hanlerClosePopup={hanlerClosePopup} />
+        )}
+        {isCallRezervePopUp && (
+          <OfferCallRezerve hanlerCloseCallPopup={hanlerCloseCallPopup} />
+        )}
       </section>
     </>
   );

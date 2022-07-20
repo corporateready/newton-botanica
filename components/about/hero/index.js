@@ -5,13 +5,13 @@ import Image from "next/image";
 import hero__bg from "../../../public/static/planning-page/Frame-3.webp";
 import hero__bg_mobile from "../../../public/static/planning-page/bg-groupe-mobile.png";
 
-export default function index({ setIsPDFOpen, setIsPhoneOfferOpen }) {
+export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
   const hanlerIsPDFOpenPopup = () => {
     setIsPDFOpen(true);
   };
 
-  const hanlerIsPhoneOpenPopup = () => {
-    setIsPhoneOfferOpen(true);
+  const hanlerIsCallOpenPopup = () => {
+    setIsCallRezervePopUp(true);
   };
 
   return (
@@ -54,7 +54,7 @@ export default function index({ setIsPDFOpen, setIsPhoneOfferOpen }) {
             </button>
             <button
               className={styles.button__planning}
-              onClick={hanlerIsPhoneOpenPopup}
+              onClick={hanlerIsCallOpenPopup}
             >
               REZERVĂ TIMPUL PENTRU
               <br />A FI TELEFONAT
