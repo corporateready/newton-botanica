@@ -25,41 +25,17 @@ export default function News() {
     "November",
     "December",
   ]);
+  const [isMounthMob, setIsMounthMob] = useState("January");
+  const [isItem] = useState(12);
+  const [isActive, setIsActive] = useState(0);
+  const [isLine, setIsLine] = useState(0);
+  const [isToggle, setIsToggle] = useState(1);
 
-  const handlerTogler = ()=> {
-    
-  }
-
-  // const mounthes = [
-  //   {id: 1, mounth:"January"},
-  //   {id: 2, mounth:"February"},
-  //   {id: 3, mounth:"March"},
-  //   {id: 4, mounth:"April"},
-  //   {id: 5, mounth:"May"},
-  //   {id: 6, mounth:"June"},
-  //   {id: 7, mounth:"July"},
-  //   {id: 8, mounth:"August"},
-  //   {id: 9, mounth:"September"},
-  //   {id: 10, mounth:"October"},
-  //   {id: 11, mounth:"November"},
-  //   {id: 12, mounth:"December"}
-  // ];
-
-  // const mounthes = [
-  //   "January",
-  //   "February",
-  //   "March",
-  //   "April",
-  //   "May",
-  //   "June",
-  //   "July",
-  //   "August",
-  //   "September",
-  //   "October",
-  //   "November",
-  //   "December"
-  // ];
-
+  const handlerTabClick = (i) => {
+    console.log("Clicked", i);
+    console.log("isToggle", isToggle);
+    setIsToggle(i)
+  };
   return (
     <>
       <div className={styles.news__section}>
@@ -80,15 +56,40 @@ export default function News() {
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
               </select>
-              <TimlineNav mounthes={isMounth} />
-              <select className={styles.news__navigation_mounth_mob}>
+              <TimlineNav
+                mounthes={isMounth}
+                isLine={isLine}
+                isActive={isActive}
+                setIsActive={setIsActive}
+                isItem={isItem}
+                setIsLine={setIsLine}
+                handlerTabClick={handlerTabClick}
+                isToggle={isToggle}
+                setIsToggle={setIsToggle}
+              />
+              <select
+                className={styles.news__navigation_mounth_mob}
+                onChange={(e) => {
+                  setIsMounthMob(e.target.value);
+                }}
+              >
                 {isMounth.map((mounth, idx) => (
-                  <option key={idx}>{mounth}</option>
+                  <option
+                    key={idx}
+                    value={mounth}
+                    onClick={() => console.log(isMounthMob)}
+                  >
+                    {mounth}
+                  </option>
                 ))}
               </select>
             </div>
             <div className={styles.news__grids}>
-              {isYear === "2021" ? <Year21 /> : <Year22 isMounth={isMounth} setIsMounth={setIsMounth}/>}
+              {isYear === "2021" ? (
+                <Year21 />
+              ) : (
+                <Year22 isToggle={isToggle} isMounthMob={isMounthMob} />
+              )}
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@ function Year21() {
     <motion.div
       className={styles.news__grid_month}
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 1.5 } }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
     >
       <div className={styles.news__grid_item}>
         <div className={styles.item__bg}>
@@ -128,541 +129,2158 @@ function Year21() {
   );
 }
 
-function Year22({ isMounth }) {
-  console.log("mounth is:", isMounth);
-  console.log("mounth is:", isMounth[1]);
+function Year22({ isToggle, isMounthMob }) {
+  return (
+    <>
+      {isMounthMob === "January" && <January />}
+      {isMounthMob === "February" && <February />}
+      {isMounthMob === "March" && <March />}
+      {isMounthMob === "April" && <April />}
+      {isMounthMob === "May" && <May />}
+      {isMounthMob === "June" && <June />}
+      {isMounthMob === "July" && <July />}
+      {isMounthMob === "August" && <August />}
+      {isMounthMob === "September" && <September />}
+      {isMounthMob === "October" && <October />}
+      {isMounthMob === "November" && <November />}
+      {isMounthMob === "December" && <December />}
+    </>
+  );
+}
 
-  switch (isMounth) {
-    case isMounth[0]:
-      return (
-        <motion.div
-          className={styles.news__grid_month}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 1.5 } }}
-        >
-          <div className={styles.news__grid_item}>
-            <div className={styles.item__bg}>
-              <Image
-                src={location__bg_2}
-                height={333}
-                width={499}
-                priority
-                alt=""
-              />
-            </div>
-            <div className={styles.item__info}>
-              <div className={styles.item__info_l}>
-                <p>TRANȘA 1</p>
-              </div>
-              <div className={styles.item__info_r}>
-                <div className={styles.item__info_r_up}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-                <div className={styles.item__info_r_down}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-              </div>
-            </div>
+function January() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 1</p>
           </div>
-          <div className={styles.news__grid_item}>
-            <div className={styles.item__bg}>
-              <Image
-                src={location__bg_2}
-                height={333}
-                width={499}
-                priority
-                alt=""
-              />
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
-            <div className={styles.item__info}>
-              <div className={styles.item__info_l}>
-                <p>TRANȘA 1</p>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
               </div>
-              <div className={styles.item__info_r}>
-                <div className={styles.item__info_r_up}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-                <div className={styles.item__info_r_down}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.news__grid_item}>
-            <div className={styles.item__bg}>
-              <Image
-                src={location__bg_2}
-                height={333}
-                width={499}
-                priority
-                alt=""
-              />
-            </div>
-            <div className={styles.item__info}>
-              <div className={styles.item__info_l}>
-                <p>TRANȘA 1</p>
-              </div>
-              <div className={styles.item__info_r}>
-                <div className={styles.item__info_r_up}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-                <div className={styles.item__info_r_down}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.news__grid_item}>
-            <div className={styles.item__bg}>
-              <Image
-                src={location__bg_2}
-                height={333}
-                width={499}
-                priority
-                alt=""
-              />
-            </div>
-            <div className={styles.item__info}>
-              <div className={styles.item__info_l}>
-                <p>TRANȘA 1</p>
-              </div>
-              <div className={styles.item__info_r}>
-                <div className={styles.item__info_r_up}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-                <div className={styles.item__info_r_down}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      );
-      case isMounth[1]:
-        return (
-          <motion.div
-        className={styles.news__grid_month}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 1.5 } }}
-      >
-        <div className={styles.news__grid_item}>
-          <div className={styles.item__bg}>
-            <Image
-              src={location__bg_2}
-              height={333}
-              width={499}
-              priority
-              alt=""
-            />
-          </div>
-          <div className={styles.item__info}>
-            <div className={styles.item__info_l}>
-              <p>TRANȘA 2</p>
-            </div>
-            <div className={styles.item__info_r}>
-              <div className={styles.item__info_r_up}>
-                <div className={styles.icon__checked_wrapp}>
-                  <Image
-                    src={icon__checked}
-                    height={11}
-                    width={11}
-                    priority
-                    alt=""
-                  />
-                </div>
-                <p>Se execută marcarea coloanelor în parcare</p>
-              </div>
-              <div className={styles.item__info_r_down}>
-                <div className={styles.icon__checked_wrapp}>
-                  <Image
-                    src={icon__checked}
-                    height={11}
-                    width={11}
-                    priority
-                    alt=""
-                  />
-                </div>
-                <p>Se execută marcarea coloanelor în parcare</p>
-              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
           </div>
         </div>
-        <div className={styles.news__grid_item}>
-          <div className={styles.item__bg}>
-            <Image
-              src={location__bg_2}
-              height={333}
-              width={499}
-              priority
-              alt=""
-            />
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 1</p>
           </div>
-          <div className={styles.item__info}>
-            <div className={styles.item__info_l}>
-              <p>TRANȘA 2</p>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
-            <div className={styles.item__info_r}>
-              <div className={styles.item__info_r_up}>
-                <div className={styles.icon__checked_wrapp}>
-                  <Image
-                    src={icon__checked}
-                    height={11}
-                    width={11}
-                    priority
-                    alt=""
-                  />
-                </div>
-                <p>Se execută marcarea coloanelor în parcare</p>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
               </div>
-              <div className={styles.item__info_r_down}>
-                <div className={styles.icon__checked_wrapp}>
-                  <Image
-                    src={icon__checked}
-                    height={11}
-                    width={11}
-                    priority
-                    alt=""
-                  />
-                </div>
-                <p>Se execută marcarea coloanelor în parcare</p>
-              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
           </div>
         </div>
-        <div className={styles.news__grid_item}>
-          <div className={styles.item__bg}>
-            <Image
-              src={location__bg_2}
-              height={333}
-              width={499}
-              priority
-              alt=""
-            />
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 1</p>
           </div>
-          <div className={styles.item__info}>
-            <div className={styles.item__info_l}>
-              <p>TRANȘA 2</p>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
-            <div className={styles.item__info_r}>
-              <div className={styles.item__info_r_up}>
-                <div className={styles.icon__checked_wrapp}>
-                  <Image
-                    src={icon__checked}
-                    height={11}
-                    width={11}
-                    priority
-                    alt=""
-                  />
-                </div>
-                <p>Se execută marcarea coloanelor în parcare</p>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
               </div>
-              <div className={styles.item__info_r_down}>
-                <div className={styles.icon__checked_wrapp}>
-                  <Image
-                    src={icon__checked}
-                    height={11}
-                    width={11}
-                    priority
-                    alt=""
-                  />
-                </div>
-                <p>Se execută marcarea coloanelor în parcare</p>
-              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
           </div>
         </div>
-        <div className={styles.news__grid_item}>
-          <div className={styles.item__bg}>
-            <Image
-              src={location__bg_2}
-              height={333}
-              width={499}
-              priority
-              alt=""
-            />
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 1</p>
           </div>
-          <div className={styles.item__info}>
-            <div className={styles.item__info_l}>
-              <p>TRANȘA 2</p>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
-            <div className={styles.item__info_r}>
-              <div className={styles.item__info_r_up}>
-                <div className={styles.icon__checked_wrapp}>
-                  <Image
-                    src={icon__checked}
-                    height={11}
-                    width={11}
-                    priority
-                    alt=""
-                  />
-                </div>
-                <p>Se execută marcarea coloanelor în parcare</p>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
               </div>
-              <div className={styles.item__info_r_down}>
-                <div className={styles.icon__checked_wrapp}>
-                  <Image
-                    src={icon__checked}
-                    height={11}
-                    width={11}
-                    priority
-                    alt=""
-                  />
-                </div>
-                <p>Se execută marcarea coloanelor în parcare</p>
-              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
           </div>
         </div>
-      </motion.div>
-        )
-    default:
-      return (
-        <motion.div
-          className={styles.news__grid_month}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 1.5 } }}
-        >
-          <div className={styles.news__grid_item}>
-            <div className={styles.item__bg}>
-              <Image
-                src={location__bg_2}
-                height={333}
-                width={499}
-                priority
-                alt=""
-              />
+      </div>
+    </motion.div>
+  );
+}
+function February() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
-            <div className={styles.item__info}>
-              <div className={styles.item__info_l}>
-                <p>TRANȘA 1</p>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
               </div>
-              <div className={styles.item__info_r}>
-                <div className={styles.item__info_r_up}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-                <div className={styles.item__info_r_down}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
           </div>
-          <div className={styles.news__grid_item}>
-            <div className={styles.item__bg}>
-              <Image
-                src={location__bg_2}
-                height={333}
-                width={499}
-                priority
-                alt=""
-              />
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
-            <div className={styles.item__info}>
-              <div className={styles.item__info_l}>
-                <p>TRANȘA 1</p>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
               </div>
-              <div className={styles.item__info_r}>
-                <div className={styles.item__info_r_up}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-                <div className={styles.item__info_r_down}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
           </div>
-          <div className={styles.news__grid_item}>
-            <div className={styles.item__bg}>
-              <Image
-                src={location__bg_2}
-                height={333}
-                width={499}
-                priority
-                alt=""
-              />
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
-            <div className={styles.item__info}>
-              <div className={styles.item__info_l}>
-                <p>TRANȘA 1</p>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
               </div>
-              <div className={styles.item__info_r}>
-                <div className={styles.item__info_r_up}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-                <div className={styles.item__info_r_down}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
           </div>
-          <div className={styles.news__grid_item}>
-            <div className={styles.item__bg}>
-              <Image
-                src={location__bg_2}
-                height={333}
-                width={499}
-                priority
-                alt=""
-              />
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
-            <div className={styles.item__info}>
-              <div className={styles.item__info_l}>
-                <p>TRANȘA 1</p>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
               </div>
-              <div className={styles.item__info_r}>
-                <div className={styles.item__info_r_up}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-                <div className={styles.item__info_r_down}>
-                  <div className={styles.icon__checked_wrapp}>
-                    <Image
-                      src={icon__checked}
-                      height={11}
-                      width={11}
-                      priority
-                      alt=""
-                    />
-                  </div>
-                  <p>Se execută marcarea coloanelor în parcare</p>
-                </div>
-              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
             </div>
           </div>
-        </motion.div>
-      );
-  }
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function March() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function April() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function May() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function June() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function July() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function August() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function September() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function October() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function November() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function December() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
 }
