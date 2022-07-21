@@ -10,7 +10,7 @@ import axios from "axios";
 // import { CookiesProvider } from "react-cookie";
 // import { useCookies } from 'react-cookie';
 
-export default function Thanks() {
+export default function Thanks({src__link}) {
   return (
     <>
       <Head>
@@ -35,7 +35,7 @@ export default function Thanks() {
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
                     {/* <CookiesProvider> */}
-                    <YoutubeVideo />
+                    <YoutubeVideo src__link={src__link} />
                     {/* </CookiesProvider> */}
                   </div>
                   <Link href={"/"}>
@@ -66,32 +66,34 @@ export default function Thanks() {
 }
 
 function YoutubeVideo({ src__link }) {
-  //   useEffect(()=>{
-  //     document.cookie = 'cookie1=value1; SameSite=Lax';
-  // // Set a cross-site cookie for third-party contexts
-  // document.cookie = 'cookie2=value2; SameSite=None; Secure';
-  //   },[])
+  console.log(src__link);
+    useEffect(()=>{
+      document.cookie = 'cookie1=value1; SameSite=Lax';
+  // Set a cross-site cookie for third-party contexts
+  document.cookie = 'cookie2=value2; SameSite=None; Secure';
+    },[])
 
-  // useEffect(() => {
-  //   document.addEventListener("fetch", (event) => {
-  //     event.respondWith(
-  //       (async function () {
-  //         // Respond from the cache if we can
-  //         const cachedResponse = await caches.match(event.request);
-  //         if (cachedResponse) return cachedResponse; // Else, use the preloaded response, if it's there
-  //         const response = await event.preloadResponse;
-  //         if (response) return response; // Else try the network.
-  //         return fetch(event.request);
-  //       })()
-  //     );
-  //   });
-  // }, []);
+  useEffect(() => {
+    document.addEventListener("fetch", (event) => {
+      event.respondWith(
+        (async function () {
+          // Respond from the cache if we can
+          const cachedResponse = await caches.match(event.request);
+          if (cachedResponse) return cachedResponse; // Else, use the preloaded response, if it's there
+          const response = await event.preloadResponse;
+          if (response) return response; // Else try the network.
+          return fetch(event.request);
+        })()
+      );
+    });
+  }, []);
 
   const onPlayerReady = (event) => {
     event.target.pauseVideo();
   };
 
   const opts = {
+    videoId:"",
     height: "590px",
     width: "100%",
     loading: "lazy",
@@ -104,27 +106,29 @@ function YoutubeVideo({ src__link }) {
   };
 
   return (
-    <iframe
-      width="100%"
-      height="315"
-      src="https://www.youtube.com/embed/DdAi7K2L9qM"
-      title="YouTube video player"
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    ></iframe>
     // <iframe
-    //   height="590px"
     //   width="100%"
-    //   className={styles.video__body}
+    //   height="590"
     //   src={src__link}
     //   title="YouTube video player"
     //   frameBorder="0"
-    //   opts={opts}
     //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     //   allowFullScreen
-    //   onReady={onPlayerReady}
     // ></iframe>
+    <iframe
+      id="ytplayer"
+      type="text/html"
+      height="590px"
+      width="100%"
+      className={styles.video__body}
+      src={`https://www.youtube.com/embed/VdszNPYn5dU?autoplay=0&origin=http://example.com&controls=0&rel=1`}
+      title="YouTube video player"
+      frameBorder="0"
+      opts={opts}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      // onReady={onPlayerReady}
+    ></iframe>
     // <YouTube
     //   videoId="VdszNPYn5dU"
     //   className={styles.video__body}
@@ -136,24 +140,24 @@ function YoutubeVideo({ src__link }) {
   );
 }
 
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts.
+//   // You can use any data fetching library
 
-  var res = await axios.get("https://www.youtube.com/embed/DdAi7K2L9qM", {
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "User-Agent": "*",
-    },
-  });
-  var res = JSON.stringify(res.data);
-  console.log("res ", res);
+//   var src__link = await axios.get("https://www.youtube.com/embed/", {
+//     headers: {
+//       Accept: "application/json, text/plain, */*",
+//       "User-Agent": "*",
+//     },
+//   });
+//   var src__link = JSON.stringify(src__link.data);
+//   console.log("res ", src__link);
 
-  // By returning { props: posts }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      data: res,
-    },
-  };
-}
+//   // By returning { props: posts }, the Blog component
+//   // will receive `posts` as a prop at build time
+//   return {
+//     props: {
+//       data: src__link,
+//     },
+//   };
+// }

@@ -53,7 +53,9 @@ export default function index() {
             </Link>
           </div>
 
+          <div className="flex justify-end">
           <div className={styles.footer__contact}>
+            
             <a className={styles.footer__contact_item} href="tel:37360802020">
               <span className={styles.footer__contact_icon}>
                 <Image
@@ -98,7 +100,10 @@ export default function index() {
                 newton botanica@gmail.com
               </span>
             </a>
+
           </div>
+          </div>
+
         </div>
         <div className={styles.footer__contact_mob}>
           <div className={styles.footer__contact_bottom}>
