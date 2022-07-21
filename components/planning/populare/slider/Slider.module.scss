@@ -10,35 +10,32 @@
   }
   .next,
   .prev {
-    // @apply py-[0.5%];
-    top: calc(50% - 20px);
+    bottom: 46%;
     position: absolute;
     background: #2BB018;
     width: 40px;
-    height: auto;
+    height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
     user-select: none;
+    border-radius: 3px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
     z-index: 2;
 
     @media screen and (max-width: 1440px) {
-      width: calc(10px + (40 - 10)*(100vw - 576px)/(1440 - 576));
+      width: calc(16px + (40 - 16)*(100vw - 576px)/(1440 - 576));
+      height: calc(16px + (40 - 16)*(100vw - 576px)/(1440 - 576));
   }
   }
   .next {
-    @apply right-[-6%];
-  }
-  .next__disabled {
-    @apply hidden;
+    @apply right-[-6%] disabled:bg-transparent disabled:border-[1px] disabled:border-[#2BB018];
   }
   .prev {
-    @apply left-[-6%];
+    @apply left-[-6%] disabled:bg-transparent disabled:border-[1px] disabled:border-[#2BB018];
     transform: scale(-1);
-  }
-  .prev__disabled {
-    @apply hidden opacity-0;
   }
   .img {
     position: absolute;

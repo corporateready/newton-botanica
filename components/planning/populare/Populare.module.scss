@@ -52,8 +52,23 @@
                 height: calc(238px + (570 - 228)*(100vw - 576px)/(1440 - 576));
             }
     @media screen and (max-width: 576px) {
-        height: calc(228px + (690 - 228)*(100vw - 320px)/(576 - 320));
+        @apply hidden;
+        // height: calc(228px + (590 - 228)*(100vw - 320px)/(576 - 320));
     }
 }
+// .complex__grids_mob {
+//     @apply hidden;
+//     // @apply w-full min-h-full mx-auto relative top-0 left-0;
+//     // height: 570px;
+    
+//     // @media screen and (max-width: 1440px) {
+//     //             height: calc(238px + (570 - 228)*(100vw - 576px)/(1440 - 576));
+//     //         }
+//     @media screen and (max-width: 576px) {
+//         @apply block;
+//         @apply w-full min-h-full mx-auto relative top-0 left-0;
+//         height: calc(228px + (690 - 228)*(100vw - 320px)/(576 - 320));
+//     }
+// }
 
 

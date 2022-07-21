@@ -13,7 +13,6 @@ import {
   Plan,
   InfoForm,
 } from "../components/planning";
-import Link from "next/link";
 import Head from "next/head";
 
 const ModalContext = React.createContext();
@@ -30,7 +29,6 @@ export default function Planning() {
   };
   const handlerOpenDetails = () => {
     setIsOpenDetails(true);
-    // alert('!')
   };
 
   useEffect(() => {

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./News.module.scss";
-// import Link from "next/link";
 import Image from "next/image";
 import location__bg from "../../../public/static/planning-page/news/january/jan-1.jpeg";
 import location__bg_2 from "../../../public/static/planning-page/news/ferbrary/feb-1.jpeg";
@@ -129,7 +128,7 @@ function Year21() {
   );
 }
 
-function Year22({ isToggle, isMounthMob }) {
+function Year22({ isMounthMob }) {
   return (
     <>
       {isMounthMob === "January" && <January />}

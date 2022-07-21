@@ -3,33 +3,32 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
-// import { images_1 } from "./image-data";
 import styles from "./Plan-2.module.scss";
 import back__icon from "../../../../public/static/planning-page/complex/next-button.svg";
 
 import image_1_1 from '../../../../public/static/planning/plan/trance-2-faze-1.png'
 import image_1_2 from '../../../../public/static/planning/plan/trance-2-faze-1.png'
 
-const variants = {
-  enter: (direction) => {
-    return {
-      x: 0,
-      opacity: 0,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction) => {
-    return {
-      zIndex: 0,
-      x: 0,
-      opacity: 1,
-    };
-  },
-};
+// const variants = {
+//   enter: (direction) => {
+//     return {
+//       x: 0,
+//       opacity: 0,
+//     };
+//   },
+//   center: {
+//     zIndex: 1,
+//     x: 0,
+//     opacity: 1,
+//   },
+//   exit: (direction) => {
+//     return {
+//       zIndex: 0,
+//       x: 0,
+//       opacity: 1,
+//     };
+//   },
+// };
 
 export default function Plan_2 () {
   const images_2 = [
@@ -39,21 +38,37 @@ export default function Plan_2 () {
   ];
   const [[page, direction], setPage] = useState([0, 0]);
 
+  const variants = {
+    enter: (direction) => {
+      return {
+        x: 0,
+        opacity: 0,
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => {
+      return {
+        zIndex: 0,
+        x: 0,
+        opacity: 1,
+      };
+    },
+  };
+
   const imageIndex = wrap(0, images_2.length, page);
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
 
-  console.log(imageIndex);
-
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
-        <div
-          key={imageIndex-1}
-          className="w-[13%] absolute bottom-[0%] left-[3%] duration-200"
-        >
+      <div key={imageIndex - 1} className={styles.complex__grid_prev_item}>
           {images_2[imageIndex - 1]}
         </div>
 
@@ -71,7 +86,10 @@ export default function Plan_2 () {
           {images_2[imageIndex]}
         </motion.div>
 
-        <div className="w-[13%] absolute bottom-[0%] right-[3%] z-10">
+        <div
+          className={styles.complex__grid_next_item}
+          key={images_2[imageIndex]}
+        >
           {images_2[imageIndex]}
         </div>
       </AnimatePresence>

@@ -93,7 +93,7 @@ border-radius: 13px;
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
 
     @media screen and (max-width: 576px) {
         @apply pb-0;

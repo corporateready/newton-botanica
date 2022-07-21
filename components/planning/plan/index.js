@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import index from "../payment";
 import styles from "./Gallery.module.scss";
 import Plan_1 from "./plan-1";
 import Plan_2 from "./plan-2";
