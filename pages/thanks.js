@@ -67,11 +67,11 @@ export default function Thanks({src__link}) {
 
 function YoutubeVideo({ src__link }) {
   console.log(src__link);
-    useEffect(()=>{
-      document.cookie = 'cookie1=value1; SameSite=Lax';
-  // Set a cross-site cookie for third-party contexts
-  document.cookie = 'cookie2=value2; SameSite=None; Secure';
-    },[])
+  //   useEffect(()=>{
+  //     document.cookie = 'cookie1=value1; SameSite=Lax';
+  // // Set a cross-site cookie for third-party contexts
+  // document.cookie = 'cookie2=value2; SameSite=None; Secure';
+  //   },[])
 
   useEffect(() => {
     document.addEventListener("fetch", (event) => {

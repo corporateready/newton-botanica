@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Styles.module.scss";
 
-export default function Index({ mounthes }) {
+export default function Index({ mounthes, setIsMounth }) {
     const [isItem] = useState(12)
     const [isActive, setIsActive] = useState(0)
     const [isLine, setIsLine] = useState(0)
@@ -14,20 +14,20 @@ export default function Index({ mounthes }) {
         arr.push(<div
             className={i <= isActive ? styles.timeline__step_active : styles.timeline__step}
             key={i}
-            onClick={() => i > isActive ? setIsActive(isActive+i) : setIsActive(isActive-i)}
+            onClick={() => {
+              console.log(i)
+              setIsMounth('Tab clicked!')
+              i > isActive ? setIsActive(isActive+i) : setIsActive(isActive-i)}}
           >
-            {i}
+            <div key={i}>
+              {mounthes[i]}
+            </div>
           </div>)
         
     }
-  const hendlerClickItem = (item) => {
-    console.log(item.target.value);
-  };
+
   return (
     <div className={styles.timeline}>
-      {/* {mounthes.map((mounth) => (
-        
-      ))} */}
       {arr}
     </div>
   );
