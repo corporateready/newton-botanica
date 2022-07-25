@@ -9,7 +9,7 @@
     @apply absolute top-0 left-0 h-full w-screen z-auto;
 
     @media screen and(max-width: 576px) {
-        @apply hidden;
+        // @apply hidden;
     }
 }
 .planning__bg_mob {
@@ -32,18 +32,18 @@
 }
 // =====open details =====>
 .details__section {
-    @apply flex justify-center h-full w-full fixed top-0 left-0 z-10;
+    @apply flex justify-center items-center h-full w-full fixed top-0 left-0 z-10;
     background: rgb(0 0 0 / 85%);
 }
 .details__wrapper {
-    @apply bg-white w-[95%] h-auto absolute top-[15%] rounded-lg pb-[7%];
+    @apply bg-white w-[95%] h-auto absolute rounded-lg pb-[7%];
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
     @media screen and (max-width: 576px) {
         @apply w-[96%];
     }
 }
 .details__close_button {
-    @apply z-20 absolute top-[2%] right-[1.5%];
+    @apply z-20 absolute top-[1%] right-[1.5%];
 }
 .details__inner {
     @apply pt-[5%] flex justify-between w-full h-auto px-[5%] space-x-[5%];

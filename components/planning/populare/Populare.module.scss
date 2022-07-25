@@ -10,6 +10,10 @@
 .complex__inner {
     @apply h-full w-full pt-[5%] pb-[2%] px-[7%] overflow-hidden;
     background: #fff;
+
+    @media screen and (max-width:576px) {
+        // @apply pt-0;
+    }
 }
 .complex__title {
     @include text(32px, 150%, 400, #2D2D2B);
@@ -34,7 +38,7 @@
     }
 
     @media screen and (max-width: 576px) {
-        @apply pt-[10%] ;
+        @apply pt-[10%];
         font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
     }
 }
@@ -56,19 +60,13 @@
         // height: calc(228px + (590 - 228)*(100vw - 320px)/(576 - 320));
     }
 }
-// .complex__grids_mob {
-//     @apply hidden;
-//     // @apply w-full min-h-full mx-auto relative top-0 left-0;
-//     // height: 570px;
-    
-//     // @media screen and (max-width: 1440px) {
-//     //             height: calc(238px + (570 - 228)*(100vw - 576px)/(1440 - 576));
-//     //         }
-//     @media screen and (max-width: 576px) {
-//         @apply block;
-//         @apply w-full min-h-full mx-auto relative top-0 left-0;
-//         height: calc(228px + (690 - 228)*(100vw - 320px)/(576 - 320));
-//     }
-// }
+.complex__grids_mob {
+    @apply hidden;
+    @media screen and (max-width: 576px) {
+        @apply block;
+        @apply w-full min-h-full mx-auto relative top-0 left-0;
+        height: calc(550px + (1000 - 500)*(100vw - 320px)/(576 - 320));
+    }
+}
 
 

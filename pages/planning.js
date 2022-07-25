@@ -77,8 +77,8 @@ export default function Planning() {
                 >
                   <Image
                     src={close__button}
-                    height={20}
-                    width={20}
+                    height={15}
+                    width={15}
                     priority
                     alt=""
                   />

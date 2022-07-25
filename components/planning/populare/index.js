@@ -16,9 +16,9 @@ export default function Populare() {
               <div className={styles.complex__grids}>
                 <Slider />
               </div>
-              {/* <div className={styles.complex__grids_mob}>
+              <div className={styles.complex__grids_mob}>
                 <Slider />
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

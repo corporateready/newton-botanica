@@ -1,0 +1,150 @@
+@import '../../../../../styles/mixins.scss';
+
+.complex__section {
+    @apply h-auto max-w-full relative top-0 left-0 bg-white my-[-1px];
+    font-family: 'Gilroy-Bold';
+}
+.complex__wrapper {
+    @apply w-full mx-auto relative;
+
+    @media screen and (max-width: 576px) {
+        @apply px-[5%];
+    }
+}
+.complex__inner {
+    @apply flex flex-col justify-center h-full w-full mt-[5%];
+
+    @media screen and (max-width: 576px) {
+        // @apply mt-0;
+    }
+}
+.complex__title {
+    @include text(32px, 150%, 400, #2D2D2B);
+    @apply relative pt-[5%] uppercase text-center;
+
+    span {
+        background: radial-gradient(50% 50% at 50% 50%, #2BB018 0%, rgba(43, 176, 24, 0) 100%);
+        position: absolute;
+        bottom: -5%;
+        left: 8%;
+        height: 2%;
+        width: 85%;
+
+        @media screen and (max-width: 576px) {
+            @apply w-[95%] left-[5%];
+            // font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        // @apply pt-[10%] ;
+        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+    }
+}
+.complex__grid_month {
+    @apply grid grid-cols-1 grid-rows-2 gap-y-[1%];
+
+    @media screen and(max-width: 576px) {
+        @apply gap-y-[3%];
+    }
+}
+.complex__grid_item {
+    @apply flex flex-col h-auto w-full relative top-0 rounded-md overflow-hidden hover:cursor-pointer hover:scale-95 hover:duration-200;
+    
+    &:hover {
+        box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.35);
+    }
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+.complex__grid_item_info {
+    @apply flex flex-col h-full w-full relative top-0 rounded-md overflow-hidden hover:cursor-pointer hover:scale-95 hover:duration-200;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+
+    // @media screen and (max-width: 576px) {
+    //     @apply hidden;
+    // }
+}
+.item__info {
+    @include text(10px, 130%, 400, #fff);
+    @apply mt-[5%] bg-[#FFA800] uppercase text-center py-[2.5%] tracking-wider;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
+    }
+}
+.item__info_attention {
+    @include text(12px, 130%, 400, #fff);
+    @apply mt-[5%] bg-[#DD2525] uppercase text-center py-[6%] tracking-wider;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(6px + (12 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+    // @media screen and (max-width: 576px) {
+    //     @apply hidden;
+    // }
+}
+.item__bg {
+    @apply flex justify-center rounded-md m-[10%];
+
+    @media screen and(max-width: 576px) {
+        // @apply flex-grow;
+    }
+}
+.item__bg_info {
+    @apply flex justify-center rounded-md mt-[7%] mb-[12%] mx-auto;
+
+    @media screen and(max-width: 1440px) {
+        width: calc(52px + (130 - 52)*(100vw - 576px)/(1440 - 576));
+    }
+}
+.item__description {
+    @apply flex flex-col py-0 bg-[#ECECEC] space-y-[2%];
+}
+.item__description__up {
+    @apply flex;
+    @media screen and (max-width: 1440px) {
+        font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
+    }
+}
+.item__description_name {
+    @include text(15px, 100%, 400, #2D2D2B);
+    @apply text-center border-r-[1.5px] border-white py-[5%] w-[50%];
+    
+    @media screen and (max-width: 1440px) {
+        font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and (max-width: 576px) {
+        font-size: calc(11px + (20 - 11)*(100vw - 320px)/(576 - 320));
+    }
+}
+.item__description_text {
+    @include text(15px, 100%, 400, #2D2D2B);
+    @apply text-center py-[5%] w-[50%];
+    @media screen and (max-width: 1440px) {
+        font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and (max-width: 576px) {
+        font-size: calc(11px + (20 - 11)*(100vw - 320px)/(576 - 320));
+    }
+}
+.item__description__up {
+    @apply flex justify-center w-full;
+}
+.item__description__down {
+    @apply w-full flex justify-center pt-[2%] pb-[8%];
+}
+.details__button {
+    @include text(10px, 130%, 400, #fff);
+    @apply bg-[#2BB018] rounded-sm w-[45%] py-[1.5%] tracking-wider;
+    @media screen and (max-width: 1440px) {
+        font-size: calc(6px + (10 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and (max-width: 576px) {
+        font-size: calc(11px + (20 - 11)*(100vw - 320px)/(576 - 320));
+    }
+}
