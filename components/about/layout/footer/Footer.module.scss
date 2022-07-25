@@ -29,7 +29,7 @@
     }
 }
 .footer__logo {
-    @apply self-center hover:scale-75 hover:duration-200;
+    @apply self-center;
 
     @media screen and(max-width: 1440px) {
         width: calc(69px + (171 - 13)*(100vw - 576px)/(1440 - 576));
@@ -71,8 +71,18 @@
             width: calc(8px + (10 - 8)*(100vw - 320px)/(576 - 320));
     }
 }
+.social__item_icon_YT {
+    @apply flex items-center justify-center;
+
+    @media screen and(max-width: 1440px) {
+        width: calc(15px + (24 - 15)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        width: calc(22px + (35 - 22)*(100vw - 320px)/(576 - 320));
+    }
+}
 .footer__contact {
-    @apply flex flex-col h-full space-y-[1%];
+    @apply flex flex-col justify-center h-full space-y-[3%];
 
     @media screen and(max-width: 1100px) {
         @apply ml-[25%];
@@ -92,6 +102,7 @@
     }
 }
 .footer__contact_icon {
+    @apply flex justify-center;
     @media screen and(max-width: 1440px) {
         width: calc(13px + (24 - 13)*(100vw - 576px)/(1440 - 576));
     }
