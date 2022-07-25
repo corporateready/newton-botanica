@@ -2,7 +2,7 @@
     @apply flex flex-col space-y-[55%];
 
     @media screen and(max-width: 576px) {
-        @apply flex flex-row items-baseline justify-between space-y-0 w-full mt-[15%] mx-0 relative;
+        @apply flex flex-row items-baseline justify-center space-y-0 space-x-[12%] w-full mt-[15%] mx-0 relative;
     }
 
     @media (max-width: 576px) and(max-height: 740px) {

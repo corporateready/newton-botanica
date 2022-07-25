@@ -8,9 +8,7 @@ export default function Index({
   isActive,
   setIsActive,
   isItem,
-  handlerTabClick,
-  isToggle,
-  setIsToggle
+  handlerTabClick
 }) {
 
   useEffect(() => {
@@ -26,7 +24,7 @@ export default function Index({
         }
         key={i}
         onClick={() => {
-          console.log(i);
+          console.log(isActive);
           handlerTabClick(i)
           i > isActive ? setIsActive(isActive + i) : setIsActive(isActive - i);
         }}
