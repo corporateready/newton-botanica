@@ -10,7 +10,7 @@ import axios from "axios";
 // import { CookiesProvider } from "react-cookie";
 // import { useCookies } from 'react-cookie';
 
-export default function Thanks({src__link}) {
+export default function Thanks({ src__link }) {
   return (
     <>
       <Head>
@@ -65,13 +65,16 @@ export default function Thanks({src__link}) {
   );
 }
 
-function YoutubeVideo({ src__link }) {
-  console.log(src__link);
-  //   useEffect(()=>{
-  //     document.cookie = 'cookie1=value1; SameSite=Lax';
-  // // Set a cross-site cookie for third-party contexts
-  // document.cookie = 'cookie2=value2; SameSite=None; Secure';
-  //   },[])
+function YoutubeVideo() {
+  useEffect(() => {
+    //     document.cookie = 'cookie1=value1; SameSite=Lax';
+    // // Set a cross-site cookie for third-party contexts
+    // document.cookie = 'cookie2=value2; SameSite=None; Secure';
+    window.addEventListener("beforeunload", (ev) => {
+      ev.preventDefault();
+      cookies.remove("userInfo");
+    });
+  }, []);
 
   useEffect(() => {
     document.addEventListener("fetch", (event) => {
@@ -93,7 +96,7 @@ function YoutubeVideo({ src__link }) {
   };
 
   const opts = {
-    videoId:"",
+    videoId: "",
     height: "590px",
     width: "100%",
     loading: "lazy",
