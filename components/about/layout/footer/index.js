@@ -44,7 +44,7 @@ export default function index() {
             >
               <a className={styles.social__item}>
                 <span className={styles.social__item_icon_YT}>
-                  <FaYoutube size={25} />
+                  <FaYoutube size={12} />
                 </span>
               </a>
             </Link>
