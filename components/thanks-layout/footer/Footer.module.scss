@@ -56,7 +56,7 @@
     }
 }
 .social__item {
-    @apply bg-white rounded-full flex justify-center;
+    @apply bg-white rounded-full flex justify-center h-[30px] w-[30px];
 
     @media screen and(max-width: 1440px) {
         height: calc(11px + (26 - 11)*(100vw - 576px)/(1440 - 576));
@@ -70,7 +70,7 @@
 
 }
 .social__item_icon {
-    @apply flex items-center justify-center;
+    @apply flex items-center justify-center w-[16px];
 
     @media screen and(max-width: 1440px) {
         width: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
@@ -80,7 +80,7 @@
     }
 }
 .social__item_icon_YT {
-    @apply flex items-center justify-center;
+    @apply flex items-center justify-center w-[20px];
 
     @media screen and(max-width: 1440px) {
         width: calc(7px + (18 - 7)*(100vw - 576px)/(1440 - 576));
