@@ -238,7 +238,7 @@
     }
 }
 .offer__subtitle {
-    @include text(20px, 130%, 600, #2c2c2c);
+    @include text(20px, 130%, 400, #2c2c2c);
     @apply text-center mt-[2%] tracking-wider;
     font-family: 'Gilroy Regular';
 
