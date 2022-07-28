@@ -28,7 +28,7 @@ export default function index() {
             <Link href={"https://www.instagram.com/newtonhouse.md/"}>
               <a className={styles.social__item}>
                 <span className={styles.social__item_icon}>
-                  <FiInstagram size={30} />
+                  <FiInstagram size={24} />
                 </span>
               </a>
             </Link>
@@ -44,7 +44,7 @@ export default function index() {
             >
               <a className={styles.social__item}>
                 <span className={styles.social__item_icon_YT}>
-                  <FaYoutube size={12} />
+                  <FaYoutube size={24} />
                 </span>
               </a>
             </Link>

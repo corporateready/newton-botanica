@@ -29,22 +29,10 @@ const thumb__hero = [image_1, image_1, image_1, image_1, image_1, image_1];
 function SwiperThumbs() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  // useEffect(()=>{
-  //   const swiper = new Swiper('.swiper', {
-  //     // Install modules
-  //     modules: [Navigation, Pagination],
-  //     speed: 500,
-  //     navigation: {
-  //       nextEl: '.swiper-button-next',
-  //       prevEl: '.swiper-button-prev',
-  //     },
-  //   });
-  // },[])
-
   const pagination = {
     clickable: true,
     bulletActiveClass: ".--swiper-pagination-bullet-active",
-    bulletClass: "--swiper-pagination-bullet",
+    bulletClass: ".--swiper-pagination-bullet",
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },

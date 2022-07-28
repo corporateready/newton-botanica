@@ -31,14 +31,14 @@ export default function index() {
             <Link href={"https://www.instagram.com/newtonhouse.md/"}>
               <a className={styles.social__item}>
                 <span className={styles.social__item_icon}>
-                  <FiInstagram size={30} />
+                  <FiInstagram size={20} />
                 </span>
               </a>
             </Link>
             <Link href={"https://www.facebook.com/NewtonHouse.md/"}>
               <a className={styles.social__item}>
-                <span className={styles.social__item_icon}>
-                  <FaFacebookF size={30} />
+                <span className={styles.social__item_icon_fb}>
+                  <FaFacebookF size={20} />
                 </span>
               </a>
             </Link>
