@@ -24,12 +24,13 @@ export default function Home() {
   return (
     <>
       <Head>
-      <link
+      
+      {/* <link
           rel="preload"
           href="Home.module.scss"
           as="style"
           onLoad="rel='stylesheet'"
-        />
+        /> */}
         <link rel="preconnect" href="http://localhost:3000/" />
         <title>Newton House Grădina Botanica</title>
         <meta
