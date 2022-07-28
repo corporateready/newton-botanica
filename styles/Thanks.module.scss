@@ -1,7 +1,7 @@
 @import "../styles/mixins.scss";
 
 .thanks__screen {
-    @apply bg-[url('/static/home-page/background2-2.webp')] relative flex flex-col h-full w-full;
+    @apply bg-[url('https://botanica.newton.md/wp-content/uploads/2021/07/green-leaves-natural-background-tropical-leaf-background-1.jpg')] relative flex flex-col h-full w-full;
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -14,7 +14,7 @@
     }
 }
 .thanks__massangers {
-    @apply absolute top-[20%] left-[2%];
+    @apply absolute top-[20%] left-[1%];
 
     @media (max-width: 576px) {
         @apply hidden;
