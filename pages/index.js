@@ -24,12 +24,6 @@ export default function Home() {
   return (
     <>
       <Head>
-        <link
-          rel="preload"
-          href="globals.scss"
-          as="style"
-          onLoad="this.rel='stylesheet'"
-        />
         <link rel="preconnect" href="http://localhost:3000/" />
         <title>Newton House Grădina Botanica</title>
         <meta
@@ -169,7 +163,14 @@ function OfferPopUpSending({ hanlerClosePopup }) {
 
   return (
     <>
-      <Head></Head>
+      <Head>
+      <link
+          rel="preload"
+          href="globals.scss"
+          as="style"
+          onLoad="this.rel='stylesheet'"
+        />
+      </Head>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
           <div className={styles.offer__inner}>
