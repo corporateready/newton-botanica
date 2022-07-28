@@ -5,7 +5,7 @@ const nextConfig = {
   value: 'on',
   images: {
     formats: ['image/webp'],
-    domains:['swiperjs.com','youtu.be', 'lorempixel.com'],
+    domains:['swiperjs.com','youtu.be', 'lorempixel.com','botanica.newton.md'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
   experimental: {
