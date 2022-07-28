@@ -10,7 +10,7 @@
 }
 .header {
     @apply relative top-0 left-0 bg-white h-auto w-full z-10;
-    font-family: 'Gilroy-Bold';
+    
 }
 .header__logo {
     @media screen and(max-width: 1440px) {
@@ -24,9 +24,12 @@
         @apply py-[1%];
     }
 }
+.header__phone_link {
+    font-family: 'Gilroy-Bold';
+}
 .home {
     @apply h-auto w-full relative;
-    font-family: 'Gilroy-Bold';
+    
 }
 .desktop__messengers {
     @apply absolute top-[20%] left-[-4.5%];
@@ -85,6 +88,7 @@
 }
 .navigate__side {
     @apply w-[33%] mt-[18%];
+    font-family: 'Gilroy-Bold';
 
     @media screen and(max-width: 576px) {
         @apply w-full mt-[7%];
@@ -190,7 +194,6 @@
 .offer__section {
     @apply h-screen w-full absolute top-0 flex items-center justify-center left-0 z-20;
     background: rgb(0 0 0 / 85%);
-    font-family: 'Montserrat Regular';
 
     @media screen and (max-width: 576px) {
         @apply px-[3%] flex items-start pt-[40%];
@@ -224,8 +227,7 @@
 }
 .offer__title {
     @include text(38px, 130%, 600, #2D2D2B);
-    @apply text-center;
-    font-family: 'Montserrat SemiBold';
+    @apply text-center tracking-wider;
 
     @media screen and(max-width: 1440px) {
         font-size: calc(14px + (38 - 14)*(100vw - 576px)/(1440 - 576));
@@ -237,7 +239,7 @@
 }
 .offer__subtitle {
     @include text(20px, 130%, 600, #2c2c2c);
-    @apply text-center mt-[2%];
+    @apply text-center mt-[2%] tracking-wider;
     font-family: 'Gilroy Regular';
 
     @media screen and(max-width: 1440px) {
@@ -286,19 +288,7 @@
 
         input {
             @apply py-[5%] w-full border-[1px] border-[#C4C4C4];
-
-            .flag-dropdown {
-                @apply h-[40px];
-                .selected-flag {
-                    @apply h-[40px];
-                }
-            }
-        }
-
-        .flag-dropdown {
-            .selected-flag {
-                @apply h-[40px];
-            }
+            font-family: 'Gilroy Regular';
         }
 
         @media screen and(max-width: 1440px) {
