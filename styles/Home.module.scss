@@ -84,7 +84,7 @@
     }
 }
 .navigate__side {
-    @apply w-[32%] mt-[18%];
+    @apply w-[33%] mt-[18%];
 
     @media screen and(max-width: 576px) {
         @apply w-full mt-[7%];
@@ -95,10 +95,10 @@
 }
 .button__about {
     @include text(12px, 130%, 400, #fff);
-    @apply flex items-center justify-center bg-none w-[50%] border-[1px] border-white py-[4%] rounded uppercase tracking-wider hover:bg-white hover:text-[#2BB018] duration-150;
+    @apply flex items-center justify-center bg-none w-[50%] border-[1px] border-white py-[3%] rounded uppercase tracking-widest hover:bg-white hover:text-[#2BB018] duration-150;
 
     @media screen and(max-width: 1440px) {
-        font-size: calc(6px + (14 - 6)*(100vw - 576px)/(1440 - 576));
+        font-size: calc(6px + (16 - 6)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
         @apply py-[4.5%];
@@ -107,10 +107,10 @@
 }
 .button__planning {
     @include text(12px, 130%, 400, #fff);
-    @apply flex items-center justify-center bg-none w-[50%] border-[1px] border-white py-[4%] rounded uppercase tracking-wider hover:bg-white hover:text-[#2BB018] duration-150;
+    @apply flex items-center justify-center bg-none w-[50%] border-[1px] border-white py-[3%] rounded uppercase tracking-widest hover:bg-white hover:text-[#2BB018] duration-150;
 
     @media screen and(max-width: 1440px) {
-        font-size: calc(6px + (14 - 6)*(100vw - 576px)/(1440 - 576));
+        font-size: calc(6px + (16 - 6)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
@@ -120,10 +120,10 @@
 }
 .button__send {
     @include text(12px, 130%, 400, #fff);
-    @apply flex justify-center items-center border-[1px] border-[#2BB018] bg-[#2BB018] py-[4.5%] mt-[3%] w-full rounded uppercase tracking-wider hover:bg-white hover:border-[#fff] hover:text-[#2BB018] hover:duration-200;
+    @apply flex justify-center items-center border-[1px] border-[#2BB018] bg-[#2BB018] py-[3.5%] mt-[3%] w-full rounded uppercase tracking-widest hover:bg-white hover:border-[#fff] hover:text-[#2BB018] hover:duration-200;
 
     @media screen and(max-width: 1440px) {
-        font-size: calc(6px + (14 - 6)*(100vw - 576px)/(1440 - 576));
+        font-size: calc(6px + (16 - 6)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 768px) {

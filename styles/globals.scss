@@ -79,22 +79,19 @@
 
   @media screen and(max-width: 576px) {
     @apply hidden;
-    // @apply text-[#C4C4C4] text-sm bg-transparent border-[#2BB018] inline-block relative bottom-0 left-0 border-[1px] hover:cursor-pointer;
-    // width: calc(10px + (25 - 10)*(100vw - 320px)/(576 - 320));
-    // height: calc(10px + (25 - 10)*(100vw - 320px)/(576 - 320));
-    // font-size: calc(6px + (15 - 6)*(100vw - 320px)/(576 - 320));
   }
 }
-.--swiper-pagination-bullet-active{
-  @apply text-white bg-[#2BB018];
-}
-.--swiper-wrapper {
-  .swiper-pagination {
-  @media screen and (max-width: 576px){
-    @apply pb-[17%];
-}
-  }
-}
-.--swiper-thumbs {
-  @apply flex flex-col;
-}
+// .--swiper-pagination-bullet-active{
+//   @apply text-white bg-[#2BB018];
+// }
+// .--swiper-wrapper {
+//   .swiper-pagination {
+//     @apply pb-[7%];
+//   @media screen and (max-width: 576px){
+//     @apply pb-[17%];
+// }
+//   }
+// }
+// .--swiper-thumbs {
+//   @apply flex flex-col;
+// }

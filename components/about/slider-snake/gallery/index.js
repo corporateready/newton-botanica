@@ -2,7 +2,6 @@
 
 import styles from "./Styles.module.scss";
 import Image from "next/image";
-import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -15,11 +14,13 @@ import SwiperCore, {
 } from "swiper";
 
 import "swiper/css";
-import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
+
 import image_1 from "../../../../public/static/planning-page/gallery/Gradina Botanica transa 2_View05.png";
+// import image_1 from "../../../../public/static/planning-page/gallery/Gradina Botanica transa 2_View05.png";
+// import image_1 from "../../../../public/static/planning-page/gallery/Gradina Botanica transa 2_View05.png";
 
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
 
@@ -28,9 +29,21 @@ const thumb__hero = [image_1, image_1, image_1, image_1, image_1, image_1];
 function SwiperThumbs() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+  // useEffect(()=>{
+  //   const swiper = new Swiper('.swiper', {
+  //     // Install modules
+  //     modules: [Navigation, Pagination],
+  //     speed: 500,
+  //     navigation: {
+  //       nextEl: '.swiper-button-next',
+  //       prevEl: '.swiper-button-prev',
+  //     },
+  //   });
+  // },[])
+
   const pagination = {
     clickable: true,
-    bulletActiveClass: "--swiper-pagination-bullet-active",
+    bulletActiveClass: ".--swiper-pagination-bullet-active",
     bulletClass: "--swiper-pagination-bullet",
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
@@ -48,14 +61,6 @@ function SwiperThumbs() {
         autoHeight={true}
         spaceBetween={10}
         navigation={false}
-        // breakpoints={{
-        //   0: {
-        //     pagination:false,
-        //   },
-        //   576: {
-        //     pagination:true,
-        //   },
-        // }}
         pagination={pagination}
         direction={"horizontal"}
         thumbs={{ swiper: thumbsSwiper }}

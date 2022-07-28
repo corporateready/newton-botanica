@@ -3,14 +3,9 @@ import Link from "next/link";
 import styles from "../styles/Thanks.module.scss";
 import Layout from "../components/thanks-layout";
 import Messenger from "../components/messengers";
-import YouTube, { YouTubeProps } from "react-youtube";
 import Head from "next/head";
-import axios from "axios";
 
-// import { CookiesProvider } from "react-cookie";
-// import { useCookies } from 'react-cookie';
-
-export default function Thanks({ src__link }) {
+export default function Thanks() {
   return (
     <>
       <Head>
@@ -34,9 +29,7 @@ export default function Thanks({ src__link }) {
                 </h1>
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
-                    {/* <CookiesProvider> */}
-                    <YoutubeVideo src__link={src__link} />
-                    {/* </CookiesProvider> */}
+                    <YoutubeVideo />
                   </div>
                   <Link href={"/"}>
                     <a className={styles.back__button}>
@@ -67,9 +60,6 @@ export default function Thanks({ src__link }) {
 
 function YoutubeVideo() {
   useEffect(() => {
-    //     document.cookie = 'cookie1=value1; SameSite=Lax';
-    // // Set a cross-site cookie for third-party contexts
-    // document.cookie = 'cookie2=value2; SameSite=None; Secure';
     window.addEventListener("beforeunload", (ev) => {
       ev.preventDefault();
       cookies.remove("userInfo");
@@ -91,10 +81,6 @@ function YoutubeVideo() {
     });
   }, []);
 
-  const onPlayerReady = (event) => {
-    event.target.pauseVideo();
-  };
-
   const opts = {
     videoId: "",
     height: "590px",
@@ -103,7 +89,6 @@ function YoutubeVideo() {
     playerVars: {
       passive: false,
       controls: 2,
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
@@ -121,37 +106,6 @@ function YoutubeVideo() {
       opts={opts}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
-      // onReady={onPlayerReady}
     ></iframe>
-    // <YouTube
-    //   videoId="VdszNPYn5dU"
-    //   className={styles.video__body}
-    //   opts={opts}
-    //   onReady={onPlayerReady}
-    //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    //   allowfullscreen
-    // />
   );
 }
-
-// export async function getStaticProps() {
-//   // Call an external API endpoint to get posts.
-//   // You can use any data fetching library
-
-//   var src__link = await axios.get("https://www.youtube.com/embed/", {
-//     headers: {
-//       Accept: "application/json, text/plain, */*",
-//       "User-Agent": "*",
-//     },
-//   });
-//   var src__link = JSON.stringify(src__link.data);
-//   console.log("res ", src__link);
-
-//   // By returning { props: posts }, the Blog component
-//   // will receive `posts` as a prop at build time
-//   return {
-//     props: {
-//       data: src__link,
-//     },
-//   };
-// }

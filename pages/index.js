@@ -73,8 +73,6 @@ export default function Home() {
           </div>
         </header>
 
-        {/* <div className={styles.home__bg}></div> */}
-
         <div className={styles.home}>
           <div className={styles.container}>
             <div className={styles.inner}>
@@ -172,7 +170,6 @@ function OfferPopUpSending({ hanlerClosePopup }) {
   return (
     <>
       <Head></Head>
-
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
           <div className={styles.offer__inner}>
