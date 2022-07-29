@@ -105,7 +105,7 @@
         font-size: calc(6px + (16 - 6)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-        @apply py-[4.5%];
+        @apply  py-[4.5%] hover:bg-transparent hover:text-[#fff];
         font-size: calc(11px + (20 - 11)*(100vw - 320px)/(576 - 320));
     }
 }
@@ -118,7 +118,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply py-[4.5%];
+        @apply py-[4.5%] hover:bg-transparent hover:text-[#fff];
         font-size: calc(11px + (20 - 11)*(100vw - 320px)/(576 - 320));
     }
 }
