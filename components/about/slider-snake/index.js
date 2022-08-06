@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Styles.module.scss'
-import {Gallery} from './gallery'
+// import {Gallery} from './gallery'
+import Gallery from './gallery-2'
 import Head from 'next/head';
 
 export default function Index() {

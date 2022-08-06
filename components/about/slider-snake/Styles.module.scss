@@ -16,6 +16,17 @@
         // height: calc(200px + (525 - 200)*(100vw - 320px)/(576 - 320));
       }
 }
+.complex__grids {
+    height: 585px;
+    width: 100%;
+    @media screen and (max-width: 1440px) {
+        height: calc(248px + (585 - 248)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and (max-width: 576px) {
+        // height: 550px;
+        height: calc(355px + (550 - 355)*(100vw - 320px)/(576 - 320));
+    }
+}
 .complex__title {
     @include text(32px, 150%, 400, #2D2D2B);
     @apply relative pt-[5%] uppercase text-center tracking-wider;
