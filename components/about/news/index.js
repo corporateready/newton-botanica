@@ -31,8 +31,6 @@ export default function News() {
   const [isToggle, setIsToggle] = useState(1);
 
   const handlerTabClick = (i) => {
-    console.log("Clicked", i);
-    console.log("isToggle", isToggle);
     setIsToggle(i)
   };
   return (

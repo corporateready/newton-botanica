@@ -28,20 +28,19 @@ export default function Index() {
     },
   ];
 
-  //   const toggle__items = [1,2,3,4]
-
   const [sliderData, setSliderData] = useState(images[0]);
 
   const handleClick = (idx) => {
-    console.log(idx);
     const currentSlide = images[idx];
-    setSliderData(currentSlide);
+    return setSliderData(currentSlide);
   };
+
+  console.log(sliderData.id);
 
   return (
     <>
     <div className={styles.slider__wrapper}>
-      <div className={styles.slider__inner}>
+      <div className={styles.slider}>
         <div className={styles.image__wrap}>
           <img
             src={sliderData.url}
@@ -76,11 +75,10 @@ export default function Index() {
     </div>
     <ul className={styles.toggle__list}>
         {images.map((itemUrl, idx) => {
-          console.log(itemUrl.id);
           return (
             <li 
             key={itemUrl.id}
-                className={idx ? styles.toggle__item : styles.active__toggle_item}
+                className={sliderData.id === idx ? styles.active__toggle_item : styles.toggle__item}
                 onClick={() => handleClick(idx)}
                 >
               {itemUrl.id+1}

@@ -12,7 +12,7 @@
     background: #fff;
 
     @media screen and (max-width:576px) {
-        // @apply pt-0;
+        @apply pt-1;
     }
 }
 .complex__title {
@@ -65,7 +65,7 @@
     @media screen and (max-width: 576px) {
         @apply block;
         @apply w-full min-h-full mx-auto relative top-0 left-0;
-        height: calc(550px + (1000 - 500)*(100vw - 320px)/(576 - 320));
+        height: calc(670px + (1000 - 670)*(100vw - 320px)/(576 - 320));
     }
 }
 

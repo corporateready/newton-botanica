@@ -11,6 +11,10 @@
     @include text(12px, 100%, 400, #C4C4C4);
     @apply relative top-0 left-0 w-full text-center pb-[1.5%] hover:cursor-pointer;
 
+    @media screen and (max-width: 1440px) {
+        font-size: calc(7px + (12 - 7)*(100vw - 768px)/(1440 - 768));
+    }
+
     &::after {
         content: "";
         position: absolute;
@@ -38,6 +42,9 @@
 .timeline__step_active {
     @include text(12px, 100%, 400, #2BB018);
     @apply relative top-0 left-0 w-full text-center pb-[1.5%] hover:cursor-pointer;
+    @media screen and (max-width: 1440px) {
+        font-size: calc(7px + (12 - 7)*(100vw - 768px)/(1440 - 768));
+    }
 
     &::after {
         content: "";

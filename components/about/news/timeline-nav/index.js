@@ -8,9 +8,8 @@ export default function Index({
   isActive,
   setIsActive,
   isItem,
-  handlerTabClick
+  handlerTabClick,
 }) {
-
   useEffect(() => {
     setIsLine((100 / (isItem - 1)) * isActive);
   }, [isLine, isActive]);
@@ -24,17 +23,17 @@ export default function Index({
         }
         key={i}
         onClick={() => {
-          console.log(isActive);
-          handlerTabClick(i)
+          // console.log(isActive);
+          handlerTabClick(i);
           i > isActive ? setIsActive(isActive + i) : setIsActive(isActive - i);
         }}
       >
-        <div key={i}
-        
-        >{mounthes[i]}</div>
+        <div key={i}>{mounthes[i]}</div>
       </div>
     );
   }
 
-  return <div className={styles.timeline}>{arr}</div>;
+  return <div className={styles.timeline}>
+    {/* {console.log(arr)} */}
+    {arr}</div>;
 }
