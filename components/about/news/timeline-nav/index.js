@@ -4,16 +4,15 @@ import styles from "./Styles.module.scss";
 export default function Index({
   mounthes,
   isLine,
-  setIsLine,
   isActive,
   setIsActive,
   isItem,
   handlerTabClick,
+  isMounthDesk,
+  setIsMounthDesk,
 }) {
-  useEffect(() => {
-    setIsLine((100 / (isItem - 1)) * isActive);
-  }, [isLine, isActive]);
-
+  console.log("isLine: " + isLine);
+  console.log("isActive: " + isActive);
   const arr = [];
   for (let i = 0; i < isItem; i++) {
     arr.push(
@@ -22,9 +21,14 @@ export default function Index({
           i <= isActive ? styles.timeline__step_active : styles.timeline__step
         }
         key={i}
+        value={isMounthDesk}
+        onChange={(e) => {
+          setIsMounthDesk(e.target.value);
+        }}
         onClick={() => {
           handlerTabClick(i);
-          i > isActive ? setIsActive(isActive + i) : setIsActive(isActive - i);
+          setIsActive(i);
+          console.log(isActive);
         }}
       >
         <div key={i}>{mounthes[i]}</div>
@@ -32,6 +36,5 @@ export default function Index({
     );
   }
 
-  return <div className={styles.timeline}>
-    {arr}</div>;
+  return <div className={styles.timeline}>{arr}</div>;
 }

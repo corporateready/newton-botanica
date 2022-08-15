@@ -40,10 +40,13 @@
     }
 }
 .timeline__step_active {
-    @include text(12px, 100%, 400, #2BB018);
+    @include text(13px, 100%, 400, #2BB018);
     @apply relative top-0 left-0 w-full text-center pb-[1.5%] hover:cursor-pointer;
+    transition: 1s all ease-in-out;
+    transition-delay: 0.1s;
+     
     @media screen and (max-width: 1440px) {
-        font-size: calc(7px + (12 - 7)*(100vw - 768px)/(1440 - 768));
+        font-size: calc(7px + (13 - 7)*(100vw - 768px)/(1440 - 768));
     }
 
     &::after {
@@ -56,7 +59,21 @@
         height: 4px;
         background: #2BB018;
         border: 1px solid #2BB018;
-        
+        animation-name: linestep;
+        animation-timing-function: ease-in-out;
+        transition: 1s all ease-in-out;
+        transition-delay: 0.1s;
+
+        @keyframes linestep {
+            from {background-color: #2BB018;
+                border: 1px solid white;
+                left: 0;
+            }
+            to {background-color: #2BB018;
+                border: 1px solid #2BB018;
+                right: 100%;
+            }
+        }
     }
 
     &::before {
@@ -64,11 +81,26 @@
         content: "";
         position: absolute;
         display: block;
-        bottom: -15%;
+        bottom: -17%;
         right: -8%;
-        width: 10px;
-        height: 10px;
+        width: 13px;
+        height: 13px;
         background: #2BB018;
         border: 1px solid #2BB018;
+        
+        transition-delay: 0.2s;
+        animation-name: linestep;
+        animation-timing-function: ease-in-out;
+        transition: 1s all ease-in-out;
+        transition-delay: 0.1s;
+
+        @keyframes linestep {
+            from {background-color: #2BB018;
+                border: 1px solid white;
+            }
+            to {background-color: #2BB018;
+                border: 1px solid #2BB018;
+            }
+        }
     }
 }

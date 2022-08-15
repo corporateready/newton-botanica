@@ -9,8 +9,7 @@ import TimlineNav from "./timeline-nav";
 import { motion } from "framer-motion";
 
 export default function News() {
-  const [isYear, setIsYear] = useState();
-  const [isMounth, setIsMounth] = useState([
+  const isMounth = [
     "January",
     "February",
     "March",
@@ -23,7 +22,10 @@ export default function News() {
     "October",
     "November",
     "December",
-  ]);
+  ];
+
+  const [isYear, setIsYear] = useState();
+  const [isMounthDesk, setIsMounthDesk] = useState(0);
   const [isMounthMob, setIsMounthMob] = useState("January");
   const [isItem] = useState(12);
   const [isActive, setIsActive] = useState(0);
@@ -31,8 +33,10 @@ export default function News() {
   const [isToggle, setIsToggle] = useState(1);
 
   const handlerTabClick = (i) => {
-    setIsToggle(i)
+    setIsToggle(i);
+    setIsMounthDesk(i);
   };
+
   return (
     <>
       <div className={styles.news__section}>
@@ -63,6 +67,8 @@ export default function News() {
                 handlerTabClick={handlerTabClick}
                 isToggle={isToggle}
                 setIsToggle={setIsToggle}
+                isMounthDesk={isMounthDesk}
+                setIsMounthDesk={setIsMounthDesk}
               />
               <select
                 className={styles.news__navigation_mounth_mob}
@@ -71,11 +77,7 @@ export default function News() {
                 }}
               >
                 {isMounth.map((mounth, idx) => (
-                  <option
-                    key={idx}
-                    value={mounth}
-                    onClick={() => console.log(isMounthMob)}
-                  >
+                  <option key={idx} value={mounth}>
                     {mounth}
                   </option>
                 ))}
@@ -83,9 +85,12 @@ export default function News() {
             </div>
             <div className={styles.news__grids}>
               {isYear === "2021" ? (
-                <Year21 />
+                <Year21 isMounthDesk={isMounthDesk}/>
               ) : (
-                <Year22 isToggle={isToggle} isMounthMob={isMounthMob} />
+                <Year22
+                  isMounthDesk={isMounthDesk}
+                  isMounthMob={isMounthMob}
+                />
               )}
             </div>
           </div>
@@ -97,50 +102,42 @@ export default function News() {
 
 function Year21() {
   return (
-    <motion.div
-      className={styles.news__grid_month}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.7 } }}
-    >
-      <div className={styles.news__grid_item}>
-        <div className={styles.item__bg}>
-          <Image src={location__bg} height={333} width={499} priority alt="" />
-        </div>
-      </div>
-      <div className={styles.news__grid_item}>
-        <div className={styles.item__bg}>
-          <Image src={location__bg} height={333} width={499} priority alt="" />
-        </div>
-      </div>
-      <div className={styles.news__grid_item}>
-        <div className={styles.item__bg}>
-          <Image src={location__bg} height={333} width={499} priority alt="" />
-        </div>
-      </div>
-      <div className={styles.news__grid_item}>
-        <div className={styles.item__bg}>
-          <Image src={location__bg} height={333} width={499} priority alt="" />
-        </div>
-      </div>
-    </motion.div>
+    <>
+      {<December />}
+    </>
   );
 }
-
-function Year22({ isMounthMob }) {
+function Year22({ isMounthDesk, isMounthMob }) {
   return (
     <>
-      {isMounthMob === "January" && <January />}
-      {isMounthMob === "February" && <February />}
-      {isMounthMob === "March" && <March />}
-      {isMounthMob === "April" && <April />}
-      {isMounthMob === "May" && <May />}
-      {isMounthMob === "June" && <June />}
-      {isMounthMob === "July" && <July />}
-      {isMounthMob === "August" && <August />}
-      {isMounthMob === "September" && <September />}
-      {isMounthMob === "October" && <October />}
-      {isMounthMob === "November" && <November />}
-      {isMounthMob === "December" && <December />}
+      <div className={styles.mounth__desk}>
+        {isMounthDesk === 0 && <January />}
+        {isMounthDesk === 1 && <February />}
+        {isMounthDesk === 2 && <March />}
+        {isMounthDesk === 3 && <April />}
+        {isMounthDesk === 4 && <May />}
+        {isMounthDesk === 5 && <June />}
+        {isMounthDesk === 6 && <July />}
+        {isMounthDesk === 7 && <August />}
+        {isMounthDesk === 8 && <September />}
+        {isMounthDesk === 9 && <October />}
+        {isMounthDesk === 10 && <November />}
+        {isMounthDesk === 11 && <December />}
+      </div>
+      <div className={styles.mounth__mob}>
+        {isMounthMob === "January" && <January />}
+        {isMounthMob === "February" && <February />}
+        {isMounthMob === "March" && <March />}
+        {isMounthMob === "April" && <April />}
+        {isMounthMob === "May" && <May />}
+        {isMounthMob === "June" && <June />}
+        {isMounthMob === "July" && <July />}
+        {isMounthMob === "August" && <August />}
+        {isMounthMob === "September" && <September />}
+        {isMounthMob === "October" && <October />}
+        {isMounthMob === "November" && <November />}
+        {isMounthMob === "December" && <December />}
+      </div>
     </>
   );
 }

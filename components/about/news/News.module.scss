@@ -160,3 +160,16 @@
         font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
     }
 }
+// ===== =====>
+.mounth__desk {
+    @apply block;
+    @media screen and (max-width: 576px) {
+        @apply hidden;
+    }
+}
+.mounth__mob {
+    @apply hidden;
+    @media screen and (max-width: 576px) {
+        @apply block;
+    }
+}
