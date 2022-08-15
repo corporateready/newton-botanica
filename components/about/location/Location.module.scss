@@ -24,7 +24,7 @@
     }
 
     @media screen and (max-width: 576px) {
-        @apply pt-[10%];
+        @apply pt-[3%];
         font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
     }
 

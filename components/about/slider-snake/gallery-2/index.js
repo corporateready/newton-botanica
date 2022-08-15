@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./styles.module.scss";
-import image_1 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-1.png";
-import image_2 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-2.png";
+import image_1 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-1.webp";
+import image_1_1 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-1.png";
+import image_2 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-2.webp";
 
 export default function Index() {
   const images = [
@@ -30,10 +31,12 @@ export default function Index() {
   ];
 
   const [sliderData, setSliderData] = useState(images[0]);
+  const [offset, setOffset] = useState(0)
 
   const handleClick = (idx) => {
     const currentSlide = images[idx];
-    return setSliderData(currentSlide);
+    setOffset(-200)
+    setSliderData(currentSlide);
   };
 
   console.log(sliderData.id);
@@ -61,14 +64,11 @@ export default function Index() {
                   ? styles.active__thumbs_wrap
                   : styles.image__thumbs_wrap
               }
-              onClick={() => handleClick(idx)}
             >
               <div className={styles.image_}>
               <Image
                 src={itemUrl.url}
                 layout="fill"
-                // height="243"
-                // width="362"
                 alt=""
               />
               </div>
