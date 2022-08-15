@@ -3,22 +3,20 @@ import styles from "./Styles.module.scss";
 
 export default function Index({
   mounthes,
-  isLine,
   isActive,
   setIsActive,
   isItem,
   handlerTabClick,
   isMounthDesk,
   setIsMounthDesk,
+  isYear
 }) {
-  console.log("isLine: " + isLine);
-  console.log("isActive: " + isActive);
   const arr = [];
   for (let i = 0; i < isItem; i++) {
     arr.push(
       <div
         className={
-          i <= isActive ? styles.timeline__step_active : styles.timeline__step
+          i <= isActive || isYear == "2021" ? styles.timeline__step_active : styles.timeline__step
         }
         key={i}
         value={isMounthDesk}
@@ -28,7 +26,6 @@ export default function Index({
         onClick={() => {
           handlerTabClick(i);
           setIsActive(i);
-          console.log(isActive);
         }}
       >
         <div key={i}>{mounthes[i]}</div>

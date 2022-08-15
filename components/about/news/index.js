@@ -24,12 +24,11 @@ export default function News() {
     "December",
   ];
 
-  const [isYear, setIsYear] = useState();
+  const [isYear, setIsYear] = useState("2022");
   const [isMounthDesk, setIsMounthDesk] = useState(0);
   const [isMounthMob, setIsMounthMob] = useState("January");
   const [isItem] = useState(12);
   const [isActive, setIsActive] = useState(0);
-  const [isLine, setIsLine] = useState(0);
   const [isToggle, setIsToggle] = useState(1);
 
   const handlerTabClick = (i) => {
@@ -59,16 +58,15 @@ export default function News() {
               </select>
               <TimlineNav
                 mounthes={isMounth}
-                isLine={isLine}
                 isActive={isActive}
                 setIsActive={setIsActive}
                 isItem={isItem}
-                setIsLine={setIsLine}
                 handlerTabClick={handlerTabClick}
                 isToggle={isToggle}
                 setIsToggle={setIsToggle}
                 isMounthDesk={isMounthDesk}
                 setIsMounthDesk={setIsMounthDesk}
+                isYear={isYear}
               />
               <select
                 className={styles.news__navigation_mounth_mob}
@@ -77,7 +75,11 @@ export default function News() {
                 }}
               >
                 {isMounth.map((mounth, idx) => (
-                  <option key={idx} value={mounth}>
+                  <option
+                    key={idx}
+                    value={mounth}
+                    onClick={() => setIsYear(mounth)}
+                  >
                     {mounth}
                   </option>
                 ))}
@@ -85,12 +87,9 @@ export default function News() {
             </div>
             <div className={styles.news__grids}>
               {isYear === "2021" ? (
-                <Year21 isMounthDesk={isMounthDesk}/>
+                <Year21 />
               ) : (
-                <Year22
-                  isMounthDesk={isMounthDesk}
-                  isMounthMob={isMounthMob}
-                />
+                <Year22 isMounthDesk={isMounthDesk} isMounthMob={isMounthMob} />
               )}
             </div>
           </div>
@@ -101,11 +100,7 @@ export default function News() {
 }
 
 function Year21() {
-  return (
-    <>
-      {<December />}
-    </>
-  );
+  return <>{<December21 />}</>;
 }
 function Year22({ isMounthDesk, isMounthMob }) {
   return (
@@ -2101,6 +2096,184 @@ function November() {
   );
 }
 function December() {
+  return (
+    <motion.div
+      className={styles.news__grid_month}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+    >
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.news__grid_item}>
+        <div className={styles.item__bg}>
+          <Image
+            src={location__bg_2}
+            height={333}
+            width={499}
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.item__info}>
+          <div className={styles.item__info_l}>
+            <p>TRANȘA 2</p>
+          </div>
+          <div className={styles.item__info_r}>
+            <div className={styles.item__info_r_up}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+            <div className={styles.item__info_r_down}>
+              <div className={styles.icon__checked_wrapp}>
+                <Image
+                  src={icon__checked}
+                  height={11}
+                  width={11}
+                  priority
+                  alt=""
+                />
+              </div>
+              <p>Se execută marcarea coloanelor în parcare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+function December21() {
   return (
     <motion.div
       className={styles.news__grid_month}
