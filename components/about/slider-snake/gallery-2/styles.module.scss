@@ -49,7 +49,7 @@
 }
 // ===== thumbs =====>
 .thumbsnail__wrapper {
-    @apply flex flex-col w-[35%] h-full space-y-[3%] overflow-y-scroll;
+    @apply flex flex-col w-[35%] h-full space-y-[3%];
 
     @media screen and (max-width: 576px) {
         @apply grid w-full gap-[2%] space-y-0;

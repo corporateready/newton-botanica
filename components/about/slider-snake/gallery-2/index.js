@@ -2,29 +2,30 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./styles.module.scss";
-// import image_1 from "";
+import image_1 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-1.png";
+import image_2 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-2.png";
 
 export default function Index() {
   const images = [
     {
       id: 0,
-      url: "https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=",
+      url: image_1,
     },
     {
       id: 1,
-      url: "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
+      url: image_2,
     },
     {
       id: 2,
-      url: "https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=",
+      url: image_1,
     },
     {
       id: 3,
-      url: "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg",
+      url: image_2,
     },
     {
       id: 4,
-      url: "https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=",
+      url: image_1,
     },
   ];
 
@@ -42,13 +43,14 @@ export default function Index() {
     <div className={styles.slider__wrapper}>
       <div className={styles.slider}>
         <div className={styles.image__wrap}>
-          <img
+          <div className={styles.image_}>
+          <Image
             src={sliderData.url}
-            className={styles.image_}
-            height="525"
-            width="100%"
+            layout="fill"
+            placeholder="blur"
             alt=""
           />
+          </div>
         </div>
         <div className={styles.thumbsnail__wrapper}>
           {images.map((itemUrl, idx) => (
@@ -61,13 +63,15 @@ export default function Index() {
               }
               onClick={() => handleClick(idx)}
             >
-              <img
+              <div className={styles.image_}>
+              <Image
                 src={itemUrl.url}
-                className={styles.image_}
-                height="243"
-                width="362"
+                layout="fill"
+                // height="243"
+                // width="362"
                 alt=""
               />
+              </div>
             </div>
           ))}
         </div>

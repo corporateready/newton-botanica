@@ -23,7 +23,6 @@ export default function Index({
         }
         key={i}
         onClick={() => {
-          // console.log(isActive);
           handlerTabClick(i);
           i > isActive ? setIsActive(isActive + i) : setIsActive(isActive - i);
         }}
@@ -34,6 +33,5 @@ export default function Index({
   }
 
   return <div className={styles.timeline}>
-    {/* {console.log(arr)} */}
     {arr}</div>;
 }
