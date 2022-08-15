@@ -17,11 +17,11 @@
 }
 .location__title {
     @include text(32px, 150%, 400, #2D2D2B);
-    @apply relative pt-[60px] uppercase text-center;
+    @apply relative pt-[40px] uppercase text-center;
 
-    @media screen and (max-width: 1440px) {
-        @apply pt-[5.8%];
-    }
+    // @media screen and (max-width: 1440px) {
+    //     @apply pt-[5.8%];
+    // }
 
     @media screen and (max-width: 576px) {
         @apply pt-[3%];

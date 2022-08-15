@@ -31,11 +31,8 @@
     }
 
     @media screen and (max-width: 576px) {
-        height: calc(208px + (374 - 208)*(100vw - 320px)/(576 - 320));
-    }
-
-    @media screen and (max-width: 576px) {
         @apply w-full;
+        height: calc(208px + (374 - 208)*(100vw - 320px)/(576 - 320));
     }
 }
 .image_ {
@@ -60,13 +57,13 @@
     @apply relative top-0 left-0 z-10 w-full h-[101px];
 
     @media screen and (max-width: 1440px) {
-        height: calc(40px + (101 - 40)*(100vw - 320px)/(1440 - 320));
+        height: calc(38px + (101 - 38)*(100vw - 576px)/(1440 - 576));
     }
 
-    // @media screen and (max-width: 576px) {
-    //     width: 100%;
-    //     height: calc(59px + (107 - 59)*(100vw - 320px)/(576 - 320));
-    // }
+    @media screen and (max-width: 576px) {
+        width: 100%;
+        height: calc(39px + (67 - 39)*(100vw - 320px)/(576 - 320));
+    }
 
     &:after {
         content: "";
@@ -83,13 +80,13 @@
     @apply relative top-0 left-0 z-10 w-full h-[101px];
 
     @media screen and (max-width: 1440px) {
-        height: calc(40px + (101 - 40)*(100vw - 320px)/(1440 - 320));
+        height: calc(38px + (101 - 38)*(100vw - 576px)/(1440 - 576));
     }
 
-    // @media screen and (max-width: 576px) {
-    //     width: 100%;
-    //     height: calc(59px + (107 - 59)*(100vw - 320px)/(576 - 320));
-    // }
+    @media screen and (max-width: 576px) {
+        width: 100%;
+        height: calc(39px + (67 - 39)*(100vw - 320px)/(576 - 320));
+    }
 
     &:after {
         content: "";
@@ -103,7 +100,14 @@
 }
 // ===== toggle =====>
 .toggle__list {
-    @apply flex justify-center space-x-[5%] my-[8%] absolute bottom-0 left-[25%] w-[50%];
+    @apply flex justify-center space-x-3 my-[1%] absolute bottom-0 left-[25%] w-[50%];
+
+    @media screen and (max-width: 576px) {
+        @apply space-x-[5%] my-[8%];
+    }
+    @media screen and (max-width: 375px) {
+        @apply my-[6%];
+    }
 }
 .toggle__item {
     @apply border-[1px] border-[#2BB018] flex w-[25px] h-[25px] rounded-[3px] justify-center items-center text-sm text-[#C4C4C4] hover:cursor-pointer hover:bg-[#2BB018] hover:text-white;

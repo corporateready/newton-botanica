@@ -13,7 +13,7 @@
     overflow: hidden;
 }
 .complex__grids {
-    // height: 585px;
+    height: 585px;
     width: 100%;
     @media screen and (max-width: 1440px) {
         height: calc(248px + (585 - 248)*(100vw - 576px)/(1440 - 576));
