@@ -102,7 +102,7 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 1440px) {
-        @apply block opacity-100 absolute top-[-30%] left-[-25%] z-10;  
+        @apply block opacity-100 absolute top-[-30%] left-[-18%] z-10;  
         width: calc(162px + (406 - 162)*(100vw - 576px)/(1440 - 576));  
     }
 
@@ -144,7 +144,7 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 1440px) {
-        @apply block opacity-100 absolute bottom-[-43%] left-[-15%];  
+        @apply block opacity-100 absolute bottom-[-47%] left-[-15%];  
         width: calc(162px + (406 - 162)*(100vw - 576px)/(1440 - 576));  
     }
 
@@ -162,7 +162,7 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute bottom-[20%] right-[-27%];  
+        @apply block opacity-100 absolute bottom-[10%] right-[-27%];  
         width: calc(152px + (276 - 152)*(100vw - 320px)/(576 - 320));  
     }
 
@@ -184,7 +184,7 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute bottom-[-15%] right-[15%];  
+        @apply block opacity-100 absolute bottom-[-20%] right-[15%];  
         width: calc(122px + (206 - 122)*(100vw - 320px)/(576 - 320));  
     }
 
@@ -193,7 +193,7 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute bottom-0 left-[-17%];  
+        @apply block opacity-100 absolute bottom-0 left-[-14%];  
         width: calc(102px + (206 - 102)*(100vw - 320px)/(576 - 320));  
     }
 

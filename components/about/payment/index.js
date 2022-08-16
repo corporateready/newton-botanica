@@ -174,6 +174,17 @@ export default function index({ isOpen, setIsOpen }) {
         <div className={styles.leaf}>
           <Image
             src={leaf_1}
+            layout="intrinsic"
+            sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
+            priority
+            alt=""
+          />
+        </div>
+        <div className={styles.leaf__mob}>
+          <Image
+            src={leaf_1__mob}
             height={376}
             width={406}
             sizes="(max-width: 75em) 33vw,
@@ -183,29 +194,82 @@ export default function index({ isOpen, setIsOpen }) {
             alt=""
           />
         </div>
-        <div className={styles.leaf__mob}>
-          <Image src={leaf_1__mob} height={376} width={406} priority alt="" />
-        </div>
         <div className={styles.leaf__2}>
-          <Image src={leaf_2} height={376} width={406} priority alt="" />
+          <Image
+            src={leaf_2}
+            layout="intrinsic"
+            sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
+            priority
+            alt=""
+          />
         </div>
         <div className={styles.leaf_2__mob}>
-          <Image src={leaf_2__mob} height={376} width={406} priority alt="" />
+          <Image
+            src={leaf_2__mob}
+            layout="intrinsic"
+            sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
+            priority
+            alt=""
+          />
         </div>
         <div className={styles.leaf__3}>
-          <Image src={leaf_3} height={376} width={406} priority alt="" />
+          <Image
+            src={leaf_3}
+            layout="intrinsic"
+            sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
+            priority
+            alt=""
+          />
         </div>
         <div className={styles.leaf_3__mob}>
-          <Image src={leaf_3__mob} height={376} width={406} priority alt="" />
+          <Image
+            src={leaf_3__mob}
+            layout="intrinsic"
+            sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
+            priority
+            alt=""
+          />
         </div>
         <div className={styles.leaf__4}>
-          <Image src={leaf_4} height={376} width={406} priority alt="" />
+          <Image
+            src={leaf_4}
+            layout="intrinsic"
+            sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
+            priority
+            alt=""
+          />
         </div>
         <div className={styles.leaf_4__mob}>
-          <Image src={leaf_4__mob} height={376} width={406} priority alt="" />
+          <Image
+            src={leaf_4__mob}
+            layout="intrinsic"
+            sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
+            priority
+            alt=""
+          />
         </div>
         <div className={styles.leaf_5__mob}>
-          <Image src={leaf_5__mob} height={276} width={306} priority alt="" />
+          <Image
+            src={leaf_5__mob}
+            layout="intrinsic"
+            sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
+            priority
+            alt=""
+          />
         </div>
       </div>
     </>
