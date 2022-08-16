@@ -67,7 +67,6 @@ export default function Planning() {
             src={planning__bg}
             layout="fill"
             quality={100}
-            placeholder={planning__bg_}
             priority
             alt="home background"
           />
@@ -76,8 +75,10 @@ export default function Planning() {
           <Image
             src={planning__bg_mob}
             layout="fill"
-            quality={100}
             priority
+            sizes="(max-width: 75em) 33vw,
+            (max-width: 48em) 50vw,
+            100vw"
             alt="mobile home background"
           />
         </div>
