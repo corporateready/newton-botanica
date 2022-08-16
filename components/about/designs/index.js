@@ -26,8 +26,10 @@ export default function index() {
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_1}
-                    height={164}
-                    width={105}
+                    layout="intrinsic"
+                    sizes="(max-width: 71em) 33vw,
+                      (max-width: 48em) 50vw,
+                      100vw"
                     priority
                     alt=""
                   />
@@ -41,8 +43,10 @@ export default function index() {
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_2}
-                    height={160}
-                    width={80}
+                    layout="intrinsic"
+                    sizes="(max-width: 71em) 33vw,
+                      (max-width: 48em) 50vw,
+                      100vw"
                     priority
                     alt=""
                   />
@@ -56,8 +60,10 @@ export default function index() {
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_3}
-                    height={134}
-                    width={144}
+                    layout="intrinsic"
+                    sizes="(max-width: 71em) 33vw,
+                      (max-width: 48em) 50vw,
+                      100vw"
                     priority
                     alt=""
                   />
@@ -71,8 +77,10 @@ export default function index() {
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_4}
-                    height={98}
-                    width={172}
+                    layout="intrinsic"
+                    sizes="(max-width: 71em) 33vw,
+                      (max-width: 48em) 50vw,
+                      100vw"
                     priority
                     alt=""
                   />
@@ -86,8 +94,10 @@ export default function index() {
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_5}
-                    height={119}
-                    width={122}
+                    layout="intrinsic"
+                    sizes="(max-width: 71em) 33vw,
+                      (max-width: 48em) 50vw,
+                      100vw"
                     priority
                     alt=""
                   />
@@ -101,8 +111,10 @@ export default function index() {
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_6}
-                    height={92}
-                    width={111}
+                    layout="intrinsic"
+                    sizes="(max-width: 71em) 33vw,
+                      (max-width: 48em) 50vw,
+                      100vw"
                     priority
                     alt=""
                   />
@@ -116,8 +128,10 @@ export default function index() {
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_7}
-                    height={147}
-                    width={96}
+                    layout="intrinsic"
+                    sizes="(max-width: 71em) 33vw,
+                      (max-width: 48em) 50vw,
+                      100vw"
                     priority
                     alt=""
                   />
@@ -131,8 +145,10 @@ export default function index() {
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_8}
-                    height={158}
-                    width={144}
+                    layout="intrinsic"
+                    sizes="(max-width: 71em) 33vw,
+                      (max-width: 48em) 50vw,
+                      100vw"
                     priority
                     alt=""
                   />

@@ -64,7 +64,7 @@
 }
 
 .designs__image {
-    @apply flex items-center justify-center h-full w-full;
+    @apply flex items-center justify-center h-full w-[50%];
 
     @media screen and (max-width: 1024px) {
         @apply w-[40%];

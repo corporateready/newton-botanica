@@ -19,6 +19,9 @@ export default function index() {
                 src={location__bg}
                 height={506}
                 width={1043}
+                sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
                 priority
                 alt=""
               />

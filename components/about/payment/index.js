@@ -14,11 +14,10 @@ import leaf_3__mob from "../../../public/static/planning-page/payment/leaf-b-r.s
 import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
 import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.svg";
 
-export default function index({isOpen, setIsOpen}) {
-
+export default function index({ isOpen, setIsOpen }) {
   const hanlerOpenPopup = () => {
-    setIsOpen(true)
-  }
+    setIsOpen(true);
+  };
   return (
     <>
       <div className={styles.payment__section}>
@@ -34,10 +33,10 @@ export default function index({isOpen, setIsOpen}) {
                   alt=""
                 />
               </div>
-              <button 
+              <button
                 className={styles.location__detail}
                 onClick={hanlerOpenPopup}
-                >
+              >
                 SOLICITĂ OFERTA
               </button>
             </div>
@@ -173,7 +172,16 @@ export default function index({isOpen, setIsOpen}) {
           </div>
         </div>
         <div className={styles.leaf}>
-          <Image src={leaf_1} height={376} width={406} priority alt="" />
+          <Image
+            src={leaf_1}
+            height={376}
+            width={406}
+            sizes="(max-width: 75em) 33vw,
+              (max-width: 48em) 50vw,
+              100vw"
+            priority
+            alt=""
+          />
         </div>
         <div className={styles.leaf__mob}>
           <Image src={leaf_1__mob} height={376} width={406} priority alt="" />
