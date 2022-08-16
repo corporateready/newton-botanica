@@ -6,6 +6,18 @@
 .planning__bg {
     @apply absolute top-0 left-0 min-h-full max-h-full w-full z-auto object-fill;
 
+    @media screen and (max-width: 576px) {
+        @apply hidden;
+    }
+
+}
+.planning__bg_mob {
+    @apply hidden;
+
+    @media screen and (max-width: 576px) {
+        @apply block absolute top-0 left-0 min-h-full max-h-full w-full z-auto object-fill;
+    }
+
 }
 .container {
     @apply w-[1170px] mx-auto px-0;
@@ -15,6 +27,6 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply w-full px-[7%];
+        @apply w-full px-[5%];
     }
 }

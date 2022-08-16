@@ -3,6 +3,7 @@ import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
 import planning__bg from "/public/static/planning-page/Group_2678.webp";
+import planning__bg_mob from "/public/static/planning-page/bg-about-mob.webp";
 import {
   Hero,
   Complex,
@@ -58,6 +59,15 @@ export default function Planning() {
         <div className={styles.planning__bg}>
           <Image
             src={planning__bg}
+            layout="fill"
+            quality={100}
+            priority
+            alt="home background"
+          />
+        </div>
+        <div className={styles.planning__bg_mob}>
+          <Image
+            src={planning__bg_mob}
             layout="fill"
             quality={100}
             priority

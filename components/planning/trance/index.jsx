@@ -69,230 +69,291 @@ export default function Index() {
         </div>
 
         <div className={styles.trance__paggination_inner}>
-          <motion.div
-            className={
-              isTab === 1
-                ? styles.complex__grid_floats
-                : styles.complex__grid_hidden
-            }
-            hidden={isTab != 1}
-            initial={{ opacity: 0 }}
-            animate={isTab === 1 ? { opacity: 1 } : null}
-            transition={{ duration: 1 }}
-          >
-            {one__room_floats.map((float) => (
-              <div key={float.id} className={styles.complex__grid_item}>
-                <div className={styles.item__bg}>
-                  <Image
-                    src={float.image}
-                    height={221}
-                    width={250}
-                    priority
-                    // placeholder="blur"
-                    alt=""
-                  />
-                </div>
-                <div className={styles.item__description}>
-                  <div className={styles.item__description__up}>
-                    <p className={styles.item__description_name}>
-                      <span className={styles.item__description_name_up}>
-                        {float.title}
-                      </span>
-                      <span className={styles.item__description_name_down}>
-                        {float.quantity}
-                        <sup>2</sup>
-                      </span>
-                    </p>
-                    <p className={styles.item__description_name}>
-                      <span className={styles.item__description_name_up}>
-                        {float.subtitle}
-                      </span>
-                      <span className={styles.item__description_name_down}>
-                        {float.coast} €
-                      </span>
-                    </p>
+          <div className={styles.trance__desktop_inner}>
+            <motion.div
+              className={
+                isTab === 1
+                  ? styles.complex__grid_floats
+                  : styles.complex__grid_hidden
+              }
+              hidden={isTab != 1}
+              initial={{ opacity: 0 }}
+              animate={isTab === 1 ? { opacity: 1 } : null}
+              transition={{ duration: 1 }}
+            >
+              {one__room_floats.map((float) => (
+                <div key={float.id} className={styles.complex__grid_item}>
+                  <div className={styles.item__bg}>
+                    <Image
+                      src={float.image}
+                      height={221}
+                      width={250}
+                      priority
+                      alt=""
+                    />
                   </div>
-                  <div className={styles.item__description__down}>
-                    <button
-                      //   onClick={handlerOpenDetails}
-                      type="button"
-                      className={styles.details__button}
-                    >
-                      AFLĂ DETALII
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-          <motion.div
-            className={
-              isTab === 2
-                ? styles.complex__grid_floats
-                : styles.complex__grid_hidden
-            }
-            hidden={isTab != 2}
-            initial={{ opacity: 0 }}
-            animate={isTab === 2 ? { opacity: 1 } : null}
-            transition={{ duration: 1 }}
-          >
-            {two__room_floats.map((float) => (
-              <div key={float.id} className={styles.complex__grid_item}>
-                <div className={styles.item__bg}>
-                  <Image
-                    src={float.image}
-                    height={221}
-                    width={250}
-                    priority
-                    // placeholder="blur"
-                    alt=""
-                  />
-                </div>
-                <div className={styles.item__description}>
-                  <div className={styles.item__description__up}>
-                    <p className={styles.item__description_name}>
-                      <span className={styles.item__description_name_up}>
-                        {float.title}
-                      </span>
-                      <span className={styles.item__description_name_down}>
-                        {float.quantity}
-                        <sup>2</sup>
-                      </span>
-                    </p>
-                    <p className={styles.item__description_name}>
-                      <span className={styles.item__description_name_up}>
-                        {float.subtitle}
-                      </span>
-                      <span className={styles.item__description_name_down}>
-                        {float.coast} €
-                      </span>
-                    </p>
-                  </div>
-                  <div className={styles.item__description__down}>
-                    <button
-                      //   onClick={handlerOpenDetails}
-                      type="button"
-                      className={styles.details__button}
-                    >
-                      AFLĂ DETALII
-                    </button>
+                  <div className={styles.item__description}>
+                    <div className={styles.item__description__up}>
+                      <p className={styles.item__description_name}>
+                        <span className={styles.item__description_name_up}>
+                          {float.title}
+                        </span>
+                        <span className={styles.item__description_name_down}>
+                          {float.quantity}
+                          <sup>2</sup>
+                        </span>
+                      </p>
+                      <p className={styles.item__description_name}>
+                        <span className={styles.item__description_name_up}>
+                          {float.subtitle}
+                        </span>
+                        <span className={styles.item__description_name_down}>
+                          {float.coast} €
+                        </span>
+                      </p>
+                    </div>
+                    <div className={styles.item__description__down}>
+                      <button
+                        //   onClick={handlerOpenDetails}
+                        type="button"
+                        className={styles.details__button}
+                      >
+                        AFLĂ DETALII
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
-          <motion.div
-            className={
-              isTab === 3
-                ? styles.complex__grid_floats
-                : styles.complex__grid_hidden
-            }
-            hidden={isTab != 3}
-            initial={{ opacity: 0 }}
-            animate={isTab === 3 ? { opacity: 1 } : null}
-            transition={{ duration: 1 }}
-          >
-            {three__room_floats.map((float) => (
-              <div key={float.id} className={styles.complex__grid_item}>
-                <div className={styles.item__bg}>
-                  <Image
-                    src={float.image}
-                    height={221}
-                    width={250}
-                    priority
-                    // placeholder="blur"
-                    alt=""
-                  />
-                </div>
-                <div className={styles.item__description}>
-                  <div className={styles.item__description__up}>
-                    <p className={styles.item__description_name}>
-                      <span className={styles.item__description_name_up}>
-                        {float.title}
-                      </span>
-                      <span className={styles.item__description_name_down}>
-                        {float.quantity}
-                        <sup>2</sup>
-                      </span>
-                    </p>
-                    <p className={styles.item__description_name}>
-                      <span className={styles.item__description_name_up}>
-                        {float.subtitle}
-                      </span>
-                      <span className={styles.item__description_name_down}>
-                        {float.coast} €
-                      </span>
-                    </p>
+              ))}
+            </motion.div>
+            <motion.div
+              className={
+                isTab === 2
+                  ? styles.complex__grid_floats
+                  : styles.complex__grid_hidden
+              }
+              hidden={isTab != 2}
+              initial={{ opacity: 0 }}
+              animate={isTab === 2 ? { opacity: 1 } : null}
+              transition={{ duration: 1 }}
+            >
+              {two__room_floats.map((float) => (
+                <div key={float.id} className={styles.complex__grid_item}>
+                  <div className={styles.item__bg}>
+                    <Image
+                      src={float.image}
+                      height={221}
+                      width={250}
+                      priority
+                      // placeholder="blur"
+                      alt=""
+                    />
                   </div>
-                  <div className={styles.item__description__down}>
-                    <button
-                      //   onClick={handlerOpenDetails}
-                      type="button"
-                      className={styles.details__button}
-                    >
-                      AFLĂ DETALII
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-          <motion.div
-            className={
-              isTab === 4
-                ? styles.complex__grid_floats
-                : styles.complex__grid_hidden
-            }
-            hidden={isTab != 4}
-            initial={{ opacity: 0 }}
-            animate={isTab === 4 ? { opacity: 1 } : null}
-            transition={{ duration: 1 }}
-          >
-            {four__room_floats.map((float) => (
-              <div key={float.id} className={styles.complex__grid_item}>
-                <div className={styles.item__bg}>
-                  <Image
-                    src={float.image}
-                    height={221}
-                    width={250}
-                    priority
-                    // placeholder="blur"
-                    alt=""
-                  />
-                </div>
-                <div className={styles.item__description}>
-                  <div className={styles.item__description__up}>
-                    <p className={styles.item__description_name}>
-                      <span className={styles.item__description_name_up}>
-                        {float.title}
-                      </span>
-                      <span className={styles.item__description_name_down}>
-                        {float.quantity}
-                        <sup>2</sup>
-                      </span>
-                    </p>
-                    <p className={styles.item__description_name}>
-                      <span className={styles.item__description_name_up}>
-                        {float.subtitle}
-                      </span>
-                      <span className={styles.item__description_name_down}>
-                        {float.coast} €
-                      </span>
-                    </p>
-                  </div>
-                  <div className={styles.item__description__down}>
-                    <button
-                      //   onClick={handlerOpenDetails}
-                      type="button"
-                      className={styles.details__button}
-                    >
-                      AFLĂ DETALII
-                    </button>
+                  <div className={styles.item__description}>
+                    <div className={styles.item__description__up}>
+                      <p className={styles.item__description_name}>
+                        <span className={styles.item__description_name_up}>
+                          {float.title}
+                        </span>
+                        <span className={styles.item__description_name_down}>
+                          {float.quantity}
+                          <sup>2</sup>
+                        </span>
+                      </p>
+                      <p className={styles.item__description_name}>
+                        <span className={styles.item__description_name_up}>
+                          {float.subtitle}
+                        </span>
+                        <span className={styles.item__description_name_down}>
+                          {float.coast} €
+                        </span>
+                      </p>
+                    </div>
+                    <div className={styles.item__description__down}>
+                      <button
+                        //   onClick={handlerOpenDetails}
+                        type="button"
+                        className={styles.details__button}
+                      >
+                        AFLĂ DETALII
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+            <motion.div
+              className={
+                isTab === 3
+                  ? styles.complex__grid_floats
+                  : styles.complex__grid_hidden
+              }
+              hidden={isTab != 3}
+              initial={{ opacity: 0 }}
+              animate={isTab === 3 ? { opacity: 1 } : null}
+              transition={{ duration: 1 }}
+            >
+              {three__room_floats.map((float) => (
+                <div key={float.id} className={styles.complex__grid_item}>
+                  <div className={styles.item__bg}>
+                    <Image
+                      src={float.image}
+                      height={221}
+                      width={250}
+                      priority
+                      // placeholder="blur"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.item__description}>
+                    <div className={styles.item__description__up}>
+                      <p className={styles.item__description_name}>
+                        <span className={styles.item__description_name_up}>
+                          {float.title}
+                        </span>
+                        <span className={styles.item__description_name_down}>
+                          {float.quantity}
+                          <sup>2</sup>
+                        </span>
+                      </p>
+                      <p className={styles.item__description_name}>
+                        <span className={styles.item__description_name_up}>
+                          {float.subtitle}
+                        </span>
+                        <span className={styles.item__description_name_down}>
+                          {float.coast} €
+                        </span>
+                      </p>
+                    </div>
+                    <div className={styles.item__description__down}>
+                      <button
+                        //   onClick={handlerOpenDetails}
+                        type="button"
+                        className={styles.details__button}
+                      >
+                        AFLĂ DETALII
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+            <motion.div
+              className={
+                isTab === 4
+                  ? styles.complex__grid_floats
+                  : styles.complex__grid_hidden
+              }
+              hidden={isTab != 4}
+              initial={{ opacity: 0 }}
+              animate={isTab === 4 ? { opacity: 1 } : null}
+              transition={{ duration: 1 }}
+            >
+              {four__room_floats.map((float) => (
+                <div key={float.id} className={styles.complex__grid_item}>
+                  <div className={styles.item__bg}>
+                    <Image
+                      src={float.image}
+                      height={221}
+                      width={250}
+                      priority
+                      // placeholder="blur"
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.item__description}>
+                    <div className={styles.item__description__up}>
+                      <p className={styles.item__description_name}>
+                        <span className={styles.item__description_name_up}>
+                          {float.title}
+                        </span>
+                        <span className={styles.item__description_name_down}>
+                          {float.quantity}
+                          <sup>2</sup>
+                        </span>
+                      </p>
+                      <p className={styles.item__description_name}>
+                        <span className={styles.item__description_name_up}>
+                          {float.subtitle}
+                        </span>
+                        <span className={styles.item__description_name_down}>
+                          {float.coast} €
+                        </span>
+                      </p>
+                    </div>
+                    <div className={styles.item__description__down}>
+                      <button
+                        //   onClick={handlerOpenDetails}
+                        type="button"
+                        className={styles.details__button}
+                      >
+                        AFLĂ DETALII
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+          {/* mobile */}
+          <div className={styles.trance__mobile_inner}>
+            <motion.div
+              className={
+                isTab === 1
+                  ? styles.complex__grid_floats_mob
+                  : styles.complex__grid_hidden
+              }
+              hidden={isTab != 1}
+              initial={{ opacity: 0 }}
+              animate={isTab === 1 ? { opacity: 1 } : null}
+              transition={{ duration: 1 }}
+            >
+              {one__room_floats.map((float) => (
+                <div key={float.id} className={styles.complex__grid_item}>
+                  <div className={styles.complex__grid_col}>
+                    <div className={styles.item__bg}>
+                      <Image
+                        src={float.image}
+                        height={221}
+                        width={250}
+                        priority
+                        alt=""
+                      />
+                    </div>
+                    <div className={styles.item__description}>
+                      <div className={styles.item__description__up}>
+                        <p className={styles.item__description_name}>
+                          <span className={styles.item__description_name_up}>
+                            {float.title}
+                          </span>
+                          <span className={styles.item__description_name_down}>
+                            {float.quantity}
+                            <sup>2</sup>
+                          </span>
+                        </p>
+                        <p className={styles.item__description_name}>
+                          <span className={styles.item__description_name_up}>
+                            {float.subtitle}
+                          </span>
+                          <span className={styles.item__description_name_down}>
+                            {float.coast} €
+                          </span>
+                        </p>
+                      </div>
+                      <div className={styles.item__description__down}>
+                        <button
+                          //   onClick={handlerOpenDetails}
+                          type="button"
+                          className={styles.details__button}
+                        >
+                          AFLĂ DETALII
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
           <div className={styles.trance__paggination_2}></div>
         </div>
         <div className={styles.trance__paggination_inner_toggler}>
