@@ -78,7 +78,7 @@
         width: calc(15px + (24 - 15)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-        width: calc(22px + (35 - 22)*(100vw - 320px)/(576 - 320));
+        width: calc(12px + (25 - 12)*(100vw - 320px)/(576 - 320));
     }
 }
 .footer__contact {

@@ -4,7 +4,7 @@ import Footer from "./footer";
 
 export default function index({ children }) {
   return (
-    <div className="flex flex-col relative">
+    <div className="flex flex-col relative h-full w-full">
       <Header />
       {children}
       <Footer />
