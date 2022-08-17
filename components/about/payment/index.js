@@ -4,15 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import payment__image from "../../../public/static/planning-page/payment/payment-image.svg";
 import logo__icon from "../../../public/static/planning-page/payment/logo-icon.svg";
-import leaf_1 from "../../../public/static/planning-page/payment/leaf-t-l.svg";
-import leaf_2 from "../../../public/static/planning-page/payment/leaf-t-r.svg";
-import leaf_3 from "../../../public/static/planning-page/payment/leaf-b-l.svg";
-import leaf_4 from "../../../public/static/planning-page/payment/leaf-b-r.svg";
-import leaf_1__mob from "../../../public/static/planning-page/payment/leaf-t-l-mob.svg";
+
+import leaf_1 from "../../../public/static/planning-page/payment/leaf-t-l-desk.png";
+import leaf_2 from "../../../public/static/planning-page/payment/leaf-t-r-desk.png";
+import leaf_4 from "../../../public/static/planning-page/payment/leaf-b-r-desk.png";
+import leaf_3 from "../../../public/static/planning-page/payment/leaf-b-l-desk.png";
+
+import leaf_1__mob from "../../../public/static/planning-page/payment/leaf-t-l-mob.png";
 import leaf_2__mob from "../../../public/static/planning-page/payment/leaf-t-r-mob.png";
-import leaf_3__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
-import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
-import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.svg";
+import leaf_3__mob from "../../../public/static/planning-page/payment/leaf-c-r-mob.png";
+import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r-mob.png";
+import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.png";
 
 export default function index({ isOpen, setIsOpen }) {
   const hanlerOpenPopup = () => {

@@ -170,14 +170,6 @@ function OfferPopUpSending({ hanlerClosePopup }) {
 
   return (
     <>
-      <Head>
-      {/* <link
-          rel="preload"
-          href="Home.module.scss"
-          as="style"
-          onLoad="this.rel='stylesheet'"
-        /> */}
-      </Head>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
           <div className={styles.offer__inner}>

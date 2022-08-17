@@ -102,8 +102,8 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 1440px) {
-        @apply block opacity-100 absolute top-[-30%] left-[-18%] z-10;  
-        width: calc(162px + (406 - 162)*(100vw - 576px)/(1440 - 576));  
+        @apply block opacity-100 absolute top-[-28%] left-[-18%] z-10;  
+        width: calc(102px + (306 - 102)*(100vw - 576px)/(1440 - 576));  
     }
 
     @media screen and(max-width: 576px) {
@@ -114,7 +114,7 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute top-[-27%] left-[-30%];  
+        @apply block opacity-100 absolute top-[-27%] left-[-37%];  
         width: calc(202px + (306 - 202)*(100vw - 320px)/(576 - 320));  
     }
 
@@ -135,8 +135,8 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute top-[-10%] right-[-30%];  
-        width: calc(142px + (256 - 142)*(100vw - 320px)/(576 - 320));  
+        @apply block opacity-100 absolute top-[-9%] right-[-46%];  
+        width: calc(142px + (306 - 142)*(100vw - 320px)/(576 - 320));  
     }
 
 }
@@ -151,18 +151,12 @@
     @media screen and(max-width: 576px) {
         @apply hidden;
     }
-
-    
-    // @media screen and(max-width: 576px) {
-    //     @apply opacity-100 absolute top-[-10%] left-[-25%];  
-    //     width: calc(132px + (206 - 132)*(100vw - 320px)/(576 - 320));  
-    // }
 }
 .leaf_3__mob {
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute bottom-[10%] right-[-27%];  
+        @apply block opacity-100 absolute bottom-[10%] right-[-35%];  
         width: calc(152px + (276 - 152)*(100vw - 320px)/(576 - 320));  
     }
 
