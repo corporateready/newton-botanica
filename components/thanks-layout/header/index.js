@@ -33,7 +33,7 @@ export default function index() {
                 />
               </div>
               <span className={styles.header__phone_link_number}>
-                + 373 60 80 20 20
+                + 373 608 020 20
               </span>
             </a>
           </Link>

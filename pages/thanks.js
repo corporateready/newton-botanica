@@ -21,11 +21,8 @@ export default function Thanks() {
             <div className={styles.container}>
               <div className={styles.thanks__wrapper}>
                 <h1 className={styles.thanks__title}>
-                  thank you <div className={styles.separate}></div> thank you{" "}
-                  <span className={styles.content__remove}>thank you</span>{" "}
-                  thank you,
-                  <br />
-                  <span>NEWTON HOUSE GRĂDINA BOTANICĂ</span>
+                  thank you
+                  <span> NEWTON HOUSE GRĂDINA BOTANICĂ</span>
                 </h1>
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
@@ -89,7 +86,7 @@ function YoutubeVideo() {
     playerVars: {
       passive: false,
       controls: 2,
-      autoplay: 1,
+      autoplay: true,
     },
   };
 

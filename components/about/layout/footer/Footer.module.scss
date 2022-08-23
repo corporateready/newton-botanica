@@ -81,29 +81,23 @@
 .footer__contact {
     @apply flex flex-col justify-center h-full space-y-[3%];
 
-    @media screen and(max-width: 1100px) {
-        // @apply ml-[15%];
-    }
-    @media screen and(max-width: 768px) {
-        // @apply ml-[17%];
-    }
     @media screen and(max-width: 576px) {
         @apply space-y-[3%] w-[100%] ml-0;
     }
 }
 .footer__contact_item {
-    @apply flex items-center space-x-[5%] w-[67%] self-end;
+    @apply flex items-center space-x-[5%] w-[55%] self-end;
 
-    @media screen and (max-width: 1000px) {
-        @apply w-[72%];
+    @media screen and (max-width: 1150px) {
+        @apply w-[62%];
     }
 
     @media screen and (max-width: 790px) {
-        @apply w-[80%];
+        @apply w-[70%];
     }
 
     @media screen and (max-width: 576px) {
-        @apply w-[110%];
+        @apply w-[100%];
     }
 }
 .footer__contact_icon {

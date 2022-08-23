@@ -9,11 +9,11 @@ export default function index() {
     <>
       <div className={styles.location__section}>
         <div className={styles.location__wrapper}>
-        <h1 className={styles.location__title}>
-              Amplasare execlentă în zonă verde
-              <span></span>
-            </h1>
-          <div className={styles.location__inner}>  
+          <h1 className={styles.location__title}>
+            Amplasare execlentă în zonă verde
+            <span></span>
+          </h1>
+          <div className={styles.location__inner}>
             <div className={styles.location__bg_inner}>
               <Image
                 src={location__bg}
@@ -27,9 +27,11 @@ export default function index() {
               />
             </div>
             <div className={styles.location__address}>
-              <p className={styles.location__address_name}>
-              Str. Grădina Botanică, 18
-              </p>
+              <Link href="https://g.page/Newton-House-srl?share">
+                <a className={styles.location__address_name}>
+                  str. Grădina Botanică, 18
+                </a>
+              </Link>
               <Link href="https://g.page/Newton-House-srl?share">
                 <a className={styles.location__address_detail}>Vezi traseul</a>
               </Link>

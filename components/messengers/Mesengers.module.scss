@@ -11,7 +11,24 @@
 }
 
 .whatsapp {
-    @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
+
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
 
     @media screen and(max-width: 1440px) {
         width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
@@ -35,7 +52,24 @@
 }
 
 .viber {
-    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
+
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
 
     @media screen and(max-width: 1440px) {
         width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
@@ -59,7 +93,24 @@
 }
 
 .messenger {
-    @apply bg-white h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-white h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
+
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
 
     @media screen and(max-width: 1440px) {
         width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
@@ -83,7 +134,24 @@
 }
 
 .phone {
-    @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer hover:scale-125 duration-200;
+    @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
+
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
 
     @media screen and(max-width: 1440px) {
         width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));

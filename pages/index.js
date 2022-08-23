@@ -24,14 +24,6 @@ export default function Home() {
   return (
     <>
       <Head>
-      
-      {/* <link
-          rel="preload"
-          href="Home.module.scss"
-          as="style"
-          onLoad="rel='stylesheet'"
-        /> */}
-        <link rel="preconnect" href="http://localhost:3000/" />
         <title>Newton House Grădina Botanica</title>
         <meta
           name="description"
@@ -111,7 +103,7 @@ export default function Home() {
                   className={styles.button__send}
                   onClick={() => setIsOfferOpen(true)}
                 >
-                  SOLICITĂ OFERTA
+                  VEZI DETALII
                 </button>
               </div>
 

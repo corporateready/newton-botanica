@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import styles from "./styles.module.scss";
-import image_1 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-1.webp";
-import image_1_1 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-1.png";
-import image_2 from "../../../../public/static/planning-page/gallery/Gradina-Botanica-2.webp";
+import image_1 from "../../../../public/static/planning-page/gallery/Gradina_1.jpg";
+import image_2 from "../../../../public/static/planning-page/gallery/Gradina_2.jpg";
+import image_3 from "../../../../public/static/planning-page/gallery/Gradina_3.jpg";
+import image_4 from "../../../../public/static/planning-page/gallery/Gradina_4.jpg";
 
 export default function Index() {
   const images = [
@@ -18,11 +18,11 @@ export default function Index() {
     },
     {
       id: 2,
-      url: image_1,
+      url: image_3,
     },
     {
       id: 3,
-      url: image_2,
+      url: image_4,
     },
     {
       id: 4,
@@ -31,11 +31,9 @@ export default function Index() {
   ];
 
   const [sliderData, setSliderData] = useState(images[0]);
-  const [offset, setOffset] = useState(0)
 
   const handleClick = (idx) => {
     const currentSlide = images[idx];
-    setOffset(-200)
     setSliderData(currentSlide);
   };
 
@@ -43,53 +41,49 @@ export default function Index() {
 
   return (
     <>
-    <div className={styles.slider__wrapper}>
-      <div className={styles.slider}>
-        <div className={styles.image__wrap}>
-          <div className={styles.image_}>
-          <Image
-            src={sliderData.url}
-            layout="fill"
-            placeholder="blur"
-            alt=""
-          />
+      <div className={styles.slider__wrapper}>
+        <div className={styles.slider}>
+          <div className={styles.image__wrap}>
+            <div className={styles.image_}>
+              <Image src={sliderData.url} layout="fill" priority alt="" />
+            </div>
+          </div>
+          <div className={styles.thumbsnail__wrapper}>
+            {images.map((itemUrl, idx) => (
+              <div
+                key={itemUrl.id}
+                className={
+                  sliderData.id == idx
+                    ? styles.active__thumbs_wrap
+                    : styles.image__thumbs_wrap
+                }
+                onClick={() => handleClick(idx)}
+              >
+                <div className={styles.image_}>
+                  <Image src={itemUrl.url} layout="fill" priority alt="" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-        <div className={styles.thumbsnail__wrapper}>
-          {images.map((itemUrl, idx) => (
-            <div
-              key={itemUrl.id}
-              className={
-                sliderData.id == idx
-                  ? styles.active__thumbs_wrap
-                  : styles.image__thumbs_wrap
-              }
-            >
-              <div className={styles.image_}>
-              <Image
-                src={itemUrl.url}
-                layout="fill"
-                alt=""
-              />
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
-    </div>
-    <ul className={styles.toggle__list}>
+      <ul className={styles.toggle__list}>
         {images.map((itemUrl, idx) => {
           return (
-            <li 
-            key={itemUrl.id}
-                className={sliderData.id === idx ? styles.active__toggle_item : styles.toggle__item}
-                onClick={() => handleClick(idx)}
-                >
-              {itemUrl.id+1}
+            <li
+              key={itemUrl.id}
+              className={
+                sliderData.id === idx
+                  ? styles.active__toggle_item
+                  : styles.toggle__item
+              }
+              onClick={() => handleClick(idx)}
+            >
+              {itemUrl.id + 1}
             </li>
           );
         })}
-    </ul>
+      </ul>
     </>
   );
 }

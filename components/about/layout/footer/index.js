@@ -89,7 +89,7 @@ export default function index() {
                 />
               </span>
               <span className={styles.footer__contact_text}>
-                newton botanica@gmail.com
+              salut@newton.md
               </span>
             </a>
           </div>

@@ -3,7 +3,6 @@ import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
 import planning__bg from "/public/static/planning-page/Group_2678.webp";
-import planning__bg_ from "/public/static/planning-page/Group_2678-.webp";
 import planning__bg_mob from "/public/static/planning-page/bg-about-mob.webp";
 import {
   Hero,

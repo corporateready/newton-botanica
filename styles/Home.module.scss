@@ -4,9 +4,6 @@
     @apply relative top-0 left-0 h-screen w-screen bg-[url('https://botanica.newton.md/wp-content/uploads/2021/07/green-leaves-natural-background-tropical-leaf-background-1.jpg')] bg-no-repeat object-fill;
     background-position: center;
     background-size: cover;
-    @media screen and(max-width: 576px) {
-        // @apply h-screen w-screen top-0 left-0;
-    }
 }
 .header {
     @apply relative top-0 left-0 bg-white h-auto w-full z-10;
@@ -134,7 +131,7 @@
         @apply rounded-sm;
     }
     @media screen and(max-width: 576px) {
-        @apply py-[4.5%] rounded-md;
+        @apply py-[4.5%] rounded-md hover:bg-[#2BB018] hover:border-[#2BB018] hover:text-white;
         font-size: calc(11px + (20 - 11)*(100vw - 320px)/(576 - 320));
     }
 }
@@ -211,9 +208,7 @@
 }
 .offer__inner {
     @apply flex flex-col items-center justify-center h-auto w-[63%] bg-white relative z-auto pt-[3%] pb-[4.5%] mx-auto rounded-md;
-    @media screen and (max-width: 1420px) {
-        // @apply mt-[10%];
-    }
+
     @media screen and (max-width: 576px) {
         @apply w-full py-[15%] px-[5%];
     }
@@ -226,8 +221,9 @@
     }
 }
 .offer__title {
-    @include text(38px, 130%, 600, #2D2D2B);
+    @include text(32px, 130%, 600, #2D2D2B);
     @apply text-center tracking-wider;
+    font-family: 'Montserrat Semibold';
 
     @media screen and(max-width: 1440px) {
         font-size: calc(14px + (38 - 14)*(100vw - 576px)/(1440 - 576));
@@ -238,9 +234,9 @@
     }
 }
 .offer__subtitle {
-    @include text(20px, 130%, 400, #2c2c2c);
+    @include text(16px, 130%, 400, #2c2c2c);
     @apply text-center mt-[2%] tracking-wider;
-    font-family: 'Gilroy Regular';
+    font-family: 'Montserrat Regular';
 
     @media screen and(max-width: 1440px) {
         font-size: calc(7px + (20 - 7)*(100vw - 576px)/(1440 - 576));
@@ -252,11 +248,12 @@
 }
 .offer__form {
     @apply flex flex-col py-[4%] mx-auto w-[52%];
+    font-family: 'Montserrat Regular';
 
     input {
         @include text(15px, 130%, 400, #2D2D2B);
         @apply border-[1px] border-[#C4C4C4] rounded-sm py-[3%] mb-[3%] pl-[3%] focus-visible:outline-none;
-        font-family: 'Gilroy Regular';
+        font-family: 'Montserrat Regular';
 
         @media screen and(max-width: 1440px) {
             font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
@@ -269,8 +266,8 @@
 
         &::placeholder {
             @include text(15px, 130%, 400, #2D2D2B);
-            @apply uppercase tracking-wider;
-            font-family: 'Gilroy Regular';
+            @apply uppercase tracking-wider opacity-30;
+            font-family: 'Montserrat Regular';
 
             @media screen and(max-width: 1440px) {
                 font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
@@ -284,11 +281,11 @@
     .input {
         @include text(15px, 130%, 400, #2D2D2B);
         @apply border-0 rounded-sm py-[1%] mb-[3%] h-full focus-visible:outline-none;
-        font-family: 'Gilroy Regular';
+        font-family: 'Montserrat Regular';
 
         input {
             @apply py-[5%] w-full border-[1px] border-[#C4C4C4];
-            font-family: 'Gilroy Regular';
+            font-family: 'Montserrat Regular';
         }
 
         @media screen and(max-width: 1440px) {
@@ -302,8 +299,8 @@
 
         &::placeholder {
             @include text(15px, 130%, 400, #2D2D2B);
-            @apply uppercase tracking-wider;
-            font-family: 'Gilroy Regular';
+            @apply uppercase tracking-wider opacity-30;
+            font-family: 'Montserrat Regular';
 
             @media screen and(max-width: 1440px) {
                 font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
@@ -322,21 +319,22 @@
 // ===== send button =====>
 .button__sending {
     @include text(15px, 130%, 700, #000);
-    @apply flex justify-center w-full bg-[#2BB018] border-[#2BB018] border-[1px] text-white mx-auto py-[3.5%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-[1px] hover:text-[#2BB018] hover:duration-200;
+    @apply flex justify-center w-full bg-[#2BB018] border-[#2BB018] border-[1px] text-white mx-auto py-[3.5%] rounded uppercase text-center tracking-widest hover:duration-200;
+    font-family: 'Montserrat Regular';
     &:hover {
         animation-name:  pulse;
-    animation-duration: 1s;
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
+        animation-duration: 1s;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
-        50%{
-            transform: scale(1.1);
-        }
-        100% {
-            transform: scale(1);
-        }
-    }
     }
 
     @media screen and(max-width: 1440px) {

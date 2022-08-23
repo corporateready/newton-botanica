@@ -110,7 +110,7 @@
     }
 }
 .toggle__item {
-    @apply border-[1px] border-[#2BB018] flex w-[25px] h-[25px] rounded-[3px] justify-center items-center text-sm text-[#C4C4C4] hover:cursor-pointer hover:bg-[#2BB018] hover:text-white;
+    @apply border-[1px] border-[#2BB018] flex w-[25px] h-[25px] rounded-[3px] justify-center items-center text-sm text-[#2BB018] hover:cursor-pointer hover:bg-[#2BB018] hover:text-white;
 }
 .active__toggle_item {
     @apply border-[1px] border-[#2BB018] flex w-[25px] h-[25px] rounded-[3px] justify-center items-center text-sm hover:cursor-pointer bg-[#2BB018] text-white;
