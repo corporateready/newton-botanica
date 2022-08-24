@@ -4,6 +4,7 @@ import styles from "../styles/Thanks.module.scss";
 import Layout from "../components/thanks-layout";
 import Messenger from "../components/messengers";
 import Head from "next/head";
+import YouTube from 'react-youtube';
 
 export default function Thanks() {
   return (
@@ -79,14 +80,13 @@ function YoutubeVideo() {
   }, []);
 
   const opts = {
-    videoId: "",
     height: "590px",
     width: "100%",
     loading: "lazy",
     playerVars: {
       passive: false,
       controls: 2,
-      autoplay: true,
+      autoplay: 1,
     },
   };
 
@@ -97,12 +97,13 @@ function YoutubeVideo() {
       height="590px"
       width="100%"
       className={styles.video__body}
-      src={`https://www.youtube.com/embed/VdszNPYn5dU?autoplay=0&origin=http://example.com&controls=0&rel=1`}
+      src={`https://www.youtube.com/embed/VdszNPYn5dU?autoplay=1&origin=http://example.com&controls=0&rel=1`}
       title="YouTube video player"
       frameBorder="0"
       opts={opts}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
-    ></iframe>
+      autoPlay
+    />
   );
 }
