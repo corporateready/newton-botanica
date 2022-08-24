@@ -75,9 +75,6 @@ export default function Planning() {
             src={planning__bg_mob}
             layout="fill"
             priority
-            sizes="(max-width: 75em) 33vw,
-            (max-width: 48em) 50vw,
-            100vw"
             alt="mobile home background"
           />
         </div>
