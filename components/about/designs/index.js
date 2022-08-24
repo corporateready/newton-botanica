@@ -6,7 +6,7 @@ import grid__item_1 from "../../../public/static/planning-page/designs-grid/geam
 import grid__item_2 from "../../../public/static/planning-page/designs-grid/cazan.png";
 import grid__item_3 from "../../../public/static/planning-page/designs-grid/caraida.png";
 import grid__item_4 from "../../../public/static/planning-page/designs-grid/floor.png";
-import grid__item_5 from "../../../public/static/planning-page/designs-grid/dubble-wall.png";
+import grid__item_5 from "../../../public/static/planning-page/designs-grid/dubble-wall.webp";
 import grid__item_6 from "../../../public/static/planning-page/designs-grid/mineral-wool.png";
 import grid__item_7 from "../../../public/static/planning-page/designs-grid/elevator.png";
 import grid__item_8 from "../../../public/static/planning-page/designs-grid/white-variant.png";
