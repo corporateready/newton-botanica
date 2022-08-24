@@ -2,12 +2,12 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Populare.module.scss";
 
-import location__bg from "../../../../../public/static/planning-page/complex/centru-comercial.png";
-import item__img_2 from "../../../../../public/static/planning-page/complex/pasarela-image.png";
-import item__img_3 from "../../../../../public/static/planning-page/complex/parking-image.png";
-import item__img_4 from "../../../../../public/static/planning-page/complex/swiming-image.png";
-import item__img_5 from "../../../../../public/static/planning-page/complex/kids-place-image.png";
-import item__img_6 from "../../../../../public/static/planning-page/complex/no-voice-image.png";
+import location__bg from "../../../../../public/static/planning-page/complex/items-images/image-1.webp";
+import item__img_2 from "../../../../../public/static/planning-page/complex/items-images/image-2.webp";
+import item__img_3 from "../../../../../public/static/planning-page/complex/items-images/image-3.webp";
+import item__img_4 from "../../../../../public/static/planning-page/complex/items-images/image-4.webp";
+import item__img_5 from "../../../../../public/static/planning-page/complex/items-images/image-5.webp";
+import item__img_6 from "../../../../../public/static/planning-page/complex/items-images/image-6.webp";
 
 import cart from "../../../../../public/static/planning-page/complex/cart-icon.svg";
 import icon_2 from "../../../../../public/static/planning-page/complex/pasarela.svg";

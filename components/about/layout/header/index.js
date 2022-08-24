@@ -21,8 +21,8 @@ export default function index() {
               />
             </a>
           </Link>
-          <Link href="/about">
-            <a className={styles.button__planning}>Despre casă</a>
+          <Link href="/planning">
+            <a className={styles.button__planning}>PLANIMETRII</a>
           </Link>
           <Link href="tel:+3736082020">
             <a className={styles.header__phone_link}>
@@ -35,7 +35,7 @@ export default function index() {
                 />
               </div>
               <span className={styles.header__phone_link_number}>
-                060 80 20 20
+                060 802 020
               </span>
             </a>
           </Link>

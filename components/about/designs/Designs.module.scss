@@ -22,7 +22,7 @@
     @apply relative pt-[2%] uppercase text-center;
 
     @media screen and (max-width: 576px) {
-        @apply pt-[5%];
+        @apply pt-[10%];
         font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
     }
 
@@ -94,12 +94,11 @@
     @apply flex justify-center bg-[#2BB018] border-[1px] w-[20%] py-[1%] mx-auto mt-[10%] rounded uppercase text-center tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
 
     @media screen and(max-width: 1440px) {
-        // @apply mt-[5.8%];
         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
-        @apply mt-[30%] w-[60%] py-[3%];
+        @apply mt-[35%] w-[60%] py-[3%];
         font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
     }
 }
