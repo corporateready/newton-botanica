@@ -68,9 +68,10 @@
 .offer__form {
     @apply flex flex-col py-[4%] mx-auto w-[52%];
 
-    select {
+    select,
+    input {
         @include text(15px, 130%, 400, #2D2D2B);
-        @apply border-[1px] rounded-sm py-[3%] mb-[3%] px-[3%] focus-visible:outline-none;
+        @apply border-[1px] rounded-sm py-[2%] mb-[3%] px-[3%] focus-visible:outline-none;
         font-family: 'Gilroy Regular';
 
         @media screen and(max-width: 1440px) {
@@ -96,6 +97,7 @@
             }
         }
     }
+
     @media screen and(max-width: 576px) {
         @apply w-full;
     }

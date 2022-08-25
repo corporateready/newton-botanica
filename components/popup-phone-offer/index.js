@@ -1,13 +1,18 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./OfferPopUp.module.scss";
+import timezone from "./Taimezone.module.scss";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
+import TimezoneSelect from "react-timezone-select";
+import CSSModules from 'react-css-modules'
 
-export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
+Object.assign(styles, timezone)
+
+export default function OfferPDFOpenSending ({ hanlerCloseCallPopup }) {
   const [isSend, setIsSend] = React.useState(false);
   const [timeValue, setTimeValue] = React.useState("");
-  const [difHourValue, setDifHourlValue] = React.useState("");
-
+  const [phoneValue, setPhoneValue] = React.useState("");
+  const [selectedTimezone, setSelectedTimezone] = React.useState({});
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
 
@@ -18,8 +23,9 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        "ora": timeValue,
-        "Diferența de timp": difHourValue,
+        ora: timeValue,
+        "Diferența de timp": selectedTimezone,
+        "telfon": phoneValue
       }),
     })
       .then((response) => {
@@ -33,12 +39,9 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
   React.useEffect(() => {
     if (isSend) {
       setTimeValue("");
-      setDifHourlValue("");
+      // setDifHourlValue("");
+      setPhoneValue("");
     }
-  //   if (isSend) {
-  //     console.log(isSend);
-  //     Router.push("/thanks");
-  //   }
   }, [isSend]);
 
   return (
@@ -73,22 +76,29 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
               value={timeValue}
               onChange={(e) => setTimeValue(e.target.value)}
             >
-              <option>8:00 </option>
-              <option>8:30</option>
-              <option>9:00</option>
-              <option>9:30</option>
-              <option>10:00</option>
+              <option value="8:00">8:00</option>
+              <option value="8:15">8:15</option>
+              <option value="8:30">8:30</option>
+              <option value="8:45">8:45</option>
+              <option value="9:00">9:00</option>
+              <option value="9:15">9:15</option>
+              <option value="9:30">9:30</option>
+              <option value="9:45">9:45</option>
+              <option value="10:00">10:00</option>
+              <option value="10:15">10:15</option>
+              <option value="10:30">10:30</option>
+              <option value="10:45">10:45</option>
             </select>
-            <select
-              name="Diferența de timp"
-              value={difHourValue}
-              onChange={(e) => setDifHourlValue(e.target.value)}
-            >
-              <option>+ 1 ore </option>
-              <option>+ 2 ore </option>
-              <option>+ 3 ore </option>
-              <option>+ 4 ore </option>
-            </select>
+            <TaimeZone 
+            selectedTimezone={selectedTimezone}
+            setSelectedTimezone={setSelectedTimezone}
+            />
+            <input
+              type="text"
+              value={phoneValue}
+              onChange={(e) => setPhoneValue(e.target.value)}
+              placeholder="Telefon"
+            />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="false" />
             <input
@@ -105,3 +115,21 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
     </section>
   );
 }
+
+
+const TaimeZone = ({selectedTimezone,setSelectedTimezone}) => {
+  
+
+  return (
+    <div className={timezone.select__app}>
+        <TimezoneSelect
+          value={selectedTimezone}
+          onChange={setSelectedTimezone}
+          className={timezone.select__wrapper}
+          placeholder="Fus orar"
+        />
+    </div>
+  );
+};
+
+CSSModules(TaimeZone, styles, {allowMultiple: true} )
