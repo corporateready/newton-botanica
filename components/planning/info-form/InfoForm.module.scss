@@ -27,7 +27,7 @@
 
     @media screen and (max-width: 576px) {
         @include text(20px, 130%, 400, #2D2D2B);
-        @apply inline-block mt-[2%] text-center pt-[10%];
+        @apply inline-block mt-[10%] text-center pt-[10%];
         font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
     }
 }

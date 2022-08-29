@@ -33,7 +33,7 @@
 }
 .button__planning {
     @include text(24px, 130%, 400, #2BB018);
-    @apply flex justify-center bg-none border-[1px] px-[38px] py-[5px] rounded uppercase text-center tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
+    @apply flex justify-center bg-none border-[1px] px-[38px] py-[5px] rounded uppercase text-center text-[#c4c4c2] tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         @apply w-[20%] py-[0.5%] px-0;

@@ -5,16 +5,16 @@ import Plan_2 from "./plan-2";
 
 export default function Plan() {
 
-  const [isPlan, setIsPlan] = useState(true);
+  const [isPlan, setIsPlan] = useState(2);
   const [isButtonActive, setIsButtonActive] = useState(2);
 
   const handlerToggleTrance1 = () => {
-    setIsPlan(!isPlan);
+    setIsPlan(1);
     setIsButtonActive(1);
   };
 
   const handlerToggleTrance2 = () => {
-    setIsPlan(!isPlan);
+    setIsPlan(2);
     setIsButtonActive(2);
   };
 
@@ -54,7 +54,8 @@ export default function Plan() {
           <div className={styles.container}>
             <div className={styles.complex__inner}>
               <div className={styles.complex__grids}>
-                {isPlan ? <Plan_1 /> : <Plan_2 />}
+                {isPlan === 1 && <Plan_1 /> }
+                {isPlan === 2 && <Plan_2 /> }
               </div>
             </div>
           </div>

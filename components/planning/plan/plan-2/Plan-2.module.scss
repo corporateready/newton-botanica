@@ -2,12 +2,12 @@
 
 .next,
 .prev {
-  @apply py-[0.5%];
-  top: calc(50% - 20px);
+  bottom: 50%;
   position: absolute;
   background: #2BB018;
+  border-radius: 3px;
   width: 40px;
-  height: auto;
+  height: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,36 +18,34 @@
   z-index: 2;
 
   @media screen and (max-width: 1440px) {
-    width: calc(19px + (40 - 19)*(100vw - 768px)/(1440 - 768));
-  }
+    width: calc(16px + (40 - 16)*(100vw - 576px)/(1440 - 576));
+    height: calc(10px + (36 - 10)*(100vw - 576px)/(1440 - 576));
+}
 
   @media screen and (max-width: 576px) {
-    @apply top-[107%];
-    width: calc(30px + (40 - 30)*(100vw - 320px)/(768 - 320));
+    @apply bottom-[-15%];
+    width: calc(30px + (40 - 30)*(100vw - 320px)/(576 - 320));
+    height: calc(30px + (40 - 30)*(100vw - 320px)/(576 - 320));
   }
 }
-.prev__disabled {
-  @apply opacity-0 hidden;
-}
-.next__disabled {
-  @apply opacity-0 hidden;
-}
 .next {
-  right:10%;
+  @apply right-[12%] disabled:bg-transparent disabled:border-[1px] disabled:border-[#2BB018];
+
   @media screen and (max-width: 576px) {
     @apply right-0;
   }
 }
 .prev {
-  left: 10%;
+  @apply left-[12%] disabled:bg-transparent disabled:border-[1px] disabled:border-[#2BB018];
   transform: scale(-1);
+
   @media screen and (max-width: 576px) {
     @apply left-0;
   }
 }
 .img__body {
   position: relative;
-  height: auto;
+  // height: auto;
   max-width: 100vw;
 }
 .complex__grid_prev_item {
@@ -63,4 +61,14 @@
   @media screen and (max-width: 576px) {
       @apply hidden opacity-0;
   }
+}
+// ====== сщгтеук =====Ю
+.slider__counter_mob {
+  @apply absolute bottom-[-14%] left-[50%] z-10;
+}
+.inner__counter {
+  @apply text-[#2BB018] text-xl;
+}
+.length__counter {
+  @apply text-[#2D2D2B] text-xl;
 }

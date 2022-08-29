@@ -3,6 +3,7 @@ import styles from "../styles/About.module.scss";
 import Layout from "../components/layout";
 import Image from "next/image";
 import planning__bg from "/public/static/planning-page/Group_2678.webp";
+import planning__bg_mob from "/public/static/planning-page/bg-about-mob.webp";
 import image__detail from "../public/static/planning/populare/populare-1/63 55 2d.svg";
 import close__button from "../public/static/planning/populare/close-icon.svg";
 import { motion } from "framer-motion";
@@ -48,15 +49,23 @@ export default function Planning() {
 
       <ModalContext.Provider value={{ handlerSetModal }}>
         <section className={styles.planning__section}>
-          <div className={styles.planning__bg}>
-            <Image
-              src={planning__bg}
-              layout="fill"
-              quality={100}
-              priority
-              alt="home background"
-            />
-          </div>
+        <div className={styles.planning__bg}>
+          <Image
+            src={planning__bg}
+            layout="fill"
+            quality={100}
+            priority
+            alt="home background"
+          />
+        </div>
+        <div className={styles.planning__bg_mob}>
+          <Image
+            src={planning__bg_mob}
+            layout="fill"
+            priority
+            alt="mobile home background"
+          />
+        </div>
           <Layout>
             <div className={styles.container}>
               <Payment />

@@ -30,20 +30,24 @@ border-radius: 13px;
 
         @media screen and (max-width: 576px) {
             @apply w-[20%] left-[40%];
-            // font-size: calc(10px + (16 - 10)*(100vw - 320px)/(576 - 320));
         }
     }
 
     @media screen and(max-width: 1440px) {
         font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
     }
+    @media screen and (max-width: 576px) {
+            @include text(20px, 130%, 400, #2D2D2B);
+            @apply pt-[10%];
+            font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+        }
 }
 // =====>
 .trance__toggler {
     @apply grid grid-cols-2 mx-auto w-[50%] gap-[3%] mt-[5%];
 
     @media screen and(max-width: 576px) {
-        @apply grid grid-cols-2 w-full gap-y-4 gap-[3%];
+        @apply grid grid-cols-2 w-full gap-y-4 gap-[3%] mt-[8%];
     }
 }
 .trance__toggler_r {

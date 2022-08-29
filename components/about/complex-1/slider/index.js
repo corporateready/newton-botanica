@@ -47,7 +47,6 @@ export const Slider = () => {
         type="button"
         disabled={page <= 0}
         className={styles.prev}
-        
         onClick={() => paginate(-1)}
       >
         <svg

@@ -1,7 +1,6 @@
 .slider__body {
-  @apply h-full w-full;
+  @apply h-full w-full relative top-0 left-0;
     background: #fff;
-    overflow: hidden;
     padding: 0;
     margin: 0;
     display: flex;
@@ -54,9 +53,6 @@
     height: calc(16px + (40 - 16)*(100vw - 320px)/(576 - 320));
 }
 
-// @media screen and (max-width: 460px) {
-//   @apply bottom-[-1%];
-// }
   }
   .next {
     @apply right-[-6%] disabled:bg-transparent disabled:border-[1px] disabled:border-[#2BB018];

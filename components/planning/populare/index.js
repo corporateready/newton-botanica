@@ -1,6 +1,5 @@
 import styles from "./Populare.module.scss";
 import { Slider } from "./slider";
-// import { SliderMobile } from "./slider-mobile/slider";
 
 export default function Populare() {
   return (
