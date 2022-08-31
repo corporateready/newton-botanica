@@ -39,7 +39,7 @@ export default function index({ isOpen, setIsOpen }) {
                 className={styles.location__detail}
                 onClick={hanlerOpenPopup}
               >
-                SOLICITĂ OFERTA
+                Cere detalii despre metoda de achitare 
               </button>
             </div>
             <div className={styles.description__side}>
@@ -169,7 +169,9 @@ export default function index({ isOpen, setIsOpen }) {
               </div>
             </div>
             <Link href="/about">
-              <a className={styles.location__detail_mobile}>SOLICITĂ OFERTA</a>
+              <a className={styles.location__detail_mobile}>
+              Cere detalii despre metoda de achitare
+              </a>
             </Link>
           </div>
         </div>

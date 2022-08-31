@@ -118,7 +118,7 @@ export default function Index() {
                         type="button"
                         className={styles.details__button}
                       >
-                        AFLĂ DETALII
+                        Descoperă planimetriile
                       </button>
                     </div>
                   </div>
@@ -174,7 +174,7 @@ export default function Index() {
                         type="button"
                         className={styles.details__button}
                       >
-                        AFLĂ DETALII
+                        Descoperă planimetriile
                       </button>
                     </div>
                   </div>
@@ -230,7 +230,7 @@ export default function Index() {
                         type="button"
                         className={styles.details__button}
                       >
-                        AFLĂ DETALII
+                        Descoperă planimetriile
                       </button>
                     </div>
                   </div>
@@ -286,7 +286,7 @@ export default function Index() {
                         type="button"
                         className={styles.details__button}
                       >
-                        AFLĂ DETALII
+                        Descoperă planimetriile
                       </button>
                     </div>
                   </div>
@@ -345,7 +345,7 @@ export default function Index() {
                           type="button"
                           className={styles.details__button}
                         >
-                          AFLĂ DETALII
+                          Descoperă planimetriile
                         </button>
                       </div>
                     </div>

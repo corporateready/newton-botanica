@@ -177,7 +177,7 @@
 }
 .details__button {
     @include text(15px, 130%, 600, #fff);
-    @apply bg-[#2BB018] rounded-md w-[60%] py-[2.5%] tracking-wider;
+    @apply bg-[#2BB018] rounded-sm w-[90%] py-[2.5%] tracking-wider uppercase;
 
     @media screen and (max-width: 1440px) {
         font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));

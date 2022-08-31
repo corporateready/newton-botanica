@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const withTM = require('next-transpile-modules')(['react-timezone-select'])
+
 const nextConfig = {
   reactStrictMode: true,
   key: 'X-DNS-Prefetch-Control',
@@ -34,4 +36,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = withTM({nextConfig})

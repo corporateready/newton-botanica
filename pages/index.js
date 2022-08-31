@@ -30,6 +30,22 @@ export default function Home() {
           content="Apartamente în rate, pe 5 ani, cu doar 10% prima rată, 0% dobândă,"
         />
         <link rel="icon" href="/favicon.ico" />
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-203040095-1"
+        ></script>
+
+        {/* <!-- Google Tag Manager (noscript) --> */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KRLSSZN"
+            height="0"
+            width="0"
+            styles="display:none;visibility:hidden"
+          ></iframe>
+        </noscript>
+        {/* <!-- End Google Tag Manager (noscript) --> */}
       </Head>
 
       <div className={styles.home__screen}>
@@ -103,7 +119,7 @@ export default function Home() {
                   className={styles.button__send}
                   onClick={() => setIsOfferOpen(true)}
                 >
-                  VEZI DETALII
+                  Plasează solicitarea
                 </button>
               </div>
 

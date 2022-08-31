@@ -3,19 +3,17 @@ import Image from "next/image";
 import styles from "./OfferPopUp.module.scss";
 import timezone from "./Taimezone.module.scss";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
-import TimezoneSelect from "react-timezone-select";
-import CSSModules from 'react-css-modules'
+import TimezoneSelect, { allTimezones } from "react-timezone-select";
 
-Object.assign(styles, timezone)
+Object.assign(styles, timezone);
 
-export default function OfferPDFOpenSending ({ hanlerCloseCallPopup }) {
+export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
   const [isSend, setIsSend] = React.useState(false);
   const [timeValue, setTimeValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [selectedTimezone, setSelectedTimezone] = React.useState({});
-  const useHandlerOnClickToSend = (e) => {
-    e.preventDefault();
 
+  const useHandlerOnClickToSend = () => {
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -23,9 +21,9 @@ export default function OfferPDFOpenSending ({ hanlerCloseCallPopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        ora: timeValue,
-        "Diferența de timp": selectedTimezone,
-        "telfon": phoneValue
+        Ora: timeValue,
+        "Fusul orar": selectedTimezone.label,
+        Telfon: phoneValue,
       }),
     })
       .then((response) => {
@@ -39,10 +37,36 @@ export default function OfferPDFOpenSending ({ hanlerCloseCallPopup }) {
   React.useEffect(() => {
     if (isSend) {
       setTimeValue("");
-      // setDifHourlValue("");
       setPhoneValue("");
     }
   }, [isSend]);
+
+  const options = [
+    { option: "8:00" },
+    { option: "8:15" },
+    { option: "8:30" },
+    { option: "8:45" },
+    { option: "9:00" },
+    { option: "9:15" },
+    { option: "9:30" },
+    { option: "9:45" },
+    { option: "10:00" },
+    { option: "10:15" },
+    { option: "10:30" },
+    { option: "10:45" },
+    { option: "11:00" },
+    { option: "11:15" },
+    { option: "11:30" },
+    { option: "11:45" },
+    { option: "12:00" },
+    { option: "12:15" },
+    { option: "12:30" },
+    { option: "12:45" },
+    { option: "13:00" },
+    { option: "13:15" },
+    { option: "13:30" },
+    { option: "13:45" },
+  ];
 
   return (
     <section className={styles.offer__section}>
@@ -75,39 +99,56 @@ export default function OfferPDFOpenSending ({ hanlerCloseCallPopup }) {
               name="Ora"
               value={timeValue}
               onChange={(e) => setTimeValue(e.target.value)}
+              required
             >
-              <option value="8:00">8:00</option>
-              <option value="8:15">8:15</option>
-              <option value="8:30">8:30</option>
-              <option value="8:45">8:45</option>
-              <option value="9:00">9:00</option>
-              <option value="9:15">9:15</option>
-              <option value="9:30">9:30</option>
-              <option value="9:45">9:45</option>
-              <option value="10:00">10:00</option>
-              <option value="10:15">10:15</option>
-              <option value="10:30">10:30</option>
-              <option value="10:45">10:45</option>
+              {options.map((opt, idx) => {
+                console.log();
+                return (
+                  <option
+                    key={opt.option}
+                    value={opt.option}
+                    onChange={(e) => setTimeValue(e.target.value)}
+                    id={idx}
+                  >
+                    {opt.option}
+                  </option>
+                );
+              })}
             </select>
-            <TaimeZone 
-            selectedTimezone={selectedTimezone}
-            setSelectedTimezone={setSelectedTimezone}
-            />
+            <div className={timezone.select__app}>
+                <TimezoneSelect
+                  name="Fusul orar"
+                  value={selectedTimezone}
+                  onChange={setSelectedTimezone}
+                  placeholder="Fus orar"
+                  timezones={{
+                    ...allTimezones,
+                  }}
+                  required
+                />
+            </div>
             <input
-              type="text"
-              value={phoneValue}
-              onChange={(e) => setPhoneValue(e.target.value)}
-              placeholder="Telefon"
-            />
+                type="text"
+                name="Telefon"
+                value={phoneValue}
+                onChange={(e) => setPhoneValue(e.target.value)}
+                placeholder="Telefon"
+                required
+              />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="false" />
-            <input
-              type="hidden"
-              name="_autoresponse"
-              value="Everyone is important for as!"
-            />
+              <input type="hidden" name="_next" value="false" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Everyone is important for as!"
+              />
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost:3000/thanks"
+              />
             <button type="submit" className={styles.button__sending}>
-              Solicită prezentarea
+              Programează un apel
             </button>
           </form>
         </div>
@@ -115,21 +156,3 @@ export default function OfferPDFOpenSending ({ hanlerCloseCallPopup }) {
     </section>
   );
 }
-
-
-const TaimeZone = ({selectedTimezone,setSelectedTimezone}) => {
-  
-
-  return (
-    <div className={timezone.select__app}>
-        <TimezoneSelect
-          value={selectedTimezone}
-          onChange={setSelectedTimezone}
-          className={timezone.select__wrapper}
-          placeholder="Fus orar"
-        />
-    </div>
-  );
-};
-
-CSSModules(TaimeZone, styles, {allowMultiple: true} )

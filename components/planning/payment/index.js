@@ -6,22 +6,9 @@ import payment__image from "../../../public/static/planning/payment-image-about.
 import payment__image_mob from "../../../public/static/planning/payment-image-mob.svg";
 import logo__icon from "../../../public/static/planning-page/payment/logo-icon.svg";
 
-import Messenger from '../../../components/messengers'
-// import leaf_1 from "../../../public/static/planning-page/payment/leaf-t-l.svg";
-// import leaf_2 from "../../../public/static/planning-page/payment/leaf-t-r.svg";
-// import leaf_3 from "../../../public/static/planning-page/payment/leaf-b-l.svg";
-// import leaf_4 from "../../../public/static/planning-page/payment/leaf-b-r.svg";
-// import leaf_1__mob from "../../../public/static/planning-page/payment/leaf-t-l-mob.svg";
-// import leaf_2__mob from "../../../public/static/planning-page/payment/leaf-t-r-mob.png";
-// import leaf_3__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
-// import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r.svg";
-// import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.svg";
+import Messenger from "../../../components/messengers";
 
 export default function index() {
-
-  // const hanlerOpenPopup = () => {
-  //   setIsOpen(true)
-  // }
   return (
     <>
       <div className={styles.payment__section}>
@@ -46,11 +33,8 @@ export default function index() {
                   alt=""
                 />
               </div>
-              <button 
-                className={styles.location__detail}
-                // onClick={hanlerOpenPopup}
-                >
-                SOLICITĂ OFERTA
+              <button className={styles.location__detail}>
+              Cere detalii despre metoda de achitare 
               </button>
             </div>
             <div className={styles.description__side}>
@@ -180,40 +164,15 @@ export default function index() {
               </div>
             </div>
             <Link href="/planning">
-              <a className={styles.location__detail_mobile}>SOLICITĂ OFERTA</a>
+              <a className={styles.location__detail_mobile}>
+              Cere detalii despre metoda de achitare 
+              </a>
             </Link>
           </div>
         </div>
         <div className={styles.payment__messengers}>
-        <Messenger/>
+          <Messenger />
         </div>
-        {/* <div className={styles.leaf}>
-          <Image src={leaf_1} height={376} width={406} priority alt="" />
-        </div>
-        <div className={styles.leaf__mob}>
-          <Image src={leaf_1__mob} height={376} width={406} priority alt="" />
-        </div>
-        <div className={styles.leaf__2}>
-          <Image src={leaf_2} height={376} width={406} priority alt="" />
-        </div>
-        <div className={styles.leaf_2__mob}>
-          <Image src={leaf_2__mob} height={376} width={406} priority alt="" />
-        </div>
-        <div className={styles.leaf__3}>
-          <Image src={leaf_3} height={376} width={406} priority alt="" />
-        </div>
-        <div className={styles.leaf_3__mob}>
-          <Image src={leaf_3__mob} height={376} width={406} priority alt="" />
-        </div>
-        <div className={styles.leaf__4}>
-          <Image src={leaf_4} height={376} width={406} priority alt="" />
-        </div>
-        <div className={styles.leaf_4__mob}>
-          <Image src={leaf_4__mob} height={376} width={406} priority alt="" />
-        </div>
-        <div className={styles.leaf_5__mob}>
-          <Image src={leaf_5__mob} height={276} width={306} priority alt="" />
-        </div> */}
       </div>
     </>
   );

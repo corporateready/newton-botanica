@@ -32,36 +32,47 @@
     }
 }
 .details__form {
-    @apply flex flex-col items-center mt-[3%] mx-auto w-full h-auto;
+    @apply flex flex-col items-center mt-[3%] mx-auto w-[35%] h-auto;
+
+    @media screen and (max-width: 576px) {
+        @apply w-[86%];
+    }
 
 
-    input {
-        @include text(15px, 130%, 300, #2D2D2B);
-        @apply border-[1px] border-[#C4C4C4] rounded-md w-[35%] px-[3%] py-[1%] mb-[2%] focus:outline-none;
+    input,
+    select {
+        @include text(16px, 130%, 300, #2D2D2B);
+        @apply border-[1px] border-[#C4C4C4] rounded-sm w-full px-[3%] py-[2.5%] mb-[4%] focus:outline-none;
         font-family: 'Gilroy Regular';
 
         @media screen and(max-width: 576px) {
-            @apply w-[86%] rounded-sm py-[0.5%];
+            @apply w-full rounded-sm py-[2%];
+            font-size: calc(10px + (20 - 10)*(100vw - 320px)/(576 - 320));
         }
        
         &::placeholder {
-            @include text(15px, 100%, 400, #2D2D2B);
+            @include text(16px, 100%, 400, #2D2D2B);
             @apply focus:opacity-0;
+
             @media screen and(max-width: 1440px) {
-                font-size: calc(10px + (15 - 10)*(100vw - 576px)/(1440 - 576));
+                font-size: calc(10px + (16 - 10)*(100vw - 576px)/(1440 - 576));
+            }
+            @media screen and(max-width: 576px) {
+                font-size: calc(10px + (20 - 10)*(100vw - 320px)/(576 - 320));
             }
         }
     
     }
 }
 .button__sending {
-    @include text(15px, 100%, 400, #fff);
-    @apply bg-[#2BB018] border-none rounded-md w-[35%] px-[3%] py-[1%] mt-[1%] uppercase; 
+    @include text(15px, 100%, 300, #fff);
+    @apply bg-[#2BB018] border-none rounded-sm w-full px-[3%] py-[4%] mt-[3%] tracking-wider uppercase; 
     
     @media screen and(max-width: 1440px) {
         font-size: calc(10px + (15 - 10)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-        @apply w-[86%] py-[2%] rounded-sm;
+        @apply w-full py-[4%] rounded-sm;
+        font-size: calc(10px + (20 - 10)*(100vw - 320px)/(576 - 320));
     }
 }

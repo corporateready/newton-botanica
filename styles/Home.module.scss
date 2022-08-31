@@ -230,7 +230,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        font-size: calc(10px + (28 - 10)*(100vw - 320px)/(576 - 320));
+        font-size: calc(11px + (24 - 11)*(100vw - 320px)/(576 - 320));
     }
 }
 .offer__subtitle {

@@ -159,7 +159,7 @@ export default function index() {
               </div>
             </div>
             <Link href="/planning">
-            <a className={styles.button__detail}>Află detalii</a>
+            <a className={styles.button__detail}>Află mai multe despre <br/>calitatea construcției </a>
           </Link>
           </div>
         </div>

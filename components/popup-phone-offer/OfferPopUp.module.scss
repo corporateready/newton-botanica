@@ -105,20 +105,21 @@
 .button__sending {
     @include text(15px, 130%, 700, #000);
     @apply flex justify-center w-full bg-[#2BB018] border-[#2BB018] border-[1px] text-white mx-auto py-[3.5%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-[1px] hover:text-[#2BB018] hover:duration-200;
+    
     &:hover {
         animation-name:  pulse;
-    animation-duration: 1s;
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
+        animation-duration: 1s;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
-        50%{
-            transform: scale(1.1);
-        }
-        100% {
-            transform: scale(1);
-        }
-    }
     }
 
     @media screen and(max-width: 1440px) {

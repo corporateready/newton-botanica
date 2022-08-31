@@ -94,7 +94,7 @@
 //  =====>
 .location__detail {
     @include text(15px, 130%, 400, #fff);
-    @apply flex justify-center bg-[#2BB018] border-0 mt-[10%] w-[40%] py-[1.7%] mx-auto rounded uppercase text-center tracking-wider hover:duration-150;
+    @apply flex justify-center bg-[#2BB018] border-0 mt-[10%] w-[83%] py-[1.7%] mx-auto rounded uppercase text-center tracking-wider hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
@@ -106,9 +106,10 @@
 }
 .location__detail_mobile {
 @apply hidden;
+
     @media screen and(max-width: 576px) {
         @include text(15px, 130%, 400, #fff);
-        @apply flex justify-center self-center bg-[#2BB018] border-0 w-[70%] py-[3%] mt-[5%] mx-auto rounded uppercase text-center tracking-wider hover:duration-150;
+        @apply flex justify-center self-center bg-[#2BB018] border-0 w-full py-[3%] mt-[5%] mx-auto rounded uppercase text-center tracking-wider hover:duration-150;
 
         font-size: calc(10px + (15 - 10)*(100vw - 320px)/(576 - 320));
     }
