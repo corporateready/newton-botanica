@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useCallback } from "react";
 import styles from "../styles/About.module.scss";
 import Layout from "../components/layout";
 import Image from "next/image";
-import planning__bg from "/public/static/planning-page/Group_2678.webp";
+import planning__bg from "/public/static/planning-page/Group_2678-.webp";
 import planning__bg_mob from "/public/static/planning-page/bg-about-mob.webp";
 import image__detail from "../public/static/planning/populare/populare-1/63 55 2d.svg";
 import close__button from "../public/static/planning/populare/close-icon.svg";

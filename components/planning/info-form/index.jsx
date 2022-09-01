@@ -72,9 +72,7 @@ export default function Index() {
         <div className={styles.container}>
           <div className={styles.details__inner}>
             <p className={styles.details__form__title}>
-              Pentru informații suplimentare
-              <br />
-              completați formularul
+            Completează formularul de mai jos cu datele <br/>de contact, alege ora convenabilă, iar noi <br/>te vom contacta pentru a-ți oferi detalii: 
             </p>
             <p className={styles.details__form__title_mob}>
               Rezervă timpul pentru a fi telefonat:

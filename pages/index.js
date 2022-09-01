@@ -16,7 +16,26 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 export default function Home() {
+  // const [isAboutSend, setIsAboutSend] = React.useState(false);
+  const [isAboutPopUp, setIsAboutPopUp] = React.useState(false);
+  const [isPlanningPopUp, setIsPlanningPopUp] = React.useState(false);
   const [isOfferOpen, setIsOfferOpen] = React.useState(false);
+
+  const handlerAboutClick =()=>{
+    setIsAboutPopUp(true)
+  }
+
+  const hanlerCloseAboutPopup = () => {
+    setIsAboutPopUp(false);
+  };
+
+  const handlerPlanningClick =()=>{
+    setIsPlanningPopUp(true)
+  }
+
+  const hanlerClosePlanningPopup = () => {
+    setIsAboutPopUp(false);
+  };
 
   const hanlerClosePopup = () => {
     setIsOfferOpen(false);
@@ -30,22 +49,7 @@ export default function Home() {
           content="Apartamente în rate, pe 5 ani, cu doar 10% prima rată, 0% dobândă,"
         />
         <link rel="icon" href="/favicon.ico" />
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-203040095-1"
-        ></script>
 
-        {/* <!-- Google Tag Manager (noscript) --> */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KRLSSZN"
-            height="0"
-            width="0"
-            styles="display:none;visibility:hidden"
-          ></iframe>
-        </noscript>
-        {/* <!-- End Google Tag Manager (noscript) --> */}
       </Head>
 
       <div className={styles.home__screen}>
@@ -107,12 +111,14 @@ export default function Home() {
 
               <div className={styles.navigate__side}>
                 <div className={styles.buttons__up}>
-                  <Link href="/about">
-                    <a className={styles.button__about}>Despre CASĂ</a>
-                  </Link>
-                  <Link href="/planning">
-                    <a className={styles.button__planning}>PLANIMETRII</a>
-                  </Link>
+                    <button 
+                      className={styles.button__about}
+                      onClick={handlerAboutClick}
+                    >Despre CASĂ</button>
+                    <a 
+                      className={styles.button__planning}
+                      onClick={handlerPlanningClick}
+                      >PLANIMETRII</a>
                 </div>
 
                 <button
@@ -136,6 +142,14 @@ export default function Home() {
 
         {isOfferOpen && (
           <OfferPopUpSending hanlerClosePopup={hanlerClosePopup} />
+        )}
+
+        {isAboutPopUp && (
+          <AboutPopUpSending hanlerCloseAboutPopup={hanlerCloseAboutPopup} />
+        )}
+
+        {isPlanningPopUp && (
+          <PlanningPopUpSending hanlerClosePlanningPopup={hanlerClosePlanningPopup} />
         )}
       </div>
     </>
@@ -235,6 +249,229 @@ function OfferPopUpSending({ hanlerClosePopup }) {
               />
               <button type="submit" className={styles.button__sending}>
                 AFLĂ DETALII
+              </button>
+            </form>
+
+            <div className={styles.terms__policy}>
+              <Link href="/terms">
+                <a className={styles.terms}>Terms and Conditions </a>
+              </Link>
+              and
+              <Link href="/policy">
+                <a className={styles.policy}> Privacy Policy</a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
+  const [isPlanningSend, setIsPlanningSend] = React.useState(false);
+  const [nameValue, setNameValue] = React.useState("");
+  const [emailValue, setEmailValue] = React.useState("");
+
+  const useHandlerOnClickToSend = (e) => {
+    e.preventDefault();
+
+    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        numele: nameValue,
+        email: emailValue,
+      }),
+    })
+      .then((response) => {
+        response.json();
+        setIsPlanningSend(true);
+      })
+      .then((data) => data)
+      .catch((error) => console.log(error));
+  };
+
+  React.useEffect(() => {
+    if (isPlanningSend) {
+      Router.push("/planning");
+    }
+  }, [isPlanningSend]);
+
+  return (
+    <>
+      <section className={styles.offer__section}>
+        <div className={styles.offer__container}>
+          <div className={styles.offer__inner}>
+            <button
+              type="button"
+              className={styles.offer__button_close}
+              onClick={hanlerClosePlanningPopup}
+            >
+              <Image
+                src={close__button}
+                height={13}
+                width={13}
+                alt="close button icon"
+              />
+            </button>
+            <h2 className={styles.offer__title}>
+            Vrei să vizualizezi <br/>planimetriile disponibile?
+            </h2>
+            <h3 className={styles.offer__subtitle}>
+            Expediază-ne datele de contact și managerul revine <br/>cu informații suplimentare:
+            </h3>
+
+            <form
+              className={styles.offer__form}
+              action="https://formsubmit.co/nev30inbox@gmail.com"
+              method="POST"
+              onSubmit={useHandlerOnClickToSend}
+            >
+              <input
+                type="text"
+                value={nameValue}
+                onChange={(e) => setNameValue(e.target.value)}
+                placeholder="NUMELE, PRENUMELE"
+                required
+              />
+              <PhoneInput
+                className={styles.input}
+                style={{
+                  height: "auto",
+                  width: "100%",
+                  paddingTop: "0",
+                  paddingBottom: "0",
+                }}
+                placeholder="Numărul de telefon"
+                country={"md"}
+                value={emailValue}
+                onChange={setEmailValue}
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="false" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Everyone is important for as!"
+              />
+              <button type="submit" className={styles.button__sending}>
+              Plasează solicitarea
+              </button>
+            </form>
+
+            <div className={styles.terms__policy}>
+              <Link href="/terms">
+                <a className={styles.terms}>Terms and Conditions </a>
+              </Link>
+              and
+              <Link href="/policy">
+                <a className={styles.policy}> Privacy Policy</a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function AboutPopUpSending({ hanlerCloseAboutPopup }) {
+  const [isAboutSend, setIsAboutSend] = React.useState(false);
+  const [nameValue, setNameValue] = React.useState("");
+  const [emailValue, setEmailValue] = React.useState("");
+
+  const useHandlerOnClickToSend = (e) => {
+    e.preventDefault();
+
+    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        numele: nameValue,
+        email: emailValue,
+      }),
+    })
+      .then((response) => {
+        response.json();
+        setIsAboutSend(true);
+      })
+      .then((data) => data)
+      .catch((error) => console.log(error));
+  };
+
+  React.useEffect(() => {
+    if (isAboutSend) {
+      console.log(isAboutSend);
+      Router.push("/about");
+    }
+  }, [isAboutSend]);
+
+  return (
+    <>
+      <section className={styles.offer__section}>
+        <div className={styles.offer__container}>
+          <div className={styles.offer__inner}>
+            <button
+              type="button"
+              className={styles.offer__button_close}
+              onClick={hanlerCloseAboutPopup}
+            >
+              <Image
+                src={close__button}
+                height={13}
+                width={13}
+                alt="close button icon"
+              />
+            </button>
+            <h2 className={styles.offer__title}>
+            Află mai multe informații înainte <br/>de a-ți alege locuința de vis!
+            </h2>
+            <h3 className={styles.offer__subtitle}>
+            Introdu datele de contact corect, iar noi te vom contacta <br/>pentru a-ți prezenta detalii despre proiect: 
+            </h3>
+
+            <form
+              className={styles.offer__form}
+              action="https://formsubmit.co/nev30inbox@gmail.com"
+              method="POST"
+              onSubmit={useHandlerOnClickToSend}
+            >
+              <input
+                type="text"
+                value={nameValue}
+                onChange={(e) => setNameValue(e.target.value)}
+                placeholder="NUMELE, PRENUMELE"
+                required
+              />
+              <PhoneInput
+                className={styles.input}
+                style={{
+                  height: "auto",
+                  width: "100%",
+                  paddingTop: "0",
+                  paddingBottom: "0",
+                }}
+                placeholder="Numărul de telefon"
+                country={"md"}
+                value={emailValue}
+                onChange={setEmailValue}
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="false" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Everyone is important for as!"
+              />
+              <button type="submit" className={styles.button__sending}>
+              Vreau să fiu contactat
               </button>
             </form>
 

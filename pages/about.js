@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
-import planning__bg from "/public/static/planning-page/Group_2678.webp";
+import planning__bg from "/public/static/planning-page/Group_2678-.webp";
 import planning__bg_mob from "/public/static/planning-page/bg-about-mob.webp";
 import {
   Hero,
@@ -53,7 +53,7 @@ export default function Planning() {
         <link
           rel="preload"
           as="image"
-          href="Group_2678.webp"
+          href="Group_2678-.webp"
         />
         <link rel="prefetch" />
         <link rel="preconnect" href="http://localhost:3000/about/" />
