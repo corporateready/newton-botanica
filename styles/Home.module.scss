@@ -108,7 +108,7 @@
 }
 .button__planning {
     @include text(12px, 130%, 400, #fff);
-    @apply flex items-center justify-center bg-none w-[50%] border-[1px] border-white py-[3%] rounded uppercase tracking-widest hover:bg-white hover:text-[#2BB018] duration-150;
+    @apply flex items-center justify-center bg-none w-[50%] border-[1px] border-white py-[3%] rounded uppercase tracking-widest hover:cursor-pointer hover:bg-white hover:text-[#2BB018] duration-150;
 
     @media screen and(max-width: 1440px) {
         font-size: calc(6px + (16 - 6)*(100vw - 576px)/(1440 - 576));
