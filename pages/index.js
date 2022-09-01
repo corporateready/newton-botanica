@@ -34,7 +34,7 @@ export default function Home() {
   }
 
   const hanlerClosePlanningPopup = () => {
-    setIsAboutPopUp(false);
+    setIsPlanningPopUp(false);
   };
 
   const hanlerClosePopup = () => {
