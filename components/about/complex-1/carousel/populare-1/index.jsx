@@ -31,7 +31,7 @@ export default function Index() {
           Curte sigură fără mașini
           </p>
         </div>
-        {/* <div className={styles.item__info}>
+        <div className={styles.item__info}>
           <div className={styles.info__icon_wrapper}>
             <div className={styles.item__description_icon}>
             <Image src={cart} height={33} width={39} priority alt="" />
@@ -40,7 +40,7 @@ export default function Index() {
           <div className={styles.info__description}>
             <p className={styles.info__text}>Curte sigură fără mașini</p>
           </div>
-        </div> */}
+        </div>
       </div>
       <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
@@ -61,7 +61,7 @@ export default function Index() {
           Supraveghere video 24/7
           </p>
         </div>
-        {/* <div className={styles.item__info}>Supraveghere video 24/7</div> */}
+        <div className={styles.item__info}>Supraveghere video 24/7</div>
       </div>
       <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
