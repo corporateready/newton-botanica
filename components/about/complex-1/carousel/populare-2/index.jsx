@@ -28,9 +28,9 @@ export default function Index() {
             <Image src={cart} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Centru comercial la Parter
+          Locuri de parcare calde și uscate 
             <br />
-            și Etajul 1
+            în parcarea subterană
           </p>
         </div>
       </div>
@@ -50,7 +50,8 @@ export default function Index() {
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Pasarelă pietonală modernă
+          Parcare pentru cărucioare și 
+          <br/>rasteluri (parcări) pentru biciclete
           </p>
         </div>
       </div>
@@ -63,9 +64,9 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Parcare multietajată,
+          Piste comode pentru bicicliști, 
             <br />
-            3000+ locuri de parcare
+            conectate cu pistele din oraș
           </p>
         </div>
       </div>
@@ -78,9 +79,9 @@ export default function Index() {
             <Image src={icon_4} height={26} width={47} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Complex sportiv
+          Mediu fără bariere comod pentru deplasarea părinților 
+          <br/>cu cărucioare, copiilor și persoanelor cu dizabilități 
             <br />
-            cu bazin de înot acoperit
           </p>
         </div>
       </div>
@@ -93,9 +94,8 @@ export default function Index() {
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Grădiniță proprie conform
-            <br />
-            standardelor contemporane
+          Lacuri și parc – un loc minunat 
+          <br/>pentru plimbări și relaxare
           </p>
         </div>
       </div>
@@ -107,7 +107,10 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>Mediu fără bariere</p>
+          <p className={styles.item__description_text}>
+          Tot de ce ai nevoie pentru casă și 
+          <br/>familie la câțiva pași distanță
+          </p>
         </div>
       </div>
     </div>

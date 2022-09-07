@@ -11,14 +11,18 @@ import grid__item_6 from "../../../public/static/planning-page/designs-grid/mine
 import grid__item_7 from "../../../public/static/planning-page/designs-grid/elevator.png";
 import grid__item_8 from "../../../public/static/planning-page/designs-grid/white-variant.png";
 
-export default function index() {
+export default function Index({ setIsPopUpSend }) {
+  const hanlerIsOpenPopup = () => {
+    setIsPopUpSend(true);
+  };
+
   return (
     <>
       <div className={styles.designs__section}>
         <div className={styles.designs__wrapper}>
           <div className={styles.designs__inner}>
             <h1 className={styles.designs__title}>
-            Calitate sporită a construcției
+              Calitate sporită a construcției
               <span></span>
             </h1>
             <div className={styles.designs__grid}>
@@ -52,8 +56,9 @@ export default function index() {
                   />
                 </div>
                 <p className={styles.designs__item_name}>
-                Cazan de ultimă 
-                <br/>generație (2 contoare)
+                  Cazan de ultimă
+                  <br />
+                  generație (2 contoare)
                 </p>
               </div>
               <div className={styles.designs__item}>
@@ -69,8 +74,9 @@ export default function index() {
                   />
                 </div>
                 <p className={styles.designs__item_name}>
-                Pereți exteriori 
-                <br/>din K-Bloc 
+                  Pereți exteriori
+                  <br />
+                  din K-Bloc
                 </p>
               </div>
               <div className={styles.designs__item}>
@@ -87,7 +93,7 @@ export default function index() {
                 </div>
                 <p className={styles.designs__item_name}>
                   Tehnologie italiană de izolare
-                  <br/>a pereților și pardoselii
+                  <br />a pereților și pardoselii
                 </p>
               </div>
               <div className={styles.designs__item}>
@@ -104,7 +110,8 @@ export default function index() {
                 </div>
                 <p className={styles.designs__item_name}>
                   Pereți în 3 straturi
-                  <br/>între apartamente
+                  <br />
+                  între apartamente
                 </p>
               </div>
               <div className={styles.designs__item}>
@@ -121,7 +128,8 @@ export default function index() {
                 </div>
                 <p className={styles.designs__item_name}>
                   Fațadă izolată
-                  <br/>cu vată bazaltică
+                  <br />
+                  cu vată bazaltică
                 </p>
               </div>
               <div className={styles.designs__item}>
@@ -138,7 +146,8 @@ export default function index() {
                 </div>
                 <p className={styles.designs__item_name}>
                   Ascensoare silențioase
-                  <br/>de înaltă viteză
+                  <br />
+                  de înaltă viteză
                 </p>
               </div>
               <div className={styles.designs__item}>
@@ -153,14 +162,16 @@ export default function index() {
                     alt=""
                   />
                 </div>
-                <p className={styles.designs__item_name}>
-                Variantă albă
-                </p>
+                <p className={styles.designs__item_name}>Variantă albă</p>
               </div>
             </div>
-            <Link href="/planning">
-            <a className={styles.button__detail}>Află mai multe despre <br/>calitatea construcției </a>
-          </Link>
+            <button
+              type="button"
+              className={styles.button__detail}
+              onClick={hanlerIsOpenPopup}
+            >
+              Află mai multe detalii despre proiect
+            </button>
           </div>
         </div>
       </div>

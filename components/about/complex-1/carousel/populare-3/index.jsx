@@ -28,9 +28,8 @@ export default function Index() {
             <Image src={cart} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Centru comercial la Parter
-            <br />
-            și Etajul 1
+          Sală de fitness cu bazin de înot 
+          <br/>acoperit pentru copii și adulți
           </p>
         </div>
       </div>
@@ -50,7 +49,8 @@ export default function Index() {
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Pasarelă pietonală modernă
+          Grădiniță contemporană pe 
+          <br/>teritoriul complexului 
           </p>
         </div>
       </div>
@@ -63,9 +63,9 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Parcare multietajată,
+          Spații de joacă moderne pentru 
             <br />
-            3000+ locuri de parcare
+            copiii de toate vârstele 
           </p>
         </div>
       </div>
@@ -78,9 +78,7 @@ export default function Index() {
             <Image src={icon_4} height={26} width={47} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Complex sportiv
-            <br />
-            cu bazin de înot acoperit
+          Terenuri sportive pentru adulți
           </p>
         </div>
       </div>
@@ -93,9 +91,9 @@ export default function Index() {
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Grădiniță proprie conform
+          Mobilier urban modern și 
             <br />
-            standardelor contemporane
+            practic pentru odihnă
           </p>
         </div>
       </div>
@@ -107,7 +105,10 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>Mediu fără bariere</p>
+          <p className={styles.item__description_text}>
+          Havuz care creează o atmosferă 
+          <br/>deosebită în curte
+          </p>
         </div>
       </div>
     </div>

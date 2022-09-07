@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Payment.module.scss";
-import Link from "next/link";
 import Image from "next/image";
 import payment__image from "../../../public/static/planning-page/payment/payment-image.svg";
 import logo__icon from "../../../public/static/planning-page/payment/logo-icon.svg";
@@ -16,10 +15,12 @@ import leaf_3__mob from "../../../public/static/planning-page/payment/leaf-c-r-m
 import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r-mob.png";
 import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.png";
 
-export default function index({ isOpen, setIsOpen }) {
-  const hanlerOpenPopup = () => {
-    setIsOpen(true);
+export default function index({ setIsPopUpSend }) {
+
+  const hanlerIsOpenPopup = () => {
+    setIsPopUpSend(true);
   };
+
   return (
     <>
       <div className={styles.payment__section}>
@@ -37,9 +38,9 @@ export default function index({ isOpen, setIsOpen }) {
               </div>
               <button
                 className={styles.location__detail}
-                onClick={hanlerOpenPopup}
+                onClick={hanlerIsOpenPopup}
               >
-                Cere detalii despre metoda de achitare 
+                Cere detalii despre <br/>metoda de achitare 
               </button>
             </div>
             <div className={styles.description__side}>
@@ -168,11 +169,12 @@ export default function index({ isOpen, setIsOpen }) {
                 </p>
               </div>
             </div>
-            <Link href="/about">
-              <a className={styles.location__detail_mobile}>
-              Cere detalii despre metoda de achitare
-              </a>
-            </Link>
+              <button 
+              className={styles.location__detail_mobile}
+              onClick={hanlerIsOpenPopup}
+              >
+              Cere detalii despre <br/>metoda de achitare
+              </button>
           </div>
         </div>
         <div className={styles.leaf}>

@@ -15,51 +15,62 @@ import Messengers from "../components/messengers";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-import $ from "jquery"
+import $ from "jquery";
 
 export default function Home() {
-React.useEffect(()=>{
-  ($(document.window).ready(function() {
-    let __int = setInterval(function() {
-        if (window.roistat !== undefined && window.roistat.callTracking !== undefined && window.roistat.callTracking.phone !== undefined) {
-            clearInterval(__int)
-            let phone = ''
-            $('a[href*="tel"]').each(function(key, val) {
-                if (!phone.length) {
-                    phone = $(val).find('span span').text().replace(/[^+\d]/g, '')
-                }
-                $(val).attr('href', 'tel:' + phone)
-            })
+
+  React.useEffect(() => {
+    $(document.window).ready(function () {
+      let __int = setInterval(function () {
+        if (
+          window.roistat !== undefined &&
+          window.roistat.callTracking !== undefined &&
+          window.roistat.callTracking.phone !== undefined
+        ) {
+          clearInterval(__int);
+          let phone = "";
+          $('a[href*="tel"]').each(function (key, val) {
+            if (!phone.length) {
+              phone = $(val)
+                .find("span span")
+                .text()
+                .replace(/[^+\d]/g, "");
+            }
+            $(val).attr("href", "tel:" + phone);
+          });
         }
-    }, 333)
-}))
+      }, 333);
+    });
+  }, []);
 
-}, [])
-
-React.useEffect(()=>{
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KRLSSZN')
-},[])
-
+  React.useEffect(() => {
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KRLSSZN");
+  }, []);
 
   const [isAboutPopUp, setIsAboutPopUp] = React.useState(false);
   const [isPlanningPopUp, setIsPlanningPopUp] = React.useState(false);
   const [isOfferOpen, setIsOfferOpen] = React.useState(false);
 
-  const handlerAboutClick =()=>{
-    setIsAboutPopUp(true)
-  }
+  const handlerAboutClick = () => {
+    setIsAboutPopUp(true);
+  };
 
   const hanlerCloseAboutPopup = () => {
     setIsAboutPopUp(false);
   };
 
-  const handlerPlanningClick =()=>{
-    setIsPlanningPopUp(true)
-  }
+  const handlerPlanningClick = () => {
+    setIsPlanningPopUp(true);
+  };
 
   const hanlerClosePlanningPopup = () => {
     setIsPlanningPopUp(false);
@@ -71,13 +82,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   return (
     <>
       <Head>
-        <title>Newton House Grădina Botanica</title>
+        <title>NEWTON HOUSE GRĂDINA BOTANICA</title>
         <meta
           name="description"
           content="Apartamente în rate, pe 5 ani, cu doar 10% prima rată, 0% dobândă,"
         />
         <link rel="icon" href="/favicon.ico" />
-
       </Head>
 
       <div className={styles.home__screen}>
@@ -139,21 +149,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
               <div className={styles.navigate__side}>
                 <div className={styles.buttons__up}>
-                    <button 
-                      className={styles.button__about}
-                      onClick={handlerAboutClick}
-                    >Despre CASĂ</button>
-                    <a 
-                      className={styles.button__planning}
-                      onClick={handlerPlanningClick}
-                      >PLANIMETRII</a>
+                  <button
+                    className={styles.button__about}
+                    onClick={handlerAboutClick}
+                  >
+                    Despre CASĂ
+                  </button>
+                  <a
+                    className={styles.button__planning}
+                    onClick={handlerPlanningClick}
+                  >
+                    PLANIMETRII
+                  </a>
                 </div>
 
                 <button
                   className={styles.button__send}
                   onClick={() => setIsOfferOpen(true)}
                 >
-                  Plasează solicitarea
+                  vezi detalii
                 </button>
               </div>
 
@@ -177,14 +191,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         )}
 
         {isPlanningPopUp && (
-          <PlanningPopUpSending hanlerClosePlanningPopup={hanlerClosePlanningPopup} />
+          <PlanningPopUpSending
+            hanlerClosePlanningPopup={hanlerClosePlanningPopup}
+          />
         )}
       </div>
     </>
   );
 }
 
-function OfferPopUpSending({ hanlerClosePopup }) {
+export function OfferPopUpSending({ hanlerClosePopup }) {
   const [isSend, setIsSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [emailValue, setEmailValue] = React.useState("");
@@ -199,8 +215,9 @@ function OfferPopUpSending({ hanlerClosePopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        numele: nameValue,
-        email: emailValue,
+        From : "AFLĂ DETALII",
+        Numele: nameValue.toUpperCase(),
+        Telefon: emailValue,
       }),
     })
       .then((response) => {
@@ -311,8 +328,9 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        numele: nameValue,
-        email: emailValue,
+        From : "Plasează solicitarea",
+        Numele: nameValue.toUpperCase(),
+        Telefon: emailValue,
       }),
     })
       .then((response) => {
@@ -325,7 +343,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
 
   React.useEffect(() => {
     if (isPlanningSend) {
-      Router.push("/planning");
+      Router.push("/about");
     }
   }, [isPlanningSend]);
 
@@ -347,10 +365,12 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
               />
             </button>
             <h2 className={styles.offer__title}>
-            Vrei să vizualizezi <br/>planimetriile disponibile?
+              Vrei să vizualizezi <br />
+              planimetriile disponibile?
             </h2>
             <h3 className={styles.offer__subtitle}>
-            Expediază-ne datele de contact și managerul revine <br/>cu informații suplimentare:
+              Expediază-ne datele de contact și managerul revine <br />
+              cu informații suplimentare:
             </h3>
 
             <form
@@ -387,7 +407,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
                 value="Everyone is important for as!"
               />
               <button type="submit" className={styles.button__sending}>
-              Plasează solicitarea
+                Plasează solicitarea
               </button>
             </form>
 
@@ -422,8 +442,9 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        numele: nameValue,
-        email: emailValue,
+        From: "Vreau să fiu contactat",
+        Numele: nameValue,
+        Telefon: emailValue,
       }),
     })
       .then((response) => {
@@ -459,10 +480,12 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
               />
             </button>
             <h2 className={styles.offer__title}>
-            Află mai multe informații înainte <br/>de a-ți alege locuința de vis!
+              Află mai multe informații înainte <br />
+              de a-ți alege locuința de vis!
             </h2>
             <h3 className={styles.offer__subtitle}>
-            Introdu datele de contact corect, iar noi te vom contacta <br/>pentru a-ți prezenta detalii despre proiect: 
+              Introdu datele de contact corect, iar noi te vom contacta <br />
+              pentru a-ți prezenta detalii despre proiect:
             </h3>
 
             <form
@@ -499,7 +522,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 value="Everyone is important for as!"
               />
               <button type="submit" className={styles.button__sending}>
-              Vreau să fiu contactat
+                Vreau să fiu contactat
               </button>
             </form>
 

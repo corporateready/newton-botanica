@@ -91,14 +91,30 @@
 //  =====>
 .button__detail {
     @include text(15px, 130%, 400, #fff);
-    @apply flex justify-center bg-[#2BB018] border-[1px] w-[20%] py-[1%] mx-auto mt-[10%] rounded uppercase text-center tracking-wider hover:bg-white hover:text-[#2BB018] hover:transition-all hover:duration-150;
+    @apply flex justify-center bg-[#2BB018] border-[1px] w-[40%] py-[2%] mx-auto mt-[13%] rounded uppercase text-center tracking-wider;
+
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1s;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
 
     @media screen and(max-width: 1440px) {
         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
-        @apply mt-[35%] w-[60%] py-[3%];
+        @apply mt-[35%] w-[86%] py-[3%];
         font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
     }
 }

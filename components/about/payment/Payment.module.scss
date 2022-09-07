@@ -77,7 +77,7 @@
 //  =====>
 .location__detail {
     @include text(15px, 130%, 400, #fff);
-    @apply flex justify-center bg-[#2BB018] border-0 w-full py-[2%] mx-auto rounded uppercase text-center tracking-wider hover:duration-150;
+    @apply flex justify-center bg-[#2BB018] border-0 w-[78%] py-[2.5%] ml-[16%] rounded uppercase text-center tracking-wider hover:duration-150;
 
     @media screen and(max-width: 1440px) {
         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));

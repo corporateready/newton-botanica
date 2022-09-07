@@ -5,6 +5,7 @@ import hero__bg from "../../../public/static/planning-page/Group_2678.webp";
 import hero__bg_mobile from "../../../public/static/planning-page/bg-groupe-mobile.png";
 
 export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
+  
   const hanlerIsPDFOpenPopup = () => {
     setIsPDFOpen(true);
   };

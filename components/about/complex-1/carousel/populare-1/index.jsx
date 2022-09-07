@@ -28,11 +28,19 @@ export default function Index() {
             <Image src={cart} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Centru comercial la Parter
-            <br />
-            și Etajul 1
+          Curte sigură fără mașini
           </p>
         </div>
+        {/* <div className={styles.item__info}>
+          <div className={styles.info__icon_wrapper}>
+            <div className={styles.item__description_icon}>
+            <Image src={cart} height={33} width={39} priority alt="" />
+            </div>
+          </div>
+          <div className={styles.info__description}>
+            <p className={styles.info__text}>Curte sigură fără mașini</p>
+          </div>
+        </div> */}
       </div>
       <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
@@ -50,9 +58,10 @@ export default function Index() {
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Pasarelă pietonală modernă
+          Supraveghere video 24/7
           </p>
         </div>
+        {/* <div className={styles.item__info}>Supraveghere video 24/7</div> */}
       </div>
       <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
@@ -63,9 +72,9 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Parcare multietajată,
+          O singură cheie de acces
             <br />
-            3000+ locuri de parcare
+            la toate porțile
           </p>
         </div>
       </div>
@@ -78,9 +87,9 @@ export default function Index() {
             <Image src={icon_4} height={26} width={47} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Complex sportiv
+          Logistică planificată și acces spre
             <br />
-            cu bazin de înot acoperit
+             complex din două străzi diferite
           </p>
         </div>
       </div>
@@ -93,9 +102,9 @@ export default function Index() {
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-            Grădiniță proprie conform
+          Accesul online și gestiunea interfonului smart 
             <br />
-            standardelor contemporane
+            cu smartphone-ul și calculatorul
           </p>
         </div>
       </div>
@@ -107,7 +116,10 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>Mediu fără bariere</p>
+          <p className={styles.item__description_text}>
+          Lifturi moderne cu acces spre toate etajele 
+          <br/>și nivelurile parcării
+          </p>
         </div>
       </div>
     </div>

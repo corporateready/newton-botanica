@@ -1,39 +1,7 @@
-@import'./mixins.scss';
+@import '../../styles/mixins.scss';
 
-.planning__section {
-    @apply h-full w-full relative top-0 left-0 overflow-hidden;
-}
-.planning__bg {
-    @apply absolute top-0 left-0 min-h-full max-h-full w-full z-auto object-fill;
-
-    @media screen and (max-width: 576px) {
-        @apply hidden;
-    }
-
-}
-.planning__bg_mob {
-    @apply hidden;
-
-    @media screen and (max-width: 576px) {
-        @apply block absolute top-0 left-0 min-h-full max-h-full w-full z-auto object-fill;
-    }
-
-}
-.container {
-    @apply w-[1170px] mx-auto px-0;
-
-    @media screen and(max-width: 1440px) {
-        @apply w-full px-[9.3%];
-    }
-
-    @media screen and(max-width: 576px) {
-        @apply w-full px-0;
-    }
-}
-
-//  ===== popup offer =====>
 .offer__section {
-    @apply h-screen w-full absolute top-0 flex items-center justify-center left-0 z-20;
+    @apply h-screen w-full fixed top-0 flex items-center justify-center left-0 z-20;
     background: rgb(0 0 0 / 85%);
 
     @media screen and (max-width: 576px) {

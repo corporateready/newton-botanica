@@ -11,15 +11,22 @@ import {
   Location,
   SliderSnake,
   Payment,
-  News,
+  // News,
 } from "../components/about";
 import Head from "next/head";
+import "react-phone-input-2/lib/style.css";
 import OfferPDFOpenSending from "../components/popup-pdf-offer";
 import OfferCallRezerve from "../components/popup-phone-offer";
+import FromDesignPopUp from '../components/name-phone-popup/index'
 
-export default function Planning() {
+export default function About() {
+  const [isPopUpSend, setIsPopUpSend] = useState(false);
   const [isPDFOpen, setIsPDFOpen] = useState(false);
   const [isCallRezervePopUp, setIsCallRezervePopUp] = useState(false);
+
+  const hanlerCloseDesignPopup = () => {
+    setIsPopUpSend(!isPopUpSend);
+  };
 
   const hanlerClosePopup = () => {
     setIsPDFOpen(!isPDFOpen);
@@ -47,14 +54,19 @@ export default function Planning() {
     }
   }, [isCallRezervePopUp]);
 
+  useEffect(()=>{
+    if(isPopUpSend) {
+      document.body.style.overflow = "hidden";
+    }
+    else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isPopUpSend])
+
   return (
     <>
       <Head>
-        <link
-          rel="preload"
-          as="image"
-          href="Group_2678-.webp"
-        />
+        <link rel="preload" as="image" href="Group_2678-.webp" />
         <link rel="prefetch" />
         <link rel="preconnect" href="http://localhost:3000/about/" />
         <title>NGNB | PLANIMETRII</title>
@@ -78,6 +90,7 @@ export default function Planning() {
             alt="mobile home background"
           />
         </div>
+
         <Layout>
           <div className={styles.container}>
             <Hero
@@ -86,11 +99,17 @@ export default function Planning() {
               setIsCallRezervePopUp={setIsCallRezervePopUp}
             />
             <Complex />
-            <Designs />
+            <Designs
+            setIsPopUpSend={setIsPopUpSend}
+            hanlerCloseDesignPopup={hanlerCloseDesignPopup}
+            />
             <SliderSnake />
             <Location />
-            <Payment />
-            <News />
+            <Payment 
+            setIsPopUpSend={setIsPopUpSend}
+            hanlerCloseDesignPopup={hanlerCloseDesignPopup}
+            />
+            {/* <News /> */}
           </div>
         </Layout>
         {isPDFOpen && (
@@ -98,6 +117,9 @@ export default function Planning() {
         )}
         {isCallRezervePopUp && (
           <OfferCallRezerve hanlerCloseCallPopup={hanlerCloseCallPopup} />
+        )}
+        {isPopUpSend && (
+          <FromDesignPopUp hanlerCloseDesignPopup={hanlerCloseDesignPopup} />
         )}
       </section>
     </>
