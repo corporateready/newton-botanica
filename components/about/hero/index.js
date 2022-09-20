@@ -50,14 +50,13 @@ export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
               className={styles.button__about}
               onClick={hanlerIsPDFOpenPopup}
             >
-              SOLICITĂ <br /> PREZENTAREA PDF
+              SOLICITĂ <span className={styles.separotor__hide}></span> PREZENTAREA PDF
             </button>
             <button
               className={styles.button__planning}
               onClick={hanlerIsCallOpenPopup}
             >
-            Programează timpul pentru 
-            <br/>o consultație telefonică
+            rezrervă timpul pentru a fi telefonat
             </button>
           </div>
         </article>

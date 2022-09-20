@@ -15,7 +15,7 @@
     @apply hidden;
 
     @media screen and(max-width: 576px) {
-        @apply flex relative top-0 left-0 h-[70vh] w-full;
+        @apply flex relative top-0 left-0 h-[80vh] w-full;
         background-position: left;
     }
 }
@@ -33,10 +33,24 @@
     @media screen and(max-width: 1440px) {
     font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
     }
+
     @media screen and(max-width: 576px) {
-        @apply top-[-22%];
-        font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
-        }
+        @apply top-[-18%];
+        line-height: 180%;
+        font-size: calc(18px + (27 - 18)*(100vw - 320px)/(576 - 320));
+    }
+
+    @media screen and(max-width: 425px) {
+        @apply top-[-18%];
+    }
+
+    @media screen and(max-width: 415px) {
+        @apply top-[-15%];
+    }
+
+    // @media screen and(max-width: 400px) {
+    //     @apply top-[-15%];
+    // }
 
     span {
         @include text(32px, 150%, 400, #2BB018);
@@ -46,7 +60,7 @@
         }
 
         @media screen and(max-width: 576px) {
-            font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
+            font-size: calc(18px + (27 - 18)*(100vw - 320px)/(576 - 320));
             }
     }
 }
@@ -54,30 +68,39 @@
     @apply flex justify-center pt-[37%] pb-[3%] mx-auto relative space-x-[3%] w-[60%];
 
     @media screen and(max-width: 576px) {
-        @apply w-[95%] bottom-[-20%];
+        @apply w-[93%] bottom-[-20%] flex-col-reverse space-x-0;
+    }
+
+    @media screen and(max-width: 425px) {
+        @apply bottom-[-15%];
     }
 }
 .button__about {
     @include text(12px, 130%, 400, #fff);
     @apply flex justify-center bg-[#2BB018] w-[50%] py-[2%] text-center rounded uppercase tracking-wider items-center hover:bg-[#1e7f11] hover:text-white hover:transition-all hover:duration-150;
     
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+
     @media screen and(max-width: 1440px) {
     font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-    font-size: calc(6px + (13 - 6)*(100vw - 320px)/(576 - 320));
+        @apply w-full mt-[4%] py-[4%];
+        font-size: calc(10px + (24 - 10)*(100vw - 320px)/(576 - 320));
     }
 }
 .button__planning {
     @include text(12px, 130%, 400, #000);
     @apply block bg-white border-[1px] w-[50%] py-[2%] rounded uppercase text-center tracking-wider hover:bg-slate-300 hover:transition-all hover:duration-150;
 
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+
     @media screen and(max-width: 1440px) {
         font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-        @apply px-[5%];
-        font-size: calc(6px + (13 - 6)*(100vw - 320px)/(576 - 320));
+        @apply px-[5%] w-full py-[4%];
+        font-size: calc(10px + (24 - 10)*(100vw - 320px)/(576 - 320));
     }
 }
 .separotor {
