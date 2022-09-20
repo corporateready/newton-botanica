@@ -16,7 +16,7 @@
     background: #fff;
 
     @media (max-width: 576px) {
-        @apply pt-[10%];
+        @apply pt-[15%];
     }
 }
 .complex__title {
@@ -43,7 +43,7 @@
 
     @media screen and (max-width: 576px) {
         @apply pt-[10%] ;
-        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
+        font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
     }
 }
 .separator {
@@ -57,11 +57,9 @@
     height: 570px;
     
     @media screen and (max-width: 1440px) {
-                height: calc(228px + (570 - 228)*(100vw - 576px)/(1440 - 576));
-            }
+        height: calc(228px + (570 - 228)*(100vw - 576px)/(1440 - 576));
+    }
     @media screen and (max-width: 576px) {
-        // @apply hidden;
-        // height: 690px;
         height: calc(360px + (650 - 360)*(100vw - 320px)/(576 - 320));
     }
 }

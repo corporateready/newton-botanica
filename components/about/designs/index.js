@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Designs.module.scss";
-import Link from "next/link";
 import Image from "next/image";
 import grid__item_1 from "../../../public/static/planning-page/designs-grid/geam.png";
 import grid__item_2 from "../../../public/static/planning-page/designs-grid/cazan.png";

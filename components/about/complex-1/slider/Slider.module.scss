@@ -7,7 +7,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 576px) {
+      @apply hidden;
+    }
+}
+.slider__body_mob {
+  @apply hidden;
+
+  @media screen and (max-width: 576px) {
+    @apply block;
   }
+}
   .next,
   .prev {
     bottom: 46%;

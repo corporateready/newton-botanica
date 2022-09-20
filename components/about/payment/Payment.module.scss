@@ -36,7 +36,7 @@
     }
 }
 .description__side {
-    @apply w-[50%] space-y-[3%];
+    @apply w-[50%] space-y-[5%];
     @media screen and(max-width: 576px) {
         @apply w-full;
     }
@@ -92,9 +92,9 @@
     
     @media screen and(max-width: 576px) {
         @include text(15px, 130%, 400, #fff);
-        @apply flex justify-center self-center bg-[#2BB018] border-0 w-full py-[3%] mt-[5%] mx-auto rounded uppercase text-center tracking-wider hover:duration-150;
+        @apply flex justify-center self-center bg-[#2BB018] border-0 w-[80%] py-[4.5%] mt-[5%] mx-auto rounded uppercase text-center tracking-wider hover:duration-150;
 
-        font-size: calc(10px + (15 - 10)*(100vw - 320px)/(576 - 320));
+        font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
     }
 }
 

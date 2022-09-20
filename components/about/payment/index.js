@@ -40,7 +40,7 @@ export default function index({ setIsPopUpSend }) {
                 className={styles.location__detail}
                 onClick={hanlerIsOpenPopup}
               >
-                Cere detalii despre <br/>metoda de achitare 
+                solicită oferta
               </button>
             </div>
             <div className={styles.description__side}>
@@ -173,7 +173,7 @@ export default function index({ setIsPopUpSend }) {
               className={styles.location__detail_mobile}
               onClick={hanlerIsOpenPopup}
               >
-              Cere detalii despre <br/>metoda de achitare
+              Solicită oferta
               </button>
           </div>
         </div>

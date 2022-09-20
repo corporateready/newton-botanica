@@ -17,15 +17,8 @@
 .footer__inner {
     @apply grid grid-cols-3 py-[2%] w-full h-full relative;
 
-    &::after {
-        content: "";
-        display: inline-block;
-       position: absolute;
-       bottom: 0;
-       left: 0; 
-       height: 1px;
-       width: 100%;
-       background: #2BB018;
+    @media screen and (max-width: 576px) {
+        @apply grid grid-cols-2 grid-rows-1 py-[2%] gap-3 ;
     }
 }
 .footer__logo {
@@ -44,8 +37,7 @@
     @apply h-auto flex justify-center items-center space-x-[7%];
 
     @media screen and(max-width: 576px) {
-        @apply w-[100%] space-x-[15%];
-        width: calc(59px + (101 - 59)*(100vw - 320px)/(576 - 320));
+        @apply w-full flex justify-between;
     }
 
 }
@@ -57,7 +49,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply w-4 h-4;
+        @apply w-8 h-8;
     }
 }
 .social__item_icon {
@@ -67,8 +59,7 @@
         width: calc(15px + (24 - 15)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-
-            width: calc(8px + (10 - 8)*(100vw - 320px)/(576 - 320));
+            width: calc(12px + (16 - 12)*(100vw - 320px)/(576 - 320));
     }
 }
 .social__item_icon_YT {
@@ -77,16 +68,27 @@
     @media screen and(max-width: 1440px) {
         width: calc(15px + (24 - 15)*(100vw - 576px)/(1440 - 576));
     }
+
+    @media screen and(max-width: 576px) {
+        width: calc(15px + (30 - 15)*(100vw - 320px)/(576 - 320));
+}
 }
 .footer__contact {
     @apply flex flex-col justify-center h-full space-y-[3%];
 
     @media screen and(max-width: 576px) {
-        @apply space-y-[3%] w-[100%] ml-0;
+        @apply hidden;
+    }
+}
+.footer__contact_mob {
+    @apply hidden;
+
+    @media screen and(max-width: 576px) {
+        @apply flex flex-col gap-3 items-center w-full pb-[5%] pl-[15%];
     }
 }
 .footer__contact_item {
-    @apply flex items-center space-x-[5%] w-[55%] self-end;
+    @apply flex items-center space-x-[5%] w-[60%] self-end;
 
     @media screen and (max-width: 1150px) {
         @apply w-[62%];
@@ -97,7 +99,7 @@
     }
 
     @media screen and (max-width: 576px) {
-        @apply w-[100%];
+        @apply w-full space-x-[7%];
     }
 }
 .footer__contact_icon {
@@ -107,24 +109,39 @@
     }
    
     @media screen and(max-width: 576px) {
-        width: calc(13px + (24 - 13)*(100vw - 576px)/(1440 - 576));
+        @apply h-auto;
+        width: calc(20px + (30 - 20)*(100vw - 320px)/(576 - 320));
     }
 }
 .footer__contact_text {
-    @apply text-white text-[15px] font-thin;
+    @include text(15, 100%, 400, #fff);
+    font-family: 'Gilroy Regular';
+    @apply tracking-wider;
 
     @media screen and(max-width: 1440px) {
         font-size: calc(8px + (15 - 8)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
-        font-size: calc(6px + (11 - 6)*(100vw - 320px)/(576 - 320));
+        // @apply font-light;
+        font-size: calc(10px + (25 - 10)*(100vw - 320px)/(576 - 320));
     }
 }
 .footer__bottom {
     @include text(16px, 100%, 300, #fff);
-    @apply py-[1.5%] tracking-wider;
+    @apply py-[1.5%] tracking-wider relative top-0 left-0;
     font-family: 'Gilroy Regular';
+
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0; 
+        height: 1px;
+        width: 100%;
+        background: #2BB018;
+    }
 
     @media screen and(max-width: 1440px) {
         font-size: calc(6px + (16 - 6)*(100vw - 576px)/(1440 - 576));

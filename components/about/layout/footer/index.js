@@ -94,6 +94,36 @@ export default function index() {
             </a>
           </div>
         </div>
+        <div className={styles.footer__contact_mob}>
+            <a className={styles.footer__contact_item} href="tel:37360802020">
+              <span className={styles.footer__contact_icon}>
+                <Image
+                  src={phone__icon}
+                  height={24}
+                  width={24}
+                  priority
+                  alt="footer phone icon"
+                />
+              </span>
+              <span className={styles.footer__contact_text}>060 80 20 20</span>
+            </a>
+            <Link href="https://www.google.com/maps/dir/47.7626368,28.9898496/newton+house+google+map+location/@47.3618199,28.3867357,9.42z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x40c97dc3398a2559:0x71d4f48a93ea6096!2m2!1d28.8776605!2d46.9768761">
+            <a className={styles.footer__contact_item}>
+              <span className={styles.footer__contact_icon}>
+                <Image
+                  src={loc__icon}
+                  height={24}
+                  width={24}
+                  priority
+                  alt="footer phone icon"
+                />
+              </span>
+              <span className={styles.footer__contact_text}>
+                str. Grădina Botanică, 18
+              </span>
+            </a>
+            </Link>
+          </div>
         <p className={styles.footer__bottom}>
           Toate drepturile rezervate NEWTON HOUSE GRĂDINA BOTANICĂ © 2022.
         </p>

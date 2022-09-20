@@ -82,37 +82,9 @@
         &::after {
             @apply inline-block absolute top-0 left-0 h-full w-full bg-slate-500 opacity-70;
             content: '';
-            
         }
     }
 }
-// .complex__grid_item_info {
-//     @apply flex flex-col h-full w-full relative top-0 rounded-md overflow-hidden;
-//     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-
-//     @media screen and (max-width: 576px) {
-//         @apply hidden;
-//     }
-// }
-// .item__info {
-//     @include text(10px, 130%, 400, #fff);
-//     @apply mt-[5%] bg-[#FFA800] uppercase text-center py-[2.5%] tracking-wider;
-
-//     @media screen and(max-width: 1440px) {
-//         font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
-//     }
-// }
-// .item__info_attention {
-//     @include text(12px, 130%, 400, #fff);
-//     @apply mt-[5%] bg-[#DD2525] uppercase text-center py-[6%] tracking-wider;
-
-//     @media screen and(max-width: 1440px) {
-//         font-size: calc(6px + (12 - 6)*(100vw - 576px)/(1440 - 576));
-//     }
-//     @media screen and (max-width: 576px) {
-//         @apply hidden;
-//     }
-// }
 .item__bg {
     @apply flex rounded-t-md;
 }

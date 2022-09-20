@@ -90,8 +90,8 @@
 }
 //  =====>
 .button__detail {
-    @include text(15px, 130%, 400, #fff);
-    @apply flex justify-center bg-[#2BB018] border-[1px] w-[40%] py-[2%] mx-auto mt-[13%] rounded uppercase text-center tracking-wider;
+    @include text(16px, 130%, 400, #fff);
+    @apply flex justify-center bg-[#2BB018] border-[1px] w-[40%] py-[1.6%] mx-auto mt-[13%] rounded uppercase text-center tracking-wider;
 
     &:hover {
         animation-name:  pulse;
@@ -110,11 +110,11 @@
     }
 
     @media screen and(max-width: 1440px) {
-        font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+        font-size: calc(8px + (16 - 8)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {
-        @apply mt-[35%] w-[86%] py-[3%];
-        font-size: calc(10px + (14 - 10)*(100vw - 320px)/(576 - 320));
+        @apply mt-[35%] w-[86%] py-[4.3%];
+        font-size: calc(8px + (20 - 8)*(100vw - 320px)/(576 - 320));
     }
 }
