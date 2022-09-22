@@ -4,7 +4,6 @@ import styles from "../styles/Thanks.module.scss";
 import Layout from "../components/thanks-layout";
 import Messenger from "../components/messengers";
 import Head from "next/head";
-import YouTube from 'react-youtube';
 
 export default function Thanks() {
   return (

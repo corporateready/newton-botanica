@@ -59,5 +59,9 @@
 @layer {
     body {
         @apply max-w-full h-full mx-auto flex-col flex-1; 
+
+        .ytp-expand-pause-overlay .ytp-pause-overlay {
+          @apply opacity-0;
+        }
     }
 }

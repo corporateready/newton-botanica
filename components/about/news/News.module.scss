@@ -173,3 +173,32 @@
         @apply block;
     }
 }
+//  ===== =====>
+.video__wrapper {
+    @apply h-auto w-full flex flex-col mt-[3%] mx-auto overflow-hidden mb-[6%];
+    background: #FFFFFF;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+
+    @media screen and (max-width: 576px) {
+        @apply mt-[3%] mb-0 bg-transparent h-[250px];
+        box-shadow:none;
+    }
+}
+.video__body {
+    @media screen and (max-width: 576px) {
+        // @apply h-[230px];
+    }
+}
+.video_responsive {
+    // overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+.video_responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}

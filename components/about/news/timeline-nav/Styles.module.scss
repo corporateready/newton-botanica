@@ -1,7 +1,7 @@
 @import '../../../../styles/mixins.scss';
 
 .timeline {
-    @apply flex justify-between w-full;
+    @apply flex justify-between w-[50%];
 
     @media screen and (max-width: 768px) {
         @apply hidden;

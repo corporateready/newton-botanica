@@ -16,7 +16,7 @@ export default function Index({
     arr.push(
       <div
         className={
-          i <= isActive || isYear == "2021" ? styles.timeline__step_active : styles.timeline__step
+          i <= isActive ? styles.timeline__step_active : styles.timeline__step
         }
         key={i}
         value={isMounthDesk}

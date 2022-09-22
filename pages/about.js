@@ -11,7 +11,7 @@ import {
   Location,
   SliderSnake,
   Payment,
-  // News,
+  News,
 } from "../components/about";
 import Head from "next/head";
 import "react-phone-input-2/lib/style.css";
@@ -109,7 +109,7 @@ export default function About() {
             setIsPopUpSend={setIsPopUpSend}
             hanlerCloseDesignPopup={hanlerCloseDesignPopup}
             />
-            {/* <News /> */}
+            <News />
           </div>
         </Layout>
         {isPDFOpen && (
