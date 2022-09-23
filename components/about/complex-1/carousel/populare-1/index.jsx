@@ -28,7 +28,7 @@ export default function Index() {
             <Image src={cart} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Curte sigură fără mașini
+          Curte fără mașini
           </p>
         </div>
         <div className={styles.item__info}>
@@ -72,9 +72,7 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          O singură cheie de acces
-            <br />
-            la toate porțile
+          O cheie de acces 
           </p>
         </div>
       </div>
@@ -87,9 +85,7 @@ export default function Index() {
             <Image src={icon_4} height={26} width={47} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Logistică planificată și acces spre
-            <br />
-             complex din două străzi diferite
+          Acces prin 3 intrări 
           </p>
         </div>
       </div>
@@ -102,9 +98,7 @@ export default function Index() {
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Accesul online și gestiunea interfonului smart 
-            <br />
-            cu smartphone-ul și calculatorul
+          Interfon smart 
           </p>
         </div>
       </div>
@@ -117,8 +111,7 @@ export default function Index() {
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Lifturi moderne cu acces spre toate etajele 
-          <br/>și nivelurile parcării
+          Lifturi moderne 
           </p>
         </div>
       </div>

@@ -1,0 +1,67 @@
+.slider__body {
+  @apply h-full w-full;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .next,
+  .prev {
+    bottom: 46%;
+    position: absolute;
+    background: #2BB018;
+    width: 40px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 2;
+
+    @media screen and (max-width: 1440px) {
+      width: calc(16px + (40 - 16)*(100vw - 576px)/(1440 - 576));
+  }
+
+  @media screen and (max-width: 576px) {
+    @apply bottom-[-4%] h-[32px] w-[30px] py-[3%] rounded-sm;
+  }
+  }
+  .slider__pagination {
+    @apply hidden;
+    @media (max-width: 576px) {
+      @apply block absolute bottom-[-4%]; 
+    }
+  }
+  .next {
+    @apply right-[-6%] disabled:bg-transparent disabled:border-[1px] disabled:border-[#2BB018];
+
+    @media (max-width: 576px) {
+      @apply right-[6%];
+    }
+  }
+  .prev {
+    @apply left-[-6%] disabled:bg-transparent disabled:border-[1px] disabled:border-[#2BB018];
+    transform: scale(-1);
+
+    @media (max-width: 576px) {
+      @apply left-[6%];
+    }
+  }
+  .img {
+    position: absolute;
+    width: 100%;
+  }
+  // =====>
+  .inner__counter {
+    @apply text-[#2BB018] text-xl;
+  }
+  .inner__counter_lehgth {
+    @apply text-[#2D2D2B] text-xl;
+  }

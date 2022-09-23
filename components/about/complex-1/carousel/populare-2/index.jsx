@@ -28,9 +28,7 @@ export default function Index() {
             <Image src={cart} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Locuri de parcare calde și uscate 
-            <br />
-            în parcarea subterană
+          Parcare subterană multietajată 
           </p>
         </div>
       </div>
@@ -50,8 +48,7 @@ export default function Index() {
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Parcare pentru cărucioare și 
-          <br/>rasteluri (parcări) pentru biciclete
+          Parking cărucioare și biciclete
           </p>
         </div>
       </div>
@@ -64,9 +61,7 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Piste comode pentru bicicliști, 
-            <br />
-            conectate cu pistele din oraș
+          Piste pentru ciclism
           </p>
         </div>
       </div>
@@ -79,9 +74,7 @@ export default function Index() {
             <Image src={icon_4} height={26} width={47} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Mediu fără bariere comod pentru deplasarea părinților 
-          <br/>cu cărucioare, copiilor și persoanelor cu dizabilități 
-            <br />
+          Mediu fără bariere 
           </p>
         </div>
       </div>
@@ -94,8 +87,7 @@ export default function Index() {
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Lacuri și parc – un loc minunat 
-          <br/>pentru plimbări și relaxare
+          Lanț de lacuri și parc 
           </p>
         </div>
       </div>
@@ -108,8 +100,7 @@ export default function Index() {
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Tot de ce ai nevoie pentru casă și 
-          <br/>familie la câțiva pași distanță
+          Facilități de shopping 
           </p>
         </div>
       </div>

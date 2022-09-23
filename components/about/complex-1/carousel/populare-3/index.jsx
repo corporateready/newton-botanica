@@ -28,8 +28,7 @@ export default function Index() {
             <Image src={cart} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Sală de fitness cu bazin de înot 
-          <br/>acoperit pentru copii și adulți
+          Fitness centru cu bazin 
           </p>
         </div>
       </div>
@@ -49,8 +48,7 @@ export default function Index() {
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Grădiniță contemporană pe 
-          <br/>teritoriul complexului 
+          Grădiniță modernă
           </p>
         </div>
       </div>
@@ -63,9 +61,7 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Spații de joacă moderne pentru 
-            <br />
-            copiii de toate vârstele 
+          Spații de joacă 
           </p>
         </div>
       </div>
@@ -78,7 +74,7 @@ export default function Index() {
             <Image src={icon_4} height={26} width={47} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Terenuri sportive pentru adulți
+          Terenuri sportive 
           </p>
         </div>
       </div>
@@ -91,9 +87,7 @@ export default function Index() {
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Mobilier urban modern și 
-            <br />
-            practic pentru odihnă
+          Mobilier urban modern 
           </p>
         </div>
       </div>
@@ -106,8 +100,7 @@ export default function Index() {
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Havuz care creează o atmosferă 
-          <br/>deosebită în curte
+          Havuz artistic
           </p>
         </div>
       </div>

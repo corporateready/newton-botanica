@@ -1,10 +1,9 @@
-@import '../../../../../styles/mixins.scss';
+@import '../../../../../../styles/mixins.scss';
 
 .complex__grid_month {
-    @apply grid grid-cols-3 gap-y-[3%] gap-x-[2%];
 
     @media screen and(max-width: 576px) {
-        @apply grid grid-cols-2 grid-rows-3 gap-x-[2%] gap-y-[2%];
+        @apply grid grid-cols-1 grid-rows-2 gap-x-0 gap-y-[3%] px-[6%];
     }
 }
 .complex__grid_item {
@@ -23,10 +22,6 @@
 
             .info__icon_wrapper {
                 @apply flex bg-white h-[60px] w-[60px] rounded-full justify-center items-center;
-
-                .item__description_icon {
-                    // @apply flex ;
-                }
             }
 
             .info__description {
@@ -52,7 +47,7 @@
     @apply flex justify-start items-center py-[4%] pl-[5%] space-x-[5%];
 
     @media screen and (max-width: 576px) {
-        @apply py-[8%];
+        @apply pt-[4%] pb-[6%];
     }
 }
 .item__description_icon {
@@ -71,6 +66,6 @@
     @media screen and (max-width: 576px) {
         @apply flex self-center;
         font-family: 'Gilroy Regular';
-        font-size: calc(6px + (13 - 6)*(100vw - 320px)/(576 - 320));
+        font-size: calc(15px + (30 - 15)*(100vw - 320px)/(576 - 320));
     }
 }

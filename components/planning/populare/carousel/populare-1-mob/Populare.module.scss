@@ -13,10 +13,6 @@
 }
 .complex__inner {
     @apply flex flex-col justify-center h-full w-full mt-[5%];
-
-    @media screen and (max-width: 576px) {
-        // @apply mt-0;
-    }
 }
 .complex__title {
     @include text(32px, 150%, 400, #2D2D2B);
@@ -63,10 +59,6 @@
 .complex__grid_item_info {
     @apply flex flex-col h-full w-full relative top-0 rounded-md overflow-hidden hover:cursor-pointer hover:scale-95 hover:duration-200;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-
-    // @media screen and (max-width: 576px) {
-    //     @apply hidden;
-    // }
 }
 .item__info {
     @include text(10px, 130%, 400, #fff);
@@ -83,16 +75,9 @@
     @media screen and(max-width: 1440px) {
         font-size: calc(6px + (12 - 6)*(100vw - 576px)/(1440 - 576));
     }
-    // @media screen and (max-width: 576px) {
-    //     @apply hidden;
-    // }
 }
 .item__bg {
     @apply flex justify-center rounded-md m-[10%];
-
-    @media screen and(max-width: 576px) {
-        // @apply flex-grow;
-    }
 }
 .item__bg_info {
     @apply flex justify-center rounded-md mt-[7%] mb-[12%] mx-auto;

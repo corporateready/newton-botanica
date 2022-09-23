@@ -1,5 +1,6 @@
 import styles from "./Populare.module.scss";
 import { Slider } from "./slider";
+import { SliderMob } from "./slider-mob";
 
 export default function Populare() {
   return (
@@ -14,6 +15,9 @@ export default function Populare() {
             <div className={styles.complex__inner}>
               <div className={styles.complex__grids}>
                 <Slider/>
+              </div>
+              <div className={styles.complex__grids_mob}>
+                <SliderMob/>
               </div>
             </div>
           </div>
