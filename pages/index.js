@@ -15,45 +15,28 @@ import Messengers from "../components/messengers";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-import $ from "jquery";
-
 export default function Home() {
   React.useEffect(() => {
-    $(document.window).ready(function () {
-      let __int = setInterval(function () {
-        if (
-          window.roistat !== undefined &&
-          window.roistat.callTracking !== undefined &&
-          window.roistat.callTracking.phone !== undefined
-        ) {
-          clearInterval(__int);
-          let phone = "";
-          $('a[href*="tel"]').each(function (key, val) {
-            if (!phone.length) {
-              phone = $(val)
-                .find("span span")
-                .text()
-                .replace(/[^+\d]/g, "");
-            }
-            $(val).attr("href", "tel:" + phone);
-          });
-        }
-      }, 333);
-    });
+    (function(w, d, s, h, id) {
+      w.roistatProjectId = id; w.roistatHost = h;
+      var p = d.location.protocol == "https:" ? "https://" : "http://";
+      var u = /^.roistat_visit=[^;]+(.)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
+      var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+  })(window, document, 'script', 'cloud.roistat.com', 'e39442a8581e616d741b8f0786da960e');
   }, []);
 
-  React.useEffect(() => {
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != "dataLayer" ? "&l=" + l : "";
-      j.async = true;
-      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, "script", "dataLayer", "GTM-KRLSSZN");
-  }, []);
+  // React.useEffect(() => {
+  //   (function (w, d, s, l, i) {
+  //     w[l] = w[l] || [];
+  //     w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+  //     var f = d.getElementsByTagName(s)[0],
+  //       j = d.createElement(s),
+  //       dl = l != "dataLayer" ? "&l=" + l : "";
+  //     j.async = true;
+  //     j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+  //     f.parentNode.insertBefore(j, f);
+  //   })(window, document, "script", "dataLayer", "GTM-KRLSSZN");
+  // }, []);
 
   const [isAboutPopUp, setIsAboutPopUp] = React.useState(false);
   const [isPlanningPopUp, setIsPlanningPopUp] = React.useState(false);
