@@ -18,7 +18,6 @@ import "react-phone-input-2/lib/style.css";
 import $ from "jquery";
 
 export default function Home() {
-
   React.useEffect(() => {
     $(document.window).ready(function () {
       let __int = setInterval(function () {
@@ -204,10 +203,11 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
   const [isSend, setIsSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [emailValue, setEmailValue] = React.useState("");
+  const [spinner, setSpinner] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
-
+    setSpinner(true)
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -215,7 +215,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        From : "AFLĂ DETALII",
+        From: "AFLĂ DETALII",
         Numele: nameValue.toUpperCase(),
         Telefon: emailValue,
       }),
@@ -225,6 +225,10 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
         setIsSend(true);
       })
       .then((data) => data)
+      .then(function(){
+        setSpinner(false);
+       }
+      )
       .catch((error) => console.log(error));
   };
 
@@ -293,7 +297,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                 value="Everyone is important for as!"
               />
               <button type="submit" className={styles.button__sending}>
-                AFLĂ DETALII
+                {spinner ? "trimiteri..." : "AFLĂ DETALII"}
               </button>
             </form>
 
@@ -317,10 +321,11 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
   const [isPlanningSend, setIsPlanningSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [emailValue, setEmailValue] = React.useState("");
+  const [spinner, setSpinner] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
-
+    setSpinner(true)
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -328,7 +333,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        From : "Plasează solicitarea",
+        From: "Plasează solicitarea",
         Numele: nameValue.toUpperCase(),
         Telefon: emailValue,
       }),
@@ -338,6 +343,10 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
         setIsPlanningSend(true);
       })
       .then((data) => data)
+      .then(function(){
+        setSpinner(false);
+       }
+      )
       .catch((error) => console.log(error));
   };
 
@@ -407,7 +416,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
                 value="Everyone is important for as!"
               />
               <button type="submit" className={styles.button__sending}>
-                Plasează solicitarea
+                {spinner ? "trimitere..." : "Plasează solicitarea"}
               </button>
             </form>
 
@@ -431,10 +440,11 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
   const [isAboutSend, setIsAboutSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [emailValue, setEmailValue] = React.useState("");
+  const [spinner, setSpinner] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
-
+    setSpinner(true);
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -451,7 +461,14 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
         response.json();
         setIsAboutSend(true);
       })
-      .then((data) => data)
+      .then((data) => {
+          data
+        }
+      )
+      .then(function(){
+        setSpinner(false);
+       }
+      )
       .catch((error) => console.log(error));
   };
 
@@ -522,7 +539,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 value="Everyone is important for as!"
               />
               <button type="submit" className={styles.button__sending}>
-                Vreau să fiu contactat
+                {spinner ? "trimitere..." : "Vreau să fiu contactat"}
               </button>
             </form>
 
