@@ -60,7 +60,11 @@
 }
 
 .designs__item {
-    @apply h-full w-full flex flex-col justify-center items-center hover:scale-110 duration-200 hover:cursor-pointer;
+    @apply h-full w-full flex flex-col justify-center items-center relative hover:scale-110 duration-200 hover:cursor-pointer;
+    
+    @media screen and (max-width: 576px) {
+        @apply pointer-events-none;
+    }
 }
 
 .designs__image {

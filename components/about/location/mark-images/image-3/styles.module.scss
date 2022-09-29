@@ -29,4 +29,8 @@
     @include text(15px, 200%, 400, #2BB018);
     @apply absolute top-[3%] right-[2%] z-auto bg-white px-[2%] rounded-full hover:cursor-pointer uppercase;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+
+    @media screen and (max-width: 576px) {
+        @include text(13px, 200%, 400, #2BB018);
+    }
 }

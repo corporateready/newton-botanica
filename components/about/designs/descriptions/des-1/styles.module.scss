@@ -4,7 +4,7 @@
     @apply mt-[3%] bg-white;
 
     @media screen and(max-width: 576px) {
-        @apply pt-[50%];
+        @apply hidden;
     }
     iframe {
         @apply h-[600px];
@@ -19,7 +19,6 @@
 
         @media screen and(max-width: 576px) {
             @apply h-[250px];
-            // height: calc(300px + (200 - 200)*(100vw - 320px)/(576 - 320));
         }
     }
 }

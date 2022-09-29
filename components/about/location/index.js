@@ -4,8 +4,28 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import location__bg from "../../../public/static/planning-page/location/botanica-location.webp";
-import { MarkButton_1, MarkButton_2, MarkButton_3, MarkButton_4, MarkButton_5 } from "./marks";
-import { MarkImage, MarkImage_2, MarkImage_3, MarkImage_4, MarkImage_5 } from "./mark-images";
+import {
+  MarkButton_1,
+  MarkButton_2,
+  MarkButton_3,
+  MarkButton_4,
+  MarkButton_5,
+  MarkButton_6,
+  MarkButton_7,
+  MarkButton_8,
+  MarkButton_9
+} from "./marks";
+import {
+  MarkImage,
+  MarkImage_2,
+  MarkImage_3,
+  MarkImage_4,
+  MarkImage_5,
+  MarkImage_6,
+  MarkImage_7,
+  MarkImage_8,
+  MarkImage_9
+} from "./mark-images";
 
 export default function index() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -13,6 +33,10 @@ export default function index() {
   const [isOpen3, setIsOpen3] = React.useState(false);
   const [isOpen4, setIsOpen4] = React.useState(false);
   const [isOpen5, setIsOpen5] = React.useState(false);
+  const [isOpen6, setIsOpen6] = React.useState(false);
+  const [isOpen7, setIsOpen7] = React.useState(false);
+  const [isOpen8, setIsOpen8] = React.useState(false);
+  const [isOpen9, setIsOpen9] = React.useState(false);
 
   const handlerIsOpen = (e) => {
     e.stopPropagation();
@@ -34,6 +58,22 @@ export default function index() {
     e.stopPropagation();
     setIsOpen5(!isOpen5);
   };
+  const handlerIsOpen6 = (e) => {
+    e.stopPropagation();
+    setIsOpen6(!isOpen6);
+  };
+  const handlerIsOpen7 = (e) => {
+    e.stopPropagation();
+    setIsOpen7(!isOpen7);
+  };
+  const handlerIsOpen8 = (e) => {
+    e.stopPropagation();
+    setIsOpen8(!isOpen8);
+  };
+  const handlerIsOpen9 = (e) => {
+    e.stopPropagation();
+    setIsOpen9(!isOpen9);
+  };
 
   return (
     <>
@@ -49,7 +89,10 @@ export default function index() {
             {isOpen3 && <MarkImage_3 setIsOpen3={setIsOpen3} />}
             {isOpen4 && <MarkImage_4 setIsOpen4={setIsOpen4} />}
             {isOpen5 && <MarkImage_5 setIsOpen5={setIsOpen5} />}
-            
+            {isOpen6 && <MarkImage_6 setIsOpen6={setIsOpen6} />}
+            {isOpen7 && <MarkImage_7 setIsOpen7={setIsOpen7} />}
+            {isOpen8 && <MarkImage_8 setIsOpen8={setIsOpen8} />}
+            {isOpen9 && <MarkImage_9 setIsOpen9={setIsOpen9} />}
 
             <div className={styles.location__bg_inner}>
               <MarkButton_1 handlerIsOpen={handlerIsOpen} />
@@ -61,6 +104,14 @@ export default function index() {
               <MarkButton_4 handlerIsOpen4={handlerIsOpen4} />
 
               <MarkButton_5 handlerIsOpen5={handlerIsOpen5} />
+
+              <MarkButton_6 handlerIsOpen6={handlerIsOpen6} />
+
+              <MarkButton_7 handlerIsOpen7={handlerIsOpen7} />
+
+              <MarkButton_8 handlerIsOpen8={handlerIsOpen8} />
+
+              <MarkButton_9 handlerIsOpen9={handlerIsOpen9} />
 
               <motion.span
                 className={styles.loaction__mark_3}

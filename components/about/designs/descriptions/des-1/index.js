@@ -15,7 +15,6 @@ export default function DesItem_1({ setIsVisible }) {
         height: "115%",
         width: "100%",
         display: "block",
-        // background: "white",
         "z-index": "20",
       }}
       exit={{ height: "0px", width: "0px" }}
