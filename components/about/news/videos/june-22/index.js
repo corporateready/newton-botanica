@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import styles from './styles.module.scss'
 
 export function June() {
-  React.useEffect(() => {
-    window.addEventListener("beforeunload", (ev) => {
-      ev.preventDefault();
-      cookies.remove("userInfo");
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   window.addEventListener("beforeunload", (ev) => {
+  //     ev.preventDefault();
+  //     // cookies.remove("userInfo");
+  //   });
+  // }, []);
 
   React.useEffect(() => {
     document.addEventListener("fetch", (event) => {
@@ -24,30 +24,7 @@ export function June() {
       );
     });
   }, []);
-
-  React.useEffect(()=>{
-    (function() {
-      player = new YT.Player('video', {
-        events: {
-          // call this function when player is ready to use
-          'onReady': onPlayerReady,
-          
-        },
-        playerVars: { 'rel':0}
-      })()
-    })
-  },[])
-
-  const opts = {
-    height: "590px",
-    width: "100%",
-    loading: "lazy",
-    playerVars: {
-      passive: false,
-      controls: 2,
-      autoplay: 1,
-    },
-  };
+  
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -56,20 +33,13 @@ export function June() {
       <div className={styles.video__wrapper}>
         <div className={styles.video__wrapper_frame}>
           <iframe
-            id="ytplayer"
             type="text/html"
             height="590px"
             width="100%"
-            className={styles.video__body}
-            src={`https://www.youtube-nocookie.com/embed/w4MKDMpRr7I?rel=0amp;&origin=http://localhost:3000/`}
-            title="YouTube video player"
+            src={`https://www.youtube-nocookie.com/embed/w4MKDMpRr7I?origin=http://localhost:3000&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}  
             frameBorder="0"
-            loading="lazy"
-            controls={0}
-            opts={opts}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            rel={0}
           />
         </div>
       </div>

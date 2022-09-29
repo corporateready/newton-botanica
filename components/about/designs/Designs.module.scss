@@ -52,7 +52,7 @@
 }
 
 .designs__grid {
-    @apply grid grid-cols-4  gap-x-[5%] gap-y-[10%] pt-[4.5%] h-auto w-full;
+    @apply grid grid-cols-4  gap-x-[5%] gap-y-[10%] pt-[4.5%] h-auto w-full relative ;
 
     @media screen and (max-width: 576px) {
         @apply grid grid-cols-2 gap-y-[5%] mt-[3%];
@@ -60,7 +60,7 @@
 }
 
 .designs__item {
-    @apply h-full w-full flex flex-col justify-center items-center;
+    @apply h-full w-full flex flex-col justify-center items-center hover:scale-110 duration-200 hover:cursor-pointer;
 }
 
 .designs__image {

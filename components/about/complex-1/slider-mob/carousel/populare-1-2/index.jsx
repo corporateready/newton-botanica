@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Populare.module.scss";
 
-import item__img_3 from "../../../../../../public/static/planning-page/complex/items-images/image-3.webp";
-import item__img_4 from "../../../../../../public/static/planning-page/complex/items-images/image-4.webp";
+import item__img_3 from "../../../../../../public/static/planning-page/complex/items-images/image-7.webp";
+import item__img_4 from "../../../../../../public/static/planning-page/complex/items-images/image-5.webp";
 
-import icon_3 from "../../../../../../public/static/planning-page/complex/parking.svg";
-import icon_4 from "../../../../../../public/static/planning-page/complex/swiming.svg";
+import icon_3 from "../../../../../../public/static/planning-page/complex/icons/03-o_cheie_de_acces.svg";
+import icon_4 from "../../../../../../public/static/planning-page/complex/icons/04-acces_prin_3_intrari.svg";
 
 export default function Index() {
   return (

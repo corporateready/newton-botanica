@@ -1,0 +1,7 @@
+import MarkImage from './image-1'
+import MarkImage_2 from './image-2'
+import MarkImage_3 from './image-3'
+import MarkImage_4 from './image-4'
+import MarkImage_5 from './image-5'
+
+export {MarkImage, MarkImage_2, MarkImage_3, MarkImage_4, MarkImage_5}

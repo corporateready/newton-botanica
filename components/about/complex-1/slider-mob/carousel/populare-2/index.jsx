@@ -2,19 +2,11 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Populare.module.scss";
 
-import location__bg from "../../../../../../public/static/planning-page/complex/items-images/image-7.webp";
-import item__img_2 from "../../../../../../public/static/planning-page/complex/items-images/image-8.webp";
-import item__img_3 from "../../../../../../public/static/planning-page/complex/items-images/image-9.webp";
-import item__img_4 from "../../../../../../public/static/planning-page/complex/items-images/image-10.webp";
-import item__img_5 from "../../../../../../public/static/planning-page/complex/items-images/image-11.webp";
-import item__img_6 from "../../../../../../public/static/planning-page/complex/items-images/image-12.webp";
+import location__bg from "../../../../../../public/static/planning-page/complex/items-images/image-14.webp";
+import item__img_2 from "../../../../../../public/static/planning-page/complex/items-images/image-15.webp";
 
-import cart from "../../../../../../public/static/planning-page/complex/cart-icon.svg";
-import icon_2 from "../../../../../../public/static/planning-page/complex/pasarela.svg";
-import icon_3 from "../../../../../../public/static/planning-page/complex/parking.svg";
-import icon_4 from "../../../../../../public/static/planning-page/complex/swiming.svg";
-import icon_5 from "../../../../../../public/static/planning-page/complex/kids-place.svg";
-import icon_6 from "../../../../../../public/static/planning-page/complex/no-voice-place.svg";
+import cart from "../../../../../../public/static/planning-page/complex/icons/parking.svg";
+import icon_2 from "../../../../../../public/static/planning-page/complex/icons/08-parking_carucioare_biciclete.svg";
 
 export default function Index() {
   return (

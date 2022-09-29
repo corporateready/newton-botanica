@@ -48,34 +48,6 @@
         font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
     }
 }
-.loaction__mark {
-    @apply inline-block absolute top-[39%] left-[44%] z-10 h-[25px] w-[120px] bg-transparent hover:cursor-pointer;
-
-}
-.loaction__mark_description {
-    display: block;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        height: 100%;
-        width: 100%;
-        background-color: #fff;
-        z-index: 20;
-        overflow: hidden;
-        border-radius: 5px;
-        animation-name: is-open;
-        animation-duration: 0.5s;
-        animation-timing-function: ease-in-out;
-
-        @keyframes is-open {
-           from {opacity: 0; x:0}
-           to {opacity: 1; x:100%}
-        }
-
-        &:hover {
-            @apply cursor-pointer;
-        }
-}
 .location__bg_inner {
     @apply h-auto w-full relative top-0;
 }
@@ -102,7 +74,6 @@
         @apply flex justify-between items-center w-full py-[1%];
     }
 }
-
 //  =====>
 .location__address_detail {
     @include text(15px, 130%, 400, #fff);

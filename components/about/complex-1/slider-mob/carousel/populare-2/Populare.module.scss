@@ -66,6 +66,6 @@
     @media screen and (max-width: 576px) {
         @apply flex self-center;
         font-family: 'Gilroy Regular';
-        font-size: calc(15px + (30 - 15)*(100vw - 320px)/(576 - 320));
+        font-size: calc(14px + (28 - 14)*(100vw - 320px)/(576 - 320));
     }
 }

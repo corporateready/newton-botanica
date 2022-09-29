@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Populare.module.scss";
 
-import item__img_3 from "../../../../../../public/static/planning-page/complex/items-images/image-9.webp";
+import item__img_3 from "../../../../../../public/static/planning-page/complex/items-images/image-1.webp";
 import item__img_4 from "../../../../../../public/static/planning-page/complex/items-images/image-10.webp";
 
-import icon_3 from "../../../../../../public/static/planning-page/complex/parking.svg";
-import icon_4 from "../../../../../../public/static/planning-page/complex/swiming.svg";
+import icon_3 from "../../../../../../public/static/planning-page/complex/icons/09-piste_pentru_ciclism.svg";
+import icon_4 from "../../../../../../public/static/planning-page/complex/icons/no-voice-place.svg";
 
 export default function Index() {
   return (
@@ -30,7 +30,7 @@ export default function Index() {
         </div>
         <div className={styles.item__description}>
           <div className={styles.item__description_icon}>
-            <Image src={icon_4} height={26} width={47} priority alt="" />
+            <Image src={icon_4} height={35} width={35} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
           Mediu fără bariere 

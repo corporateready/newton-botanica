@@ -3,10 +3,10 @@ import Image from "next/image";
 import styles from "./Populare.module.scss";
 
 import item__img_5 from "../../../../../../public/static/planning-page/complex/items-images/image-11.webp";
-import item__img_6 from "../../../../../../public/static/planning-page/complex/items-images/image-12.webp";
+import item__img_6 from "../../../../../../public/static/planning-page/complex/items-images/image-9.webp";
 
-import icon_5 from "../../../../../../public/static/planning-page/complex/kids-place.svg";
-import icon_6 from "../../../../../../public/static/planning-page/complex/no-voice-place.svg";
+import icon_5 from "../../../../../../public/static/planning-page/complex/icons/11-parc.svg";
+import icon_6 from "../../../../../../public/static/planning-page/complex/icons/cart-icon.svg";
 
 export default function Index() {
   return (

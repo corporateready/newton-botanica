@@ -9,8 +9,29 @@ import grid__item_5 from "../../../public/static/planning-page/designs-grid/dubb
 import grid__item_6 from "../../../public/static/planning-page/designs-grid/mineral-wool.png";
 import grid__item_7 from "../../../public/static/planning-page/designs-grid/elevator.png";
 import grid__item_8 from "../../../public/static/planning-page/designs-grid/white-variant.png";
+import { motion } from "framer-motion";
+
+import {
+  DesItem_1,
+  DesItem_2,
+  DesItem_3,
+  DesItem_4,
+  DesItem_5,
+  DesItem_6,
+  DesItem_7,
+  DesItem_8,
+} from "./descriptions";
 
 export default function Index({ setIsPopUpSend }) {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const [isVisible2, setIsVisible2] = React.useState(false);
+  const [isVisible3, setIsVisible3] = React.useState(false);
+  const [isVisible4, setIsVisible4] = React.useState(false);
+  const [isVisible5, setIsVisible5] = React.useState(false);
+  const [isVisible6, setIsVisible6] = React.useState(false);
+  const [isVisible7, setIsVisible7] = React.useState(false);
+  const [isVisible8, setIsVisible8] = React.useState(false);
+
   const hanlerIsOpenPopup = () => {
     setIsPopUpSend(true);
   };
@@ -25,7 +46,10 @@ export default function Index({ setIsPopUpSend }) {
               <span></span>
             </h1>
             <div className={styles.designs__grid}>
-              <div className={styles.designs__item}>
+              <motion.div
+                className={styles.designs__item}
+                onClick={() => setIsVisible(!isVisible)}
+              >
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_1}
@@ -41,8 +65,13 @@ export default function Index({ setIsPopUpSend }) {
                   Geamuri Rehau Low-e
                   <br />5 camere
                 </p>
-              </div>
-              <div className={styles.designs__item}>
+              </motion.div>
+              {isVisible && <DesItem_1 setIsVisible={setIsVisible} />}
+
+              <motion.div
+                className={styles.designs__item}
+                onClick={() => setIsVisible(!isVisible2)}
+              >
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_2}
@@ -59,8 +88,13 @@ export default function Index({ setIsPopUpSend }) {
                   <br />
                   generație (2 contoare)
                 </p>
-              </div>
-              <div className={styles.designs__item}>
+              </motion.div>
+              {isVisible2 && <DesItem_2 setIsVisible2={setIsVisible2} />}
+
+              <motion.div
+                className={styles.designs__item}
+                onClick={() => setIsVisible3(!isVisible3)}
+              >
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_3}
@@ -77,8 +111,13 @@ export default function Index({ setIsPopUpSend }) {
                   <br />
                   din K-Bloc
                 </p>
-              </div>
-              <div className={styles.designs__item}>
+              </motion.div>
+              {isVisible3 && <DesItem_3 setIsVisible3={setIsVisible3} />}
+
+              <motion.div
+                className={styles.designs__item}
+                onClick={() => setIsVisible4(!isVisible4)}
+              >
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_4}
@@ -94,8 +133,13 @@ export default function Index({ setIsPopUpSend }) {
                   Tehnologie italiană de izolare
                   <br />a pereților și pardoselii
                 </p>
-              </div>
-              <div className={styles.designs__item}>
+              </motion.div>
+              {isVisible4 && <DesItem_4 setIsVisible4={setIsVisible4} />}
+
+              <motion.div
+                className={styles.designs__item}
+                onClick={() => setIsVisible5(!isVisible5)}
+              >
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_5}
@@ -112,8 +156,13 @@ export default function Index({ setIsPopUpSend }) {
                   <br />
                   între apartamente
                 </p>
-              </div>
-              <div className={styles.designs__item}>
+              </motion.div>
+              {isVisible5 && <DesItem_5 setIsVisible5={setIsVisible5} />}
+
+              <motion.div
+                className={styles.designs__item}
+                onClick={() => setIsVisible6(!isVisible6)}
+              >
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_6}
@@ -130,8 +179,13 @@ export default function Index({ setIsPopUpSend }) {
                   <br />
                   cu vată bazaltică
                 </p>
-              </div>
-              <div className={styles.designs__item}>
+              </motion.div>
+              {isVisible6 && <DesItem_6 setIsVisible6={setIsVisible6} />}
+
+              <motion.div
+                className={styles.designs__item}
+                onClick={() => setIsVisible6(!isVisible6)}
+              >
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_7}
@@ -148,8 +202,13 @@ export default function Index({ setIsPopUpSend }) {
                   <br />
                   de înaltă viteză
                 </p>
-              </div>
-              <div className={styles.designs__item}>
+              </motion.div>
+              {isVisible7 && <DesItem_7 setIsVisible7={setIsVisible7} />}
+
+              <motion.div
+                className={styles.designs__item}
+                onClick={() => setIsVisible8(!isVisible8)}
+              >
                 <div className={styles.designs__image}>
                   <Image
                     src={grid__item_8}
@@ -162,7 +221,8 @@ export default function Index({ setIsPopUpSend }) {
                   />
                 </div>
                 <p className={styles.designs__item_name}>Variantă albă</p>
-              </div>
+              </motion.div>
+              {isVisible8 && <DesItem_8 setIsVisible8={setIsVisible8} />}
             </div>
             <button
               type="button"

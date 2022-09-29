@@ -16,6 +16,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 export default function Home() {
+  
   React.useEffect(() => {
     (function(w, d, s, h, id) {
       w.roistatProjectId = id; w.roistatHost = h;
@@ -25,18 +26,18 @@ export default function Home() {
   })(window, document, 'script', 'cloud.roistat.com', 'e39442a8581e616d741b8f0786da960e');
   }, []);
 
-  // React.useEffect(() => {
-  //   (function (w, d, s, l, i) {
-  //     w[l] = w[l] || [];
-  //     w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-  //     var f = d.getElementsByTagName(s)[0],
-  //       j = d.createElement(s),
-  //       dl = l != "dataLayer" ? "&l=" + l : "";
-  //     j.async = true;
-  //     j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-  //     f.parentNode.insertBefore(j, f);
-  //   })(window, document, "script", "dataLayer", "GTM-KRLSSZN");
-  // }, []);
+  React.useEffect(() => {
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KRLSSZN");
+  }, []);
 
   const [isAboutPopUp, setIsAboutPopUp] = React.useState(false);
   const [isPlanningPopUp, setIsPlanningPopUp] = React.useState(false);

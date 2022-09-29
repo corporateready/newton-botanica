@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Populare.module.scss";
 
-import location__bg from "../../../../../../public/static/planning-page/complex/items-images/image-13.webp";
-import item__img_2 from "../../../../../../public/static/planning-page/complex/items-images/image-14.webp";
+import location__bg from "../../../../../../public/static/planning-page/complex/items-images/image-8.webp";
+import item__img_2 from "../../../../../../public/static/planning-page/complex/items-images/image-13.webp";
 
-import cart from "../../../../../../public/static/planning-page/complex/cart-icon.svg";
+import cart from "../../../../../../public/static/planning-page/complex/icons/swiming.svg";
 import icon_2 from "../../../../../../public/static/planning-page/complex/pasarela.svg";
 
 export default function Index() {
