@@ -270,7 +270,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                 placeholder="Numărul de telefon"
                 country={"md"}
                 value={emailValue}
-                onChange={setEmailValue}
+                onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value="true" />
