@@ -301,7 +301,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
 function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
   const [isPlanningSend, setIsPlanningSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
-  const [emailValue, setEmailValue] = React.useState("");
+  const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
@@ -316,7 +316,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
       body: JSON.stringify({
         From: "Plasează solicitarea",
         Numele: nameValue.toUpperCase(),
-        Telefon: emailValue,
+        Telefon: phoneValue,
       }),
     })
       .then((response) => {
@@ -364,6 +364,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
             </h3>
 
             <form
+              id="home__form_send_planning_btn"
               className={styles.offer__form}
               action="https://formsubmit.co/nev30inbox@gmail.com"
               method="POST"
@@ -371,6 +372,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
             >
               <input
                 type="text"
+                name="name"
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
                 placeholder="NUMELE, PRENUMELE"
@@ -378,6 +380,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
               />
               <PhoneInput
                 className={styles.input}
+                name="phone"
                 style={{
                   height: "auto",
                   width: "100%",
@@ -386,11 +389,11 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
                 }}
                 placeholder="Numărul de telefon"
                 country={"md"}
-                value={emailValue}
-                onChange={setEmailValue}
+                value={phoneValue}
+                onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="false" />
+              <input type="hidden" name="_next" value="http://localhost:3000/about" />
               <input
                 type="hidden"
                 name="_autoresponse"
