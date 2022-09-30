@@ -420,7 +420,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
 function AboutPopUpSending({ hanlerCloseAboutPopup }) {
   const [isAboutSend, setIsAboutSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
-  const [emailValue, setEmailValue] = React.useState("");
+  const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
@@ -435,7 +435,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
       body: JSON.stringify({
         From: "Vreau să fiu contactat",
         Numele: nameValue,
-        Telefon: emailValue,
+        Telefon: phoneValue,
       }),
     })
       .then((response) => {
@@ -495,6 +495,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
             >
               <input
                 type="text"
+                name="name"
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
                 placeholder="NUMELE, PRENUMELE"
@@ -502,6 +503,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
               />
               <PhoneInput
                 className={styles.input}
+                name="phone"
                 style={{
                   height: "auto",
                   width: "100%",
@@ -510,8 +512,8 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 }}
                 placeholder="Numărul de telefon"
                 country={"md"}
-                value={emailValue}
-                onChange={setEmailValue}
+                value={phoneValue}
+                onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value="false" />
