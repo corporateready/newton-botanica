@@ -66,7 +66,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
             onSubmit={useHandlerOnClickToSend}
           >
             <input
-              type="email"
+              type="text"
               name="email"
               value={emailValue}
               onChange={(e) => setEmailValue(e.target.value)}
@@ -82,7 +82,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
               required
             />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://main--mellifluous-queijadas-43440a.netlify.app/about" />
+            <input type="hidden" name="_next" value="true" />
             <input
               type="hidden"
               name="_autoresponse"
