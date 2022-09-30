@@ -76,8 +76,8 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
             <input
               type="tel"
               name="tel"
-              value={nameValue}
-              onChange={(e) => setNameValue(e.target.value)}
+              value={phoneValue}
+              onChange={(e) => setPhoneValue(e.target.value)}
               placeholder="Numărul de telefon"
               required
             />
