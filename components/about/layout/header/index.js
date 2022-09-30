@@ -32,8 +32,7 @@ export default function index() {
           {/* <Link href="/planning">
             <a className={styles.button__planning}>PLANIMETRII</a>
           </Link> */}
-          <Link href="tel:+3736082020">
-            <a className={styles.header__phone_link}>
+            <div className={styles.header__phone_link}>
               <div className={styles.header__phone_icon}>
                 <Image
                   src={phone__icon}
@@ -42,11 +41,9 @@ export default function index() {
                   alt="home header phone icon"
                 />
               </div>
-              <span className={styles.header__phone_link_number}>
-                
-              </span>
-            </a>
-          </Link>
+              <a href="tel:+3736082020" className={styles.header__phone_link_number}>
+              </a>
+            </div>
         </div>
       </div>
     </header>
