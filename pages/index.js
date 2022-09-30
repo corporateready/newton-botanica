@@ -98,7 +98,6 @@ export default function Home() {
                     />
                   </div>
                   <span className={styles.header__phone_link_number}>
-                    4367456234
                   </span>
                 </a>
             </div>
