@@ -183,7 +183,7 @@ export default function Home() {
 export function OfferPopUpSending({ hanlerClosePopup }) {
   const [isSend, setIsSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
-  const [emailValue, setEmailValue] = React.useState("");
+  const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
@@ -198,7 +198,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
       body: JSON.stringify({
         From: "AFLĂ DETALII",
         Numele: nameValue.toUpperCase(),
-        Telefon: emailValue,
+        Telefon: phoneValue,
       }),
     })
       .then((response) => {
@@ -245,6 +245,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
             </h3>
 
             <form
+              id="home__form_send_details_btn"
               className={styles.offer__form}
               action="https://formsubmit.co/nev30inbox@gmail.com"
               method="POST"
@@ -252,6 +253,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
             >
               <input
                 type="text"
+                name="name"
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
                 placeholder="NUMELE, PRENUMELE"
@@ -271,7 +273,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                 onChange={setEmailValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="false" />
+              <input type="hidden" name="_next" value="https://main--mellifluous-queijadas-43440a.netlify.app/about" />
               <input
                 type="hidden"
                 name="_autoresponse"
