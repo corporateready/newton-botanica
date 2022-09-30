@@ -127,6 +127,20 @@
         font-size: calc(10px + (25 - 10)*(100vw - 320px)/(576 - 320));
     }
 }
+.footer__contact_text_phone {
+    @include text(15, 100%, 400, #fff);
+    font-family: 'Gilroy Regular';
+    @apply tracking-wider;
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(8px + (15 - 8)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        // @apply font-light;
+        font-size: calc(10px + (25 - 10)*(100vw - 320px)/(576 - 320));
+    }
+}
 .footer__bottom {
     @include text(16px, 100%, 300, #fff);
     @apply py-[1.5%] tracking-wider relative top-0 left-0;
