@@ -269,11 +269,11 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                 }}
                 placeholder="Numărul de telefon"
                 country={"md"}
-                value={emailValue}
+                value={phoneValue}
                 onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="true" />
+              <input type="hidden" name="_next" value="https://main--mellifluous-queijadas-43440a.netlify.app/thanks" />
               <input
                 type="hidden"
                 name="_autoresponse"
