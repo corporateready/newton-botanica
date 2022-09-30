@@ -5,7 +5,7 @@ import close__button from "../../public/static/planning-page/close-button-popup.
 
 export default function OfferPDFOpenSending({ hanlerClosePopup }) {
   const [isSend, setIsSend] = useState(false);
-  const [nameValue, setNameValue] = useState("");
+  const [phoneValue, setPhoneValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
 
   const useHandlerOnClickToSend = (e) => {
@@ -32,7 +32,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
 
   useEffect(() => {
     if (isSend) {
-      setNameValue("");
+      setPhoneValue("");
       setEmailValue("");
     }
   }, [isSend]);
@@ -59,7 +59,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
           </h2>
 
           <form
-          id="about__hero_presentation_btn"
+            id="about__hero_presentation_btn"
             className={styles.offer__form}
             action="https://formsubmit.co/nev30inbox@gmail.com"
             method="POST"
@@ -74,8 +74,8 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
               required
             />
             <input
-              type="text"
-              name=""
+              type="tel"
+              name="tel"
               value={nameValue}
               onChange={(e) => setNameValue(e.target.value)}
               placeholder="Numărul de telefon"
