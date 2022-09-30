@@ -18,8 +18,8 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        numele: nameValue,
         email: emailValue,
+        numele: nameValue,
       }),
     })
       .then((response) => {
@@ -59,22 +59,25 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
           </h2>
 
           <form
+          id="about__hero_presentation_btn"
             className={styles.offer__form}
             action="https://formsubmit.co/nev30inbox@gmail.com"
             method="POST"
             onSubmit={useHandlerOnClickToSend}
           >
             <input
-              type="text"
-              value={nameValue}
-              onChange={(e) => setNameValue(e.target.value)}
+              type="email"
+              name="email"
+              value={emailValue}
+              onChange={(e) => setEmailValue(e.target.value)}
               placeholder="Adresa de email"
               required
             />
             <input
               type="text"
-              value={emailValue}
-              onChange={(e) => setEmailValue(e.target.value)}
+              name=""
+              value={nameValue}
+              onChange={(e) => setNameValue(e.target.value)}
               placeholder="Numărul de telefon"
               required
             />
