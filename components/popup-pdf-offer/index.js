@@ -18,8 +18,8 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        email: emailValue,
-        numele: nameValue,
+        Email: emailValue,
+        Telefon: phoneValue,
       }),
     })
       .then((response) => {
@@ -82,7 +82,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
               required
             />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="false" />
+            <input type="hidden" name="_next" value="https://main--mellifluous-queijadas-43440a.netlify.app/about" />
             <input
               type="hidden"
               name="_autoresponse"
