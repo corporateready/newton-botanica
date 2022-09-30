@@ -273,7 +273,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                 onChange={setEmailValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://main--mellifluous-queijadas-43440a.netlify.app/about" />
+              <input type="hidden" name="_next" value="true" />
               <input
                 type="hidden"
                 name="_autoresponse"
