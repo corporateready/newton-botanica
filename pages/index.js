@@ -491,6 +491,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
               action="https://formsubmit.co/nev30inbox@gmail.com"
               method="POST"
               onSubmit={useHandlerOnClickToSend}
+              id="home__form_send_about_btn"
             >
               <input
                 type="text"
