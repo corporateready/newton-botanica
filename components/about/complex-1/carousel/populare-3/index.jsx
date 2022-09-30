@@ -3,14 +3,14 @@ import Image from "next/image";
 import styles from "./Populare.module.scss";
 
 import location__bg from "../../../../../public/static/planning-page/complex/items-images/image-8.webp";
-import item__img_2 from "../../../../../public/static/planning-page/complex/items-images/image-13.webp";
+import item__img_2 from "../../../../../public/static/planning-page/complex/items-images/image-16.webp";
 import item__img_3 from "../../../../../public/static/planning-page/complex/items-images/image-12.webp";
 import item__img_4 from "../../../../../public/static/planning-page/complex/items-images/image-18.webp";
 import item__img_5 from "../../../../../public/static/planning-page/complex/items-images/image-17.webp";
 import item__img_6 from "../../../../../public/static/planning-page/complex/items-images/image-4.webp";
 
 import icon_1 from "../../../../../public/static/planning-page/complex/icons/swiming.svg";
-import icon_2 from "../../../../../public/static/planning-page/complex/pasarela.svg";
+import icon_2 from "../../../../../public/static/planning-page/complex/icons/kids-place.svg";
 import icon_3 from "../../../../../public/static/planning-page/complex/icons/15-spatii_de_joaca.svg";
 import icon_4 from "../../../../../public/static/planning-page/complex/icons/16-terenuri_sportive.svg";
 import icon_5 from "../../../../../public/static/planning-page/complex/icons/17-mobilier_modern.svg";
