@@ -92,12 +92,13 @@ export default function Home() {
                   <div className={styles.header__phone_icon}>
                     <Image
                       src={phone__icon}
-                      height={19}
-                      width={20}
+                      height={28}
+                      width={24}
                       alt="home header phone icon"
                     />
                   </div>
                   <span className={styles.header__phone_link_number}>
+                    4367456234
                   </span>
                 </a>
             </div>
