@@ -516,7 +516,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              {/* <input type="hidden" name="_next" value="false" /> */}
+              <input type="hidden" name="_next" value="http://localhost:3001/about" />
               <input
                 type="hidden"
                 name="_autoresponse"
