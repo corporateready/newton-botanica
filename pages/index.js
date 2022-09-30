@@ -98,7 +98,6 @@ export default function Home() {
                     />
                   </div>
                   <span className={styles.header__phone_link_number}>
-                    + 373 608 020 20
                   </span>
                 </a>
             </div>
