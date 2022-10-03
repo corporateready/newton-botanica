@@ -13,6 +13,7 @@ export default function FromDisignPopUp({ hanlerDesignClosePopup }) {
   
     const useHandlerOnClickToSend = (e) => {
       e.preventDefault();
+
       setSpinner(true);
       fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
         method: "POST",
@@ -21,14 +22,14 @@ export default function FromDisignPopUp({ hanlerDesignClosePopup }) {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          From: "Vreau să fiu contactat",
+          From: "AFLĂ DETALII",
           Numele: nameValue,
           Telefon: phoneValue,
         }),
       })
         .then((response) => {
           response.json();
-          setIsAboutSend(true);
+          setIsSend(true);
         })
         .then((data) => {
             data
