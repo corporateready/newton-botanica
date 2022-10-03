@@ -46,7 +46,7 @@
     }
 }
 .header__phone_link {
-    @apply flex items-center justify-end w-[15%];
+    @apply flex items-center justify-end w-[16%];
 
     @media screen and(max-width: 576px) {
         // @apply hidden;

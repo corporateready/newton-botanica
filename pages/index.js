@@ -88,7 +88,7 @@ export default function Home() {
                   />
                 </a>
               </Link>
-                <a href="tel:+3736082020" className={styles.header__phone_link}>
+                <div className={styles.header__phone_link}>
                   <div className={styles.header__phone_icon}>
                     <Image
                       src={phone__icon}
@@ -97,9 +97,10 @@ export default function Home() {
                       alt="home header phone icon"
                     />
                   </div>
-                  <span className={styles.header__phone_link_number}>
-                  </span>
-                </a>
+                  <a href="tel:+3736082020" className={styles.header__phone_link_number}>
+                    373(689)-69-195
+                  </a>
+                </div>
             </div>
           </div>
         </header>
