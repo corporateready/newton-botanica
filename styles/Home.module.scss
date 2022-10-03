@@ -158,11 +158,11 @@
         }
     }
 
-    @include text(28px, 100%, 400, #2d2d2b);
+    @include text(27px, 100%, 400, #2d2d2b);
     @apply flex text-right uppercase hover:text-[#2BB018] hover:duration-150;
 
     @media screen and(max-width: 1440px) {
-        font-size: calc(14px + (28 - 14)*(100vw - 576px)/(1440 - 576));
+        font-size: calc(14px + (27 - 14)*(100vw - 576px)/(1440 - 576));
     }
 
     @media screen and(max-width: 576px) {

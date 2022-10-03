@@ -8,11 +8,12 @@ import styles from './DisidnPopup.module.scss'
 export default function FromDisignPopUp({ hanlerDesignClosePopup }) {
     const [isSend, setIsSend] = React.useState(false);
     const [nameValue, setNameValue] = React.useState("");
-    const [emailValue, setEmailValue] = React.useState("");
+    const [phoneValue, setPhoneValue] = React.useState("");
+    const [spinner, setSpinner] = React.useState(false);
   
     const useHandlerOnClickToSend = (e) => {
-      // e.preventDefault();
-  
+      e.preventDefault();
+      setSpinner(true);
       fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
         method: "POST",
         headers: {
@@ -20,16 +21,23 @@ export default function FromDisignPopUp({ hanlerDesignClosePopup }) {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          From : "AFLĂ DETALII",
-          Numele: nameValue.toUpperCase(),
-          Telefon: emailValue,
+          From: "Vreau să fiu contactat",
+          Numele: nameValue,
+          Telefon: phoneValue,
         }),
       })
         .then((response) => {
           response.json();
-          setIsSend(true);
+          setIsAboutSend(true);
         })
-        .then((data) => data)
+        .then((data) => {
+            data
+          }
+        )
+        .then(function(){
+          setSpinner(false);
+         }
+        )
         .catch((error) => console.log(error));
     };
   
@@ -69,9 +77,11 @@ export default function FromDisignPopUp({ hanlerDesignClosePopup }) {
                 action="https://formsubmit.co/nev30inbox@gmail.com"
                 method="POST"
                 onSubmit={useHandlerOnClickToSend}
+                id="about__form_send_design_btn"
               >
                 <input
                   type="text"
+                  name="name"
                   value={nameValue}
                   onChange={(e) => setNameValue(e.target.value)}
                   placeholder="NUMELE, PRENUMELE"
@@ -79,6 +89,7 @@ export default function FromDisignPopUp({ hanlerDesignClosePopup }) {
                 />
                 <PhoneInput
                   className={styles.input}
+                  name="phone"
                   style={{
                     height: "auto",
                     width: "100%",
@@ -87,18 +98,18 @@ export default function FromDisignPopUp({ hanlerDesignClosePopup }) {
                   }}
                   placeholder="Numărul de telefon"
                   country={"md"}
-                  value={emailValue}
-                  onChange={setEmailValue}
+                  value={phoneValue}
+                  onChange={setPhoneValue}
                 />
                 <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="false" />
+                <input type="hidden" name="_next" value="http://localhost:3000/about/" />
                 <input
                   type="hidden"
                   name="_autoresponse"
                   value="Everyone is important for as!"
                 />
                 <button type="submit" className={styles.button__sending}>
-                  AFLĂ DETALII
+                {spinner ? "trimitere..." : "AFLĂ DETALII"}
                 </button>
               </form>
   

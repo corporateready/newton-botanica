@@ -10,36 +10,6 @@
 .complex__grid_item {
     @apply flex flex-col h-auto w-full relative top-0 rounded-md overflow-hidden duration-200;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-
-    .item__info {
-        @apply hidden;
-    }
-
-    &:hover {
-        @apply cursor-pointer overflow-hidden;
-
-        .item__info {
-            @apply h-full w-full absolute top-[20%] left-0 z-10 text-white flex flex-col items-center space-y-[10%] text-center;
-
-            .info__icon_wrapper {
-                @apply flex bg-white h-[60px] w-[60px] rounded-full justify-center items-center;
-            }
-
-            .info__description {
-                @apply relative top-0 left-0 h-[1px] w-[80%] bg-white;
-                content: '';
-
-                .info__text {
-                    @apply mt-[10%];
-                }
-            }
-        }
-
-        &::after {
-            @apply inline-block absolute top-0 left-0 h-full w-full bg-slate-500 opacity-70;
-            content: '';
-        }
-    }
 }
 .item__bg {
     @apply flex rounded-t-md;
