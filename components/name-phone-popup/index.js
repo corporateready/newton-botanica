@@ -10,10 +10,11 @@ export default function Index({ hanlerCloseDesignPopup }) {
   const [isSend, setIsSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
+  const [spinner, setSpinner] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
-
+    setSpinner(true);
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -30,7 +31,14 @@ export default function Index({ hanlerCloseDesignPopup }) {
         response.json();
         setIsSend(true);
       })
-      .then((data) => data)
+      .then((data) => {
+          data
+        }
+      )
+      .then(function(){
+        setSpinner(false);
+       }
+      )
       .catch((error) => console.log(error));
   };
 
@@ -43,10 +51,9 @@ export default function Index({ hanlerCloseDesignPopup }) {
 
   React.useEffect(() => {
     if (isSend) {
-        console.log(isSend);
-        Router.push("/about");
-      }
-    }, [isSend]);
+      Router.push("/about");
+    }
+  }, [isSend]);
 
   return (
     <>
@@ -75,6 +82,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
             </h3>
 
             <form
+            id="about__form_send_payment_btn"
               className={styles.offer__form}
               action="https://formsubmit.co/nev30inbox@gmail.com"
               method="POST"
@@ -82,6 +90,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
             >
               <input
                 type="text"
+                name="name"
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
                 placeholder="NUMELE, PRENUMELE"
@@ -89,6 +98,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
               />
               <PhoneInput
                 className={styles.input}
+                name="phone"
                 style={{
                   height: "auto",
                   width: "100%",
@@ -101,14 +111,14 @@ export default function Index({ hanlerCloseDesignPopup }) {
                 onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="false" />
+              <input type="hidden" name="_next" value="http://localhost:3000/about/" />
               <input
                 type="hidden"
                 name="_autoresponse"
                 value="Everyone is important for as!"
               />
               <button type="submit" className={styles.button__sending}>
-                Vreau să fiu contactat
+              {spinner ? "trimitere..." : "Vreau să fiu contactat"}
               </button>
             </form>
 
