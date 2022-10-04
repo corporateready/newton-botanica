@@ -129,8 +129,9 @@ export default function Home() {
                     alt="home header phone icon"
                   />
                 </div>
-                <a href="tel:+40726080202" className={styles.header__phone_link_number}>
-                  <span className={styles.phone__text}>5634345424</span>
+                <a href="tel:+37372608020" className={styles.header__phone_link_number}>
+                  {/* <span className={styles.phone__text}>5634345424</span> */}
+                  3623634534
                 </a>
               </div>
 
