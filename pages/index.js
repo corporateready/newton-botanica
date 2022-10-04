@@ -16,14 +16,30 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 export default function Home() {
-  
   React.useEffect(() => {
-    (function(w, d, s, h, id) {
-      w.roistatProjectId = id; w.roistatHost = h;
+    (function (w, d, s, h, id) {
+      w.roistatProjectId = id;
+      w.roistatHost = h;
       var p = d.location.protocol == "https:" ? "https://" : "http://";
-      var u = /^.roistat_visit=[^;]+(.)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
-      var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
-  })(window, document, 'script', 'cloud.roistat.com', 'e39442a8581e616d741b8f0786da960e');
+      var u = /^.roistat_visit=[^;]+(.)?$/.test(d.cookie)
+        ? "/dist/module.js"
+        : "/api/site/1.0/" +
+          id +
+          "/init?referrer=" +
+          encodeURIComponent(d.location.href);
+      var js = d.createElement(s);
+      js.charset = "UTF-8";
+      js.async = 1;
+      js.src = p + h + u;
+      var js2 = d.getElementsByTagName(s)[0];
+      js2.parentNode.insertBefore(js, js2);
+    })(
+      window,
+      document,
+      "script",
+      "cloud.roistat.com",
+      "e39442a8581e616d741b8f0786da960e"
+    );
   }, []);
 
   React.useEffect(() => {
@@ -88,19 +104,22 @@ export default function Home() {
                   />
                 </a>
               </Link>
-                <div className={styles.header__phone_link}>
-                  <div className={styles.header__phone_icon}>
-                    <Image
-                      src={phone__icon}
-                      height={28}
-                      width={24}
-                      alt="home header phone icon"
-                    />
-                  </div>
-                  <a href="tel:+3736082020" className={styles.header__phone_link_number}>
-                    {/* 373(689)-69-195 */}
-                  </a>
+              <div className={styles.header__phone_link}>
+                <div className={styles.header__phone_icon}>
+                  <Image
+                    src={phone__icon}
+                    height={28}
+                    width={24}
+                    alt="home header phone icon"
+                  />
                 </div>
+                <a
+                  href="tel:+3736082020"
+                  className={styles.header__phone_link_number}
+                >
+                  373(689)-69-195
+                </a>
+              </div>
             </div>
           </div>
         </header>
@@ -189,7 +208,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
-    setSpinner(true)
+    setSpinner(true);
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -207,10 +226,9 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
         setIsSend(true);
       })
       .then((data) => data)
-      .then(function(){
+      .then(function () {
         setSpinner(false);
-       }
-      )
+      })
       .catch((error) => console.log(error));
   };
 
@@ -274,7 +292,11 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                 onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://main--mellifluous-queijadas-43440a.netlify.app/thanks" />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://main--mellifluous-queijadas-43440a.netlify.app/thanks"
+              />
               <input
                 type="hidden"
                 name="_autoresponse"
@@ -309,7 +331,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
-    setSpinner(true)
+    setSpinner(true);
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -327,10 +349,9 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
         setIsPlanningSend(true);
       })
       .then((data) => data)
-      .then(function(){
+      .then(function () {
         setSpinner(false);
-       }
-      )
+      })
       .catch((error) => console.log(error));
   };
 
@@ -396,7 +417,11 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
                 onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="http://localhost:3000/about" />
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost:3000/about"
+              />
               <input
                 type="hidden"
                 name="_autoresponse"
@@ -449,13 +474,11 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
         setIsAboutSend(true);
       })
       .then((data) => {
-          data
-        }
-      )
-      .then(function(){
+        data;
+      })
+      .then(function () {
         setSpinner(false);
-       }
-      )
+      })
       .catch((error) => console.log(error));
   };
 
@@ -522,7 +545,11 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="http://localhost:3000/about/" />
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost:3000/about/"
+              />
               <input
                 type="hidden"
                 name="_autoresponse"
