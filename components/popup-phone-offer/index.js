@@ -1,20 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./OfferPopUp.module.scss";
+import Router from "next/router";
 import timezone from "./Taimezone.module.scss";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
 import TimezoneSelect, { allTimezones } from "react-timezone-select";
+import PhoneInput from "react-phone-input-2";
 
-Object.assign(styles, timezone);
-
-export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
+export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
   const [isSend, setIsSend] = React.useState(false);
   const [timeValue, setTimeValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [selectedTimezone, setSelectedTimezone] = React.useState({});
+  const [spinner, setSpinner] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
+    setSpinner(true);
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -32,6 +34,9 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
         setIsSend(true);
       })
       .then((data) => data)
+      .then(function () {
+        setSpinner(false);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -39,6 +44,12 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
     if (isSend) {
       setTimeValue("");
       setPhoneValue("");
+    }
+  }, [isSend]);
+
+  React.useEffect(() => {
+    if (isSend) {
+      Router.push("/about");
     }
   }, [isSend]);
 
@@ -68,7 +79,11 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
     { option: "13:30" },
     { option: "13:45" },
   ];
-console.log(timeValue);
+
+  React.useEffect(()=>{
+    console.log(document.body);
+  })
+
   return (
     <section className={styles.offer__section}>
       <div className={styles.offer__container}>
@@ -117,39 +132,45 @@ console.log(timeValue);
               })}
             </select>
             <div className={timezone.select__app}>
-                <TimezoneSelect
-                  name="Fusul orar"
-                  value={selectedTimezone}
-                  onChange={setSelectedTimezone}
-                  placeholder="Fus orar"
-                  timezones={{
-                    ...allTimezones,
-                  }}
-                  required
-                />
-            </div>
-            <input
-                type="text"
-                name="Telefon"
-                value={phoneValue}
-                onChange={(e) => setPhoneValue(e.target.value)}
-                placeholder="Telefon"
+              <TimezoneSelect
+                name="Fusul orar"
+                value={selectedTimezone}
+                onChange={setSelectedTimezone}
+                placeholder="Fus orar"
+                timezones={{
+                  ...allTimezones,
+                }}
                 required
               />
+            </div>
+            <PhoneInput
+                className={styles.input}
+                name="phone"
+                style={{
+                  height: "auto",
+                  width: "100%",
+                  paddingTop: "0",
+                  paddingBottom: "0",
+                }}
+                placeholder="Numărul de telefon"
+                country={"md"}
+                value={phoneValue}
+                onChange={setPhoneValue}
+              />
             <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="false" />
-              <input
-                type="hidden"
-                name="_autoresponse"
-                value="Everyone is important for as!"
-              />
-              <input
-                type="hidden"
-                name="_next"
-                value="http://localhost:3000/thanks"
-              />
+            <input type="hidden" name="_next" value="false" />
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Everyone is important for as!"
+            />
+            <input
+              type="hidden"
+              name="_next"
+              value="http://localhost:3000/thanks"
+            />
             <button type="submit" className={styles.button__sending}>
-              Programează un apel
+            {spinner ? "trimitere..." : "Programează un apel"}
             </button>
           </form>
         </div>

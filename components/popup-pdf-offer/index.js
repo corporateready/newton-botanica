@@ -1,16 +1,19 @@
 import React, {useEffect,useState} from 'react'
 import Image from 'next/image';
 import styles from './OfferPopUp.module.scss'
+import Router from "next/router";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
+import PhoneInput from "react-phone-input-2";
 
 export default function OfferPDFOpenSending({ hanlerClosePopup }) {
   const [isSend, setIsSend] = useState(false);
-  const [phoneValue, setPhoneValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
+  const [phoneValue, setPhoneValue] = React.useState("");
+  const [spinner, setSpinner] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
-
+    setSpinner(true);
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -27,6 +30,9 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
         setIsSend(true);
       })
       .then((data) => data)
+      .then(function () {
+        setSpinner(false);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -34,6 +40,12 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
     if (isSend) {
       setPhoneValue("");
       setEmailValue("");
+    }
+  }, [isSend]);
+
+  React.useEffect(() => {
+    if (isSend) {
+      Router.push("/about");
     }
   }, [isSend]);
 
@@ -73,14 +85,28 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
               placeholder="Adresa de email"
               required
             />
-            <input
+            <PhoneInput
+                className={styles.input}
+                name="phone"
+                style={{
+                  height: "auto",
+                  width: "100%",
+                  paddingTop: "0",
+                  paddingBottom: "0",
+                }}
+                // placeholder="Numărul de telefon"
+                country={"md"}
+                value={phoneValue}
+                onChange={setPhoneValue}
+              />
+            {/* <input
               type="tel"
               name="tel"
               value={phoneValue}
               onChange={(e) => setPhoneValue(e.target.value)}
               placeholder="Numărul de telefon"
               required
-            />
+            /> */}
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="true" />
             <input
@@ -89,7 +115,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
               value="Everyone is important for as!"
             />
             <button type="submit" className={styles.button__sending}>
-            Solicită prezentarea
+            {spinner ? "trimitere..." : "Solicită prezentarea"}
             </button>
           </form>
         </div>
