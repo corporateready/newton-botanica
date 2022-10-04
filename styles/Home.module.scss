@@ -141,7 +141,7 @@
     }
 }
 .header__phone_link {
-    @apply flex items-center space-x-2 justify-center w-[22%];
+    @apply flex items-center justify-end w-[28%] hover:scale-110;
     animation-name: stretch;
     animation-duration: 1s;
     animation-timing-function: ease-in;
@@ -193,19 +193,19 @@
 //         font-size: calc(13px + (26 - 13)*(100vw - 320px)/(576 - 320));
 //     }
 // }
-.header__phone_link {
-    @include text(27px, 100%, 400, #2d2d2b);
-    @apply flex items-center justify-end w-[28%] hover:scale-110;
+// .header__phone_link {
+//     @include text(27px, 100%, 400, #2d2d2b);
+//     @apply flex items-center justify-end w-[28%] hover:scale-110;
 
-    @media screen and(max-width: 1440px) {
-        font-size: calc(14px + (27 - 14)*(100vw - 576px)/(1440 - 576));
-    }
+//     @media screen and(max-width: 1440px) {
+//         font-size: calc(14px + (27 - 14)*(100vw - 576px)/(1440 - 576));
+//     }
 
-    @media screen and(max-width: 576px) {
-        @include text(18px, 130%, 700, #2BB018);
-        @apply w-[50%];
-    }
-}
+//     @media screen and(max-width: 576px) {
+//         @include text(18px, 130%, 700, #2BB018);
+//         @apply w-[50%];
+//     }
+// }
 .header__phone_icon {
     @apply self-center;
 
