@@ -104,7 +104,8 @@ export default function Home() {
                   />
                 </a>
               </Link>
-              <div className={styles.header__phone_link}>
+
+              {/* <div className={styles.header__phone_link}>
                 <div className={styles.header__phone_icon}>
                   <Image
                     src={phone__icon}
@@ -116,9 +117,23 @@ export default function Home() {
                 <a
                   href="tel:+3736082020"
                   className={styles.header__phone_link_number}
-                >
+                ></a>
+              </div> */}
+
+              <div className={styles.phone__number_wrapper}>
+                <div className={styles.phone__icon}>
+                  <Image
+                    src={phone__icon}
+                    height={28}
+                    width={24}
+                    alt="home header phone icon"
+                  />
+                </div>
+                <a href="tel:+40726080202" className={styles.header__phone_link_number}>
+                  <span className={styles.phone__text}>5634345424</span>
                 </a>
               </div>
+
             </div>
           </div>
         </header>

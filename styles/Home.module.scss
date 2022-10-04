@@ -180,32 +180,6 @@
     }
 
 }
-// .header__phone_link {
-//     // @include text(28px, 100%, 400, #2d2d2b);
-//     // @apply flex text-right uppercase hover:text-[#2BB018] hover:duration-150;
-
-//     @media screen and(max-width: 1440px) {
-//         // font-size: calc(14px + (30 - 14)*(100vw - 576px)/(1440 - 576));
-//     }
-
-//     @media screen and(max-width: 576px) {
-//         // @include text(18px, 130%, 700, #2BB018);
-//         font-size: calc(13px + (26 - 13)*(100vw - 320px)/(576 - 320));
-//     }
-// }
-// .header__phone_link {
-//     @include text(27px, 100%, 400, #2d2d2b);
-//     @apply flex items-center justify-end w-[28%] hover:scale-110;
-
-//     @media screen and(max-width: 1440px) {
-//         font-size: calc(14px + (27 - 14)*(100vw - 576px)/(1440 - 576));
-//     }
-
-//     @media screen and(max-width: 576px) {
-//         @include text(18px, 130%, 700, #2BB018);
-//         @apply w-[50%];
-//     }
-// }
 .header__phone_icon {
     @apply self-center;
 
@@ -309,44 +283,63 @@
             }
         }
     }
-    .input {
-        @include text(15px, 130%, 400, #2D2D2B);
-        @apply border-0 rounded-sm py-[1%] mb-[3%] h-full focus-visible:outline-none;
-        font-family: 'Montserrat Regular';
+    // .input {
+    //     @include text(15px, 130%, 400, #2D2D2B);
+    //     @apply border-0 rounded-sm py-[1%] mb-[3%] h-full focus-visible:outline-none;
+    //     font-family: 'Montserrat Regular';
 
-        input {
-            @apply py-[5%] w-full border-[1px] border-[#C4C4C4];
-            font-family: 'Montserrat Regular';
-        }
+    //     input {
+    //         @apply py-[5%] w-full border-[1px] border-[#C4C4C4];
+    //         font-family: 'Montserrat Regular';
+    //     }
 
-        @media screen and(max-width: 1440px) {
-            font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
-        }
+    //     @media screen and(max-width: 1440px) {
+    //         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+    //     }
 
-        @media screen and(max-width: 576px) {
-            @apply mb-[5%] rounded-md;
-            font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
-        }
+    //     @media screen and(max-width: 576px) {
+    //         @apply mb-[5%] rounded-md;
+    //         font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+    //     }
 
-        &::placeholder {
-            @include text(15px, 130%, 400, #2D2D2B);
-            @apply uppercase tracking-wider opacity-30;
-            font-family: 'Montserrat Regular';
+    //     &::placeholder {
+    //         @include text(15px, 130%, 400, #2D2D2B);
+    //         @apply uppercase tracking-wider opacity-30;
+    //         font-family: 'Montserrat Regular';
 
-            @media screen and(max-width: 1440px) {
-                font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
-            }
+    //         @media screen and(max-width: 1440px) {
+    //             font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+    //         }
 
-            @media screen and(max-width: 576px) {
-                font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
-            }
-        }
-    }
+    //         @media screen and(max-width: 576px) {
+    //             font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+    //         }
+    //     }
+    // }
 
     @media screen and(max-width: 576px) {
         @apply w-full;
     }
 }
+.phone__number_wrapper {
+    @apply flex items-center space-x-2;
+  }
+    .header__phone_link_number {
+        @include text(20px, 140%, 700, rgba(88, 88, 87, 1));
+        @apply flex items-center space-x-2 text-[#585857] font-bold;
+    
+        @media screen and (max-width: 576px) {
+          font-size: calc(15px + (30 - 15) * (100vw - 320px) / (576 - 320));
+        }
+    }
+  
+    .phone__text {
+      @apply inline-flex;
+    }
+  
+    .phone__icon {
+      @apply duration-75 delay-200;
+    }
 // ===== send button =====>
 .button__sending {
     @include text(15px, 130%, 700, #000);
