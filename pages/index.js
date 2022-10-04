@@ -130,8 +130,6 @@ export default function Home() {
                   />
                 </div>
                 <a href="tel:+37372608020" className={styles.header__phone_link_number}>
-                  {/* <span className={styles.phone__text}>5634345424</span> */}
-                  3623634534
                 </a>
               </div>
 
