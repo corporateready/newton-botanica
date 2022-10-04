@@ -17,15 +17,21 @@ import Head from "next/head";
 import "react-phone-input-2/lib/style.css";
 import OfferPDFOpenSending from "../components/popup-pdf-offer";
 import OfferCallRezerve from "../components/popup-phone-offer";
-import FromDesignPopUp from '../components/name-phone-popup/index'
+import FromDesignPopUp from "../components/name-design-phone-popup";
+import FromPaymentPopUp from "../components/name-payment-phone-popup";
 
 export default function About() {
   const [isPopUpSend, setIsPopUpSend] = useState(false);
   const [isPDFOpen, setIsPDFOpen] = useState(false);
   const [isCallRezervePopUp, setIsCallRezervePopUp] = useState(false);
+  const [isPaymentPopUp, setIsPaymentPopUp] = useState(false);
 
   const hanlerCloseDesignPopup = () => {
     setIsPopUpSend(!isPopUpSend);
+  };
+
+  const hanlerClosePaymentPopup = () => {
+    setIsPaymentPopUp(!isPaymentPopUp);
   };
 
   const hanlerClosePopup = () => {
@@ -54,14 +60,21 @@ export default function About() {
     }
   }, [isCallRezervePopUp]);
 
-  useEffect(()=>{
-    if(isPopUpSend) {
+  useEffect(() => {
+    if (isPopUpSend) {
       document.body.style.overflow = "hidden";
-    }
-    else {
+    } else {
       document.body.style.overflow = "auto";
     }
-  }, [isPopUpSend])
+  }, [isPopUpSend]);
+
+  useEffect(() => {
+    if (isPaymentPopUp) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isPaymentPopUp]);
 
   return (
     <>
@@ -69,7 +82,7 @@ export default function About() {
         <link rel="preload" as="image" href="Group_2678-.webp" />
         <link rel="prefetch" />
         <link rel="preconnect" href="http://localhost:3000/about/" />
-        <title>NGNB | PLANIMETRII</title>
+        <title>NGNB | DESPRE CASĂ</title>
       </Head>
 
       <section className={styles.planning__section}>
@@ -100,15 +113,14 @@ export default function About() {
             />
             <Complex />
             <Designs
-            setIsPopUpSend={setIsPopUpSend}
-            hanlerCloseDesignPopup={hanlerCloseDesignPopup}
+              setIsPopUpSend={setIsPopUpSend}
+              hanlerCloseDesignPopup={hanlerCloseDesignPopup}
             />
             <SliderSnake />
             <Location />
-            <Payment 
-            setIsPopUpSend={setIsPopUpSend}
-            hanlerCloseDesignPopup={hanlerCloseDesignPopup}
-            />
+            <Payment
+            setIsPaymentPopUp={setIsPaymentPopUp} 
+            hanlerClosePaymentPopup={hanlerClosePaymentPopup} />
             <News />
           </div>
         </Layout>
@@ -120,6 +132,9 @@ export default function About() {
         )}
         {isPopUpSend && (
           <FromDesignPopUp hanlerCloseDesignPopup={hanlerCloseDesignPopup} />
+        )}
+        {isPaymentPopUp && (
+          <FromPaymentPopUp hanlerClosePaymentPopup={hanlerClosePaymentPopup} />
         )}
       </section>
     </>

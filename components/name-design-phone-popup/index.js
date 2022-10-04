@@ -22,7 +22,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        From: "Vreau să fiu contactat",
+        From: "Află mai multe detalii despre proiect",
         Numele: nameValue,
         Telefon: phoneValue,
       }),
@@ -32,13 +32,11 @@ export default function Index({ hanlerCloseDesignPopup }) {
         setIsSend(true);
       })
       .then((data) => {
-          data
-        }
-      )
-      .then(function(){
+        data;
+      })
+      .then(function () {
         setSpinner(false);
-       }
-      )
+      })
       .catch((error) => console.log(error));
   };
 
@@ -82,7 +80,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
             </h3>
 
             <form
-            id="about__form_send_payment_btn"
+              id="about__form_send_design_btn"
               className={styles.offer__form}
               action="https://formsubmit.co/nev30inbox@gmail.com"
               method="POST"
@@ -111,14 +109,14 @@ export default function Index({ hanlerCloseDesignPopup }) {
                 onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="http://localhost:3000/about/" />
+              <input type="hidden" name="_next" value="false" />
               <input
                 type="hidden"
                 name="_autoresponse"
                 value="Everyone is important for as!"
               />
               <button type="submit" className={styles.button__sending}>
-              {spinner ? "trimitere..." : "Vreau să fiu contactat"}
+                {spinner ? "trimitere..." : "Vreau să fiu contactat"}
               </button>
             </form>
 

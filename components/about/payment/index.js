@@ -15,10 +15,10 @@ import leaf_3__mob from "../../../public/static/planning-page/payment/leaf-c-r-m
 import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r-mob.png";
 import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.png";
 
-export default function index({ setIsPopUpSend }) {
+export default function index({ setIsPaymentPopUp }) {
 
   const hanlerIsOpenPopup = () => {
-    setIsPopUpSend(true);
+    setIsPaymentPopUp(true);
   };
 
   return (

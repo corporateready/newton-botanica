@@ -13,7 +13,7 @@ import {
   MarkButton_6,
   MarkButton_7,
   MarkButton_8,
-  MarkButton_9
+  MarkButton_9,
 } from "./marks";
 import {
   MarkImage,
@@ -24,8 +24,9 @@ import {
   MarkImage_6,
   MarkImage_7,
   MarkImage_8,
-  MarkImage_9
+  MarkImage_9,
 } from "./mark-images";
+import Head from "next/head";
 
 export default function index() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -77,6 +78,7 @@ export default function index() {
 
   return (
     <>
+      <Head></Head>
       <div className={styles.location__section}>
         <div className={styles.location__wrapper}>
           <h1 className={styles.location__title}>
@@ -117,6 +119,7 @@ export default function index() {
                 className={styles.loaction__mark_3}
                 onClick={handlerIsOpen}
               ></motion.span>
+              
               <Image
                 src={location__bg}
                 height={506}
@@ -128,6 +131,7 @@ export default function index() {
                 alt=""
               />
             </div>
+
             <div className={styles.location__address}>
               <Link href="https://g.page/Newton-House-srl?share">
                 <a className={styles.location__address_name}>

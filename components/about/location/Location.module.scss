@@ -88,3 +88,13 @@
         font-size: calc(12px + (20 - 12)*(100vw - 320px)/(576 - 320));
     }
 }
+// ===== =====>
+.magnifier-image {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Установите размер стекла лупы:*/
+    width: 100px;
+    height: 100px;
+  }

@@ -98,7 +98,7 @@ export default function Home() {
                     />
                   </div>
                   <a href="tel:+3736082020" className={styles.header__phone_link_number}>
-                    373(689)-69-195
+                    {/* 373(689)-69-195 */}
                   </a>
                 </div>
             </div>

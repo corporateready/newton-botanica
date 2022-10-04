@@ -13,7 +13,8 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
   const [phoneValue, setPhoneValue] = React.useState("");
   const [selectedTimezone, setSelectedTimezone] = React.useState({});
 
-  const useHandlerOnClickToSend = () => {
+  const useHandlerOnClickToSend = (e) => {
+    e.preventDefault();
     fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
       method: "POST",
       headers: {
@@ -21,7 +22,7 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        Ora: timeValue,
+        Ora: timeValue.toString(),
         "Fusul orar": selectedTimezone.label,
         Telfon: phoneValue,
       }),
@@ -67,7 +68,7 @@ export default function OfferPDFOpenSending({ hanlerCloseCallPopup }) {
     { option: "13:30" },
     { option: "13:45" },
   ];
-
+console.log(timeValue);
   return (
     <section className={styles.offer__section}>
       <div className={styles.offer__container}>
