@@ -287,39 +287,39 @@
             }
         }
     }
-    // .input {
-    //     @include text(15px, 130%, 400, #2D2D2B);
-    //     @apply border-0 rounded-sm py-[1%] mb-[3%] h-full focus-visible:outline-none;
-    //     font-family: 'Montserrat Regular';
+    .input {
+        @include text(15px, 130%, 400, #2D2D2B);
+        @apply border-0 rounded-sm py-[1%] mb-[3%] h-full focus-visible:outline-none;
+        font-family: 'Montserrat Regular';
 
-    //     input {
-    //         @apply py-[5%] w-full border-[1px] border-[#C4C4C4];
-    //         font-family: 'Montserrat Regular';
-    //     }
+        input {
+            @apply py-[5%] w-full border-[1px] border-[#C4C4C4];
+            font-family: 'Montserrat Regular';
+        }
 
-    //     @media screen and(max-width: 1440px) {
-    //         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
-    //     }
+        @media screen and(max-width: 1440px) {
+            font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+        }
 
-    //     @media screen and(max-width: 576px) {
-    //         @apply mb-[5%] rounded-md;
-    //         font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
-    //     }
+        @media screen and(max-width: 576px) {
+            @apply mb-[5%] rounded-md;
+            font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+        }
 
-    //     &::placeholder {
-    //         @include text(15px, 130%, 400, #2D2D2B);
-    //         @apply uppercase tracking-wider opacity-30;
-    //         font-family: 'Montserrat Regular';
+        &::placeholder {
+            @include text(15px, 130%, 400, #2D2D2B);
+            @apply uppercase tracking-wider opacity-30;
+            font-family: 'Montserrat Regular';
 
-    //         @media screen and(max-width: 1440px) {
-    //             font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
-    //         }
+            @media screen and(max-width: 1440px) {
+                font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+            }
 
-    //         @media screen and(max-width: 576px) {
-    //             font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
-    //         }
-    //     }
-    // }
+            @media screen and(max-width: 576px) {
+                font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+            }
+        }
+    }
 
     @media screen and(max-width: 576px) {
         @apply w-full;
