@@ -27,6 +27,8 @@ import {
   MarkImage_9,
 } from "./mark-images";
 import Head from "next/head";
+import {Magnify} from './magnify'
+// import Magnifier from "react-magnifier";
 
 export default function index() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -76,9 +78,80 @@ export default function index() {
     setIsOpen9(!isOpen9);
   };
 
+  React.useEffect(() => {
+    // (function (imgID, zoom) {
+    //   var img, glass, w, h, bw;
+    //   img = document.getElementById(imgID);
+    //   /*create magnifier glass:*/
+    //   glass = document.createElement("DIV");
+    //   glass.setAttribute("class", "img-magnifier-glass");
+    //   /*insert magnifier glass:*/
+    //   img.parentElement.insertBefore(glass, img);
+    //   /*set background properties for the magnifier glass:*/
+    //   glass.style.backgroundImage = "url('" + img.src + "')";
+    //   glass.style.backgroundRepeat = "no-repeat";
+    //   glass.style.backgroundSize =
+    //     img.width * zoom + "px " + img.height * zoom + "px";
+    //   bw = 3;
+    //   w = glass.offsetWidth / 2;
+    //   h = glass.offsetHeight / 2;
+    //   /*execute a function when someone moves the magnifier glass over the image:*/
+    //   glass.addEventListener("mousemove", moveMagnifier);
+    //   img.addEventListener("mousemove", moveMagnifier);
+    //   /*and also for touch screens:*/
+    //   glass.addEventListener("touchmove", moveMagnifier);
+    //   img.addEventListener("touchmove", moveMagnifier);
+    //   function moveMagnifier(e) {
+    //     let pos, x, y;
+    //     /*prevent any other actions that may occur when moving over the image*/
+    //     e.preventDefault();
+    //     /*get the cursor's x and y positions:*/
+    //     pos = getCursorPos(e);
+    //     x = pos.x;
+    //     y = pos.y;
+    //     /*prevent the magnifier glass from being positioned outside the image:*/
+    //     if (x > img.width - w / zoom) {
+    //       x = img.width - w / zoom;
+    //     }
+    //     if (x < w / zoom) {
+    //       x = w / zoom;
+    //     }
+    //     if (y > img.height - h / zoom) {
+    //       y = img.height - h / zoom;
+    //     }
+    //     if (y < h / zoom) {
+    //       y = h / zoom;
+    //     }
+    //     /*set the position of the magnifier glass:*/
+    //     glass.style.left = x - w + "px";
+    //     glass.style.top = y - h + "px";
+    //     /*display what the magnifier glass "sees":*/
+    //     glass.style.backgroundPosition =
+    //       "-" + (x * zoom - w + bw) + "px -" + (y * zoom - h + bw) + "px";
+    //   }
+    //   function getCursorPos(e) {
+    //     let a,
+    //       x = 0,
+    //       y = 0;
+    //     e = e || window.event;
+    //     /*get the x and y positions of the image:*/
+    //     a = img.getBoundingClientRect();
+    //     /*calculate the cursor's x and y coordinates, relative to the image:*/
+    //     x = e.pageX - a.left;
+    //     y = e.pageY - a.top;
+    //     /*consider any page scrolling:*/
+    //     x = x - window.pageXOffset;
+    //     y = y - window.pageYOffset;
+    //     console.log(x, y);
+    //     return { x: x, y: y };
+    //   }
+    // })()
+  }, []);
+
   return (
     <>
-      <Head></Head>
+      <Head>
+      </Head>
       <div className={styles.location__section}>
         <div className={styles.location__wrapper}>
           <h1 className={styles.location__title}>
@@ -119,18 +192,23 @@ export default function index() {
                 className={styles.loaction__mark_3}
                 onClick={handlerIsOpen}
               ></motion.span>
-              
+
+              {/* <Magnify/> */}
+            {/* <div className="img-magnifier-container">
+          
+            </div>*/}
               <Image
                 src={location__bg}
+                id="myimage"
                 height={506}
                 width={1043}
                 sizes="(max-width: 75em) 33vw,
-              (max-width: 48em) 50vw,
-              100vw"
+                  (max-width: 48em) 50vw,
+                  100vw"
                 priority
                 alt=""
               />
-            </div>
+            </div> 
 
             <div className={styles.location__address}>
               <Link href="https://g.page/Newton-House-srl?share">
@@ -148,3 +226,8 @@ export default function index() {
     </>
   );
 }
+
+// function ExampleComponent() {
+//   console.log(<Magnifier className={styles.magnifier}/>);
+//   return <Magnifier src={location__bg} width="100%" height="500px" className={styles.magnifier} />;
+// }

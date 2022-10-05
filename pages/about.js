@@ -79,7 +79,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <link rel="preload" as="image" href="Group_2678-.webp" />
+        {/* <link rel="preload" as="image" href="Group_2678-.webp" /> */}
         <link rel="prefetch" />
         <link rel="preconnect" href="http://localhost:3000/about/" />
         <title>NGNB | DESPRE CASĂ</title>

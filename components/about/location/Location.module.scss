@@ -89,12 +89,12 @@
     }
 }
 // ===== =====>
-.magnifier-image {
-    position: absolute;
+.magnifier {
+    position: relative;
     border: 3px solid #000;
-    border-radius: 50%;
+    // border-radius: 50%;
     cursor: none;
     /*Установите размер стекла лупы:*/
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
   }

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import Image from "next/image";
 import hero__bg from "../../../public/static/planning-page/Group_2678.webp";
-import hero__bg_mobile from "../../../public/static/planning-page/bg-groupe-mobile.png";
+import hero__bg_mobile from "../../../public/static/planning-page/NHGB_mobile.webp";
 
 export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
   
