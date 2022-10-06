@@ -54,9 +54,6 @@ export default function Index({ setIsPopUpSend }) {
                   <Image
                     src={grid__item_1}
                     layout="intrinsic"
-                    // sizes="(max-width: 71em) 33vw,
-                    //   (max-width: 48em) 50vw,
-                    //   100vw"
                     priority
                     alt=""
                   />
@@ -76,9 +73,6 @@ export default function Index({ setIsPopUpSend }) {
                   <Image
                     src={grid__item_2}
                     layout="intrinsic"
-                    // sizes="(max-width: 71em) 33vw,
-                    //   (max-width: 48em) 50vw,
-                    //   100vw"
                     priority
                     alt=""
                   />
@@ -99,9 +93,6 @@ export default function Index({ setIsPopUpSend }) {
                   <Image
                     src={grid__item_3}
                     layout="intrinsic"
-                    // sizes="(max-width: 71em) 33vw,
-                    //   (max-width: 48em) 50vw,
-                    //   100vw"
                     priority
                     alt=""
                   />
@@ -122,9 +113,6 @@ export default function Index({ setIsPopUpSend }) {
                   <Image
                     src={grid__item_4}
                     layout="intrinsic"
-                    // sizes="(max-width: 71em) 33vw,
-                    //   (max-width: 48em) 50vw,
-                    //   100vw"
                     priority
                     alt=""
                   />
@@ -144,9 +132,6 @@ export default function Index({ setIsPopUpSend }) {
                   <Image
                     src={grid__item_5}
                     layout="intrinsic"
-                    // sizes="(max-width: 71em) 33vw,
-                    //   (max-width: 48em) 50vw,
-                    //   100vw"
                     priority
                     alt=""
                   />
@@ -167,9 +152,6 @@ export default function Index({ setIsPopUpSend }) {
                   <Image
                     src={grid__item_6}
                     layout="intrinsic"
-                    // sizes="(max-width: 71em) 33vw,
-                    //   (max-width: 48em) 50vw,
-                    //   100vw"
                     priority
                     alt=""
                   />
@@ -190,9 +172,6 @@ export default function Index({ setIsPopUpSend }) {
                   <Image
                     src={grid__item_7}
                     layout="intrinsic"
-                    // sizes="(max-width: 71em) 33vw,
-                    //   (max-width: 48em) 50vw,
-                    //   100vw"
                     priority
                     alt=""
                   />
@@ -213,9 +192,6 @@ export default function Index({ setIsPopUpSend }) {
                   <Image
                     src={grid__item_8}
                     layout="intrinsic"
-                    // sizes="(max-width: 71em) 33vw,
-                    //   (max-width: 48em) 50vw,
-                    //   100vw"
                     priority
                     alt=""
                   />

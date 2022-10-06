@@ -118,7 +118,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply mt-[35%] w-[86%] py-[4.3%];
+        @apply mt-[37%] w-[86%] py-[4.3%];
         font-size: calc(8px + (20 - 8)*(100vw - 320px)/(576 - 320));
     }
 }
