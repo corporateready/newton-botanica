@@ -35,7 +35,7 @@ export function March() {
             type="text/html"
             height="590px"
             width="100%"
-            src={`https://www.youtube-nocookie.com/embed/P8BNoZZgzSk?origin=http://localhost:3000&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}
+            src={`https://www.youtube-nocookie.com/embed/P8BNoZZgzSk?origin=https://main--mellifluous-queijadas-43440a.netlify.app&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

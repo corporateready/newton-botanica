@@ -38,7 +38,7 @@ export function November21() {
             height="590px"
             width="100%"
             className={styles.video__body}
-            src={`https://www.youtube-nocookie.com/embed/B4fC-lWRYJY?origin=http://localhost:3000&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}
+            src={`https://www.youtube-nocookie.com/embed/B4fC-lWRYJY?origin=https://main--mellifluous-queijadas-43440a.netlify.app&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

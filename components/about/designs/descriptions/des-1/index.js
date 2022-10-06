@@ -35,7 +35,7 @@ export default function DesItem_1({ setIsVisible }) {
           height="530px"
           width="100%"
           className={styles.video__body}
-          src={`https://www.youtube-nocookie.com/embed/B4fC-lWRYJY?origin=http://localhost:3000&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}
+          src={`https://www.youtube-nocookie.com/embed/B4fC-lWRYJY?origin=http://localhost:3000&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0&mode=no-cors`}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

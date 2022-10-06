@@ -40,7 +40,7 @@ export const SliderMob = () => {
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
-  console.log("page = " + page);
+
   return (
     <>
       <div className={styles.slider__body}>
@@ -150,12 +150,12 @@ export const SliderMob = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
+              x: { type: "spring", stiffness: 300, damping: 50 },
               opacity: { duration: 0.2 },
             }}
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            drag={direction >= page || direction <= 8 ? "x" : " "}
+            dragElastic={0}
+            drag="x"
             onDragEnd={(e, { offset, velocity }) => {
               const swipe = swipePower(offset.x, velocity.x);
               if (swipe < -swipeConfidenceThreshold) {
