@@ -180,7 +180,7 @@ export default function index({ setIsPaymentPopUp }) {
         <div className={styles.leaf}>
           <Image
             src={leaf_1}
-            layout="intrinsic"
+            layout="responsive"
             sizes="(max-width: 75em) 33vw,
               (max-width: 48em) 50vw,
               100vw"
@@ -193,6 +193,7 @@ export default function index({ setIsPaymentPopUp }) {
             src={leaf_1__mob}
             height={376}
             width={406}
+            layout="responsive"
             sizes="(max-width: 75em) 33vw,
               (max-width: 48em) 50vw,
               100vw"
@@ -203,7 +204,7 @@ export default function index({ setIsPaymentPopUp }) {
         <div className={styles.leaf__2}>
           <Image
             src={leaf_2}
-            layout="intrinsic"
+            layout="responsive"
             sizes="(max-width: 75em) 33vw,
               (max-width: 48em) 50vw,
               100vw"
@@ -214,7 +215,7 @@ export default function index({ setIsPaymentPopUp }) {
         <div className={styles.leaf_2__mob}>
           <Image
             src={leaf_2__mob}
-            layout="intrinsic"
+            layout="responsive"
             sizes="(max-width: 75em) 33vw,
               (max-width: 48em) 50vw,
               100vw"
@@ -225,7 +226,7 @@ export default function index({ setIsPaymentPopUp }) {
         <div className={styles.leaf__3}>
           <Image
             src={leaf_3}
-            layout="intrinsic"
+            layout="responsive"
             sizes="(max-width: 75em) 33vw,
               (max-width: 48em) 50vw,
               100vw"
@@ -236,7 +237,7 @@ export default function index({ setIsPaymentPopUp }) {
         <div className={styles.leaf_3__mob}>
           <Image
             src={leaf_3__mob}
-            layout="intrinsic"
+            layout="responsive"
             sizes="(max-width: 75em) 33vw,
               (max-width: 48em) 50vw,
               100vw"
@@ -247,7 +248,7 @@ export default function index({ setIsPaymentPopUp }) {
         <div className={styles.leaf__4}>
           <Image
             src={leaf_4}
-            layout="intrinsic"
+            layout="responsive"
             sizes="(max-width: 75em) 33vw,
               (max-width: 48em) 50vw,
               100vw"
@@ -258,7 +259,7 @@ export default function index({ setIsPaymentPopUp }) {
         <div className={styles.leaf_4__mob}>
           <Image
             src={leaf_4__mob}
-            layout="intrinsic"
+            layout="responsive"
             sizes="(max-width: 75em) 33vw,
               (max-width: 48em) 50vw,
               100vw"
@@ -269,7 +270,7 @@ export default function index({ setIsPaymentPopUp }) {
         <div className={styles.leaf_5__mob}>
           <Image
             src={leaf_5__mob}
-            layout="intrinsic"
+            layout="responsive"
             sizes="(max-width: 75em) 33vw,
               (max-width: 48em) 50vw,
               100vw"
