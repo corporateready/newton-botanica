@@ -13,18 +13,27 @@ import {
   Payment,
   News,
 } from "../components/about";
+import { AnimatePresence, motion } from "framer-motion";
 import Head from "next/head";
 import "react-phone-input-2/lib/style.css";
 import OfferPDFOpenSending from "../components/popup-pdf-offer";
 import OfferCallRezerve from "../components/popup-phone-offer";
 import FromDesignPopUp from "../components/name-design-phone-popup";
 import FromPaymentPopUp from "../components/name-payment-phone-popup";
+import MessengerMobile from "../components/messengers-mobile";
 
 export default function About() {
   const [isPopUpSend, setIsPopUpSend] = useState(false);
   const [isPDFOpen, setIsPDFOpen] = useState(false);
   const [isCallRezervePopUp, setIsCallRezervePopUp] = useState(false);
   const [isPaymentPopUp, setIsPaymentPopUp] = useState(false);
+  const [scroll, setScroll] = React.useState(false);
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 0);
+    });
+  }, []);
 
   const hanlerCloseDesignPopup = () => {
     setIsPopUpSend(!isPopUpSend);
@@ -77,7 +86,7 @@ export default function About() {
   }, [isPaymentPopUp]);
 
   return (
-    <>
+    <div className="relative">
       <Head>
         {/* <link rel="preload" as="image" href="Group_2678-.webp" /> */}
         <link rel="prefetch" />
@@ -119,8 +128,9 @@ export default function About() {
             <SliderSnake />
             <Location />
             <Payment
-            setIsPaymentPopUp={setIsPaymentPopUp} 
-            hanlerClosePaymentPopup={hanlerClosePaymentPopup} />
+              setIsPaymentPopUp={setIsPaymentPopUp}
+              hanlerClosePaymentPopup={hanlerClosePaymentPopup}
+            />
             <News />
           </div>
         </Layout>
@@ -137,6 +147,23 @@ export default function About() {
           <FromPaymentPopUp hanlerClosePaymentPopup={hanlerClosePaymentPopup} />
         )}
       </section>
-    </>
+      <div className={styles.about__messenger_mob}>
+        <AnimatePresence>
+          {scroll && (
+            <motion.div
+              className={scroll ? styles.scroll__visible : ""}
+              initial={{ y: 100 }}
+              animate={{ y: 0 }}
+              exit={{ y: 100 }}
+              transition={{ duration: 1 }}
+            >
+              <div className="flex justify-around items-center h-full">
+                <MessengerMobile />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
   );
 }

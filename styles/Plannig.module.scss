@@ -2,6 +2,10 @@
 
 .planning__section {
     @apply h-full w-full relative top-0 left-0 overflow-hidden;
+
+    @media screen and (max-width: 576px) {
+        @apply mb-[100px];
+    }
 }
 .planning__bg {
     @apply absolute top-0 left-0 min-h-full max-h-full w-full z-auto object-fill;
@@ -209,4 +213,16 @@
 }
 .policy {
     @apply text-[#2BB018];
+}
+// ===== scroll visible messendger =====>
+.about__messenger_mob {
+    @apply hidden;
+
+    @media screen and (max-width: 576px) {
+        @apply block;
+    }
+}
+.scroll__visible {
+    @apply block w-full h-[100px] bg-white fixed bottom-0 left-0 z-[500];
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 }

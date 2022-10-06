@@ -73,7 +73,7 @@
     @apply hidden;
 
     @media screen and(max-width: 768px) {
-        @apply inline-block w-[48%] text-[120%] py-[1%] border-2 rounded-md text-[#2BB018] focus-visible:outline;
+        @apply inline-block w-[48%] text-[120%] py-[1%] border-2 rounded-md text-white bg-[#2BB018] focus:outline-none pl-2;
     }
 }
 .news__grids {

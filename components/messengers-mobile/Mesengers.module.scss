@@ -1,0 +1,175 @@
+.messengers {
+    @apply flex flex-col space-y-[55%];
+
+    @media screen and(max-width: 576px) {
+        @apply flex flex-row items-baseline justify-center space-y-0 space-x-[12%] w-full mt-[15%] mx-0 relative;
+    }
+
+    @media (max-width: 576px) and(max-height: 740px) {
+        @apply mt-[10%];
+    }
+}
+
+.whatsapp {
+    @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+        height: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+        height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+    }
+
+    svg {
+        @media screen and(max-width: 1440px) {
+            width: calc(12px + (32 - 12)*(100vw - 576px)/(1440 - 576));
+        }
+        @media screen and(max-width: 576px) {
+            width: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+            height: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+        }
+    }
+}
+
+.viber {
+    @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+        height: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+        height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+    }
+
+    svg {
+        @media screen and(max-width: 1440px) {
+            width: calc(12px + (32 - 12)*(100vw - 576px)/(1440 - 576));
+        }
+        @media screen and(max-width: 576px) {
+            width: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+            height: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+        }
+    }
+}
+
+.messenger {
+    @apply bg-white h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+        height: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+        height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+    }
+
+    svg {
+        @media screen and(max-width: 1440px) {
+            width: calc(12px + (32 - 12)*(100vw - 576px)/(1440 - 576));
+        }
+        @media screen and(max-width: 576px) {
+            width: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+            height: calc(20px + (47 - 20)*(100vw - 320px)/(576 - 320));
+        }
+    }
+}
+
+.phone {
+    @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        width: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+        height: calc(20px + (48 - 20)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+        height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
+    }
+
+    svg {
+        @media screen and(max-width: 1440px) {
+            width: calc(8px + (32 - 8)*(100vw - 576px)/(1440 - 576));
+        }
+        @media screen and(max-width: 576px) {
+            width: calc(18px + (45 - 18)*(100vw - 320px)/(576 - 320));
+            height: calc(18px + (45 - 18)*(100vw - 320px)/(576 - 320));
+        }
+    }
+}
