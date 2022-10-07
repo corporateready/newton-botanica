@@ -21,9 +21,6 @@
         @apply py-[1%];
     }
 }
-.header__phone_link {
-    font-family: 'Gilroy-Bold';
-}
 .home {
     @apply h-auto w-full relative;
     
@@ -140,35 +137,6 @@
         @apply w-[90px];
     }
 }
-.header__phone_link {
-    @apply flex items-center justify-end w-[28%] hover:scale-110;
-    animation-name: stretch;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-    animation-direction:alternate-reverse;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-
-    @keyframes stretch {
-        0% {
-            transform: scale(1);
-        }
-        100% {
-            transform: scale(1.1);
-        }
-    }
-
-    @include text(27px, 100%, 00, #2d2d2b);
-    @apply flex text-right uppercase hover:text-[#2BB018] hover:duration-150;
-
-    // @media screen and(max-width: 1440px) {
-    //     font-size: calc(14px + (30 - 14)*(100vw - 576px)/(1440 - 576));
-    // }
-
-    @media screen and(max-width: 576px) {
-        @apply w-[50%];
-    }
-}
 .header__phone_icon {
     @apply flex items-center;
 
@@ -188,14 +156,6 @@
     }
 
 }
-// .header__phone_link_number {
-//     @apply inline-block ml-[3%] uppercase;
-
-//     @media screen and (max-width: 1440px) {
-//         font-size: calc(15px + (30 - 15) * (100vw - 576px) / (1440 - 576));
-//       }
-// }
-
 //  ===== popup offer =====>
 .offer__section {
     @apply h-screen w-full absolute top-0 flex items-center justify-center left-0 z-20;
@@ -327,27 +287,48 @@
 }
 .phone__number_wrapper {
     @apply flex items-center space-x-2;
-  }
-    .header__phone_link_number {
-        @include text(27px, 100%, 700, rgba(88, 88, 87, 1));
-        @apply flex items-center space-x-2 text-[#585857] font-bold;
 
-        @media screen and (max-width: 1440px) {
-            font-size: calc(15px + (27 - 15) * (100vw - 576px) / (1440 - 576));
-          }
-    
-        @media screen and (max-width: 576px) {
-          font-size: calc(15px + (30 - 15) * (100vw - 320px) / (576 - 320));
+    animation-name: stretch;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-direction:alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+
+    @keyframes stretch {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
         }
     }
-  
-    .phone__text {
-      @apply inline-flex;
+
+    @media screen and(max-width: 576px) {
+        @apply w-[57%];
     }
-  
-    .phone__icon {
-      @apply duration-75 delay-200 pt-[2%];
+
+}
+.header__phone_link_number {
+    @include text(27px, 100%, 700, rgba(88, 88, 87, 1));
+    @apply flex items-center space-x-2;
+
+    @media screen and (max-width: 576px) {
+        @include text(24px, 100%, 700, rgba(88, 88, 87, 1));
     }
+}
+
+.phone__text {
+  @apply inline-flex;
+}
+
+.phone__icon {
+  @apply duration-75 delay-200 pt-[2%];
+
+  @media screen and (max-width: 576px) {
+    @apply pt-2;
+  }
+}
 // ===== send button =====>
 .button__sending {
     @include text(15px, 130%, 700, #000);

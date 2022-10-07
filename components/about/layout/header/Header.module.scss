@@ -46,24 +46,31 @@
     }
 }
 .header__phone_link {
-    @include text(27px, 100%, 400, #2d2d2b);
+    @include text(27px, 100%, 700, rgba(88, 88, 87, 1));
     @apply flex items-center justify-end w-[28%] hover:scale-110;
+    animation-name: stretch;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-direction:alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
 
-    @media screen and(max-width: 1440px) {
-        font-size: calc(14px + (27 - 14)*(100vw - 576px)/(1440 - 576));
+    @keyframes stretch {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
     }
 
     @media screen and(max-width: 576px) {
-        @include text(18px, 130%, 700, #2BB018);
-        @apply w-[50%];
+        @include text(24px, 130%, 700, #2BB018);
+        @apply w-[57%];
     }
 }
 .header__phone_icon {
-    @apply self-center;
-
-    @media screen and(max-width: 576px) {
-        @apply w-[15px];
-    }
+    @apply self-center duration-75 delay-200 ;
 
 }
 .header__phone_link_number {

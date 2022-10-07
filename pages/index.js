@@ -14,6 +14,7 @@ import Messengers from "../components/messengers";
 
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { motion } from "framer-motion";
 
 export default function Home() {
   React.useEffect(() => {
@@ -81,7 +82,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>NEWTON HOUSE  Grădina Botanică | Apartamente de vanzare în Chisinău</title>
+        <title>
+          NEWTON HOUSE Grădina Botanică | Apartamente de vanzare în Chisinău
+        </title>
         <meta
           name="description"
           content="Apartamente în rate, pe 5 ani, cu doar 10% prima rată, 0% dobândă,"
@@ -105,34 +108,25 @@ export default function Home() {
                 </a>
               </Link>
 
-              {/* <div className={styles.header__phone_link}>
-                <div className={styles.header__phone_icon}>
+              <div className={styles.phone__number_wrapper}>
+                <motion.div 
+                className={styles.phone__icon}
+                initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{delay:1.5}}
+                >
                   <Image
                     src={phone__icon}
-                    height={28}
+                    height={23}
                     width={24}
                     alt="home header phone icon"
                   />
-                </div>
+                </motion.div>
                 <a
-                  href="tel:+3736082020"
+                  href="tel:+37372608020"
                   className={styles.header__phone_link_number}
                 ></a>
-              </div> */}
-
-              <div className={styles.phone__number_wrapper}>
-                <div className={styles.phone__icon}>
-                  <Image
-                    src={phone__icon}
-                    height={28}
-                    width={24}
-                    alt="home header phone icon"
-                  />
-                </div>
-                <a href="tel:+37372608020" className={styles.header__phone_link_number}>
-                </a>
               </div>
-
             </div>
           </div>
         </header>
