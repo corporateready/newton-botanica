@@ -329,7 +329,7 @@
     @apply flex items-center space-x-2;
   }
     .header__phone_link_number {
-        @include text(30px, 100%, 700, rgba(88, 88, 87, 1));
+        @include text(27px, 100%, 700, rgba(88, 88, 87, 1));
         @apply flex items-center space-x-2 text-[#585857] font-bold;
 
         @media screen and (max-width: 1440px) {

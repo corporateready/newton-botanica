@@ -13,7 +13,7 @@ export default function MarkImage2({ setIsOpen3 }) {
           setIsOpen3(false);
         }}
       >
-        înnapoi
+        înapoi
       </button>
     </span>
   );
