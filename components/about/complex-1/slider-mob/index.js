@@ -150,12 +150,12 @@ export const SliderMob = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 50 },
-              opacity: { duration: 0.2 },
+              x: { type: "spring", stiffness: 300, damping: 40 },
+              opacity: { duration: 0.5 },
             }}
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0}
-            drag="x"
+            drag={page >= 0 ? "x" : ""}
             onDragEnd={(e, { offset, velocity }) => {
               const swipe = swipePower(offset.x, velocity.x);
               if (swipe < -swipeConfidenceThreshold) {
