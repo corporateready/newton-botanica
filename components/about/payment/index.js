@@ -72,7 +72,7 @@ export default function index({ setIsPaymentPopUp }) {
                   PE UN TERMEN DE <span>5 ANI</span>
                 </p>
               </div>
-              <div className={styles.description__item}>
+              {/* <div className={styles.description__item}>
                 <div className={styles.description__icon}>
                   <Image
                     src={logo__icon}
@@ -85,7 +85,7 @@ export default function index({ setIsPaymentPopUp }) {
                 <p className={styles.description__text}>
                   CU DOAR <span>10% PRIMA RATĂ</span>
                 </p>
-              </div>
+              </div> */}
               <div className={styles.description__item}>
                 <div className={styles.description__icon}>
                   <Image

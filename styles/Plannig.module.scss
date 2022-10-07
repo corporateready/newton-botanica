@@ -4,7 +4,7 @@
     @apply h-full w-full relative top-0 left-0 overflow-hidden;
 
     @media screen and (max-width: 576px) {
-        @apply mb-[100px];
+        @apply pb-[100px];
     }
 }
 .planning__bg {
@@ -223,6 +223,6 @@
     }
 }
 .scroll__visible {
-    @apply block w-full h-[100px] bg-white fixed bottom-0 left-0 z-[500];
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    @apply block w-full h-[100px] bg-transparent fixed bottom-0 left-0 z-[500];
+    // box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 }

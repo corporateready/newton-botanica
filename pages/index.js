@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>NEWTON HOUSE GRĂDINA BOTANICA</title>
+        <title>NEWTON HOUSE  Grădina Botanică | Apartamente de vanzare în Chisinău</title>
         <meta
           name="description"
           content="Apartamente în rate, pe 5 ani, cu doar 10% prima rată, 0% dobândă,"

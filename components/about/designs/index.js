@@ -48,7 +48,7 @@ export default function Index({ setIsPopUpSend }) {
             <div className={styles.designs__grid}>
               <motion.div
                 className={styles.designs__item}
-                onClick={() => setIsVisible(!isVisible)}
+                // onClick={() => setIsVisible(!isVisible)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -67,7 +67,7 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                onClick={() => setIsVisible(!isVisible2)}
+                // onClick={() => setIsVisible(!isVisible2)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -87,7 +87,7 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                onClick={() => setIsVisible3(!isVisible3)}
+                // onClick={() => setIsVisible3(!isVisible3)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -107,7 +107,7 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                onClick={() => setIsVisible4(!isVisible4)}
+                // onClick={() => setIsVisible4(!isVisible4)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -126,7 +126,7 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                onClick={() => setIsVisible5(!isVisible5)}
+                // onClick={() => setIsVisible5(!isVisible5)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -146,7 +146,7 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                onClick={() => setIsVisible6(!isVisible6)}
+                // onClick={() => setIsVisible6(!isVisible6)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -166,7 +166,7 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                onClick={() => setIsVisible6(!isVisible6)}
+                // onClick={() => setIsVisible6(!isVisible6)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -186,7 +186,7 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                onClick={() => setIsVisible8(!isVisible8)}
+                // onClick={() => setIsVisible8(!isVisible8)}
               >
                 <div className={styles.designs__image}>
                   <Image

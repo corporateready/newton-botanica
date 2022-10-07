@@ -91,7 +91,7 @@ export default function About() {
         {/* <link rel="preload" as="image" href="Group_2678-.webp" /> */}
         <link rel="prefetch" />
         <link rel="preconnect" href="http://localhost:3000/about/" />
-        <title>NGNB | DESPRE CASĂ</title>
+        <title description="">NHGB | DESPRE CASĂ</title>
       </Head>
 
       <section className={styles.planning__section}>

@@ -12,7 +12,7 @@
 
 .whatsapp {
     @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
     &:hover {
         animation-name:  pulse;
         animation-duration: 1.2s;
@@ -53,7 +53,7 @@
 
 .viber {
     @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
     &:hover {
         animation-name:  pulse;
         animation-duration: 1.2s;
@@ -94,7 +94,7 @@
 
 .messenger {
     @apply bg-white h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
     &:hover {
         animation-name:  pulse;
         animation-duration: 1.2s;
@@ -135,7 +135,7 @@
 
 .phone {
     @apply bg-[#2BB018] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
     &:hover {
         animation-name:  pulse;
         animation-duration: 1.2s;
