@@ -53,7 +53,7 @@ export default function index() {
             className={styles.header__phone_icon}
             initial={{opacity:0}}
             animate={{opacity:1}}
-            transition={{delay:0.5}}
+            transition={{delay:0.7}}
             >
               <Image
                 src={phone__icon}
