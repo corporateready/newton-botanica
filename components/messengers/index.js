@@ -22,7 +22,7 @@ const messengers = [
   {
     id: 3,
     icon: <FaFacebookMessenger size={30} color="#2D9CDB" />,
-    irl: "https://www.facebook.com/NewtonHouse.md",
+    irl: "http://m.me/NewtonHouse.md?roistat_visit=666144",
     title: "messenger",
   },
   {
