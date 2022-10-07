@@ -113,7 +113,7 @@ export default function Home() {
                 className={styles.phone__icon}
                 initial={{opacity:0}}
             animate={{opacity:1}}
-            transition={{delay:1}}
+            transition={{delay:0.5}}
                 >
                   <Image
                     src={phone__icon}
