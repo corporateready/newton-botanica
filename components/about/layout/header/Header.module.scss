@@ -67,6 +67,7 @@
     @media screen and(max-width: 576px) {
         @include text(24px, 130%, 700, #2BB018);
         @apply w-[57%];
+        font-size: calc(12px + (27 - 12)*(100vw - 320px)/(576 - 320));
     }
 }
 .header__phone_icon {

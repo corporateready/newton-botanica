@@ -109,11 +109,11 @@ export default function Home() {
               </Link>
 
               <div className={styles.phone__number_wrapper}>
-                <motion.div 
-                className={styles.phone__icon}
-                initial={{opacity:0}}
-            animate={{opacity:1}}
-            transition={{delay:0.5}}
+                <motion.div
+                  className={styles.phone__icon}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
                 >
                   <Image
                     src={phone__icon}
