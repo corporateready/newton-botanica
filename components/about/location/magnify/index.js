@@ -14,7 +14,7 @@ export default function MagnifyComponent() {
       mgMouseOffsetY={-100}
       mgMouseOffsetX={100}
       mgTouchOffsetX={50}
-      mgTouchOffsetY={100}
+      mgTouchOffsetY={-100}
       mgShape={"square"}
       mgWidth={200}
     />
