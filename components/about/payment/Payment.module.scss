@@ -153,15 +153,6 @@
         @apply hidden;
     }
 }
-.leaf_3__mob {
-    @apply opacity-0 hidden;
-
-    @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute bottom-[10%] right-[-35%];  
-        width: calc(152px + (276 - 152)*(100vw - 320px)/(576 - 320));  
-    }
-
-}
 .leaf__4 {
     @apply opacity-0 hidden;
 
@@ -179,7 +170,7 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute bottom-[-11%] right-[15%];  
+        @apply block opacity-100 absolute bottom-[31%] right-[-25%] rotate-180;  
         width: calc(122px + (206 - 122)*(100vw - 320px)/(576 - 320));  
     }
 
@@ -188,7 +179,7 @@
     @apply opacity-0 hidden;
 
     @media screen and(max-width: 576px) {
-        @apply block opacity-100 absolute bottom-0 left-[-19%];  
+        @apply block opacity-100 absolute bottom-[-2%] left-[-17%];  
         width: calc(102px + (206 - 102)*(100vw - 320px)/(576 - 320));  
     }
 

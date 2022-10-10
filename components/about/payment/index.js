@@ -9,11 +9,8 @@ import leaf_2 from "../../../public/static/planning-page/payment/leaf-t-r-desk.p
 import leaf_4 from "../../../public/static/planning-page/payment/leaf-b-r-desk.png";
 import leaf_3 from "../../../public/static/planning-page/payment/leaf-b-l-desk.png";
 
-import leaf_1__mob from "../../../public/static/planning-page/payment/leaf-t-l-mob.png";
-import leaf_2__mob from "../../../public/static/planning-page/payment/leaf-t-r-mob.png";
-import leaf_3__mob from "../../../public/static/planning-page/payment/leaf-c-r-mob.png";
-import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-b-r-mob.png";
-import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-b-l-mob.png";
+import leaf_4__mob from "../../../public/static/planning-page/payment/leaf-t-r-desk.png";
+import leaf_5__mob from "../../../public/static/planning-page/payment/leaf-t-l-desk.png";
 
 export default function index({ setIsPaymentPopUp }) {
 
@@ -72,20 +69,6 @@ export default function index({ setIsPaymentPopUp }) {
                   PE UN TERMEN DE <span>5 ANI</span>
                 </p>
               </div>
-              {/* <div className={styles.description__item}>
-                <div className={styles.description__icon}>
-                  <Image
-                    src={logo__icon}
-                    height={19}
-                    width={15}
-                    priority
-                    alt=""
-                  />
-                </div>
-                <p className={styles.description__text}>
-                  CU DOAR <span>10% PRIMA RATĂ</span>
-                </p>
-              </div> */}
               <div className={styles.description__item}>
                 <div className={styles.description__icon}>
                   <Image
@@ -188,7 +171,7 @@ export default function index({ setIsPaymentPopUp }) {
             alt=""
           />
         </div>
-        <div className={styles.leaf__mob}>
+        {/* <div className={styles.leaf__mob}>
           <Image
             src={leaf_1__mob}
             height={376}
@@ -200,7 +183,7 @@ export default function index({ setIsPaymentPopUp }) {
             priority
             alt=""
           />
-        </div>
+        </div> */}
         <div className={styles.leaf__2}>
           <Image
             src={leaf_2}
@@ -212,7 +195,7 @@ export default function index({ setIsPaymentPopUp }) {
             alt=""
           />
         </div>
-        <div className={styles.leaf_2__mob}>
+        {/* <div className={styles.leaf_2__mob}>
           <Image
             src={leaf_2__mob}
             layout="responsive"
@@ -222,7 +205,7 @@ export default function index({ setIsPaymentPopUp }) {
             priority
             alt=""
           />
-        </div>
+        </div> */}
         <div className={styles.leaf__3}>
           <Image
             src={leaf_3}
@@ -234,7 +217,7 @@ export default function index({ setIsPaymentPopUp }) {
             alt=""
           />
         </div>
-        <div className={styles.leaf_3__mob}>
+        {/* <div className={styles.leaf_3__mob}>
           <Image
             src={leaf_3__mob}
             layout="responsive"
@@ -244,7 +227,7 @@ export default function index({ setIsPaymentPopUp }) {
             priority
             alt=""
           />
-        </div>
+        </div> */}
         <div className={styles.leaf__4}>
           <Image
             src={leaf_4}

@@ -9,7 +9,7 @@ import styles from "./Slider.module.scss";
 const variants = {
   enter: (direction) => {
     return {
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 500 : -500,
       opacity: 0,
     };
   },
@@ -21,7 +21,7 @@ const variants = {
   exit: (direction) => {
     return {
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? 500 : -500,
       opacity: 0,
     };
   },
@@ -140,7 +140,7 @@ export const SliderMob = () => {
           </svg>
         </button>
 
-        <AnimatePresence initial={false} custom={direction}>
+        <AnimatePresence initial={true} custom={direction}>
           <motion.div
             key={page}
             className={styles.img}
@@ -155,8 +155,10 @@ export const SliderMob = () => {
             }}
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0}
-            drag={page >= 0 ? "x" : ""}
+            drag="x"
+            // onDrag={detectPaginationGesture}
             onDragEnd={(e, { offset, velocity }) => {
+              console.log(e);
               const swipe = swipePower(offset.x, velocity.x);
               if (swipe < -swipeConfidenceThreshold) {
                 paginate(1);
