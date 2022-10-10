@@ -153,12 +153,14 @@ export const SliderMob = () => {
               x: { type: "spring", stiffness: 300, damping: 40 },
               opacity: { duration: 0.5 },
             }}
+            // onDrag={(event, info) => console.log(info.point.x, info.point.y)}
+            // onDragEnd={(event, info) => console.log(info.point.x, info.point.y)}
+            dragDirectionLock
+            onDirectionLock={(axis) => console.log(axis)}
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0}
             drag="x"
-            // onDrag={detectPaginationGesture}
             onDragEnd={(e, { offset, velocity }) => {
-              console.log(e);
               const swipe = swipePower(offset.x, velocity.x);
               if (swipe < -swipeConfidenceThreshold) {
                 paginate(1);

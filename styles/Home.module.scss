@@ -305,12 +305,12 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply w-[57%];
+        @apply flex justify-center w-[57%];
     }
 
 }
 .header__phone_link_number {
-    @include text(27px, 100%, 700, rgba(88, 88, 87, 1));
+    @include text(24px, 100%, 700, rgba(88, 88, 87, 1));
     @apply flex items-center space-x-2;
 
     @media screen and (max-width: 576px) {
@@ -325,10 +325,10 @@
 }
 
 .phone__icon {
-  @apply duration-75 delay-200 pt-[2%];
+  @apply duration-75 delay-200 pt-[3%];
 
   @media screen and (max-width: 576px) {
-    @apply pt-2;
+    @apply pt-1 w-[15px];
   }
 }
 // ===== send button =====>

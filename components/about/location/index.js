@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./Location.module.scss";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import location__bg from "../../../public/static/planning-page/location/botanica-location.webp";
 import {
   MarkButton_1,
   MarkButton_2,
@@ -27,6 +25,7 @@ import {
   MarkImage_9,
 } from "./mark-images";
 import Head from "next/head";
+import MagnifyComponent from './magnify'
 
 export default function index() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -78,8 +77,7 @@ export default function index() {
 
   return (
     <>
-      <Head>
-      </Head>
+      <Head></Head>
       <div className={styles.location__section}>
         <div className={styles.location__wrapper}>
           <h1 className={styles.location__title}>
@@ -96,8 +94,9 @@ export default function index() {
             {isOpen7 && <MarkImage_7 setIsOpen7={setIsOpen7} />}
             {isOpen8 && <MarkImage_8 setIsOpen8={setIsOpen8} />}
             {isOpen9 && <MarkImage_9 setIsOpen9={setIsOpen9} />}
-
+            
             <div className={styles.location__bg_inner}>
+              <MagnifyComponent />
               <MarkButton_1 handlerIsOpen={handlerIsOpen} />
 
               <MarkButton_2 handlerIsOpen2={handlerIsOpen2} />
@@ -121,18 +120,7 @@ export default function index() {
                 onClick={handlerIsOpen}
               ></motion.span>
 
-              <Image
-                src={location__bg}
-                id="myimage"
-                height={506}
-                width={1043}
-                sizes="(max-width: 75em) 33vw,
-                  (max-width: 48em) 50vw,
-                  100vw"
-                priority
-                alt=""
-              />
-            </div> 
+            </div>
 
             <div className={styles.location__address}>
               <Link href="https://g.page/Newton-House-srl?share">
@@ -151,7 +139,3 @@ export default function index() {
   );
 }
 
-// function ExampleComponent() {
-//   console.log(<Magnifier className={styles.magnifier}/>);
-//   return <Magnifier src={location__bg} width="100%" height="500px" className={styles.magnifier} />;
-// }

@@ -117,8 +117,8 @@ export default function Home() {
                 >
                   <Image
                     src={phone__icon}
-                    height={23}
-                    width={24}
+                    height={19}
+                    width={20}
                     alt="home header phone icon"
                   />
                 </motion.div>

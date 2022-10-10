@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Header.module.scss";
 import header__logo from "../../../../public/static/home-page/header-logo.svg";
 import phone__icon from "../../../../public/static/home-page/phone.svg";
@@ -35,7 +36,8 @@ export default function index() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.header__inner}>
-            <div className={styles.header__logo}>
+          <Link href="/">
+            <a className={styles.header__logo}>
               <Image
                 src={header__logo}
                 height={45}
@@ -43,7 +45,8 @@ export default function index() {
                 priority
                 alt="home header logo"
               />
-            </div>
+            </a>
+            </Link>
           {/* <Link href="/planning">
             <a className={styles.button__planning}>PLANIMETRII</a>
           </Link> */}
@@ -56,8 +59,8 @@ export default function index() {
             >
               <Image
                 src={phone__icon}
-                height={23}
-                width={24}
+                height={19}
+                width={20}
                 alt="home header phone icon"
               />
             </motion.div>

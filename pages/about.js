@@ -88,7 +88,6 @@ export default function About() {
   return (
     <div className="relative">
       <Head>
-        {/* <link rel="preload" as="image" href="Group_2678-.webp" /> */}
         <link rel="prefetch" />
         <link rel="preconnect" href="http://localhost:3000/about/" />
         <title description="">NHGB | DESPRE CASĂ</title>
@@ -99,7 +98,6 @@ export default function About() {
           <Image
             src={planning__bg}
             layout="fill"
-            quality={100}
             priority
             alt="home background"
           />

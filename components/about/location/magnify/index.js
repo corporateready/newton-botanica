@@ -1,28 +1,22 @@
 import React from "react";
-import ReactImageMagnify from "react-image-magnify";
+import Magnifier from "react-magnifier";
+import { styles } from "../../news/imports";
+const yourImage = require("../../../../public/static/planning-page/location/botanica-location.webp");
 
-import styles from "./styles.module.scss";
-
-import watchImg300 from "../../../../public/static/planning-page/location/botanica-location.webp";
-import watchImg1200 from "../../../../public/static/planning-page/location/botanica-location.webp";
-
-export function Magnify() {
+export default function MagnifyComponent() {
+  console.log(yourImage.default.src);
   return (
-    <div className={styles.fluid__image_container}>
-      {/* <ReactImageMagnify
-        {...{
-          smallImage: {
-            alt: "Wristwatch by Ted Baker London",
-            isFluidWidth: true,
-            src: `${watchImg300}`,
-          },
-          largeImage: {
-            src: `${watchImg1200}`,
-            width: 1200,
-            height: 1800,
-          },
-        }}
-      /> */}
-    </div>
+    <Magnifier
+      className={styles.magnifier}
+      src={yourImage.default.src}
+      width={"100%"}
+      alt="image location"
+      mgMouseOffsetY={-100}
+      mgMouseOffsetX={100}
+      mgTouchOffsetX={30}
+      mgTouchOffsetY={30}
+      mgShape={"square"}
+      mgWidth={200}
+    />
   );
 }

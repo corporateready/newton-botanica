@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import Image from "next/image";
 import hero__bg from "../../../public/static/planning-page/NHGB_desktop.webp";
-import hero__bg_mobile from "../../../public/static/planning-page/NHGB_mobile.webp";
+import hero__bg_mobile from "../../../public/static/planning-page/NHGB_mobile_auto_x2.webp";
 
 export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
   
@@ -31,7 +31,7 @@ export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
           <Image
             src={hero__bg_mobile}
             height={751}
-            width={1170}
+            width={570}
             objectFit="cover"
             priority
             alt="home background"
