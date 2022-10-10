@@ -13,8 +13,8 @@ export default function MagnifyComponent() {
       alt="image location"
       mgMouseOffsetY={-100}
       mgMouseOffsetX={100}
-      mgTouchOffsetX={30}
-      mgTouchOffsetY={30}
+      mgTouchOffsetX={50}
+      mgTouchOffsetY={100}
       mgShape={"square"}
       mgWidth={200}
     />
