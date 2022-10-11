@@ -26,6 +26,8 @@ import {
 } from "./mark-images";
 import Head from "next/head";
 import MagnifyComponent from './magnify'
+import Image from "next/image";
+import location__bg from "../../../public/static/planning-page/location/botanica-location.webp"
 
 export default function index() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -97,6 +99,16 @@ export default function index() {
             
             <div className={styles.location__bg_inner}>
               <MagnifyComponent />
+              <div className={styles.magnifier__body_desktop}>
+                <Image
+                src={location__bg}
+                layout="responsive"
+                width={"100%"}
+                height="50px"
+                priority
+                alt="sity location image"
+                />
+              </div>
               <MarkButton_1 handlerIsOpen={handlerIsOpen} />
 
               <MarkButton_2 handlerIsOpen2={handlerIsOpen2} />

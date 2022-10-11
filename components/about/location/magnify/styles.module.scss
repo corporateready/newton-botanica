@@ -1,5 +1,7 @@
-// .magnifier {
-//   div {
-//     @apply z-50;
-//   }
-// }
+.magnifier__body {
+  @apply hidden;
+
+  @media screen and (max-width: 576px) {
+    @apply block;
+  }
+}
