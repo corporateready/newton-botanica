@@ -4,7 +4,6 @@ import styles from "./styles.module.scss";
 const yourImage = require("../../../../public/static/planning-page/location/botanica-location.webp");
 
 export default function MagnifyComponent() {
-  console.log(yourImage.default);
   return (
     <div className={styles.magnifier__body}>
       <Magnifier

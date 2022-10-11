@@ -10,7 +10,7 @@ export default function Index() {
   const images = [
     {
       id: 0,
-      url: image_1,
+      url: image_4,
     },
     {
       id: 1,
@@ -22,7 +22,7 @@ export default function Index() {
     },
     {
       id: 3,
-      url: image_4,
+      url: image_1,
     },
     {
       id: 4,

@@ -67,9 +67,9 @@
         @apply w-[93%] bottom-[-20%] flex-col-reverse space-x-0;
     }
 
-    @media screen and(max-width: 425px) {
-        @apply bottom-[-15%];
-    }
+    // @media screen and(max-width: 425px) {
+    //     @apply bottom-[-15%];
+    // }
 
     @media (max-width: 415px) and (max-height: 800px) {
         @apply bottom-[-12%];

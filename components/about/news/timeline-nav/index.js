@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Styles.module.scss";
 
 export default function Index({
@@ -9,7 +9,7 @@ export default function Index({
   handlerTabClick,
   isMounthDesk,
   setIsMounthDesk,
-  isYear
+  // isYear
 }) {
   const arr = [];
   for (let i = 0; i < isItem; i++) {

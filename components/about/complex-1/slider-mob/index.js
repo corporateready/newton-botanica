@@ -34,9 +34,21 @@ const swipePower = (offset, velocity) => {
 
 export const SliderMob = () => {
   const [[page, direction], setPage] = useState([0, 0]);
-
   const imageIndex = wrap(0, images.length, page);
 
+  const [constraint, setConstraint] = useState(0);
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const calcConstraint = () => {
+      setConstraint(ref?.current?.scrollWidth - ref?.current?.offsetWidth);
+    };
+
+    calcConstraint();
+    window.addEventListener("resize", calcConstraint);
+
+    return () => window.removeEventListener("resize", calcConstraint);
+  }, []);
+console.log(ref.current);
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
@@ -142,6 +154,7 @@ export const SliderMob = () => {
 
         <AnimatePresence initial={true} custom={direction}>
           <motion.div
+            ref={ref}
             key={page}
             className={styles.img}
             custom={direction}
