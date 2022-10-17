@@ -35,13 +35,11 @@ const swipePower = (offset, velocity) => {
 export const SliderMob = () => {
   const [[page, direction], setPage] = useState([0, 0]);
 
-
   const imageIndex = wrap(0, images.length, page);
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
 
-  
   return (
     <>
       <div className={styles.slider__body}>
@@ -140,33 +138,33 @@ export const SliderMob = () => {
             </defs>
           </svg>
         </button>
-          <AnimatePresence initial={true} custom={direction}>
-            <motion.div
-              key={page}
-              className={styles.img}
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { stiffness: 300, damping: 40 },
-                opacity: { duration: 0.5 },
-              }}
-              dragConstraints={{ left: 0, right: 0 }}
-              drag="x"
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = swipePower(offset.x, velocity.x);
-                if (swipe < -swipeConfidenceThreshold) {
-                  paginate(1);
-                } else if (swipe > swipeConfidenceThreshold) {
-                  paginate(-1);
-                }
-              }}
-            >
-              <motion.div key={page}>{images[imageIndex]}</motion.div>
-            </motion.div>
-          </AnimatePresence>
+        <AnimatePresence initial={true} custom={direction}>
+          <motion.div
+            key={page}
+            className={styles.img}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { stiffness: 300, damping: 40 },
+              opacity: { duration: 0.5 },
+            }}
+            dragConstraints={{ left: 0, right: 0 }}
+            drag="x"
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipe = swipePower(offset.x, velocity.x);
+              if (swipe < -swipeConfidenceThreshold) {
+                return page > 7 ? paginate(0) : paginate(1);
+              } else if (swipe > swipeConfidenceThreshold) {
+                return page < 1 ? paginate(0) : paginate(-1);
+              }
+            }}
+          >
+            <motion.div key={page}>{images[imageIndex]}</motion.div>
+          </motion.div>
+        </AnimatePresence>
 
         <div className={styles.slider__pagination}>
           <span className={styles.inner__counter}>{page + 1}</span>/
