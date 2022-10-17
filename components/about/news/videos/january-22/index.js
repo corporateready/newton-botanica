@@ -31,9 +31,10 @@ export function January() {
       animate={{ opacity: 1, transition: { duration: 0.3 } }}
     >
       <div className={styles.video__wrapper}>
+      <div className={styles.video__wrapper_frame}>
           <iframe
             type="text/html"
-            height="590px"
+            height="100%"
             width="100%"
             className={styles.video__body}
             src={`https://www.youtube-nocookie.com/embed/rFUvaWXDvPc?origin=https://main--mellifluous-queijadas-43440a.netlify.app&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}
@@ -41,6 +42,7 @@ export function January() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+          </div>
       </div>
     </motion.div>
   );

@@ -9,11 +9,11 @@ import {
 } from "./imports";
 
 export default function News() {
-  const isMounth = ["November/21", "January/22", "March/22", "June/22"];
+  const isMounth = ["June/22","March/22", "January/22","November/21" ];
 
   // const [isYear, setIsYear] = useState("2022");
   const [isMounthDesk, setIsMounthDesk] = useState(0);
-  const [isMounthMob, setIsMounthMob] = useState("November/21");
+  const [isMounthMob, setIsMounthMob] = useState("June/22");
   const [isItem] = useState(4);
   const [isActive, setIsActive] = useState(0);
   const [isToggle, setIsToggle] = useState(1);
@@ -91,10 +91,10 @@ function Year22({ isMounthDesk, isMounthMob }) {
   return (
     <>
       <div className={styles.mounth__desk}>
-        {isMounthDesk === 0 && <November21 />}
-        {isMounthDesk === 1 && <January />}
-        {isMounthDesk === 2 && <March />}
-        {isMounthDesk === 3 && <June />}
+        {isMounthDesk === 3 && <November21 />}
+        {isMounthDesk === 2 && <January />}
+        {isMounthDesk === 1 && <March />}
+        {isMounthDesk === 0 && <June />}
       </div>
       <div className={styles.mounth__mob}>
         {isMounthMob === "November/21" && <November21 />}

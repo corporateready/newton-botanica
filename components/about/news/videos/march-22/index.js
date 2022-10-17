@@ -31,15 +31,17 @@ export function March() {
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
     >
       <div className={styles.video__wrapper}>
+      <div className={styles.video__wrapper_frame}>
           <iframe
             type="text/html"
-            height="590px"
+            height="100%"
             width="100%"
             src={`https://www.youtube-nocookie.com/embed/P8BNoZZgzSk?origin=https://main--mellifluous-queijadas-43440a.netlify.app&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+          </div>
       </div>
     </motion.div>
   );

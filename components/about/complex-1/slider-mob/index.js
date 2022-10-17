@@ -34,25 +34,14 @@ const swipePower = (offset, velocity) => {
 
 export const SliderMob = () => {
   const [[page, direction], setPage] = useState([0, 0]);
+
+
   const imageIndex = wrap(0, images.length, page);
-
-  const [constraint, setConstraint] = useState(0);
-  const ref = React.useRef(null);
-  React.useEffect(() => {
-    const calcConstraint = () => {
-      setConstraint(ref?.current?.scrollWidth - ref?.current?.offsetWidth);
-    };
-
-    calcConstraint();
-    window.addEventListener("resize", calcConstraint);
-
-    return () => window.removeEventListener("resize", calcConstraint);
-  }, []);
-console.log(ref.current);
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
 
+  
   return (
     <>
       <div className={styles.slider__body}>
@@ -151,36 +140,33 @@ console.log(ref.current);
             </defs>
           </svg>
         </button>
-
-        <AnimatePresence initial={true} custom={direction}>
-          <motion.div
-            ref={ref}
-            key={page}
-            className={styles.img}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 40 },
-              opacity: { duration: 0.5 },
-            }}
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0}
-            drag="x"
-            onDragEnd={(e, { offset, velocity }) => {
-              const swipe = swipePower(offset.x, velocity.x);
-              if (swipe < -swipeConfidenceThreshold) {
-                paginate(1);
-              } else if (swipe > swipeConfidenceThreshold) {
-                paginate(-1);
-              }
-            }}
-          >
-            <div key={page}>{images[imageIndex]}</div>
-          </motion.div>
-        </AnimatePresence>
+          <AnimatePresence initial={true} custom={direction}>
+            <motion.div
+              key={page}
+              className={styles.img}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { stiffness: 300, damping: 40 },
+                opacity: { duration: 0.5 },
+              }}
+              dragConstraints={{ left: 0, right: 0 }}
+              drag="x"
+              onDragEnd={(e, { offset, velocity }) => {
+                const swipe = swipePower(offset.x, velocity.x);
+                if (swipe < -swipeConfidenceThreshold) {
+                  paginate(1);
+                } else if (swipe > swipeConfidenceThreshold) {
+                  paginate(-1);
+                }
+              }}
+            >
+              <motion.div key={page}>{images[imageIndex]}</motion.div>
+            </motion.div>
+          </AnimatePresence>
 
         <div className={styles.slider__pagination}>
           <span className={styles.inner__counter}>{page + 1}</span>/
