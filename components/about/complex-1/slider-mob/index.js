@@ -148,7 +148,7 @@ export const SliderMob = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { stiffness: 300, damping: 40 },
+              x: { damping: 30 },
               opacity: { duration: 0.5 },
             }}
             dragConstraints={{ left: 0, right: 0 }}
