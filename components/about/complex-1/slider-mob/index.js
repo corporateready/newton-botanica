@@ -9,7 +9,7 @@ import styles from "./Slider.module.scss";
 const variants = {
   enter: (direction) => {
     return {
-      x: direction > 0 ? 500 : -500,
+      x: direction > 0 ? 300 : -300,
       opacity: 0,
     };
   },
@@ -21,7 +21,7 @@ const variants = {
   exit: (direction) => {
     return {
       zIndex: 0,
-      x: direction < 0 ? 500 : -500,
+      x: direction < 0 ? 300 : -300,
       opacity: 0,
     };
   },
@@ -148,7 +148,7 @@ export const SliderMob = () => {
             animate="center"
             exit="exit"
             transition={{
-              x: { damping: 30 },
+              // x: { damping: 30 },
               opacity: { duration: 0.5 },
             }}
             dragConstraints={{ left: 0, right: 0 }}
