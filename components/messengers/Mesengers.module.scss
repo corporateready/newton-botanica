@@ -250,7 +250,7 @@
         width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
         height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
     }
-
+  
     &:hover {
       animation-name:  pulse;
       animation-duration: 1.2s;

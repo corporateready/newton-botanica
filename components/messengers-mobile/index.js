@@ -25,14 +25,33 @@ const messengers = [
     irl: "http://m.me/NewtonHouse.md?roistat_visit=666144",
     title: "messenger",
   },
-  {
-    id: 4,
-    icon: <FaPhoneAlt size={25} color="white" />,
-    irl: "tel:+3736082020",
-    title: "phone",
-  },
 ];
 export default function Index() {
+  React.useEffect(() => {
+    (function (w, d, s, h, id) {
+      w.roistatProjectId = id;
+      w.roistatHost = h;
+      var p = d.location.protocol == "https:" ? "https://" : "http://";
+      var u = /^.roistat_visit=[^;]+(.)?$/.test(d.cookie)
+        ? "/dist/module.js"
+        : "/api/site/1.0/" +
+          id +
+          "/init?referrer=" +
+          encodeURIComponent(d.location.href);
+      var js = d.createElement(s);
+      js.charset = "UTF-8";
+      js.async = 1;
+      js.src = p + h + u;
+      var js2 = d.getElementsByTagName(s)[0];
+      js2.parentNode.insertBefore(js, js2);
+    })(
+      window,
+      document,
+      "script",
+      "cloud.roistat.com",
+      "e39442a8581e616d741b8f0786da960e"
+    );
+  }, []);
   return (
     <>
       {messengers.map((item) => (
@@ -40,6 +59,14 @@ export default function Index() {
           <a className={styles[item.title]}>{item.icon}</a>
         </Link>
       ))}
+      <div className={styles.item__phone}>
+        <a href="tel:+37360802020" className={styles.item__mess_phone}></a>
+        <FaPhoneAlt
+          size={22}
+          color="#ffffff"
+          className={styles.item__phone_icon}
+        />
+      </div>
     </>
   );
 }
