@@ -60,7 +60,7 @@ export default function Index() {
         </Link>
       ))}
       <div className={styles.item__phone}>
-          <a href="tel:+40726080202" className={styles.item__mess_phone}></a>
+          <a href="tel:+37360802020" className={styles.item__mess_phone}></a>
           <FaPhoneAlt size={22} color="#ffffff" className={styles.item__phone_icon} />
         </div>
     </article>

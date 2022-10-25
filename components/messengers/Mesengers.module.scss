@@ -238,7 +238,7 @@
     filter: drop-shadow(1.14573px 3.8324px 4px rgba(0, 0, 0, 0.13));
   }
   .item__phone {
-    @apply w-[46px] h-[46px] bg-[#2BB018] rounded-full flex items-center justify-center relative bottom-0 lg:bottom-2 left-0;
+    @apply w-[46px] h-[46px] bg-[#2BB018] rounded-full flex items-center justify-center relative bottom-0 left-0;
     filter: drop-shadow(1.14573px 3.8324px 4px rgba(0, 0, 0, 0.13));
 
     @media screen and(max-width: 1440px) {
@@ -250,10 +250,7 @@
         width: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
         height: calc(42px + (75 - 42)*(100vw - 320px)/(576 - 320));
     }
-  
-    // @media screen and (max-width:576px) {
-    //   @apply bg-white;
-    // }
+
     &:hover {
       animation-name:  pulse;
       animation-duration: 1.2s;
