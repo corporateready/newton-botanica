@@ -94,14 +94,14 @@ export default function About() {
       </Head>
 
       <section className={styles.planning__section}>
-        <div className={styles.planning__bg}>
+        {/* <div className={styles.planning__bg}>
           <Image
             src={planning__bg}
             layout="fill"
             priority
             alt="home background"
           />
-        </div>
+        </div> */}
         <div className={styles.planning__bg_mob}>
           <Image
             src={planning__bg_mob}

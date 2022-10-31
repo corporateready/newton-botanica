@@ -1,14 +1,19 @@
 @import'./mixins.scss';
 
 .planning__section {
-    @apply h-full w-full relative top-0 left-0 overflow-hidden;
+    @apply h-full w-screen relative top-0 left-0 overflow-hidden bg-center bg-no-repeat bg-cover;
+
+    background-image: url('../public/static/planning-page/about-bg-desktop.webp');
+
+    width: 100%;
+    height: 100%;
 
     @media screen and (max-width: 576px) {
         @apply pb-[100px];
     }
 }
 .planning__bg {
-    @apply absolute top-0 left-0 min-h-full max-h-full w-full z-auto object-fill;
+    @apply absolute top-0 left-0 min-h-full max-h-full w-full z-auto object-cover;
 
     @media screen and (max-width: 576px) {
         @apply hidden;
