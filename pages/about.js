@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
-import Image from "next/image";
-import planning__bg_mob from "/public/static/planning-page/about-bg-mob.webp";
 import {
   Hero,
   Complex,
@@ -93,22 +91,6 @@ export default function About() {
       </Head>
 
       <section className={styles.planning__section}>
-        {/* <div className={styles.planning__bg}>
-          <Image
-            src={planning__bg}
-            layout="fill"
-            priority
-            alt="home background"
-          />
-        </div> */}
-        <div className={styles.planning__bg_mob}>
-          <Image
-            src={planning__bg_mob}
-            layout="fill"
-            priority
-            alt="mobile home background"
-          />
-        </div>
 
         <Layout>
           <div className={styles.container}>
