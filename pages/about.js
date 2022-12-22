@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/Plannig.module.scss";
 import Layout from "../components/about/layout";
 import Image from "next/image";
-import planning__bg from "/public/static/planning-page/about-bg-desktop.webp";
 import planning__bg_mob from "/public/static/planning-page/about-bg-mob.webp";
 import {
   Hero,
