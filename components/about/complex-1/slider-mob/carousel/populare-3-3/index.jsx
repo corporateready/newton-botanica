@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Populare.module.scss";
 
-import item__img_5 from "../../../../../../public/static/planning-page/complex/items-images/image-17.webp";
+import item__img_5 from "../../../../../../public/static/planning-page/complex/items-images/image-13.webp";
 import item__img_6 from "../../../../../../public/static/planning-page/complex/items-images/image-4.webp";
 
 import icon_5 from "../../../../../../public/static/planning-page/complex/icons/17-mobilier_modern.svg";

@@ -56,7 +56,7 @@ export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
               className={styles.button__planning}
               onClick={hanlerIsCallOpenPopup}
             >
-            rezrervă timpul pentru a fi telefonat
+            rezerervă timpul pentru a fi telefonat
             </button>
           </div>
         </article>

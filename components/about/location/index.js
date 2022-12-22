@@ -141,7 +141,7 @@ export default function index() {
                 </a>
               </Link>
               <Link href="https://g.page/Newton-House-srl?share">
-                <a className={styles.location__address_detail}>Vezi traseul</a>
+                <a className={styles.location__address_detail} target="_blank">Vezi traseul</a>
               </Link>
             </div>
           </div>
