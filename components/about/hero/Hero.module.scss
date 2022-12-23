@@ -1,15 +1,8 @@
 @import '../../../styles/mixins.scss';
 
 .hero__section {
-    @apply h-full w-full relative top-0 left-0;
+    @apply h-full w-full relative top-0 left-0 overflow-x-hidden;
     font-family: 'Gilroy-Bold';
-}
-.hero__bg {
-    @apply flex absolute top-0 left-0 h-full w-full;
-
-    @media screen and(max-width: 576px) {
-        @apply hidden;
-    }
 }
 .hero__bg_mobile {
     @apply hidden;
@@ -28,7 +21,7 @@
 }
 .hero__title {
     @include text(32px, 150%, 400, #2D2D2B);
-    @apply relative pt-[2%] uppercase text-center;
+    @apply relative pt-[2%] uppercase text-center z-10;
 
     @media screen and(max-width: 1440px) {
     font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
@@ -61,15 +54,11 @@
     }
 }
 .hero__buttons {
-    @apply flex justify-center pt-[37%] pb-[3%] mx-auto relative space-x-[3%] w-[60%];
+    @apply flex justify-center pt-[37%] pb-[3%] mx-auto relative space-x-[3%] w-[60%] z-10;
 
     @media screen and(max-width: 576px) {
         @apply w-[93%] bottom-[-20%] flex-col-reverse space-x-0;
     }
-
-    // @media screen and(max-width: 425px) {
-    //     @apply bottom-[-15%];
-    // }
 
     @media (max-width: 415px) and (max-height: 800px) {
         @apply bottom-[-12%];

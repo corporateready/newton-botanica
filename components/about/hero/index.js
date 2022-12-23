@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Hero.module.scss";
 import Image from "next/image";
-import hero__bg from "../../../public/static/planning-page/NHGB_desktop_ml_resize_x2.webp";
+
 import hero__bg_mobile from "../../../public/static/planning-page/NHGB_mobile_ml_resize_x2.webp";
+import HeroBG from "./image-bg"
 
 export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
   
@@ -17,16 +18,7 @@ export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
   return (
     <>
       <div className={styles.hero__section}>
-        <div className={styles.hero__bg}>
-          <Image
-            src={hero__bg}
-            height={751}
-            width={1170}
-            objectFit="cover"
-            priority
-            alt="home background"
-          />
-        </div>
+        <HeroBG/>
         <div className={styles.hero__bg_mobile}>
           <Image
             src={hero__bg_mobile}
