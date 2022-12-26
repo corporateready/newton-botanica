@@ -21,6 +21,9 @@
 }
 .hero__title {
     @include text(32px, 150%, 400, #2D2D2B);
+    // span {
+    //     text-shadow: 1px 1px 2px #2e2e2e;
+    // }
     @apply relative pt-[2%] uppercase text-center z-10;
 
     @media screen and(max-width: 1440px) {
@@ -43,8 +46,10 @@
 
     span {
         @include text(32px, 150%, 400, #2BB018);
+        
 
         @media screen and(max-width: 1440px) {
+            
             font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
         }
 

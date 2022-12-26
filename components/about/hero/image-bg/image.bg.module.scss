@@ -1,55 +1,56 @@
 .hero__bg {
-    @apply flex absolute top-0 left-0 h-full w-full;
+    @apply flex absolute top-0 left-0 h-full w-full bg-cover bg-bottom bg-no-repeat z-0;
 
-    background-image: url("../../../../public/static/planning-page/hero-animete/white-cloud-blue-sky-background 1.png");
+    background-image: url("../../../../public/static/planning-page/hero-animete/white-cloud-blue-sky-background\ 1.png");
 
     @media screen and(max-width: 576px) {
         // @apply hidden;
     }
 }
 
-.hero__cloude {
-    @apply absolute top-0 left-0 h-full w-full z-[2] bg-repeat-x bg-cover bg-center;
+// .hero__cloude {
+//     @apply absolute top-0 left-0 h-full w-full z-[2] bg-repeat-x bg-cover bg-center;
 
-    background-image: url("../../../../public/static/planning-page/hero-animete/lighting-cloud.png");
+//     background-image: url("../../../../public/static/planning-page/hero-animete/lighting-cloud.png");
 
-    @media screen and(max-width: 576px) {
-        @apply hidden;
-    }
-}
+//     @media screen and(max-width: 576px) {
+//         @apply hidden;
+//     }
+// }
 
 .hero__cloude_animate__grey_3 {
-    @apply absolute top-0 left-0 h-[50vw] w-full bg-cover bg-center z-[2];
+    @apply relative top-0 left-0 h-[100%] w-[100%] bg-cover bg-center z-[2];
 
         &::after {
         content: '';
-        display: flex;
+        display: inline-flex;
+        flex-grow: 1;
         background-image: url("../../../../public/static/planning-page/hero-animete/clouds.webp");
-        @apply absolute top-0 left-0 h-full  w-full bg-no-repeat bg-contain bg-center;
+        @apply absolute top-0 left-0 h-full w-full bg-repeat bg-cover bg-center;
     }
 
     // background-image: url("../../../../public/static/planning-page/hero-animete/31003-7-storm-clipart.png");
 
     @media screen and(max-width: 576px) {
-        @apply absolute top-0 left-0 h-[30vw] w-full bg-cover bg-center z-[2];
+        @apply absolute top-0 left-0 h-[30vw] w-full bg-cover bg-no-repeat bg-center z-[2];
     }
 }
-.hero__cloude_animate__grey_4 {
-    @apply absolute top-0 left-0 h-[50vw] w-full bg-cover bg-center z-[2];
+// .hero__cloude_animate__grey_4 {
+//     @apply absolute top-0 left-0 h-[50vw] w-full bg-cover bg-center z-[2];
 
-        &::after {
-        content: '';
-        display: flex;
-        background-image: url("../../../../public/static/planning-page/hero-animete/clouds.webp");
-        @apply absolute top-0 left-0 h-full  w-full bg-no-repeat bg-contain bg-center;
-    }
+//         &::after {
+//         content: '';
+//         display: flex;
+//         background-image: url("../../../../public/static/planning-page/hero-animete/clouds.webp");
+//         @apply absolute top-0 left-0 h-full  w-full bg-no-repeat bg-contain bg-center;
+//     }
 
-    // background-image: url("../../../../public/static/planning-page/hero-animete/31003-7-storm-clipart.png");
+//     // background-image: url("../../../../public/static/planning-page/hero-animete/31003-7-storm-clipart.png");
 
-    @media screen and(max-width: 576px) {
-        @apply absolute top-0 left-0 h-[50vw] w-full bg-cover bg-center z-[2];
-    }
-}
+//     @media screen and(max-width: 576px) {
+//         @apply absolute top-0 left-0 h-[50vw] w-full bg-cover bg-center z-[2];
+//     }
+// }
 
 .hero__build {
     @apply h-[37vw] w-full absolute bottom-0 left-0 z-10 bg-no-repeat bg-cover bg-center;

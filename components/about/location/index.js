@@ -27,7 +27,7 @@ import {
 import Head from "next/head";
 import MagnifyComponent from './magnify'
 import Image from "next/image";
-import location__bg from "../../../public/static/planning-page/location/botanica-location.webp"
+import location__bg from "../../../public/static/planning-page/location/panoramic-botanica.webp"
 
 export default function index() {
   const [isOpen, setIsOpen] = React.useState(false);

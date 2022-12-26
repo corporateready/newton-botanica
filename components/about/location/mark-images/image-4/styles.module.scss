@@ -2,27 +2,39 @@
 
 .loaction__mark_description {
     display: block;
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        height: 100%;
-        width: 100%;
-        background-color: #fff;
-        z-index: 20;
-        overflow: hidden;
-        border-radius: 5px;
-        animation-name: is-open;
-        animation-duration: 0.5s;
-        animation-timing-function: ease-in-out;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    z-index: 20;
+    overflow: hidden;
+    border-radius: 5px;
+    animation-name: is-open;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
 
-        @keyframes is-open {
-           from {opacity: 0; x:0}
-           to {opacity: 1; x:100%}
+    @keyframes is-open {
+        from {
+            opacity: 0;
+            x: 0
         }
 
-        &:hover {
-            @apply cursor-pointer;
+        to {
+            opacity: 1;
+            x: 100%
         }
+    }
+
+    span {
+        @apply absolute top-0 left-0 h-full w-full bg-cover bg-center object-cover;
+        background-image: url('../../../../../public/static/planning-page/location/liceiul-teoretic-ni.webp');
+    }
+
+    &:hover {
+        @apply cursor-pointer;
+    }
 }
 
 .loaction__back_btn {
