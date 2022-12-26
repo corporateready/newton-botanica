@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./styles.module.scss";
-import image_1 from "../../../../public/static/planning-page/gallery/Gradina_1.jpg";
-import image_2 from "../../../../public/static/planning-page/gallery/Gradina_2.jpg";
-import image_3 from "../../../../public/static/planning-page/gallery/Gradina_3.jpg";
-import image_4 from "../../../../public/static/planning-page/gallery/Gradina_4.jpg";
+import image_1 from "../../../../public/static/planning-page/gallery/Gradina_1.webp";
+import image_2 from "../../../../public/static/planning-page/gallery/Gradina_2.webp";
+import image_3 from "../../../../public/static/planning-page/gallery/Gradina_3.webp";
+import image_4 from "../../../../public/static/planning-page/gallery/Gradina_5.webp";
+import image_5 from "../../../../public/static/planning-page/gallery/Gradina_4.webp";
 
 export default function Index() {
   const images = [
     {
       id: 0,
-      url: image_4,
+      url: image_1,
     },
     {
       id: 1,
@@ -22,11 +23,11 @@ export default function Index() {
     },
     {
       id: 3,
-      url: image_1,
+      url: image_5,
     },
     {
       id: 4,
-      url: image_1,
+      url: image_4,
     },
   ];
 
