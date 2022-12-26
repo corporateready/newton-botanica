@@ -56,10 +56,10 @@ export default function Index() {
 
       <motion.div
         className={styles.hero__cloude_animate__grey_3}
-        initial={{ x: 0, y: 0, opacity: 0.2, scale: isMobile ? 1 : 0.5 }}
+        initial={{ x: 0, y: 0, opacity: 0.1, scale: isMobile ? 1 : 0.5 }}
         animate={{
-          x: isMobile ? [50, -700] : [100, -1700],
-          y: isMobile ? -100 : -700,
+          x: isMobile ? [50, -700] : [100, -1800],
+          y: isMobile ? -100 : -900,
           opacity: 1,
           scale: 3,
         }}
@@ -73,9 +73,9 @@ export default function Index() {
 
       <motion.div
         className={styles.hero__cloude_animate__grey_4}
-        initial={{ x: 0, y: 0, opacity: 0.2, scale: isMobile ? 1 : 0.5 }}
+        initial={{ x: 0, y: 0, opacity: 0.1, scale: isMobile ? 1 : 0.5 }}
         animate={{
-          x: isMobile ? [50, -300] : [100, -1300],
+          x: isMobile ? [50, -300] : [100, -2000],
           y: isMobile ? -200 : -700,
           opacity: 1,
           scale: 3,

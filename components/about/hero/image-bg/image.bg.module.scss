@@ -19,7 +19,7 @@
 }
 
 .hero__cloude_animate__grey_3 {
-    @apply absolute top-0 left-0 h-[20vw] w-full bg-cover bg-center z-[2];
+    @apply absolute top-0 left-0 h-[50vw] w-full bg-cover bg-center z-[2];
 
         &::after {
         content: '';
@@ -35,7 +35,7 @@
     }
 }
 .hero__cloude_animate__grey_4 {
-    @apply absolute top-0 left-0 h-[30vw] w-full bg-cover bg-center z-[2];
+    @apply absolute top-0 left-0 h-[50vw] w-full bg-cover bg-center z-[2];
 
         &::after {
         content: '';
