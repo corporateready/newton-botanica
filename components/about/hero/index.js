@@ -24,7 +24,6 @@ export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
             src={hero__bg_mobile}
             height={751}
             width={570}
-            objectFit="cover"
             priority
             alt="home background"
           />

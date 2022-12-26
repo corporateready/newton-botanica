@@ -9,7 +9,7 @@
 }
 
 .hero__cloude {
-    @apply absolute top-0 left-0 h-full w-full z-[2];
+    @apply absolute top-0 left-0 h-full w-full z-[2] bg-repeat-x bg-cover bg-center;
 
     background-image: url("../../../../public/static/planning-page/hero-animete/lighting-cloud.png");
 
@@ -18,50 +18,36 @@
     }
 }
 
-.hero__cloude_animate__grey_1 {
-    @apply absolute top-[3vw] left-0 h-[13vw] w-[70%] z-[2] opacity-30;
-
-    &::after {
-        content: '';
-        display: flex;
-        background-image: url("../../../../public/static/planning-page/hero-animete/31003-7-storm-clipart.png");
-        @apply absolute top-0 left-0 h-full bg-no-repeat  w-full bg-contain bg-center rotate-180 opacity-70;
-    }
-
-    
-
-    @media screen and(max-width: 576px) {
-        @apply absolute top-[23vw] left-0 h-[23vw] w-[70%] z-[2] opacity-30;
-    }
-}
-
-.hero__cloude_animate__grey_2 {
-    @apply absolute top-0 left-0 h-[5vw] w-[50%] bg-cover bg-center opacity-50 z-[2];
-
-    &::after {
-        content: '';
-        display: flex;
-        background-image: url("../../../../public/static/planning-page/hero-animete/31003-7-storm-clipart.png");
-        @apply absolute top-0 left-0 h-full bg-no-repeat  w-full bg-contain bg-center;
-    }
-    @media screen and(max-width: 576px) {
-        @apply absolute top-[10vw] left-0 h-[15vw] w-[50%] bg-cover bg-center opacity-50 z-[2];
-    }
-}
 .hero__cloude_animate__grey_3 {
-    @apply absolute top-0 left-0 h-[10vw] w-[50%] bg-cover bg-center z-[2];
+    @apply absolute top-0 left-0 h-[20vw] w-full bg-cover bg-center z-[2];
 
         &::after {
         content: '';
         display: flex;
-        background-image: url("../../../../public/static/planning-page/hero-animete/31003-7-storm-clipart.png");
+        background-image: url("../../../../public/static/planning-page/hero-animete/clouds.webp");
         @apply absolute top-0 left-0 h-full  w-full bg-no-repeat bg-contain bg-center;
     }
 
     // background-image: url("../../../../public/static/planning-page/hero-animete/31003-7-storm-clipart.png");
 
     @media screen and(max-width: 576px) {
-        @apply absolute top-0 left-0 h-[30vw] w-[50%] bg-cover bg-center z-[2];
+        @apply absolute top-0 left-0 h-[30vw] w-full bg-cover bg-center z-[2];
+    }
+}
+.hero__cloude_animate__grey_4 {
+    @apply absolute top-0 left-0 h-[30vw] w-full bg-cover bg-center z-[2];
+
+        &::after {
+        content: '';
+        display: flex;
+        background-image: url("../../../../public/static/planning-page/hero-animete/clouds.webp");
+        @apply absolute top-0 left-0 h-full  w-full bg-no-repeat bg-contain bg-center;
+    }
+
+    // background-image: url("../../../../public/static/planning-page/hero-animete/31003-7-storm-clipart.png");
+
+    @media screen and(max-width: 576px) {
+        @apply absolute top-0 left-0 h-[50vw] w-full bg-cover bg-center z-[2];
     }
 }
 
