@@ -32,7 +32,7 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-export const SliderMob = () => {
+export const SliderMob = ({hanlerIsComplexOpen}) => {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const imageIndex = wrap(0, images.length, page);
@@ -148,7 +148,6 @@ export const SliderMob = () => {
             animate="center"
             exit="exit"
             transition={{
-              // x: { damping: 30 },
               opacity: { duration: 0.5 },
             }}
             dragConstraints={{ left: 0, right: 0 }}
@@ -162,7 +161,7 @@ export const SliderMob = () => {
               }
             }}
           >
-            <motion.div key={page}>{images[imageIndex]}</motion.div>
+            <motion.div key={page} onClick={hanlerIsComplexOpen}>{images[imageIndex]}</motion.div>
           </motion.div>
         </AnimatePresence>
 

@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
 export default function Index() {
+
   const isMobile = useMediaQuery({
     query: "(max-width: 576px)",
   });
+  
   return (
     <div className={styles.hero__bg}>
 

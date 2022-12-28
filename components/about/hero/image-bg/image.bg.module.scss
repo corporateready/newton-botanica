@@ -59,6 +59,7 @@
 
     @media screen and(max-width: 576px) {
         @apply hidden;
+        // @apply absolute bottom-0 right-0 bg-cover bg-left h-[55vh] w-full;
     }
 
     @media screen and (min-width: 1600px) {

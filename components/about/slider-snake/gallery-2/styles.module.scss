@@ -50,7 +50,7 @@
 
     @media screen and (max-width: 576px) {
         @apply grid w-full gap-[1%] space-y-0;
-        grid-template-columns: repeat(5, 19.5%);
+        grid-template-columns: repeat(8, 19.5%);
     }
 }
 .image__thumbs_wrap {
@@ -103,7 +103,7 @@
     @apply flex justify-center space-x-3 my-[1%] absolute bottom-0 left-[25%] w-[50%];
 
     @media screen and (max-width: 576px) {
-        @apply space-x-[5%] my-[3%];
+        @apply space-x-[5%] my-[3%] w-full left-0;
     }
     @media screen and (max-width: 375px) {
         @apply my-[6%];

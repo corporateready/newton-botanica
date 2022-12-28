@@ -1,7 +1,7 @@
 import React from "react";
 import Magnifier from "react-magnifier";
 import styles from "./styles.module.scss";
-const yourImage = require("../../../../public/static/planning-page/location/botanica-location.webp");
+const yourImage = require("../../../../public/static/planning-page/location/panoramic-botanica.webp");
 
 export default function MagnifyComponent() {
   return (

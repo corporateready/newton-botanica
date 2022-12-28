@@ -8,8 +8,13 @@
     @apply hidden;
 
     @media screen and(max-width: 576px) {
-        @apply flex relative top-0 left-0 h-[80vh] w-full;
-        background-position: left;
+        @apply flex relative bottom-0 left-0 h-[80vh] w-full;
+
+        &::after {
+            content: "";
+            @apply absolute bottom-0 left-0 h-full w-full bg-contain bg-bottom bg-no-repeat;
+            background-image: url("../../../public/static/planning-page/hero-animete/GradinaBotanica-mobile.webp");
+        }
     }
 }
 .hero__inner {
@@ -31,18 +36,18 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply top-[-18%];
+        @apply top-[-35vw];
         line-height: 180%;
         font-size: calc(18px + (27 - 18)*(100vw - 320px)/(576 - 320));
     }
 
-    @media screen and(max-width: 425px) {
-        @apply top-[-18%];
-    }
+    // @media screen and(max-width: 425px) {
+    //     @apply top-[-18%];
+    // }
 
-    @media screen and(max-width: 415px) {
-        @apply top-[-15%];
-    }
+    // @media screen and(max-width: 415px) {
+    //     @apply top-[-15%];
+    // }
 
     span {
         @include text(32px, 150%, 400, #2BB018);
@@ -62,11 +67,11 @@
     @apply flex justify-center pt-[37%] pb-[3%] mx-auto relative space-x-[3%] w-[60%] z-10;
 
     @media screen and(max-width: 576px) {
-        @apply w-[93%] bottom-[-20%] flex-col-reverse space-x-0;
+        @apply w-[93%] bottom-[-40vw] flex-col-reverse space-x-0;
     }
 
     @media (max-width: 415px) and (max-height: 800px) {
-        @apply bottom-[-12%];
+        @apply bottom-[-17%];
     }
 }
 .button__about {

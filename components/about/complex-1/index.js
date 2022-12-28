@@ -2,7 +2,7 @@ import styles from "./Populare.module.scss";
 import { Slider } from "./slider";
 import { SliderMob } from "./slider-mob";
 
-export default function Populare() {
+export default function Populare({hanlerIsComplexOpen}) {
   return (
     <>
       <div className={styles.complex__section}>
@@ -17,7 +17,7 @@ export default function Populare() {
                 <Slider/>
               </div>
               <div className={styles.complex__grids_mob}>
-                <SliderMob/>
+                <SliderMob hanlerIsComplexOpen={hanlerIsComplexOpen}/>
               </div>
             </div>
           </div>

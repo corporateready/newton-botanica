@@ -2,16 +2,17 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Populare.module.scss";
 
-import item__img_3 from "../../../../../../public/static/planning-page/complex/items-images/image-7.webp";
+import item__img_3 from "../../../../../../public/static/planning-page/complex/items-images/image-18.webp";
 import item__img_4 from "../../../../../../public/static/planning-page/complex/items-images/image-5.webp";
 
-import icon_3 from "../../../../../../public/static/planning-page/complex/icons/03-o_cheie_de_acces.svg";
+import icon_3 from "../../../../../../public/static/planning-page/complex/icons/16-terenuri_sportive.svg";
 import icon_4 from "../../../../../../public/static/planning-page/complex/icons/04-acces_prin_3_intrari.svg";
 
 export default function Index() {
   return (
     <>
     <div className={styles.complex__grid_month}>
+
       <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
           <Image src={item__img_3} height={303} width={435} priority alt="" />
@@ -21,10 +22,11 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          O cheie de acces 
+          Terenuri sportive
           </p>
         </div>
       </div>
+
       <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
           <Image src={item__img_4} height={303} width={435} priority alt="" />

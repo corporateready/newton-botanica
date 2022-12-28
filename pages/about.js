@@ -18,8 +18,11 @@ import OfferCallRezerve from "../components/popup-phone-offer";
 import FromDesignPopUp from "../components/name-design-phone-popup";
 import FromPaymentPopUp from "../components/name-payment-phone-popup";
 import MessengerMobile from "../components/messengers-mobile";
+import ComplexScreen from "../components/about/complex-1/carousel/full-screen-image"
 
 export default function About() {
+  const [isComplexOpen, setIsComplexOpen] = React.useState(false)
+
   const [isPopUpSend, setIsPopUpSend] = useState(false);
   const [isPDFOpen, setIsPDFOpen] = useState(false);
   const [isCallRezervePopUp, setIsCallRezervePopUp] = useState(false);
@@ -31,6 +34,10 @@ export default function About() {
       setScroll(window.scrollY > 0);
     });
   }, []);
+
+  const hanlerIsComplexOpen = () => {
+    setIsComplexOpen(!isComplexOpen);
+  };
 
   const hanlerCloseDesignPopup = () => {
     setIsPopUpSend(!isPopUpSend);
@@ -99,7 +106,7 @@ export default function About() {
               hanlerClosePopup={hanlerClosePopup}
               setIsCallRezervePopUp={setIsCallRezervePopUp}
             />
-            <Complex />
+            <Complex hanlerIsComplexOpen={hanlerIsComplexOpen}/>
             <Designs
               setIsPopUpSend={setIsPopUpSend}
               hanlerCloseDesignPopup={hanlerCloseDesignPopup}
@@ -113,6 +120,10 @@ export default function About() {
             <News />
           </div>
         </Layout>
+
+        {isComplexOpen && (
+          <ComplexScreen hanlerIsComplexOpen={hanlerIsComplexOpen} />
+        )}
         {isPDFOpen && (
           <OfferPDFOpenSending hanlerClosePopup={hanlerClosePopup} />
         )}
@@ -125,7 +136,9 @@ export default function About() {
         {isPaymentPopUp && (
           <FromPaymentPopUp hanlerClosePaymentPopup={hanlerClosePaymentPopup} />
         )}
+
       </section>
+
       <div className={styles.about__messenger_mob}>
         <AnimatePresence>
           {scroll && (

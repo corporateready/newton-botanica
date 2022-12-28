@@ -29,7 +29,14 @@ import MagnifyComponent from './magnify'
 import Image from "next/image";
 import location__bg from "../../../public/static/planning-page/location/panoramic-botanica.webp"
 
-export default function index() {
+import { useMediaQuery } from "react-responsive";
+
+export default function Index() {
+
+  // const isMobile = useMediaQuery({
+  //   query: "(max-width: 576px)",
+  // });
+
   const [isOpen, setIsOpen] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);
   const [isOpen3, setIsOpen3] = React.useState(false);
