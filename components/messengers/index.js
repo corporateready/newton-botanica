@@ -10,13 +10,13 @@ const messengers = [
   {
     id: 1,
     icon: <FaWhatsapp size={30} color="white" />,
-    irl: "https://api.whatsapp.com/send?phone=+37360802020&text=I'm%20interested%20in%20your%20car%20for%20sale",
+    irl: "https://api.whatsapp.com/send?phone=+37360044040&text=I'm%20interested%20in%20your%20car%20for%20sale",
     title: "whatsapp",
   },
   {
     id: 2,
     icon: <FaViber size={30} color="white" />,
-    irl: "viber://chat?number=37360802020",
+    irl: "viber://chat?number=37360044040",
     title: "viber",
   },
   {
@@ -60,7 +60,7 @@ export default function Index() {
         </Link>
       ))}
       <div className={styles.item__phone}>
-        <a href="tel:+37360802020" className={styles.item__mess_phone}></a>
+        <a href="tel:+37360044040" className={styles.item__mess_phone}></a>
         <FaPhoneAlt
           size={22}
           color="#ffffff"

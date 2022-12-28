@@ -2,6 +2,6 @@
     @apply inline-block absolute bottom-[57%] left-[61%] z-10 h-[6%] w-[9%] bg-transparent hover:cursor-pointer;
 
     @media screen and (max-width: 576px) {
-        @apply inline-block absolute bottom-[63%] left-[61%] z-10 h-[5%] w-[7%] bg-transparent hover:cursor-pointer;
+        @apply hidden;
     }
 }

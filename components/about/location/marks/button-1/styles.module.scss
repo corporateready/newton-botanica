@@ -1,7 +1,7 @@
 .loaction__mark {
-    @apply inline-block absolute top-[33%] left-[44%] z-10 h-[6%] w-[12%] bg-transparent hover:cursor-pointer;
+    @apply hidden;
 
-    @media screen and (max-width: 576px) {
-        @apply inline-block absolute top-[28%] left-[44%] z-10 h-[6%] w-[12%] bg-transparent hover:cursor-pointer;
+    @media screen and (min-width: 576px) {
+        @apply inline-block absolute top-[33%] left-[44%] z-10 h-[6%] w-[12%] bg-transparent hover:cursor-pointer;
     }
 }

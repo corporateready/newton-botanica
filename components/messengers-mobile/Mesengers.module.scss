@@ -54,6 +54,7 @@
 .viber {
     @apply bg-[#7F4DA0] h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+
     @media screen and (min-width: 576px) {
         &:hover {
             animation-name:  pulse;
@@ -96,6 +97,7 @@
 .messenger {
     @apply bg-white h-12 w-12 flex justify-center items-center rounded-full hover:cursor-pointer;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+    
     @media screen and (min-width: 576px) {
         &:hover {
             animation-name:  pulse;
