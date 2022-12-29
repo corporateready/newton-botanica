@@ -13,7 +13,12 @@ import image_8 from "../../../../public/static/planning-page/gallery/Gradina_4.w
 
 import { useMediaQuery } from "react-responsive";
 
+import { Item1Context } from "../../../../pages/about";
+import { Item2Context } from "../../../../pages/about";
+
 export default function Index() {
+  const [setIsComplexOpen1] = React.useContext(Item1Context);
+  const [setIsComplexOpen2] = React.useContext(Item2Context);
 
   const isMobile = useMediaQuery({
     query: "(min-width: 576px)",
@@ -55,28 +60,38 @@ export default function Index() {
   ];
 
   const [sliderData, setSliderData] = useState(images[0]);
+  const [imageURL, setImageURL] = React.useState("");
+
+  console.log("imageURL: " + imageURL);
 
   const handleClick = (idx) => {
     const currentSlide = images[idx];
     setSliderData(currentSlide);
   };
 
-  // console.log(sliderData.id);
-
   return (
     <>
       <div className={styles.slider__wrapper}>
-        <div className={styles.slider}>
-          <div className={styles.image__wrap}>
+        <div
+          className={styles.slider}
+          
+        >
+          <motion.div className={styles.image__wrap}
+          initial={{ scale: 1 }}
+          whileTap={{ scale: 1.5 }}
+          exit={{scale: 1}}
+          >
             <div className={styles.image_}>
               <Image src={sliderData.url} layout="fill" priority alt="" />
             </div>
-          </div>
+          </motion.div>
 
           <motion.div
             className={styles.thumbsnail__wrapper}
             drag={isMobile ? "y" : "x"}
-            dragConstraints={isMobile ? { top: -300, bottom: 0 } : { left: -225, right: 0 }}
+            dragConstraints={
+              isMobile ? { top: -300, bottom: 0 } : { left: -225, right: 0 }
+            }
           >
             {images.map((itemUrl, idx) => (
               <div

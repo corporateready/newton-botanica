@@ -59,6 +59,9 @@ export const Item18Context = React.createContext();
 
 export default function About() {
   const [isComplexOpen1, setIsComplexOpen1] = React.useState(false);
+  const [imageURL, setImageURL] = React.useState('')
+
+
   const [isComplexOpen2, setIsComplexOpen2] = React.useState(false);
   const [isComplexOpen3, setIsComplexOpen3] = React.useState(false);
   const [isComplexOpen4, setIsComplexOpen4] = React.useState(false);
@@ -89,8 +92,9 @@ export default function About() {
     });
   }, []);
 
-  const hanlerIsComplexOpen1 = () => {
+  const hanlerIsComplexOpen1 = (url) => {
     setIsComplexOpen1(!isComplexOpen1);
+    setImageURL(url)
   };
 
   const hanlerIsComplexOpen2 = () => {
@@ -245,10 +249,6 @@ export default function About() {
                                         <div className="relative">
                                           <Head>
                                             <link rel="prefetch" />
-                                            <link
-                                              rel="preconnect"
-                                              href="http://localhost:3000/about/"
-                                            />
                                             <title description="">
                                               NHGB | DESPRE CASĂ
                                             </title>

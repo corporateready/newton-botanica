@@ -13,7 +13,7 @@ export default function MarkButton_8({handlerIsOpen8}) {
   return (
     <motion.button
       className={styles.loaction__mark}
-      disabled={isMobile? true:false}
+      disabled={isMobile ? true : false}
       onClick={handlerIsOpen8}
     >
       <Image
