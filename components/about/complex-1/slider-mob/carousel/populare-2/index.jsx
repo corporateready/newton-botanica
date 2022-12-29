@@ -8,11 +8,22 @@ import item__img_2 from "../../../../../../public/static/planning-page/complex/i
 import cart from "../../../../../../public/static/planning-page/complex/icons/parking.svg";
 import icon_2 from "../../../../../../public/static/planning-page/complex/icons/swiming.svg";
 
+import { Item3Context } from "../../../../../../pages/about";
+import { Item4Context } from "../../../../../../pages/about";
+
 export default function Index() {
+  
+  const [setIsComplexOpen3] = React.useContext(Item3Context)
+  const [setIsComplexOpen4] = React.useContext(Item4Context)
+
   return (
     <div className={styles.complex__grid_month}>
 
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={()=>{
+        setIsComplexOpen3(true)
+      }}
+      >
         <div className={styles.item__bg}>
           <Image src={location__bg} height={303} width={435} priority alt="" />
         </div>
@@ -26,7 +37,11 @@ export default function Index() {
         </div>
       </div>
 
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={()=>{
+        setIsComplexOpen4(true)
+      }}
+      >
         <div className={styles.item__bg}>
           <Image src={item__img_2} height={303} width={435} priority alt="" />
         </div>

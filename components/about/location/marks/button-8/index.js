@@ -4,10 +4,16 @@ import pinIcon from "../../../../../public/static/planning-page/location/pin-GB.
 import { motion } from "framer-motion";
 import styles from './styles.module.scss'
 
+import { useMediaQuery } from "react-responsive";
+
 export default function MarkButton_8({handlerIsOpen8}) {
+  const isMobile = useMediaQuery({
+    query: "(max-width: 576px)",
+  });
   return (
     <motion.button
       className={styles.loaction__mark}
+      disabled={isMobile? true:false}
       onClick={handlerIsOpen8}
     >
       <Image

@@ -8,12 +8,21 @@ import item__img_6 from "../../../../../../public/static/planning-page/complex/i
 import icon_5 from "../../../../../../public/static/planning-page/complex/icons/05-interfon_smart.svg";
 import icon_6 from "../../../../../../public/static/planning-page/complex/icons/02-supraveghere24-7.svg";
 
+import { Item5Context } from "../../../../../../pages/about";
+import { Item6Context } from "../../../../../../pages/about";
+
 export default function Index() {
+  const [setIsComplexOpen5] = React.useContext(Item5Context);
+  const [setIsComplexOpen6] = React.useContext(Item6Context);
   return (
     <>
     <div className={styles.complex__grid_month}>
 
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={() => {
+        setIsComplexOpen5(true);
+      }}
+      >
         <div className={styles.item__bg}>
           <Image src={item__img_5} height={303} width={435} priority alt="" />
         </div>
@@ -27,7 +36,11 @@ export default function Index() {
         </div>
       </div>
 
-      <div className={styles.complex__grid_item}>
+      <div className={styles.complex__grid_item}
+      onClick={() => {
+        setIsComplexOpen6(true);
+      }}
+      >
         <div className={styles.item__bg}>
           <Image src={item__img_6} height={303} width={435} priority alt="" />
         </div>

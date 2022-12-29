@@ -5,10 +5,9 @@ import Router from "next/router";
 import Link from "next/link";
 import close__button from "../../../../../public/static/planning-page/close-button-popup.svg";
 
-import image__item_1 from "../../../../../public/static/planning-page/complex/items-images/image-1.webp"
+import image__item_1 from "../../../../../public/static/planning-page/complex/items-images/image-1.webp";
 
-export default function Index({ hanlerIsComplexOpen }) {
-
+export default function Index({ hanlerIsComplexOpen5 }) {
   return (
     <>
       <section className={styles.offer__section}>
@@ -17,7 +16,7 @@ export default function Index({ hanlerIsComplexOpen }) {
             <button
               type="button"
               className={styles.offer__button_close}
-              onClick={hanlerIsComplexOpen}
+              onClick={hanlerIsComplexOpen5}
             >
               <Image
                 src={close__button}
@@ -36,10 +35,7 @@ export default function Index({ hanlerIsComplexOpen }) {
               /> */}
             </div>
 
-            <h2 className={styles.offer__title}>
-              Name item
-            </h2>
-
+            <h2 className={styles.offer__title}>Interfon smart </h2>
           </div>
         </div>
       </section>

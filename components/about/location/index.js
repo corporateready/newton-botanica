@@ -29,13 +29,7 @@ import MagnifyComponent from './magnify'
 import Image from "next/image";
 import location__bg from "../../../public/static/planning-page/location/panoramic-botanica.webp"
 
-import { useMediaQuery } from "react-responsive";
-
 export default function Index() {
-
-  // const isMobile = useMediaQuery({
-  //   query: "(max-width: 576px)",
-  // });
 
   const [isOpen, setIsOpen] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);
@@ -122,7 +116,7 @@ export default function Index() {
 
               <MarkButton_3 handlerIsOpen3={handlerIsOpen3} />
 
-              <MarkButton_4 handlerIsOpen4={handlerIsOpen4} />
+              <MarkButton_4 handlerIsOpen4={handlerIsOpen4} /> 
 
               <MarkButton_5 handlerIsOpen5={handlerIsOpen5} />
 
@@ -151,6 +145,7 @@ export default function Index() {
                 <a className={styles.location__address_detail} target="_blank">Vezi traseul</a>
               </Link>
             </div>
+            
           </div>
         </div>
       </div>

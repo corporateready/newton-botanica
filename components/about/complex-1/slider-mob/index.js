@@ -32,7 +32,7 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-export const SliderMob = ({ hanlerIsComplexOpen }) => {
+export const SliderMob = () => {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const imageIndex = wrap(0, images.length, page);
@@ -161,7 +161,6 @@ export const SliderMob = ({ hanlerIsComplexOpen }) => {
                 return page < 1 ? paginate(0) : paginate(-1);
               }
             }}
-            // onClick={hanlerIsComplexOpen}
           >
             <motion.div key={page}>{images[imageIndex]}</motion.div>
           </motion.div>

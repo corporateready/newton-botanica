@@ -1,7 +1,7 @@
 @import '../../../../../styles/mixins.scss';
 
 .offer__section {
-    @apply h-screen w-full fixed top-0 flex items-center justify-center left-0 z-20 duration-200;
+    @apply h-screen w-full fixed top-0 flex items-center justify-center left-0 z-[1100] duration-200;
     background: rgb(0 0 0 / 85%);
 
     @media screen and (max-width: 576px) {
@@ -10,7 +10,7 @@
 }
 
 .offer__inner {
-    @apply flex flex-col items-center justify-center h-screen w-[63%] bg-white relative z-auto pt-[3%] pb-[4.5%] mx-auto rounded-md;
+    @apply flex flex-col items-center justify-center h-screen w-[63%] bg-white relative z-auto mx-auto rounded-md;
 
     @media screen and (max-width: 576px) {
         @apply w-full pt-[12%] px-0;
@@ -25,22 +25,14 @@
 }
 .offer__title {
     @include text(32px, 130%, 600, #2D2D2B);
-    @apply text-center tracking-wider mt-[5%];
+    @apply text-center tracking-wider mt-[5%] text-[6vw];
     font-family: 'Montserrat Semibold';
-
-    @media screen and(max-width: 1440px) {
-        font-size: calc(14px + (38 - 14)*(100vw - 576px)/(1440 - 576));
-    }
-
-    @media screen and(max-width: 576px) {
-        font-size: calc(11px + (24 - 11)*(100vw - 320px)/(576 - 320));
-    }
 }
 .image__item {
     @apply relative top-0 left-0 h-[60vh] w-screen;
 
     span {
         @apply absolute h-full w-full bg-cover bg-center z-10; 
-    background-image: url("../../../../../public/static/planning-page/complex/items-images/image-1.webp");
+        background-image: url("../../../../../public/static/planning-page/complex/items-images/image-11.webp");
     }
 }
