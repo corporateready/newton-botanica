@@ -3,7 +3,7 @@ import styles from "./name-phone-popup.module.scss";
 import Image from "next/image";
 import close__button from "../../../../../public/static/planning-page/close-button-popup.svg";
 
-export default function Index({ hanlerIsComplexOpen3 }) {
+export default function Index({ hanlerIsComplexOpen1 }) {
   return (
     <>
       <section className={styles.offer__section}>
@@ -12,7 +12,7 @@ export default function Index({ hanlerIsComplexOpen3 }) {
             <button
               type="button"
               className={styles.offer__button_close}
-              onClick={hanlerIsComplexOpen3}
+              onClick={hanlerIsComplexOpen1}
             >
               <Image
                 src={close__button}

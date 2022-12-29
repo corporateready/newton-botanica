@@ -8,19 +8,12 @@ import item__img_2 from "../../../../../../public/static/planning-page/complex/i
 import cart from "../../../../../../public/static/planning-page/complex/icons/08-parking_carucioare_biciclete.svg";
 import icon_2 from "../../../../../../public/static/planning-page/complex/icons/kids-place.svg";
 
-import { Item13Context } from "../../../../../../pages/about";
-import { Item14Context } from "../../../../../../pages/about";
-
 export default function Index() {
-  const [setIsComplexOpen13] = React.useContext(Item13Context);
-  const [setIsComplexOpen14] = React.useContext(Item14Context);
+  
   return (
     <div className={styles.complex__grid_month}>
 
       <div className={styles.complex__grid_item}
-      onClick={() => {
-          setIsComplexOpen13(true);
-        }}
       >
         <div className={styles.item__bg}>
           <Image src={location__bg} height={303} width={435} priority alt="" />
@@ -36,9 +29,6 @@ export default function Index() {
       </div>
 
       <div className={styles.complex__grid_item}
-      onClick={() => {
-          setIsComplexOpen14(true);
-        }}
       >
         <div className={styles.item__bg}>
           <Image src={item__img_2} height={303} width={435} priority alt="" />

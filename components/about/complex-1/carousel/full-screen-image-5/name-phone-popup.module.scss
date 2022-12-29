@@ -32,7 +32,7 @@
     @apply relative top-0 left-0 h-[60vh] w-screen;
 
     span {
-        @apply absolute h-full w-full bg-cover bg-right z-10; 
-        background-image: url("../../../../../public/static/planning-page/complex/items-images/image-6.webp");
+        @apply absolute h-full w-full bg-cover bg-center z-10; 
+        background-image: url("../../../../../public/static/planning-page/gallery/Gradina_5.webp");
     }
 }

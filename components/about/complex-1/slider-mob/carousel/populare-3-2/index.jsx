@@ -8,20 +8,13 @@ import item__img_4 from "../../../../../../public/static/planning-page/complex/i
 import icon_3 from "../../../../../../public/static/planning-page/complex/icons/15-spatii_de_joaca.svg";
 import icon_4 from "../../../../../../public/static/planning-page/complex/icons/03-o_cheie_de_acces.svg";
 
-import { Item1Context } from "../../../../../../pages/about";
-import { Item2Context } from "../../../../../../pages/about";
-
 export default function Index() {
-  const [setIsComplexOpen1] = React.useContext(Item1Context);
-  const [setIsComplexOpen2] = React.useContext(Item2Context);
+  
 
   return (
     <div className={styles.complex__grid_month}>
       <div
         className={styles.complex__grid_item}
-        onClick={() => {
-          setIsComplexOpen1(true);
-        }}
       >
         <div className={styles.item__bg}>
           <Image src={item__img_3} height={303} width={435} priority alt="" />
@@ -36,9 +29,6 @@ export default function Index() {
 
       <div
         className={styles.complex__grid_item}
-        onClick={() => {
-          setIsComplexOpen2(true);
-        }}
       >
         <div className={styles.item__bg}>
           <Image src={item__img_4} height={303} width={435} priority alt="" />

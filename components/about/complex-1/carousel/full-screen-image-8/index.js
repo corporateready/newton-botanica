@@ -1,13 +1,9 @@
 import React from "react";
 import styles from "./name-phone-popup.module.scss";
 import Image from "next/image";
-import Router from "next/router";
-import Link from "next/link";
 import close__button from "../../../../../public/static/planning-page/close-button-popup.svg";
 
-import image__item_1 from "../../../../../public/static/planning-page/complex/items-images/image-1.webp";
-
-export default function Index({ hanlerIsComplexOpen8 }) {
+export default function Index({ hanlerIsComplexOpen1 }) {
   return (
     <>
       <section className={styles.offer__section}>
@@ -16,7 +12,7 @@ export default function Index({ hanlerIsComplexOpen8 }) {
             <button
               type="button"
               className={styles.offer__button_close}
-              onClick={hanlerIsComplexOpen8}
+              onClick={hanlerIsComplexOpen1}
             >
               <Image
                 src={close__button}
@@ -30,7 +26,6 @@ export default function Index({ hanlerIsComplexOpen8 }) {
               <span></span>
             </div>
 
-            <h2 className={styles.offer__title}>Lifturi moderne </h2>
           </div>
         </div>
       </section>

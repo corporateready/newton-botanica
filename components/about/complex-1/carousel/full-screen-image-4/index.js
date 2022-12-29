@@ -7,7 +7,7 @@ import close__button from "../../../../../public/static/planning-page/close-butt
 
 import image__item_1 from "../../../../../public/static/planning-page/complex/items-images/image-1.webp";
 
-export default function Index({ hanlerIsComplexOpen4 }) {
+export default function Index({ hanlerIsComplexOpen1 }) {
   return (
     <>
       <section className={styles.offer__section}>
@@ -16,7 +16,7 @@ export default function Index({ hanlerIsComplexOpen4 }) {
             <button
               type="button"
               className={styles.offer__button_close}
-              onClick={hanlerIsComplexOpen4}
+              onClick={hanlerIsComplexOpen1}
             >
               <Image
                 src={close__button}
@@ -30,7 +30,6 @@ export default function Index({ hanlerIsComplexOpen4 }) {
               <span></span>
             </div>
 
-            <h2 className={styles.offer__title}>Fitness centru cu bazin </h2>
           </div>
         </div>
       </section>

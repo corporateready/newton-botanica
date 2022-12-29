@@ -3,7 +3,7 @@ import styles from './Styles.module.scss'
 import Gallery from './gallery-2'
 import Head from 'next/head';
 
-export default function Index() {
+export default function Index({setImageURL}) {
     return (
       <>
       <Head>
@@ -16,7 +16,7 @@ export default function Index() {
             </h1>
             <div className={styles.complex__inner}>
               <div className={styles.complex__grids}>
-                <Gallery />
+                <Gallery setImageURL={setImageURL}/>
               </div>
             </div>
           </div>

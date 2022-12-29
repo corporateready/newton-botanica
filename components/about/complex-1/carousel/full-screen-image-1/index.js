@@ -32,7 +32,7 @@ export default function Index({ hanlerIsComplexOpen1 }) {
               <span></span>
             </motion.div>
 
-            <h2 className={styles.offer__title}>Spații de joacă</h2>
+            {/* <h2 className={styles.offer__title}>Spații de joacă</h2> */}
           </div>
         </div>
       </section>
