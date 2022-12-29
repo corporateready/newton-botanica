@@ -18,10 +18,14 @@ import OfferCallRezerve from "../components/popup-phone-offer";
 import FromDesignPopUp from "../components/name-design-phone-popup";
 import FromPaymentPopUp from "../components/name-payment-phone-popup";
 import MessengerMobile from "../components/messengers-mobile";
-import ComplexScreen from "../components/about/complex-1/carousel/full-screen-image"
+import ComplexScreen from "../components/about/complex-1/carousel/full-screen-image";
+
+export const Item1Context = React.createContext();
 
 export default function About() {
-  const [isComplexOpen, setIsComplexOpen] = React.useState(false)
+
+  const [isComplexOpen, setIsComplexOpen] = React.useState(false);
+  const [isComplexCount, setIsComplexCount] = React.useState(1);
 
   const [isPopUpSend, setIsPopUpSend] = useState(false);
   const [isPDFOpen, setIsPDFOpen] = useState(false);
@@ -35,7 +39,10 @@ export default function About() {
     });
   }, []);
 
+  // const item1 = React.useRef(hanlerIsComplexOpen)
+
   const hanlerIsComplexOpen = () => {
+    setIsComplexCount(isComplexCount);
     setIsComplexOpen(!isComplexOpen);
   };
 
@@ -98,7 +105,6 @@ export default function About() {
       </Head>
 
       <section className={styles.planning__section}>
-
         <Layout>
           <div className={styles.container}>
             <Hero
@@ -106,7 +112,7 @@ export default function About() {
               hanlerClosePopup={hanlerClosePopup}
               setIsCallRezervePopUp={setIsCallRezervePopUp}
             />
-            <Complex hanlerIsComplexOpen={hanlerIsComplexOpen}/>
+            <Complex hanlerIsComplexOpen={hanlerIsComplexOpen} />
             <Designs
               setIsPopUpSend={setIsPopUpSend}
               hanlerCloseDesignPopup={hanlerCloseDesignPopup}
@@ -136,7 +142,6 @@ export default function About() {
         {isPaymentPopUp && (
           <FromPaymentPopUp hanlerClosePaymentPopup={hanlerClosePaymentPopup} />
         )}
-
       </section>
 
       <div className={styles.about__messenger_mob}>

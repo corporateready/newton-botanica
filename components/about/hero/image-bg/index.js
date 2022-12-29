@@ -58,7 +58,7 @@ export default function Index() {
           scale: 3,
         }}
         transition={{
-          duration: 100,
+          duration: 1,
           ease: "easeInOut",
           times: 1,
           repeat: Infinity,

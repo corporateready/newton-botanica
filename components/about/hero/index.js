@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Hero.module.scss";
 import Image from "next/image";
 
-// import hero__bg_mobile from "../../../public/static/planning-page/NHGB_mobile_ml_resize_x2.webp";
 import HeroBG from "./image-bg"
 
 export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {

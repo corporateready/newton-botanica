@@ -4,13 +4,6 @@ import styles from "./styles.module.scss";
 
 export function November21() {
 
-  // React.useEffect(() => {
-  //   window.addEventListener("beforeunload", (ev) => {
-  //     ev.preventDefault();
-  //     // cookies.remove("userInfo");
-  //   });
-  // }, []);
-
   React.useEffect(() => {
     document.addEventListener("fetch", (event) => {
       event.respondWith(
@@ -39,7 +32,7 @@ export function November21() {
             height="100%"
             width="100%"
             className={styles.video__body}
-            src={`https://www.youtube-nocookie.com/embed/B4fC-lWRYJY?origin=https://main--mellifluous-queijadas-43440a.netlify.app&modestbranding=0&controls=0&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}
+            src={`https://www.youtube-nocookie.com/embed/B4fC-lWRYJY?origin=https://main--mellifluous-queijadas-43440a.netlify.app&modestbranding=0&controls=1&rel=0amp&showinfo=0&iv_load_policy=1&disablekb=0`}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

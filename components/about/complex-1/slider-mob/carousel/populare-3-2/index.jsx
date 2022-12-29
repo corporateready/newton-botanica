@@ -8,10 +8,13 @@ import item__img_4 from "../../../../../../public/static/planning-page/complex/i
 import icon_3 from "../../../../../../public/static/planning-page/complex/icons/15-spatii_de_joaca.svg";
 import icon_4 from "../../../../../../public/static/planning-page/complex/icons/03-o_cheie_de_acces.svg";
 
-export default function Index() {
+// import { Item1Context } from "../../../../../../pages/about";
+
+export default function Index({hanlerIsComplexOpen}) {
   
   return (
     <div className={styles.complex__grid_month}>
+      
       <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
           <Image src={item__img_3} height={303} width={435} priority alt="" />

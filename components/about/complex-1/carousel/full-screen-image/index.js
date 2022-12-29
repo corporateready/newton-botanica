@@ -5,9 +5,9 @@ import Router from "next/router";
 import Link from "next/link";
 import close__button from "../../../../../public/static/planning-page/close-button-popup.svg";
 
-export default function Index({ hanlerIsComplexOpen }) {
+import image__item_1 from "../../../../../public/static/planning-page/complex/items-images/image-1.webp"
 
-  const [spinner, setSpinner] = React.useState(false);
+export default function Index({ hanlerIsComplexOpen }) {
 
   return (
     <>
@@ -29,6 +29,11 @@ export default function Index({ hanlerIsComplexOpen }) {
 
             <div className={styles.image__item}>
               <span></span>
+              {/* <Image
+              src={image__item_1}
+              layout="fill"
+              alt=""
+              /> */}
             </div>
 
             <h2 className={styles.offer__title}>
