@@ -1,16 +1,18 @@
 @import '../../../../../styles/mixins.scss';
 
 .offer__section {
-    @apply h-screen w-full fixed top-0 flex items-center justify-center left-0 z-[1100] duration-200;
-    background: rgb(0 0 0 / 85%);
+    @apply hidden;
 
     @media screen and (max-width: 576px) {
-        @apply px-0 flex items-start pt-0;
+        @apply h-screen w-full fixed top-0 flex items-center justify-center left-0 z-[1100];
+    background: rgb(0 0 0 / 85%);
+    transition: all;
+    transition-duration: 2s;
     }
 }
 
 .offer__inner {
-    @apply flex flex-col items-center justify-center h-screen w-[63%] bg-white relative z-auto mx-auto rounded-md;
+    @apply flex flex-col items-center justify-center h-screen w-[63%] bg-transparent relative z-auto mx-auto rounded-md;
 
     @media screen and (max-width: 576px) {
         @apply w-full pt-[12%] px-0;

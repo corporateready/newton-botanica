@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./name-phone-popup.module.scss";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import close__button from "../../../../../public/static/planning-page/close-button-popup.svg";
 
 export default function Index({ hanlerIsComplexOpen1 }) {
   return (
@@ -15,12 +13,7 @@ export default function Index({ hanlerIsComplexOpen1 }) {
               className={styles.offer__button_close}
               onClick={hanlerIsComplexOpen1}
             >
-              <Image
-                src={close__button}
-                height={13}
-                width={13}
-                alt="close button icon"
-              />
+              <span className="text-white text-[6vw]">&#215;</span>
             </button>
 
             <motion.div 
@@ -32,7 +25,6 @@ export default function Index({ hanlerIsComplexOpen1 }) {
               <span></span>
             </motion.div>
 
-            {/* <h2 className={styles.offer__title}>Spații de joacă</h2> */}
           </div>
         </div>
       </section>

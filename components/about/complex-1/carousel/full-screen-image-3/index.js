@@ -9,17 +9,12 @@ export default function Index({ hanlerIsComplexOpen1 }) {
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
           <div className={styles.offer__inner}>
-            <button
+          <button
               type="button"
               className={styles.offer__button_close}
               onClick={hanlerIsComplexOpen1}
             >
-              <Image
-                src={close__button}
-                height={13}
-                width={13}
-                alt="close button icon"
-              />
+              <span className="text-white text-[6vw]">&#215;</span>
             </button>
 
             <div className={styles.image__item}>
