@@ -12,7 +12,7 @@
 
         &::after {
             content: "";
-            @apply absolute bottom-0 left-0 h-full w-full bg-contain bg-bottom bg-no-repeat;
+            @apply absolute bottom-[-5%] left-0 h-full w-full bg-contain bg-bottom bg-no-repeat;
             background-image: url("../../../public/static/planning-page/hero-animete/GradinaBotanica-mobile.webp");
         }
     }
@@ -38,7 +38,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply top-[-35vw];
+        @apply top-[-40vw];
         line-height: 180%;
         font-size: calc(18px + (27 - 18)*(100vw - 320px)/(576 - 320));
     }
@@ -62,10 +62,10 @@
     }
 }
 .hero__buttons {
-    @apply flex justify-center pt-[37%] pb-[3%] mx-auto relative space-x-[3%] w-[60%] z-10;
+    @apply flex justify-center pt-[37%] pb-[3%] mx-auto relative space-x-[2%] w-[60%] z-10;
 
     @media screen and(max-width: 576px) {
-        @apply w-[93%] bottom-[-40vw] flex-col-reverse space-x-0;
+        @apply w-[96%] bottom-[-30vw];
     }
 
     @media (max-width: 415px) and (max-height: 800px) {
@@ -74,7 +74,7 @@
 }
 .button__about {
     @include text(12px, 130%, 400, #fff);
-    @apply flex justify-center bg-[#2BB018] w-[50%] py-[2%] text-center rounded uppercase tracking-wider items-center hover:bg-[#1e7f11] hover:text-white hover:transition-all hover:duration-150;
+    @apply block bg-[#2BB018] w-[50%] py-[2%] text-center rounded uppercase tracking-wider items-center hover:bg-[#1e7f11] hover:text-white hover:transition-all hover:duration-150;
     
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
 
@@ -82,8 +82,7 @@
     font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-        @apply w-full mt-[4%] py-[4%];
-        font-size: calc(10px + (24 - 10)*(100vw - 320px)/(576 - 320));
+        @apply mt-[4%] py-[3%] text-[3.25vw];
     }
 }
 .button__planning {
@@ -96,8 +95,7 @@
         font-size: calc(5px + (12 - 5)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
-        @apply px-[5%] w-full py-[4%];
-        font-size: calc(10px + (24 - 10)*(100vw - 320px)/(576 - 320));
+        @apply mt-[4%] py-[3%] text-[3.25vw];
     }
 }
 .separotor {
@@ -110,5 +108,12 @@
     @apply block;
     @media screen and(max-width: 576px) {
     @apply hidden;
+    }
+}
+
+.separator__text {
+    @apply hidden;
+    @media screen and(max-width: 576px) {
+    @apply block;
     }
 }

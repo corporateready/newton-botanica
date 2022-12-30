@@ -427,7 +427,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
               <input
                 type="hidden"
                 name="_next"
-                value="http://localhost:3000/about"
+                value="https://botanica.newton.md/about"
               />
               <input
                 type="hidden"
@@ -555,7 +555,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
               <input
                 type="hidden"
                 name="_next"
-                value="http://localhost:3000/about/"
+                value="https://botanica.newton.md/about"
               />
               <input
                 type="hidden"

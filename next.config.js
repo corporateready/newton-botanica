@@ -42,27 +42,27 @@ const nextConfig = {
       },
     ];
   },
-  async redirects() {
-    return [
-      {
-        source: "/about", // automatically becomes /docs/with-basePath
-        destination: "/", // automatically becomes /docs/another
-        permanent: true,
-        has: [
-          {
-            type: "query",
-            key: "page",
-            value: "home",
-          },
-          {
-            type: "cookie",
-            key: "authorized",
-            value: "true",
-          },
-        ],
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/about", // automatically becomes /docs/with-basePath
+  //       destination: "/", // automatically becomes /docs/another
+  //       permanent: true,
+  //       has: [
+  //         {
+  //           type: "query",
+  //           key: "page",
+  //           value: "home",
+  //         },
+  //         {
+  //           type: "cookie",
+  //           key: "authorized",
+  //           value: "true",
+  //         },
+  //       ],
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = withTM({ nextConfig });

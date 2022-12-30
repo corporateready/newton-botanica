@@ -3,10 +3,10 @@ import Image from "next/image";
 import styles from "./Populare.module.scss";
 
 import item__img_3 from "../../../../../../public/static/planning-page/complex/items-images/image-12.webp";
-import item__img_4 from "../../../../../../public/static/planning-page/complex/items-images/image-7.webp";
+import item__img_4 from "../../../../../../public/static/planning-page/complex/items-images/image-5.webp";
 
 import icon_3 from "../../../../../../public/static/planning-page/complex/icons/15-spatii_de_joaca.svg";
-import icon_4 from "../../../../../../public/static/planning-page/complex/icons/03-o_cheie_de_acces.svg";
+import icon_4 from "../../../../../../public/static/planning-page/complex/icons/04-acces_prin_3_intrari.svg";
 
 export default function Index() {
   
@@ -37,7 +37,9 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_4} height={39} width={38} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>O cheie de acces</p>
+          <p className={styles.item__description_text}>
+          Acces prin 3 intrări
+          </p>
         </div>
       </div>
     </div>

@@ -26,22 +26,22 @@ export default function Index({ setIsPDFOpen, setIsCallRezervePopUp }) {
           <h1 className={styles.hero__title}>
             ALEGE UN REFUGIU URBAN<span className={styles.separotor}></span> MAI
             APROAPE DE NATURĂ
-            {/* <span className={styles.separotor__hide}></span> ALEGE
+            <span className={styles.separotor__hide}></span> ALEGE
             <span className={styles.separotor}></span>
-            <span className={styles.hero__text_decor}> NEWTON HOUSE GRĂDINA BOTANICĂ</span> */}
+            <span className={styles.hero__text_decor}> NEWTON HOUSE GRĂDINA BOTANICĂ</span>
           </h1>
           <div className={styles.hero__buttons}>
             <button
               className={styles.button__about}
               onClick={hanlerIsPDFOpenPopup}
             >
-              SOLICITĂ PREZENTAREA PDF
+              SOLICITĂ <p className={styles.separator__text}></p> PREZENTAREA PDF
             </button>
             <button
               className={styles.button__planning}
               onClick={hanlerIsCallOpenPopup}
             >
-            rezervă timpul pentru a fi telefonat
+            rezervă timpul pentru <p className={styles.separator__text}></p>a fi telefonat
             </button>
           </div>
         </article>

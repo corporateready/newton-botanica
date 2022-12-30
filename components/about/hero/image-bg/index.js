@@ -4,32 +4,14 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
 export default function Index() {
-
   const isMobile = useMediaQuery({
     query: "(max-width: 576px)",
   });
-  
+
   return (
     <div className={styles.hero__bg}>
-
+      <div className={styles.hero__cloude}></div>
       {/* <motion.div
-        className={styles.hero__cloude_animate__grey_3}
-        initial={{ x: "-100vw", y: "10vw", opacity: 0, scale: 0.2 }}
-        animate={{
-          x: "100vw",
-          y: '-10vw',
-          opacity: 1,
-          scale: 1.2,
-        }}
-        // exit={{opacity:0, transition: {duration:2}}}
-        transition={{
-          duration: 120,
-          ease: "easeOut",
-          // times: 1,
-          repeat: Infinity,
-        }}
-      ></motion.div>
-       <motion.div
         className={styles.hero__cloude_animate__grey_3}
         initial={{ x: "-100vw", y: "10vw", opacity: 0, scale: 0.2 }}
         animate={{

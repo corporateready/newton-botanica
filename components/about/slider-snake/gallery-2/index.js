@@ -7,9 +7,9 @@ import image_2 from "../../../../public/static/planning-page/gallery/Gradina_2.w
 import image_3 from "../../../../public/static/planning-page/gallery/Gradina_3.webp";
 import image_4 from "../../../../public/static/planning-page/gallery/Gradina_5.webp";
 import image_5 from "../../../../public/static/planning-page/gallery/Gradina_4.webp";
-import image_6 from "../../../../public/static/planning-page/gallery/Gradina_3.webp";
-import image_7 from "../../../../public/static/planning-page/gallery/Gradina_5.webp";
-import image_8 from "../../../../public/static/planning-page/gallery/Gradina_4.webp";
+import image_6 from "../../../../public/static/planning-page/gallery/Gradina_6.webp";
+import image_7 from "../../../../public/static/planning-page/gallery/Gradina_7.webp";
+import image_8 from "../../../../public/static/planning-page/gallery/Gradina_8.webp";
 
 import { useMediaQuery } from "react-responsive";
 

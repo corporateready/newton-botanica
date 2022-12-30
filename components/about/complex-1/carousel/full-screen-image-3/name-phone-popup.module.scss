@@ -34,7 +34,7 @@
     @apply relative top-0 left-0 h-[60vh] w-screen;
 
     span {
-        @apply absolute h-full w-full bg-cover bg-center z-10; 
+        @apply absolute h-full w-full bg-contain bg-no-repeat bg-center z-10; 
         background-image: url("../../../../../public/static/planning-page/gallery/Gradina_3.webp");
     }
 }
