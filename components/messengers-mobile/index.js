@@ -16,7 +16,7 @@ const messengers = [
   {
     id: 2,
     icon: <FaViber size={30} color="white" />,
-    irl: "viber://chat?number=37360044040",
+    irl: "viber://pa?chatURI=37360044040",
     title: "viber",
   },
   {
