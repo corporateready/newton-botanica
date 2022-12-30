@@ -103,7 +103,7 @@
     @apply flex justify-center space-x-3 my-[1%] absolute bottom-0 left-[25%] w-[50%];
 
     @media screen and (max-width: 576px) {
-        @apply space-x-[5%] my-[3%] w-full left-0;
+        @apply space-x-[5%] my-[3%] w-full left-0 px-[5%];
     }
     @media screen and (max-width: 375px) {
         @apply my-[6%];
