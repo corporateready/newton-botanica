@@ -47,9 +47,6 @@ export default function index() {
               />
             </a>
             </Link>
-          {/* <Link href="/planning">
-            <a className={styles.button__planning}>PLANIMETRII</a>
-          </Link> */}
           <div className={styles.header__phone_link}>
             <motion.div 
             className={styles.header__phone_icon}

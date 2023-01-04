@@ -19,8 +19,7 @@ export default function Thanks() {
             <div className={styles.container}>
               <div className={styles.thanks__wrapper}>
                 <h1 className={styles.thanks__title}>
-                  thank you
-                  <span> NEWTON HOUSE GRĂDINA BOTANICĂ</span>
+                  <span>VĂ MULȚUMIM!</span>
                 </h1>
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
@@ -42,7 +41,7 @@ export default function Thanks() {
                         fill="#3BAA35"
                       />
                     </svg>
-                    <button>înapoi la site</button>
+                    <span>înapoi la site</span>
                   </button>
                 </div>
               </div>
@@ -55,12 +54,12 @@ export default function Thanks() {
 }
 
 function YoutubeVideo() {
-  useEffect(() => {
-    window.addEventListener("beforeunload", (ev) => {
-      ev.preventDefault();
-      cookies.remove("userInfo");
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("beforeunload", (ev) => {
+  //     ev.preventDefault();
+  //     cookies.remove("userInfo");
+  //   });
+  // }, []);
 
   useEffect(() => {
     document.addEventListener("fetch", (event) => {
