@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./header";
+import Header from "../about/layout/header";
 import Footer from "./footer";
 
-export default function index({ children }) {
+export default function Index({ children }) {
   return (
     <>
       <Header />

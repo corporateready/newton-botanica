@@ -1,10 +1,9 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Header.module.scss";
 import header__logo from "../../../public/static/home-page/header-logo.svg";
 import phone__icon from "../../../public/static/home-page/phone.svg";
-
 import { motion } from "framer-motion";
 
 export default function index() {
@@ -47,8 +46,7 @@ export default function index() {
                 alt="home header logo"
               />
             </a>
-          </Link>
-
+            </Link>
           <div className={styles.header__phone_link}>
             <motion.div 
             className={styles.header__phone_icon}
