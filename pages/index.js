@@ -302,7 +302,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
               <input
                 type="hidden"
                 name="_next"
-                value="https://main--mellifluous-queijadas-43440a.netlify.app/thanks"
+                value="https://botanica.newton.md/about"
               />
               <input
                 type="hidden"

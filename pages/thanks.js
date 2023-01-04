@@ -9,8 +9,8 @@ export default function Thanks() {
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://localhost:3000/thanks/" />
-        <link rel="dns-prefetch" href="https://localhost:3000/thanks/" />
+        {/* <link rel="preconnect" href="https://localhost:3000/thanks/" />
+        <link rel="dns-prefetch" href="https://localhost:3000/thanks/" /> */}
       </Head>
       <div className={styles.thanks__screen}>
         <div className={styles.thanks__massangers}>
@@ -98,7 +98,7 @@ function YoutubeVideo() {
       className={styles.video__body}
       src={`https://www.youtube.com/embed/VdszNPYn5dU?autoplay=1&origin=http://example.com&controls=0&rel=1`}
       title="YouTube video player"
-      frameBorder="0"
+      // frameBorder="0"
       opts={opts}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
