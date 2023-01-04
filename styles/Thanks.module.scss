@@ -44,7 +44,7 @@
 }
 .thanks__title {
     @include text(32px, 130%, 600, #2d2d2b);
-    @apply pt-[9%] uppercase text-center relative;
+    @apply pt-[2%] uppercase text-center relative;
 
     @media screen and(max-width: 1440px) {
         font-size: calc(13px + (32 - 13)*(100vw - 576px)/(1440 - 576));
@@ -52,7 +52,7 @@
 
     @media screen and(max-width: 576px) {
         @include text(24px, 170%, 600, #2d2d2b);
-        @apply pt-[30%];
+        @apply pt-[10%];
         font-size: calc(13px + (24 - 13)*(100vw - 320px)/(576 - 320));
     }
 
