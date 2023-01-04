@@ -75,8 +75,8 @@
         }
 
         &::placeholder {
-            @include text(15px, 130%, 400, #2D2D2B);
-            @apply uppercase tracking-wider;
+            @include text(15px, 130%, 400, #626262);
+            @apply uppercase tracking-wider opacity-30;
             font-family: 'Gilroy Regular';
 
             @media screen and(max-width: 1440px) {
