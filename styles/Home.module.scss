@@ -1,7 +1,8 @@
 @import '../styles/mixins.scss';
 
 .home__screen {
-    @apply relative top-0 left-0 h-screen w-screen bg-[url('https://botanica.newton.md/wp-content/uploads/2021/07/green-leaves-natural-background-tropical-leaf-background-1.jpg')] bg-no-repeat object-fill;
+    @apply relative top-0 left-0 h-screen w-screen bg-no-repeat object-fill;
+    background-image: url('../public/background.webp');
     background-position: center;
     background-size: cover;
 }
