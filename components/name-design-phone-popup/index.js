@@ -49,7 +49,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
 
   React.useEffect(() => {
     if (isSend) {
-      Router.push("/about");
+      Router.push("/thanks");
     }
   }, [isSend]);
 
@@ -109,7 +109,11 @@ export default function Index({ hanlerCloseDesignPopup }) {
                 onChange={setPhoneValue}
               />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="false" />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://botanica.newton.md/thanks"
+              />
               <input
                 type="hidden"
                 name="_autoresponse"

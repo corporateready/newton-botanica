@@ -99,16 +99,8 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
                 value={phoneValue}
                 onChange={setPhoneValue}
               />
-            {/* <input
-              type="tel"
-              name="tel"
-              value={phoneValue}
-              onChange={(e) => setPhoneValue(e.target.value)}
-              placeholder="Numărul de telefon"
-              required
-            /> */}
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="true" />
+            <input type="hidden" name="_next" value="https://botanica.newton.md/thanks" />
             <input
               type="hidden"
               name="_autoresponse"

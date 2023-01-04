@@ -49,7 +49,7 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
 
   React.useEffect(() => {
     if (isSend) {
-      Router.push("/about");
+      Router.push("/thanks");
     }
   }, [isSend]);
 
@@ -80,9 +80,9 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
     { option: "13:45" },
   ];
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     console.log(document.body);
-  })
+  });
 
   return (
     <section className={styles.offer__section}>
@@ -144,33 +144,32 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
               />
             </div>
             <PhoneInput
-                className={styles.input}
-                name="phone"
-                style={{
-                  height: "auto",
-                  width: "100%",
-                  paddingTop: "0",
-                  paddingBottom: "0",
-                }}
-                placeholder="Numărul de telefon"
-                country={"md"}
-                value={phoneValue}
-                onChange={setPhoneValue}
-              />
+              className={styles.input}
+              name="phone"
+              style={{
+                height: "auto",
+                width: "100%",
+                paddingTop: "0",
+                paddingBottom: "0",
+              }}
+              placeholder="Numărul de telefon"
+              country={"md"}
+              value={phoneValue}
+              onChange={setPhoneValue}
+            />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://botanica.newton.md/thanks"
+            />
             <input
               type="hidden"
               name="_autoresponse"
               value="Everyone is important for as!"
             />
-            <input
-              type="hidden"
-              name="_next"
-              value="http://localhost:3000/thanks"
-            />
             <button type="submit" className={styles.button__sending}>
-            {spinner ? "trimitere..." : "Programează un apel"}
+              {spinner ? "trimitere..." : "Programează un apel"}
             </button>
           </form>
         </div>

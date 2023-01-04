@@ -65,15 +65,15 @@ export default function About() {
 
   useEffect(() => {
     if (
-      imageURL === 0 
-      || imageURL === 1 
-      || imageURL === 2 
-      || imageURL === 3
-      || imageURL === 4
-      || imageURL === 5
-      || imageURL === 6
-      || imageURL === 7
-      ) {
+      imageURL === 0 ||
+      imageURL === 1 ||
+      imageURL === 2 ||
+      imageURL === 3 ||
+      imageURL === 4 ||
+      imageURL === 5 ||
+      imageURL === 6 ||
+      imageURL === 7
+    ) {
       document.body.style.overflow = "hidden";
     }
     if (imageURL === null) {
