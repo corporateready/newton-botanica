@@ -16,18 +16,18 @@ export default class CustomDocument extends Document {
             type="text/javascript"
             async=""
           ></script> */}
-          {/* <script
+          <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-203040095-1"
-          ></script> */}
-          {/* <noscript>
+          ></script>
+          <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-KRLSSZN"
               height="0"
               width="0"
               styles="display:none;visibility:hidden"
             ></iframe>
-          </noscript> */}
+          </noscript>
         </Head>
         <body>
           <Main />

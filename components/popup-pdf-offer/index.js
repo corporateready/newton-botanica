@@ -78,7 +78,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
             onSubmit={useHandlerOnClickToSend}
           >
             <input
-              type="text"
+              type="email"
               name="email"
               value={emailValue}
               onChange={(e) => setEmailValue(e.target.value)}
@@ -98,6 +98,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
                 country={"md"}
                 value={phoneValue}
                 onChange={setPhoneValue}
+                required
               />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://botanica.newton.md/thanks" />

@@ -31,6 +31,7 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
     })
       .then((response) => {
         response.json();
+        // console.log('phoneValue' + phoneValue);
         setIsSend(true);
       })
       .then((data) => data)
@@ -80,10 +81,6 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
     { option: "13:45" },
   ];
 
-  React.useEffect(() => {
-    console.log(document.body);
-  });
-
   return (
     <section className={styles.offer__section}>
       <div className={styles.offer__container}>
@@ -131,6 +128,7 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
                 );
               })}
             </select>
+
             <div className={timezone.select__app}>
               <TimezoneSelect
                 name="Fusul orar"
@@ -143,6 +141,7 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
                 required
               />
             </div>
+
             <PhoneInput
               className={styles.input}
               name="phone"
@@ -156,7 +155,23 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
               country={"md"}
               value={phoneValue}
               onChange={setPhoneValue}
+              inputProps={{
+                name: 'phone',
+                required: true,
+                autoFocus: true
+              }}
+              // isValid={(value, country) => {
+              //   console.log(value.length);
+                // if (value.match(/12345/)) {
+                //   return 'Invalid value: '+value+', '+country.name;
+                // } else if (value.match(/1234/)) {
+                //   return false;
+                // } else {
+                //   return true;
+                // }
+              // }}
             />
+
             <input type="hidden" name="_captcha" value="false" />
             <input
               type="hidden"

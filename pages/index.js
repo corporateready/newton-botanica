@@ -478,7 +478,10 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
     })
       .then((response) => {
         response.json();
-        setIsAboutSend(true);
+        // if(phoneValue.length === 11 && phoneValue){
+          // console.log(true);
+        setIsAboutSend(true)
+      // } 
       })
       .then((data) => {
         data;
@@ -535,6 +538,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
                 placeholder="NUMELE, PRENUMELE"
+                min={3}
                 required
               />
               <PhoneInput
@@ -550,6 +554,15 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 country={"md"}
                 value={phoneValue}
                 onChange={setPhoneValue}
+                masks={{ md: "(...) ..-..." }}
+                // minLength={11}
+                // isValid={(value) => {
+                //   if (phoneValue.length === 11) {
+                //     return console.log(true);
+                //   } else {
+                //     return console.log(false);
+                //   }
+                // }}
               />
               <input type="hidden" name="_captcha" value="false" />
               <input
