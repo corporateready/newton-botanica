@@ -497,7 +497,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
   React.useEffect(() => {
     if (isAboutSend) {
       console.log(isAboutSend);
-      // Router.push("/about");
+      Router.push("/about");
     }
   }, [isAboutSend]);
 
