@@ -459,7 +459,10 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
   const [isAboutSend, setIsAboutSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
+  const [phoneValid, setPhoneValid] = React.useState(false);
   const [spinner, setSpinner] = React.useState(false);
+
+  console.log("phoneValid " + phoneValid);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -478,10 +481,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
     })
       .then((response) => {
         response.json();
-        // if(phoneValue.length === 11 && phoneValue){
-          // console.log(true);
-        setIsAboutSend(true)
-      // } 
+          setIsAboutSend(true);
       })
       .then((data) => {
         data;
@@ -492,10 +492,12 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
       .catch((error) => console.log(error));
   };
 
+  console.log('isAboutSend ' + isAboutSend);
+
   React.useEffect(() => {
     if (isAboutSend) {
       console.log(isAboutSend);
-      Router.push("/about");
+      // Router.push("/about");
     }
   }, [isAboutSend]);
 
@@ -538,17 +540,22 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
                 placeholder="NUMELE, PRENUMELE"
-                min={3}
                 required
               />
+              {nameValue.length < 3 && <p className="text-xs text-red-400 pb-[2%]">Значение меньше 3</p>}
               <PhoneInput
                 className={styles.input}
                 name="phone"
+                // pattern="/\d$/"
                 style={{
                   height: "auto",
                   width: "100%",
                   paddingTop: "0",
                   paddingBottom: "0",
+                  border:
+                    phoneValue.length !== 11
+                      ? " 1px solid red"
+                      : " 2px solid green",
                 }}
                 placeholder="Numărul de telefon"
                 country={"md"}
@@ -557,13 +564,18 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 masks={{ md: "(...) ..-..." }}
                 // minLength={11}
                 // isValid={(value) => {
-                //   if (phoneValue.length === 11) {
-                //     return console.log(true);
+                //   console.log(value);
+                //   if (value.length > 11) {
+                //     console.log("value " + value);
+                //     setPhoneValid(true)
+                //     return true;
                 //   } else {
-                //     return console.log(false);
+                //     // return false;
+                //     setPhoneValid(false)
                 //   }
                 // }}
               />
+              {phoneValue.length < 11 && <p className="text-xs text-red-400 pb-[2%]">Значение меньше 11</p>}
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
@@ -575,7 +587,11 @@ function AboutPopUpSending({ hanlerCloseAboutPopup }) {
                 name="_autoresponse"
                 value="Everyone is important for as!"
               />
-              <button type="submit" className={styles.button__sending}>
+              <button 
+              type="submit" 
+              className={styles.button__sending}
+              disabled={phoneValue.length < 11}
+              >
                 {spinner ? "trimitere..." : "Vreau să fiu contactat"}
               </button>
             </form>
