@@ -2,7 +2,7 @@
 
 .home__screen {
     @apply relative top-0 left-0 h-screen w-screen bg-no-repeat object-fill;
-    background-image: url('../public/background.webp');
+    background-image: url('../public/static/home-page/GB_background_1920x1080.webp');
     background-position: center;
     background-size: cover;
 }
@@ -250,7 +250,7 @@
     }
     .input {
         @include text(15px, 130%, 400, #2D2D2B);
-        @apply border-0 rounded-sm py-[1%] mb-[3%] h-full focus-visible:outline-none;
+        @apply border-0 rounded-sm py-[1%] mb-[3%] h-full focus-visible:outline-none relative top-0 left-0;
         font-family: 'Montserrat Regular';
 
         input {

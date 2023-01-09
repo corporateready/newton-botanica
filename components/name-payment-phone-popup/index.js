@@ -94,6 +94,11 @@ export default function Index({ hanlerClosePaymentPopup }) {
                 placeholder="NUMELE, PRENUMELE"
                 required
               />
+              {/* {nameValue.length < 3 && (
+                <p className="text-xs text-red-400 pb-[2%]">
+                  Nu mai puțin de 3 simboluri
+                </p>
+              )} */}
               <PhoneInput
                 className={styles.input}
                 name="phone"
@@ -102,20 +107,50 @@ export default function Index({ hanlerClosePaymentPopup }) {
                   width: "100%",
                   paddingTop: "0",
                   paddingBottom: "0",
+                  borderRadius: "3px",
+                  border:
+                    phoneValue.length !== 11
+                      ? " 1px solid red"
+                      : " 1px solid green",
                 }}
-                placeholder="Numărul de telefon"
+                placeholder="+373-XXX-XXX-XX"
                 country={"md"}
                 value={phoneValue}
                 onChange={setPhoneValue}
+                masks={{ md: "(...) ...-.." }}
+                isValid={(value, country) => {
+                  if (
+                    phoneValue.length === 4 &&
+                    value.match(/0/) &&
+                    country.name === "Moldova"
+                  ) {
+                    return "fără prefixul zero în față";
+                  } else {
+                    return true;
+                  }
+                }}
               />
+              {phoneValue.length < 11 && (
+                <p className="text-xs text-red-400 pb-[2%]">
+                  Exact 8 cifre, fără prefixul zero în față
+                </p>
+              )}
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://botanica.newton.md/thanks" />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://botanica.newton.md/thanks"
+              />
               <input
                 type="hidden"
                 name="_autoresponse"
                 value="Everyone is important for as!"
               />
-              <button type="submit" className={styles.button__sending}>
+              <button
+                type="submit"
+                className={styles.button__sending}
+                disabled={phoneValue.length < 11 || nameValue.length < 3}
+              >
                 {spinner ? "trimitere..." : "Vreau să fiu contactat"}
               </button>
             </form>

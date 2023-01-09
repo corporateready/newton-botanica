@@ -1,6 +1,6 @@
-import React, {useEffect,useState} from 'react'
-import Image from 'next/image';
-import styles from './OfferPopUp.module.scss'
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import styles from "./OfferPopUp.module.scss";
 import Router from "next/router";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
 import PhoneInput from "react-phone-input-2";
@@ -66,8 +66,9 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
             />
           </button>
           <h2 className={styles.offer__title}>
-          Solicită prezentarea
-          <br/><span>NEWTON HOUSE GRĂDINA BOTANICĂ</span> PDF
+            Solicită prezentarea
+            <br />
+            <span>NEWTON HOUSE GRĂDINA BOTANICĂ</span> PDF
           </h2>
 
           <form
@@ -86,29 +87,58 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
               required
             />
             <PhoneInput
-                className={styles.input}
-                name="phone"
-                style={{
-                  height: "auto",
-                  width: "100%",
-                  paddingTop: "0",
-                  paddingBottom: "0",
-                }}
-                // placeholder="Numărul de telefon"
-                country={"md"}
-                value={phoneValue}
-                onChange={setPhoneValue}
-                required
-              />
+              className={styles.input}
+              name="phone"
+              style={{
+                height: "auto",
+                width: "100%",
+                paddingTop: "0",
+                paddingBottom: "0",
+                borderRadius: "3px",
+                border:
+                  phoneValue.length !== 11
+                    ? " 1px solid red"
+                    : " 1px solid green",
+              }}
+              placeholder="+373-XXX-XXX-XX"
+              country={"md"}
+              value={phoneValue}
+              onChange={setPhoneValue}
+              masks={{ md: "(...) ...-.." }}
+              isValid={(value, country) => {
+                if (
+                  phoneValue.length === 4 &&
+                  value.match(/0/) &&
+                  country.name === "Moldova"
+                ) {
+                  return "fără prefixul zero în față";
+                } else {
+                  return true;
+                }
+              }}
+            />
+            {phoneValue.length < 11 && (
+              <p className="text-xs text-red-400 pb-[2%]">
+                Exact 8 cifre, fără prefixul zero în față
+              </p>
+            )}
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://botanica.newton.md/thanks" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://botanica.newton.md/thanks"
+            />
             <input
               type="hidden"
               name="_autoresponse"
               value="Everyone is important for as!"
             />
-            <button type="submit" className={styles.button__sending}>
-            {spinner ? "trimitere..." : "Solicită prezentarea"}
+            <button
+              type="submit"
+              className={styles.button__sending}
+              disabled={phoneValue.length < 11 && emailValue.match(/@/)}
+            >
+              {spinner ? "trimitere..." : "Solicită prezentarea"}
             </button>
           </form>
         </div>
