@@ -54,12 +54,6 @@ export default function Thanks() {
 }
 
 function YoutubeVideo() {
-  // useEffect(() => {
-  //   window.addEventListener("beforeunload", (ev) => {
-  //     ev.preventDefault();
-  //     cookies.remove("userInfo");
-  //   });
-  // }, []);
 
   useEffect(() => {
     document.addEventListener("fetch", (event) => {
@@ -96,7 +90,6 @@ function YoutubeVideo() {
       className={styles.video__body}
       src={`https://www.youtube.com/embed/VdszNPYn5dU?autoplay=1&origin=http://example.com&controls=0&rel=1`}
       title="YouTube video player"
-      // frameBorder="0"
       opts={opts}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen

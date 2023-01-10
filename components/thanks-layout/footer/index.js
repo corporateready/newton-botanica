@@ -11,6 +11,31 @@ import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 
 export default function index() {
+  React.useEffect(() => {
+    (function (w, d, s, h, id) {
+      w.roistatProjectId = id;
+      w.roistatHost = h;
+      var p = d.location.protocol == "https:" ? "https://" : "http://";
+      var u = /^.roistat_visit=[^;]+(.)?$/.test(d.cookie)
+        ? "/dist/module.js"
+        : "/api/site/1.0/" +
+          id +
+          "/init?referrer=" +
+          encodeURIComponent(d.location.href);
+      var js = d.createElement(s);
+      js.charset = "UTF-8";
+      js.async = 1;
+      js.src = p + h + u;
+      var js2 = d.getElementsByTagName(s)[0];
+      js2.parentNode.insertBefore(js, js2);
+    })(
+      window,
+      document,
+      "script",
+      "cloud.roistat.com",
+      "e39442a8581e616d741b8f0786da960e"
+    );
+  }, []);
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -54,56 +79,56 @@ export default function index() {
           </div>
 
           <div className="flex justify-end">
-          <div className={styles.footer__contact}>
-            
-            <a className={styles.footer__contact_item} href="tel:37360802020">
-              <span className={styles.footer__contact_icon}>
-                <Image
-                  src={phone__icon}
-                  height={24}
-                  width={24}
-                  priority
-                  alt="footer phone icon"
-                />
-              </span>
-              <span className={styles.footer__contact_text}>060 802 020</span>
-            </a>
-            <Link href="https://www.google.com/maps/dir/47.7626368,28.9898496/newton+house+google+map+location/@47.3618199,28.3867357,9.42z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x40c97dc3398a2559:0x71d4f48a93ea6096!2m2!1d28.8776605!2d46.9768761">
-              <a className={styles.footer__contact_item}>
+            <div className={styles.footer__contact}>
+              <div className={styles.footer__contact_item}>
                 <span className={styles.footer__contact_icon}>
                   <Image
-                    src={loc__icon}
+                    src={phone__icon}
                     height={24}
                     width={24}
                     priority
                     alt="footer phone icon"
                   />
                 </span>
+                <a  href="tel:37360802020" className={styles.footer__contact_text}></a>
+              </div>
+              <Link href="https://www.google.com/maps/dir/47.7626368,28.9898496/newton+house+google+map+location/@47.3618199,28.3867357,9.42z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x40c97dc3398a2559:0x71d4f48a93ea6096!2m2!1d28.8776605!2d46.9768761">
+                <a className={styles.footer__contact_item}>
+                  <span className={styles.footer__contact_icon}>
+                    <Image
+                      src={loc__icon}
+                      height={24}
+                      width={24}
+                      priority
+                      alt="footer phone icon"
+                    />
+                  </span>
 
+                  <span className={styles.footer__contact_text}>
+                    str. Grădina Botanică, 18
+                  </span>
+                </a>
+              </Link>
+
+              <a
+                className={styles.footer__contact_item}
+                href="mailto:botanica@mail.com"
+              >
+                <span className={styles.footer__contact_icon}>
+                  <Image
+                    src={mail__icon}
+                    height={24}
+                    width={24}
+                    priority
+                    alt="footer phone icon"
+                  />
+                </span>
                 <span className={styles.footer__contact_text}>
-                  str. Grădina Botanică, 18
+                  salut@newton.md
                 </span>
               </a>
-            </Link>
-            
-            <a className={styles.footer__contact_item} href="mailto:botanica@mail.com">
-              <span className={styles.footer__contact_icon}>
-                <Image
-                  src={mail__icon}
-                  height={24}
-                  width={24}
-                  priority
-                  alt="footer phone icon"
-                />
-              </span>
-              <span className={styles.footer__contact_text}>
-              salut@newton.md
-              </span>
-            </a>
-
+            </div>
           </div>
-          </div>
-
         </div>
         <div className={styles.footer__contact_mob}>
           <div className={styles.footer__contact_bottom}>
@@ -117,7 +142,7 @@ export default function index() {
                   alt="footer phone icon"
                 />
               </span>
-              <span className={styles.footer__contact_text}>060 80 20 20</span>
+              <a href="tel:+3736082020" className={styles.footer__contact_text}></a>
             </div>
             <div className={styles.footer__contact_item}>
               <span className={styles.footer__contact_icon}>
@@ -144,13 +169,14 @@ export default function index() {
                 />
               </span>
               <span className={styles.footer__contact_text}>
-                newton botanica@gmail.com
+                salut@newton.md
               </span>
             </div>
           </div>
         </div>
         <p className={styles.footer__bottom}>
-          Toate drepturile rezervate NEWTON HOUSE GRĂDINA BOTANICĂ © 2022.
+          Toate drepturile rezervate NEWTON HOUSE GRĂDINA BOTANICĂ ©{" "}
+          {new Date().getFullYear()}.
         </p>
       </div>
     </footer>
