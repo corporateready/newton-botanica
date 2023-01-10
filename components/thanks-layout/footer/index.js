@@ -10,7 +10,7 @@ import { FiInstagram } from "@react-icons/all-files/fi/FiInstagram";
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 
-export default function index() {
+export default function Index() {
   React.useEffect(() => {
     (function (w, d, s, h, id) {
       w.roistatProjectId = id;
@@ -90,7 +90,7 @@ export default function index() {
                     alt="footer phone icon"
                   />
                 </span>
-                <a  href="tel:37360802020" className={styles.footer__contact_text}></a>
+                <a  href="tel:37360802020" className={styles.footer__contact_text_phone}></a>
               </div>
               <Link href="https://www.google.com/maps/dir/47.7626368,28.9898496/newton+house+google+map+location/@47.3618199,28.3867357,9.42z/data=!4m9!4m8!1m1!4e1!1m5!1m1!1s0x40c97dc3398a2559:0x71d4f48a93ea6096!2m2!1d28.8776605!2d46.9768761">
                 <a className={styles.footer__contact_item}>

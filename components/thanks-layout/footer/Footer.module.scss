@@ -132,6 +132,18 @@
         width: calc(20px + (30 - 20)*(100vw - 576px)/(1440 - 576));
     }
 }
+.footer__contact_text_phone {
+    @apply text-white text-[15px];
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(8px + (15 - 8)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 576px) {
+        font-family: 'Gilroy Regular';
+        font-size: calc(9px + (16 - 9)*(100vw - 320px)/(576 - 320));
+    }
+}
 .footer__contact_text {
     @apply text-white text-[15px];
 
