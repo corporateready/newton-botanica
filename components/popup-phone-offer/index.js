@@ -163,7 +163,7 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
               masks={{ md: "(...) ...-.." }}
               isValid={(value, country) => {
                 if (
-                  phoneValue.length === 4 &&
+                  phoneValue.length >= 4 &&
                   value.match(/0/) &&
                   country.name === "Moldova"
                 ) {

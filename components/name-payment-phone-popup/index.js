@@ -94,11 +94,6 @@ export default function Index({ hanlerClosePaymentPopup }) {
                 placeholder="NUMELE, PRENUMELE"
                 required
               />
-              {/* {nameValue.length < 3 && (
-                <p className="text-xs text-red-400 pb-[2%]">
-                  Nu mai puțin de 3 simboluri
-                </p>
-              )} */}
               <PhoneInput
                 className={styles.input}
                 name="phone"
@@ -120,7 +115,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
                 masks={{ md: "(...) ...-.." }}
                 isValid={(value, country) => {
                   if (
-                    phoneValue.length === 4 &&
+                    phoneValue.length >= 4 &&
                     value.match(/0/) &&
                     country.name === "Moldova"
                   ) {

@@ -48,7 +48,6 @@ export default function Index({ setIsPopUpSend }) {
             <div className={styles.designs__grid}>
               <motion.div
                 className={styles.designs__item}
-                // onClick={() => setIsVisible(!isVisible)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -59,15 +58,13 @@ export default function Index({ setIsPopUpSend }) {
                   />
                 </div>
                 <p className={styles.designs__item_name}>
-                  Geamuri Rehau Low-e
-                  <br />5 camere
+                  Geamuri Low-E +4S
                 </p>
               </motion.div>
               {isVisible && <DesItem_1 setIsVisible={setIsVisible} />}
 
               <motion.div
                 className={styles.designs__item}
-                // onClick={() => setIsVisible(!isVisible2)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -80,14 +77,13 @@ export default function Index({ setIsPopUpSend }) {
                 <p className={styles.designs__item_name}>
                   Cazan de ultimă
                   <br />
-                  generație (2 contoare)
+                  generație (2 conture)
                 </p>
               </motion.div>
               {isVisible2 && <DesItem_2 setIsVisible2={setIsVisible2} />}
 
               <motion.div
                 className={styles.designs__item}
-                // onClick={() => setIsVisible3(!isVisible3)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -107,7 +103,6 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                // onClick={() => setIsVisible4(!isVisible4)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -118,7 +113,7 @@ export default function Index({ setIsPopUpSend }) {
                   />
                 </div>
                 <p className={styles.designs__item_name}>
-                  Tehnologie italiană de izolare
+                  Tehnologie modernă de izolare
                   <br />a pereților și pardoselii
                 </p>
               </motion.div>
@@ -126,7 +121,6 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                // onClick={() => setIsVisible5(!isVisible5)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -146,7 +140,6 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                // onClick={() => setIsVisible6(!isVisible6)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -166,7 +159,6 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                // onClick={() => setIsVisible6(!isVisible6)}
               >
                 <div className={styles.designs__image}>
                   <Image
@@ -186,7 +178,6 @@ export default function Index({ setIsPopUpSend }) {
 
               <motion.div
                 className={styles.designs__item}
-                // onClick={() => setIsVisible8(!isVisible8)}
               >
                 <div className={styles.designs__image}>
                   <Image
