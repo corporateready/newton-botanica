@@ -10,6 +10,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
   const [emailValue, setEmailValue] = useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -111,8 +112,10 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
                   value.match(/0/) &&
                   country.name === "Moldova"
                 ) {
+                  setIsPhoneValid(true)
                   return "fără prefixul zero în față";
                 } else {
+                  setIsPhoneValid(false)
                   return true;
                 }
               }}
@@ -136,7 +139,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
             <button
               type="submit"
               className={styles.button__sending}
-              disabled={phoneValue.length < 11 && emailValue.match(/@/)}
+              disabled={phoneValue.length < 11 || emailValue.match(/@/) || isPhoneValid}
             >
               {spinner ? "trimitere..." : "Solicită prezentarea"}
             </button>

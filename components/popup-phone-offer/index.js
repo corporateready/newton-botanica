@@ -13,6 +13,7 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
   const [phoneValue, setPhoneValue] = React.useState("");
   const [selectedTimezone, setSelectedTimezone] = React.useState({});
   const [spinner, setSpinner] = React.useState(false);
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -167,8 +168,10 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
                   value.match(/0/) &&
                   country.name === "Moldova"
                 ) {
+                  setIsPhoneValid(true)
                   return "fără prefixul zero în față";
                 } else {
+                  setIsPhoneValid(false)
                   return true;
                 }
               }}
@@ -193,7 +196,7 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
             <button
               type="submit"
               className={styles.button__sending}
-              disabled={phoneValue.length < 11 || timeValue}
+              disabled={phoneValue.length < 11 || timeValue || isPhoneValid}
             >
               {spinner ? "trimitere..." : "Programează un apel"}
             </button>

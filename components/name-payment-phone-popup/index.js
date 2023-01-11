@@ -11,6 +11,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -119,8 +120,10 @@ export default function Index({ hanlerClosePaymentPopup }) {
                     value.match(/0/) &&
                     country.name === "Moldova"
                   ) {
+                    setIsPhoneValid(true)
                     return "fără prefixul zero în față";
                   } else {
+                    setIsPhoneValid(false)
                     return true;
                   }
                 }}
@@ -144,7 +147,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
               <button
                 type="submit"
                 className={styles.button__sending}
-                disabled={phoneValue.length < 11 || nameValue.length < 3}
+                disabled={phoneValue.length < 11 || nameValue.length < 3 || isPhoneValid}
               >
                 {spinner ? "trimitere..." : "Vreau să fiu contactat"}
               </button>

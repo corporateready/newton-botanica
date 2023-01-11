@@ -128,9 +128,7 @@ export default function Home() {
                 <a
                   href="tel:+37372608020"
                   className={styles.header__phone_link_number}
-                >
-                  +37368969195
-                </a>
+                ></a>
               </div>
             </div>
             {/* <motion.div className="absolute top-[25%] right-[55%] sm:right-[50%]">
@@ -230,6 +228,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -328,8 +327,10 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                     value.match(/0/) &&
                     country.name === "Moldova"
                   ) {
+                    setIsPhoneValid(true)
                     return "fără prefixul zero în față";
                   } else {
+                    setIsPhoneValid(false)
                     return true;
                   }
                 }}
@@ -353,7 +354,7 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
               <button
                 type="submit"
                 className={styles.button__sending}
-                disabled={phoneValue.length < 11 || nameValue.length < 3}
+                disabled={phoneValue.length < 11 || nameValue.length < 3 || isPhoneValid}
               >
                 {spinner ? "trimiteri..." : "AFLĂ DETALII"}
               </button>
@@ -380,6 +381,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -454,7 +456,6 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
                 placeholder="NUMELE, PRENUMELE"
                 required
               />
-              {/* {nameValue.length < 3 && <p className="text-xs text-red-400 pb-[2%]">Nu mai puțin de 3 simboluri</p>} */}
 
               <PhoneInput
                 className={styles.input}
@@ -481,8 +482,10 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
                     value.match(/0/) &&
                     country.name === "Moldova"
                   ) {
-                    return "Invalid value: без ноля";
+                    setIsPhoneValid(true)
+                    return "fără prefixul zero în față";
                   } else {
+                    setIsPhoneValid(false)
                     return true;
                   }
                 }}
@@ -506,7 +509,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
               <button
                 type="submit"
                 className={styles.button__sending}
-                disabled={phoneValue.length < 11 || nameValue.length < 3}
+                disabled={phoneValue.length < 11 || nameValue.length < 3 || isPhoneValid}
               >
                 {spinner ? "trimitere..." : "Plasează solicitarea"}
               </button>
@@ -533,8 +536,8 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
 
-  console.log("phoneValue1 " + phoneValue);
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
     setSpinner(true);
@@ -650,22 +653,18 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
                 value={phoneValue}
                 onChange={setPhoneValue}
                 masks={{ md: "(...) ...-.." }}
-                pattern={/0/}
                 isValid={(value, country) => {
                   if (
                     phoneValue.length >= 4 &&
                     value.match(/0/) &&
                     country.name === "Moldova"
                   ) {
+                    setIsPhoneValid(true)
                     return "fără prefixul zero în față";
                   } else {
+                    setIsPhoneValid(false)
                     return true;
                   }
-                }}
-                inputProps={{
-                  name: "phone",
-                  required: true,
-                  autoFocus: true,
                 }}
               />
               {phoneValue.length < 11 &&
@@ -692,13 +691,8 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
               <button
                 type="submit"
                 className={styles.button__sending}
-                disabled={phoneValue.length < 11 || nameValue.length < 3}
+                disabled={phoneValue.length < 11 || nameValue.length < 3 || isPhoneValid}
               >
-                {/* {isToggleLang === "ro"
-                  ? "Vreau să fiu contactat"
-                  : "Хочу получить звонок"
-                } */}
-
                 {spinner
                   ? isToggleLang === "ro"
                     ? "trimitere..."
