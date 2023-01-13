@@ -37,7 +37,7 @@
     @apply text-center tracking-wider;
     font-family: 'Montserrat Semibold';
 
-    @media screen and (min-width: 576px) {
+    @media screen and (max-width: 1440px) {
         @apply text-[2.5vw];
     }
 

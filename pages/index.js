@@ -291,11 +291,11 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
               />
             </button>
             {isToggleLang === "ro" ? (
-              <h2 className={styles.offer__title}>
+              <h2 className={styles.offer__title_}>
                 OBȚINE CONSULTAȚIA MANAGERULUI
               </h2>
             ) : (
-              <h2 className={styles.offer__title}>
+              <h2 className={styles.offer__title_}>
                 Получи консультацию менеджера
               </h2>
             )}
@@ -488,12 +488,12 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup, isToggleLang }) {
               />
             </button>
             {isToggleLang === "ro" ? (
-              <h2 className={styles.offer__title}>
+              <h2 className={styles.offer__title_}>
                 Vrei să vizualizezi <br />
                 planimetriile disponibile?
               </h2>
             ) : (
-              <h2 className={styles.offer__title}>
+              <h2 className={styles.offer__title_}>
                 Хочешь увидеть <br />
                 доступные планировки?
               </h2>

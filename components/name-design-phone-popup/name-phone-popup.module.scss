@@ -37,12 +37,12 @@
     @apply text-center tracking-wider;
     font-family: 'Montserrat Semibold';
 
-    @media screen and (min-width: 576px) {
+    @media screen and (max-width: 1440px) {
         @apply text-[2.5vw];
     }
 
     @media screen and (max-width: 576px) {
-        @apply text-[3.25vw];
+        @apply text-[4.5vw];
     }
 }
 .offer__subtitle {

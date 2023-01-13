@@ -195,12 +195,25 @@
     @apply text-center tracking-wider;
     font-family: 'Montserrat Semibold';
 
-    @media screen and (min-width: 576px) {
+    @media screen and (max-width: 1440px) {
         @apply text-[2.5vw];
     }
 
     @media screen and (max-width: 576px) {
-        @apply text-[3.25vw];
+        @apply text-[4.5vw];
+    }
+}
+.offer__title_ {
+    @include text(32px, 130%, 600, #2D2D2B);
+    @apply text-center tracking-wider;
+    font-family: 'Montserrat Semibold';
+
+    @media screen and (max-width: 1440px) {
+        @apply text-[2.5vw];
+    }
+
+    @media screen and (max-width: 576px) {
+        @apply text-[5.75vw];
     }
 }
 .offer__subtitle {
@@ -306,7 +319,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply flex justify-center w-[60%] pr-[25%];
+        @apply flex justify-center w-[60%];
     }
 
 }
@@ -316,8 +329,7 @@
 
     @media screen and (max-width: 576px) {
         @include text(27px, 100%, 700, rgba(88, 88, 87, 1));
-
-        font-size: calc(12px + (27 - 12)*(100vw - 320px)/(576 - 320));
+        @apply text-[4.25vw];
     }
 }
 
