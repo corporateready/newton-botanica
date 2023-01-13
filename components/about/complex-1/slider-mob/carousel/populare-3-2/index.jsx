@@ -8,14 +8,14 @@ import item__img_4 from "../../../../../../public/static/planning-page/complex/i
 import icon_3 from "../../../../../../public/static/planning-page/complex/icons/15-spatii_de_joaca.svg";
 import icon_4 from "../../../../../../public/static/planning-page/complex/icons/04-acces_prin_3_intrari.svg";
 
+import { LangContext } from "../../../../../../pages/_app";
+
 export default function Index() {
-  
+  const { isToggleLang } = React.useContext(LangContext);
 
   return (
     <div className={styles.complex__grid_month}>
-      <div
-        className={styles.complex__grid_item}
-      >
+      <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
           <Image src={item__img_3} height={303} width={435} priority alt="" />
         </div>
@@ -23,13 +23,14 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>Spații de joacă</p>
+
+          <p className={styles.item__description_text}>
+            {isToggleLang === "ro" ? "Spații de joacă" : "Игровые площадки"}
+          </p>
         </div>
       </div>
 
-      <div
-        className={styles.complex__grid_item}
-      >
+      <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
           <Image src={item__img_4} height={303} width={435} priority alt="" />
         </div>
@@ -38,7 +39,9 @@ export default function Index() {
             <Image src={icon_4} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Acces prin 3 intrări
+            {isToggleLang === "ro"
+              ? "Acces prin 3 intrări"
+              : "Доступ с трех сторон"}
           </p>
         </div>
       </div>

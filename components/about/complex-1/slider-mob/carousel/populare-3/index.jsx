@@ -8,7 +8,11 @@ import item__img_2 from "../../../../../../public/static/planning-page/complex/i
 import cart from "../../../../../../public/static/planning-page/complex/icons/08-parking_carucioare_biciclete.svg";
 import icon_2 from "../../../../../../public/static/planning-page/complex/icons/kids-place.svg";
 
+import { LangContext } from "../../../../../../pages/_app";
+
 export default function Index() {
+
+  const { isToggleLang } = React.useContext(LangContext);
   
   return (
     <div className={styles.complex__grid_month}>
@@ -23,7 +27,11 @@ export default function Index() {
             <Image src={cart} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Parking cărucioare și biciclete
+            {
+              isToggleLang === "ro"
+              ? "Parking cărucioare și biciclete"
+              : "Велопарковка и места для колясок"
+            }
           </p>
         </div>
       </div>
@@ -38,7 +46,11 @@ export default function Index() {
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Grădiniță modernă
+          {
+              isToggleLang === "ro"
+              ? "Grădiniță modernă"
+              : "Современный детский сад"
+            }
           </p>
         </div>
       </div>

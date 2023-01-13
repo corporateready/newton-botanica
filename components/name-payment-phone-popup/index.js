@@ -6,7 +6,11 @@ import Link from "next/link";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
 import PhoneInput from "react-phone-input-2";
 
+import { LangContext } from "../../pages/_app";
+
 export default function Index({ hanlerClosePaymentPopup }) {
+  const { isToggleLang } = React.useContext(LangContext);
+
   const [isSend, setIsSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
@@ -59,6 +63,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
           <div className={styles.offer__inner}>
+
             <button
               type="button"
               className={styles.offer__button_close}
@@ -71,14 +76,28 @@ export default function Index({ hanlerClosePaymentPopup }) {
                 alt="close button icon"
               />
             </button>
+
+            {isToggleLang === "ro" ? (
             <h2 className={styles.offer__title}>
               Află mai multe informații înainte <br />
               de a-ți alege locuința de vis!
             </h2>
-            <h3 className={styles.offer__subtitle}>
+          ) : (
+            <h2 className={styles.offer__title}>
+              Получи больше информации перед тем,<br />
+              как выбрать квартиру своей мечты!
+            </h2>
+          )}
+
+            {isToggleLang === "ro"
+            ? <h3 className={styles.offer__subtitle}>
               Introdu datele de contact corect, iar noi te vom contacta <br />
               pentru a-ți prezenta detalii despre proiect:
             </h3>
+            : <h3 className={styles.offer__subtitle}>
+            Оставь свои контактные данные, мы перезвоним и <br />
+            предоставим подробную информацию о проекте:
+          </h3>}
 
             <form
               id="about__form_send_payment_btn"
@@ -92,7 +111,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
                 name="name"
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
-                placeholder="NUMELE, PRENUMELE"
+                placeholder={isToggleLang === "ro" ? "NUMELE, PRENUMELE" : "ИМЯ, ФАМИЛИЯ"}
                 required
               />
               <PhoneInput
@@ -130,7 +149,9 @@ export default function Index({ hanlerClosePaymentPopup }) {
               />
               {phoneValue.length < 11 && (
                 <p className="text-xs text-red-400 pb-[2%]">
-                  Exact 8 cifre, fără prefixul zero în față
+                  {isToggleLang === "ro"
+                  ? "Exact 8 cifre, fără prefixul zero în față"
+                  : "ровно 8 цифр, без префикса ноль в начале"}
                 </p>
               )}
               <input type="hidden" name="_captcha" value="false" />
@@ -144,24 +165,47 @@ export default function Index({ hanlerClosePaymentPopup }) {
                 name="_autoresponse"
                 value="Everyone is important for as!"
               />
+
               <button
-                type="submit"
-                className={styles.button__sending}
-                disabled={phoneValue.length < 11 || nameValue.length < 3 || isPhoneValid}
-              >
-                {spinner ? "trimitere..." : "Vreau să fiu contactat"}
-              </button>
+              type="submit"
+              className={styles.button__sending}
+              disabled={
+                phoneValue.length < 11 ||
+                nameValue.length < 3 ||
+                isPhoneValid ||
+                spinner ||
+                isSend
+              }
+            >
+              {spinner
+                ? isToggleLang === "ro"
+                  ? "trimitere..."
+                  : "Отправляется..."
+                : isToggleLang === "ro"
+                ? "Vreau să fiu contactat"
+                : "Хочу получить звонок"}
+            </button>
             </form>
 
             <div className={styles.terms__policy}>
               <Link href="/terms">
-                <a className={styles.terms}>Terms and Conditions </a>
+                <a className={styles.terms}>
+                  {isToggleLang === "ro"
+                    ? "Terms and Conditions"
+                    : "Условия и положения"}{" "}
+                </a>
               </Link>
-              and
+              {isToggleLang === "ro" ? "and" : "и"}
               <Link href="/policy">
-                <a className={styles.policy}> Privacy Policy</a>
+                <a className={styles.policy}>
+                  {" "}
+                  {isToggleLang === "ro"
+                    ? "Privacy Policy"
+                    : "Конфиденциальность"}
+                </a>
               </Link>
             </div>
+
           </div>
         </div>
       </section>

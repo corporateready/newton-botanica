@@ -8,8 +8,13 @@ import {
   November21,
 } from "./imports";
 
+import { LangContext } from "../../../pages/_app";
+
 export default function News() {
+  const { isToggleLang } = React.useContext(LangContext);
+  
   const isMounth = ["November/21","January/22","March/22", "June/22", ];
+  const isMounthRu = ["Ноябрь/21","Январь/22","Март/22", "Июнь/22", ];
 
   // const [isYear, setIsYear] = useState("2022");
   const [isMounthDesk, setIsMounthDesk] = useState(0);
@@ -28,7 +33,9 @@ export default function News() {
       <div className={styles.news__section}>
         <div className={styles.news__wrapper}>
           <h1 className={styles.news__title}>
-            Noutăți de șantier
+            {isToggleLang==="ro"
+            ? "Noutăți de șantier"
+          :"Новости со стройплощадки"}
             <span></span>
           </h1>
           <div className={styles.news__inner}>
@@ -45,6 +52,7 @@ export default function News() {
               </select> */}
               <TimlineNav
                 mounthes={isMounth}
+                mounthesRu={isMounthRu}
                 isActive={isActive}
                 setIsActive={setIsActive}
                 isItem={isItem}
@@ -53,6 +61,7 @@ export default function News() {
                 setIsToggle={setIsToggle}
                 isMounthDesk={isMounthDesk}
                 setIsMounthDesk={setIsMounthDesk}
+                isToggleLang={isToggleLang}
                 // isYear={isYear}
               />
               <select
@@ -88,6 +97,7 @@ export default function News() {
 // function Year21() {
 //   return <>{<November21 />}</>;
 function Year22({ isMounthDesk, isMounthMob }) {
+  const { isToggleLang } = React.useContext(LangContext);
   return (
     <>
       <div className={styles.mounth__desk}>

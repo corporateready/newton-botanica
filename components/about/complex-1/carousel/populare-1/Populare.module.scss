@@ -19,7 +19,7 @@
     @apply flex rounded-t-md;
 }
 .item__description {
-    @apply flex justify-start items-center py-[4%] pl-[5%] space-x-[5%];
+    @apply flex justify-start items-center py-[4%] pl-[5%] space-x-[3%];
 
     @media screen and (max-width: 576px) {
         @apply py-[8%];
@@ -35,7 +35,7 @@
     font-family: 'Gilroy Semibold';
 
     @media screen and (max-width: 1440px) {
-        font-size: calc(7px + (15 - 7)*(100vw - 576px)/(1440 - 576));
+        @apply text-[1vw];
     }
 
     @media screen and (max-width: 576px) {

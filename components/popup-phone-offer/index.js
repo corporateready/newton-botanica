@@ -7,13 +7,17 @@ import close__button from "../../public/static/planning-page/close-button-popup.
 import TimezoneSelect, { allTimezones } from "react-timezone-select";
 import PhoneInput from "react-phone-input-2";
 
+import { LangContext } from "../../pages/_app";
+
 export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
+  const { isToggleLang } = React.useContext(LangContext);
+
   const [isSend, setIsSend] = React.useState(false);
   const [timeValue, setTimeValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [selectedTimezone, setSelectedTimezone] = React.useState({});
   const [spinner, setSpinner] = React.useState(false);
-  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -97,10 +101,18 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
               alt="close button icon"
             />
           </button>
-          <h2 className={styles.offer__title}>
-            Rezervă timpul pentru
-            <br />a fi telefonat:
-          </h2>
+          {isToggleLang === "ro" ? (
+            <h2 className={styles.offer__title}>
+              Rezervă timpul pentru
+              <br />a fi telefonat:
+            </h2>
+          ) : (
+            <h2 className={styles.offer__title}>
+              Зарезервируй время
+              <br />
+              для звонка
+            </h2>
+          )}
 
           <form
             className={styles.offer__form}
@@ -135,7 +147,9 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
                 name="Fusul orar"
                 value={selectedTimezone}
                 onChange={setSelectedTimezone}
-                placeholder="Fus orar"
+                placeholder={
+                  isToggleLang === "ro" ? "Fus orar" : "Часовой пояс"
+                }
                 timezones={{
                   ...allTimezones,
                 }}
@@ -168,17 +182,19 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
                   value.match(/0/) &&
                   country.name === "Moldova"
                 ) {
-                  setIsPhoneValid(true)
+                  setIsPhoneValid(true);
                   return "fără prefixul zero în față";
                 } else {
-                  setIsPhoneValid(false)
+                  setIsPhoneValid(false);
                   return true;
                 }
               }}
             />
             {phoneValue.length < 11 && (
               <p className="text-xs text-red-400 pb-[2%]">
-                Exact 8 cifre, fără prefixul zero în față
+                {isToggleLang === "ro"
+                  ? "Exact 8 cifre, fără prefixul zero în față"
+                  : "ровно 8 цифр, без префикса ноль в начале"}
               </p>
             )}
 
@@ -196,9 +212,21 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
             <button
               type="submit"
               className={styles.button__sending}
-              disabled={phoneValue.length < 11 || timeValue || isPhoneValid}
+              disabled={
+                phoneValue.length < 11 ||
+                timeValue ||
+                isPhoneValid ||
+                spinner ||
+                isSend
+              }
             >
-              {spinner ? "trimitere..." : "Programează un apel"}
+              {spinner
+                ? isToggleLang === "ro"
+                  ? "trimitere..."
+                  : "Отправляется..."
+                : isToggleLang === "ro"
+                ? "Programează un apel"
+                : "Запрограммировать звонок"}
             </button>
           </form>
         </div>

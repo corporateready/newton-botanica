@@ -51,11 +51,11 @@
     }
 }
 .description__text {
-    @include text(24px, 100%, 400, #2D2D2B);
+    @include text(23px, 100%, 400, #2D2D2B);
     @apply uppercase;
 
     @media screen and(max-width: 1440px) {
-        font-size: calc(8px + (24 - 8)*(100vw - 576px)/(1440 - 576));
+        font-size: calc(8px + (23 - 8)*(100vw - 576px)/(1440 - 576));
     }
     @media screen and(max-width: 576px) {
         font-size: calc(11px + (20 - 11)*(100vw - 320px)/(576 - 320));

@@ -28,8 +28,13 @@ import Head from "next/head";
 import MagnifyComponent from './magnify'
 import Image from "next/image";
 import location__bg from "../../../public/static/planning-page/location/panoramic-botanica.webp"
+import location__bg_ru from "../../../public/static/planning-page/location/panoramic-botanica-pins-ru.webp"
+
+import { LangContext } from "../../../pages/_app";
 
 export default function Index() {
+
+  const { isToggleLang } = React.useContext(LangContext);
 
   const [isOpen, setIsOpen] = React.useState(false);
   const [isOpen2, setIsOpen2] = React.useState(false);
@@ -84,7 +89,7 @@ export default function Index() {
       <div className={styles.location__section}>
         <div className={styles.location__wrapper}>
           <h1 className={styles.location__title}>
-            Amplasare execlentă în zonă verde
+            {isToggleLang === "ro" ? "Amplasare execlentă în zonă verde" : "Великолепное расположение в зеленой зоне"}
             <span></span>
           </h1>
           <div className={styles.location__inner}>
@@ -102,7 +107,7 @@ export default function Index() {
               <MagnifyComponent />
               <div className={styles.magnifier__body_desktop}>
                 <Image
-                src={location__bg}
+                src={isToggleLang==="ro" ? location__bg : location__bg_ru}
                 layout="responsive"
                 width={"100%"}
                 height="50px"
@@ -138,11 +143,19 @@ export default function Index() {
             <div className={styles.location__address}>
               <Link href="https://g.page/Newton-House-srl?share">
                 <a className={styles.location__address_name}>
-                  str. Grădina Botanică, 18
+                  {
+                    isToggleLang==="ro"
+                    ? "str. Grădina Botanică, 18"
+                    : "ул. Грэдина Ботаникэ, 18"
+                  }
                 </a>
               </Link>
               <Link href="https://g.page/Newton-House-srl?share">
-                <a className={styles.location__address_detail} target="_blank">Vezi traseul</a>
+                <a className={styles.location__address_detail} target="_blank">
+                  {isToggleLang==="ro"
+                  ?"Vezi traseul"
+                :"Посмотреть маршрут"}
+                </a>
               </Link>
             </div>
             

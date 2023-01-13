@@ -3,12 +3,14 @@ import styles from "./Styles.module.scss";
 
 export default function Index({
   mounthes,
+  mounthesRu,
   isActive,
   setIsActive,
   isItem,
   handlerTabClick,
   isMounthDesk,
   setIsMounthDesk,
+  isToggleLang
   // isYear
 }) {
   const arr = [];
@@ -28,7 +30,7 @@ export default function Index({
           setIsActive(i);
         }}
       >
-        <div key={i}>{mounthes[i]}</div>
+        <div key={i}>{isToggleLang === "ro" ? mounthes[i] : mounthesRu[i]}</div>
       </div>
     );
   }

@@ -5,12 +5,16 @@ import Router from "next/router";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
 import PhoneInput from "react-phone-input-2";
 
+import { LangContext } from "../../pages/_app";
+
 export default function OfferPDFOpenSending({ hanlerClosePopup }) {
+  const { isToggleLang } = React.useContext(LangContext);
+
   const [isSend, setIsSend] = useState(false);
   const [emailValue, setEmailValue] = useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
-  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -66,11 +70,20 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
               alt="close button icon"
             />
           </button>
-          <h2 className={styles.offer__title}>
-            Solicită prezentarea
-            <br />
-            <span>NEWTON HOUSE GRĂDINA BOTANICĂ</span> PDF
-          </h2>
+
+          {isToggleLang === "ro" ? (
+            <h2 className={styles.offer__title}>
+              Solicită prezentarea
+              <br />
+              <span>NEWTON HOUSE GRĂDINA BOTANICĂ</span> PDF
+            </h2>
+          ) : (
+            <h2 className={styles.offer__title}>
+              Запросить презентацию
+              <br />
+              <span>NEWTON HOUSE GRĂDINA BOTANICĂ</span> в PDF
+            </h2>
+          )}
 
           <form
             id="about__hero_presentation_btn"
@@ -84,7 +97,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
               name="email"
               value={emailValue}
               onChange={(e) => setEmailValue(e.target.value)}
-              placeholder="Adresa de email"
+              placeholder={isToggleLang === "ro" ? "Adresa de email" : "Почта"}
               required
             />
             <PhoneInput
@@ -112,17 +125,19 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
                   value.match(/0/) &&
                   country.name === "Moldova"
                 ) {
-                  setIsPhoneValid(true)
+                  setIsPhoneValid(true);
                   return "fără prefixul zero în față";
                 } else {
-                  setIsPhoneValid(false)
+                  setIsPhoneValid(false);
                   return true;
                 }
               }}
             />
             {phoneValue.length < 11 && (
               <p className="text-xs text-red-400 pb-[2%]">
-                Exact 8 cifre, fără prefixul zero în față
+                {isToggleLang === "ro"
+                  ? "Exact 8 cifre, fără prefixul zero în față"
+                  : "ровно 8 цифр, без префикса ноль в начале"}
               </p>
             )}
             <input type="hidden" name="_captcha" value="false" />
@@ -139,9 +154,21 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
             <button
               type="submit"
               className={styles.button__sending}
-              disabled={phoneValue.length < 11 || emailValue.match(/@/) || isPhoneValid}
+              disabled={
+                phoneValue.length < 11 ||
+                emailValue.match(/@/) ||
+                isPhoneValid ||
+                spinner ||
+                isSend
+              }
             >
-              {spinner ? "trimitere..." : "Solicită prezentarea"}
+              {spinner
+                ? isToggleLang === "ro"
+                  ? "trimitere..."
+                  : "Отправляется..."
+                : isToggleLang === "ro"
+                ? "Solicită prezentarea"
+                : "Получи презентацию"}
             </button>
           </form>
         </div>

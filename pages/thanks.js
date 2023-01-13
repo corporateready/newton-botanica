@@ -6,7 +6,12 @@ import Messenger from "../components/messengers";
 import Head from "next/head";
 import Router from "next/router";
 
+import { LangContext } from "./_app";
+
 export default function Thanks() {
+
+  const { isToggleLang } = React.useContext(LangContext);
+
   return (
     <>
       <Head></Head>
@@ -19,7 +24,10 @@ export default function Thanks() {
             <div className={styles.container}>
               <div className={styles.thanks__wrapper}>
                 <h1 className={styles.thanks__title}>
-                  <span>VĂ MULȚUMIM!</span>
+                  <span>
+                    {isToggleLang === "ro"
+                    ? "VĂ MULȚUMIM!"
+                  : "спасибо!"}</span>
                 </h1>
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
@@ -41,7 +49,11 @@ export default function Thanks() {
                         fill="#3BAA35"
                       />
                     </svg>
-                    <span>înapoi la site</span>
+                    <span>{
+                    isToggleLang === "ro"
+                    ?"înapoi la site"
+                  : "Назад"}
+                    </span>
                   </button>
                 </div>
               </div>
@@ -54,6 +66,8 @@ export default function Thanks() {
 }
 
 function YoutubeVideo() {
+
+  const { isToggleLang } = React.useContext(LangContext);
 
   useEffect(() => {
     document.addEventListener("fetch", (event) => {
@@ -88,7 +102,9 @@ function YoutubeVideo() {
       height="590px"
       width="100%"
       className={styles.video__body}
-      src={`https://www.youtube.com/embed/VdszNPYn5dU?autoplay=1&origin=http://example.com&controls=0&rel=1`}
+      src={isToggleLang === "ro" 
+      ? "https://www.youtube-nocookie.com/embed/F5fbJZS3R3c"
+      : "https://www.youtube-nocookie.com/embed/shpCgt4iy-s"}
       title="YouTube video player"
       opts={opts}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

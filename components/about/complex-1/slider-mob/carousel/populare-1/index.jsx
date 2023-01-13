@@ -8,8 +8,11 @@ import item__img_2 from "../../../../../../public/static/planning-page/complex/i
 import icon_1 from "../../../../../../public/static/planning-page/complex/icons/01-сurte_fara_masini.svg";
 import icon_2 from "../../../../../../public/static/planning-page/complex/icons/06-lifturi_moderne.svg";
 
+import { LangContext } from "../../../../../../pages/_app";
 
 export default function Index() {
+
+  const { isToggleLang } = React.useContext(LangContext);
 
   return (
     <>
@@ -25,7 +28,12 @@ export default function Index() {
             <Image src={icon_1} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Curte fără mașini
+            {
+              isToggleLang === "ro"
+              ? "Curte fără mașini"
+              : "Двор без машин"
+            }
+          
           </p>
         </div>
       </div>
@@ -42,7 +50,11 @@ export default function Index() {
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Lifturi moderne 
+            {
+              isToggleLang === "ro"
+              ? "Lifturi moderne"
+              : "Современные лифты"
+            }
           </p>
         </div>
       </div>

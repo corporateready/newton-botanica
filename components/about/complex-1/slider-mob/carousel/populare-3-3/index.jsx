@@ -8,7 +8,12 @@ import item__img_6 from "../../../../../../public/static/planning-page/complex/i
 import icon_5 from "../../../../../../public/static/planning-page/complex/icons/17-mobilier_modern.svg";
 import icon_6 from "../../../../../../public/static/planning-page/complex/icons/18-havuz.svg";
 
+import { LangContext } from "../../../../../../pages/_app";
+
 export default function Index() {
+
+  const { isToggleLang } = React.useContext(LangContext);
+
   return (
     <div className={styles.complex__grid_month}>
       <div
@@ -21,7 +26,14 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>Mobilier urban modern</p>
+          <p className={styles.item__description_text}>
+          {
+            isToggleLang === "ro"
+            ? "Mobilier urban modern"
+            : "Современная городская мебель"
+          }
+            
+          </p>
         </div>
       </div>
       <div
@@ -34,7 +46,13 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>Havuz artistic</p>
+          <p className={styles.item__description_text}>
+          {
+            isToggleLang === "ro"
+            ? "Havuz artistic"
+            : "Фонтан"
+          }
+            </p>
         </div>
       </div>
     </div>

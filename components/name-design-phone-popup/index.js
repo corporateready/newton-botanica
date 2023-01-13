@@ -6,12 +6,16 @@ import Link from "next/link";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
 import PhoneInput from "react-phone-input-2";
 
+import { LangContext } from "../../pages/_app";
+
 export default function Index({ hanlerCloseDesignPopup }) {
+  const { isToggleLang } = React.useContext(LangContext);
+
   const [isSend, setIsSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
-  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -71,14 +75,28 @@ export default function Index({ hanlerCloseDesignPopup }) {
                 alt="close button icon"
               />
             </button>
-            <h2 className={styles.offer__title}>
-              Află mai multe informații înainte <br />
-              de a-ți alege locuința de vis!
-            </h2>
-            <h3 className={styles.offer__subtitle}>
+
+            {isToggleLang === "ro" ? (
+              <h2 className={styles.offer__title}>
+                Află mai multe informații înainte <br />
+                de a-ți alege locuința de vis!
+              </h2>
+            ) : (
+              <h2 className={styles.offer__title}>
+                Получи больше информации перед тем, <br />
+                как выбрать квартиру своей мечты!
+              </h2>
+            )}
+
+{isToggleLang === "ro"
+            ? <h3 className={styles.offer__subtitle}>
               Introdu datele de contact corect, iar noi te vom contacta <br />
               pentru a-ți prezenta detalii despre proiect:
             </h3>
+            : <h3 className={styles.offer__subtitle}>
+            Оставь свои контактные данные, мы перезвоним и <br />
+            предоставим подробную информацию о проекте:
+          </h3>}
 
             <form
               id="about__form_send_design_btn"
@@ -92,47 +110,51 @@ export default function Index({ hanlerCloseDesignPopup }) {
                 name="name"
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
-                placeholder="NUMELE, PRENUMELE"
+                placeholder={
+                  isToggleLang === "ro" ? "NUMELE, PRENUMELE" : "ИМЯ, ФАМИЛИЯ"
+                }
                 required
               />
               <PhoneInput
-              className={styles.input}
-              name="phone"
-              style={{
-                height: "auto",
-                width: "100%",
-                paddingTop: "0",
-                paddingBottom: "0",
-                borderRadius: "3px",
-                border:
-                  phoneValue.length !== 11
-                    ? " 1px solid red"
-                    : " 1px solid green",
-              }}
-              placeholder="+373-XXX-XXX-XX"
-              country={"md"}
-              value={phoneValue}
-              onChange={setPhoneValue}
-              masks={{ md: "(...) ...-.." }}
-              isValid={(value, country) => {
-                if (
-                  phoneValue.length >= 4 &&
-                  value.match(/0/) &&
-                  country.name === "Moldova"
-                ) {
-                  setIsPhoneValid(true)
-                  return "fără prefixul zero în față";
-                } else {
-                  setIsPhoneValid(false)
-                  return true;
-                }
-              }}
-            />
-            {phoneValue.length < 11 && (
-              <p className="text-xs text-red-400 pb-[2%]">
-                Exact 8 cifre, fără prefixul zero în față
-              </p>
-            )}
+                className={styles.input}
+                name="phone"
+                style={{
+                  height: "auto",
+                  width: "100%",
+                  paddingTop: "0",
+                  paddingBottom: "0",
+                  borderRadius: "3px",
+                  border:
+                    phoneValue.length !== 11
+                      ? " 1px solid red"
+                      : " 1px solid green",
+                }}
+                placeholder="+373-XXX-XXX-XX"
+                country={"md"}
+                value={phoneValue}
+                onChange={setPhoneValue}
+                masks={{ md: "(...) ...-.." }}
+                isValid={(value, country) => {
+                  if (
+                    phoneValue.length >= 4 &&
+                    value.match(/0/) &&
+                    country.name === "Moldova"
+                  ) {
+                    setIsPhoneValid(true);
+                    return "fără prefixul zero în față";
+                  } else {
+                    setIsPhoneValid(false);
+                    return true;
+                  }
+                }}
+              />
+              {phoneValue.length < 11 && (
+                <p className="text-xs text-red-400 pb-[2%]">
+                  {isToggleLang === "ro"
+                    ? "Exact 8 cifre, fără prefixul zero în față"
+                    : "ровно 8 цифр, без префикса ноль в начале"}
+                </p>
+              )}
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
@@ -144,22 +166,46 @@ export default function Index({ hanlerCloseDesignPopup }) {
                 name="_autoresponse"
                 value="Everyone is important for as!"
               />
-              <button type="submit" className={styles.button__sending}
-              disabled={phoneValue.length < 11 || nameValue.length < 3 || isPhoneValid}
-              >
-                {spinner ? "trimitere..." : "Vreau să fiu contactat"}
-              </button>
+              <button
+              type="submit"
+              className={styles.button__sending}
+              disabled={
+                phoneValue.length < 11 ||
+                nameValue.length < 3 ||
+                isPhoneValid ||
+                spinner ||
+                isSend
+              }
+            >
+              {spinner
+                ? isToggleLang === "ro"
+                  ? "trimitere..."
+                  : "Отправляется..."
+                : isToggleLang === "ro"
+                ? "vreau să fiu contactat"
+                : "Хочу получить звонок "}
+            </button>
             </form>
 
             <div className={styles.terms__policy}>
               <Link href="/terms">
-                <a className={styles.terms}>Terms and Conditions </a>
+                <a className={styles.terms}>
+                  {isToggleLang === "ro"
+                    ? "Terms and Conditions"
+                    : "Условия и положения"}{" "}
+                </a>
               </Link>
-              and
+              {isToggleLang === "ro" ? "and" : "и"}
               <Link href="/policy">
-                <a className={styles.policy}> Privacy Policy</a>
+                <a className={styles.policy}>
+                  {" "}
+                  {isToggleLang === "ro"
+                    ? "Privacy Policy"
+                    : "Конфиденциальность"}
+                </a>
               </Link>
             </div>
+
           </div>
         </div>
       </section>

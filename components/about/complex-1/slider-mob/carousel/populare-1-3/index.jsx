@@ -8,8 +8,12 @@ import item__img_6 from "../../../../../../public/static/planning-page/complex/i
 import icon_5 from "../../../../../../public/static/planning-page/complex/icons/05-interfon_smart.svg";
 import icon_6 from "../../../../../../public/static/planning-page/complex/icons/02-supraveghere24-7.svg";
 
+import { LangContext } from "../../../../../../pages/_app";
 
 export default function Index() {
+
+  const { isToggleLang } = React.useContext(LangContext);
+
   return (
     <>
     <div className={styles.complex__grid_month}>
@@ -24,7 +28,12 @@ export default function Index() {
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Interfon smart 
+            {
+              isToggleLang === "ro"
+              ? "Interfon smart "
+              : "Smart интерфон"
+            }
+          
           </p>
         </div>
       </div>
@@ -39,7 +48,12 @@ export default function Index() {
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Supraveghere video 24/7
+          {
+              isToggleLang === "ro"
+              ? "Supraveghere video 24/7"
+              : "Видеонаблюдение 24/7"
+            }
+          
           </p>
         </div>
       </div> 

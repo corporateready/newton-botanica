@@ -8,7 +8,11 @@ import item__img_4 from "../../../../../../public/static/planning-page/complex/i
 import icon_3 from "../../../../../../public/static/planning-page/complex/icons/09-piste_pentru_ciclism.svg";
 import icon_4 from "../../../../../../public/static/planning-page/complex/icons/no-voice-place.svg";
 
+import { LangContext } from "../../../../../../pages/_app";
+
 export default function Index() {
+
+  const { isToggleLang } = React.useContext(LangContext);
 
   return (
     <div className={styles.complex__grid_month}>
@@ -22,7 +26,11 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Piste pentru ciclism
+            {
+              isToggleLang === "ro"
+              ? "Piste pentru ciclism"
+              : "Велодорожки"
+            }
           </p>
         </div>
       </div>
@@ -36,7 +44,12 @@ export default function Index() {
             <Image src={icon_4} height={35} width={35} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Mediu fără bariere 
+          {
+              isToggleLang === "ro"
+              ? "Mediu fără bariere"
+              : "Безбарьерная среда"
+            }
+           
           </p>
         </div>
       </div>

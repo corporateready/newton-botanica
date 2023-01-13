@@ -53,8 +53,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        // @apply mt-[10%];
-        font-size: calc(14px + (24 - 14)*(100vw - 320px)/(576 - 320));
+        @apply text-[3.5vw];
     }
 }
 .location__address_inner{

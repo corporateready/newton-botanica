@@ -28,7 +28,7 @@ import ComplexScreen6 from "../components/about/complex-1/carousel/full-screen-i
 import ComplexScreen7 from "../components/about/complex-1/carousel/full-screen-image-7";
 import ComplexScreen8 from "../components/about/complex-1/carousel/full-screen-image-8";
 
-export default function About() {
+export default function About({isToggleLang,setToggleLang}) {
   const [imageURL, setImageURL] = React.useState(null);
 
   const [isPopUpSend, setIsPopUpSend] = useState(false);
@@ -123,14 +123,15 @@ export default function About() {
       </Head>
 
       <section className={styles.planning__section}>
-        <Layout>
+        <Layout isToggleLang={isToggleLang} setToggleLang={setToggleLang}>
           <div className={styles.container}>
             <Hero
               setIsPDFOpen={setIsPDFOpen}
               hanlerClosePopup={hanlerClosePopup}
               setIsCallRezervePopUp={setIsCallRezervePopUp}
+              isToggleLang={isToggleLang}
             />
-            <Complex />
+            <Complex isToggleLang={isToggleLang}/>
             <Designs
               setIsPopUpSend={setIsPopUpSend}
               hanlerCloseDesignPopup={hanlerCloseDesignPopup}

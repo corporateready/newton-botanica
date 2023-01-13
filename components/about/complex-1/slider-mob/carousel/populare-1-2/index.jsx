@@ -8,7 +8,12 @@ import item__img_4 from "../../../../../../public/static/planning-page/complex/i
 import icon_3 from "../../../../../../public/static/planning-page/complex/icons/16-terenuri_sportive.svg";
 import icon_4 from "../../../../../../public/static/planning-page/complex/icons/03-o_cheie_de_acces.svg";
 
+import { LangContext } from "../../../../../../pages/_app";
+
 export default function Index() {
+
+  const { isToggleLang } = React.useContext(LangContext);
+
   return (
     <>
       <div className={styles.complex__grid_month}>
@@ -21,7 +26,13 @@ export default function Index() {
             <div className={styles.item__description_icon}>
               <Image src={icon_3} height={39} width={38} priority alt="" />
             </div>
-            <p className={styles.item__description_text}>Terenuri sportive</p>
+            <p className={styles.item__description_text}>
+            {
+              isToggleLang === "ro"
+              ? "Terenuri sportive"
+              : "Спортплощадки"
+            }
+              </p>
           </div>
         </div>
 
@@ -34,7 +45,12 @@ export default function Index() {
               <Image src={icon_4} height={26} width={47} priority alt="" />
             </div>
             <p className={styles.item__description_text}>
-            O cheie de acces
+            {
+              isToggleLang === "ro"
+              ? "O cheie de acces"
+              : "Единый ключ доступа"
+            }
+            
             </p>
           </div>
         </div>

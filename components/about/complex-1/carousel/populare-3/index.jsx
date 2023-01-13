@@ -16,7 +16,11 @@ import icon_4 from "../../../../../public/static/planning-page/complex/icons/16-
 import icon_5 from "../../../../../public/static/planning-page/complex/icons/17-mobilier_modern.svg";
 import icon_6 from "../../../../../public/static/planning-page/complex/icons/18-havuz.svg";
 
+import { LangContext } from "../../../../../pages/_app";
+
 export default function Index() {
+  const { isToggleLang } = React.useContext(LangContext);
+
   return (
     <div className={styles.complex__grid_month}>
       <div className={styles.complex__grid_item}>
@@ -28,7 +32,7 @@ export default function Index() {
             <Image src={icon_1} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          O cheie de acces 
+            {isToggleLang === "ro" ? "O cheie de acces" : "Единый ключ доступа"}
           </p>
         </div>
       </div>
@@ -48,7 +52,9 @@ export default function Index() {
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Grădiniță modernă
+            {isToggleLang === "ro"
+              ? "Grădiniță modernă"
+              : "Современный детский сад"}
           </p>
         </div>
       </div>
@@ -61,7 +67,7 @@ export default function Index() {
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Lifturi moderne 
+            {isToggleLang === "ro" ? "Lifturi moderne" : "Современные лифты"}
           </p>
         </div>
       </div>
@@ -74,7 +80,7 @@ export default function Index() {
             <Image src={icon_4} height={26} width={47} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Terenuri sportive 
+            {isToggleLang === "ro" ? "Terenuri sportive" : "Спортплощадки"}
           </p>
         </div>
       </div>
@@ -87,7 +93,9 @@ export default function Index() {
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Mobilier urban modern 
+            {isToggleLang === "ro"
+              ? "Mobilier urban modern"
+              : "Современная городская мебель"}
           </p>
         </div>
       </div>
@@ -100,8 +108,12 @@ export default function Index() {
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Havuz artistic
-          </p>
+          {
+              isToggleLang === "ro"
+              ? "Havuz artistic"
+              : "Фонтан"
+            }
+            </p>
         </div>
       </div>
     </div>

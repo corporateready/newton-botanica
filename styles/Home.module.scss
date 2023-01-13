@@ -195,12 +195,12 @@
     @apply text-center tracking-wider;
     font-family: 'Montserrat Semibold';
 
-    @media screen and(max-width: 1440px) {
-        font-size: calc(14px + (38 - 14)*(100vw - 576px)/(1440 - 576));
+    @media screen and (min-width: 576px) {
+        @apply text-[2.5vw];
     }
 
-    @media screen and(max-width: 576px) {
-        font-size: calc(11px + (24 - 11)*(100vw - 320px)/(576 - 320));
+    @media screen and (max-width: 576px) {
+        @apply text-[3.25vw];
     }
 }
 .offer__subtitle {
@@ -306,7 +306,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply flex justify-center w-[57%];
+        @apply flex justify-center w-[60%] pr-[25%];
     }
 
 }

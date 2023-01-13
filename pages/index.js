@@ -6,7 +6,9 @@ import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 import header__home_logo from "../public/static/home-page/header-logo.svg";
 import image__side from "../public/static/home-page/home-image-inner.svg";
+import image__side_ru from "../public/static/home-page/descktop.svg";
 import image__side_mobile from "../public/static/home-page/home-image-inner-mobile.svg";
+import image__side_mobile_ru from "../public/static/home-page/mobile.svg";
 import close__button from "../public/static/planning-page/close-button-popup.svg";
 
 import phone__icon from "../public/static/home-page/phone.svg";
@@ -14,11 +16,12 @@ import Messengers from "../components/messengers";
 
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import startsWith from "lodash.startswith";
 import { motion } from "framer-motion";
 
+import { LangContext } from "../pages/_app";
+
 export default function Home() {
-  const [isToggleLang, setToggleLang] = React.useState("ro");
+  const { isToggleLang, setToggleLang } = React.useContext(LangContext);
 
   React.useEffect(() => {
     (function (w, d, s, h, id) {
@@ -131,11 +134,11 @@ export default function Home() {
                 ></a>
               </div>
             </div>
-            {/* <motion.div className="absolute top-[25%] right-[55%] sm:right-[50%]">
+            {/* <motion.div className="absolute top-[28%] right-[4%] sm:right-[30%]">
               <select
                 value={isToggleLang}
                 onChange={(e) => setToggleLang(e.target.value)}
-                className="text-sm focus-visible:outline-none hover:cursor-pointer"
+                className="text-sm text-green-600 font-bold focus-visible:outline-none hover:cursor-pointer"
               >
                 <option value="ro">RO</option>
                 <option value="ru">RU</option>
@@ -149,7 +152,7 @@ export default function Home() {
             <div className={styles.inner}>
               <div className={styles.image__side}>
                 <Image
-                  src={image__side}
+                  src={isToggleLang === "ro" ? image__side : image__side_ru}
                   height={400}
                   width={536}
                   alt="home inner "
@@ -159,7 +162,11 @@ export default function Home() {
 
               <div className={styles.image__side_mobile}>
                 <Image
-                  src={image__side_mobile}
+                  src={
+                    isToggleLang === "ro"
+                      ? image__side_mobile
+                      : image__side_mobile_ru
+                  }
                   height={466}
                   width={381}
                   alt="home inner mobile "
@@ -173,13 +180,13 @@ export default function Home() {
                     className={styles.button__about}
                     onClick={handlerAboutClick}
                   >
-                    {isToggleLang === "ro" ? "Despre CASĂ" : "О ДОМЕ"}
+                    {isToggleLang === "ro" ? "Despre CASĂ" : "О проекте"}
                   </button>
                   <a
                     className={styles.button__planning}
                     onClick={handlerPlanningClick}
                   >
-                    {isToggleLang === "ro" ? "PLANIMETRII" : "планиметрия"}
+                    {isToggleLang === "ro" ? "PLANIMETRII" : "Планировки"}
                   </a>
                 </div>
 
@@ -187,7 +194,7 @@ export default function Home() {
                   className={styles.button__send}
                   onClick={() => setIsOfferOpen(true)}
                 >
-                  {isToggleLang === "ro" ? "vezi detalii" : "посмотреть детали"}
+                  {isToggleLang === "ro" ? "vezi detalii" : "Подробности"}
                 </button>
               </div>
 
@@ -203,7 +210,10 @@ export default function Home() {
         </div>
 
         {isOfferOpen && (
-          <OfferPopUpSending hanlerClosePopup={hanlerClosePopup} />
+          <OfferPopUpSending
+            hanlerClosePopup={hanlerClosePopup}
+            isToggleLang={isToggleLang}
+          />
         )}
 
         {isAboutPopUp && (
@@ -216,6 +226,7 @@ export default function Home() {
         {isPlanningPopUp && (
           <PlanningPopUpSending
             hanlerClosePlanningPopup={hanlerClosePlanningPopup}
+            isToggleLang={isToggleLang}
           />
         )}
       </div>
@@ -223,12 +234,12 @@ export default function Home() {
   );
 }
 
-export function OfferPopUpSending({ hanlerClosePopup }) {
+export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
   const [isSend, setIsSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
-  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -279,12 +290,26 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                 alt="close button icon"
               />
             </button>
-            <h2 className={styles.offer__title}>
-              OBȚINE CONSULTAȚIA MANAGERULUI
-            </h2>
-            <h3 className={styles.offer__subtitle}>
-              Expediază-ne datele de contact și revenim cu un apel în curând
-            </h3>
+            {isToggleLang === "ro" ? (
+              <h2 className={styles.offer__title}>
+                OBȚINE CONSULTAȚIA MANAGERULUI
+              </h2>
+            ) : (
+              <h2 className={styles.offer__title}>
+                Получи консультацию менеджера
+              </h2>
+            )}
+
+            {isToggleLang === "ro" ? (
+              <h3 className={styles.offer__subtitle}>
+                Expediază-ne datele de contact și revenim cu un apel în curând
+              </h3>
+            ) : (
+              <h3 className={styles.offer__subtitle}>
+                Отправь нам свои контактные данные <br />и мы свяжемся с тобой в
+                ближайшее время
+              </h3>
+            )}
 
             <form
               id="home__form_send_details_btn"
@@ -298,7 +323,9 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                 name="name"
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
-                placeholder="NUMELE, PRENUMELE"
+                placeholder={
+                  isToggleLang === "ro" ? "NUMELE, PRENUMELE" : "ИМЯ, ФАМИЛИЯ"
+                }
                 required
               />
 
@@ -327,19 +354,25 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                     value.match(/0/) &&
                     country.name === "Moldova"
                   ) {
-                    setIsPhoneValid(true)
+                    setIsPhoneValid(true);
                     return "fără prefixul zero în față";
                   } else {
-                    setIsPhoneValid(false)
+                    setIsPhoneValid(false);
                     return true;
                   }
                 }}
               />
-              {phoneValue.length < 11 && (
-                <p className="text-xs text-red-400 pb-[2%]">
-                  Exact 8 cifre, fără prefixul zero în față
-                </p>
-              )}
+              {phoneValue.length < 11 &&
+                (isToggleLang === "ro" ? (
+                  <p className="text-xs text-red-400 pb-[2%]">
+                    Exact 8 cifre, fără prefixul zero în față
+                  </p>
+                ) : (
+                  <p className="text-xs text-red-400 pb-[2%]">
+                    ровно 8 цифр, без префикса ноль в начале
+                  </p>
+                ))}
+
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
@@ -351,22 +384,44 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
                 name="_autoresponse"
                 value="Everyone is important for as!"
               />
+
               <button
                 type="submit"
                 className={styles.button__sending}
-                disabled={phoneValue.length < 11 || nameValue.length < 3 || isPhoneValid}
+                disabled={
+                  phoneValue.length < 11 ||
+                  nameValue.length < 3 ||
+                  isPhoneValid ||
+                  spinner ||
+                  isSend
+                }
               >
-                {spinner ? "trimiteri..." : "AFLĂ DETALII"}
+                {spinner
+                  ? isToggleLang === "ro"
+                    ? "trimitere..."
+                    : "Отправляется..."
+                  : isToggleLang === "ro"
+                  ? "AFLĂ DETALII"
+                  : "Узнать подробности"}
               </button>
             </form>
 
             <div className={styles.terms__policy}>
               <Link href="/terms">
-                <a className={styles.terms}>Terms and Conditions </a>
+                <a className={styles.terms}>
+                  {isToggleLang === "ro"
+                    ? "Terms and Conditions"
+                    : "Условия и положения"}{" "}
+                </a>
               </Link>
-              and
+              {isToggleLang === "ro" ? "and" : "и"}
               <Link href="/policy">
-                <a className={styles.policy}> Privacy Policy</a>
+                <a className={styles.policy}>
+                  {" "}
+                  {isToggleLang === "ro"
+                    ? "Privacy Policy"
+                    : "Конфиденциальность"}
+                </a>
               </Link>
             </div>
           </div>
@@ -376,12 +431,12 @@ export function OfferPopUpSending({ hanlerClosePopup }) {
   );
 }
 
-function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
+function PlanningPopUpSending({ hanlerClosePlanningPopup, isToggleLang }) {
   const [isPlanningSend, setIsPlanningSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
-  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -432,14 +487,28 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
                 alt="close button icon"
               />
             </button>
-            <h2 className={styles.offer__title}>
-              Vrei să vizualizezi <br />
-              planimetriile disponibile?
-            </h2>
-            <h3 className={styles.offer__subtitle}>
-              Expediază-ne datele de contact și managerul revine <br />
-              cu informații suplimentare:
-            </h3>
+            {isToggleLang === "ro" ? (
+              <h2 className={styles.offer__title}>
+                Vrei să vizualizezi <br />
+                planimetriile disponibile?
+              </h2>
+            ) : (
+              <h2 className={styles.offer__title}>
+                Хочешь увидеть <br />
+                доступные планировки?
+              </h2>
+            )}
+            {isToggleLang === "ro" ? (
+              <h3 className={styles.offer__subtitle}>
+                Expediază-ne datele de contact și managerul revine <br />
+                cu informații suplimentare:
+              </h3>
+            ) : (
+              <h3 className={styles.offer__subtitle}>
+                Отправь нам контактные данные и менеджер свяжется с тобой,
+                <br /> чтобы предоставить дополнительную информацию:
+              </h3>
+            )}
 
             <form
               id="home__form_send_planning_btn"
@@ -453,7 +522,9 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
                 name="name"
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
-                placeholder="NUMELE, PRENUMELE"
+                placeholder={
+                  isToggleLang === "ro" ? "NUMELE, PRENUMELE" : "ИМЯ, ФАМИЛИЯ"
+                }
                 required
               />
 
@@ -482,19 +553,24 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
                     value.match(/0/) &&
                     country.name === "Moldova"
                   ) {
-                    setIsPhoneValid(true)
+                    setIsPhoneValid(true);
                     return "fără prefixul zero în față";
                   } else {
-                    setIsPhoneValid(false)
+                    setIsPhoneValid(false);
                     return true;
                   }
                 }}
               />
-              {phoneValue.length < 11 && (
-                <p className="text-xs text-red-400 pb-[2%]">
-                  Exact 8 cifre, fără prefixul zero în față
-                </p>
-              )}
+              {phoneValue.length < 11 &&
+                (isToggleLang === "ro" ? (
+                  <p className="text-xs text-red-400 pb-[2%]">
+                    Exact 8 cifre, fără prefixul zero în față
+                  </p>
+                ) : (
+                  <p className="text-xs text-red-400 pb-[2%]">
+                    ровно 8 цифр, без префикса ноль в начале
+                  </p>
+                ))}
               <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
@@ -509,19 +585,40 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup }) {
               <button
                 type="submit"
                 className={styles.button__sending}
-                disabled={phoneValue.length < 11 || nameValue.length < 3 || isPhoneValid}
+                disabled={
+                  phoneValue.length < 11 ||
+                  nameValue.length < 3 ||
+                  isPhoneValid ||
+                  spinner ||
+                  isPlanningSend
+                }
               >
-                {spinner ? "trimitere..." : "Plasează solicitarea"}
+                {spinner
+                  ? isToggleLang === "ro"
+                    ? "trimitere..."
+                    : "Отправляется..."
+                  : isToggleLang === "ro"
+                  ? "Plasează solicitarea"
+                  : "Оставить заявку"}
               </button>
             </form>
 
             <div className={styles.terms__policy}>
               <Link href="/terms">
-                <a className={styles.terms}>Terms and Conditions </a>
+                <a className={styles.terms}>
+                  {isToggleLang === "ro"
+                    ? "Terms and Conditions"
+                    : "Условия и положения"}{" "}
+                </a>
               </Link>
-              and
+              {isToggleLang === "ro" ? "and" : "и"}
               <Link href="/policy">
-                <a className={styles.policy}> Privacy Policy</a>
+                <a className={styles.policy}>
+                  {" "}
+                  {isToggleLang === "ro"
+                    ? "Privacy Policy"
+                    : "Конфиденциальность"}
+                </a>
               </Link>
             </div>
           </div>
@@ -536,7 +633,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
   const [nameValue, setNameValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
   const [spinner, setSpinner] = React.useState(false);
-  const [isPhoneValid, setIsPhoneValid] = React.useState(false)
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false);
 
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
@@ -558,7 +655,6 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
         setIsAboutSend(true);
       })
       .then((data) => {
-        console.log("data " + data);
         data;
       })
       .then(function () {
@@ -659,10 +755,10 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
                     value.match(/0/) &&
                     country.name === "Moldova"
                   ) {
-                    setIsPhoneValid(true)
+                    setIsPhoneValid(true);
                     return "fără prefixul zero în față";
                   } else {
-                    setIsPhoneValid(false)
+                    setIsPhoneValid(false);
                     return true;
                   }
                 }}
@@ -691,7 +787,13 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
               <button
                 type="submit"
                 className={styles.button__sending}
-                disabled={phoneValue.length < 11 || nameValue.length < 3 || isPhoneValid}
+                disabled={
+                  phoneValue.length < 11 ||
+                  nameValue.length < 3 ||
+                  isPhoneValid ||
+                  spinner ||
+                  isAboutSend
+                }
               >
                 {spinner
                   ? isToggleLang === "ro"
@@ -705,11 +807,20 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
 
             <div className={styles.terms__policy}>
               <Link href="/terms">
-                <a className={styles.terms}>Terms and Conditions </a>
+                <a className={styles.terms}>
+                  {isToggleLang === "ro"
+                    ? "Terms and Conditions"
+                    : "Условия и положения"}{" "}
+                </a>
               </Link>
-              and
+              {isToggleLang === "ro" ? "and" : "и"}
               <Link href="/policy">
-                <a className={styles.policy}> Privacy Policy</a>
+                <a className={styles.policy}>
+                  {" "}
+                  {isToggleLang === "ro"
+                    ? "Privacy Policy"
+                    : "Конфиденциальность"}
+                </a>
               </Link>
             </div>
           </div>

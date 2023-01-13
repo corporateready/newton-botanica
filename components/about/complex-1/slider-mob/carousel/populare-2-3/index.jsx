@@ -8,7 +8,11 @@ import item__img_6 from "../../../../../../public/static/planning-page/complex/i
 import icon_5 from "../../../../../../public/static/planning-page/complex/icons/11-parc.svg";
 import icon_6 from "../../../../../../public/static/planning-page/complex/icons/cart-icon.svg";
 
+import { LangContext } from "../../../../../../pages/_app";
+
 export default function Index() {
+
+  const { isToggleLang } = React.useContext(LangContext);
  
   return (
     <div className={styles.complex__grid_month}>
@@ -21,7 +25,11 @@ export default function Index() {
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Lanț de lacuri și parc 
+            {
+              isToggleLang === "ro"
+              ? "Lanț de lacuri și parc"
+              : "Цепь озер и парк"
+            }
           </p>
         </div>
       </div>
@@ -34,7 +42,12 @@ export default function Index() {
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Facilități de shopping 
+          
+          {
+              isToggleLang === "ro"
+              ? "Facilități de shopping"
+              : "Шоппинг"
+            }
           </p>
         </div>
       </div>

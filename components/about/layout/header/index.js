@@ -6,7 +6,11 @@ import header__logo from "../../../../public/static/home-page/header-logo.svg";
 import phone__icon from "../../../../public/static/home-page/phone.svg";
 import { motion } from "framer-motion";
 
-export default function index() {
+import { LangContext } from "../../../../pages/_app";
+
+export default function Index() {
+  const { isToggleLang, setToggleLang } = React.useContext(LangContext);
+  
   React.useEffect(() => {
     (function (w, d, s, h, id) {
       w.roistatProjectId = id;
@@ -32,6 +36,7 @@ export default function index() {
       "e39442a8581e616d741b8f0786da960e"
     );
   }, []);
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -46,7 +51,8 @@ export default function index() {
                 alt="home header logo"
               />
             </a>
-            </Link>
+          </Link>
+          
           <div className={styles.header__phone_link}>
             <motion.div 
             className={styles.header__phone_icon}
@@ -66,6 +72,17 @@ export default function index() {
               className={styles.header__phone_link_number}
             ></a>
           </div>
+          
+          {/* <motion.div className="absolute top-[28%] right-[4%] sm:right-[30%]">
+              <select
+                value={isToggleLang}
+                onChange={(e) => setToggleLang(e.target.value)}
+                className="text-sm text-green-600 font-bold focus-visible:outline-none hover:cursor-pointer"
+              >
+                <option value="ro">RO</option>
+                <option value="ru">RU</option>
+              </select>
+            </motion.div> */}
         </div>
       </div>
     </header>

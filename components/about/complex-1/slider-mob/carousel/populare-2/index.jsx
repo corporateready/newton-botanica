@@ -8,7 +8,11 @@ import item__img_2 from "../../../../../../public/static/planning-page/complex/i
 import cart from "../../../../../../public/static/planning-page/complex/icons/parking.svg";
 import icon_2 from "../../../../../../public/static/planning-page/complex/icons/swiming.svg";
 
+import { LangContext } from "../../../../../../pages/_app";
+
 export default function Index() {
+
+  const { isToggleLang } = React.useContext(LangContext);
 
   return (
     <div className={styles.complex__grid_month}>
@@ -23,7 +27,9 @@ export default function Index() {
             <Image src={cart} height={33} width={39} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Parcare subterană multietajată 
+          {isToggleLang === "ro"
+          ? "Parcare subterană multietajată "
+        : "Многоуровневая подземная парковка"}
           </p>
         </div>
       </div>
@@ -38,7 +44,10 @@ export default function Index() {
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
           <p className={styles.item__description_text}>
-          Fitness centru cu bazin 
+          {isToggleLang === "ro"
+          ? "Fitness centru cu bazin "
+        : "Фитнес-центр с бассейном"
+        }
           </p>
         </div>
       </div>

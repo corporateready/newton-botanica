@@ -16,10 +16,14 @@ import icon_4 from "../../../../../public/static/planning-page/complex/icons/04-
 import icon_5 from "../../../../../public/static/planning-page/complex/icons/05-interfon_smart.svg";
 import icon_6 from "../../../../../public/static/planning-page/complex/icons/15-spatii_de_joaca.svg";
 
+import { LangContext } from "../../../../../pages/_app";
+
 export default function Index() {
+  const { isToggleLang } = React.useContext(LangContext);
+  
   return (
     <div className={styles.complex__grid_month}>
-
+      
       <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
           <Image src={item__img_1} height={223} width={335} priority alt="" />
@@ -28,14 +32,20 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_1} height={33} width={39} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>
-          Parcare subterană multietajată 
-          </p>
+          {isToggleLang === "ro" ? (
+            <p className={styles.item__description_text}>
+              Parcare subterană multietajată
+            </p>
+          ) : (
+            <p className={styles.item__description_text}>
+              Многоуровневая подземная парковка
+            </p>
+          )}
         </div>
         <div className={styles.item__info}>
           <div className={styles.info__icon_wrapper}>
             <div className={styles.item__description_icon}>
-            <Image src={icon_1} height={33} width={39} priority alt="" />
+              <Image src={icon_1} height={33} width={39} priority alt="" />
             </div>
           </div>
           <div className={styles.info__description}>
@@ -59,9 +69,13 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_2} height={35} width={56} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>
-          Lanț de lacuri și parc 
+          {isToggleLang==="ro"?<p className={styles.item__description_text}>
+            Lanț de lacuri și parc
           </p>
+        : <p className={styles.item__description_text}>
+        Цепь озер и парк
+      </p>  
+        }
         </div>
         <div className={styles.item__info}>Supraveghere video 24/7</div>
       </div>
@@ -74,9 +88,14 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_3} height={39} width={38} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>
-          Fitness centru cu bazin 
+         {isToggleLang==="ro"
+         ? <p className={styles.item__description_text}>
+            Fitness centru cu bazin
           </p>
+        :  <p className={styles.item__description_text}>
+        Фитнес-центр с бассейном
+      </p>  
+        }
         </div>
       </div>
 
@@ -88,11 +107,13 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_4} height={26} width={47} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>
-          Acces prin 3 intrări 
-          </p>
+          {isToggleLang==="ro"
+            ? <p className={styles.item__description_text}>Acces prin 3 intrări</p>
+          : <p className={styles.item__description_text}>Доступ с трех сторон</p>
+          }
         </div>
       </div>
+
       <div className={styles.complex__grid_item}>
         <div className={styles.item__bg}>
           <Image src={item__img_5} height={223} width={335} priority alt="" />
@@ -101,9 +122,8 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_5} height={37} width={37} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>
-          Interfon smart 
-          </p>
+          {isToggleLang==="ro"?<p className={styles.item__description_text}>Interfon smart</p>
+          :<p className={styles.item__description_text}>Smart интерфон</p>}
         </div>
       </div>
 
@@ -115,9 +135,9 @@ export default function Index() {
           <div className={styles.item__description_icon}>
             <Image src={icon_6} height={33} width={39} priority alt="" />
           </div>
-          <p className={styles.item__description_text}>
-          Spații de joacă 
-          </p>
+          {isToggleLang==="ro" ? <p className={styles.item__description_text}>Spații de joacă</p>
+        : <p className={styles.item__description_text}>Игровые площадки</p>  
+        }
         </div>
       </div>
     </div>
