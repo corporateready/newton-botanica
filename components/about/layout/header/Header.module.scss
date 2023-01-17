@@ -65,7 +65,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply flex justify-center w-[60%];
+        @apply flex justify-center w-[60%] mr-[13%];
     }
 }
 .header__phone_icon {

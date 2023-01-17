@@ -4,11 +4,13 @@ import Image from "next/image";
 
 import HeroBG from "./image-bg";
 
+import {LangContext} from "../../../pages/_app"
+
 export default function Index({
   setIsPDFOpen,
-  setIsCallRezervePopUp,
-  isToggleLang,
+  setIsCallRezervePopUp
 }) {
+  const { isToggleLang } = React.useContext(LangContext);
   const hanlerIsPDFOpenPopup = () => {
     setIsPDFOpen(true);
   };

@@ -73,16 +73,17 @@ export default function Index() {
             ></a>
           </div>
           
-          {/* <motion.div className="absolute top-[28%] right-[4%] sm:right-[30%]">
+          <motion.div className="absolute top-[28%] right-[4%] sm:right-[30%]">
               <select
                 value={isToggleLang}
                 onChange={(e) => setToggleLang(e.target.value)}
+                multiple={false}
                 className="text-sm text-green-600 font-bold focus-visible:outline-none hover:cursor-pointer"
               >
                 <option value="ro">RO</option>
                 <option value="ru">RU</option>
               </select>
-            </motion.div> */}
+            </motion.div>
         </div>
       </div>
     </header>

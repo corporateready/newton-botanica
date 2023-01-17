@@ -319,7 +319,7 @@
     }
 
     @media screen and(max-width: 576px) {
-        @apply flex justify-center w-[60%];
+        @apply flex justify-center w-[65%];
     }
 
 }
@@ -329,7 +329,7 @@
 
     @media screen and (max-width: 576px) {
         @include text(27px, 100%, 700, rgba(88, 88, 87, 1));
-        @apply text-[4.25vw];
+        @apply text-[4.25vw] pr-[35%];
     }
 }
 

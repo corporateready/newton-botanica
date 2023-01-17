@@ -10,7 +10,10 @@ import { FiInstagram } from "@react-icons/all-files/fi/FiInstagram";
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 
+import {LangContext} from "../../../../pages/_app"
+
 export default function index() {
+  const { isToggleLang } = React.useContext(LangContext);
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -125,7 +128,12 @@ export default function index() {
             </Link>
           </div>
         <p className={styles.footer__bottom}>
-          Toate drepturile rezervate NEWTON HOUSE GRĂDINA BOTANICĂ © {new Date().getFullYear()}.
+          {
+            isToggleLang === "ro"
+            ? `Toate drepturile rezervate NEWTON HOUSE GRĂDINA BOTANICĂ © ${new Date().getFullYear()}.`
+            : `Все права защищены NEWTON HOUSE GRĂDINA BOTANICĂ © ${new Date().getFullYear()}.`
+          }
+          
         </p>
       </div>
     </footer>
