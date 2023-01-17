@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript, Script } from "next/document";
 
 export default class CustomDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -15,7 +15,6 @@ export default class CustomDocument extends Document {
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-203040095-1"
           ></script>
-
           <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-KRLSSZN"
@@ -24,39 +23,31 @@ export default class CustomDocument extends Document {
               styles="display:none;visibility:hidden"
             ></iframe>
           </noscript>
+          <script type="text/javascript" async>
+            {function (w, d, s, h, id) {
+              w.roistatProjectId = id;
+              w.roistatHost = h;
+              var p = d.location.protocol == "https:" ? "https://" : "http://";
+              var u = /^.roistat_visit=[^;]+(.)?$/.test(d.cookie)
+                ? "/dist/module.js"
+                : "/api/site/1.0/" +
+                  id +
+                  "/init?referrer=" +
+                  encodeURIComponent(d.location.href);
+              var js = d.createElement(s);
+              js.charset = "UTF-8";
+              js.async = 1;
+              js.src = p + h + u;
+              var js2 = d.getElementsByTagName(s)[0];
+              js2.parentNode.insertBefore(js, js2);
+            }}
+            ( window, document, "script", "cloud.roistat.com",
+            "e39442a8581e616d741b8f0786da960e" )
+          </script>
         </Head>
         <body>
           <Main />
           <NextScript></NextScript>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              !function (w, d, s, h, id) {
-                  w.roistatProjectId = id;
-                  w.roistatHost = h;
-                  var p = d.location.protocol == "https:" ? "https://" : "http://";
-                  var u = /^.roistat_visit=[^;]+(.)?$/.test(d.cookie)
-                    ? "/dist/module.js"
-                    : "/api/site/1.0/" +
-                      id +
-                      "/init?referrer=" +
-                      encodeURIComponent(d.location.href);
-                  var js = d.createElement(s);
-                  js.charset = "UTF-8";
-                  js.async = 1;
-                  js.src = p + h + u;
-                  var js2 = d.getElementsByTagName(s)[0];
-                  js2.parentNode.insertBefore(js, js2);
-                }(
-                  window,
-                  document,
-                  "script",
-                  "cloud.roistat.com",
-                  "e39442a8581e616d741b8f0786da960e"
-                );
-            `,
-            }}
-          />
         </body>
       </Html>
     );

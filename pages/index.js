@@ -96,6 +96,9 @@ export default function Home() {
           content="Apartamente în rate, pe 5 ani, cu doar 10% prima rată, 0% dobândă,"
         />
         <link rel="icon" href="/favicon.ico" />
+        <script>
+          
+        </script>
       </Head>
 
       <div className={styles.home__screen}>

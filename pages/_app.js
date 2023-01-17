@@ -25,6 +25,7 @@ const getLanguageFromLocalStorage = () => {
     () => ({ isToggleLang, setToggleLang }),
     [isToggleLang]
   );
+  
   return (
     <LangContext.Provider value={value}>
       <Component
