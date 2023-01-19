@@ -183,7 +183,7 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
                   country.name === "Moldova"
                 ) {
                   setIsPhoneValid(true);
-                  return "fără prefixul zero în față";
+                  return isToggleLang === "ro" ? "fără prefixul zero în față" : "без префикса ноль в начале";
                 } else {
                   setIsPhoneValid(false);
                   return true;

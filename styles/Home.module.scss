@@ -178,6 +178,7 @@
 }
 .offer__inner {
     @apply flex flex-col items-center justify-center h-auto w-[63%] bg-white relative z-auto pt-[3%] pb-[4.5%] mx-auto rounded-md;
+    transform: scale(1);
 
     @media screen and (max-width: 576px) {
         @apply w-full py-[15%] px-[5%];
@@ -328,8 +329,8 @@
     @apply flex items-center space-x-2;
 
     @media screen and (max-width: 576px) {
-        @include text(27px, 100%, 700, rgba(88, 88, 87, 1));
-        @apply text-[4.25vw] pr-[35%];
+        // @include text(27px, 100%, 700, rgba(88, 88, 87, 1));
+        @apply text-[3.5vw] pr-[35%];
     }
 }
 

@@ -72,10 +72,14 @@
     @apply self-center duration-75 delay-200 ;
 
     @media screen and(max-width: 576px) {
-        @apply w-[15px] pt-1;
+        @apply w-[15px];
     }
 
 }
 .header__phone_link_number {
     @apply inline-block ml-[3%] uppercase;
+
+    @media screen and(max-width: 576px) {
+        @apply text-[3.75vw];
+    }
 }

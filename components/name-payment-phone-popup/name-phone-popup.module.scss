@@ -19,8 +19,8 @@
     }
 }
 .offer__inner {
-    @apply flex flex-col items-center justify-center h-auto w-[63%] bg-white relative z-auto pt-[3%] pb-[4.5%] mx-auto rounded-md;
-
+    @apply flex flex-col items-center justify-center h-auto w-[63%] bg-white relative z-auto pt-[3%] pb-[4.5%] mx-auto rounded-md transform-none;
+    transform: scale(1);
     @media screen and (max-width: 576px) {
         @apply w-full py-[15%] px-[5%];
     }
@@ -33,7 +33,7 @@
     }
 }
 .offer__title {
-    @include text(32px, 130%, 600, #2D2D2B);
+    @include text(28px, 130%, 600, #2D2D2B);
     @apply text-center tracking-wider;
     font-family: 'Montserrat Semibold';
 

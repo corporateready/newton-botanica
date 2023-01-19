@@ -29,6 +29,7 @@ import ComplexScreen7 from "../components/about/complex-1/carousel/full-screen-i
 import ComplexScreen8 from "../components/about/complex-1/carousel/full-screen-image-8";
 
 import {LangContext} from "./_app"
+
 export default function About() {
   const { isToggleLang } = React.useContext(LangContext);
 
@@ -132,7 +133,6 @@ export default function About() {
               setIsPDFOpen={setIsPDFOpen}
               hanlerClosePopup={hanlerClosePopup}
               setIsCallRezervePopUp={setIsCallRezervePopUp}
-              // isToggleLang={isToggleLang}
             />
             <Complex isToggleLang={isToggleLang}/>
             <Designs
