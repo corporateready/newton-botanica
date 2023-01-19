@@ -13,6 +13,15 @@ import { LangContext } from "../../../../pages/_app";
 export default function Index({ hanlerCloseLocationPopup }) {
   const { isToggleLang } = React.useContext(LangContext);
 
+  const [isClicked, setIsClicked] = React.useState(false)
+
+  const x = useMotionValue(0)
+  const background = useTransform(
+    x,
+    [-100, 0, 100],
+    ["", "", ""],
+  )
+
   return (
     <section className={styles.offer__section}>
         <div className={styles.offer__container}>
@@ -28,8 +37,12 @@ export default function Index({ hanlerCloseLocationPopup }) {
             <motion.button 
             className={isToggleLang === "ro" ? styles.image__item : styles.image__item_ru}
             initial={{scale:1, opacity:0,left: 0, right: 0 }}
-            animate={{opacity:1}}
-            whileTap={{scale:2.5, x:[0,200]}}
+            animate={{opacity:1,stiffness: 2000, type:"spring"}}
+            whileDrag={{scale:2}}
+            style={{ background }}
+            // onClick={()=>{
+            //   console.log("isClicked ", isClicked);
+            //   setIsClicked(!isClicked)}}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             transition={{duration:0.5, ease:"easeOut"}}
