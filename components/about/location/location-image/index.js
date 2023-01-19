@@ -4,14 +4,14 @@ import styles from "./styles.module.scss";
 import location__bg from "../../../../public/static/planning-page/location/panoramic-botanica.webp";
 import location__bg_ru from "../../../../public/static/planning-page/location/panoramic-botanica-pins-ru.webp";
 import close__button from "../../../../public/static/planning-page/close-button-popup.svg";
-import { motion } from "framer-motion";
+import { motion,
+  useMotionValue,
+  useTransform, } from "framer-motion";
 
 import { LangContext } from "../../../../pages/_app";
 
 export default function Index({ hanlerCloseLocationPopup }) {
   const { isToggleLang } = React.useContext(LangContext);
-
-  const [isTap, setIsTap] = React.useState(false)
 
   return (
     <section className={styles.offer__section}>
@@ -27,10 +27,11 @@ export default function Index({ hanlerCloseLocationPopup }) {
 
             <motion.button 
             className={isToggleLang === "ro" ? styles.image__item : styles.image__item_ru}
-            initial={{scale:1, opacity:0}}
+            initial={{scale:1, opacity:0,left: 0, right: 0 }}
             animate={{opacity:1}}
-            whileTap={{scale:3}}
-            onDrag="y"
+            whileTap={{scale:2.5, x:[0,200]}}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
             transition={{duration:0.5, ease:"easeOut"}}
             >
               <span></span>
