@@ -103,13 +103,12 @@ function YoutubeVideo() {
       width="100%"
       className={styles.video__body}
       src={isToggleLang === "ro" 
-      ? "https://www.youtube-nocookie.com/embed/F5fbJZS3R3c"
-      : "https://www.youtube-nocookie.com/embed/shpCgt4iy-s"}
+      ? "https://www.youtube-nocookie.com/embed/F5fbJZS3R3c?autoplay=1"
+      : "https://www.youtube-nocookie.com/embed/shpCgt4iy-s?autoplay=1"}
       title="YouTube video player"
       opts={opts}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
-      autoPlay
     />
   );
 }

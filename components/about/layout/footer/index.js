@@ -122,7 +122,9 @@ export default function index() {
                 />
               </span>
               <span className={styles.footer__contact_text}>
-                str. Grădina Botanică, 18
+                {
+                  isToggleLang === "ro"?"str. Grădina Botanică, 18":"ул. Грэдина Ботаникэ, 18"
+                }
               </span>
             </a>
             </Link>
