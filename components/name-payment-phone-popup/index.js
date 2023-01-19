@@ -62,7 +62,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style="transform:scale(1)">
+          <div className={styles.offer__inner} style={{transform:"none"}}>
 
             <button
               type="button"

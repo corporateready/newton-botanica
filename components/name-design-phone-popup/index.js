@@ -62,7 +62,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style="transform:scale(1)">
+          <div className={styles.offer__inner} style={{transform:"none"}}>
             <button
               type="button"
               className={styles.offer__button_close}

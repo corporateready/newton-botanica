@@ -281,7 +281,7 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style="transform:scale(1)">
+          <div className={styles.offer__inner} style={{transform:"none"}}>
             <button
               type="button"
               className={styles.offer__button_close}
@@ -478,7 +478,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup, isToggleLang }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style="transform:scale(1)">
+          <div className={styles.offer__inner} style={{transform:"none"}}>
             <button
               type="button"
               className={styles.offer__button_close}
@@ -677,7 +677,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style="transform:scale(1)">
+          <div className={styles.offer__inner} style={{transform:"none"}}>
             <button
               type="button"
               className={styles.offer__button_close}
