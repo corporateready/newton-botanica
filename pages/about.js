@@ -18,6 +18,8 @@ import OfferCallRezerve from "../components/popup-phone-offer";
 import FromDesignPopUp from "../components/name-design-phone-popup";
 import FromPaymentPopUp from "../components/name-payment-phone-popup";
 import MessengerMobile from "../components/messengers-mobile";
+import LocationPopUp from "../components/about/location/location-image";
+import { useMediaQuery } from 'react-responsive'
 
 import ComplexScreen1 from "../components/about/complex-1/carousel/full-screen-image-1";
 import ComplexScreen2 from "../components/about/complex-1/carousel/full-screen-image-2";
@@ -40,6 +42,11 @@ export default function About() {
   const [isCallRezervePopUp, setIsCallRezervePopUp] = useState(false);
   const [isPaymentPopUp, setIsPaymentPopUp] = useState(false);
   const [scroll, setScroll] = React.useState(false);
+  const [isLocationPopup, setIsLocationPopup] = React.useState(false)
+
+  const isMobileScreen = useMediaQuery({
+    query: '(max-width: 576px)'
+  })
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -49,6 +56,10 @@ export default function About() {
 
   const hanlerIsClouseFuulScreen = (url) => {
     setImageURL(null);
+  };
+
+  const hanlerOpenDesignPopup = () => {
+    setIsPopUpSend(!isPopUpSend);
   };
 
   const hanlerCloseDesignPopup = () => {
@@ -65,6 +76,14 @@ export default function About() {
 
   const hanlerCloseCallPopup = () => {
     setIsCallRezervePopUp(!isCallRezervePopUp);
+  };
+
+  const hanlerCloseLocationPopup = () => {
+    setIsLocationPopup(!isLocationPopup);
+  };
+
+  const hanlerOpenLocationPopup = () => {
+    setIsLocationPopup(!isLocationPopup);
   };
 
   useEffect(() => {
@@ -84,6 +103,15 @@ export default function About() {
       document.body.style.overflow = "auto";
     }
   }, [imageURL]);
+
+  useEffect(() => {
+    if (!isMobileScreen || isLocationPopup) {
+      document.body.style.overflow = "hidden";
+    }
+    if (!isLocationPopup || !isMobileScreen) {
+      document.body.style.overflow = "auto";
+    }
+  }, [isLocationPopup,isMobileScreen]);
 
   useEffect(() => {
     if (isPDFOpen) {
@@ -140,7 +168,7 @@ export default function About() {
               hanlerCloseDesignPopup={hanlerCloseDesignPopup}
             />
             <SliderSnake setImageURL={setImageURL} />
-            <Location />
+            <Location hanlerOpenLocationPopup={hanlerOpenLocationPopup}/>
             <Payment
               setIsPaymentPopUp={setIsPaymentPopUp}
               hanlerClosePaymentPopup={hanlerClosePaymentPopup}
@@ -186,6 +214,11 @@ export default function About() {
         {isPaymentPopUp && (
           <FromPaymentPopUp hanlerClosePaymentPopup={hanlerClosePaymentPopup} />
         )}
+        {
+          isLocationPopup && (
+            <LocationPopUp hanlerCloseLocationPopup={hanlerCloseLocationPopup}/>
+          )
+        }
       </section>
 
       <div className={styles.about__messenger_mob}>

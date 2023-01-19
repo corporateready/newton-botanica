@@ -32,7 +32,7 @@ import location__bg_ru from "../../../public/static/planning-page/location/panor
 
 import { LangContext } from "../../../pages/_app";
 
-export default function Index() {
+export default function Index({hanlerOpenLocationPopup}) {
 
   const { isToggleLang } = React.useContext(LangContext);
 
@@ -104,8 +104,10 @@ export default function Index() {
             {isOpen9 && <MarkImage_9 setIsOpen9={setIsOpen9} />}
             
             <div className={styles.location__bg_inner}>
-              <MagnifyComponent />
-              <div className={styles.magnifier__body_desktop}>
+              {/* <MagnifyComponent /> */}
+              <div className={styles.magnifier__body_desktop}
+              onClick={hanlerOpenLocationPopup}
+              >
                 <Image
                 src={isToggleLang==="ro" ? location__bg : location__bg_ru}
                 layout="responsive"

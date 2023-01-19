@@ -1,0 +1,50 @@
+@import '../../../../styles/mixins.scss';
+
+//  ===== popup offer =====>
+.offer__section {
+    @apply hidden;
+
+    @media screen and (max-width: 576px) {
+        @apply h-screen w-full fixed top-0 flex items-center justify-center left-0 z-[1100];
+        background: rgb(0 0 0 / 85%);
+        transition: all;
+        transition-duration: 2s;
+    }
+}
+
+.offer__inner {
+    @apply flex flex-col items-center justify-center h-screen w-[63%] bg-transparent relative z-auto mx-auto rounded-md;
+
+    @media screen and (max-width: 576px) {
+        @apply w-full pt-[12%] px-0;
+    }
+}
+.offer__button_close {
+    @apply absolute top-[4%] right-[7%];
+
+    @media screen and(max-width: 576px) {
+        @apply top-[3%] z-20;
+    }
+}
+.offer__title {
+    @include text(32px, 130%, 600, #2D2D2B);
+    @apply text-center tracking-wider mt-[5%] text-[6vw];
+    font-family: 'Montserrat Semibold';
+}
+.image__item {
+    @apply relative top-0 left-0 h-[60vh] w-screen flex;
+
+    span {
+        @apply absolute h-full w-full bg-contain bg-no-repeat bg-center z-10; 
+        background-image: url("../../../../public/static/planning-page/location/panoramic-botanica.webp");
+    }
+}
+
+.image__item_ru {
+    @apply relative top-0 left-0 h-[60vh] w-screen flex;
+
+    span {
+        @apply absolute h-full w-full bg-contain bg-no-repeat bg-center z-10; 
+        background-image: url("../../../../public/static/planning-page/location/panoramic-botanica-pins-ru.webp");
+    }
+}
