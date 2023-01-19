@@ -57,7 +57,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
   return (
     <section className={styles.offer__section}>
       <div className={styles.offer__container}>
-        <div className={styles.offer__inner} style={{transform:"none"}}>
+        <div className={styles.offer__inner} style={{transform:"none!important"}}>
           <button
             type="button"
             className={styles.offer__button_close}
