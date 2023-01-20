@@ -9,8 +9,8 @@ import { motion } from "framer-motion";
 import { LangContext } from "../../../../pages/_app";
 
 export default function Index() {
-  const { isToggleLang, changeSelect } = React.useContext(LangContext);
-
+  const { isToggleLang, setToggleLang } = React.useContext(LangContext);
+  
   React.useEffect(() => {
     (function (w, d, s, h, id) {
       w.roistatProjectId = id;
@@ -52,13 +52,13 @@ export default function Index() {
               />
             </a>
           </Link>
-
+          
           <div className={styles.header__phone_link}>
-            <motion.div
-              className={styles.header__phone_icon}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+            <motion.div 
+            className={styles.header__phone_icon}
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{delay:0.5}}
             >
               <Image
                 src={phone__icon}
@@ -72,28 +72,18 @@ export default function Index() {
               className={styles.header__phone_link_number}
             ></a>
           </div>
-
+          
           <motion.div className="absolute top-[28%] right-[4%] sm:right-[30%]">
-            <select
-              value={isToggleLang}
-              onChange={changeSelect}
-              // multiple={false}
-              className="text-sm text-green-600 font-bold focus-visible:outline-none hover:cursor-pointer"
-            >
-              <option
-                value="ro"
-                onClick={() => window.localStorage.setItem("language", "ro")}
+              <select
+                value={isToggleLang}
+                onChange={(e) => setToggleLang(e.target.value)}
+                multiple={false}
+                className="text-sm text-green-600 font-bold focus-visible:outline-none hover:cursor-pointer"
               >
-                RO
-              </option>
-              <option
-                value="ru"
-                onClick={() => window.localStorage.setItem("language", "ru")}
-              >
-                RU
-              </option>
-            </select>
-          </motion.div>
+                <option value="ro">RO</option>
+                <option value="ru">RU</option>
+              </select>
+            </motion.div>
         </div>
       </div>
     </header>
