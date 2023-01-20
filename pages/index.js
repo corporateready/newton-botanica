@@ -31,6 +31,14 @@ const ImageRu = dynamic(() => import('../components/hero/image-ru'), {
   ssr: false
 })
 
+const ImageDeskRo = dynamic(() => import('../components/hero/image-desk-ro'), {
+  ssr: false
+})
+
+const ImageDeskRu = dynamic(() => import('../components/hero/image-desk-ru'), {
+  ssr: false
+})
+
 export default function Home() {
   const { isToggleLang, setToggleLang } = React.useContext(LangContext);
 
@@ -114,81 +122,14 @@ export default function Home() {
 
       <div className={styles.home__screen}>
         <Header/>
-        {/* <header className={styles.header}>
-          <div className={styles.container}>
-            <div className={styles.header__inner}>
-              <Link href="/">
-                <a className={styles.header__logo}>
-                  <Image
-                    src={header__home_logo}
-                    height={45}
-                    width={90}
-                    priority
-                    alt="home header logo"
-                  />
-                </a>
-              </Link>
-
-              <div className={styles.phone__number_wrapper}>
-                <motion.div
-                  className={styles.phone__icon}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Image
-                    src={phone__icon}
-                    height={19}
-                    width={20}
-                    alt="home header phone icon"
-                  />
-                </motion.div>
-                <a
-                  href="tel:+37372608020"
-                  className={styles.header__phone_link_number}
-                ></a>
-              </div>
-            </div>
-            <motion.div className="absolute top-[28%] right-[4%] sm:right-[30%]">
-              <select
-                value={isToggleLang}
-                onChange={(e) => setToggleLang(e.target.value)}
-                className="text-sm text-green-600 font-bold focus-visible:outline-none hover:cursor-pointer"
-                multiple={false}
-              >
-                <option value="ro">RO</option>
-                <option value="ru">RU</option>
-              </select>
-            </motion.div>
-          </div>
-        </header> */}
 
         <div className={styles.home}>
           <div className={styles.container}>
             <div className={styles.inner}>
-              <div className={styles.image__side}>
-                <Image
-                  src={isToggleLang === "ro" ? image__side : image__side_ru}
-                  height={400}
-                  width={536}
-                  alt="home inner "
-                  priority
-                />
-              </div>
 
-              {/* <div className={styles.image__side_mobile}>
-                <Image
-                  src={
-                    isToggleLang === "ro"
-                      ? image__side_mobile
-                      : image__side_mobile_ru
-                  }
-                  height={466}
-                  width={381}
-                  alt="home inner mobile "
-                  priority
-                />
-              </div> */}
+            {
+                isToggleLang === "ro" ? <ImageDeskRo/> : <ImageDeskRu/>
+              }
 
               {
                 isToggleLang === "ro" ? <ImageRo/> : <ImageRu/>

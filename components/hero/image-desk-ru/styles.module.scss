@@ -1,0 +1,8 @@
+.image__side {
+    @media screen and(max-width: 1440px) {
+        width: calc(235px + (586 - 235)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        @apply hidden;
+    }
+}

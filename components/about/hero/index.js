@@ -11,6 +11,7 @@ export default function Index({
   setIsCallRezervePopUp
 }) {
   const { isToggleLang } = React.useContext(LangContext);
+  
   const hanlerIsPDFOpenPopup = () => {
     setIsPDFOpen(true);
   };
