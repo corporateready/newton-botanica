@@ -88,6 +88,7 @@ export default function About() {
 
   useEffect(() => {
     if (
+      !isMobileScreen ||
       imageURL === 0 ||
       imageURL === 1 ||
       imageURL === 2 ||
@@ -99,7 +100,7 @@ export default function About() {
     ) {
       document.body.style.overflow = "hidden";
     }
-    if (imageURL === null) {
+    if (imageURL === null || !isMobileScreen) {
       document.body.style.overflow = "auto";
     }
   }, [imageURL]);

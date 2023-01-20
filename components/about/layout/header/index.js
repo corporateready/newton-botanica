@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { LangContext } from "../../../../pages/_app";
 
 export default function Index() {
-  const { isToggleLang, setToggleLang } = React.useContext(LangContext);
+  const { isToggleLang, changeSelect } = React.useContext(LangContext);
 
   React.useEffect(() => {
     (function (w, d, s, h, id) {
@@ -76,14 +76,22 @@ export default function Index() {
           <motion.div className="absolute top-[28%] right-[4%] sm:right-[30%]">
             <select
               value={isToggleLang}
-              onChange={(e) => {
-                setToggleLang(e.target.value);
-              }}
-              multiple={false}
+              onChange={changeSelect}
+              // multiple={false}
               className="text-sm text-green-600 font-bold focus-visible:outline-none hover:cursor-pointer"
             >
-              <option value="ro">RO</option>
-              <option value="ru">RU</option>
+              <option
+                value="ro"
+                onClick={() => window.localStorage.setItem("language", "ro")}
+              >
+                RO
+              </option>
+              <option
+                value="ru"
+                onClick={() => window.localStorage.setItem("language", "ru")}
+              >
+                RU
+              </option>
             </select>
           </motion.div>
         </div>

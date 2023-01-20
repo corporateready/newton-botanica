@@ -1,14 +1,15 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import dynamic from 'next/dynamic'
 import Router from "next/router";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 import header__home_logo from "../public/static/home-page/header-logo.svg";
 import image__side from "../public/static/home-page/home-image-inner.svg";
 import image__side_ru from "../public/static/home-page/descktop.svg";
-import image__side_mobile from "../public/static/home-page/home-image-inner-mobile.svg";
-import image__side_mobile_ru from "../public/static/home-page/mobile.svg";
+// import image__side_mobile from "../public/static/home-page/home-image-inner-mobile.svg";
+// import image__side_mobile_ru from "../public/static/home-page/mobile.svg";
 import close__button from "../public/static/planning-page/close-button-popup.svg";
 
 import phone__icon from "../public/static/home-page/phone.svg";
@@ -18,7 +19,17 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { motion } from "framer-motion";
 
+import Header from "../components/about/layout/header"
+
 import { LangContext } from "../pages/_app";
+
+const ImageRo = dynamic(() => import('../components/hero/image-ro'), {
+  ssr: false
+})
+
+const ImageRu = dynamic(() => import('../components/hero/image-ru'), {
+  ssr: false
+})
 
 export default function Home() {
   const { isToggleLang, setToggleLang } = React.useContext(LangContext);
@@ -102,7 +113,8 @@ export default function Home() {
       </Head>
 
       <div className={styles.home__screen}>
-        <header className={styles.header}>
+        <Header/>
+        {/* <header className={styles.header}>
           <div className={styles.container}>
             <div className={styles.header__inner}>
               <Link href="/">
@@ -149,7 +161,7 @@ export default function Home() {
               </select>
             </motion.div>
           </div>
-        </header>
+        </header> */}
 
         <div className={styles.home}>
           <div className={styles.container}>
@@ -164,7 +176,7 @@ export default function Home() {
                 />
               </div>
 
-              <div className={styles.image__side_mobile}>
+              {/* <div className={styles.image__side_mobile}>
                 <Image
                   src={
                     isToggleLang === "ro"
@@ -176,7 +188,11 @@ export default function Home() {
                   alt="home inner mobile "
                   priority
                 />
-              </div>
+              </div> */}
+
+              {
+                isToggleLang === "ro" ? <ImageRo/> : <ImageRu/>
+              }
 
               <div className={styles.navigate__side}>
                 <div className={styles.buttons__up}>

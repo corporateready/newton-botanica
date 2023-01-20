@@ -10,10 +10,11 @@ export default function MarkButton_8({handlerIsOpen8}) {
   const isMobile = useMediaQuery({
     query: "(max-width: 576px)",
   });
+  
   return (
     <motion.button
       className={styles.loaction__mark}
-      disabled={isMobile ? true : false}
+      disabled={isMobile ? true : null}
       onClick={handlerIsOpen8}
     >
       <Image
@@ -22,6 +23,7 @@ export default function MarkButton_8({handlerIsOpen8}) {
       height="60vw"
       width="150vw"
       alt="pin icon"
+      priority={true}
       />
     </motion.button>
   );

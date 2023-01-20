@@ -4,30 +4,28 @@ import "../styles/globals.scss";
 export const LangContext = React.createContext("ru");
 
 function MyApp({ Component, pageProps }) {
-  const [isToggleLang, setToggleLang] = React.useState('ro'
-    // typeof window !== "undefined" ? localStorage.isToggleLang : "ro"
-  );
+  const [isToggleLang, setToggleLang] = React.useState(( () => {
+    if(typeof window !== "undefined"){
+      const savedItem = localStorage.getItem("language");
+   const parsedItem = JSON.stringify(savedItem);
+   return parsedItem || isToggleLang;}
+   }));
 
   React.useEffect(() => {
     localStorage.setItem("language",  JSON.stringify(isToggleLang))
-    // getLanguageFromLocalStorage();
   }, [isToggleLang]);
 
-  const getLanguageFromLocalStorage = () => {
-    // localStorage.setItem("userLanguage", isToggleLang ? 'ro' : 'ru')
-    // const language = localStorage.getItem("language", "ru");
-
-    // if (language) {
-    //   setToggleLang(language);
-    // } else {
-    //   setToggleLang("ro");
-    // }
-  };
+  const changeSelect = (e) => {
+    window.localStorage.setItem('language', e.target.value);
+    setToggleLang(e.target.value);
+  }
 
   const value = React.useMemo(
-    () => ({ isToggleLang, setToggleLang }),
+    () => ({ isToggleLang, setToggleLang,changeSelect }),
     [isToggleLang]
   );
+
+  console.log("isToggleLang ", isToggleLang);
 
   React.useEffect(() => {
         (function (w, d, s, h, id) {
@@ -59,8 +57,6 @@ function MyApp({ Component, pageProps }) {
     <LangContext.Provider value={value}>
       <Component
         {...pageProps}
-        isToggleLang={isToggleLang}
-        setToggleLang={setToggleLang}
       />
     </LangContext.Provider>
   );

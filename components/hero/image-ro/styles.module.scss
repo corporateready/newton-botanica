@@ -1,0 +1,11 @@
+.image__side_mobile {
+    @apply hidden;
+    
+    @media screen and(max-width: 576px) {
+        @apply flex w-[90%] self-center justify-center;
+    }
+
+    @media (max-width: 576px) and (max-height:740px) {
+        @apply flex w-[70%] self-center;
+    }
+}
