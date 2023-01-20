@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/globals.scss";
 
-export const LangContext = React.createContext("ru");
+export const LangContext = React.createContext("");
 
 function MyApp({ Component, pageProps }) {
   const [isToggleLang, setToggleLang] = React.useState(( () => {
