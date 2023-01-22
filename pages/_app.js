@@ -1,27 +1,41 @@
 import React from "react";
 import "../styles/globals.scss";
 
-export const LangContext = React.createContext("");
+export const LangContext = React.createContext();
 
 function MyApp({ Component, pageProps }) {
-  const [isToggleLang, setToggleLang] = React.useState(( () => {
-    if(typeof window !== "undefined"){
-      const savedItem = localStorage.getItem("language");
-   const parsedItem = JSON.parse(savedItem);
-   return parsedItem || "ro";}
-   }));
+
+  const options = [
+    { value: "ro", id: 1, name: "RO" },
+    { value: "ru", id: 2, name: "RU" }
+  ];
+
+  const [isToggleLang, setToggleLang] = React.useState(
+    "ro"
+  );
 
   React.useEffect(() => {
-    localStorage.setItem("language",  JSON.stringify(isToggleLang))
+    const savedValue = localStorage.getItem('language');
+    if (savedValue) {
+      setToggleLang(savedValue);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    localStorage.setItem('language', isToggleLang);
   }, [isToggleLang]);
 
+  const handleLanguageChange = (e) => {
+    setToggleLang( e.target.value);
+  };
+
   const value = React.useMemo(
-    () => ({ isToggleLang, setToggleLang }),
+    () => ({ isToggleLang, setToggleLang, handleLanguageChange, options }),
     [isToggleLang]
   );
 
   React.useEffect(() => {
-        (function (w, d, s, h, id) {
+    (function (w, d, s, h, id) {
       w.roistatProjectId = id;
       w.roistatHost = h;
       var p = d.location.protocol == "https:" ? "https://" : "http://";
@@ -48,11 +62,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <LangContext.Provider value={value}>
-      <Component
-        {...pageProps}
-        isToggleLang={isToggleLang}
-        setToggleLang={setToggleLang}
-      />
+      <Component {...pageProps} />
     </LangContext.Provider>
   );
 }

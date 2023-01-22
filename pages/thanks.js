@@ -31,7 +31,7 @@ export default function Thanks() {
                 </h1>
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
-                    <YoutubeVideo />
+                    {isToggleLang == "ro" ? <YoutubeVideoRo /> : <YoutubeVideoRu />}
                   </div>
                   <button
                     className={styles.back__button}
@@ -65,9 +65,7 @@ export default function Thanks() {
   );
 }
 
-function YoutubeVideo() {
-
-  const { isToggleLang } = React.useContext(LangContext);
+function YoutubeVideoRo() {
 
   useEffect(() => {
     document.addEventListener("fetch", (event) => {
@@ -91,7 +89,8 @@ function YoutubeVideo() {
     playerVars: {
       passive: false,
       controls: 2,
-      autoplay: 1,
+      autoplay:1,
+      loop:1
     },
   };
 
@@ -102,13 +101,65 @@ function YoutubeVideo() {
       height="590px"
       width="100%"
       className={styles.video__body}
-      src={isToggleLang === "ro" 
-      ? "https://www.youtube-nocookie.com/embed/F5fbJZS3R3c?autoplay=1"
-      : "https://www.youtube-nocookie.com/embed/shpCgt4iy-s?autoplay=1"}
+      src={"https://www.youtube-nocookie.com/embed/F5fbJZS3R3c?loop=1&autoplay=1&enablejsapi=1&start=1&origin=https://botanica.newton.md/"}
       title="YouTube video player"
       opts={opts}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
+      modestbranding="0"
+      showinfo="0"
+      enablejsapi="1"
+      autoPlay="1"
+      loop
+      fs="1"
+    />
+  );
+}
+
+function YoutubeVideoRu() {
+
+  useEffect(() => {
+    document.addEventListener("fetch", (event) => {
+      event.respondWith(
+        (async function () {
+          // Respond from the cache if we can
+          const cachedResponse = await caches.match(event.request);
+          if (cachedResponse) return cachedResponse; // Else, use the preloaded response, if it's there
+          const response = await event.preloadResponse;
+          if (response) return response; // Else try the network.
+          return fetch(event.request);
+        })()
+      );
+    });
+  }, []);
+
+  const opts = {
+    height: "590px",
+    width: "100%",
+    loading: "lazy",
+    playerVars: {
+      passive: false,
+      controls: 2,
+      autoplay:1,
+      loop:1
+    },
+  };
+
+  return (
+    <iframe
+      id="ytplayer"
+      type="text/html"
+      height="590px"
+      width="100%"
+      className={styles.video__body}
+      src={"https://www.youtube-nocookie.com/embed/shpCgt4iy-s?loop=1&amp;autoplay=1&amp;"}
+      title="YouTube video player"
+      opts={opts}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      enablejsapi="1"
+      autoPlay="1"
+      loop
     />
   );
 }

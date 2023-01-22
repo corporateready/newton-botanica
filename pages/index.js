@@ -5,14 +5,8 @@ import dynamic from 'next/dynamic'
 import Router from "next/router";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
-import header__home_logo from "../public/static/home-page/header-logo.svg";
-import image__side from "../public/static/home-page/home-image-inner.svg";
-import image__side_ru from "../public/static/home-page/descktop.svg";
-// import image__side_mobile from "../public/static/home-page/home-image-inner-mobile.svg";
-// import image__side_mobile_ru from "../public/static/home-page/mobile.svg";
 import close__button from "../public/static/planning-page/close-button-popup.svg";
 
-import phone__icon from "../public/static/home-page/phone.svg";
 import Messengers from "../components/messengers";
 
 import PhoneInput from "react-phone-input-2";

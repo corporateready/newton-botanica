@@ -19,7 +19,7 @@ import FromDesignPopUp from "../components/name-design-phone-popup";
 import FromPaymentPopUp from "../components/name-payment-phone-popup";
 import MessengerMobile from "../components/messengers-mobile";
 import LocationPopUp from "../components/about/location/location-image";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from "react-responsive";
 
 import ComplexScreen1 from "../components/about/complex-1/carousel/full-screen-image-1";
 import ComplexScreen2 from "../components/about/complex-1/carousel/full-screen-image-2";
@@ -30,7 +30,7 @@ import ComplexScreen6 from "../components/about/complex-1/carousel/full-screen-i
 import ComplexScreen7 from "../components/about/complex-1/carousel/full-screen-image-7";
 import ComplexScreen8 from "../components/about/complex-1/carousel/full-screen-image-8";
 
-import {LangContext} from "./_app"
+import { LangContext } from "./_app";
 
 export default function About() {
   const { isToggleLang } = React.useContext(LangContext);
@@ -42,11 +42,11 @@ export default function About() {
   const [isCallRezervePopUp, setIsCallRezervePopUp] = useState(false);
   const [isPaymentPopUp, setIsPaymentPopUp] = useState(false);
   const [scroll, setScroll] = React.useState(false);
-  const [isLocationPopup, setIsLocationPopup] = React.useState(false)
+  const [isLocationPopup, setIsLocationPopup] = React.useState(false);
 
   const isMobileScreen = useMediaQuery({
-    query: '(max-width: 576px)'
-  })
+    query: "(max-width: 576px)",
+  });
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -58,9 +58,9 @@ export default function About() {
     setImageURL(null);
   };
 
-  const hanlerOpenDesignPopup = () => {
-    setIsPopUpSend(!isPopUpSend);
-  };
+  // const hanlerOpenDesignPopup = () => {
+  //   setIsPopUpSend(!isPopUpSend);
+  // };
 
   const hanlerCloseDesignPopup = () => {
     setIsPopUpSend(!isPopUpSend);
@@ -112,7 +112,7 @@ export default function About() {
     if (!isLocationPopup || !isMobileScreen) {
       document.body.style.overflow = "auto";
     }
-  }, [isLocationPopup,isMobileScreen]);
+  }, [isLocationPopup, isMobileScreen]);
 
   useEffect(() => {
     if (isPDFOpen) {
@@ -163,13 +163,13 @@ export default function About() {
               hanlerClosePopup={hanlerClosePopup}
               setIsCallRezervePopUp={setIsCallRezervePopUp}
             />
-            <Complex isToggleLang={isToggleLang}/>
+            <Complex isToggleLang={isToggleLang} />
             <Designs
               setIsPopUpSend={setIsPopUpSend}
               hanlerCloseDesignPopup={hanlerCloseDesignPopup}
             />
             <SliderSnake setImageURL={setImageURL} />
-            <Location hanlerOpenLocationPopup={hanlerOpenLocationPopup}/>
+            <Location hanlerOpenLocationPopup={hanlerOpenLocationPopup} />
             <Payment
               setIsPaymentPopUp={setIsPaymentPopUp}
               hanlerClosePaymentPopup={hanlerClosePaymentPopup}
@@ -215,11 +215,9 @@ export default function About() {
         {isPaymentPopUp && (
           <FromPaymentPopUp hanlerClosePaymentPopup={hanlerClosePaymentPopup} />
         )}
-        {
-          isLocationPopup && (
-            <LocationPopUp hanlerCloseLocationPopup={hanlerCloseLocationPopup}/>
-          )
-        }
+        {isLocationPopup && (
+          <LocationPopUp hanlerCloseLocationPopup={hanlerCloseLocationPopup} />
+        )}
       </section>
 
       <div className={styles.about__messenger_mob}>
