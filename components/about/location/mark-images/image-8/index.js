@@ -3,7 +3,11 @@ import styles from "./styles.module.scss";
 import stadion from "../../../../../public/static/planning-page/location/Gradina_2.webp";
 import Image from "next/image";
 
-export default function MarkImage8({ setIsOpen8 }) {
+import { LangContext } from "../../../../../pages/_app";
+
+export default function MarkImage({ setIsOpen8 }) {
+
+  const { isToggleLang } = React.useContext(LangContext);
   return (
     <span className={styles.loaction__mark_description}>
       <Image src={stadion} layout="fill" priority alt="" />
@@ -13,7 +17,9 @@ export default function MarkImage8({ setIsOpen8 }) {
           setIsOpen8(false);
         }}
       >
-        înapoi
+        {
+          isToggleLang === 'ro' ? "înapoi" : "назад"
+        }
       </button>
     </span>
   );

@@ -9,7 +9,6 @@ import Router from "next/router";
 import { LangContext } from "./_app";
 
 export default function Thanks() {
-
   const { isToggleLang } = React.useContext(LangContext);
 
   return (
@@ -25,13 +24,16 @@ export default function Thanks() {
               <div className={styles.thanks__wrapper}>
                 <h1 className={styles.thanks__title}>
                   <span>
-                    {isToggleLang === "ro"
-                    ? "VĂ MULȚUMIM!"
-                  : "спасибо!"}</span>
+                    {isToggleLang === "ro" ? "VĂ MULȚUMIM!" : "спасибо!"}
+                  </span>
                 </h1>
                 <div className={styles.video__wrapper}>
                   <div className={styles.video__wrapper_frame}>
-                    {isToggleLang == "ro" ? <YoutubeVideoRo /> : <YoutubeVideoRu />}
+                    {isToggleLang && isToggleLang === "ro" ? (
+                      <YoutubeVideoRo />
+                    ) : (
+                      <YoutubeVideoRu />
+                    )}
                   </div>
                   <button
                     className={styles.back__button}
@@ -49,10 +51,8 @@ export default function Thanks() {
                         fill="#3BAA35"
                       />
                     </svg>
-                    <span>{
-                    isToggleLang === "ro"
-                    ?"înapoi la site"
-                  : "Назад"}
+                    <span>
+                      {isToggleLang === "ro" ? "înapoi la site" : "Назад"}
                     </span>
                   </button>
                 </div>
@@ -67,33 +67,6 @@ export default function Thanks() {
 
 function YoutubeVideoRo() {
 
-  useEffect(() => {
-    document.addEventListener("fetch", (event) => {
-      event.respondWith(
-        (async function () {
-          // Respond from the cache if we can
-          const cachedResponse = await caches.match(event.request);
-          if (cachedResponse) return cachedResponse; // Else, use the preloaded response, if it's there
-          const response = await event.preloadResponse;
-          if (response) return response; // Else try the network.
-          return fetch(event.request);
-        })()
-      );
-    });
-  }, []);
-
-  const opts = {
-    height: "590px",
-    width: "100%",
-    loading: "lazy",
-    playerVars: {
-      passive: false,
-      controls: 2,
-      autoplay:1,
-      loop:1
-    },
-  };
-
   return (
     <iframe
       id="ytplayer"
@@ -101,50 +74,15 @@ function YoutubeVideoRo() {
       height="590px"
       width="100%"
       className={styles.video__body}
-      src={"https://www.youtube-nocookie.com/embed/F5fbJZS3R3c?loop=1&autoplay=1&enablejsapi=1&start=1&origin=https://botanica.newton.md/"}
-      title="YouTube video player"
-      opts={opts}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      src="https://www.youtube-nocookie.com/embed/F5fbJZS3R3c?autoplay=1&cc_load_policy=1&disablekb=1&enablejsapi=1&loop=1&modestbranding=1&color=white&controls=1&origin=https://botanica.newton.md/"
       allowFullScreen
-      modestbranding="0"
-      showinfo="0"
-      enablejsapi="1"
-      autoPlay="1"
-      loop
-      fs="1"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     />
   );
 }
 
 function YoutubeVideoRu() {
 
-  useEffect(() => {
-    document.addEventListener("fetch", (event) => {
-      event.respondWith(
-        (async function () {
-          // Respond from the cache if we can
-          const cachedResponse = await caches.match(event.request);
-          if (cachedResponse) return cachedResponse; // Else, use the preloaded response, if it's there
-          const response = await event.preloadResponse;
-          if (response) return response; // Else try the network.
-          return fetch(event.request);
-        })()
-      );
-    });
-  }, []);
-
-  const opts = {
-    height: "590px",
-    width: "100%",
-    loading: "lazy",
-    playerVars: {
-      passive: false,
-      controls: 2,
-      autoplay:1,
-      loop:1
-    },
-  };
-
   return (
     <iframe
       id="ytplayer"
@@ -152,14 +90,9 @@ function YoutubeVideoRu() {
       height="590px"
       width="100%"
       className={styles.video__body}
-      src={"https://www.youtube-nocookie.com/embed/shpCgt4iy-s?loop=1&amp;autoplay=1&amp;"}
-      title="YouTube video player"
-      opts={opts}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      src="https://www.youtube-nocookie.com/embed/shpCgt4iy-s?autoplay=1&cc_load_policy=1&disablekb=1&enablejsapi=1&loop=1&modestbranding=1&color=white&controls=1&fs=1&origin=https://botanica.newton.md/"
       allowFullScreen
-      enablejsapi="1"
-      autoPlay="1"
-      loop
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     />
   );
 }
