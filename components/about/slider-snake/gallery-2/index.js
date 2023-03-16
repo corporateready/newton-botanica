@@ -80,7 +80,7 @@ export default function Index({ setImageURL }) {
             className={styles.thumbsnail__wrapper}
             drag={isMobile ? "y" : "x"}
             dragConstraints={
-              isMobile ? { top: -550, bottom: 0 } : { left: -235, right: 0 }
+              isMobile ? { top: -600, bottom: 0 } : { left: -235, right: 0 }
             }
           >
 

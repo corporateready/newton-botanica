@@ -1,8 +1,8 @@
 .slider__wrapper {
-    @apply w-full overflow-hidden h-[524px];
+    @apply w-full overflow-hidden h-[484px];
 
     @media screen and (max-width: 1440px) {
-        height: calc(200px + (524 - 200)*(100vw - 576px)/(1440 - 576));
+        height: 33vw;
     }
 
     @media screen and (max-width: 576px) {
@@ -24,15 +24,14 @@
     }
 }
 .image__wrap {
-    @apply relative top-0 left-0 z-10 w-[80%] h-[524px] overflow-hidden;
+    @apply relative top-0 left-0 z-10 w-[80%] h-[484px] overflow-hidden;
 
     @media screen and (max-width: 1440px) {
-        height: calc(210px + (524 - 210)*(100vw - 576px)/(1440 - 576));
+        @apply h-[33vw];
     }
 
     @media screen and (max-width: 576px) {
-        @apply w-full;
-        height: calc(208px + (374 - 208)*(100vw - 320px)/(576 - 320));
+        @apply w-full h-[51vw];
     }
 }
 .image_ {
@@ -49,7 +48,7 @@
     @apply flex flex-col w-[20%] h-full space-y-[3%];
 
     @media screen and (max-width: 576px) {
-        @apply grid w-full gap-[1%] space-y-0;
+        @apply grid w-full gap-[1%] space-y-0; 
         grid-template-columns: repeat(8, 19.5%);
     }
 }
@@ -62,7 +61,7 @@
 
     @media screen and (max-width: 576px) {
         width: 100%;
-        height: calc(39px + (67 - 39)*(100vw - 320px)/(576 - 320));
+        height: 11vw;
     }
 
     &:after {

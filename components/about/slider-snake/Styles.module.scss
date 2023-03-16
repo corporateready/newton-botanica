@@ -13,13 +13,13 @@
     overflow: hidden;
 }
 .complex__grids {
-    height: 585px;
+    height: 555px;
     width: 100%;
     @media screen and (max-width: 1440px) {
-        height: calc(248px + (585 - 248)*(100vw - 576px)/(1440 - 576));
+        height: 38vw;
     }
     @media screen and (max-width: 576px) {
-        height: calc(305px + (550 - 305)*(100vw - 320px)/(576 - 320));
+        @apply h-[77vw];
     }
 }
 .complex__title {
