@@ -40,7 +40,6 @@
     @media screen and(max-width: 576px) {
         @apply top-[-37vw] text-[4.75vw];
         line-height: 180%;
-        // font-size: calc(18px + (27 - 18)*(100vw - 320px)/(576 - 320));
     }
 
     @media (max-height: 740px) and (max-width: 576px) {

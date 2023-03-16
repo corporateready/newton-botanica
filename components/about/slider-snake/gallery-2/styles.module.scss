@@ -24,7 +24,7 @@
     }
 }
 .image__wrap {
-    @apply relative top-0 left-0 z-10 w-[80%] h-[524px];
+    @apply relative top-0 left-0 z-10 w-[80%] h-[524px] overflow-hidden;
 
     @media screen and (max-width: 1440px) {
         height: calc(210px + (524 - 210)*(100vw - 576px)/(1440 - 576));
@@ -54,10 +54,10 @@
     }
 }
 .image__thumbs_wrap {
-    @apply relative top-0 left-0 z-[1] w-full h-[101px];
+    @apply relative top-0 left-0 z-[1] w-full h-[130px] hover:cursor-pointer;
 
     @media screen and (max-width: 1440px) {
-        height: calc(38px + (101 - 38)*(100vw - 576px)/(1440 - 576));
+        @apply h-[9vw];
     }
 
     @media screen and (max-width: 576px) {
@@ -77,10 +77,10 @@
     }
 }
 .active__thumbs_wrap {
-    @apply relative top-0 left-0 z-[1] w-full h-[101px];
+    @apply relative top-0 left-0 z-[1] w-full h-[130px];
 
     @media screen and (max-width: 1440px) {
-        height: calc(38px + (101 - 38)*(100vw - 576px)/(1440 - 576));
+        @apply h-[9vw];
     }
 
     @media screen and (max-width: 576px) {
@@ -110,8 +110,8 @@
     }
 }
 .toggle__item {
-    @apply border-[1px] border-[#2BB018] flex w-[25px] h-[25px] rounded-[3px] justify-center items-center text-sm text-[#2BB018] hover:cursor-pointer hover:bg-[#2BB018] hover:text-white;
+    @apply border-[1px] border-[#2BB018] flex w-[25px] h-[25px] object-cover rounded-[3px] justify-center items-center text-sm text-[#2BB018] hover:cursor-pointer hover:bg-[#2BB018] hover:text-white;
 }
 .active__toggle_item {
-    @apply border-[1px] border-[#2BB018] flex w-[25px] h-[25px] rounded-[3px] justify-center items-center text-sm hover:cursor-pointer bg-[#2BB018] text-white;
+    @apply border-[1px] border-[#2BB018] flex w-[25px] h-[25px] object-cover rounded-[3px] justify-center items-center text-sm hover:cursor-pointer bg-[#2BB018] text-white;
 }

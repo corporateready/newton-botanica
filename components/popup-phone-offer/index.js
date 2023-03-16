@@ -190,6 +190,7 @@ export default function OfferCallOpenSending({ hanlerCloseCallPopup }) {
                 }
               }}
             />
+            
             {phoneValue.length < 11 && (
               <p className="text-xs text-red-400 pb-[2%]">
                 {isToggleLang === "ro"

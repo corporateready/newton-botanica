@@ -11,12 +11,15 @@ export default function Index({
   isMounthDesk,
   setIsMounthDesk,
   isToggleLang
-  // isYear
 }) {
+
+  React.useEffect(() => {})
+  
   const arr = [];
-  for (let i = 0; i < isItem; i++) {
+  for (let i = 0; i < isItem + 1; i++) {
     arr.push(
-      <div
+      <button
+      type="button"
         className={
           i <= isActive ? styles.timeline__step_active : styles.timeline__step
         }
@@ -29,9 +32,13 @@ export default function Index({
           handlerTabClick(i);
           setIsActive(i);
         }}
+        disabled={ i === isItem}
       >
-        <div key={i}>{isToggleLang === "ro" ? mounthes[i] : mounthesRu[i]}</div>
-      </div>
+        <span></span>
+        <div key={i}>
+          {mounthes[i]}
+          </div>
+      </button>
     );
   }
 

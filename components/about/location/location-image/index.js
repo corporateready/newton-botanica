@@ -37,6 +37,7 @@ export default function Index({ hanlerCloseLocationPopup }) {
     <section className={styles.offer__section}>
         <div className={styles.offer__container}>
           <div className={styles.offer__inner}>
+            
             <button
               type="button"
               className={styles.offer__button_close}
@@ -50,13 +51,10 @@ export default function Index({ hanlerCloseLocationPopup }) {
             initial={{scale:1, opacity:0}}
             animate={{opacity:1, scale: isDesktopSize ? 2 : 1}}
             transition={{duration:0.5, ease:"easeOut"}}
-            // onTap={()=>setIsDesktopSize(!isDesktopSize)}
             onClick={()=>setIsDesktopSize(!isDesktopSize)}
             drag="x"
             dragConstraints={isDesktopSize ? {left:-200, right:200} : {left:0, right:0}}
-            // onTouchMove={()=>console.log("Toch")}
-            // onClick={handleClick}
-            // onChange={handleChange}
+
             >
               <span></span>
             </motion.button>

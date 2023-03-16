@@ -62,7 +62,10 @@ export default function Index({ hanlerCloseDesignPopup }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style={{transform:"none!important"}}>
+          <div
+            className={styles.offer__inner}
+            style={{ transform: "none!important" }}
+          >
             <button
               type="button"
               className={styles.offer__button_close}
@@ -88,15 +91,17 @@ export default function Index({ hanlerCloseDesignPopup }) {
               </h2>
             )}
 
-{isToggleLang === "ro"
-            ? <h3 className={styles.offer__subtitle}>
-              Introdu datele de contact corect, iar noi te vom contacta <br />
-              pentru a-ți prezenta detalii despre proiect:
-            </h3>
-            : <h3 className={styles.offer__subtitle}>
-            Оставь свои контактные данные, мы перезвоним и <br />
-            предоставим подробную информацию о проекте:
-          </h3>}
+            {isToggleLang === "ro" ? (
+              <h3 className={styles.offer__subtitle}>
+                Introdu datele de contact corect, iar noi te vom contacta <br />
+                pentru a-ți prezenta detalii despre proiect:
+              </h3>
+            ) : (
+              <h3 className={styles.offer__subtitle}>
+                Оставь свои контактные данные, мы перезвоним и <br />
+                предоставим подробную информацию о проекте:
+              </h3>
+            )}
 
             <form
               id="about__form_send_design_btn"
@@ -141,7 +146,9 @@ export default function Index({ hanlerCloseDesignPopup }) {
                     country.name === "Moldova"
                   ) {
                     setIsPhoneValid(true);
-                    return isToggleLang === "ro" ? "fără prefixul zero în față" : "без префикса ноль в начале";
+                    return isToggleLang === "ro"
+                      ? "fără prefixul zero în față"
+                      : "без префикса ноль в начале";
                   } else {
                     setIsPhoneValid(false);
                     return true;
@@ -167,24 +174,24 @@ export default function Index({ hanlerCloseDesignPopup }) {
                 value="Everyone is important for as!"
               />
               <button
-              type="submit"
-              className={styles.button__sending}
-              disabled={
-                phoneValue.length < 11 ||
-                nameValue.length < 3 ||
-                isPhoneValid ||
-                spinner ||
-                isSend
-              }
-            >
-              {spinner
-                ? isToggleLang === "ro"
-                  ? "trimitere..."
-                  : "Отправляется..."
-                : isToggleLang === "ro"
-                ? "vreau să fiu contactat"
-                : "Хочу получить звонок "}
-            </button>
+                type="submit"
+                className={styles.button__sending}
+                disabled={
+                  phoneValue.length < 11 ||
+                  nameValue.length < 3 ||
+                  isPhoneValid ||
+                  spinner ||
+                  isSend
+                }
+              >
+                {spinner
+                  ? isToggleLang === "ro"
+                    ? "trimitere..."
+                    : "Отправляется..."
+                  : isToggleLang === "ro"
+                  ? "vreau să fiu contactat"
+                  : "Хочу получить звонок "}
+              </button>
             </form>
 
             <div className={styles.terms__policy}>
@@ -205,7 +212,6 @@ export default function Index({ hanlerCloseDesignPopup }) {
                 </a>
               </Link>
             </div>
-
           </div>
         </div>
       </section>

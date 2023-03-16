@@ -25,7 +25,6 @@ import {
   MarkImage_9,
 } from "./mark-images";
 import Head from "next/head";
-// import MagnifyComponent from './magnify'
 import Image from "next/image";
 import location__bg from "../../../public/static/planning-page/location/panoramic-botanica.webp"
 import location__bg_ru from "../../../public/static/planning-page/location/panoramic-botanica-pins-ru.webp"
