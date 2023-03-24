@@ -1,0 +1,94 @@
+.events__inner {
+    // @apply flex flex-col flex-auto items-center h-full max-w-full;
+    @media all and (min-width:576px) {
+        @apply bg-[url('/static/event-page/events-bg.webp')] bg-bottom bg-no-repeat object-fill bg-cover;
+    }
+
+    @apply flex flex-col items-center h-screen w-full bg-[url('/static/event-page/event-bg-mob.webp')] bg-no-repeat object-fill bg-contain bg-center;
+}
+.events__title {
+    @media all and (min-width: 576px) {
+        @apply block h-[13vw] mt-[16vw];
+    }
+
+    @media all and (min-width: 769px) {
+        @apply text-center mt-[3vw] h-[9vw];        
+    }
+
+    @media all and (min-width: 1200px) {
+        @apply h-[10vw] mt-[6vw];        
+    }
+
+    @media all and (min-width: 1441px) {
+        @apply text-center mt-[47px] h-[132px];        
+    }
+
+    @media all and (min-width: 1600px) {
+        @apply text-center mt-[87px];        
+    }
+
+    @media all and (min-width: 2000px) {
+        @apply text-center mt-[97px] h-[163px];        
+    }
+
+    @apply hidden;
+}
+.events__title_mob {
+    @apply hidden;
+
+    @media all and (max-width: 576px) {
+        @apply block mt-[14vw] text-[#2d2d2b] leading-[173%] tracking-[0.85px] text-[6.44vw] font-bold uppercase text-center;
+        font-family: 'Gilroy-Bold';
+    }
+
+    span {
+        @apply hidden;
+
+        @media all and (max-width: 576px) {
+            @apply inline-block text-[#2BB018]
+        }
+    }
+}
+.events__btn {
+    @apply mt-[6vw] w-[93.46vw] text-[6.4vw] py-[2.6vw] rounded-[6px] text-white uppercase;
+    background: linear-gradient(180deg, #42C530 0%, #2BA433 100%);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    font-family: 'Montserrat Bold';
+    text-shadow: 0px 3.07692px 3.07692px rgba(0, 0, 0, 0.25);
+    border-radius: 7.75px;
+
+    @media all and (min-width: 576px) {
+        @apply absolute top-[66%] py-[2vw] text-[3vw] w-[55vw];
+        background: linear-gradient(180deg, #42C530 0%, #2BA433 100%);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 7.75px;
+    }
+
+    @media all and ( min-width: 769px ) {
+        @apply top-[60%] w-[25vw] py-[1vw] text-[1.75vw];
+    }
+
+    @media all and ( min-width: 900px ) {
+        @apply top-[55%];
+    }
+
+    @media all and ( min-width: 1200px ) {
+        @apply top-[59%];
+    }
+
+    @media all and (min-width: 1441px) {
+        @apply top-[55%] py-[10px] text-[30px];
+    }
+
+    @media all and (min-width: 1900px) {
+        @apply text-[35px] py-[20px];        
+    }
+}
+.events__copy {
+    @apply text-[16px] text-[#fff] absolute bottom-[36px] left-[138px];
+
+    @media all and (max-width: 576px) {
+        @apply text-[10px] left-[8vw];
+    }
+}

@@ -1,0 +1,160 @@
+@import '../../styles/mixins.scss';
+
+//  ===== popup offer =====>
+.offer__section {
+    @apply h-full w-full fixed flex top-0 left-0 z-20;
+    background: rgb(0 0 0 / 85%);
+    font-family: 'Montserrat Regular';
+
+    @media screen and (max-width: 576px) {
+        @apply px-[3%];
+    }
+}
+.offer__container {
+    @apply w-[1170px] mx-auto px-0;
+
+    @media screen and(max-width: 1440px) {
+        @apply w-full px-[9.3%];
+    }
+    @media screen and(max-width: 1440px) {
+        @apply px-0;
+    }
+}
+.offer__inner {
+    @apply flex flex-col items-center justify-center h-auto w-[53%] relative bg-white mt-[10%] z-auto pt-[5%] pb-[3.5%] mx-auto rounded-md;
+    transform: scale(1);
+
+    @media screen and (max-width: 576px) {
+        @apply w-full py-[15%] px-[5%];
+    }
+
+    @media screen and (min-width: 1441px) {
+        @apply w-[650px];
+    }
+}
+.offer__button_close {
+    @apply absolute top-[4%] right-[2.5%];
+
+    @media screen and(max-width: 576px) {
+        @apply top-[3%];
+    }
+}
+.offer__title {
+    @include text(16px, 130%, 600, #2D2D2B);
+    @apply text-center uppercase;
+    font-family: 'Montserrat SemiBold';
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(14px + (20 - 14)*(100vw - 576px)/(1440 - 576));
+    }
+
+    @media screen and(max-width: 768px) {
+        @apply text-[1.6vw];
+    }
+
+    @media screen and(max-width: 576px) {
+        font-size: calc(8px + (18 - 8)*(100vw - 320px)/(576 - 320));
+        line-height: 170%;
+    }
+}
+.offer__form {
+    @apply flex flex-col py-[2%] mx-auto w-[60%];
+
+    input {
+        @include text(15px, 130%, 400, #2D2D2B);
+        @apply border-[1px] rounded-[6px] py-[3%] mb-[3%] pl-[3%] focus-visible:outline-none;
+        font-family: 'Montserrat Regular';
+
+        @media screen and(max-width: 1440px) {
+            font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+        }
+
+        @media screen and(max-width: 576px) {
+            @apply mb-[5%] rounded-md;
+            font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+        }
+
+        &::placeholder {
+            @include text(15px, 130%, 400, #626262);
+            @apply tracking-wider opacity-30;
+            font-family: 'Montserrat Regular';
+
+            @media screen and(max-width: 1440px) {
+                font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+            }
+
+            @media screen and(max-width: 576px) {
+                font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+            }
+        }
+    }
+    .input {
+        @include text(15px, 130%, 400, #2D2D2B);
+        @apply border-0 rounded-sm py-[1%] mb-[3%] h-full focus-visible:outline-none;
+        font-family: 'Montserrat Regular';
+
+        input {
+            @apply py-[5%] w-full border-[1px] border-[#C4C4C4];
+            font-family: 'Montserrat Regular';
+        }
+
+        @media screen and(max-width: 1440px) {
+            font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+        }
+
+        @media screen and(max-width: 576px) {
+            @apply mb-[5%] rounded-md;
+            font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+        }
+
+        &::placeholder {
+            @include text(15px, 130%, 400, #2D2D2B);
+            @apply uppercase tracking-wider opacity-30;
+            font-family: 'Montserrat Regular';
+
+            @media screen and(max-width: 1440px) {
+                font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+            }
+
+            @media screen and(max-width: 576px) {
+                font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+            }
+        }
+    }
+    @media screen and(min-width: 1440px) {
+        @apply w-[404px];
+    }
+    @media screen and(max-width: 576px) {
+        @apply w-full;
+    }
+}
+.button__sending {
+    @include text(22px, 130%, 700, #000);
+    @apply flex justify-center w-full bg-[#2BB018] border-[#2BB018] border-[1px] text-white mx-auto py-[3.5%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-[1px] hover:text-[#2BB018] hover:cursor-pointer hover:duration-200 disabled:hover:cursor-default;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+    font-family: 'Montserrat Semibold';
+
+    &:hover {
+        animation-name:  pulse;
+        animation-duration: 1s;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+
+    @media screen and(max-width: 1440px) {
+        font-size: calc(6px + (22 - 6)*(100vw - 576px)/(1440 - 576));
+    }
+    @media screen and(max-width: 576px) {
+        @apply px-[5%] w-full rounded-md;
+        font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+    }
+}

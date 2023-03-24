@@ -3,17 +3,17 @@ import React from "react";
 import styles from "./OfferPopUp.module.scss";
 import close__button from "../../public/static/planning-page/close-button-popup.svg";
 
-export default function index({setIsOpen}) {
-    const hanlerClosePopup = () => {
-        setIsOpen(false)
-      }
+export default function index({ setIsOpen }) {
+  const hanlerClosePopup = () => {
+    setIsOpen(false);
+  };
   return (
     <section className={styles.offer__section}>
       <div className={styles.offer__inner}>
-        <button 
-        type="button"
-        className={styles.offer__button_close}
-        onClick={hanlerClosePopup}
+        <button
+          type="button"
+          className={styles.offer__button_close}
+          onClick={hanlerClosePopup}
         >
           <Image
             src={close__button}
@@ -23,20 +23,17 @@ export default function index({setIsOpen}) {
           />
         </button>
         <h2 className={styles.offer__title}>
-            Solicită prezentarea 
-            <br/><span>NEWTON HOUSE GRĂDINA BOTANICĂ</span> PDF
+          Solicită prezentarea
+          <br />
+          <span>NEWTON HOUSE GRĂDINA BOTANICĂ</span> PDF
         </h2>
         <form className={styles.offer__form}>
-            <input type="email" placeholder="Adresa de email" required/>
-            <input type="text" placeholder="Numărul de telefon" required/>
-            
+          <input type="email" placeholder="Adresa de email" required />
+          <input type="text" placeholder="Numărul de telefon" required />
         </form>
-        <button 
-            type="button"
-                className={styles.button__sending}
-            >
-                Solicită prezentarea
-              </button>
+        <button type="button" className={styles.button__sending}>
+          Solicită prezentarea
+        </button>
       </div>
     </section>
   );
