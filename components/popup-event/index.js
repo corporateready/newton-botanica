@@ -57,7 +57,6 @@ export default function OfferPDFOpenSending({ handlerCloseEventPopup }) {
   React.useEffect(() => {
     if (isSend) {
       handlerCloseEventPopup();
-      // Router.push("/about");
     }
   }, [isSend]);
 
@@ -73,7 +72,7 @@ export default function OfferPDFOpenSending({ handlerCloseEventPopup }) {
           type="text/css"
           href="https://unpkg.com/intl-tel-input@17.0.18/build/css/intlTelInput.min.css"
         />
-        <Script
+        {/* <Script
           async
           id="roistat-script-event-popup"
           dangerouslySetInnerHTML={{
@@ -1022,7 +1021,8 @@ export default function OfferPDFOpenSending({ handlerCloseEventPopup }) {
           `,
           }}
           strategy="afterInteractive"
-        />
+        /> */}
+        <script src="https://ready4977.activehosted.com/f/embed.php?id=1" type="text/javascript" charset="utf-8"></script>
       </Head>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
@@ -1057,7 +1057,10 @@ export default function OfferPDFOpenSending({ handlerCloseEventPopup }) {
               </h2>
             )}
 
-            <form
+<div className="_form_1 w-[80%] lg:w-[60%] xl:w-[50%] 2xl:w-[330px]">
+</div>
+
+            {/* <form
               id="about__hero_presentation_btn"
               className={styles.offer__form}
               action="https://formsubmit.co/nev30inbox@gmail.com"
@@ -1153,7 +1156,8 @@ export default function OfferPDFOpenSending({ handlerCloseEventPopup }) {
                   ? "trimite"
                   : "отправить"}
               </button>
-            </form>
+            </form> */}
+
           </div>
         </div>
       </section>
