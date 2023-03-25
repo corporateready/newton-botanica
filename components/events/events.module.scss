@@ -1,10 +1,9 @@
 .events__inner {
-    // @apply flex flex-col flex-auto items-center h-full max-w-full;
     @media all and (min-width:576px) {
         @apply bg-[url('/static/event-page/events-bg.webp')] bg-bottom bg-no-repeat object-fill bg-cover;
     }
 
-    @apply flex flex-col items-center h-screen w-full bg-[url('/static/event-page/event-bg-mob.webp')] bg-no-repeat object-fill bg-contain bg-center;
+    @apply flex flex-col items-center h-screen w-full bg-[url('/static/event-page/event-bg-mob.webp')] bg-no-repeat object-fill bg-cover bg-center;
 }
 .events__title {
     @media all and (min-width: 576px) {
@@ -20,7 +19,7 @@
     }
 
     @media all and (min-width: 1441px) {
-        @apply text-center mt-[47px] h-[132px];        
+        @apply text-center mt-[27px] h-[102px];        
     }
 
     @media all and (min-width: 1600px) {
