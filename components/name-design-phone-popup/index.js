@@ -142,7 +142,8 @@ export default function Index({ hanlerCloseDesignPopup }) {
                 isValid={(value, country) => {
                   if (
                     phoneValue.length >= 4 &&
-                    value.match(/0/) &&
+                    phoneValue[3] === "0" &&
+                    phoneValue[3] !== undefined &&
                     country.name === "Moldova"
                   ) {
                     setIsPhoneValid(true);

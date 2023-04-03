@@ -306,7 +306,8 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
                 isValid={(value, country) => {
                   if (
                     phoneValue.length >= 4 &&
-                    value.match(/0/) &&
+                    phoneValue[3] === "0" &&
+                    phoneValue[3] !== undefined &&
                     country.name === "Moldova"
                   ) {
                     setIsPhoneValid(true);
@@ -505,7 +506,8 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup, isToggleLang }) {
                 isValid={(value, country) => {
                   if (
                     phoneValue.length >= 4 &&
-                    value.match(/0/) &&
+                    phoneValue[3] === "0" &&
+                    phoneValue[3] !== undefined &&
                     country.name === "Moldova"
                   ) {
                     setIsPhoneValid(true);
@@ -705,9 +707,12 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
                 onChange={setPhoneValue}
                 masks={{ md: "(...) ...-.." }}
                 isValid={(value, country) => {
+                  console.log('value ', value);
+                  console.log("phoneValue ", phoneValue[3]);
                   if (
                     phoneValue.length >= 4 &&
-                    value.match(/0/) &&
+                    phoneValue[3] === "0" &&
+                    phoneValue[3] !== undefined &&
                     country.name === "Moldova"
                   ) {
                     setIsPhoneValid(true);
