@@ -3,10 +3,6 @@
         @apply bg-[url('/static/event-page/events-bg.webp')] bg-bottom bg-no-repeat object-fill bg-cover;
     }
 
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        @apply bg-[url('/static/event-page/events-bg.webp')] bg-bottom bg-no-repeat object-fill bg-cover;
-    }
-
     @apply flex flex-col items-center h-screen w-full bg-[url('/static/event-page/event-bg-mob.webp')] bg-no-repeat object-fill bg-cover bg-center;
 }
 .events__title {
@@ -20,10 +16,6 @@
         @apply text-center mt-[3vw] h-[10vw];         
     }
 
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        @apply text-center mt-[3vw] h-[10vw];       
-    }
-    
     @media all and (min-width: 1600px) {
         @apply text-center mt-[70px] h-[150px];        
     }
@@ -72,10 +64,6 @@
     }
 
     @media all and ( min-width: 769px ) {
-        @apply top-[48%] w-[39.73vw] py-[1.13vw] text-[2.674vw];
-    }
-
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
         @apply top-[48%] w-[39.73vw] py-[1.13vw] text-[2.674vw];
     }
 

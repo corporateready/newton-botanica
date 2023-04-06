@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/globals.scss";
+import Head from "next/head";
 
 export const LangContext = React.createContext();
 
@@ -61,9 +62,14 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
+    <>
+    <Head>
+    <meta name="viewport" content="width=device-width"/>
+    </Head>
     <LangContext.Provider value={value}>
       <Component {...pageProps} />
     </LangContext.Provider>
+    </>
   );
 }
 
