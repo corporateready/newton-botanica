@@ -1,24 +1,28 @@
 .events__inner {
     @media all and (min-width: 320px) {
-        @apply flex flex-col items-center h-screen w-full bg-[url('/static/event-page/event-bg-mob.webp')] relative top-0 left-0 bg-no-repeat bg-cover bg-center;
+        @apply h-screen w-screen flex flex-col items-center justify-start bg-[url('/static/event-page/event-bg-mob.webp')] relative top-0 left-0 bg-no-repeat bg-cover bg-center space-y-[6vh];
     }
     @media all and (min-width:576px) {
-        @apply h-full w-full bg-[url('/static/event-page/events-bg.webp')] relative top-0 left-0 bg-bottom bg-no-repeat bg-cover;
+        @apply h-screen w-screen bg-[url('/static/event-page/events-bg.webp')] relative top-0 left-0 bg-no-repeat bg-cover bg-center space-y-[38vh];
+    }
+
+    @media all and (min-width:1920px) {
+        @apply space-y-[45vh];
     }
 }
 .events__title {
     @apply hidden;
 
     @media all and (min-width: 576px) {
-        @apply block h-[10vw] w-full mt-[16vw];
+        @apply block h-[10vw] w-full mt-[5vh];
     }
 
     @media all and (min-width: 769px) {
-        @apply text-center mt-[3vw] h-[10vw];         
+        @apply text-center h-[10vw] ;         
     }
 
     @media all and (min-width: 1600px) {
-        @apply text-center mt-[70px] h-[150px];        
+        @apply text-center h-[150px];        
     }
 
     @media all and (min-width: 2000px) {
@@ -27,7 +31,7 @@
 }
 .events__title_mob {
     @media all and (min-width: 320px) {
-        @apply block mt-[14vw] text-[#2d2d2b] leading-[200%] tracking-[0.85px] text-[5.984vw] font-bold uppercase text-center;
+        @apply block text-[#2d2d2b] leading-[200%] tracking-[0.85px] text-[5.984vw] font-bold uppercase text-center;
         font-family: 'Gilroy-Bold';
 
         span {
@@ -43,7 +47,7 @@
 }
 .events__btn {
     @media all and (min-width: 320px) {
-        @apply mt-[9.81vw] w-[93.46vw] text-[6.3vw] py-[2.6vw] rounded-[6px] text-white uppercase;
+        @apply w-[92vw] text-[6.3vw] py-[2.6vw] rounded-[6px] text-white uppercase;
         background: linear-gradient(180deg, #42C530 0%, #2BA433 100%);
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
         font-family: 'Montserrat Bold';
@@ -52,7 +56,7 @@
     }
 
     @media all and (min-width: 576px) {
-        @apply absolute top-[62%] py-[2vw] text-[3vw] w-[55vw];
+        @apply py-[2vw] text-[3vw] w-[55vw];
         background: linear-gradient(180deg, #42C530 0%, #2BA433 100%);
         box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -65,25 +69,25 @@
     }
 
     @media all and ( min-width: 769px ) {
-        @apply top-[48%] w-[39.73vw] py-[1.13vw] text-[2.674vw];
+        @apply w-[39.73vw] py-[1.13vw] text-[2.674vw];
     }
 
     @media all and (min-width: 1439px) {
-        @apply top-[390px] py-[15px] text-[35px] w-[520px] ;
+        @apply py-[15px] text-[35px] w-[520px] ;
     }
 
     @media all and (min-width: 1600px) {
-        @apply top-[490px] py-[15px] text-[35px] w-[520px] ;
+        @apply py-[15px] text-[35px] w-[520px] ;
     }
 
     @media all and (min-width: 2000px) {
-        @apply top-[640px];        
+        // @apply top-[640px];        
     }
 }
 .events__copy {
-    @apply text-[16px] text-[#fff] absolute bottom-[36px] left-[138px];
+    @apply  absolute bottom-[36px] left-[138px];   
 
-    @media all and (max-width: 576px) {
-        @apply text-[10px] left-[8vw];
+    @media all and (min-width: 320px) {
+        @apply text-[#fff] text-[10px] left-[8vw];
     }
 }
