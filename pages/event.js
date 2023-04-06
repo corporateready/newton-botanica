@@ -16,7 +16,7 @@ export default function Events() {
   }
 
   return (
-    <div className="h-screen w-full relative top-0 left-0 flex flex-col">
+    <div className="h-screen min-h-screen w-screen flex flex-col">
       <Head>
         <title>NHGB | Events</title>
       </Head>

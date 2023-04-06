@@ -11,15 +11,6 @@ import { LangContext } from "../../../../pages/_app";
 export default function Index() {
   const { isToggleLang, handleLanguageChange, options } = React.useContext(LangContext);
 
-  // React.useEffect(() => {
-    //   // localStorage.setItem("language",  JSON.stringify(isToggleLang))
-      // window.addEventListener("storage", function (e) {
-      //   console.log("change ", e);
-    //     const select = document.getElementById("select");
-    //     console.log("select ", select);
-    //   });
-    // }, [isToggleLang]);
-  
   React.useEffect(() => {
     (function (w, d, s, h, id) {
       w.roistatProjectId = id;

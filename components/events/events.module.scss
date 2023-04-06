@@ -1,9 +1,10 @@
 .events__inner {
-    @media all and (min-width:576px) {
-        @apply bg-[url('/static/event-page/events-bg.webp')] bg-bottom bg-no-repeat object-fill bg-cover;
+    @media all and (min-width: 320px) {
+        @apply flex flex-col items-center h-screen w-full bg-[url('/static/event-page/event-bg-mob.webp')] relative top-0 left-0 bg-no-repeat bg-cover bg-center;
     }
-
-    @apply flex flex-col items-center h-screen w-full bg-[url('/static/event-page/event-bg-mob.webp')] bg-no-repeat object-fill bg-cover bg-center;
+    @media all and (min-width:576px) {
+        @apply h-full w-full bg-[url('/static/event-page/events-bg.webp')] relative top-0 left-0 bg-bottom bg-no-repeat bg-cover;
+    }
 }
 .events__title {
     @apply hidden;
