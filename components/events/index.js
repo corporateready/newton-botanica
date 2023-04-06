@@ -633,16 +633,22 @@ export default function Index({ handlerOpenEventPopup }) {
         <h2 className={styles.events__title_mob}>
           {isToggleLang === "ro" ? (
             <>
-              <span>Câștigă un bilet la cel mai 
-                <br/>verde picnic al primăverii</span>
-                <br/>Parcul Grădina Botanică
-                <br/>07 Mai 2023
+              <span>
+                Câștigă un bilet la cel mai
+                <br />
+                verde picnic al primăverii
+              </span>
+              <br />
+              Parcul Grădina Botanică
+              <br />
+              07 Mai 2023
             </>
           ) : (
             <>
               <span>
-              получи билет на самый 
-              <br/>зеленый пикник весны
+                получи билет на самый
+                <br />
+                зеленый пикник весны
               </span>
               <br />
               Ботанический сад
