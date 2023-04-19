@@ -85,7 +85,7 @@
     }
 }
 .events__copy {
-    @apply  absolute bottom-[36px] left-[138px];   
+    @apply  absolute bottom-[2vh] left-[138px];   
 
     @media all and (min-width: 320px) {
         @apply text-[#fff] text-[10px] left-[8vw];
