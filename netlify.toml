@@ -4,33 +4,13 @@ publish = ".next"
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-#         newton.md/apartamente — 
-#  https://botanica.newton.md/?utm_source=facebook&utm_medium=facebook+referral+link
-
-#  newton.md/proiect —
-#  https://botanica.newton.md/?utm_source=youtube&utm_medium=youtube+referral+link
-
-#  newton.md/acasa —
-#  https://botanica.newton.md/?utm_source=instagram&utm_medium=instagram+referral+link
-
-#  newton.md/gb —
-#  https://botanica.newton.md/?utm_source=tiktok&utm_medium=tiktok+referral+link
-
-#  newton.md/home —
-#  https://botanica.newton.md/?utm_source=googlemybusiness&utm_medium=googlemybusiness+referral+link
-
-#  newton.md/botanica -
-#  https://botanica.newton.md/?utm_source=direct+link&utm_medium=direct+referral+link
-
-[[redirects]]
-
+  [[redirects]]
   from = "/botanica"
   to = "https://botanica.newton.md/?utm_source=direct+link&utm_medium=direct+referral+link"
   status = 301
-  force="true"
 
   [[redirects]]
-  from = "/apartamente "
+  from = "/apartamente"
   to = "https://botanica.newton.md/?utm_source=facebook&utm_medium=facebook+referral+link"
   status = 301
 

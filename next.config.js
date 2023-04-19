@@ -42,7 +42,7 @@ const nextConfig = {
       },
       {
             source: '/apartamente',
-            destination: '/?utm_source=facebook&utm_medium=facebook+referral+link', // Matched parameters can be used in the destination
+            destination: '/?utm_source=facebook&utm_medium=facebook+referral+link',
             permanent: false,
       },
       {
