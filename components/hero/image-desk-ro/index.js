@@ -7,9 +7,6 @@ import Head from "next/head";
 export default function Index() {
   return (
     <>
-      <Head>
-        {/* <link rel="preload" as="image" href="/home-image-inner-mobile.svg"/> */}
-      </Head>
       <div className={styles.image__side}>
         <Image
           src={image__desk_ro}
