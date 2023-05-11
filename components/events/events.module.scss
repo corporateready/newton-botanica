@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;700;900&display=swap');
 
 .events__inner {
+    font-family: 'Inter', sans-serif;
+
     @media all and (min-width: 320px) {
         @apply h-screen w-screen flex flex-col items-center justify-start bg-[url('/static/event-page/event-bg-mob.webp')] relative top-0 left-0 bg-no-repeat bg-cover bg-center space-y-[6vh];
     }
@@ -218,7 +220,7 @@
 }
 .text__top {
     @apply text-[#000] text-[24px] leading-[150%] text-center font-normal;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
 
     @media screen and (max-width: 1439.99px) {
         @apply text-[1.668vw] text-center;
