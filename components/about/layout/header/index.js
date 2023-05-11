@@ -41,6 +41,7 @@ export default function Index() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.header__inner}>
+          
           <Link href="/">
             <a className={styles.header__logo}>
               <Image
@@ -52,6 +53,22 @@ export default function Index() {
               />
             </a>
           </Link>
+
+          <motion.div className="absolute top-[28%] right-[4%] sm:right-[30%]">
+              <select
+                value={isToggleLang}
+                onChange={handleLanguageChange}
+                multiple={false}
+                id='select'
+                className="text-sm text-green-600 font-bold focus-visible:outline-none hover:cursor-pointer"
+              >
+                {
+                  options.map((o)=>(
+                    <option key={o.id} value={o.value}>{o.name}</option>
+                  ))
+                }
+              </select>
+          </motion.div>
           
           <div className={styles.header__phone_link}>
             <motion.div 
@@ -70,24 +87,10 @@ export default function Index() {
             <a
               href="tel:+3736082020"
               className={styles.header__phone_link_number}
-            ></a>
+            >+373 60 82 020</a>
           </div>
           
-          <motion.div className="absolute top-[28%] right-[4%] sm:right-[30%]">
-              <select
-                value={isToggleLang}
-                onChange={handleLanguageChange}
-                multiple={false}
-                id='select'
-                className="text-sm text-green-600 font-bold focus-visible:outline-none hover:cursor-pointer"
-              >
-                {
-                  options.map((o)=>(
-                    <option key={o.id} value={o.value}>{o.name}</option>
-                  ))
-                }
-              </select>
-            </motion.div>
+          
         </div>
       </div>
     </header>
