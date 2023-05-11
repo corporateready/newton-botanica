@@ -50,6 +50,8 @@
     }
 }
 .events__btn {
+    font-family: 'Inter', sans-serif;
+
     @media all and (min-width: 320px) {
         @apply w-[92vw] text-[6.3vw] py-[2.6vw] rounded-[6px] text-white uppercase;
         background: linear-gradient(180deg, #42C530 0%, #2BA433 100%);
@@ -90,6 +92,7 @@
 }
 .events__copy {
     @apply  absolute bottom-[2vh] left-[138px];   
+    font-family: 'Inter', sans-serif;
 
     @media all and (min-width: 320px) {
         @apply text-[#fff] text-[10px] left-[8vw];
@@ -255,7 +258,7 @@
 }
 .text {
     @apply text-[#000] text-[24px] leading-[150%] text-center font-normal;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
 
     @media screen and (max-width: 1439.99px) {
         @apply text-[1.668vw] text-center;
@@ -289,7 +292,7 @@
 }
 .item__text {
     @apply text-[#000] text-[20px] uppercase text-center font-normal;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
 
     @media screen and (max-width: 1440px) {
         @apply text-[1.53vw];
@@ -363,13 +366,14 @@
     }
 }
 .item__subtitle_wrapper {
+    
     @media screen and (max-width: 576px) {
         @apply flex items-center;
     }
 }
 .item__subtitle {
     @apply relative top-0 left-0 text-[#000] text-[18px] leading-[150%] text-center font-bold uppercase;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
 
     @media screen and (max-width: 576px) {
         @apply text-[4.2vw] pr-[2vw] w-full;
@@ -392,7 +396,7 @@
 }
 .item__descrition {
     @apply text-[#000] text-[16px] leading-[150%] text-center font-normal mt-[16px] transition-all duration-200;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
 
     @media screen and (max-width: 576px) {
         @apply hidden;
@@ -400,7 +404,7 @@
 }
 .item__descrition_mob {
     @apply text-[#000] text-[16px] leading-[150%] text-center font-normal mt-[16px];
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
 
     @media screen and (max-width: 576px) {
         @apply text-[3.5vw];
