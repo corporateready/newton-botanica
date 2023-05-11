@@ -281,7 +281,7 @@
     }
 }
 .items {
-    @apply flex flex-col items-center space-y-[16px] my-[60px];
+    @apply flex flex-col items-center space-y-[16px] my-[20px];
 
     @media screen and (max-width: 1439.99px) {
         @apply my-[1vw] space-y-[2vw];
