@@ -9,6 +9,11 @@ import circle__image_6 from "../../../public/static/event-page/circle-image-6.we
 import circle__image_7 from "../../../public/static/event-page/circle-image-7.webp";
 import Image from "next/image";
 import layers__bottom_right from "../../../public/static/event-page/layers-bottom-right.webp";
+import LayerTopMob from "./LayerTopMob_";
+import LayerMediumMob from "./LayerMediumMob";
+import LayerTopBottomMob from "./LayerTopBottomMob";
+import LayerTopBottomMediumMob from "./LayerTopBottomMediumMob";
+import LayerTopBottomBottomMob from "./LayerTopBottomBottomMob";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 import { LangContext } from "../../../pages/_app";
@@ -68,6 +73,8 @@ export default function Index() {
           )}
 
           <div className={styles.willbe__items}>
+            <LayerTopMob />
+            <LayerMediumMob />
             <div className={styles.willbe__item}>
               <div className={styles.item__image_wrapper}>
                 <Image
@@ -475,6 +482,9 @@ export default function Index() {
             </div>
           </div>
           <div className={styles.willbe__items_b}>
+            <LayerTopBottomMob />
+            <LayerTopBottomMediumMob />
+            <LayerTopBottomBottomMob />
             <div className={styles.willbe__item}>
               <div className={styles.item__image_wrapper}>
                 <Image

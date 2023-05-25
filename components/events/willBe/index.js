@@ -9,43 +9,13 @@ import circle__image_6 from "../../../public/static/event-page/circle-image-6.we
 import circle__image_7 from "../../../public/static/event-page/circle-image-7.webp";
 import Image from "next/image";
 import layers__bottom_right from "../../../public/static/event-page/layers-bottom-right.webp";
+import LayerTopMob from "./LayerTopMob_";
+import LayerMediumMob from "./LayerMediumMob";
+import LayerTopBottomMob from "./LayerTopBottomMob";
+import LayerTopBottomMediumMob from "./LayerTopBottomMediumMob"
+import LayerTopBottomBottomMob from "./LayerTopBottomBottomMob"
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
-
-const itemsEvent = [
-  {
-    id: "1",
-    itemImage: circle__image_1,
-    itemTitle: `Zbor cu balonul de aer cald`,
-    itemText: `Trăiește o experiență unică, admiră priveliști impresionante asupra naturii și frumusețea parcului Grădina Botanică dintr-o perspectivă absolut diferită.
-    `,
-    itemChevron: false,
-  },
-  {
-    id: "2",
-    itemImage: circle__image_2,
-    itemTitle: `Zone derecreere în aer liber`,
-    itemText:
-      "O oportunitate excelentă de a te conecta cu natura și relaxa din toată agitația de zi cu zi – la zonele amenajate comod cu scaune, hamacuri și bean bag.",
-    itemChevron: false,
-  },
-  {
-    id: "3",
-    itemImage: circle__image_3,
-    itemTitle: "Photo zone",
-    itemText:
-      "Creează amintiri deosebite la zonele de fotografiere distractive și nu uita să împărtășești pe rețelele de socializare momentele memorabile de la picnic.",
-    itemChevron: false,
-  },
-  {
-    id: "4",
-    itemImage: circle__image_4,
-    itemTitle: "Muzică live și DJ",
-    itemText:
-      "Pentru o atmosferă mai plăcută și o doză de distracție la picnic vom invita un DJ, iar acordurile de muzică live vor menține nivelul de energie și entuziasm.",
-    itemChevron: false,
-  },
-];
 
 export default function Index() {
   const [isRotate, setIsRotate] = React.useState(false);
@@ -93,6 +63,8 @@ export default function Index() {
           </h2>
 
           <div className={styles.willbe__items}>
+            <LayerTopMob />
+            <LayerMediumMob />
             <div className={styles.willbe__item}>
               <div className={styles.item__image_wrapper}>
                 <Image
@@ -387,6 +359,9 @@ export default function Index() {
             </div>
           </div>
           <div className={styles.willbe__items_b}>
+            <LayerTopBottomMob />
+            <LayerTopBottomMediumMob/>
+            <LayerTopBottomBottomMob/>
             <div className={styles.willbe__item}>
               <div className={styles.item__image_wrapper}>
                 <Image
