@@ -21,7 +21,7 @@
     }
 }
 .offer__inner {
-    @apply flex flex-col items-center justify-center h-auto w-[53%] relative bg-white mt-[10%] z-auto pt-[5%] pb-[3.5%] mx-auto rounded-md;
+    @apply flex flex-col items-center justify-center h-auto w-[53%] relative bg-white mt-[10%] z-auto pt-[7%] pb-[3.5%] mx-auto rounded-md;
     transform: scale(1);
 
     @media screen and (max-width: 576px) {
@@ -29,7 +29,7 @@
     }
 
     @media screen and (min-width: 1441px) {
-        @apply w-[650px];
+        @apply w-[780px] pt-[78px];
     }
 }
 .offer__button_close {
@@ -40,12 +40,12 @@
     }
 }
 .offer__title {
-    @include text(16px, 130%, 600, #2D2D2B);
-    @apply text-center uppercase;
+    @include text(16px, 130%, 700, #000);
+    @apply text-center uppercase leading-[175%];
     font-family: 'Montserrat SemiBold';
 
     @media screen and(max-width: 1440px) {
-        font-size: calc(14px + (20 - 14)*(100vw - 576px)/(1440 - 576));
+        @apply text-[1.39vw];
     }
 
     @media screen and(max-width: 768px) {
@@ -88,39 +88,39 @@
             }
         }
     }
-    .input {
-        @include text(15px, 130%, 400, #2D2D2B);
-        @apply border-0 rounded-sm py-[1%] mb-[3%] h-full focus-visible:outline-none;
-        font-family: 'Montserrat Regular';
+    // .input {
+    //     @include text(15px, 130%, 400, #2D2D2B);
+    //     @apply border-0 rounded-sm py-[1%] mt-[5%] h-full focus-visible:outline-none;
+    //     font-family: 'Montserrat Regular';
 
-        input {
-            @apply py-[5%] w-full border-[1px] border-[#C4C4C4];
-            font-family: 'Montserrat Regular';
-        }
+    //     input {
+    //         @apply py-[6.5%] w-full border-[1px] border-[#C4C4C4];
+    //         font-family: 'Montserrat Regular';
+    //     }
 
-        @media screen and(max-width: 1440px) {
-            font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
-        }
+    //     @media screen and(max-width: 1440px) {
+    //         font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+    //     }
 
-        @media screen and(max-width: 576px) {
-            @apply mb-[5%] rounded-md;
-            font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
-        }
+    //     @media screen and(max-width: 576px) {
+    //         @apply mb-[5%] rounded-md;
+    //         font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+    //     }
 
-        &::placeholder {
-            @include text(15px, 130%, 400, #2D2D2B);
-            @apply uppercase tracking-wider opacity-30;
-            font-family: 'Montserrat Regular';
+    //     &::placeholder {
+    //         @include text(15px, 130%, 400, #2D2D2B);
+    //         @apply uppercase tracking-wider opacity-30;
+    //         font-family: 'Montserrat Regular';
 
-            @media screen and(max-width: 1440px) {
-                font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
-            }
+    //         @media screen and(max-width: 1440px) {
+    //             font-size: calc(6px + (15 - 6)*(100vw - 576px)/(1440 - 576));
+    //         }
 
-            @media screen and(max-width: 576px) {
-                font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
-            }
-        }
-    }
+    //         @media screen and(max-width: 576px) {
+    //             font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+    //         }
+    //     }
+    // }
     @media screen and(min-width: 1440px) {
         @apply w-[404px];
     }
@@ -130,10 +130,9 @@
 }
 .button__sending {
     @include text(22px, 130%, 700, #000);
-    @apply flex justify-center w-full bg-[#2BB018] border-[#2BB018] border-[1px] text-white mx-auto py-[3.5%] rounded uppercase text-center tracking-wider hover:bg-white hover:border-[1px] hover:text-[#2BB018] hover:cursor-pointer hover:duration-200 disabled:cursor-default;
+    @apply flex justify-center w-full bg-[#2BB018] border-[#2BB018] border-[1px] text-white mx-auto py-[3%] rounded-[6px] uppercase text-center tracking-wider hover:bg-white hover:border-[1px] hover:text-[#2BB018] hover:cursor-pointer hover:duration-200 disabled:cursor-default;
     text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
     font-family: 'Montserrat Semibold';
-
     &:hover {
         @apply disabled:animate-none;
         animation-name:  pulse;
@@ -150,12 +149,7 @@
             }
         }
     }
-
-    @media screen and(max-width: 1440px) {
-        font-size: calc(6px + (22 - 6)*(100vw - 576px)/(1440 - 576));
-    }
     @media screen and(max-width: 576px) {
-        @apply px-[5%] w-full rounded-md;
-        font-size: calc(10px + (22 - 10)*(100vw - 320px)/(576 - 320));
+        @apply px-[5%] w-full rounded-md text-[4vw];
     }
 }

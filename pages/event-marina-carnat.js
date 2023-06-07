@@ -18,6 +18,14 @@ export default function Events() {
     setIsEventVisible(true)
   }
 
+  React.useEffect(() => {
+    if (isEventVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isEventVisible]);
+
   return (
     <div className="h-full min-h-screen max-w-full flex flex-col overflow-x-hidden">
       <Head>
