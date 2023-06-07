@@ -1296,24 +1296,6 @@ export default function OfferPDFOpenSending({ handlerCloseEventPopup }) {
                 />
               </div>
 
-              {/* <PhoneInput
-                className={styles.input}
-                id="phone"
-                name="phone"
-                style={{
-                  height: "auto",
-                  width: "100%",
-                  paddingTop: "0",
-                  paddingBottom: "0",
-                  borderRadius: "6px",
-                  border: "0.5px solid #C4C4C4",
-                }}
-                placeholder="+373-XXX-XXX-XX"
-                country={"md"}
-                value={phoneValue}
-                onChange={setPhoneValue}
-                masks={{ md: "(...) ...-.." }}
-              /> */}
               <button
                 id="_form_8_submit"
                 className={`${styles.button__sending} _submit disabled:cursor-default`}
