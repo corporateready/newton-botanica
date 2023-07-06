@@ -123,10 +123,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
                   paddingTop: "0",
                   paddingBottom: "0",
                   borderRadius: "3px",
-                  border:
-                    phoneValue.length !== 11
-                      ? " 1px solid red"
-                      : " 1px solid green",
+                  border:0,
                 }}
                 placeholder="+373-XXX-XXX-XX"
                 country={"md"}
@@ -147,6 +144,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
                     return true;
                   }
                 }}
+                enableLongNumbers={true}
               />
               {phoneValue.length < 11 && (
                 <p className="text-xs text-red-400 pb-[2%]">

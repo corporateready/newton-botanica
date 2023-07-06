@@ -62,7 +62,7 @@
 
     input {
         @include text(15px, 130%, 400, #2D2D2B);
-        @apply border-[1px] rounded-sm py-[3%] mb-[3%] pl-[3%] focus-visible:outline-none;
+        @apply border-[1px] rounded-[5px] py-[3%] mb-[3%] pl-[3%] focus-visible:outline-none;
         font-family: 'Gilroy Regular';
 
         @media screen and(max-width: 1440px) {

@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 import Router from "next/router";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
@@ -13,25 +13,25 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { motion } from "framer-motion";
 
-import Header from "../components/about/layout/header"
+import Header from "../components/about/layout/header";
 
 import { LangContext } from "../pages/_app";
 
-const ImageRo = dynamic(() => import('../components/hero/image-ro'), {
-  ssr: false
-})
+const ImageRo = dynamic(() => import("../components/hero/image-ro"), {
+  ssr: false,
+});
 
-const ImageRu = dynamic(() => import('../components/hero/image-ru'), {
-  ssr: false
-})
+const ImageRu = dynamic(() => import("../components/hero/image-ru"), {
+  ssr: false,
+});
 
-const ImageDeskRo = dynamic(() => import('../components/hero/image-desk-ro'), {
-  ssr: false
-})
+const ImageDeskRo = dynamic(() => import("../components/hero/image-desk-ro"), {
+  ssr: false,
+});
 
-const ImageDeskRu = dynamic(() => import('../components/hero/image-desk-ru'), {
-  ssr: false
-})
+const ImageDeskRu = dynamic(() => import("../components/hero/image-desk-ru"), {
+  ssr: false,
+});
 
 export default function Home() {
   const { isToggleLang, setToggleLang } = React.useContext(LangContext);
@@ -83,25 +83,18 @@ export default function Home() {
           content="Apartamente în rate, pe 5 ani, cu doar 10% prima rată, 0% dobândă,"
         />
         <link rel="icon" href="/favicon.ico" />
-        <script>
-          
-        </script>
+        <script></script>
       </Head>
 
       <div className={styles.home__screen}>
-        <Header/>
+        <Header />
 
         <div className={styles.home}>
           <div className={styles.container}>
             <div className={styles.inner}>
+              {isToggleLang === "ro" ? <ImageDeskRo /> : <ImageDeskRu />}
 
-            {
-                isToggleLang === "ro" ? <ImageDeskRo/> : <ImageDeskRu/>
-              }
-
-              {
-                isToggleLang === "ro" ? <ImageRo/> : <ImageRu/>
-              }
+              {isToggleLang === "ro" ? <ImageRo /> : <ImageRu />}
 
               <div className={styles.navigate__side}>
                 <div className={styles.buttons__up}>
@@ -206,7 +199,10 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style={{transform:"none!important"}}>
+          <div
+            className={styles.offer__inner}
+            style={{ transform: "none!important" }}
+          >
             <button
               type="button"
               className={styles.offer__button_close}
@@ -266,11 +262,8 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
                   width: "100%",
                   paddingTop: "0",
                   paddingBottom: "0",
-                  borderRadius: "3px",
-                  border:
-                    phoneValue.length !== 11
-                      ? " 1px solid red"
-                      : " 1px solid green",
+                  borderRadius: 0,
+                  border: 0,
                 }}
                 placeholder="+373-XXX-XXX-XX"
                 country={"md"}
@@ -285,12 +278,15 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
                     country.name === "Moldova"
                   ) {
                     setIsPhoneValid(true);
-                    return isToggleLang === "ro" ? "fără prefixul zero în față" : "без префикса ноль в начале";
+                    return isToggleLang === "ro"
+                      ? "fără prefixul zero în față"
+                      : "без префикса ноль в начале";
                   } else {
                     setIsPhoneValid(false);
                     return true;
                   }
                 }}
+                enableLongNumbers={true}
               />
               {phoneValue.length < 11 &&
                 (isToggleLang === "ro" ? (
@@ -301,7 +297,8 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
                   <p className="text-xs text-red-400 pb-[2%]">
                     ровно 8 цифр, без префикса ноль в начале
                   </p>
-                ))}
+                ))
+              }
 
               <input type="hidden" name="_captcha" value="false" />
               <input
@@ -404,7 +401,10 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup, isToggleLang }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style={{transform:"none!important"}}>
+          <div
+            className={styles.offer__inner}
+            style={{ transform: "none!important" }}
+          >
             <button
               type="button"
               className={styles.offer__button_close}
@@ -467,10 +467,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup, isToggleLang }) {
                   paddingTop: "0",
                   paddingBottom: "0",
                   borderRadius: "3px",
-                  border:
-                    phoneValue.length !== 11
-                      ? " 1px solid red"
-                      : " 1px solid green",
+                  border:0,
                 }}
                 placeholder="+373-XXX-XXX-XX"
                 country={"md"}
@@ -485,12 +482,15 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup, isToggleLang }) {
                     country.name === "Moldova"
                   ) {
                     setIsPhoneValid(true);
-                    return isToggleLang === "ro" ? "fără prefixul zero în față" : "без префикса ноль в начале";
+                    return isToggleLang === "ro"
+                      ? "fără prefixul zero în față"
+                      : "без префикса ноль в начале";
                   } else {
                     setIsPhoneValid(false);
                     return true;
                   }
                 }}
+                enableLongNumbers={true}
               />
               {phoneValue.length < 11 &&
                 (isToggleLang === "ro" ? (
@@ -604,7 +604,10 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style={{transform:"none!important"}}>
+          <div
+            className={styles.offer__inner}
+            style={{ transform: "none!important" }}
+          >
             <button
               type="button"
               className={styles.offer__button_close}
@@ -670,10 +673,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
                   paddingTop: "0",
                   paddingBottom: "0",
                   borderRadius: "3px",
-                  border:
-                    phoneValue.length < 11
-                      ? " 1px solid red"
-                      : " 1px solid green",
+                  border:0,
                 }}
                 placeholder="+373-XXX-XX-XXX"
                 country={"md"}
@@ -681,7 +681,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
                 onChange={setPhoneValue}
                 masks={{ md: "(...) ...-.." }}
                 isValid={(value, country) => {
-                  console.log('value ', value);
+                  console.log("value ", value);
                   console.log("phoneValue ", phoneValue[3]);
                   if (
                     phoneValue.length >= 4 &&
@@ -690,12 +690,15 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
                     country.name === "Moldova"
                   ) {
                     setIsPhoneValid(true);
-                    return isToggleLang === "ro" ? "fără prefixul zero în față" : "без префикса ноль в начале";
+                    return isToggleLang === "ro"
+                      ? "fără prefixul zero în față"
+                      : "без префикса ноль в начале";
                   } else {
                     setIsPhoneValid(false);
                     return true;
                   }
                 }}
+                enableLongNumbers={true}
               />
               {phoneValue.length < 11 &&
                 (isToggleLang === "ro" ? (
