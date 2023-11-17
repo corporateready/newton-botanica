@@ -1,0 +1,169 @@
+@import '../styles/mixins.scss';
+
+.container {
+    @apply w-[920px] mx-auto px-0;
+    font-family: 'Inter';
+    @media screen and(max-width: 960px) {
+        @apply w-full px-[2vw];
+    }
+}
+.post__picture {
+    @apply relative w-full h-[517px] bg-[url(../public/static/post/post-img-1.webp)] bg-center bg-cover;
+    span {
+    @include text(28px, 150%, 700, rgba(255, 255, 255, 1));
+    @apply absolute bottom-[25px] left-[40px];    
+    @media screen and(max-width: 920px) {
+        @apply text-[3.04vw] bottom-[2.6vw] left-[4.5vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply text-[3.04vw] bottom-[2.6vw] left-[4.5vw];
+    }
+    }
+
+    @media screen and(max-width: 920px) {
+        @apply h-[56.3vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply h-[51vw];
+    }
+}
+.post__picture_2 {
+    @apply mt-[60px] relative w-full h-[517px] bg-[url(../public/static/post/post-img-2.webp)] bg-center bg-cover;
+    @media screen and(max-width: 920px) {
+        @apply h-[56.3vw] ;
+    }
+    @media screen and(max-width: 576px) {
+        @apply h-[51vw] mt-[8vw];
+    }
+}
+.post__title {
+    @include text(28px, 150%, 700, rgba(45, 45, 43, 1));
+    @apply mt-[60px] uppercase text-center;
+    span {
+        @apply text-[#2FB04A];
+    }
+    @media screen and(max-width: 920px) {
+        @apply text-[2.9vw] mt-[5vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply text-[5vw];
+    }
+}
+.post__subtext {
+    @include text(25px, 150%, 600, rgba(45, 45, 43, 1));
+    @apply mt-[45px];
+    span {
+        @include text(25px, 150%, 800, rgba(45, 45, 43, 1));
+        @media screen and(max-width: 920px) {
+        @apply text-[2.72vw];
+    }
+    }
+    @media screen and(max-width: 920px) {
+        @apply text-[2.72vw] mt-[5vw];
+    }
+     @media screen and(max-width: 576px) {
+        @apply text-[4.4vw];
+    }
+}
+.post__text {
+    @include text(24px, 150%, 400, rgba(45, 45, 43, 1));
+    @apply mt-[25px];
+        span {
+            @include text(25px, 150%, 800, rgba(45, 45, 43, 1));
+            @media screen and(max-width: 920px) {
+            @apply text-[2.72vw] mt-[5vw];
+        }
+        @media screen and(max-width: 576px) {
+        @apply text-[4.4vw];
+    }
+    }
+    @media screen and(max-width: 920px) {
+        @apply text-[2.72vw] mt-[5vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply text-[4.4vw];
+    }
+    
+}
+.post__list_block {
+    @apply flex gap-[45px] mt-[45px];
+     @media screen and(max-width: 920px) {
+        @apply gap-[5vw] mt-[5vw];
+    }
+}
+.post__list_icon {
+    @apply w-[18px] h-[23px] mt-[5px];
+}
+.post__list_text {
+    @include text(24px, 150%, 400, rgba(45, 45, 43, 1));
+    @apply w-[862px];
+     span {
+        @include text(25px, 130%, 800, rgba(45, 45, 43, 1));
+         @media screen and(max-width: 920px) {
+        @apply text-[2.72vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply text-[4.4vw];
+    }
+    }
+    @media screen and(max-width: 920px) {
+        @apply text-[2.72vw] w-[60vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply text-[4.4vw] w-full;
+    }
+}
+.send__button {
+    @apply w-[520px] h-[82px] rounded-[8px] mx-auto mt-[45px] text-[35px] font-bold flex justify-center items-center text-white uppercase;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(64, 193, 49, 1), rgba(36, 160, 45, 1));
+    @media screen and(max-width: 576px) {
+        @apply text-[6.4vw] w-[90vw] mt-[6vw];
+    }
+}
+.post__form {
+    form {}
+}
+.form__title {
+    @include text(24px, 100%, 700, rgba(45, 45, 43, 1));
+    @apply text-center mt-[60px] uppercase;
+    @media screen and(max-width: 576px) {
+        @apply text-[4.5vw] leading-[150%] mt-[6vw];
+    }
+}
+.post__form {
+    @apply mt-[50px] flex flex-col gap-[25px] w-[552px] mx-auto;
+     @media screen and(max-width: 576px) {
+        @apply w-[90vw] mt-[6vw];
+    }
+
+    input {
+        @apply w-full py-[16px] text-[18px] px-[22px] border-[1px] border-[#C4C4C4] rounded-[6px];
+        &::placeholder {
+            @apply text-[#979794] text-[18px];
+        }
+        &:focus {
+            @apply outline-none;
+        }
+    }
+
+    button {
+    @apply w-full h-[65px] rounded-[8px] mx-auto text-[24px] font-bold flex justify-center items-center text-white uppercase;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(rgba(64, 193, 49, 1), rgba(36, 160, 45, 1));
+     @media screen and(max-width: 576px) {
+        @apply text-[6.4vw] w-[90vw];
+    }
+}
+}
+.post__text_bottom {
+    @include text(16px, 100%, 400, rgba(45, 45, 43, 1));
+    @apply text-center mt-[88px] mb-[37px];
+    @media screen and(max-width: 576px) {
+        @apply leading-[150%];
+    }
+}
