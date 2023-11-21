@@ -591,10 +591,9 @@ export default function PostRo() {
           <h4 className={styles.post__title}>
             Beneficiile achiziționării unui loc de parcare cu priză
             <br className="hidden sm:block" /> electrică la
-            <br className="block sm:hidden" />
-            <span>
-              NEWTON HOUSE <br className="block sm:hidden" />
-              Grădina Botanică:
+            <br className="block sm:hidden" /> <span> 
+              NEWTON HOUSE 
+              <br className="block sm:hidden" /> Grădina Botanică:
             </span>
           </h4>
         ) : (
@@ -688,7 +687,7 @@ export default function PostRo() {
 
           {isToggleLang === "ro" ? (
             <p className={styles.post__list_text}>
-              <span>Multiple moduri de utilizare.</span>
+              <span>Multiple moduri de utilizare. </span>
               Prizele electrice sunt universale și pot fi utilizate în diverse
               scopuri, de la încărcarea mașinilor electrice și plug-in hibride,
               la bicicletele și trotinetele electrice, până la conectarea
@@ -723,7 +722,7 @@ export default function PostRo() {
 
           {isToggleLang === "ro" ? (
             <p className={styles.post__list_text}>
-              <span>Posibilitatea de partajare.</span>
+              <span>Posibilitatea de partajare. </span>
               Există și posibilitatea de a partaja atât locul de parcare dotat
               cu priză electrică cu vecinul, precum și costurile de achiziție.
             </p>
