@@ -105,13 +105,15 @@ export default function PostRo() {
               {isToggleLang === "ro" ? (
                 <h6 className={styles.form__title_popup}>
                   Rezervă acum un loc
-                  <br className="block sm:hidden " />
-                  de parcare electric
+                  <br className="block sm:hidden " /> de parcare electric
                 </h6>
               ) : (
                 <h6 className={styles.form__title_popup}>
-                  Зарезервируй парковочное место
-                  <br />с электрооборудованием
+                  Зарезервируй <br className="block sm:hidden" />
+                  парковочное место
+                  <br className="block sm:hidden" />
+                  <br className="hidden sm:block" />
+                  c электрооборудованием
                 </h6>
               )}
               {isToggleLang === "ro" ? (
@@ -591,8 +593,9 @@ export default function PostRo() {
           <h4 className={styles.post__title}>
             Beneficiile achiziționării unui loc de parcare cu priză
             <br className="hidden sm:block" /> electrică la
-            <br className="block sm:hidden" /> <span> 
-              NEWTON HOUSE 
+            <br className="block sm:hidden" />{" "}
+            <span>
+              NEWTON HOUSE
               <br className="block sm:hidden" /> Grădina Botanică:
             </span>
           </h4>
@@ -602,8 +605,7 @@ export default function PostRo() {
             <br className="hidden sm:block" /> с электрической розеткой в
             <br className="hidden sm:block" />
             <span>
-              {" "}
-              NEWTON
+              {" "}NEWTON
               <br className="block sm:hidden" />
               HOUSE Grădina Botanică
             </span>

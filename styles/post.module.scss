@@ -67,7 +67,7 @@
     @include text(28px, 150%, 700, rgba(45, 45, 43, 1));
     @apply mt-[60px] uppercase text-center;
     span {
-        @apply text-[#2FB04A];
+        @apply text-[#2FB04A] font-extrabold;
     }
     @media screen and(max-width: 920px) {
         @apply text-[2.9vw] mt-[5vw];
@@ -80,13 +80,13 @@
     @include text(28px, 150%, 700, rgba(45, 45, 43, 1));
     @apply mt-[60px] uppercase text-center;
     span {
-        @apply text-[#2FB04A];
+        @apply text-[#2FB04A] font-extrabold;
     }
     @media screen and(max-width: 920px) {
         @apply text-[2.9vw] mt-[5vw];
     }
     @media screen and(max-width: 576px) {
-        @apply text-[5.84vw];
+        @apply text-[6.1vw];
     }
 }
 .post__subtext {
