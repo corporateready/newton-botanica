@@ -8,19 +8,29 @@
         @apply w-full px-[2vw];
     }
     @media screen and(max-width: 576px) {
-        @apply px-[5.3vw];
+        @apply px-[5.37vw];
     }
 }
 .post__picture {
     @apply relative w-full h-[517px] bg-[url(../public/static/post/post-img-1.webp)] bg-center bg-cover;
-    span {
+    .post__picture_title__ro {
     @include text(28px, 150%, 700, rgba(255, 255, 255, 1));
     @apply absolute bottom-[25px] left-[40px];    
     @media screen and(max-width: 920px) {
         @apply text-[3.04vw] bottom-[2.6vw] left-[4.5vw];
     }
     @media screen and(max-width: 576px) {
+        @apply text-[4.7vw] leading-[130%] bottom-[2.6vw] left-[4.5vw];
+    }
+    }
+     .post__picture_title {
+    @include text(28px, 150%, 700, rgba(255, 255, 255, 1));
+    @apply absolute bottom-[25px] left-[40px];    
+    @media screen and(max-width: 920px) {
         @apply text-[3.04vw] bottom-[2.6vw] left-[4.5vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply text-[3.2vw] bottom-[2.6vw] left-[4.5vw];
     }
     }
 
@@ -50,7 +60,33 @@
         @apply text-[2.9vw] mt-[5vw];
     }
     @media screen and(max-width: 576px) {
-        @apply text-[6vw];
+        @apply text-[5.84vw];
+    }
+}
+.post__title_ru__top {
+    @include text(28px, 150%, 700, rgba(45, 45, 43, 1));
+    @apply mt-[60px] uppercase text-center;
+    span {
+        @apply text-[#2FB04A];
+    }
+    @media screen and(max-width: 920px) {
+        @apply text-[2.9vw] mt-[5vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply text-[5.1vw];
+    }
+}
+.post__title_ru {
+    @include text(28px, 150%, 700, rgba(45, 45, 43, 1));
+    @apply mt-[60px] uppercase text-center;
+    span {
+        @apply text-[#2FB04A];
+    }
+    @media screen and(max-width: 920px) {
+        @apply text-[2.9vw] mt-[5vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply text-[5.84vw];
     }
 }
 .post__subtext {
@@ -62,14 +98,14 @@
         @apply text-[2.72vw];
     }
      @media screen and(max-width: 576px) {
-        @apply text-[3.72vw];
+        @apply text-[3.73vw];
     }
     }
     @media screen and(max-width: 920px) {
         @apply text-[2.72vw] mt-[5vw];
     }
      @media screen and(max-width: 576px) {
-        @apply text-[3.72vw];
+        @apply text-[3.73vw] leading-[200%];
     }
 }
 .post__text {
@@ -80,15 +116,15 @@
             @media screen and(max-width: 920px) {
             @apply text-[2.72vw] mt-[5vw];
         }
-        @media screen and(max-width: 576px) {
-        @apply text-[3.72vw];
+         @media screen and(max-width: 576px) {
+        @apply text-[3.73vw] leading-[200%];
     }
     }
     @media screen and(max-width: 920px) {
         @apply text-[2.72vw] mt-[5vw];
     }
-    @media screen and(max-width: 576px) {
-        @apply text-[3.72vw];
+     @media screen and(max-width: 576px) {
+        @apply text-[3.5vw] leading-[200%];
     }
     
 }
@@ -97,9 +133,15 @@
      @media screen and(max-width: 920px) {
         @apply gap-[5vw] mt-[5vw];
     }
+     @media screen and(max-width: 576px) {
+        @apply gap-4;
+    }
 }
 .post__list_icon {
     @apply w-[18px] h-[23px] mt-[5px];
+      @media screen and(max-width: 576px) {
+        @apply mt-[1vw] w-[13px];
+    }
 }
 .post__list_text {
     @include text(24px, 150%, 400, rgba(45, 45, 43, 1));
@@ -110,14 +152,14 @@
         @apply text-[2.72vw];
     }
     @media screen and(max-width: 576px) {
-        @apply text-[3.72vw];
+        @apply text-[3.72vw] leading-[200%];
     }
     }
     @media screen and(max-width: 920px) {
-        @apply text-[2.72vw] w-[60vw];
+        @apply text-[2.72vw] w-full;
     }
     @media screen and(max-width: 576px) {
-        @apply text-[3.72vw] w-full;
+        @apply text-[3.5vw] w-full leading-[200%];
     }
 }
 .send__button {
@@ -130,33 +172,60 @@
         @apply text-[5.6vw] w-[90vw] h-[14.7vw] mt-[6vw];
     }
 }
-.post__form {
-    form {}
-}
 .post__form_wrapper_popup {
     @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] bg-white rounded-lg pt-[15px] pb-[90px] px-[47px];
+   @media screen and(max-width: 920px) {
+        @apply pt-[8.7vw] pb-[10.21vw] px-[5.2vw];
+    }
     @media screen and(max-width: 576px) {
-        // @apply w-[90vw];
+        @apply w-[100%] rounded-none pt-[15px] pb-[50px] px-[25px];
     }
 }
 .form__title {
-    @include text(24px, 100%, 700, rgba(45, 45, 43, 1));
+    @include text(24px, 200%, 700, rgba(45, 45, 43, 1));
     @apply text-center mt-[60px] uppercase;
+    
     @media screen and(max-width: 576px) {
-        @apply text-[4.5vw] leading-[150%] mt-[6vw];
+        @apply text-[4.6vw] leading-[180%] mt-[6vw];
     }
 }
 .form__title_popup {
     @include text(24px, 150%, 700, rgba(0, 0, 0, 1));
     @apply text-center mt-[60px] uppercase w-[700px];
-    @media screen and(max-width: 576px) {
-        @apply text-[4.5vw] leading-[150%] mt-[6vw];
+    @media screen and(max-width: 920px) {
+        @apply mt-0 text-[2.17vw] w-full;
     }
+    @media screen and(max-width: 576px) {
+        @apply text-[4.4vw] leading-[150%] mt-[6vw];
+    }
+}
+.form__subtitle_popup {
+    @include text(24px, 150%, 400, rgba(45, 45, 43, 1));
+    @apply mt-[25px] text-center;
+        span {
+            @include text(25px, 150%, 800, rgba(45, 45, 43, 1));
+            @media screen and(max-width: 920px) {
+            @apply text-[2.72vw] mt-[5vw];
+        }
+         @media screen and(max-width: 576px) {
+        @apply text-[3.73vw] leading-[200%];
+    }
+    }
+    @media screen and(max-width: 920px) {
+        @apply text-[2.72vw] mt-[5vw];
+    }
+     @media screen and(max-width: 576px) {
+        @apply text-[3.73vw] leading-[150%] mt-[2.5vw];
+    }
+    
 }
 .post__form {
     @apply mt-[50px] flex flex-col gap-[25px] w-[552px] mx-auto;
+     @media screen and(max-width: 920px) {
+        @apply w-[60vw];
+    }
      @media screen and(max-width: 576px) {
-        @apply w-[90vw] mt-[6vw];
+        @apply w-full mt-[6vw];
     }
 
     input {
@@ -176,7 +245,7 @@
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
     background: linear-gradient(rgba(64, 193, 49, 1), rgba(36, 160, 45, 1));
      @media screen and(max-width: 576px) {
-        @apply text-[6.4vw] w-[90vw];
+        @apply text-[6.4vw] w-full;
     }
 }
 }
@@ -184,6 +253,6 @@
     @include text(16px, 100%, 400, rgba(45, 45, 43, 1));
     @apply text-center mt-[88px] mb-[37px];
     @media screen and(max-width: 576px) {
-        @apply text-[2.4vw] leading-[150%];
+        @apply text-[2.4vw] leading-[150%] mt-[20.56vw];
     }
 }

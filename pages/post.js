@@ -2,32 +2,67 @@ import Head from "next/head";
 import React from "react";
 import Header from "../components/about/layout/header";
 import styles from "../styles/post.module.scss";
+import { motion } from "framer-motion";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { LangContext } from "./_app";
 
 export default function PostRo() {
-    const { isToggleLang } = React.useContext(LangContext);
-    const [isOpenForm, setIsOpenForm] = React.useState(false)
+  const { isToggleLang } = React.useContext(LangContext);
+  const [isOpenForm, setIsOpenForm] = React.useState(false);
+ const [isSend, setIsSend] = React.useState(false);
+  const [nameValue, setNameValue] = React.useState("");
+  const [emailValue, setEmailValue] = React.useState("");
+  const [phoneValue, setPhoneValue] = React.useState("");
+  const [isPhoneValid, setIsPhoneValid] = React.useState(false);
+  const [spinner, setSpinner] = React.useState(false);
 
-    const [nameValue, setNameValue] = React.useState("");
-    const [emailValue, setEmailValue] = React.useState("");
-    const [phoneValue, setPhoneValue] = React.useState("");
-    const [isPhoneValid, setIsPhoneValid] = React.useState(false);
+  const handlerFormPoupOpen = () => {
+    setIsOpenForm(!isOpenForm);
+  };
 
-    const handlerFormPoupOpen = () => {
-setIsOpenForm(!isOpenForm)
-    }
-
-    React.useEffect(()=>{
-      if (isOpenForm) {
-        document.body.style.overflow = "hidden"
-      } else {
-         document.body.style.overflow = "auto";
-      }
+  const useHandlerOnClickToSend = (e) => {
+    e.preventDefault();
+    setSpinner(true);
+    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        From: "AFLĂ DETALII",
+        Numele: nameValue.toUpperCase(),
+        Email: emailValue,
+        Telefon: phoneValue,
+      }),
     })
+      .then((response) => {
+        response.json();
+        setIsSend(true);
+        if(isSend) {
+          setEmailValue('')
+          setNameValue('')
+          setPhoneValue('')
+          setIsOpenForm(false)
+        }
+      })
+      .then((data) => data)
+      .then(function () {
+        setSpinner(false);
+      })
+      .catch((error) => console.log(error));
+  };
 
-    const current__date_year = new Date().getFullYear()
+  React.useEffect(() => {
+    if (isOpenForm) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  const current__date_year = new Date().getFullYear();
   return (
     <div className="h-full max-w-full flex flex-col overflow-x-hidden relative z-0">
       <Head>
@@ -41,23 +76,75 @@ setIsOpenForm(!isOpenForm)
             handlerFormPoupOpen();
           }}
         >
-          <button
-            type="button"
-            className="text-white text-[45px] absolute top-1/2 right-1/2 z-[2]"
-          >
-            x
-          </button>
-          <div
+          <motion.div
             className={styles.post__form_wrapper_popup}
-            onClick={(e)=>e.stopPropagation()}
+            transition={{ duration: 0.3 }}
+            onClick={(e) => e.stopPropagation()}
           >
+            <button
+              type="button"
+              className="text-white w-[16px] sm:w-[20px] absolute top-4 right-2 z-[2]"
+              onClick={() => {
+                handlerFormPoupOpen();
+              }}
+            >
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 17.5633L12.3467 9.98416L19.9234 2.33916L17.5634 -5.72205e-06L9.98837 7.64916L2.3417 0.0758276L3.45707e-05 2.41749L7.65503 10.005L0.0758679 17.6583L2.41753 20L10.0109 12.34L17.6609 19.9233L20 17.5633Z"
+                  fill="#C4C4C4"
+                />
+              </svg>
+            </button>
             <div>
-              <h6 className={`${styles.form__title_popup} text-white`}>
-                {isToggleLang === "ro"
-                  ? "Lasă-ne datele de contact mai jos și înscrie-te în concurs, iar noi îți expediem biletul online"
-                  : "для дополнительной информации заполните форму:"}
-              </h6>
-              <form className={styles.post__form}>
+              {isToggleLang === "ro" ? (
+                <h6 className={styles.form__title_popup}>
+                  Rezervă acum un loc
+                  <br className="block sm:hidden " />
+                  de parcare electric
+                </h6>
+              ) : (
+                <h6 className={styles.form__title_popup}>
+                  Зарезервируй парковочное место
+                  <br />с электрооборудованием
+                </h6>
+              )}
+              {isToggleLang === "ro" ? (
+                <p className={styles.form__subtitle_popup}>
+                  Lasă datele de contact în formularul de mai jos
+                  <br />
+                  și revenim cu detalii în cel mai scurt timp
+                </p>
+              ) : (
+                <p className={styles.form__subtitle_popup}>
+                  Заполни форму ниже и мы свяжемся
+                  <br />с тобой в самое короткое время
+                </p>
+              )}
+
+              <form
+                className={styles.post__form}
+                id="post__form_send__popup"
+                action="https://formsubmit.co/nev30inbox@gmail.com"
+                method="POST"
+                onSubmit={useHandlerOnClickToSend}
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://botanica.newton.md/post"
+                />
+                <input
+                  type="hidden"
+                  name="_autoresponse"
+                  value="Everyone is important for as!"
+                />
                 <input
                   type="text"
                   id="fullname"
@@ -69,7 +156,7 @@ setIsOpenForm(!isOpenForm)
                   }
                   required
                 />
-                <input
+                {/* <input
                   type="email"
                   id="email"
                   name="email"
@@ -77,7 +164,7 @@ setIsOpenForm(!isOpenForm)
                   onChange={(e) => setEmailValue(e.target.value)}
                   placeholder="E-mail"
                   required
-                />
+                /> */}
                 <div className="flex items-center relative bg-[#F5F5F5] border-[1px] border-[#C4C4C4] rounded-[6px]">
                   <svg
                     className="w-[6vw] sm:w-[2vw] mx-[3%]"
@@ -403,23 +490,24 @@ setIsOpenForm(!isOpenForm)
                   />
                 </div>
                 <button type="submit">
-                  {isToggleLang === "ro" ? "trimite" : "отправить"}
+                  {isToggleLang === "ro" ? "Rezervă acum" : "Оставить заявку"}
+                  {/* {isS} */}
                 </button>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
       <div className={styles.container}>
         <div className={styles.post__picture}>
           {isToggleLang === "ro" ? (
-            <span>
-              Lokuri de parcare subterane
+            <span className={styles.post__picture_title__ro}>
+              Locuri de parcare subterane
               <br />
               dotate cu prize electrice moderne
             </span>
           ) : (
-            <span>
+            <span className={styles.post__picture_title}>
               Подземные парковочные места, обоорудованные
               <br />
               современными электрическими розетками
@@ -428,14 +516,18 @@ setIsOpenForm(!isOpenForm)
         </div>
         {isToggleLang === "ro" ? (
           <h4 className={styles.post__title}>
-            Locuri de parcare subterane dotate cu prize pentru
-            <br className="hidden sm:block" />
-            mașinile <br className="block sm:hidden" />
+            Locuri de parcare subterane dotate cu
+            <br className="block sm:hidden" /> prize pentru mașinile{" "}
+            <br className="block sm:hidden" />
             electrice
           </h4>
         ) : (
-          <h4 className={styles.post__title}>
-            Подземная парковка <span>NEWTON HOUSE Grădina Botanică:</span>{" "}
+          <h4 className={styles.post__title_ru__top}>
+            Подземная парковка{" "}
+            <span>
+              NEWTON <br className="block sm:hidden" />
+              HOUSE Grădina Botanică:
+            </span>{" "}
             <br />
             розетки для зарядки электротранспорта
           </h4>
@@ -492,25 +584,30 @@ setIsOpenForm(!isOpenForm)
           className={styles.send__button}
           onClick={() => handlerFormPoupOpen()}
         >
-          {isToggleLang === "ro" ? "trimite" : "отправить"}
+          {isToggleLang === "ro" ? "Plasează solicitarea" : "Оставить заявку"}
         </button>
         <div className={styles.post__picture_2}></div>
         {isToggleLang === "ro" ? (
           <h4 className={styles.post__title}>
             Beneficiile achiziționării unui loc de parcare cu priză
-            <br className="hidden sm:block" />
-            electrică la <br className="block sm:hidden" />
+            <br className="hidden sm:block" /> electrică la
+            <br className="block sm:hidden" />
             <span>
               NEWTON HOUSE <br className="block sm:hidden" />
               Grădina Botanică:
             </span>
           </h4>
         ) : (
-          <h4 className={styles.post__title}>
+          <h4 className={`${styles.post__title_ru}`}>
             Преимущества приобретения парковочного места
-            <br />с электрической розеткой в
-            <br />
-            <span>NEWTON HOUSE Grădina Botanică</span>
+            <br className="hidden sm:block" /> с электрической розеткой в
+            <br className="hidden sm:block" />
+            <span>
+              {" "}
+              NEWTON
+              <br className="block sm:hidden" />
+              HOUSE Grădina Botanică
+            </span>
           </h4>
         )}
         {isToggleLang === "ro" ? (
@@ -792,12 +889,36 @@ setIsOpenForm(!isOpenForm)
           </p>
         )}
         <div className={styles.post__form_wrapper}>
-          <h6 className={styles.form__title}>
-            {isToggleLang === "ro"
-              ? "PENTRU INFORMAȚII SUPLIMENTARE COMPLETEAZĂ FORMULARUL:"
-              : "для дополнительной информации заполните форму:"}
-          </h6>
-          <form className={styles.post__form}>
+          {isToggleLang === "ro" ? (
+            <h6 className={styles.form__title}>
+              Solicită oferta unui loc de parcare
+              <br className="hidden sm:block" />
+              dotat cu priză electrică
+            </h6>
+          ) : (
+            <h6 className={styles.form__title}>
+              Запроси предложение по парковочному месту
+              <br />с электрической розеткой
+            </h6>
+          )}
+          <form
+            className={styles.post__form}
+            id="post__form_send"
+            action="https://formsubmit.co/nev30inbox@gmail.com"
+            method="POST"
+            onSubmit={useHandlerOnClickToSend}
+          >
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://botanica.newton.md/post"
+            />
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Everyone is important for as!"
+            />
             <input
               type="text"
               id="fullname"
@@ -809,7 +930,7 @@ setIsOpenForm(!isOpenForm)
               }
               required
             />
-            <input
+            {/* <input
               type="email"
               id="email"
               name="email"
@@ -817,7 +938,7 @@ setIsOpenForm(!isOpenForm)
               onChange={(e) => setEmailValue(e.target.value)}
               placeholder="E-mail"
               required
-            />
+            /> */}
             <div className="flex items-center relative bg-[#F5F5F5] border-[1px] border-[#C4C4C4] rounded-[6px]">
               <svg
                 className="w-[6vw] sm:w-[2vw] mx-[3%]"
@@ -1143,7 +1264,9 @@ setIsOpenForm(!isOpenForm)
               />
             </div>
             <button type="submit">
-              {isToggleLang === "ro" ? "trimite" : "отправить"}
+              {isToggleLang === "ro"
+                ? "Plasează solicitarea"
+                : "Оставить заявку"}
             </button>
           </form>
         </div>
