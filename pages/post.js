@@ -112,8 +112,7 @@ export default function PostRo() {
                   Зарезервируй <br className="block sm:hidden" />
                   парковочное место
                   <br className="block sm:hidden" />
-                  <br className="hidden sm:block" />
-                  c электрооборудованием
+                  <br className="hidden sm:block" />c электрооборудованием
                 </h6>
               )}
               {isToggleLang === "ro" ? (
@@ -492,7 +491,9 @@ export default function PostRo() {
                   />
                 </div>
                 <button type="submit">
-                  {isToggleLang === "ro" ? "Rezervă acum" : "Оставить заявку"}
+                  {isToggleLang === "ro"
+                    ? "Rezervă acum"
+                    : "Зарезервируй сейчас"}
                   {/* {isS} */}
                 </button>
               </form>
@@ -605,9 +606,9 @@ export default function PostRo() {
             <br className="hidden sm:block" /> с электрической розеткой в
             <br className="hidden sm:block" />
             <span>
-              {" "}NEWTON
-              <br className="block sm:hidden" />
-              HOUSE Grădina Botanică
+              {" "}
+              NEWTON
+              <br className="block sm:hidden" /> HOUSE Grădina Botanică
             </span>
           </h4>
         )}
@@ -893,8 +894,7 @@ export default function PostRo() {
           {isToggleLang === "ro" ? (
             <h6 className={styles.form__title}>
               Solicită oferta unui loc de parcare
-              <br className="hidden sm:block" />
-              dotat cu priză electrică
+              <br className="hidden sm:block" /> dotat cu priză electrică
             </h6>
           ) : (
             <h6 className={styles.form__title}>
