@@ -31,25 +31,31 @@ export default function PostRo() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        From: "AFLĂ DETALII",
+        From: "Post page",
         Numele: nameValue.toUpperCase(),
-        Email: emailValue,
+        // Email: emailValue,
         Telefon: phoneValue,
       }),
     })
       .then((response) => {
         response.json();
         setIsSend(true);
-        if(isSend) {
-          setEmailValue('')
-          setNameValue('')
-          setPhoneValue('')
-          setIsOpenForm(false)
-        }
+        // if(isSend) {
+          // setEmailValue('')
+          // setNameValue('')
+          // setPhoneValue('')
+          // setIsOpenForm(false)
+        // }
       })
       .then((data) => data)
       .then(function () {
         setSpinner(false);
+        if (isSend) {
+          // setEmailValue('')
+          setNameValue("");
+          setPhoneValue("");
+          setIsOpenForm(false)
+        }
       })
       .catch((error) => console.log(error));
   };
@@ -490,11 +496,22 @@ export default function PostRo() {
                     required
                   />
                 </div>
-                <button type="submit">
+                <button
+                  type="submit"
+                  disabled={
+                    phoneValue.length < 11 ||
+                    nameValue.length < 3 ||
+                    spinner ||
+                    isSend
+                  }
+                >
                   {isToggleLang === "ro"
-                    ? "Rezervă acum"
+                    ? spinner
+                      ? "tremitere..."
+                      : "Rezervă acum"
+                    : spinner
+                    ? "отправляется..."
                     : "Зарезервируй сейчас"}
-                  {/* {isS} */}
                 </button>
               </form>
             </div>
