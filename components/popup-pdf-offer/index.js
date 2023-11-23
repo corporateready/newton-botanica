@@ -155,7 +155,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
               className={styles.button__sending}
               disabled={
                 phoneValue.length < 11 ||
-                emailValue.match(/@/) ||
+                emailValue.length < 3 ||
                 isPhoneValid ||
                 spinner ||
                 isSend

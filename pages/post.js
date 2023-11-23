@@ -8,13 +8,13 @@ import "react-phone-input-2/lib/style.css";
 import { LangContext } from "./_app";
 
 export default function PostRo() {
+
   const { isToggleLang } = React.useContext(LangContext);
   const [isOpenForm, setIsOpenForm] = React.useState(false);
- const [isSend, setIsSend] = React.useState(false);
+
+  const [isSend, setIsSend] = React.useState(false);
   const [nameValue, setNameValue] = React.useState("");
-  const [emailValue, setEmailValue] = React.useState("");
   const [phoneValue, setPhoneValue] = React.useState("");
-  const [isPhoneValid, setIsPhoneValid] = React.useState(false);
   const [spinner, setSpinner] = React.useState(false);
 
   const handlerFormPoupOpen = () => {
@@ -31,31 +31,18 @@ export default function PostRo() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        From: "Post page",
+        From: isToggleLang === "ro" ? "Rezervă acum" : "Зарезервируй сейчас",
         Numele: nameValue.toUpperCase(),
-        // Email: emailValue,
         Telefon: phoneValue,
       }),
     })
       .then((response) => {
         response.json();
         setIsSend(true);
-        // if(isSend) {
-          // setEmailValue('')
-          // setNameValue('')
-          // setPhoneValue('')
-          // setIsOpenForm(false)
-        // }
       })
       .then((data) => data)
       .then(function () {
         setSpinner(false);
-        if (isSend) {
-          // setEmailValue('')
-          setNameValue("");
-          setPhoneValue("");
-          setIsOpenForm(false)
-        }
       })
       .catch((error) => console.log(error));
   };
@@ -67,6 +54,23 @@ export default function PostRo() {
       document.body.style.overflow = "auto";
     }
   });
+  console.log("is send", isSend);
+
+  React.useEffect(() => {
+    if (isSend) {
+      setNameValue("");
+      setPhoneValue("");
+      setTimeout(() => {
+        setIsOpenForm(false);
+      }, 3000);
+    }
+  }, [isSend]);
+
+  React.useEffect(()=>{
+    // const document.querySelector(
+    //   "#home__form_send_about_btn > input[type=text]:nth-child(1)"
+    // ).value;
+  },[])
 
   const current__date_year = new Date().getFullYear();
   return (
@@ -141,21 +145,9 @@ export default function PostRo() {
                 method="POST"
                 onSubmit={useHandlerOnClickToSend}
               >
-                <input type="hidden" name="_captcha" value="false" />
-                <input
-                  type="hidden"
-                  name="_next"
-                  value="https://botanica.newton.md/post"
-                />
-                <input
-                  type="hidden"
-                  name="_autoresponse"
-                  value="Everyone is important for as!"
-                />
                 <input
                   type="text"
-                  id="fullname"
-                  name="fullname"
+                  name="name"
                   value={nameValue}
                   onChange={(e) => setNameValue(e.target.value)}
                   placeholder={
@@ -163,15 +155,6 @@ export default function PostRo() {
                   }
                   required
                 />
-                {/* <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={emailValue}
-                  onChange={(e) => setEmailValue(e.target.value)}
-                  placeholder="E-mail"
-                  required
-                /> */}
                 <div className="flex items-center relative bg-[#F5F5F5] border-[1px] border-[#C4C4C4] rounded-[6px]">
                   <svg
                     className="w-[6vw] sm:w-[2vw] mx-[3%]"
@@ -488,7 +471,6 @@ export default function PostRo() {
                   <input
                     type="tel"
                     className="text-[16rem] sm:text-[2.2rem] py-[16px] w-full h-full border-none border-l-2 border-[#C4C4C4]"
-                    id="phone"
                     name="phone"
                     value={phoneValue}
                     onChange={(e) => setPhoneValue(e.target.value)}
@@ -496,10 +478,21 @@ export default function PostRo() {
                     required
                   />
                 </div>
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://botanica.newton.md/post"
+                />
+                <input
+                  type="hidden"
+                  name="_autoresponse"
+                  value="Everyone is important for as!"
+                />
                 <button
                   type="submit"
                   disabled={
-                    phoneValue.length < 11 ||
+                    phoneValue.length < 9 ||
                     nameValue.length < 3 ||
                     spinner ||
                     isSend
