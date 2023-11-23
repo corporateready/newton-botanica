@@ -104,7 +104,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
             )}
 
             <form
-              id="about__form_send_design_btn"
+              id="botanica__about_form__design"
               className={styles.offer__form}
               action="https://formsubmit.co/nev30inbox@gmail.com"
               method="POST"

@@ -54,7 +54,6 @@ export default function PostRo() {
       document.body.style.overflow = "auto";
     }
   });
-  console.log("is send", isSend);
 
   React.useEffect(() => {
     if (isSend) {
@@ -66,13 +65,8 @@ export default function PostRo() {
     }
   }, [isSend]);
 
-  React.useEffect(()=>{
-    // const document.querySelector(
-    //   "#home__form_send_about_btn > input[type=text]:nth-child(1)"
-    // ).value;
-  },[])
-
   const current__date_year = new Date().getFullYear();
+  
   return (
     <div className="h-full max-w-full flex flex-col overflow-x-hidden relative z-0">
       <Head>
