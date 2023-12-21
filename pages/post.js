@@ -55,6 +55,40 @@ export default function PostRo() {
     }
   });
 
+  const useHandlerOnClickToSendBottom = (e) => {
+    e.preventDefault();
+    setSpinner(true);
+    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        From: isToggleLang === "ro" ? "Rezervă acum" : "Зарезервируй сейчас",
+        Numele: nameValue.toUpperCase(),
+        Telefon: phoneValue,
+      }),
+    })
+      .then((response) => {
+        response.json();
+        setIsSend(true);
+      })
+      .then((data) => data)
+      .then(function () {
+        setSpinner(false);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  React.useEffect(() => {
+    if (isOpenForm) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
+
   React.useEffect(() => {
     if (isSend) {
       setNameValue("");
@@ -911,7 +945,7 @@ export default function PostRo() {
             id="post__page_bottom__form__send"
             action="https://formsubmit.co/nev30inbox@gmail.com"
             method="POST"
-            onSubmit={useHandlerOnClickToSend}
+            onSubmit={useHandlerOnClickToSendBottom}
           >
             <input type="hidden" name="_captcha" value="false" />
             <input
