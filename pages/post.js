@@ -1302,7 +1302,9 @@ export default function PostRo() {
                 required
               />
             </div>
-            <button type="submit">
+            <button type="submit"
+          id="post__page_bottom__form__button"
+          >
               {isToggleLang === "ro"
                 ? "Plasează solicitarea"
                 : "Оставить заявку"}
