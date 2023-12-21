@@ -34,9 +34,7 @@ export default function Header() {
                   alt="home header phone icon"
                 />
               </div>
-              <span className={styles.header__phone_link_number}>
-                060 802 020
-              </span>
+              <span className={styles.header__phone_link_number}></span>
             </a>
           </Link>
         </div>
