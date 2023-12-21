@@ -908,7 +908,7 @@ export default function PostRo() {
           )}
           <form
             className={styles.post__form}
-            id="post__form_send"
+            id="post__page_bottom__form__send"
             action="https://formsubmit.co/nev30inbox@gmail.com"
             method="POST"
             onSubmit={useHandlerOnClickToSend}
