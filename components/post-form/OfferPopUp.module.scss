@@ -1,0 +1,79 @@
+@import '../../styles/mixins.scss';
+
+.post__form_wrapper_popup {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] bg-white rounded-lg pt-[15px] pb-[90px] px-[47px];
+   @media screen and(max-width: 920px) {
+        @apply pt-[8.7vw] pb-[10.21vw] px-[5.2vw];
+    }
+    @media screen and(max-width: 576px) {
+        @apply w-[100%] rounded-none pt-[15px] pb-[50px] px-[25px];
+    }
+}
+.form__title {
+    @include text(24px, 200%, 700, rgba(45, 45, 43, 1));
+    @apply text-center mt-[60px] uppercase;
+    
+    @media screen and(max-width: 576px) {
+        @apply text-[4.6vw] leading-[180%] mt-[6vw];
+    }
+}
+.form__title_popup {
+    @include text(24px, 150%, 700, rgba(0, 0, 0, 1));
+    @apply text-center mt-[60px] uppercase w-[700px];
+    @media screen and(max-width: 920px) {
+        @apply mt-0 text-[2.17vw] w-full;
+    }
+    @media screen and(max-width: 576px) {
+        @apply text-[4.4vw] leading-[150%] mt-[6vw];
+    }
+}
+.form__subtitle_popup {
+    @include text(24px, 150%, 400, rgba(45, 45, 43, 1));
+    @apply mt-[25px] text-center;
+        span {
+            @include text(25px, 150%, 800, rgba(45, 45, 43, 1));
+            @media screen and(max-width: 920px) {
+            @apply text-[2.72vw] mt-[5vw];
+        }
+         @media screen and(max-width: 576px) {
+        @apply text-[3.73vw] leading-[200%];
+    }
+    }
+    @media screen and(max-width: 920px) {
+        @apply text-[2.72vw] mt-[5vw];
+    }
+     @media screen and(max-width: 576px) {
+        @apply text-[3.73vw] leading-[150%] mt-[2.5vw];
+    }
+    
+}
+.post__form {
+    @apply mt-[50px] flex flex-col gap-[25px] w-[552px] mx-auto;
+     @media screen and(max-width: 920px) {
+        @apply w-[60vw];
+    }
+     @media screen and(max-width: 576px) {
+        @apply w-full mt-[6vw];
+    }
+
+    input {
+        @apply w-full py-[16px] text-[18px] px-[22px] border-[1px] border-[#C4C4C4] rounded-[6px];
+        &::placeholder {
+            @apply text-[#979794] text-[18px];
+        }
+        &:focus {
+            @apply outline-none;
+        }
+    }
+
+    button {
+    @apply w-full h-[65px] rounded-[8px] mx-auto text-[24px] font-bold flex justify-center items-center text-white uppercase disabled:hover:cursor-default;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(rgba(64, 193, 49, 1), rgba(36, 160, 45, 1));
+     @media screen and(max-width: 576px) {
+        @apply text-[6.4vw] w-full;
+    }
+}
+}
