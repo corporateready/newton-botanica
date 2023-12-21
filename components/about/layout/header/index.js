@@ -87,7 +87,7 @@ export default function Index() {
             <a
               href="tel:+3736082020"
               className={styles.header__phone_link_number}
-            >+373 60 82 020</a>
+            ></a>
           </div>
           
           
