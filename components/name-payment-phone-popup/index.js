@@ -20,7 +20,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
     setSpinner(true);
-    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+    fetch("https://formsubmit.co/ajax/salut@newton.md", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,8 +62,10 @@ export default function Index({ hanlerClosePaymentPopup }) {
     <>
       <section className={styles.offer__section}>
         <div className={styles.offer__container}>
-          <div className={styles.offer__inner} style={{transform:"none!important"}}>
-
+          <div
+            className={styles.offer__inner}
+            style={{ transform: "none!important" }}
+          >
             <button
               type="button"
               className={styles.offer__button_close}
@@ -78,31 +80,34 @@ export default function Index({ hanlerClosePaymentPopup }) {
             </button>
 
             {isToggleLang === "ro" ? (
-            <h2 className={styles.offer__title}>
-              Află mai multe informații înainte <br />
-              de a-ți alege locuința de vis!
-            </h2>
-          ) : (
-            <h2 className={styles.offer__title}>
-              Получи больше информации перед тем,<br />
-              как выбрать квартиру своей мечты!
-            </h2>
-          )}
+              <h2 className={styles.offer__title}>
+                Află mai multe informații înainte <br />
+                de a-ți alege locuința de vis!
+              </h2>
+            ) : (
+              <h2 className={styles.offer__title}>
+                Получи больше информации перед тем,
+                <br />
+                как выбрать квартиру своей мечты!
+              </h2>
+            )}
 
-            {isToggleLang === "ro"
-            ? <h3 className={styles.offer__subtitle}>
-              Introdu datele de contact corect, iar noi te vom contacta <br />
-              pentru a-ți prezenta detalii despre proiect:
-            </h3>
-            : <h3 className={styles.offer__subtitle}>
-            Оставь свои контактные данные, мы перезвоним и <br />
-            предоставим подробную информацию о проекте:
-          </h3>}
+            {isToggleLang === "ro" ? (
+              <h3 className={styles.offer__subtitle}>
+                Introdu datele de contact corect, iar noi te vom contacta <br />
+                pentru a-ți prezenta detalii despre proiect:
+              </h3>
+            ) : (
+              <h3 className={styles.offer__subtitle}>
+                Оставь свои контактные данные, мы перезвоним и <br />
+                предоставим подробную информацию о проекте:
+              </h3>
+            )}
 
             <form
               id="about__form_send_payment_btn"
               className={styles.offer__form}
-              action="https://formsubmit.co/nev30inbox@gmail.com"
+              action="https://formsubmit.co/salut@newton.md"
               method="POST"
               onSubmit={useHandlerOnClickToSend}
             >
@@ -111,7 +116,9 @@ export default function Index({ hanlerClosePaymentPopup }) {
                 name="name"
                 value={nameValue}
                 onChange={(e) => setNameValue(e.target.value)}
-                placeholder={isToggleLang === "ro" ? "NUMELE, PRENUMELE" : "ИМЯ, ФАМИЛИЯ"}
+                placeholder={
+                  isToggleLang === "ro" ? "NUMELE, PRENUMELE" : "ИМЯ, ФАМИЛИЯ"
+                }
                 required
               />
               <PhoneInput
@@ -123,7 +130,7 @@ export default function Index({ hanlerClosePaymentPopup }) {
                   paddingTop: "0",
                   paddingBottom: "0",
                   borderRadius: "3px",
-                  border:0,
+                  border: 0,
                 }}
                 placeholder="+373-XXX-XXX-XX"
                 country={"md"}
@@ -137,10 +144,12 @@ export default function Index({ hanlerClosePaymentPopup }) {
                     phoneValue[3] !== undefined &&
                     country.name === "Moldova"
                   ) {
-                    setIsPhoneValid(true)
-                    return isToggleLang === "ro" ? "fără prefixul zero în față" : "без префикса ноль в начале";
+                    setIsPhoneValid(true);
+                    return isToggleLang === "ro"
+                      ? "fără prefixul zero în față"
+                      : "без префикса ноль в начале";
                   } else {
-                    setIsPhoneValid(false)
+                    setIsPhoneValid(false);
                     return true;
                   }
                 }}
@@ -149,8 +158,8 @@ export default function Index({ hanlerClosePaymentPopup }) {
               {phoneValue.length < 11 && (
                 <p className="text-xs text-red-400 pb-[2%]">
                   {isToggleLang === "ro"
-                  ? "Exact 8 cifre, fără prefixul zero în față"
-                  : "ровно 8 цифр, без префикса ноль в начале"}
+                    ? "Exact 8 cifre, fără prefixul zero în față"
+                    : "ровно 8 цифр, без префикса ноль в начале"}
                 </p>
               )}
               <input type="hidden" name="_captcha" value="false" />
@@ -166,24 +175,24 @@ export default function Index({ hanlerClosePaymentPopup }) {
               />
 
               <button
-              type="submit"
-              className={styles.button__sending}
-              disabled={
-                phoneValue.length < 11 ||
-                nameValue.length < 3 ||
-                isPhoneValid ||
-                spinner ||
-                isSend
-              }
-            >
-              {spinner
-                ? isToggleLang === "ro"
-                  ? "trimitere..."
-                  : "Отправляется..."
-                : isToggleLang === "ro"
-                ? "Vreau să fiu contactat"
-                : "Хочу получить звонок"}
-            </button>
+                type="submit"
+                className={styles.button__sending}
+                disabled={
+                  phoneValue.length < 11 ||
+                  nameValue.length < 3 ||
+                  isPhoneValid ||
+                  spinner ||
+                  isSend
+                }
+              >
+                {spinner
+                  ? isToggleLang === "ro"
+                    ? "trimitere..."
+                    : "Отправляется..."
+                  : isToggleLang === "ro"
+                  ? "Vreau să fiu contactat"
+                  : "Хочу получить звонок"}
+              </button>
             </form>
 
             <div className={styles.terms__policy}>
@@ -204,7 +213,6 @@ export default function Index({ hanlerClosePaymentPopup }) {
                 </a>
               </Link>
             </div>
-
           </div>
         </div>
       </section>

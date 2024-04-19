@@ -25,7 +25,7 @@ export default function Terms() {
             <Link href="/">
               <a className={styles.button__planning}>înapoi</a>
             </Link>
-            <Link href="tel:+3736082020">
+            <Link href="tel:+37360044040">
               <a className={styles.header__phone_link}>
                 <div className={styles.header__phone_icon}>
                   <Image
@@ -36,7 +36,7 @@ export default function Terms() {
                   />
                 </div>
                 <span className={styles.header__phone_link_number}>
-                  060 80 20 20
+                  060 04 40 40
                 </span>
               </a>
             </Link>

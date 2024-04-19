@@ -27,7 +27,7 @@ export default class CustomDocument extends Document {
         <body>
           <Main />
           <NextScript></NextScript>
-          <script
+          {/* <script
             async
             id="roistat-script"
             dangerouslySetInnerHTML={{
@@ -58,7 +58,7 @@ export default class CustomDocument extends Document {
           `,
             }}
             strategy="beforeInteractive"
-          ></script>
+          ></script> */}
         </body>
       </Html>
     );

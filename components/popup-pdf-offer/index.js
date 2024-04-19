@@ -19,7 +19,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
     setSpinner(true);
-    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+    fetch("https://formsubmit.co/ajax/salut@newton.md", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,10 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
   return (
     <section className={styles.offer__section}>
       <div className={styles.offer__container}>
-        <div className={styles.offer__inner} style={{transform:"none!important"}}>
+        <div
+          className={styles.offer__inner}
+          style={{ transform: "none!important" }}
+        >
           <button
             type="button"
             className={styles.offer__button_close}
@@ -88,7 +91,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
           <form
             id="about__hero_presentation_btn"
             className={styles.offer__form}
-            action="https://formsubmit.co/nev30inbox@gmail.com"
+            action="https://formsubmit.co/salut@newton.md"
             method="POST"
             onSubmit={useHandlerOnClickToSend}
           >
@@ -109,7 +112,7 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
                 paddingTop: "0",
                 paddingBottom: "0",
                 borderRadius: "3px",
-                border:0,
+                border: 0,
               }}
               placeholder="+373-XXX-XXX-XX"
               country={"md"}
@@ -124,7 +127,9 @@ export default function OfferPDFOpenSending({ hanlerClosePopup }) {
                   country.name === "Moldova"
                 ) {
                   setIsPhoneValid(true);
-                  return isToggleLang === "ro" ? "fără prefixul zero în față" : "без префикса ноль в начале";
+                  return isToggleLang === "ro"
+                    ? "fără prefixul zero în față"
+                    : "без префикса ноль в начале";
                 } else {
                   setIsPhoneValid(false);
                   return true;

@@ -166,7 +166,7 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
     setSpinner(true);
-    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+    fetch("https://formsubmit.co/ajax/salut@newton.md", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -239,7 +239,7 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
             <form
               id="home__form_send_details_btn"
               className={styles.offer__form}
-              action="https://formsubmit.co/nev30inbox@gmail.com"
+              action="https://formsubmit.co/salut@newton.md"
               method="POST"
               onSubmit={useHandlerOnClickToSend}
             >
@@ -297,8 +297,7 @@ export function OfferPopUpSending({ hanlerClosePopup, isToggleLang }) {
                   <p className="text-xs text-red-400 pb-[2%]">
                     ровно 8 цифр, без префикса ноль в начале
                   </p>
-                ))
-              }
+                ))}
 
               <input type="hidden" name="_captcha" value="false" />
               <input
@@ -368,7 +367,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup, isToggleLang }) {
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
     setSpinner(true);
-    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+    fetch("https://formsubmit.co/ajax/salut@newton.md", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -443,7 +442,7 @@ function PlanningPopUpSending({ hanlerClosePlanningPopup, isToggleLang }) {
             <form
               id="home__form_send_planning_btn"
               className={styles.offer__form}
-              action="https://formsubmit.co/nev30inbox@gmail.com"
+              action="https://formsubmit.co/salut@newton.md"
               method="POST"
               onSubmit={useHandlerOnClickToSend}
             >
@@ -569,7 +568,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
     setSpinner(true);
-    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+    fetch("https://formsubmit.co/ajax/salut@newton.md", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -648,7 +647,7 @@ function AboutPopUpSending({ hanlerCloseAboutPopup, isToggleLang }) {
 
             <form
               className={styles.offer__form}
-              action="https://formsubmit.co/nev30inbox@gmail.com"
+              action="https://formsubmit.co/salut@newton.md"
               method="POST"
               onSubmit={useHandlerOnClickToSend}
               id="home__form_send_about_btn"

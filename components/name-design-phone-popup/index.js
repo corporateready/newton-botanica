@@ -20,7 +20,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
   const useHandlerOnClickToSend = (e) => {
     e.preventDefault();
     setSpinner(true);
-    fetch("https://formsubmit.co/ajax/nev30inbox@gmail.com", {
+    fetch("https://formsubmit.co/ajax/salut@newton.md", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
             <form
               id="botanica__about_form__design"
               className={styles.offer__form}
-              action="https://formsubmit.co/nev30inbox@gmail.com"
+              action="https://formsubmit.co/salut@newton.md"
               method="POST"
               onSubmit={useHandlerOnClickToSend}
             >
@@ -129,7 +129,7 @@ export default function Index({ hanlerCloseDesignPopup }) {
                   paddingTop: "0",
                   paddingBottom: "0",
                   borderRadius: "3px",
-                  border:0,
+                  border: 0,
                 }}
                 placeholder="+373-XXX-XXX-XX"
                 country={"md"}
