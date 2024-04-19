@@ -10,7 +10,7 @@ const messengers = [
   {
     id: 1,
     icon: <FaWhatsapp size={30} color="white" />,
-    irl: "https://api.whatsapp.com/send?phone=+37360044040&text=I'm%20interested%20in%20your%20car%20for%20sale",
+    irl: "https://api.whatsapp.com/send?phone=+37360044040",
     title: "whatsapp",
   },
   {
@@ -27,31 +27,7 @@ const messengers = [
   }
 ];
 export default function Index() {
-  // React.useEffect(() => {
-  //   (function (w, d, s, h, id) {
-  //     w.roistatProjectId = id;
-  //     w.roistatHost = h;
-  //     var p = d.location.protocol == "https:" ? "https://" : "http://";
-  //     var u = /^.roistat_visit=[^;]+(.)?$/.test(d.cookie)
-  //       ? "/dist/module.js"
-  //       : "/api/site/1.0/" +
-  //         id +
-  //         "/init?referrer=" +
-  //         encodeURIComponent(d.location.href);
-  //     var js = d.createElement(s);
-  //     js.charset = "UTF-8";
-  //     js.async = 1;
-  //     js.src = p + h + u;
-  //     var js2 = d.getElementsByTagName(s)[0];
-  //     js2.parentNode.insertBefore(js, js2);
-  //   })(
-  //     window,
-  //     document,
-  //     "script",
-  //     "cloud.roistat.com",
-  //     "e39442a8581e616d741b8f0786da960e"
-  //   );
-  // }, []);
+ 
   return (
     <article className={styles.messengers}>
       {messengers.map((item) => (
